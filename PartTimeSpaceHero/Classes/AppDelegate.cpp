@@ -1,5 +1,6 @@
 #include "AppDelegate.h"
 #include "MainMenu.hpp"
+#include "GlobalPList.hpp"
 
 
 USING_NS_CC;
@@ -31,6 +32,8 @@ bool AppDelegate::applicationDidFinishLaunching() {
         glview = GLViewImpl::createWithRect("PartTimeSpaceHero", Rect(0, 0, 960, 640));
         director->setOpenGLView(glview);
     }
+    
+    setScaleFactor(2);
 
     director->getOpenGLView()->setDesignResolutionSize(960, 640, ResolutionPolicy::SHOW_ALL);
 

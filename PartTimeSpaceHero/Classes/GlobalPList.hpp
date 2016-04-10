@@ -10,5 +10,10 @@
 #define GlobalPList_hpp
 
 #include <stdio.h>
+#include "cocos2d.h"
+
+
+bool setScaleFactor(const size_t scale);
+size_t getScaleFactor();
 
 #endif /* GlobalPList_hpp */

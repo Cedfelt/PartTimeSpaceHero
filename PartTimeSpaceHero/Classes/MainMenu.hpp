@@ -1,7 +1,7 @@
 #pragma once
 
 #include "cocos2d.h"
-#include "PlayerInput.hpp"
+using namespace cocos2d;
 
 class MainMenu : public cocos2d::Layer
 {
@@ -17,5 +17,8 @@ public:
     CREATE_FUNC(MainMenu);
     
 private:
-    PlayerInput* playerInput;
+    virtual void onTouchBegan(const std::vector<Touch*>&, Event*);
+    virtual void onTouchEnded(const std::vector<Touch*>&, Event*);
+    virtual void onTouchMoved(const std::vector<Touch*>&, Event*);
+    virtual void onTouchCancelled(const std::vector<Touch*>&, Event*);
 };
