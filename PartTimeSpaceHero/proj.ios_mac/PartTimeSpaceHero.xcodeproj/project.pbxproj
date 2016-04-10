@@ -52,6 +52,28 @@
 		67264650BD08F5A9E8B7ED1D /* libcocos2d iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D65417CAF89D7ADE4119FEC /* libcocos2d iOS.a */; };
 		6CC743B7AEC6C4A1F5FEC304 /* res in Resources */ = {isa = PBXBuildFile; fileRef = 01F741B993AED8B544209AD5 /* res */; };
 		8262943E1AAF051F00CB7CF7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8262943D1AAF051F00CB7CF7 /* Security.framework */; };
+		A81BE13F1CBA408300C09359 /* MainMenu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A81BE13D1CBA408300C09359 /* MainMenu.cpp */; };
+		A81BE1401CBA408300C09359 /* MainMenu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A81BE13D1CBA408300C09359 /* MainMenu.cpp */; };
+		A81BE1431CBA40AE00C09359 /* GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A81BE1411CBA40AE00C09359 /* GameScene.cpp */; };
+		A81BE1441CBA40AE00C09359 /* GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A81BE1411CBA40AE00C09359 /* GameScene.cpp */; };
+		A81BE1471CBA40CB00C09359 /* WorldObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A81BE1451CBA40CB00C09359 /* WorldObject.cpp */; };
+		A81BE1481CBA40CB00C09359 /* WorldObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A81BE1451CBA40CB00C09359 /* WorldObject.cpp */; };
+		A81BE14B1CBA415400C09359 /* GameObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A81BE1491CBA415400C09359 /* GameObject.cpp */; };
+		A81BE14C1CBA415400C09359 /* GameObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A81BE1491CBA415400C09359 /* GameObject.cpp */; };
+		A81BE14F1CBA41D500C09359 /* MapObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A81BE14D1CBA41D500C09359 /* MapObject.cpp */; };
+		A81BE1501CBA41D500C09359 /* MapObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A81BE14D1CBA41D500C09359 /* MapObject.cpp */; };
+		A81BE1531CBA420D00C09359 /* PlayerObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A81BE1511CBA420D00C09359 /* PlayerObject.cpp */; };
+		A81BE1541CBA420D00C09359 /* PlayerObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A81BE1511CBA420D00C09359 /* PlayerObject.cpp */; };
+		A81BE1571CBA422200C09359 /* GuardObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A81BE1551CBA422200C09359 /* GuardObject.cpp */; };
+		A81BE1581CBA422200C09359 /* GuardObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A81BE1551CBA422200C09359 /* GuardObject.cpp */; };
+		A81BE15B1CBA424600C09359 /* LaserObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A81BE1591CBA424600C09359 /* LaserObject.cpp */; };
+		A81BE15C1CBA424600C09359 /* LaserObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A81BE1591CBA424600C09359 /* LaserObject.cpp */; };
+		A81BE15F1CBA465A00C09359 /* PlayerInput.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A81BE15D1CBA465A00C09359 /* PlayerInput.cpp */; };
+		A81BE1601CBA465A00C09359 /* PlayerInput.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A81BE15D1CBA465A00C09359 /* PlayerInput.cpp */; };
+		A81BE1631CBA466D00C09359 /* PlayerControl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A81BE1611CBA466D00C09359 /* PlayerControl.cpp */; };
+		A81BE1641CBA466D00C09359 /* PlayerControl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A81BE1611CBA466D00C09359 /* PlayerControl.cpp */; };
+		A81BE1671CBA499F00C09359 /* GlobalPList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A81BE1651CBA499F00C09359 /* GlobalPList.cpp */; };
+		A81BE1681CBA499F00C09359 /* GlobalPList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A81BE1651CBA499F00C09359 /* GlobalPList.cpp */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
 		BF1C47F01293687400B63C5D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1C47EA1293683800B63C5D /* QuartzCore.framework */; };
@@ -112,6 +134,28 @@
 		52B47A461A53D09B004E4C60 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.1.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 		5D65417CAF89D7ADE4119FEC /* libcocos2d iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libcocos2d iOS.a"; path = "/Applications/Cocos/Cocos2d-x/cocos2d-x-3.10/prebuilt/ios/libcocos2d iOS.a"; sourceTree = "<absolute>"; };
 		8262943D1AAF051F00CB7CF7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		A81BE13D1CBA408300C09359 /* MainMenu.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MainMenu.cpp; sourceTree = "<group>"; };
+		A81BE13E1CBA408300C09359 /* MainMenu.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = MainMenu.hpp; sourceTree = "<group>"; };
+		A81BE1411CBA40AE00C09359 /* GameScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameScene.cpp; sourceTree = "<group>"; };
+		A81BE1421CBA40AE00C09359 /* GameScene.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GameScene.hpp; sourceTree = "<group>"; };
+		A81BE1451CBA40CB00C09359 /* WorldObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WorldObject.cpp; sourceTree = "<group>"; };
+		A81BE1461CBA40CB00C09359 /* WorldObject.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = WorldObject.hpp; sourceTree = "<group>"; };
+		A81BE1491CBA415400C09359 /* GameObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameObject.cpp; sourceTree = "<group>"; };
+		A81BE14A1CBA415400C09359 /* GameObject.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GameObject.hpp; sourceTree = "<group>"; };
+		A81BE14D1CBA41D500C09359 /* MapObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MapObject.cpp; sourceTree = "<group>"; };
+		A81BE14E1CBA41D500C09359 /* MapObject.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = MapObject.hpp; sourceTree = "<group>"; };
+		A81BE1511CBA420D00C09359 /* PlayerObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PlayerObject.cpp; sourceTree = "<group>"; };
+		A81BE1521CBA420D00C09359 /* PlayerObject.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = PlayerObject.hpp; sourceTree = "<group>"; };
+		A81BE1551CBA422200C09359 /* GuardObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GuardObject.cpp; sourceTree = "<group>"; };
+		A81BE1561CBA422200C09359 /* GuardObject.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GuardObject.hpp; sourceTree = "<group>"; };
+		A81BE1591CBA424600C09359 /* LaserObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LaserObject.cpp; sourceTree = "<group>"; };
+		A81BE15A1CBA424600C09359 /* LaserObject.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = LaserObject.hpp; sourceTree = "<group>"; };
+		A81BE15D1CBA465A00C09359 /* PlayerInput.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PlayerInput.cpp; sourceTree = "<group>"; };
+		A81BE15E1CBA465A00C09359 /* PlayerInput.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = PlayerInput.hpp; sourceTree = "<group>"; };
+		A81BE1611CBA466D00C09359 /* PlayerControl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PlayerControl.cpp; sourceTree = "<group>"; };
+		A81BE1621CBA466D00C09359 /* PlayerControl.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = PlayerControl.hpp; sourceTree = "<group>"; };
+		A81BE1651CBA499F00C09359 /* GlobalPList.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GlobalPList.cpp; sourceTree = "<group>"; };
+		A81BE1661CBA499F00C09359 /* GlobalPList.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GlobalPList.hpp; sourceTree = "<group>"; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		BF1C47EA1293683800B63C5D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -245,8 +289,30 @@
 			children = (
 				46880B8419C43A87006E1F66 /* AppDelegate.cpp */,
 				46880B8519C43A87006E1F66 /* AppDelegate.h */,
+				A81BE1491CBA415400C09359 /* GameObject.cpp */,
+				A81BE14A1CBA415400C09359 /* GameObject.hpp */,
+				A81BE1411CBA40AE00C09359 /* GameScene.cpp */,
+				A81BE1421CBA40AE00C09359 /* GameScene.hpp */,
+				A81BE1651CBA499F00C09359 /* GlobalPList.cpp */,
+				A81BE1661CBA499F00C09359 /* GlobalPList.hpp */,
+				A81BE1551CBA422200C09359 /* GuardObject.cpp */,
+				A81BE1561CBA422200C09359 /* GuardObject.hpp */,
 				46880B8619C43A87006E1F66 /* HelloWorldScene.cpp */,
 				46880B8719C43A87006E1F66 /* HelloWorldScene.h */,
+				A81BE1591CBA424600C09359 /* LaserObject.cpp */,
+				A81BE15A1CBA424600C09359 /* LaserObject.hpp */,
+				A81BE13D1CBA408300C09359 /* MainMenu.cpp */,
+				A81BE13E1CBA408300C09359 /* MainMenu.hpp */,
+				A81BE14D1CBA41D500C09359 /* MapObject.cpp */,
+				A81BE14E1CBA41D500C09359 /* MapObject.hpp */,
+				A81BE1611CBA466D00C09359 /* PlayerControl.cpp */,
+				A81BE1621CBA466D00C09359 /* PlayerControl.hpp */,
+				A81BE15D1CBA465A00C09359 /* PlayerInput.cpp */,
+				A81BE15E1CBA465A00C09359 /* PlayerInput.hpp */,
+				A81BE1511CBA420D00C09359 /* PlayerObject.cpp */,
+				A81BE1521CBA420D00C09359 /* PlayerObject.hpp */,
+				A81BE1451CBA40CB00C09359 /* WorldObject.cpp */,
+				A81BE1461CBA40CB00C09359 /* WorldObject.hpp */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -359,6 +425,11 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0500;
+				TargetAttributes = {
+					1D6058900D05DD3D006BFB54 = {
+						DevelopmentTeam = BWC4X8UZ8B;
+					};
+				};
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "PartTimeSpaceHero" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -424,10 +495,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
+				A81BE1571CBA422200C09359 /* GuardObject.cpp in Sources */,
+				A81BE13F1CBA408300C09359 /* MainMenu.cpp in Sources */,
+				A81BE15F1CBA465A00C09359 /* PlayerInput.cpp in Sources */,
+				A81BE1631CBA466D00C09359 /* PlayerControl.cpp in Sources */,
 				46880B8A19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */,
+				A81BE14F1CBA41D500C09359 /* MapObject.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
+				A81BE1531CBA420D00C09359 /* PlayerObject.cpp in Sources */,
+				A81BE1431CBA40AE00C09359 /* GameScene.cpp in Sources */,
+				A81BE15B1CBA424600C09359 /* LaserObject.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
+				A81BE1671CBA499F00C09359 /* GlobalPList.cpp in Sources */,
+				A81BE1471CBA40CB00C09359 /* WorldObject.cpp in Sources */,
+				A81BE14B1CBA415400C09359 /* GameObject.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,9 +517,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A81BE1441CBA40AE00C09359 /* GameScene.cpp in Sources */,
 				46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */,
+				A81BE1541CBA420D00C09359 /* PlayerObject.cpp in Sources */,
 				503AE10517EB98FF00D1A890 /* main.cpp in Sources */,
+				A81BE1501CBA41D500C09359 /* MapObject.cpp in Sources */,
+				A81BE15C1CBA424600C09359 /* LaserObject.cpp in Sources */,
 				46880B8B19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */,
+				A81BE1681CBA499F00C09359 /* GlobalPList.cpp in Sources */,
+				A81BE1401CBA408300C09359 /* MainMenu.cpp in Sources */,
+				A81BE1581CBA422200C09359 /* GuardObject.cpp in Sources */,
+				A81BE1601CBA465A00C09359 /* PlayerInput.cpp in Sources */,
+				A81BE1481CBA40CB00C09359 /* WorldObject.cpp in Sources */,
+				A81BE14C1CBA415400C09359 /* GameObject.cpp in Sources */,
+				A81BE1641CBA466D00C09359 /* PlayerControl.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -449,6 +542,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
 				ENABLE_BITCODE = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -469,14 +563,12 @@
 				);
 				INFOPLIST_FILE = ios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				LIBRARY_SEARCH_PATHS = (
-					"",
-					"/Applications/Cocos/Cocos2d-x/cocos2d-x-3.10/prebuilt/ios",
-				);
+				LIBRARY_SEARCH_PATHS = " /Applications/Cocos/Cocos2d-x/cocos2d-x-3.10/prebuilt/ios";
 				OTHER_LDFLAGS = (
 					"$(_COCOS_LIB_IOS_BEGIN)",
 					"$(_COCOS_LIB_IOS_END)",
 				);
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "$(_COCOS_HEADER_IOS_BEGIN) $(_COCOS_HEADER_IOS_END)";
@@ -489,6 +581,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
 				ENABLE_BITCODE = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
@@ -507,14 +600,12 @@
 				);
 				INFOPLIST_FILE = ios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				LIBRARY_SEARCH_PATHS = (
-					"",
-					"/Applications/Cocos/Cocos2d-x/cocos2d-x-3.10/prebuilt/ios",
-				);
+				LIBRARY_SEARCH_PATHS = " /Applications/Cocos/Cocos2d-x/cocos2d-x-3.10/prebuilt/ios";
 				OTHER_LDFLAGS = (
 					"$(_COCOS_LIB_IOS_BEGIN)",
 					"$(_COCOS_LIB_IOS_END)",
 				);
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "$(_COCOS_HEADER_IOS_BEGIN) $(_COCOS_HEADER_IOS_END)";
@@ -546,10 +637,7 @@
 					"/Applications/Cocos/Cocos2d-x/cocos2d-x-3.10/external/glfw3/include/mac",
 				);
 				INFOPLIST_FILE = mac/Info.plist;
-				LIBRARY_SEARCH_PATHS = (
-					"",
-					"/Applications/Cocos/Cocos2d-x/cocos2d-x-3.10/prebuilt/mac",
-				);
+				LIBRARY_SEARCH_PATHS = " /Applications/Cocos/Cocos2d-x/cocos2d-x-3.10/prebuilt/mac";
 				OTHER_LDFLAGS = (
 					"$(_COCOS_LIB_MAC_BEGIN)",
 					"$(_COCOS_LIB_MAC_END)",
@@ -580,10 +668,7 @@
 					"/Applications/Cocos/Cocos2d-x/cocos2d-x-3.10/external/glfw3/include/mac",
 				);
 				INFOPLIST_FILE = mac/Info.plist;
-				LIBRARY_SEARCH_PATHS = (
-					"",
-					"/Applications/Cocos/Cocos2d-x/cocos2d-x-3.10/prebuilt/mac",
-				);
+				LIBRARY_SEARCH_PATHS = " /Applications/Cocos/Cocos2d-x/cocos2d-x-3.10/prebuilt/mac";
 				OTHER_LDFLAGS = (
 					"$(_COCOS_LIB_MAC_BEGIN)",
 					"$(_COCOS_LIB_MAC_END)",
