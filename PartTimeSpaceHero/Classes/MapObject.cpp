@@ -7,3 +7,13 @@
 //
 
 #include "MapObject.hpp"
+#include "GlobalPList.hpp"
+
+MapObject::MapObject() {
+  
+}
+
+void MapObject::loadMap(const char* name) {
+  map = TMXTiledMap::create(name);
+  addChild(map);
+}

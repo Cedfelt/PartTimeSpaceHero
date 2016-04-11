@@ -56,6 +56,10 @@ bool GameScene::init()
 
   this->schedule(schedule_selector(GameScene::mainGameLoop));
 
+  
+  WorldObject* wo2 = new WorldObject();
+  wo->setupWorld();
+  addChild(wo2);
   return true;
 }
 

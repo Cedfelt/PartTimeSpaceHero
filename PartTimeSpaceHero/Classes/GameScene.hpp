@@ -9,7 +9,10 @@
 #pragma once
 
 #include "cocos2d.h"
+#include "WorldObject.hpp"
+#include "WorldObject.hpp"
 using namespace cocos2d;
+
 
 class GameScene : public cocos2d::Layer
 {
@@ -19,9 +22,12 @@ public:
   // Here's a difference. Method 'init' in cocos2d-x returns bool, instead of returning 'id' in cocos2d-iphone
   virtual bool init();
   // implement the "static create()" method manually
-  float counter;
+  
   CREATE_FUNC(GameScene);
   void mainGameLoop(float delta);
+private:
+  float counter;
+  WorldObject* wo;
 };
 
 
