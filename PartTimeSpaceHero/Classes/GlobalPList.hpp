@@ -16,4 +16,7 @@
 bool setScaleFactor(const size_t scale);
 size_t getScaleFactor();
 
+bool setMapUrl(const std::string level);
+std::string getMapUrl();
+
 #endif /* GlobalPList_hpp */

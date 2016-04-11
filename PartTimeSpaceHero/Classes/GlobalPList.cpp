@@ -20,3 +20,17 @@ size_t getScaleFactor(){
     return scale;
 }
 
+
+const char map_url_code [25] = "map_url";
+bool setMapUrl(const std::string mapUrl) {
+  cocos2d::UserDefault::getInstance()->setStringForKey(map_url_code, mapUrl);
+  cocos2d::UserDefault::getInstance()->flush();
+  
+  return true;
+}
+
+std::string getMapUrl() {
+  std::string mapUrl = cocos2d::UserDefault::getInstance()->getStringForKey(map_url_code);
+  return mapUrl;
+}
+

@@ -1,5 +1,6 @@
 #include "MainMenu.hpp"
 #include "GlobalPList.hpp"
+#include "GameScene.hpp"
 #include "cocostudio/CocoStudio.h"
 USING_NS_CC;
 
@@ -121,7 +122,10 @@ void MainMenu::onTouchBegan(const std::vector<Touch*>& touch, Event* event)
 
 void MainMenu::onTouchEnded(const std::vector<Touch*>& touches, Event*)
 {
-    cocos2d::log("Start New Level");
+    setMapUrl("alpha.tmx");
+    auto scene = GameScene::createScene();
+    Director::getInstance()->pushScene(scene);
+    
 }
 
 void MainMenu::onTouchMoved(const std::vector<Touch*>& touch, Event* event)
