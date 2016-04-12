@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="60" height="60" tilewidth="8" tileheight="8" nextobjectid="6">
+ <properties>
+  <property name="music_track" value="Space_Adventure.mp3"/>
+ </properties>
+ <tileset firstgid="1" name="db32" tilewidth="8" tileheight="8" tilecount="36" columns="6">
+  <image source="db32.png" width="48" height="48"/>
+ </tileset>
+ <layer name="background" width="60" height="60">
+  <data encoding="base64" compression="zlib">
+   eJztw8EJAAAMA6H7Zv+Fu0dRcNVUVVVVVVVVVVVVVVVV1VcPmAd+kQ==
+  </data>
+ </layer>
+</map>
