@@ -27,7 +27,7 @@ public:
   void mainGameLoop(float delta);
 private:
   float counter;
-  WorldObject* wo;
+  WorldObject* worldObject;
 };
 
 

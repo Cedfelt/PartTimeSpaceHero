@@ -54,12 +54,13 @@ bool GameScene::init()
   label->setPosition(Vec2(origin.x + visibleSize.width / 2, origin.y + visibleSize.height - label->getContentSize().height));
   addChild(label);
 
+  
+
   this->schedule(schedule_selector(GameScene::mainGameLoop));
 
   
-  WorldObject* wo2 = new WorldObject();
-  wo->setupWorld();
-  addChild(wo2);
+  worldObject = worldObject->create();
+  addChild(worldObject);
   return true;
 }
 
