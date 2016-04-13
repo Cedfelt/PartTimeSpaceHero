@@ -25,7 +25,7 @@ bool WorldObject::init() {
   // This Sets the scale for all World Objects
   setScale(getScaleFactor());
 
-  setViewPointCenter(Point(0,0));
+  setViewPointCenter(Point(500,0));
   return true;
 }
 
