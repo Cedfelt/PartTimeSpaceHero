@@ -10,7 +10,12 @@
 #include "GlobalPList.hpp"
 
 bool MapObject::init() {
-  map = TMXTiledMap::create("db.tmx");
+  //////////////////////////////
+  // 1. super init first
+  if (!Node::init()){return false;}
+  
+  map = TMXTiledMap::create(getMapUrl());
   addChild(map);
-  return 32;
+  return true;
 }
+

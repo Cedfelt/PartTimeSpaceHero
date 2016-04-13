@@ -26,6 +26,8 @@ Scene* GameScene::createScene()
   // add layer as a child to scene
   scene->addChild(layer);
 
+  
+
   // return the scene
   return scene;
 }
@@ -55,7 +57,7 @@ bool GameScene::init()
   addChild(label);
 
   
-
+  
   this->schedule(schedule_selector(GameScene::mainGameLoop));
 
   
