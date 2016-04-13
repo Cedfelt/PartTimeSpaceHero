@@ -6,6 +6,7 @@
 //
 //
 #include "GameObject.hpp"
+#include "GlobalPList.hpp"
 
 bool GameObject::init() {
   //////////////////////////////
@@ -14,6 +15,7 @@ bool GameObject::init() {
   {
     return false;
   }
+  resolution_scale = getScaleFactor();
   return true;
 }
 
@@ -29,4 +31,31 @@ void GameObject::setupHitbox(const float x, const float y, const float w, const 
     rectangle[3] = cocos2d::Vec2(0, h);
     drawPolygon(rectangle, 4, cocos2d::Color4F::RED, 1, cocos2d::Color4F::BLUE);
   }
+}
+
+void GameObject::addToVelocityX(const float velX){
+  velocityX += velX;
+}
+void GameObject::setVelocityX(const float velX) {
+  velocityX = velX;
+}
+float GameObject::getVelocityX() {
+  return velocityX;
+}
+void GameObject::addToVelocityY(const float velY) {
+  velocityY += velY;
+}
+void GameObject::setVelocityY(const float velY) {
+  velocityY = velY;
+}
+float GameObject::getVelocityY() {
+  return velocityY;
+}
+
+void GameObject::setSpeed(float s) {
+  speed = s;
+}
+
+float GameObject::getSpeed() {
+  return speed;
 }

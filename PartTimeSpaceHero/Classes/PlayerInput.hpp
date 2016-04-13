@@ -15,15 +15,24 @@ using namespace cocos2d;
 
 class PlayerInput : public Node {
 public:
-    void setup_controlls();
-    virtual bool init();
-    // implement the "static create()" method manually
-    CREATE_FUNC(PlayerInput);
+  virtual bool init();
+  bool isRight();
+  bool isLeft();
+  // implement the "static create()" method manually
+  CREATE_FUNC(PlayerInput);
 private:
-    virtual void onTouchBegan(const std::vector<Touch*>&, Event*);
-    virtual void onTouchEnded(const std::vector<Touch*>&, Event*);
-    virtual void onTouchMoved(const std::vector<Touch*>&, Event*);
-    virtual void onTouchCancelled(const std::vector<Touch*>&, Event*);
+  bool left;
+  bool right;
+  int tapChecks;
+  int taps;
+  size_t rightCounter;
+  size_t leftCounter;
+  virtual void onTouchBegan(const std::vector<Touch*>&, Event*);
+  virtual void onTouchEnded(const std::vector<Touch*>&, Event*);
+  virtual void onTouchMoved(const std::vector<Touch*>&, Event*);
+  virtual void onTouchCancelled(const std::vector<Touch*>&, Event*);
+  void tapCounter(float delta);
+  
 };
 
 #endif /* PlayerInput_hpp */

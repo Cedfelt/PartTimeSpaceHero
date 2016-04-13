@@ -15,7 +15,21 @@ bool PlayerObject::init(){
     {
         return false;
     }
+    playerInput = PlayerInput::create();
+    setSpeed(100.f);
+    addChild(playerInput);
+    this->schedule(schedule_selector(PlayerObject::playerUpdate));
     return true;
+}
+
+void PlayerObject::playerUpdate(const float delta) {
+  if (playerInput->isLeft()) {
+    setVelocityX(-getSpeed());
+  }
+  else if (playerInput->isRight()) {
+    setVelocityX(getSpeed());
+  }
+  setPositionX(getPositionX() +getVelocityX()*delta);
 }
 
 void PlayerObject::setupPlayer(const float x,const float y){

@@ -16,17 +16,19 @@ bool WorldObject::init() {
 
   mapObject = MapObject::create();
   addChild(mapObject);
-
-  auto player = PlayerObject::create();
+  player = PlayerObject::create();
   player->setupHitbox(32, 32, 32, 32, true);
   addChild(player);
-  player->setupPlayer(600, 32);
-
+  player->setupPlayer(0, 32);
   // This Sets the scale for all World Objects
   setScale(getScaleFactor());
-
-  setViewPointCenter(Point(1000, 0));
+  this->schedule(schedule_selector(WorldObject::updateWorld));
+  setViewPointCenter(player->getPosition());
   return true;
+}
+
+void WorldObject::updateWorld(float delta) {
+  setViewPointCenter(getScale()*player->getPosition());
 }
 
 void WorldObject::setViewPointCenter(cocos2d::Point position) {

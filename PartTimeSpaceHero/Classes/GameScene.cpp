@@ -69,7 +69,7 @@ bool GameScene::init()
 
 void GameScene::mainGameLoop(float delta) {
   counter += delta;
-  if (counter > 3) {
+  if (counter > 7) {
     Director::getInstance()->popScene();
   }
 }

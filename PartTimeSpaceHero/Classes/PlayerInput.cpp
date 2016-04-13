@@ -9,32 +9,93 @@
 #include "PlayerInput.hpp"
 #include "ui/CocosGUI.h"
 
-bool PlayerInput::init(){
-
-    auto touchListener = EventListenerTouchAllAtOnce::create();
-    touchListener->onTouchesBegan = CC_CALLBACK_2(PlayerInput::onTouchBegan, this);
-    touchListener->onTouchesEnded = CC_CALLBACK_2(PlayerInput::onTouchEnded, this);
-    touchListener->onTouchesMoved = CC_CALLBACK_2(PlayerInput::onTouchMoved, this);
-    touchListener->onTouchesCancelled = CC_CALLBACK_2(PlayerInput::onTouchCancelled, this);
-    _eventDispatcher->addEventListenerWithSceneGraphPriority(touchListener, this);
-    return true;
+bool PlayerInput::init() {
+  if (!Node::init()){return false;}
+  auto touchListener = EventListenerTouchAllAtOnce::create();
+  touchListener->onTouchesBegan = CC_CALLBACK_2(PlayerInput::onTouchBegan, this);
+  touchListener->onTouchesEnded = CC_CALLBACK_2(PlayerInput::onTouchEnded, this);
+  touchListener->onTouchesMoved = CC_CALLBACK_2(PlayerInput::onTouchMoved, this);
+  touchListener->onTouchesCancelled = CC_CALLBACK_2(PlayerInput::onTouchCancelled, this);
+  _eventDispatcher->addEventListenerWithSceneGraphPriority(touchListener, this);
+  tapChecks = 0;
+  taps = 15;
+  return true;
 }
+
+
 void PlayerInput::onTouchBegan(const std::vector<Touch*>& touch, Event* event)
 {
-    cocos2d::log("touch Began");
+  CCSize winSize = CCDirector::sharedDirector()->getWinSize();
+  for (int i = 0;i < touch.size();i++) {
+    if (touch.at(i)->getLocation().x < winSize.width / 2) {
+      left = true;
+
+      if (rightCounter < 2)// Dont want double tap on both
+        leftCounter++;
+    }
+    else {
+      right = true;
+      if (leftCounter < 2)
+        rightCounter++;
+    }
+  }
+  tapChecks = 0;
+  unschedule(schedule_selector(PlayerInput::tapCounter));
+  this->schedule(schedule_selector(PlayerInput::tapCounter), 1.0 / 60.0, taps, 0);
+
 }
+
+void PlayerInput::tapCounter(float delta) {
+  tapChecks++;
+  if (rightCounter > 1) {
+    cocos2d::log("DOUBLE RIGHT\n");
+    unschedule(schedule_selector(PlayerInput::tapCounter));
+    tapChecks = taps;
+  }
+  else if (leftCounter > 1) {
+    cocos2d::log("DOUBLE LEFT\n");
+    unschedule(schedule_selector(PlayerInput::tapCounter));
+    tapChecks = taps;
+  }
+  if (tapChecks == taps) {
+    leftCounter = 0;
+    rightCounter = 0;
+    tapChecks = 0;
+  }
+}
+
+
+
 
 void PlayerInput::onTouchEnded(const std::vector<Touch*>& touches, Event*)
 {
-    cocos2d::log("touch Ended");
+  CCSize winSize = CCDirector::sharedDirector()->getWinSize();
+  for (int i = 0;i<touches.size();i++) {
+    if ((touches.at(i)->getStartLocation().x) < winSize.width / 2) {
+      // LEFT
+      left = false;
+    }
+    else {
+      // RIGHT
+      right = false;
+    }
+  }
 }
 
 void PlayerInput::onTouchMoved(const std::vector<Touch*>& touch, Event* event)
 {
-    cocos2d::log("touch moved");
+  cocos2d::log("touch moved");
 }
 
 void PlayerInput::onTouchCancelled(const std::vector<Touch*>&, Event*)
 {
-    cocos2d::log("touch cancelled");
+  cocos2d::log("touch cancelled");
+}
+
+bool PlayerInput::isLeft() {
+  return left;
+}
+
+bool PlayerInput::isRight() {
+  return right;
 }

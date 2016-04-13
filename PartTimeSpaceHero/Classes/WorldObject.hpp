@@ -21,7 +21,9 @@ public:
   // implement the "static create()" method manually
 private:
   MapObject* mapObject;
+  PlayerObject* player;
   void setViewPointCenter(cocos2d::Point position);
+  void updateWorld(float delta);
 
 
 };

@@ -26,16 +26,20 @@ void AppDelegate::initGLContextAttrs()
 
 bool AppDelegate::applicationDidFinishLaunching() {
     // initialize director
+  
+  float scale = 2;
+  const size_t res_x = 568*scale;
+  const size_t res_y = 320*scale;
     auto director = Director::getInstance();
     auto glview = director->getOpenGLView();
     if(!glview) {
-        glview = GLViewImpl::createWithRect("PartTimeSpaceHero", Rect(0, 0, 960, 640));
+        glview = GLViewImpl::createWithRect("PartTimeSpaceHero", Rect(0, 0, res_x, res_y));
         director->setOpenGLView(glview);
     }
     
-    setScaleFactor(2);
+    setScaleFactor(scale);
 
-    director->getOpenGLView()->setDesignResolutionSize(960, 640, ResolutionPolicy::SHOW_ALL);
+    director->getOpenGLView()->setDesignResolutionSize(res_x, res_y, ResolutionPolicy::SHOW_ALL);
 
     // turn on display FPS
     director->setDisplayStats(true);
