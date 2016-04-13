@@ -9,7 +9,6 @@
 #include "WorldObject.hpp"
 #include "GlobalPList.hpp"
 #include <math.h>
-
 bool WorldObject::init() {
   //////////////////////////////
   // 1. super init first
@@ -27,7 +26,6 @@ bool WorldObject::init() {
 
   setViewPointCenter(Point(500,0));
   return true;
-}
 
 void WorldObject::setViewPointCenter(cocos2d::Point position) {
   // NO PROBS HERE
@@ -47,3 +45,4 @@ void WorldObject::setViewPointCenter(cocos2d::Point position) {
   centerOfView.subtract(actualPosition);// ccpSub(centerOfView, actualPosition);
     this->setPosition(centerOfView);
 }
+
