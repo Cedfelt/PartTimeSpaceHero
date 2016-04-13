@@ -12,20 +12,21 @@
 bool WorldObject::init() {
   //////////////////////////////
   // 1. super init first
-  if (!Node::init()){return false;}
+  if (!Node::init()) { return false; }
 
   mapObject = MapObject::create();
   addChild(mapObject);
-  
+
   auto go = GameObject::create();
   go->setupHitbox(32, 32, 32, 32, true);
   addChild(go);
-  
+
   // This Sets the scale for all World Objects
   setScale(getScaleFactor());
 
-  setViewPointCenter(Point(500,0));
+  setViewPointCenter(Point(500, 0));
   return true;
+}
 
 void WorldObject::setViewPointCenter(cocos2d::Point position) {
   // NO PROBS HERE

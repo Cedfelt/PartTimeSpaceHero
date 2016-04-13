@@ -19,7 +19,6 @@ public:
   virtual bool init();
   CREATE_FUNC(WorldObject);
   // implement the "static create()" method manually
-  CREATE_FUNC(WorldObject);
 private:
   MapObject* mapObject;
   void setViewPointCenter(cocos2d::Point position);
