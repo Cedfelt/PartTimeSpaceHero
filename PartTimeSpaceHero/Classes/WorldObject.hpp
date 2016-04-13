@@ -11,7 +11,7 @@
 #include <stdio.h>
 #include "cocos2d.h"
 #include "MapObject.hpp"
-#include "GameObject.hpp"
+#include "PlayerObject.hpp"
 class WorldObject : public cocos2d::Node
 {
 public:

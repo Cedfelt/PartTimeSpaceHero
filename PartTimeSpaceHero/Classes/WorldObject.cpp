@@ -17,14 +17,15 @@ bool WorldObject::init() {
   mapObject = MapObject::create();
   addChild(mapObject);
 
-  auto go = GameObject::create();
-  go->setupHitbox(32, 32, 32, 32, true);
-  addChild(go);
+  auto player = PlayerObject::create();
+  player->setupHitbox(32, 32, 32, 32, true);
+  addChild(player);
+  player->setupPlayer(600, 32);
 
   // This Sets the scale for all World Objects
   setScale(getScaleFactor());
 
-  setViewPointCenter(Point(500, 0));
+  setViewPointCenter(Point(1000, 0));
   return true;
 }
 
