@@ -19,7 +19,7 @@ Scene* GameScene::createScene()
 {
   // 'scene' is an autorelease object
   auto scene = Scene::create();
-
+    scene->setAnchorPoint(Point(0,0));
   // 'layer' is an autorelease object
   auto layer = GameScene::create();
 
@@ -45,7 +45,7 @@ bool GameScene::init()
   {
     return false;
   }
-
+setAnchorPoint(Point(0,0));
   Size visibleSize = Director::getInstance()->getVisibleSize();
   Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
@@ -56,20 +56,24 @@ bool GameScene::init()
   label->setPosition(Vec2(origin.x + visibleSize.width / 2, origin.y + visibleSize.height - label->getContentSize().height));
   addChild(label);
 
+    
   
   
   this->schedule(schedule_selector(GameScene::mainGameLoop));
 
   
   worldObject = worldObject->create();
+    worldObject->setAnchorPoint(Point(0,0));
   addChild(worldObject);
   return true;
 }
 
 
 void GameScene::mainGameLoop(float delta) {
-  counter += delta;
-  if (counter > 7) {
+    auto director = Director::getInstance();
+    director->setProjection(Director::Projection::_2D);
+    counter += delta;
+  if (counter > 25) {
     Director::getInstance()->popScene();
   }
 }
