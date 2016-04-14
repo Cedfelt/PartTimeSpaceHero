@@ -33,6 +33,20 @@ void GameObject::setupHitbox(const float x, const float y, const float w, const 
   }
 }
 
+void GameObject::addAnimation(std::string fileName,std::string animation_name,int start,int end,float animSpeed){
+    cocos2d::Vector<cocos2d::SpriteFrame*> animFrames(end-start);
+    std::string fileFormat = "%i.png";
+    std::string fileName_update = fileName+fileFormat;
+    
+    for(int i = start;i<=end;i++){
+        auto name = cocos2d::String::createWithFormat(fileName_update.c_str(), i);
+        auto frame = spriteFrameCache->getSpriteFrameByName(name->getCString());
+        frame->getTexture()->setAliasTexParameters();
+        animFrames.pushBack(frame);
+    }
+    animationCache->addAnimation(cocos2d::Animation::createWithSpriteFrames(animFrames,animSpeed), animation_name);
+}
+
 void GameObject::addToVelocityX(const float velX){
   velocityX += velX;
 }

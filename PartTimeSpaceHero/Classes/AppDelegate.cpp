@@ -28,9 +28,9 @@ bool AppDelegate::applicationDidFinishLaunching() {
     // initialize director
   
     // initialize director
-    const uint32_t scale = 2;
-    uint32_t res_x = scale*1136 / 2;
-    uint32_t res_y = scale * 640 / 2;
+    const uint32_t scale = 4;
+    uint32_t res_x = 1136;
+    uint32_t res_y = 640;
     
     auto director = Director::getInstance();
     auto glview = director->getOpenGLView();
@@ -38,6 +38,8 @@ bool AppDelegate::applicationDidFinishLaunching() {
         glview = GLViewImpl::createWithRect("SpaceGame", Rect(0, 0, res_x , res_y ));
         director->setOpenGLView(glview);
     }
+    
+    setScaleFactor(scale);
     
     director->getOpenGLView()->setDesignResolutionSize(res_x, res_y, ResolutionPolicy::SHOW_ALL);
     

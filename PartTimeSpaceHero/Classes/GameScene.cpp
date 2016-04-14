@@ -37,7 +37,7 @@ Scene* GameScene::createScene()
 // on "init" you need to initialize your instance
 bool GameScene::init()
 {
-  
+    
 
   //////////////////////////////
   // 1. super init first
@@ -50,7 +50,7 @@ setAnchorPoint(Point(0,0));
   Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
   const size_t scale = getScaleFactor();
-
+    
   // Debug Label -
   auto label = Label::createWithTTF("GameScene", "fonts/Marker Felt.ttf", 25 * scale);
   label->setPosition(Vec2(origin.x + visibleSize.width / 2, origin.y + visibleSize.height - label->getContentSize().height));

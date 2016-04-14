@@ -23,11 +23,14 @@ bool WorldObject::init() {
   addChild(player);
   player->setupPlayer(0, 32);
   // This Sets the scale for all World Objects
-  
+    const size_t scale = getScaleFactor();
+    setScale(scale);
   this->schedule(schedule_selector(WorldObject::updateWorld));
   setViewPointCenter(player->getPosition());
   return true;
 }
+
+
 
 void WorldObject::updateWorld(float delta) {
   setViewPointCenter(player->getPosition());
@@ -39,12 +42,12 @@ void WorldObject::setViewPointCenter(cocos2d::Point position) {
   const float tileSize = 8;
   const float mapsize = 200;
   const float mapHeight = 200;
-  const float scale = getScale();
+    float scale = getScale();
 
   float x = fmaxf(position.x, winSize.width);
   float y = fmaxf(position.y, winSize.height);
-  x = fminf(x, (scale*mapsize * tileSize) - winSize.width);
-  y = fminf(y, (scale*mapHeight * tileSize) - winSize.height);
+  x = fminf(x, (mapsize * tileSize) - winSize.width);
+  y = fminf(y, (mapHeight * tileSize) - winSize.height);
     
     Point actualPosition = Point((int)x, (int)y);
 
