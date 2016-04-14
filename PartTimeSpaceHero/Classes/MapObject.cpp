@@ -15,7 +15,7 @@ bool MapObject::init() {
   if (!Node::init()){return false;}
   setAnchorPoint(Point(0,0));
   map = TMXTiledMap::create(getMapUrl());
-    map->setScale(1);
+    map->setScale(3);
     map->setAnchorPoint(Point(0,0));
   addChild(map);
   return true;
