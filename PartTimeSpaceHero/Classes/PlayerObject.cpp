@@ -16,7 +16,7 @@ bool PlayerObject::init(){
         return false;
     }
     playerInput = PlayerInput::create();
-    setSpeed(200.f);
+    setSpeed(100.f);
     addChild(playerInput);
     this->schedule(schedule_selector(PlayerObject::playerUpdate));
     

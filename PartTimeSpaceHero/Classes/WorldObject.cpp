@@ -44,8 +44,8 @@ void WorldObject::setViewPointCenter(cocos2d::Point position) {
   const float mapHeight = 200;
     float scale = getScale();
 
-  float x = fmaxf(position.x, winSize.width);
-  float y = fmaxf(position.y, winSize.height);
+  float x = fmaxf(scale*position.x, winSize.width);
+  float y = fmaxf(scale*position.y, winSize.height);
   x = fminf(x, (mapsize * tileSize) - winSize.width);
   y = fminf(y, (mapHeight * tileSize) - winSize.height);
     
