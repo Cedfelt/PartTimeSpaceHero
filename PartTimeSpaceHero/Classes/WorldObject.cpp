@@ -8,6 +8,7 @@
 
 #include "WorldObject.hpp"
 #include "GlobalPList.hpp"
+#include "Physic.hpp"
 #include <math.h>
 bool WorldObject::init() {
   //////////////////////////////

@@ -12,6 +12,7 @@
 #include "cocos2d.h"
 #include "MapObject.hpp"
 #include "PlayerObject.hpp"
+#include "GameObject.hpp"
 class WorldObject : public cocos2d::Node
 {
 public:
@@ -22,6 +23,7 @@ public:
 private:
   MapObject* mapObject;
   PlayerObject* player;
+  cocos2d::Vector<GameObject*> gameObjects;
   void setViewPointCenter(cocos2d::Point position);
   void updateWorld(float delta);
 
