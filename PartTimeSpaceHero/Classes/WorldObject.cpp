@@ -18,11 +18,14 @@ bool WorldObject::init() {
   mapObject = MapObject::create();
     mapObject->setAnchorPoint(Point(0,0));
   addChild(mapObject);
+
   player = PlayerObject::create();
   player->setupHitbox(32, 32, 32, 32, true);
     setAnchorPoint(Point(0,0));
   addChild(player);
   player->setupPlayer(0, 32);
+  gameObjects.pushBack(player);
+
   // This Sets the scale for all World Objects
     const size_t scale = getScaleFactor();
     setScale(scale);
@@ -31,7 +34,9 @@ bool WorldObject::init() {
   return true;
 }
 
-
+cocos2d::Vector<GameObject*>* WorldObject::getGameObjects() {
+  return &gameObjects;
+}
 
 void WorldObject::updateWorld(float delta) {
   setViewPointCenter(player->getPosition());
@@ -44,14 +49,11 @@ void WorldObject::setViewPointCenter(cocos2d::Point position) {
   const float mapsize = 200;
   const float mapHeight = 200;
     float scale = getScale();
-
   float x = fmaxf(scale*position.x, winSize.width);
   float y = fmaxf(scale*position.y, winSize.height);
   x = fminf(x, (mapsize * tileSize) - winSize.width);
-  y = fminf(y, (mapHeight * tileSize) - winSize.height);
-    
-    Point actualPosition = Point((int)x, (int)y);
-
+  y = fminf(y, (mapHeight * tileSize) - winSize.height);  
+  Point actualPosition = Point((int)x, (int)y);
   Point centerOfView = Point(winSize.width, winSize.height);
   centerOfView.subtract(actualPosition);// ccpSub(centerOfView, actualPosition);
     this->setPosition(centerOfView);

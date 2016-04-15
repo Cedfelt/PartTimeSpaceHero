@@ -23,10 +23,12 @@ void Physic::moveGameObjects(cocos2d::Vector<GameObject*>* gameObjects,const flo
   const size_t obj_cnt = gameObjects->size();
   for (int i = 0;i < obj_cnt;i++) {
     GameObject* obj = gameObjects->at(i);
-    const float movementY = delta*(gravity + obj->getVelocityY());
-    obj->setPositionY(obj->getPositionY() + movementY);
-    const float movementX = delta*obj->getVelocityX();
-    obj->setPositionX(obj->getPositionX() + movementX);
+    obj->addToVelocityY(gravity);
+    obj->setPositionY(obj->getPositionY() + obj->getVelocityY()*delta);
+    // While Blocked Move Backwards
+    
+    obj->setPositionX(obj->getPositionX() + delta*obj->getVelocityX());
+    // While Blocked Move Backwards
   }
 }
 

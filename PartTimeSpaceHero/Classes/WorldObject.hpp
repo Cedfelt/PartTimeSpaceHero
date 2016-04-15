@@ -18,6 +18,7 @@ class WorldObject : public cocos2d::Node
 public:
   // Here's a difference. Method 'init' in cocos2d-x returns bool, instead of returning 'id' in cocos2d-iphone
   virtual bool init();
+  cocos2d::Vector<GameObject*>* getGameObjects();
   CREATE_FUNC(WorldObject);
   // implement the "static create()" method manually
 private:
@@ -26,7 +27,5 @@ private:
   cocos2d::Vector<GameObject*> gameObjects;
   void setViewPointCenter(cocos2d::Point position);
   void updateWorld(float delta);
-
-
 };
 

@@ -51,7 +51,7 @@ void PlayerObject::playerUpdate(const float delta) {
   else if (playerInput->isRight()) {
     setVelocityX(getSpeed());
   }
-  setPositionX(getPositionX() +getVelocityX()*delta);
+ 
 }
 
 void PlayerObject::setupPlayer(const float x,const float y){

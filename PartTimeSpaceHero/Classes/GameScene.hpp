@@ -11,6 +11,7 @@
 #include "cocos2d.h"
 #include "WorldObject.hpp"
 #include "WorldObject.hpp"
+#include "Physic.hpp"
 using namespace cocos2d;
 
 
@@ -28,6 +29,7 @@ public:
 private:
   float counter;
   WorldObject* worldObject;
+  Physic* physic;
 };
 
 
