@@ -21,3 +21,13 @@ bool MapObject::init() {
   return true;
 }
 
+void MapObject::setupBlocked() {
+
+}
+
+bool MapObject::isBlocked(const uint32_t x, const uint32_t y) {
+  if (x < BLOCK_SIZE&&y < BLOCK_SIZE) {
+    return blocked[x][y];
+  }
+}
+

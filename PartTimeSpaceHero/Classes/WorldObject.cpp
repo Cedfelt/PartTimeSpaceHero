@@ -42,18 +42,18 @@ void WorldObject::updateWorld(float delta) {
   setViewPointCenter(player->getPosition());
 }
 
-void WorldObject::setViewPointCenter(cocos2d::Point position) {
+void WorldObject::setViewPointCenter(const cocos2d::Point position) {
   // NO PROBS HERE
   Size winSize = Director::getInstance()->getWinSize() / 2;//Scene Scale Factor
   const float tileSize = 8;
   const float mapsize = 200;
   const float mapHeight = 200;
-    float scale = getScale();
+  const float scale = getScale();
   float x = fmaxf(scale*position.x, winSize.width);
   float y = fmaxf(scale*position.y, winSize.height);
   x = fminf(x, (mapsize * tileSize) - winSize.width);
   y = fminf(y, (mapHeight * tileSize) - winSize.height);  
-  Point actualPosition = Point((int)x, (int)y);
+  const Point actualPosition = Point((int)x, (int)y);
   Point centerOfView = Point(winSize.width, winSize.height);
   centerOfView.subtract(actualPosition);// ccpSub(centerOfView, actualPosition);
     this->setPosition(centerOfView);

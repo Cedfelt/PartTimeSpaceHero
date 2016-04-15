@@ -25,7 +25,7 @@ private:
   MapObject* mapObject;
   PlayerObject* player;
   cocos2d::Vector<GameObject*> gameObjects;
-  void setViewPointCenter(cocos2d::Point position);
+  void setViewPointCenter(const cocos2d::Point position);
   void updateWorld(float delta);
 };
 
