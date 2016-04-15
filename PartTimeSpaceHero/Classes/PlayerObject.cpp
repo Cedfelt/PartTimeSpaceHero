@@ -45,6 +45,7 @@ bool PlayerObject::init(){
 }
 
 void PlayerObject::playerUpdate(const float delta) {
+  setVelocityY(0.0f);
   if (playerInput->isLeft()) {
     setVelocityX(-getSpeed());
   }

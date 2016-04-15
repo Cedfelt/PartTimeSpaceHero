@@ -13,6 +13,7 @@
 #include "MapObject.hpp"
 #include "PlayerObject.hpp"
 #include "GameObject.hpp"
+#include "Physic.hpp"
 class WorldObject : public cocos2d::Node
 {
 public:
@@ -27,5 +28,6 @@ private:
   cocos2d::Vector<GameObject*> gameObjects;
   void setViewPointCenter(const cocos2d::Point position);
   void updateWorld(float delta);
+    Physic* physic;
 };
 

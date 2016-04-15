@@ -74,6 +74,7 @@
 		A81BE1641CBA466D00C09359 /* PlayerControl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A81BE1611CBA466D00C09359 /* PlayerControl.cpp */; };
 		A81BE1671CBA499F00C09359 /* GlobalPList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A81BE1651CBA499F00C09359 /* GlobalPList.cpp */; };
 		A81BE1681CBA499F00C09359 /* GlobalPList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A81BE1651CBA499F00C09359 /* GlobalPList.cpp */; };
+		A87C27C71CC19F10004520EF /* Physic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A87C27C51CC19F10004520EF /* Physic.cpp */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
 		BF1C47F01293687400B63C5D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1C47EA1293683800B63C5D /* QuartzCore.framework */; };
@@ -156,6 +157,8 @@
 		A81BE1621CBA466D00C09359 /* PlayerControl.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = PlayerControl.hpp; sourceTree = "<group>"; };
 		A81BE1651CBA499F00C09359 /* GlobalPList.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GlobalPList.cpp; sourceTree = "<group>"; };
 		A81BE1661CBA499F00C09359 /* GlobalPList.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GlobalPList.hpp; sourceTree = "<group>"; };
+		A87C27C51CC19F10004520EF /* Physic.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Physic.cpp; sourceTree = "<group>"; };
+		A87C27C61CC19F10004520EF /* Physic.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Physic.hpp; sourceTree = "<group>"; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		BF1C47EA1293683800B63C5D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -287,6 +290,8 @@
 		46880B8319C43A87006E1F66 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				A87C27C51CC19F10004520EF /* Physic.cpp */,
+				A87C27C61CC19F10004520EF /* Physic.hpp */,
 				46880B8419C43A87006E1F66 /* AppDelegate.cpp */,
 				46880B8519C43A87006E1F66 /* AppDelegate.h */,
 				A81BE1491CBA415400C09359 /* GameObject.cpp */,
@@ -508,6 +513,7 @@
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 				A81BE1671CBA499F00C09359 /* GlobalPList.cpp in Sources */,
+				A87C27C71CC19F10004520EF /* Physic.cpp in Sources */,
 				A81BE1471CBA40CB00C09359 /* WorldObject.cpp in Sources */,
 				A81BE14B1CBA415400C09359 /* GameObject.cpp in Sources */,
 			);

@@ -29,7 +29,6 @@ public:
 private:
   float counter;
   WorldObject* worldObject;
-  Physic* physic;
 };
 
 

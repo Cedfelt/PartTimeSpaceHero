@@ -20,7 +20,7 @@ public:
     
     
 private:
-  const float gravity = 0;
+  float gravity = 0.0f;
 };
 
 

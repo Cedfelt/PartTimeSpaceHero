@@ -26,6 +26,8 @@ bool WorldObject::init() {
   player->setupPlayer(0, 32);
   gameObjects.pushBack(player);
 
+    physic = Physic::create();
+    
   // This Sets the scale for all World Objects
     const size_t scale = getScaleFactor();
     setScale(scale);
@@ -39,19 +41,20 @@ cocos2d::Vector<GameObject*>* WorldObject::getGameObjects() {
 }
 
 void WorldObject::updateWorld(float delta) {
-  setViewPointCenter(player->getPosition());
+    physic->moveGameObjects(getGameObjects(),delta);
+    setViewPointCenter(player->getPosition());
 }
 
 void WorldObject::setViewPointCenter(const cocos2d::Point position) {
   // NO PROBS HERE
   Size winSize = Director::getInstance()->getWinSize() / 2;//Scene Scale Factor
-  const float tileSize = 8;
-  const float mapsize = 200;
-  const float mapHeight = 200;
-  const float scale = getScale();
+  const size_t tileSize = mapObject->getMapTileSize();
+  const size_t scale = getScale();
+  const size_t mapWidth = mapObject->getMapWidthInTiles()*scale;
+  const size_t mapHeight = mapObject->getMapHeightInTiles()*scale;
   float x = fmaxf(scale*position.x, winSize.width);
   float y = fmaxf(scale*position.y, winSize.height);
-  x = fminf(x, (mapsize * tileSize) - winSize.width);
+  x = fminf(x, (mapWidth * tileSize) - winSize.width);
   y = fminf(y, (mapHeight * tileSize) - winSize.height);  
   const Point actualPosition = Point((int)x, (int)y);
   Point centerOfView = Point(winSize.width, winSize.height);

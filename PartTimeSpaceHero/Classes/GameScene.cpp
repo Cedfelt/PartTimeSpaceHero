@@ -57,7 +57,7 @@ setAnchorPoint(Point(0,0));
   addChild(label);
 
     
-  physic = Physic::create();
+  
   
   this->schedule(schedule_selector(GameScene::mainGameLoop));
 
@@ -73,7 +73,6 @@ void GameScene::mainGameLoop(float delta) {
     auto director = Director::getInstance();
     director->setProjection(Director::Projection::_2D);
     counter += delta;
-    physic->moveGameObjects(worldObject->getGameObjects(),delta);
   if (counter > 25) {
     Director::getInstance()->popScene();
   }

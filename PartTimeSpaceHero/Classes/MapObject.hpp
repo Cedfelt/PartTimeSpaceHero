@@ -16,13 +16,25 @@ class MapObject : public cocos2d::Node
 {
 public:
   // Here's a difference. Method 'init' in cocos2d-x returns bool, instead of returning 'id' in cocos2d-iphone
+  enum{
+    BLOCKED,
+    WATER,
+    CLEAR,
+    DESTRUCTABLE
+  }BLOCK_ATTRIBUTE;
   virtual bool init();
-  bool isBlocked(const uint32_t x, const uint32_t y);
+  uint32_t attributeAt(const uint32_t x, const uint32_t y);
+  size_t getMapWidthInTiles();
+  size_t getMapHeightInTiles();
+  size_t getMapTileSize();
   // implement the "static create()" method manually
   CREATE_FUNC(MapObject);
   TMXTiledMap* map;
 private:
-  void setupBlocked();
+  void setupAttributes();
+  size_t mapWidth;
+  size_t mapHeight;
+  size_t tileSize;
 #define BLOCK_SIZE 400
-  uint32_t blocked[BLOCK_SIZE][BLOCK_SIZE];
+  uint32_t attributes[BLOCK_SIZE][BLOCK_SIZE];
 };
