@@ -21,10 +21,9 @@ bool GameObject::init() {
 
 void GameObject::setupHitbox(const float x, const float y, const float w, const float h, const bool draw) {
   setPosition(x, y);
+  hitBox.setRect(x, y, w, h);
   if (draw) {
     cocos2d::Vec2 rectangle[4];
-    const float hitBoxWidth = 32;
-    const float hitBoxHeight = 32;
     rectangle[0] = cocos2d::Vec2(0, 0);
     rectangle[1] = cocos2d::Vec2(w, 0);
     rectangle[2] = cocos2d::Vec2(w, h);
@@ -47,6 +46,28 @@ void GameObject::addAnimation(std::string fileName,std::string animation_name,in
     animationCache->addAnimation(cocos2d::Animation::createWithSpriteFrames(animFrames,animSpeed), animation_name);
 }
 
+void GameObject::setAnimation(std::string anim){
+  if(prevAnimation!=anim){
+    objectSprite->stopAllActions();
+    objectSprite->runAction(cocos2d::RepeatForever::create(cocos2d::Animate::create(animationCache->getAnimation(anim))));
+  }
+  prevAnimation = anim;
+}
+
+int32_t GameObject::getMovementStatus(){
+  if(velocityY==0){
+    return GO_ON_GROUND;
+  }
+  else if(velocityY<0){
+    return GO_IN_AIR_DOWN;
+  }
+  else if(velocityY>0){
+    return GO_IN_AIR_UP;
+  }
+  CC_ASSERT(false); // MISSING A STATUS
+  return GO_ON_GROUND;
+}
+
 void GameObject::addToVelocityX(const float velX){
   velocityX += velX;
 }
@@ -64,6 +85,27 @@ void GameObject::setVelocityY(const float velY) {
 }
 float GameObject::getVelocityY() {
   return velocityY;
+}
+
+Rect* GameObject::getHitbox(){
+  return &hitBox;
+}
+
+void GameObject::setPrevDir(int32_t prev_dir){
+  prevDirection = prev_dir;
+}
+int32_t GameObject::getPrevDir(){
+  return prevDirection;
+}
+
+void GameObject::setObjectPositionX(const float x){
+  hitBox.origin.x = x;
+  setPositionX(x);
+}
+
+void GameObject::setObjectPositionY(const float y){
+  hitBox.origin.y = y;
+  setPositionY(y);
 }
 
 void GameObject::setSpeed(float s) {

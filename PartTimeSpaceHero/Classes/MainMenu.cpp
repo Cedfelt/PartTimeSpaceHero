@@ -122,7 +122,7 @@ void MainMenu::onTouchBegan(const std::vector<Touch*>& touch, Event* event)
 
 void MainMenu::onTouchEnded(const std::vector<Touch*>& touches, Event*)
 {
-    setMapUrl("alpha_demo_v1.tmx");
+    setMapUrl("f.tmx");
     auto scene = GameScene::createScene();
     Director::getInstance()->pushScene(scene);
     

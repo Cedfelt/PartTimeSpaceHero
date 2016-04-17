@@ -21,20 +21,20 @@ public:
     WATER,
     CLEAR,
     DESTRUCTABLE
-  }BLOCK_ATTRIBUTE;
+  };
   virtual bool init();
   uint32_t attributeAt(const uint32_t x, const uint32_t y);
-  size_t getMapWidthInTiles();
-  size_t getMapHeightInTiles();
-  size_t getMapTileSize();
+  uint32_t getMapWidthInTiles();
+  uint32_t getMapHeightInTiles();
+  uint32_t getMapTileSize();
   // implement the "static create()" method manually
   CREATE_FUNC(MapObject);
   TMXTiledMap* map;
 private:
   void setupAttributes();
-  size_t mapWidth;
-  size_t mapHeight;
-  size_t tileSize;
+  uint32_t mapWidth;
+  uint32_t mapHeight;
+  uint32_t tileSize;
 #define BLOCK_SIZE 400
   uint32_t attributes[BLOCK_SIZE][BLOCK_SIZE];
 };

@@ -18,11 +18,17 @@ public:
   virtual bool init();
   bool isRight();
   bool isLeft();
+  float getSwipeR();
+  float getSwipeL();
   // implement the "static create()" method manually
   CREATE_FUNC(PlayerInput);
+  void resetAnalog();
 private:
+  bool bResetAnalog = false;
   bool left;
   bool right;
+  float swipeAmountR;
+  float swipeAmountL;
   int tapChecks;
   int taps;
   size_t rightCounter;

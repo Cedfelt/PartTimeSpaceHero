@@ -20,10 +20,10 @@ bool WorldObject::init() {
   addChild(mapObject);
 
   player = PlayerObject::create();
-  player->setupHitbox(32, 32, 32, 32, true);
+  player->setupHitbox(256, 256, 16, 31, false);
     setAnchorPoint(Point(0,0));
   addChild(player);
-  player->setupPlayer(0, 32);
+  player->setupPlayer(90, 80);
   gameObjects.pushBack(player);
 
     physic = Physic::create();
@@ -41,7 +41,7 @@ cocos2d::Vector<GameObject*>* WorldObject::getGameObjects() {
 }
 
 void WorldObject::updateWorld(float delta) {
-    physic->moveGameObjects(getGameObjects(),delta);
+    physic->moveGameObjects(getGameObjects(),mapObject,delta);
     setViewPointCenter(player->getPosition());
 }
 

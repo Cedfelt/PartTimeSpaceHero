@@ -53,15 +53,15 @@ uint32_t MapObject::attributeAt(const uint32_t x, const uint32_t y) {
   return BLOCKED;
 }
 
-size_t MapObject::getMapWidthInTiles(){
+uint32_t MapObject::getMapWidthInTiles(){
   return mapWidth;
 }
 
-size_t MapObject::getMapHeightInTiles(){
+uint32_t MapObject::getMapHeightInTiles(){
   return mapHeight;
 }
 
-size_t MapObject::getMapTileSize(){
+uint32_t MapObject::getMapTileSize(){
   return tileSize;
 }
 

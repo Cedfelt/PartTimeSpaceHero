@@ -70,11 +70,14 @@ setAnchorPoint(Point(0,0));
 
 
 void GameScene::mainGameLoop(float delta) {
-    auto director = Director::getInstance();
+  return;
+  auto director = Director::getInstance();
     director->setProjection(Director::Projection::_2D);
     counter += delta;
   if (counter > 25) {
     Director::getInstance()->popScene();
   }
 }
+
+
 

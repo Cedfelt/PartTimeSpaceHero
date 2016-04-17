@@ -290,8 +290,6 @@
 		46880B8319C43A87006E1F66 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				A87C27C51CC19F10004520EF /* Physic.cpp */,
-				A87C27C61CC19F10004520EF /* Physic.hpp */,
 				46880B8419C43A87006E1F66 /* AppDelegate.cpp */,
 				46880B8519C43A87006E1F66 /* AppDelegate.h */,
 				A81BE1491CBA415400C09359 /* GameObject.cpp */,
@@ -310,6 +308,8 @@
 				A81BE13E1CBA408300C09359 /* MainMenu.hpp */,
 				A81BE14D1CBA41D500C09359 /* MapObject.cpp */,
 				A81BE14E1CBA41D500C09359 /* MapObject.hpp */,
+				A87C27C51CC19F10004520EF /* Physic.cpp */,
+				A87C27C61CC19F10004520EF /* Physic.hpp */,
 				A81BE1611CBA466D00C09359 /* PlayerControl.cpp */,
 				A81BE1621CBA466D00C09359 /* PlayerControl.hpp */,
 				A81BE15D1CBA465A00C09359 /* PlayerInput.cpp */,

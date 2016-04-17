@@ -17,6 +17,8 @@ bool PlayerInput::init() {
   touchListener->onTouchesMoved = CC_CALLBACK_2(PlayerInput::onTouchMoved, this);
   touchListener->onTouchesCancelled = CC_CALLBACK_2(PlayerInput::onTouchCancelled, this);
   _eventDispatcher->addEventListenerWithSceneGraphPriority(touchListener, this);
+  swipeAmountL = 0;
+  swipeAmountR = 0;
   tapChecks = 0;
   taps = 15;
   return true;
@@ -74,17 +76,42 @@ void PlayerInput::onTouchEnded(const std::vector<Touch*>& touches, Event*)
     if ((touches.at(i)->getStartLocation().x) < winSize.width / 2) {
       // LEFT
       left = false;
+      swipeAmountL = 0;
     }
     else {
       // RIGHT
       right = false;
+      swipeAmountR = 0;
     }
   }
 }
 
 void PlayerInput::onTouchMoved(const std::vector<Touch*>& touch, Event* event)
 {
-  cocos2d::log("touch moved");
+  CCSize winSize = CCDirector::sharedDirector()->getWinSize();
+  
+    for (int i = 0;i < touch.size();i++) {
+      const float current_touch = touch.at(0)->getLocation().y;
+      const float swipe_distance = current_touch - touch.at(0)->getStartLocation().y;
+      const float swipeThreshold = 40;
+      if(bResetAnalog){
+        touch.at(i)->setTouchInfo(touch.at(i)->getID(), touch.at(i)->getLocation().x, current_touch);
+        swipeAmountL = 0;
+        swipeAmountR = 0;
+      }
+      if (swipe_distance > swipeThreshold) {
+        if ((touch.at(i)->getStartLocation().x) < winSize.width / 2) {
+          // LEFT
+          swipeAmountL = swipe_distance / swipeThreshold;
+        }
+        else {
+          // RIGHT
+          swipeAmountR = swipe_distance / swipeThreshold;
+    
+        }
+        
+      }
+    }
 }
 
 void PlayerInput::onTouchCancelled(const std::vector<Touch*>&, Event*)
@@ -99,3 +126,16 @@ bool PlayerInput::isLeft() {
 bool PlayerInput::isRight() {
   return right;
 }
+
+float PlayerInput::getSwipeR(){
+  return swipeAmountR;
+}
+
+float PlayerInput::getSwipeL(){
+  return swipeAmountL;
+}
+
+void PlayerInput::resetAnalog(){
+  bResetAnalog = true;
+}
+
