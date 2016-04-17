@@ -27,6 +27,8 @@ public:
   uint32_t getMapWidthInTiles();
   uint32_t getMapHeightInTiles();
   uint32_t getMapTileSize();
+  void setupBackgroundLayers();
+  void moveBackgroundLayers();
   // implement the "static create()" method manually
   CREATE_FUNC(MapObject);
   TMXTiledMap* map;
@@ -35,6 +37,7 @@ private:
   uint32_t mapWidth;
   uint32_t mapHeight;
   uint32_t tileSize;
+  cocos2d::Vector<cocos2d::TMXLayer*> background_layers;
 #define BLOCK_SIZE 400
   uint32_t attributes[BLOCK_SIZE][BLOCK_SIZE];
 };

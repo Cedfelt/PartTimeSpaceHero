@@ -41,8 +41,9 @@ cocos2d::Vector<GameObject*>* WorldObject::getGameObjects() {
 }
 
 void WorldObject::updateWorld(float delta) {
-    physic->moveGameObjects(getGameObjects(),mapObject,delta);
-    setViewPointCenter(player->getPosition());
+  physic->moveGameObjects(getGameObjects(),mapObject,delta);
+  setViewPointCenter(player->getPosition());
+  mapObject->moveBackgroundLayers();
 }
 
 void WorldObject::setViewPointCenter(const cocos2d::Point position) {

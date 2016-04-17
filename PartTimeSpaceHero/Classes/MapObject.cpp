@@ -21,6 +21,8 @@ bool MapObject::init() {
   mapHeight = map->getMapSize().height;
   tileSize = map->getTileSize().width;
   setupAttributes();
+  setupBackgroundLayers();
+  
   return true;
 }
 
@@ -51,6 +53,29 @@ uint32_t MapObject::attributeAt(const uint32_t x, const uint32_t y) {
     return attributes[x][y];
   }
   return BLOCKED;
+}
+
+void MapObject::setupBackgroundLayers(){
+  std::string bgs = "background";
+  int bg_cnt = 1;
+  TMXLayer *bg = map->getLayer((bgs + std::to_string(bg_cnt)));
+  
+  while (bg != NULL) {
+    background_layers.pushBack(bg);
+    bg = map->getLayer((bgs + std::to_string(bg_cnt)));
+    bg_cnt++;
+  }
+}
+
+void MapObject::moveBackgroundLayers(){
+  for (int i = 0; i < background_layers.size();i++) {
+    auto layer_grp = background_layers.at(i)->getProperties();
+    float bg_speed = layer_grp["BACKGROUND_SPEED"].asFloat();
+    if (bg_speed == 0) {
+      bg_speed = 0.8;
+    }
+    background_layers.at(i)->setPosition(bg_speed*map->convertToNodeSpace(Point(0, 0.)));
+  }
 }
 
 uint32_t MapObject::getMapWidthInTiles(){

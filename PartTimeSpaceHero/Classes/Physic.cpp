@@ -29,6 +29,10 @@ int dir_sign(const float num){
   return -1;
 }
 
+float round_and(float f){
+  return floorf(f+0.5f);
+}
+
 void Physic::moveGameObjects(cocos2d::Vector<GameObject*>* gameObjects,MapObject* mapObject,const float delta) {
   const size_t obj_cnt = gameObjects->size();
   for (int i = 0;i < obj_cnt;i++) {
@@ -52,13 +56,15 @@ void Physic::moveGameObjects(cocos2d::Vector<GameObject*>* gameObjects,MapObject
     }
     
     // COLLISION X-AXIS
-    obj->setObjectPositionX(obj->getPositionX() + delta*obj->getVelocityX());
+    obj->setObjectPositionX((obj->getObjectPositionX() + delta*obj->getVelocityX()));
     if(isBlocked(obj->getHitbox(),mapObject)){
       const int sign = dir_sign(obj->getVelocityX());
-      obj->setObjectPositionX((int)(obj->getPositionX()+sign));
+      obj->setObjectPositionX(int(obj->getObjectPositionX()+sign));
       while(isBlocked(obj->getHitbox(),mapObject)){
-        obj->setObjectPositionX((int)(obj->getPositionX()+sign));
+        obj->setObjectPositionX(int(obj->getObjectPositionX()+sign));
       }
+      
+      
       obj->setVelocityX(0);
     }
   }
@@ -72,7 +78,7 @@ bool Physic::isBlocked(Rect* hitBox, MapObject* map){
   const uint32_t y_min = ((int)(hitBox->getMinY())/(ts));
   const uint32_t y_max = ((int)(hitBox->getMaxY())/(ts));
   const uint32_t xRange = x_min + x_max-x_min+1;
-  const uint32_t yRange = y_min + y_max-y_min+2;
+  const uint32_t yRange = y_min + y_max-y_min+1;
   const uint32_t mapWidth = map->getMapWidthInTiles();
   const uint32_t mapHeight = map->getMapWidthInTiles();
   // Out of bounds

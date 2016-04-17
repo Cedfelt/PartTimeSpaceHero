@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" width="200" height="60" tilewidth="8" tileheight="8">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="200" height="60" tilewidth="8" tileheight="8" nextobjectid="3">
  <properties>
   <property name="music_track" value="Space_Adventure.mp3"/>
  </properties>
- <tileset firstgid="1" name="Tileset1_8x8" tilewidth="8" tileheight="8">
+ <tileset firstgid="1" name="Tileset1_8x8" tilewidth="8" tileheight="8" tilecount="1696" columns="32">
   <image source="Tileset1_8x8.png" width="256" height="424"/>
  </tileset>
- <tileset firstgid="1697" name="Tileset2_8x8" tilewidth="8" tileheight="8">
+ <tileset firstgid="1697" name="Tileset2_8x8" tilewidth="8" tileheight="8" tilecount="1024" columns="32">
   <image source="Tileset2_8x8.png" width="256" height="256"/>
  </tileset>
- <tileset firstgid="2721" name="SpaceBGC" tilewidth="8" tileheight="8">
+ <tileset firstgid="2721" name="SpaceBGC" tilewidth="8" tileheight="8" tilecount="400" columns="20">
   <image source="SpaceBGC.png" width="160" height="160"/>
  </tileset>
- <tileset firstgid="3121" name="rLJjmOe" tilewidth="8" tileheight="8">
+ <tileset firstgid="3121" name="rLJjmOe" tilewidth="8" tileheight="8" tilecount="6720" columns="112">
   <image source="rLJjmOe.png" width="896" height="480"/>
  </tileset>
- <tileset firstgid="9841" name="platforms_cloud" tilewidth="8" tileheight="8">
+ <tileset firstgid="9841" name="platforms_cloud" tilewidth="8" tileheight="8" tilecount="1444" columns="38">
   <image source="platforms_cloud.png" width="307" height="307"/>
  </tileset>
- <tileset firstgid="11285" name="SpaceBGC_recolor" tilewidth="8" tileheight="8">
+ <tileset firstgid="11285" name="SpaceBGC_recolor" tilewidth="8" tileheight="8" tilecount="400" columns="20">
   <image source="SpaceBGC_recolor.png" width="160" height="160"/>
  </tileset>
- <layer name="background" width="200" height="60">
+ <layer name="background1" width="200" height="60">
   <data encoding="base64" compression="zlib">
    eJzt22fbiHUAh+GnvXdaQgolRBEqo0IaoqGsBk0aQoNsUaGUVaKy23vvvffee++9d+fH+B/38Xtxvr2+wVWraU3NBmzIRmzMJtRmU+pQl3psRn02Zwsa0JBGbMlW1EovvQr1GrM1TWhKM7ahOS3Ylu1oSSu2pzVtaMsO7MhOtEsvvYr12tOBjuzMLuxKJzrThd3oyu7swZ7sRTf2pjs92Ce99CrW25f92J+eHMCB9KI3fehLPw7iYA7hUPozgMM4nCPSS69ivSM5iqMZyCCO4ViO43gGcwJDGMowTuQkTuYUhjMivfQq1juVkYxiNGMYyzjGM4HTmMgkTucMzmQyU5jKWZydXnoV603jHM5lOjOYySxmcx7nM4cLmMs8LuQiLmY+C1iYXnoV6y1iMUtYyiVcymVczhVcyVVczTVcy3Vczw3cyE3cnF56Fevdwq3cxu3cwZ3cxd3cw73cx/08wIM8xMM8wqM8xuPppVex3hM8yVM8zTM8y3M8zwu8yEu8zCu8ymu8zhu8yVu8nV56Feu9w7u8x/t8wId8xMd8wqd8xud8wZd8xdd8w7d8x/fppVex3g/8yE/8zC/8ym/8zh/8yV/8zT/8y3/UNKupWYZlWY7lm6WXXrV6K7AiK7Eyq7Aqq7E6a7Ama7E267Au67E+tdiADdkovfQq1tuYTajNptShLvXYjPpszhY0oCGN2JKtaMzWNKFpeulVrNeMbWhOC7ZlO1rSiu1pTRvasgM7shPtaE8HOrJzeulVrLcLu9KJznRhN7qyO3uwJ3vRjb3pTg/2YV/2Y396ppdexXoHcCC96E0f+tKPgziYQziU/gzgMA7nCI7kKI5mYHrpVaw3iGM4luM4nsGcwBCGMowTOYmTOYXhjOBURjKK0emlV7HeGMYyjvFM4DQmMonTOYMzmcwUpnIWZzONcziX6emlV7HeDGYyi9mcx/nM4QLmMo8LuYiLmc8CFrKIxSxhaXrpVaxX+v+bXnr5z9NLr8xe6f9veunlP08vvTJ7pf+/6aWX/zy99Mrslf7/ppde/vP00iuzV/r/m156+c/TS6/MXun/b3rp5T9PL70ye6X/v+mll/88vfTK7JX+/6aXXv7z9NIrs1f6/5teevnP00uvzF7p/2966eU/Ty+9Mnul/7/ppZf/PL30yuyV/v+ml17+8/TSK7NX+v+bXnr5z9NLr8xe6f9veunlP08vvTJ7pf+/6aWX/zy99Mrslf7/ppde/vP00iuzV/r/m156+c/TS6/MXun/b3rp5T9PL70ye6X/v+mll/88vfTK7JX+/6aXXv7z9NIrs/c/PFcteg==
   </data>
@@ -51,14 +51,14 @@
    eJzt07cRAkEABMFLhCcaNGmgSRdNGmgM1v4EzqC7avx1thQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACg7dYp5Z4e6Zle6Z0+6dupvQ7qmjWlzNMiLdMqrdMmbZva66CuXT6wT4d0TKd0Tpd09Q/+XK9bSj8N0jCN0jhN0rRbex0AAAAAAAAAbT9hpRfR
   </data>
  </layer>
- <objectgroup name="objects" width="200" height="60">
-  <object name="passage" x="29" y="381" width="4" height="19">
+ <objectgroup name="objects">
+  <object id="1" name="passage" x="29" y="381" width="4" height="19">
    <properties>
     <property name="to_passage" value="hall1_f1"/>
     <property name="to_scene" value="hall.tmx"/>
    </properties>
   </object>
-  <object name="player_start" x="282" y="52" width="12" height="25"/>
+  <object id="2" name="player_start" x="282" y="52" width="12" height="25"/>
  </objectgroup>
  <layer name="water" width="200" height="60">
   <data encoding="base64" compression="zlib">
