@@ -97,19 +97,25 @@ void GameObject::setPrevDir(int32_t prev_dir){
 int32_t GameObject::getPrevDir(){
   return prevDirection;
 }
-float x2;
+
 void GameObject::setObjectPositionX(const float x){
-  x2 = x;
-  hitBox.origin.x = int(x2);
-  setPositionX(int(x2));
+  modelPositionX = x;
+  hitBox.origin.x = int(modelPositionX);
+  setPositionX(int(modelPositionX));
 }
 
 float GameObject::getObjectPositionX(){
-  return x2;
+  return modelPositionX;
 }
+
 void GameObject::setObjectPositionY(const float y){
-  hitBox.origin.y = y;
-  setPositionY(y);
+  modelPositionY = y;
+  hitBox.origin.y = int(modelPositionY);
+  setPositionY(int(modelPositionY));
+}
+
+float GameObject::getObjectPositionY(){
+  return modelPositionY;
 }
 
 void GameObject::setSpeed(float s) {

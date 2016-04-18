@@ -122,7 +122,19 @@ void MainMenu::onTouchBegan(const std::vector<Touch*>& touch, Event* event)
 
 void MainMenu::onTouchEnded(const std::vector<Touch*>& touches, Event*)
 {
-    setMapUrl("f.tmx");
+  CCSize winSize = CCDirector::sharedDirector()->getWinSize();
+  for (int i = 0;i<touches.size();i++) {
+    if ((touches.at(i)->getStartLocation().x) < winSize.width / 2) {
+      // LEFT
+      setScaleFactor(3);
+    }
+    else {
+      // RIGHT
+      setScaleFactor(2);
+    }
+  }
+
+  setMapUrl("f.tmx");
     auto scene = GameScene::createScene();
     Director::getInstance()->pushScene(scene);
     

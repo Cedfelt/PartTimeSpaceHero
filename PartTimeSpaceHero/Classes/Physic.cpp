@@ -45,12 +45,12 @@ void Physic::moveGameObjects(cocos2d::Vector<GameObject*>* gameObjects,MapObject
     
     
     // COLLISION Y-AXIS
-    obj->setObjectPositionY((obj->getPositionY()+obj->getVelocityY()*delta));
+    obj->setObjectPositionY((obj->getObjectPositionY()+obj->getVelocityY()*delta));
     if(isBlocked(obj->getHitbox(),mapObject)){
       const int sign = dir_sign(obj->getVelocityY());
-      obj->setObjectPositionY((int)(obj->getPositionY()+sign));
+      obj->setObjectPositionY((int)(obj->getObjectPositionY()+sign));
       while(isBlocked(obj->getHitbox(),mapObject)){
-        obj->setObjectPositionY((int)(obj->getPositionY()+sign));
+        obj->setObjectPositionY((int)(obj->getObjectPositionY()+sign));
       }
       obj->setVelocityY(0);
     }

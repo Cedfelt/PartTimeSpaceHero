@@ -31,6 +31,7 @@ public:
   void setObjectPositionX(const float x);
   void setObjectPositionY(const float y);
   float getObjectPositionX();
+  float getObjectPositionY();
   Rect* getHitbox();
   cocos2d::SpriteFrameCache *spriteFrameCache;
   cocos2d::AnimationCache *animationCache;
@@ -58,6 +59,8 @@ private:
   float velocityY;
   float resolution_scale;
   int32_t prevDirection;
+  float modelPositionX;
+  float modelPositionY;
 };
 
 

@@ -28,7 +28,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     // initialize director
   
     // initialize director
-    const uint32_t scale = 3;
+    const uint32_t scale = 2;
     uint32_t res_x = 1136;
     uint32_t res_y = 640;
     
