@@ -72,7 +72,7 @@ void MapObject::moveBackgroundLayers(){
     auto layer_grp = background_layers.at(i)->getProperties();
     float bg_speed = layer_grp["BACKGROUND_SPEED"].asFloat();
     if (bg_speed == 0) {
-      bg_speed = 0.8;
+      bg_speed = 1;
     }
     background_layers.at(i)->setPosition(bg_speed*map->convertToNodeSpace(Point(0, 0.)));
   }

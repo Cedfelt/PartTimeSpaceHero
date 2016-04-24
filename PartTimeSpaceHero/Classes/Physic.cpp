@@ -13,8 +13,8 @@
 
 USING_NS_CC;
 
-# define GRAVITY -100.0
-# define MAX_FALLSPEED -200.0
+# define GRAVITY -120.0
+# define MAX_FALLSPEED -350.0
 
 // on "init" you need to initialize your instance
 bool Physic::init(){

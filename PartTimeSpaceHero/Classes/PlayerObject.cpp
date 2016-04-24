@@ -16,7 +16,7 @@ bool PlayerObject::init(){
         return false;
     }
     playerInput = PlayerInput::create();
-    setSpeed(100.f);
+    setSpeed(150.f);
     addChild(playerInput);
     this->schedule(schedule_selector(PlayerObject::playerUpdate));
     
@@ -47,23 +47,33 @@ bool PlayerObject::init(){
 }
 
 
-
+const float ground_deacceleration = 0.75;
+const float ground_acceleration = 5;
 void PlayerObject::playerWalkUpdate(float delta){
   if(getMovementStatus()!=GO_ON_GROUND){
     return;
   }
+  
   if (playerInput->isLeft()) {
     objectSprite->setScaleX(-1);
     setAnimation("WalkL");
-    setVelocityX(-getSpeed());
+    addToVelocityX(-ground_acceleration);
+    if(getVelocityX()<-getSpeed()){
+      setVelocityX(-getSpeed());
+    }
+    
   }
   else if (playerInput->isRight()) {
     objectSprite->setScaleX(1);
     setAnimation("WalkR");
-    setVelocityX(getSpeed());
+    addToVelocityX(ground_acceleration);
+    if(getVelocityX()>getSpeed()){
+      setVelocityX(getSpeed());
+    }
   }
   else{
-    setVelocityX(0);
+    setVelocityX(getVelocityX()*ground_deacceleration);
+    
     if(getPrevDir()==GO_RIGHT){
       objectSprite->setScaleX(1);
       setAnimation("IdleR");
@@ -102,12 +112,17 @@ void PlayerObject::playerFallUpdate(float delta){
     }
   }
 }
+
+const float jumpStength = 60;
 void PlayerObject::playerFlyUpdate(float delta){
   const float jetPackFlySpeed = 1.5f;
   const float maxSpeed = getSpeed();
   const float uppSpeed = 0.75f;
   const float upp_threshold = 2.1f;
   if(playerInput->getSwipeR()>upp_threshold){
+    if(getMovementStatus() == GO_ON_GROUND){
+      addToVelocityY(jumpStength);
+    }
     addToVelocityY(playerInput->getSwipeR()*uppSpeed);
     objectSprite->setScaleX(1);
     setAnimation("FlyR");
@@ -116,7 +131,11 @@ void PlayerObject::playerFlyUpdate(float delta){
       setVelocityX(maxSpeed);
     }
     return;
-  }if(playerInput->getSwipeL()>upp_threshold){
+  }
+  if(playerInput->getSwipeL()>upp_threshold){
+    if(getMovementStatus() == GO_ON_GROUND){
+      addToVelocityY(jumpStength);
+    }
     addToVelocityY(playerInput->getSwipeL()*uppSpeed);
     objectSprite->setScaleX(-1);
     setAnimation("FlyL");
