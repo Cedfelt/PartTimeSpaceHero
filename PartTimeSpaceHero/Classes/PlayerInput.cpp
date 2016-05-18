@@ -53,11 +53,17 @@ void PlayerInput::tapCounter(float delta) {
     cocos2d::log("DOUBLE RIGHT\n");
     unschedule(schedule_selector(PlayerInput::tapCounter));
     tapChecks = taps;
+    doubleRight = true;
   }
   else if (leftCounter > 1) {
     cocos2d::log("DOUBLE LEFT\n");
     unschedule(schedule_selector(PlayerInput::tapCounter));
     tapChecks = taps;
+    doubleLeft = true;
+  }
+  else{
+    doubleRight = false;
+    doubleLeft = false;
   }
   if (tapChecks == taps) {
     leftCounter = 0;
@@ -66,8 +72,17 @@ void PlayerInput::tapCounter(float delta) {
   }
 }
 
+bool PlayerInput::isDoubleRight(){
+  const bool ret_val = doubleRight;
+  doubleRight = false;
+  return ret_val;
+}
 
-
+bool PlayerInput::isDoubleLeft(){
+  const bool ret_val = doubleLeft;
+  doubleLeft = false;
+  return ret_val;
+}
 
 void PlayerInput::onTouchEnded(const std::vector<Touch*>& touches, Event*)
 {

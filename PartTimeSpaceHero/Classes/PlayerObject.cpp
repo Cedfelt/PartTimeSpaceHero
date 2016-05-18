@@ -16,7 +16,7 @@ bool PlayerObject::init(){
         return false;
     }
     playerInput = PlayerInput::create();
-    setSpeed(150.f);
+    setSpeed(100.f);
     addChild(playerInput);
     this->schedule(schedule_selector(PlayerObject::playerUpdate));
     
@@ -53,7 +53,6 @@ void PlayerObject::playerWalkUpdate(float delta){
   if(getMovementStatus()!=GO_ON_GROUND){
     return;
   }
-  
   if (playerInput->isLeft()) {
     objectSprite->setScaleX(-1);
     setAnimation("WalkL");
@@ -113,50 +112,122 @@ void PlayerObject::playerFallUpdate(float delta){
   }
 }
 
-const float jumpStength = 60;
+
 void PlayerObject::playerFlyUpdate(float delta){
   const float jetPackFlySpeed = 1.5f;
   const float maxSpeed = getSpeed();
-  const float uppSpeed = 0.75f;
-  const float upp_threshold = 2.1f;
-  if(playerInput->getSwipeR()>upp_threshold){
-    if(getMovementStatus() == GO_ON_GROUND){
-      addToVelocityY(jumpStength);
-    }
-    addToVelocityY(playerInput->getSwipeR()*uppSpeed);
-    objectSprite->setScaleX(1);
-    setAnimation("FlyR");
-    addToVelocityX(jetPackFlySpeed);
-    if(getVelocityX()>maxSpeed){
-      setVelocityX(maxSpeed);
-    }
-    return;
+  const float uppSpeed = 0.9f;
+  const float maxRiseSpeed = 80;
+  float upp_threshold;
+  if(flying){
+    upp_threshold = 0.1f;
   }
-  if(playerInput->getSwipeL()>upp_threshold){
-    if(getMovementStatus() == GO_ON_GROUND){
-      addToVelocityY(jumpStength);
-    }
-    addToVelocityY(playerInput->getSwipeL()*uppSpeed);
-    objectSprite->setScaleX(-1);
-    setAnimation("FlyL");
-    addToVelocityX(-jetPackFlySpeed);
-    if(getVelocityX()< -maxSpeed){
-      setVelocityX(-maxSpeed);
-    }
-    return;
+  else{
+    upp_threshold = 2.1f;
   }
+  const float movement_status = getMovementStatus();
+  if(playerInput->isRight()){
+    if(playerInput->getSwipeR()>upp_threshold){
+      if(movement_status == GO_ON_GROUND && !flying){
+        addToVelocityY(jumpStength);
+        flying = true;
+      }
+      if(getVelocityY() < maxRiseSpeed)
+        addToVelocityY(playerInput->getSwipeR()*uppSpeed);
+      objectSprite->setScaleX(1);
+      setAnimation("FlyR");
+      if(getVelocityX()< maxSpeed){
+        addToVelocityX(jetPackFlySpeed);
+      }
+      return;
+    }
+    else{
+      if(movement_status == GO_ON_GROUND)
+        flying = false;
+    }
+  }
+  if(playerInput->isLeft()){
+    if(playerInput->getSwipeL()>upp_threshold){
+      if(movement_status == GO_ON_GROUND && !flying){
+        addToVelocityY(jumpStength);
+        flying = true;
+      }
+      if(getVelocityY() < maxRiseSpeed)
+        addToVelocityY(playerInput->getSwipeL()*uppSpeed);
+      objectSprite->setScaleX(-1);
+      setAnimation("FlyL");
+      if(getVelocityX()> -maxSpeed){
+        addToVelocityX(-jetPackFlySpeed);
+      }
+      return;
+    }
+    else{
+      
+    }
+  }
+  if(movement_status == GO_ON_GROUND)
+    flying = false;
 }
-void PlayerObject::playerDashUpdate(float delta){
-  
+bool dashingRight = false;
+bool dashingLeft = false;
+float dashLeftCnt = 0;
+float dashRightCnt = 0;
+float dashSpeed = 300;
+const float dashTime = 2.0f;
+bool PlayerObject::playerDashUpdate(float delta){
+  if(playerInput->isDoubleRight() &&!dashingRight){
+    objectSprite->setScaleX(1);
+    dashRightCnt = dashTime;
+    dashLeftCnt = 0;
+  }
+  if(playerInput->isDoubleLeft() && !dashingLeft){
+    objectSprite->setScaleX(-1);
+    dashLeftCnt = dashTime;
+    dashRightCnt = 0;
+  }
+  if(dashRightCnt > 0){
+    
+    setVelocityY(0);
+    if(dashRightCnt > 0.5*dashTime){
+      setVelocityX(0);
+      setAnimation("DashR");
+    }
+    else{
+      setVelocityX(dashSpeed);
+      setAnimation("DieR");
+    }
+    dashRightCnt -=delta;
+    return true;
+  }
+  if(dashLeftCnt > 0){
+    setVelocityY(0);
+    if(dashLeftCnt > 0.5*dashTime){
+      setVelocityX(0);
+      setAnimation("DashL");
+    }
+    else{
+      setVelocityX(-dashSpeed);
+      setAnimation("DieL");
+    }
+    dashLeftCnt -=delta;
+    return true;
+  }
+  return false;
 }
 
 void PlayerObject::playerUpdate(const float delta) {
+  
+  
   // Update priority
-  playerDashUpdate(delta);
+  if(playerDashUpdate(delta)){
+    return;
+  }
   playerFallUpdate(delta);
   playerFlyUpdate(delta);
   playerWalkUpdate(delta);
-  
+  if(std::abs(this->getVelocityX()) > getSpeed()){
+    setVelocityX(getVelocityX()*0.98f);
+  }
   
   if(playerInput->isLeft()){
     setPrevDir(GO_LEFT);

@@ -50,7 +50,10 @@ public:
     GO_IN_AIR_UP,
     GO_IN_AIR_DOWN
   };
-    
+  
+  float maxSpeedX;
+  float maxSpeedYUpp;
+  float maxSpeedYDown;
 private:
   int32_t goMovementStatus;
   std::string prevAnimation;

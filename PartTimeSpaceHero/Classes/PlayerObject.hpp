@@ -22,6 +22,8 @@ private:
   void playerWalkUpdate(float delta);
   void playerFallUpdate(float delta);
   void playerFlyUpdate(float delta);
-  void playerDashUpdate(float delta);
+  bool playerDashUpdate(float delta);
+  bool flying = false;
+  const float jumpStength = 90;
   
 };

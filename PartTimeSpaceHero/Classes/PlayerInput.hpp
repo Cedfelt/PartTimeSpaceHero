@@ -18,6 +18,8 @@ public:
   virtual bool init();
   bool isRight();
   bool isLeft();
+  bool isDoubleRight();
+  bool isDoubleLeft();
   float getSwipeR();
   float getSwipeL();
   // implement the "static create()" method manually
@@ -27,6 +29,8 @@ private:
   bool bResetAnalog = false;
   bool left;
   bool right;
+  bool doubleRight;
+  bool doubleLeft;
   float swipeAmountR;
   float swipeAmountL;
   int tapChecks;
