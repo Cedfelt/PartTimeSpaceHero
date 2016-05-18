@@ -19,7 +19,7 @@ Scene* GameScene::createScene()
 {
   // 'scene' is an autorelease object
   auto scene = Scene::create();
-
+    scene->setAnchorPoint(Point(0,0));
   // 'layer' is an autorelease object
   auto layer = GameScene::create();
 
@@ -37,7 +37,7 @@ Scene* GameScene::createScene()
 // on "init" you need to initialize your instance
 bool GameScene::init()
 {
-  
+    
 
   //////////////////////////////
   // 1. super init first
@@ -45,32 +45,39 @@ bool GameScene::init()
   {
     return false;
   }
-
+setAnchorPoint(Point(0,0));
   Size visibleSize = Director::getInstance()->getVisibleSize();
   Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
   const size_t scale = getScaleFactor();
-
+    
   // Debug Label -
   auto label = Label::createWithTTF("GameScene", "fonts/Marker Felt.ttf", 25 * scale);
   label->setPosition(Vec2(origin.x + visibleSize.width / 2, origin.y + visibleSize.height - label->getContentSize().height));
   addChild(label);
 
+    
   
   
   this->schedule(schedule_selector(GameScene::mainGameLoop));
 
   
   worldObject = worldObject->create();
+    worldObject->setAnchorPoint(Point(0,0));
   addChild(worldObject);
   return true;
 }
 
 
 void GameScene::mainGameLoop(float delta) {
-  counter += delta;
-  if (counter > 3) {
+  return;
+  auto director = Director::getInstance();
+    director->setProjection(Director::Projection::_2D);
+    counter += delta;
+  if (counter > 25) {
     Director::getInstance()->popScene();
   }
 }
+
+
 

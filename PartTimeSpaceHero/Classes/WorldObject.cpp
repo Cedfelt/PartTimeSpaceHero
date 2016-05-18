@@ -8,40 +8,60 @@
 
 #include "WorldObject.hpp"
 #include "GlobalPList.hpp"
+#include "Physic.hpp"
 #include <math.h>
 bool WorldObject::init() {
   //////////////////////////////
   // 1. super init first
-  if (!Node::init()){return false;}
+  if (!Node::init()) { return false; }
 
   mapObject = MapObject::create();
+    mapObject->setAnchorPoint(Point(0,0));
   addChild(mapObject);
-  
-  auto go = GameObject::create();
-  go->setupHitbox(32, 32, 32, 32, true);
-  addChild(go);
-  
+
+  player = PlayerObject::create();
+  player->setupHitbox(256, 256, 16, 31, false);
+    setAnchorPoint(Point(0,0));
+  addChild(player);
+  player->setupPlayer(90, 80);
+  gameObjects.pushBack(player);
+
+    physic = Physic::create();
+    
   // This Sets the scale for all World Objects
-  setScale(getScaleFactor());
-
-  setViewPointCenter(Point(0,0));
+    const size_t scale = getScaleFactor();
+    setScale(scale);
+  this->schedule(schedule_selector(WorldObject::updateWorld));
+  setViewPointCenter(player->getPosition());
   return true;
+}
 
-void WorldObject::setViewPointCenter(cocos2d::Point position) {
+cocos2d::Vector<GameObject*>* WorldObject::getGameObjects() {
+  return &gameObjects;
+}
+
+void WorldObject::updateWorld(float delta) {
+  physic->moveGameObjects(getGameObjects(),mapObject,delta);
+  Point playerPos = player->getPosition();
+  const uint32_t offset = 71;
+  playerPos.x = playerPos.x + offset;
+  setViewPointCenter(playerPos);
+  mapObject->moveBackgroundLayers();
+}
+
+void WorldObject::setViewPointCenter(const cocos2d::Point position) {
   // NO PROBS HERE
-  Size winSize = Director::getInstance()->getWinSize() / 1;//Scene Scale Factor
-  const float tileSize = 8;
-  const float mapsize = 200;
-  const float mapHeight = 200;
-  const float scale = 2;
-
-  float x = fmaxf(position.x, winSize.width / 2);
-  float y = fmaxf(position.y, winSize.height / 2);
-  x = fminf(x, (scale*mapsize * tileSize) - winSize.width / 2);
-  y = fminf(y, (scale*mapHeight * tileSize) - winSize.height / 2);
-  Point actualPosition = Point(x, y);
-
-  Point centerOfView = Point(winSize.width / (2), winSize.height / (2));
+  Size winSize = Director::getInstance()->getWinSize() / 2;//Scene Scale Factor
+  const size_t tileSize = mapObject->getMapTileSize();
+  const size_t scale = getScale();
+  const size_t mapWidth = mapObject->getMapWidthInTiles()*scale;
+  const size_t mapHeight = mapObject->getMapHeightInTiles()*scale;
+  float x = fmaxf(scale*position.x, winSize.width);
+  float y = fmaxf(scale*position.y, winSize.height);
+  x = fminf(x, (mapWidth * tileSize) - winSize.width);
+  y = fminf(y, (mapHeight * tileSize) - winSize.height);  
+  const Point actualPosition = Point((int)x, (int)y);
+  Point centerOfView = Point(winSize.width, winSize.height);
   centerOfView.subtract(actualPosition);// ccpSub(centerOfView, actualPosition);
     this->setPosition(centerOfView);
 }

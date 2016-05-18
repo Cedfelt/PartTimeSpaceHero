@@ -6,9 +6,24 @@
 //
 //
 
-#ifndef Player_hpp
-#define Player_hpp
+#pragma once
+#include "GameObject.hpp"
+#include "PlayerInput.hpp"
 
-#include <stdio.h>
-
-#endif /* Player_hpp */
+using namespace cocos2d;
+class PlayerObject : public GameObject {
+public:
+  virtual bool init();
+  CREATE_FUNC(PlayerObject);
+  void setupPlayer(const float x,const float y);
+  void playerUpdate(const float delta);
+  PlayerInput* playerInput;
+private:
+  void playerWalkUpdate(float delta);
+  void playerFallUpdate(float delta);
+  void playerFlyUpdate(float delta);
+  bool playerDashUpdate(float delta);
+  bool flying = false;
+  const float jumpStength = 90;
+  
+};

@@ -26,23 +26,31 @@ void AppDelegate::initGLContextAttrs()
 
 bool AppDelegate::applicationDidFinishLaunching() {
     // initialize director
+  
+    // initialize director
+    const uint32_t scale = 2;
+    uint32_t res_x = 1136;
+    uint32_t res_y = 640;
+    
     auto director = Director::getInstance();
     auto glview = director->getOpenGLView();
-    if(!glview) {
-        glview = GLViewImpl::createWithRect("PartTimeSpaceHero", Rect(0, 0, 960, 640));
+    if (!glview) {
+        glview = GLViewImpl::createWithRect("SpaceGame", Rect(0, 0, res_x , res_y ));
         director->setOpenGLView(glview);
     }
     
-    setScaleFactor(2);
-
-    director->getOpenGLView()->setDesignResolutionSize(960, 640, ResolutionPolicy::SHOW_ALL);
-
+    setScaleFactor(scale);
+    
+    director->getOpenGLView()->setDesignResolutionSize(res_x, res_y, ResolutionPolicy::SHOW_ALL);
+    
+    director->setProjection(Director::Projection::_2D);
+    
     // turn on display FPS
     director->setDisplayStats(true);
-
+    
     // set FPS. the default value is 1.0/60 if you don't call this
     director->setAnimationInterval(1.0 / 60);
-
+    
     FileUtils::getInstance()->addSearchPath("res");
 
     // create a scene. it's an autorelease object
