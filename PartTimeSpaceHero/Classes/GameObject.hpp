@@ -19,7 +19,7 @@ public:
   void addAnimation(std::string fileName,std::string animation_name,int start,int end,float animSpeed);
   void setAnimation(std::string anim);
   CREATE_FUNC(GameObject);
-  void setupHitbox(const float x, const float y, const float w, const float h,const bool draw);
+  void setupHitbox(const float x, const float y, const float w, const float h, const float box, const float boy, const bool draw);
   void addToVelocityX(float velX);
   void setVelocityX(float velX);
   float getVelocityX();
@@ -30,6 +30,10 @@ public:
   float getSpeed();
   void setObjectPositionX(const float x);
   void setObjectPositionY(const float y);
+  bool isAffectedByGravity(void);
+  void addGravityToObject(const bool bGrav);
+  float getElastic(void);
+  void setElastic(const float bGrav);
   float getObjectPositionX();
   float getObjectPositionY();
   Rect* getHitbox();
@@ -64,6 +68,8 @@ private:
   int32_t prevDirection;
   float modelPositionX;
   float modelPositionY;
+  bool affectedByGravity;
+  float elastic;
 };
 
 
