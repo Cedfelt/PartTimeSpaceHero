@@ -38,11 +38,13 @@ void Physic::moveGameObjects(cocos2d::Vector<GameObject*>* gameObjects,MapObject
   for (int i = 0;i < obj_cnt;i++) {
     
     GameObject* obj = gameObjects->at(i);
-    obj->addToVelocityY(delta*GRAVITY);// GRAVITY
-    if(obj->getVelocityY()<MAX_FALLSPEED){
-      obj->setVelocityY(MAX_FALLSPEED);
-    }
     
+    if (obj->isAffectedByGravity()) {
+      obj->addToVelocityY(delta*GRAVITY);// GRAVITY
+      if (obj->getVelocityY()<MAX_FALLSPEED) {
+        obj->setVelocityY(MAX_FALLSPEED);
+      }
+    }
     
     // COLLISION Y-AXIS
     obj->setObjectPositionY((obj->getObjectPositionY()+obj->getVelocityY()*delta));
@@ -52,7 +54,9 @@ void Physic::moveGameObjects(cocos2d::Vector<GameObject*>* gameObjects,MapObject
       while(isBlocked(obj->getHitbox(),mapObject)){
         obj->setObjectPositionY((int)(obj->getObjectPositionY()+sign));
       }
-      obj->setVelocityY(0);
+      // BLOCKED Y
+      const float newVel = obj->getVelocityY() * obj->getElastic();
+      obj->setVelocityY(newVel* -1);
     }
     
     // COLLISION X-AXIS
@@ -63,9 +67,9 @@ void Physic::moveGameObjects(cocos2d::Vector<GameObject*>* gameObjects,MapObject
       while(isBlocked(obj->getHitbox(),mapObject)){
         obj->setObjectPositionX(int(obj->getObjectPositionX()+sign));
       }
-      
-      
-      obj->setVelocityX(0);
+      // BLOCKED X
+      const float newVel = obj->getVelocityX() * obj->getElastic();
+      obj->setVelocityX(newVel * -1);
     }
   }
 }
@@ -111,5 +115,19 @@ bool Physic::isBlocked(Rect* hitBox, MapObject* map){
 
 void Physic::colideGameObjects(cocos2d::Vector<GameObject*>* gameObjects) {
 
+}
+
+bool Physic::onContactBegan(PhysicsContact &contact) {
+  GameObject *nodeA = (GameObject *)contact.getShapeA()->getBody()->getNode();
+  GameObject * nodeB = (GameObject *)contact.getShapeB()->getBody()->getNode();
+  /*nodeA->addToVelocityX(nodeB->getVelocityX());
+  nodeA->addToVelocityY(nodeB->getVelocityY());
+  nodeB->addToVelocityX(nodeA->getVelocityX());
+  nodeB->addToVelocityY(nodeA->getVelocityY());*/
+
+
+  //nodeA->removeFromParent();
+  //nodeB->removeFromParent();
+  return true;
 }
 

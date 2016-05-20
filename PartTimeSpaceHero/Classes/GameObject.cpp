@@ -15,21 +15,30 @@ bool GameObject::init() {
   {
     return false;
   }
+  addGravityToObject(true);
+  setElastic(0);
+
   resolution_scale = getScaleFactor();
   return true;
 }
 
-void GameObject::setupHitbox(const float x, const float y, const float w, const float h, const bool draw) {
+void GameObject::setupHitbox(const float x, const float y, const float w, const float h,const float box, const float boy, const bool draw) {
   setPosition(x, y);
   hitBox.setRect(x, y, w, h);
   if (draw) {
     cocos2d::Vec2 rectangle[4];
-    rectangle[0] = cocos2d::Vec2(0, 0);
+    rectangle[0] = cocos2d::Vec2(0 , 0);
     rectangle[1] = cocos2d::Vec2(w, 0);
     rectangle[2] = cocos2d::Vec2(w, h);
     rectangle[3] = cocos2d::Vec2(0, h);
     drawPolygon(rectangle, 4, cocos2d::Color4F::RED, 1, cocos2d::Color4F::BLUE);
   }
+
+  auto physicsBody = PhysicsBody::createBox(Size(w, h), PhysicsMaterial(0.1f, 1.0f, 0.0f));
+  physicsBody->setPositionOffset(Vec2(box,boy));
+  physicsBody->setDynamic(true);
+  setPhysicsBody(physicsBody);
+    
 }
 
 void GameObject::addAnimation(std::string fileName,std::string animation_name,int start,int end,float animSpeed){
@@ -88,6 +97,7 @@ float GameObject::getVelocityY() {
 }
 
 Rect* GameObject::getHitbox(){
+  //Rect r = Rect(0, 0, 0, 0);
   return &hitBox;
 }
 
@@ -124,4 +134,18 @@ void GameObject::setSpeed(float s) {
 
 float GameObject::getSpeed() {
   return speed;
+}
+
+bool GameObject::isAffectedByGravity(void) {
+  return affectedByGravity;
+}
+void GameObject::addGravityToObject(const bool bGrav) {
+  affectedByGravity = bGrav;
+}
+
+float GameObject::getElastic(void) {
+  return elastic;
+}
+void GameObject::setElastic(const float fElastic) {
+  elastic = fElastic;
 }

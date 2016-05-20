@@ -28,6 +28,7 @@ private:
   cocos2d::Vector<GameObject*> gameObjects;
   void setViewPointCenter(const cocos2d::Point position);
   void updateWorld(float delta);
-    Physic* physic;
+  bool onContactBegan(PhysicsContact &contact);
+  Physic* physic;
 };
 
