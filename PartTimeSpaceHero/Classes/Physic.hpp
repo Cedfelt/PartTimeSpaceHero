@@ -18,7 +18,7 @@ public:
   CREATE_FUNC(Physic);
   void moveGameObjects(cocos2d::Vector<GameObject*>* gameObjects,MapObject* mapObject,float delta);
   void colideGameObjects(cocos2d::Vector<GameObject*>* gameObjects);
-  bool onContactBegan(PhysicsContact &contact);  
+  void gameObjectCollision(GameObject*  goA,GameObject* goB);
     
 private:
   bool isBlocked(Rect* hitBox, MapObject* map);

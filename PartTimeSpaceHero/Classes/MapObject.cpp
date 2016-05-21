@@ -8,6 +8,9 @@
 
 #include "MapObject.hpp"
 #include "GlobalPList.hpp"
+#include "PlayerObject.hpp"
+
+
 
 bool MapObject::init() {
   //////////////////////////////
@@ -77,6 +80,8 @@ void MapObject::moveBackgroundLayers(){
     background_layers.at(i)->setPosition(bg_speed*map->convertToNodeSpace(Point(0, 0.)));
   }
 }
+
+
 
 uint32_t MapObject::getMapWidthInTiles(){
   return mapWidth;

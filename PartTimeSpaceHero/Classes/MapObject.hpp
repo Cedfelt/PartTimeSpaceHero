@@ -10,6 +10,7 @@
 
 #include <stdio.h>
 #include "cocos2d.h"
+#include "GameObject.hpp"
 using namespace cocos2d;
 
 class MapObject : public cocos2d::Node
@@ -23,6 +24,7 @@ public:
     DESTRUCTABLE
   };
   virtual bool init();
+  void spawnObjects(cocos2d::Vector<GameObject*> gameObjects);
   uint32_t attributeAt(const uint32_t x, const uint32_t y);
   uint32_t getMapWidthInTiles();
   uint32_t getMapHeightInTiles();

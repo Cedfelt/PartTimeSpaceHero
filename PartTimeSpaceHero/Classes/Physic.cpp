@@ -117,17 +117,23 @@ void Physic::colideGameObjects(cocos2d::Vector<GameObject*>* gameObjects) {
 
 }
 
-bool Physic::onContactBegan(PhysicsContact &contact) {
-  GameObject *nodeA = (GameObject *)contact.getShapeA()->getBody()->getNode();
-  GameObject * nodeB = (GameObject *)contact.getShapeB()->getBody()->getNode();
+void Physic::gameObjectCollision(GameObject*  goA,GameObject* goB) {
+  
   /*nodeA->addToVelocityX(nodeB->getVelocityX());
   nodeA->addToVelocityY(nodeB->getVelocityY());
   nodeB->addToVelocityX(nodeA->getVelocityX());
   nodeB->addToVelocityY(nodeA->getVelocityY());*/
-
+  const float aMass = goA->getPhysicsBody()->getMass() *0.01;
+  const float bMass = goB->getPhysicsBody()->getMass() *0.01;
+  const Vec2 repA = Vec2(goB->getVelocityX(), goB->getVelocityY());
+  const Vec2 repB = Vec2(goA->getVelocityX(), goA->getVelocityY());
+  goA->setVelocityX(repA.x *bMass);
+  goA->setVelocityY(repA.y*bMass);
+  goB->setVelocityX(repB.x*aMass);
+  goB->setVelocityY(repB.y*aMass);
 
   //nodeA->removeFromParent();
   //nodeB->removeFromParent();
-  return true;
+  //return true;
 }
 

@@ -120,7 +120,7 @@ void PlayerObject::playerFlyUpdate(float delta) {
   const float maxRiseSpeed = 80;
   float upp_threshold;
   if (flying) {
-    upp_threshold = 0.1f;
+    upp_threshold = 0.0f;
   }
   else {
     upp_threshold = 2.1f;

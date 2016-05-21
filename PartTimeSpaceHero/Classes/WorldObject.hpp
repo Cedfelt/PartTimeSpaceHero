@@ -26,6 +26,7 @@ private:
   MapObject* mapObject;
   PlayerObject* player;
   cocos2d::Vector<GameObject*> gameObjects;
+  void spawnObjects(cocos2d::Vector<GameObject*>* gameObjects);
   void setViewPointCenter(const cocos2d::Point position);
   void updateWorld(float delta);
   bool onContactBegan(PhysicsContact &contact);

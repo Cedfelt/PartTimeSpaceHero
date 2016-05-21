@@ -75,6 +75,9 @@
 		A81BE1671CBA499F00C09359 /* GlobalPList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A81BE1651CBA499F00C09359 /* GlobalPList.cpp */; };
 		A81BE1681CBA499F00C09359 /* GlobalPList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A81BE1651CBA499F00C09359 /* GlobalPList.cpp */; };
 		A87C27C71CC19F10004520EF /* Physic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A87C27C51CC19F10004520EF /* Physic.cpp */; };
+		A8805F2D1CEFB37400B2AE7A /* CoinObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8805F2B1CEFB37400B2AE7A /* CoinObject.cpp */; };
+		A8805F301CF04C6D00B2AE7A /* SoundFx.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8805F2E1CF04C6D00B2AE7A /* SoundFx.cpp */; };
+		A8805F311CF04C6D00B2AE7A /* SoundFx.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8805F2E1CF04C6D00B2AE7A /* SoundFx.cpp */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
 		BF1C47F01293687400B63C5D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1C47EA1293683800B63C5D /* QuartzCore.framework */; };
@@ -159,6 +162,10 @@
 		A81BE1661CBA499F00C09359 /* GlobalPList.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GlobalPList.hpp; sourceTree = "<group>"; };
 		A87C27C51CC19F10004520EF /* Physic.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Physic.cpp; sourceTree = "<group>"; };
 		A87C27C61CC19F10004520EF /* Physic.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Physic.hpp; sourceTree = "<group>"; };
+		A8805F2B1CEFB37400B2AE7A /* CoinObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CoinObject.cpp; sourceTree = "<group>"; };
+		A8805F2C1CEFB37400B2AE7A /* CoinObject.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CoinObject.hpp; sourceTree = "<group>"; };
+		A8805F2E1CF04C6D00B2AE7A /* SoundFx.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SoundFx.cpp; sourceTree = "<group>"; };
+		A8805F2F1CF04C6D00B2AE7A /* SoundFx.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SoundFx.hpp; sourceTree = "<group>"; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		BF1C47EA1293683800B63C5D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -290,6 +297,8 @@
 		46880B8319C43A87006E1F66 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				A8805F2B1CEFB37400B2AE7A /* CoinObject.cpp */,
+				A8805F2C1CEFB37400B2AE7A /* CoinObject.hpp */,
 				46880B8419C43A87006E1F66 /* AppDelegate.cpp */,
 				46880B8519C43A87006E1F66 /* AppDelegate.h */,
 				A81BE1491CBA415400C09359 /* GameObject.cpp */,
@@ -318,6 +327,8 @@
 				A81BE1521CBA420D00C09359 /* PlayerObject.hpp */,
 				A81BE1451CBA40CB00C09359 /* WorldObject.cpp */,
 				A81BE1461CBA40CB00C09359 /* WorldObject.hpp */,
+				A8805F2E1CF04C6D00B2AE7A /* SoundFx.cpp */,
+				A8805F2F1CF04C6D00B2AE7A /* SoundFx.hpp */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -506,7 +517,9 @@
 				A81BE1631CBA466D00C09359 /* PlayerControl.cpp in Sources */,
 				46880B8A19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */,
 				A81BE14F1CBA41D500C09359 /* MapObject.cpp in Sources */,
+				A8805F2D1CEFB37400B2AE7A /* CoinObject.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
+				A8805F301CF04C6D00B2AE7A /* SoundFx.cpp in Sources */,
 				A81BE1531CBA420D00C09359 /* PlayerObject.cpp in Sources */,
 				A81BE1431CBA40AE00C09359 /* GameScene.cpp in Sources */,
 				A81BE15B1CBA424600C09359 /* LaserObject.cpp in Sources */,
@@ -527,6 +540,7 @@
 				46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				A81BE1541CBA420D00C09359 /* PlayerObject.cpp in Sources */,
 				503AE10517EB98FF00D1A890 /* main.cpp in Sources */,
+				A8805F311CF04C6D00B2AE7A /* SoundFx.cpp in Sources */,
 				A81BE1501CBA41D500C09359 /* MapObject.cpp in Sources */,
 				A81BE15C1CBA424600C09359 /* LaserObject.cpp in Sources */,
 				46880B8B19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */,
@@ -568,7 +582,7 @@
 					"/Applications/Cocos/Cocos2d-x/cocos2d-x-3.10/cocos/platform/ios/Simulation",
 				);
 				INFOPLIST_FILE = ios/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LIBRARY_SEARCH_PATHS = " /Applications/Cocos/Cocos2d-x/cocos2d-x-3.10/prebuilt/ios";
 				OTHER_LDFLAGS = (
 					"$(_COCOS_LIB_IOS_BEGIN)",
@@ -605,7 +619,7 @@
 					"/Applications/Cocos/Cocos2d-x/cocos2d-x-3.10/cocos/platform/ios/Simulation",
 				);
 				INFOPLIST_FILE = ios/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LIBRARY_SEARCH_PATHS = " /Applications/Cocos/Cocos2d-x/cocos2d-x-3.10/prebuilt/ios";
 				OTHER_LDFLAGS = (
 					"$(_COCOS_LIB_IOS_BEGIN)",
@@ -707,7 +721,7 @@
 					"/Applications/Cocos/Cocos2d-x/cocos2d-x-3.10/external",
 					"/Applications/Cocos/Cocos2d-x/cocos2d-x-3.10/external/chipmunk/include/chipmunk",
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -737,7 +751,7 @@
 					"/Applications/Cocos/Cocos2d-x/cocos2d-x-3.10/external",
 					"/Applications/Cocos/Cocos2d-x/cocos2d-x-3.10/external/chipmunk/include/chipmunk",
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PRODUCT_NAME = "$(TARGET_NAME)";

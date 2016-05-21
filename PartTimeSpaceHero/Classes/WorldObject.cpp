@@ -11,12 +11,13 @@
 #include "Physic.hpp"
 #include "CoinObject.hpp"
 #include <math.h>
+#include "SimpleAudioEngine.h"
 
 enum class PhysicsCategory {
   None = 0,
-  Monster = (1 << 0),    // 1
-  Projectile = (1 << 1), // 2
-  All = PhysicsCategory::Monster | PhysicsCategory::Projectile // 3
+  Player = (1 << 0),    // 1
+  Bouncer = (1 << 1), // 2
+  All = 0xff // 3
 };
 
 bool WorldObject::init() {
@@ -28,28 +29,8 @@ bool WorldObject::init() {
   mapObject->setAnchorPoint(Point(0, 0));
   addChild(mapObject);
 
-  // PLAYER
-  player = PlayerObject::create();
-  player->setupHitbox(256, 256, 16, 31, 15, 25, false);
-  //setAnchorPoint(Point(0,0));
-  player->setupPlayer(90, 80);
-  gameObjects.pushBack(player);
-  player->getPhysicsBody()->setCategoryBitmask((int)PhysicsCategory::Monster);
-  player->getPhysicsBody()->setCollisionBitmask((int)PhysicsCategory::None);
-  player->getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::Projectile);
-  addChild(player);
+  spawnObjects(&gameObjects);
 
-  // COIN
-  auto coin = CoinObject::create();
-  coin->setupHitbox(256, 256, 16, 16, 16, 16, false);
-  gameObjects.pushBack(coin);
-  coin->setObjectPositionX(100);
-  coin->setObjectPositionY(200);
-  coin->getPhysicsBody()->setCategoryBitmask((int)PhysicsCategory::Projectile);
-  coin->getPhysicsBody()->setCollisionBitmask((int)PhysicsCategory::None);
-  coin->getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::Monster);
-  addChild(coin);
-  
   auto contactListener = EventListenerPhysicsContact::create();
   contactListener->onContactBegin = CC_CALLBACK_1(WorldObject::onContactBegan, this);
   this->getEventDispatcher()->addEventListenerWithSceneGraphPriority(contactListener, this);
@@ -61,6 +42,15 @@ bool WorldObject::init() {
   setScale(scale);
   this->schedule(schedule_selector(WorldObject::updateWorld));
   setViewPointCenter(player->getPosition());
+  
+  ////////////////////////////////////
+  // MUSIC SETUP - SPECIFIC
+  auto mapGroup = mapObject->map->getProperties();
+  std::string track_name = mapGroup["music_track"].asString();
+  auto audio = CocosDenshion::SimpleAudioEngine::getInstance();
+    audio->stopBackgroundMusic();
+    audio->playBackgroundMusic(track_name.c_str(), true);
+  
   return true;
 }
 
@@ -97,18 +87,51 @@ void WorldObject::setViewPointCenter(const cocos2d::Point position) {
 bool WorldObject::onContactBegan(PhysicsContact &contact) {
   GameObject *nodeA = (GameObject *)contact.getShapeA()->getBody()->getNode();
   GameObject * nodeB = (GameObject *)contact.getShapeB()->getBody()->getNode();
-  const Vec2 repA = Vec2(nodeB->getVelocityX(), nodeB->getVelocityY());
-  const Vec2 repB = Vec2(nodeA->getVelocityX(), nodeA->getVelocityY());
-  
-  nodeA->setVelocityX(repA.x);
-  nodeA->setVelocityY(repA.y);
-  nodeB->setVelocityX(repB.x);
-  nodeB->setVelocityY(repB.y);
-  
-
-
-  //nodeA->removeFromParent();
-  //nodeB->removeFromParent();
+  physic->gameObjectCollision(nodeA, nodeB);
   return true;
 }
 
+void WorldObject::spawnObjects(cocos2d::Vector<GameObject*>* gameObjects) {
+  
+  const std::string objectName = "GameObjects";
+  auto objectGroup = mapObject->map->getObjectGroup(objectName);
+  ValueVector obj = objectGroup->getObjects();
+  for (int i = 0;i < obj.size();i++) {
+    ValueMap vm = obj.at(i).asValueMap();
+    int x = vm["x"].asInt();
+    int y = vm["y"].asInt();
+    float w = vm["width"].asInt();
+    float h = vm["height"].asInt();
+    //x *= level->getScale();
+    //y *= level->getScale();;
+    //w *= level->getScale();;
+    //h *= level->getScale();;
+    std::string name = vm["name"].asString();
+    std::string type = vm["type"].asString();
+    
+    if (name == "PlayerObject") {
+      player = PlayerObject::create();
+      player->setupHitbox(x, y, 16, 31, 15, 25, false);
+      //setAnchorPoint(Point(0,0));
+      player->setupPlayer(x, y);
+      gameObjects->pushBack(player);
+      player->getPhysicsBody()->setCategoryBitmask((int)PhysicsCategory::Player);
+      player->getPhysicsBody()->setCollisionBitmask((int)PhysicsCategory::None);
+      player->getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::Bouncer);
+      addChild(player);
+    }
+    
+    else if(name == "CoinObject"){
+      // COIN
+      auto coin = CoinObject::create();
+      coin->setupHitbox(256, 256, 16, 16, 16, 16, false);
+      gameObjects->pushBack(coin);
+      coin->setObjectPositionX(x);
+      coin->setObjectPositionY(y);
+      coin->getPhysicsBody()->setCategoryBitmask((int)PhysicsCategory::Bouncer);
+      coin->getPhysicsBody()->setCollisionBitmask((int)PhysicsCategory::None);
+      coin->getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::All);
+      addChild(coin);
+    }
+  }
+}

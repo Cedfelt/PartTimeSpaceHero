@@ -10,12 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/WorldObject.cpp"
-            timestampString = "483394905.636891"
+            timestampString = "485510573.869483"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
-            landmarkName = "WorldObject::setViewPointCenter(const cocos2d::Point position)"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "WorldObject::init()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -26,12 +26,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/WorldObject.cpp"
-            timestampString = "483394905.636891"
+            timestampString = "485510573.869483"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
-            landmarkName = "WorldObject::setViewPointCenter(const cocos2d::Point position)"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "WorldObject::init()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -42,12 +42,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/WorldObject.cpp"
-            timestampString = "483394905.636891"
+            timestampString = "485510605.802853"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
-            landmarkName = "WorldObject::setViewPointCenter(const cocos2d::Point position)"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "WorldObject::init()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -58,28 +58,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/WorldObject.cpp"
-            timestampString = "483394905.636891"
+            timestampString = "485510573.869483"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
-            landmarkName = "WorldObject::setViewPointCenter(const cocos2d::Point position)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../Classes/WorldObject.cpp"
-            timestampString = "483394905.636891"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
-            landmarkName = "WorldObject::updateWorld(float delta)"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "WorldObject::init()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -111,7 +95,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "242"
             endingLineNumber = "242"
-            landmarkName = "PlayerObject::setupPlayer(const float x,const float y)"
+            landmarkName = "PlayerObject::setupPlayer(const float x, const float y)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -335,7 +319,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "75"
             endingLineNumber = "75"
-            landmarkName = "Physic::isBlocked(Rect* hitBox, MapObject* map)"
+            landmarkName = "Physic::moveGameObjects(cocos2d::Vector&lt;GameObject*&gt;* gameObjects,MapObject* mapObject,const float delta)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -366,9 +350,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "76"
-            endingLineNumber = "76"
-            landmarkName = "Physic::isBlocked(Rect* hitBox, MapObject* map)"
-            landmarkType = "5">
+            endingLineNumber = "76">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -394,11 +376,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/MapObject.cpp"
-            timestampString = "482620092.874689"
+            timestampString = "485504255.53762"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "77"
-            endingLineNumber = "77"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
             landmarkName = "MapObject::moveBackgroundLayers()"
             landmarkType = "5">
          </BreakpointContent>
@@ -410,11 +392,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/MapObject.cpp"
-            timestampString = "482620101.069091"
+            timestampString = "485504255.53762"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
             landmarkName = "MapObject::moveBackgroundLayers()"
             landmarkType = "5">
          </BreakpointContent>
@@ -490,11 +472,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/MapObject.cpp"
-            timestampString = "483216688.343551"
+            timestampString = "485504255.53762"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
             landmarkName = "MapObject::moveBackgroundLayers()"
             landmarkType = "5">
          </BreakpointContent>
@@ -506,11 +488,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/MapObject.cpp"
-            timestampString = "483216689.64603"
+            timestampString = "485504255.53762"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "75"
-            endingLineNumber = "75"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
             landmarkName = "MapObject::moveBackgroundLayers()"
             landmarkType = "5">
          </BreakpointContent>
@@ -646,7 +628,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/PlayerObject.cpp"
@@ -742,7 +724,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/PlayerObject.cpp"
@@ -752,6 +734,22 @@
             startingLineNumber = "118"
             endingLineNumber = "118"
             landmarkName = "PlayerObject::playerFlyUpdate(float delta)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Classes/Physic.cpp"
+            timestampString = "485501771.551878"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "125"
+            endingLineNumber = "125"
+            landmarkName = "Physic::gameObjectCollision(GameObject* goA,GameObject* goB)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
