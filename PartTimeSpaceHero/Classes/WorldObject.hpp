@@ -14,6 +14,7 @@
 #include "PlayerObject.hpp"
 #include "GameObject.hpp"
 #include "Physic.hpp"
+#include "GoalObject.hpp"
 class WorldObject : public cocos2d::Node
 {
 public:
@@ -30,6 +31,7 @@ private:
   void setViewPointCenter(const cocos2d::Point position);
   void updateWorld(float delta);
   bool onContactBegan(PhysicsContact &contact);
+  GoalObject* obj;
   Physic* physic;
 };
 

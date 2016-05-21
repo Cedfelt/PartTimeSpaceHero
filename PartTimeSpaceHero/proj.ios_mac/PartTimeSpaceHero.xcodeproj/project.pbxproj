@@ -78,6 +78,8 @@
 		A8805F2D1CEFB37400B2AE7A /* CoinObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8805F2B1CEFB37400B2AE7A /* CoinObject.cpp */; };
 		A8805F301CF04C6D00B2AE7A /* SoundFx.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8805F2E1CF04C6D00B2AE7A /* SoundFx.cpp */; };
 		A8805F311CF04C6D00B2AE7A /* SoundFx.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8805F2E1CF04C6D00B2AE7A /* SoundFx.cpp */; };
+		A8805F341CF0F5B100B2AE7A /* GoalObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8805F321CF0F5B100B2AE7A /* GoalObject.cpp */; };
+		A8805F351CF0F5B100B2AE7A /* GoalObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8805F321CF0F5B100B2AE7A /* GoalObject.cpp */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
 		BF1C47F01293687400B63C5D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1C47EA1293683800B63C5D /* QuartzCore.framework */; };
@@ -166,6 +168,8 @@
 		A8805F2C1CEFB37400B2AE7A /* CoinObject.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CoinObject.hpp; sourceTree = "<group>"; };
 		A8805F2E1CF04C6D00B2AE7A /* SoundFx.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SoundFx.cpp; sourceTree = "<group>"; };
 		A8805F2F1CF04C6D00B2AE7A /* SoundFx.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SoundFx.hpp; sourceTree = "<group>"; };
+		A8805F321CF0F5B100B2AE7A /* GoalObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GoalObject.cpp; sourceTree = "<group>"; };
+		A8805F331CF0F5B100B2AE7A /* GoalObject.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GoalObject.hpp; sourceTree = "<group>"; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		BF1C47EA1293683800B63C5D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -297,16 +301,18 @@
 		46880B8319C43A87006E1F66 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				A8805F2B1CEFB37400B2AE7A /* CoinObject.cpp */,
-				A8805F2C1CEFB37400B2AE7A /* CoinObject.hpp */,
 				46880B8419C43A87006E1F66 /* AppDelegate.cpp */,
 				46880B8519C43A87006E1F66 /* AppDelegate.h */,
+				A8805F2B1CEFB37400B2AE7A /* CoinObject.cpp */,
+				A8805F2C1CEFB37400B2AE7A /* CoinObject.hpp */,
 				A81BE1491CBA415400C09359 /* GameObject.cpp */,
 				A81BE14A1CBA415400C09359 /* GameObject.hpp */,
 				A81BE1411CBA40AE00C09359 /* GameScene.cpp */,
 				A81BE1421CBA40AE00C09359 /* GameScene.hpp */,
 				A81BE1651CBA499F00C09359 /* GlobalPList.cpp */,
 				A81BE1661CBA499F00C09359 /* GlobalPList.hpp */,
+				A8805F321CF0F5B100B2AE7A /* GoalObject.cpp */,
+				A8805F331CF0F5B100B2AE7A /* GoalObject.hpp */,
 				A81BE1551CBA422200C09359 /* GuardObject.cpp */,
 				A81BE1561CBA422200C09359 /* GuardObject.hpp */,
 				46880B8619C43A87006E1F66 /* HelloWorldScene.cpp */,
@@ -325,10 +331,10 @@
 				A81BE15E1CBA465A00C09359 /* PlayerInput.hpp */,
 				A81BE1511CBA420D00C09359 /* PlayerObject.cpp */,
 				A81BE1521CBA420D00C09359 /* PlayerObject.hpp */,
-				A81BE1451CBA40CB00C09359 /* WorldObject.cpp */,
-				A81BE1461CBA40CB00C09359 /* WorldObject.hpp */,
 				A8805F2E1CF04C6D00B2AE7A /* SoundFx.cpp */,
 				A8805F2F1CF04C6D00B2AE7A /* SoundFx.hpp */,
+				A81BE1451CBA40CB00C09359 /* WorldObject.cpp */,
+				A81BE1461CBA40CB00C09359 /* WorldObject.hpp */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -527,6 +533,7 @@
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 				A81BE1671CBA499F00C09359 /* GlobalPList.cpp in Sources */,
 				A87C27C71CC19F10004520EF /* Physic.cpp in Sources */,
+				A8805F341CF0F5B100B2AE7A /* GoalObject.cpp in Sources */,
 				A81BE1471CBA40CB00C09359 /* WorldObject.cpp in Sources */,
 				A81BE14B1CBA415400C09359 /* GameObject.cpp in Sources */,
 			);
@@ -545,6 +552,7 @@
 				A81BE15C1CBA424600C09359 /* LaserObject.cpp in Sources */,
 				46880B8B19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */,
 				A81BE1681CBA499F00C09359 /* GlobalPList.cpp in Sources */,
+				A8805F351CF0F5B100B2AE7A /* GoalObject.cpp in Sources */,
 				A81BE1401CBA408300C09359 /* MainMenu.cpp in Sources */,
 				A81BE1581CBA422200C09359 /* GuardObject.cpp in Sources */,
 				A81BE1601CBA465A00C09359 /* PlayerInput.cpp in Sources */,

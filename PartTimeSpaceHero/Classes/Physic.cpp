@@ -127,10 +127,10 @@ void Physic::gameObjectCollision(GameObject*  goA,GameObject* goB) {
   const float bMass = goB->getPhysicsBody()->getMass() *0.01;
   const Vec2 repA = Vec2(goB->getVelocityX(), goB->getVelocityY());
   const Vec2 repB = Vec2(goA->getVelocityX(), goA->getVelocityY());
-  goA->setVelocityX(repA.x *bMass);
-  goA->setVelocityY(repA.y*bMass);
-  goB->setVelocityX(repB.x*aMass);
-  goB->setVelocityY(repB.y*aMass);
+  goA->setVelocityX(repA.x * bMass / aMass);
+  goA->setVelocityY(repA.y * bMass / aMass);
+  goB->setVelocityX(repB.x * aMass / bMass);
+  goB->setVelocityY(repB.y * aMass / bMass);
 
   //nodeA->removeFromParent();
   //nodeB->removeFromParent();

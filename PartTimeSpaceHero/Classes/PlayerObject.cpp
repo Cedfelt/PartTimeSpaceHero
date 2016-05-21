@@ -113,12 +113,13 @@ void PlayerObject::playerFallUpdate(float delta) {
 }
 
 
-void PlayerObject::playerFlyUpdate(float delta) {
+bool PlayerObject::playerFlyUpdate(float delta) {
   const float jetPackFlySpeed = 1.5f;
   const float maxSpeed = getSpeed();
   const float uppSpeed = 0.9f;
   const float maxRiseSpeed = 80;
   float upp_threshold;
+  bool module_active = false;
   if (flying) {
     upp_threshold = 0.0f;
   }
@@ -128,6 +129,7 @@ void PlayerObject::playerFlyUpdate(float delta) {
   const float movement_status = getMovementStatus();
   if (playerInput->isRight()) {
     if (playerInput->getSwipeR() > upp_threshold) {
+      module_active = true;
       if (movement_status == GO_ON_GROUND && !flying) {
         addToVelocityY(jumpStength);
         flying = true;
@@ -139,7 +141,7 @@ void PlayerObject::playerFlyUpdate(float delta) {
       if (getVelocityX() < maxSpeed) {
         addToVelocityX(jetPackFlySpeed);
       }
-      return;
+      return true;
     }
     else {
       if (movement_status == GO_ON_GROUND)
@@ -159,7 +161,7 @@ void PlayerObject::playerFlyUpdate(float delta) {
       if (getVelocityX() > -maxSpeed) {
         addToVelocityX(-jetPackFlySpeed);
       }
-      return;
+      return true;
     }
     else {
 
@@ -167,6 +169,7 @@ void PlayerObject::playerFlyUpdate(float delta) {
   }
   if (movement_status == GO_ON_GROUND)
     flying = false;
+  return false;
 }
 bool dashingRight = false;
 bool dashingLeft = false;
@@ -222,9 +225,11 @@ void PlayerObject::playerUpdate(const float delta) {
   if (playerDashUpdate(delta)) {
     return;
   }
-  playerFallUpdate(delta);
-  playerFlyUpdate(delta);
-  playerWalkUpdate(delta);
+  if(!playerFlyUpdate(delta)){
+    playerFallUpdate(delta);
+    playerWalkUpdate(delta);
+  }
+  
   if (std::abs(this->getVelocityX()) > getSpeed()) {
     setVelocityX(getVelocityX()*0.99f);
   }

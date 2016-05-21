@@ -114,14 +114,18 @@ bool MainMenu::init()
     addChild(label);
     return true;
 }
-
+bool newGame;
 void MainMenu::onTouchBegan(const std::vector<Touch*>& touch, Event* event)
 {
     cocos2d::log("touch Began");
+  newGame = true;
 }
 
 void MainMenu::onTouchEnded(const std::vector<Touch*>& touches, Event*)
 {
+  if(!newGame)
+    return;
+  newGame = false;
   CCSize winSize = CCDirector::sharedDirector()->getWinSize();
   for (int i = 0;i<touches.size();i++) {
     if ((touches.at(i)->getStartLocation().x) < winSize.width / 2) {

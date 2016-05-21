@@ -1,0 +1,20 @@
+//
+//  GoalObject.hpp
+//  PartTimeSpaceHero
+//
+//  Created by Anders Svensson on 21/05/16.
+//
+//
+
+
+#pragma once
+#include "GameObject.hpp"
+
+using namespace cocos2d;
+class GoalObject : public GameObject {
+public:
+  virtual bool init();
+  CREATE_FUNC(GoalObject);
+  void update(const float delta);
+private:
+};

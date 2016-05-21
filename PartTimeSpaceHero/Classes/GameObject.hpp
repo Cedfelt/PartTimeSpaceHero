@@ -36,6 +36,9 @@ public:
   void setElastic(const float bGrav);
   float getObjectPositionX();
   float getObjectPositionY();
+  void colideWith(GameObject* otherGo);
+  bool colided;
+  
   Rect* getHitbox();
   cocos2d::SpriteFrameCache *spriteFrameCache;
   cocos2d::AnimationCache *animationCache;

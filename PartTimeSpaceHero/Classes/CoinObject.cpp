@@ -20,8 +20,13 @@ bool CoinObject::init() {
   //addGravityToObject(false);
   setElastic(1.f);
   // SETUP ANIMATIONS
-  objectSprite = cocos2d::Sprite::create("space_pig1.png");
-  objectSprite->setPosition(8, 8);// Aling sprite in Hitbox
+  objectSprite = cocos2d::Sprite::create();
+  spriteFrameCache = spriteFrameCache->getInstance();
+  animationCache = animationCache->getInstance();
+  spriteFrameCache->addSpriteFramesWithFile("coin_sheet.plist");
+  addAnimation("coin", "Coin1", 1, 4, 0.2f);
+  setAnimation("Coin1");
+  objectSprite->setPosition(19/2, 17/2);// Aling sprite in Hitbox
   addChild(objectSprite);
   return true;
 }

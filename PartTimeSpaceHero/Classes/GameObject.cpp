@@ -17,14 +17,14 @@ bool GameObject::init() {
   }
   addGravityToObject(true);
   setElastic(0);
-
+  colided = false;
   resolution_scale = getScaleFactor();
   return true;
 }
 
-void GameObject::setupHitbox(const float x, const float y, const float w, const float h,const float box, const float boy, const bool draw) {
-  setPosition(x, y);
-  hitBox.setRect(x, y, w, h);
+void GameObject::setupHitbox(float aDensity, float aRestitution, const float w, const float h,const float box, const float boy, const bool draw) {
+  setPosition(0, 0);
+  hitBox.setRect(0, 0, w, h);
   if (draw) {
     cocos2d::Vec2 rectangle[4];
     rectangle[0] = cocos2d::Vec2(0 , 0);
@@ -34,7 +34,7 @@ void GameObject::setupHitbox(const float x, const float y, const float w, const 
     drawPolygon(rectangle, 4, cocos2d::Color4F::RED, 1, cocos2d::Color4F::BLUE);
   }
 
-  auto physicsBody = PhysicsBody::createBox(Size(w, h), PhysicsMaterial(0.1f, 1.0f, 0.0f));
+  auto physicsBody = PhysicsBody::createBox(Size(w, h), PhysicsMaterial(aDensity, aRestitution, 0.0f));
   physicsBody->setPositionOffset(Vec2(box,boy));
   physicsBody->setDynamic(true);
   setPhysicsBody(physicsBody);
@@ -53,6 +53,10 @@ void GameObject::addAnimation(std::string fileName,std::string animation_name,in
         animFrames.pushBack(frame);
     }
     animationCache->addAnimation(cocos2d::Animation::createWithSpriteFrames(animFrames,animSpeed), animation_name);
+}
+
+void GameObject::colideWith(GameObject *otherGo){
+  colided = true;
 }
 
 void GameObject::setAnimation(std::string anim){

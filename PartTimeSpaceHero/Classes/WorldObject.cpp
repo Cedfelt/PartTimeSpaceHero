@@ -10,6 +10,7 @@
 #include "GlobalPList.hpp"
 #include "Physic.hpp"
 #include "CoinObject.hpp"
+#include "GoalObject.hpp"
 #include <math.h>
 #include "SimpleAudioEngine.h"
 
@@ -17,6 +18,7 @@ enum class PhysicsCategory {
   None = 0,
   Player = (1 << 0),    // 1
   Bouncer = (1 << 1), // 2
+  Goal = (1 << 2),
   All = 0xff // 3
 };
 
@@ -51,6 +53,7 @@ bool WorldObject::init() {
     audio->stopBackgroundMusic();
     audio->playBackgroundMusic(track_name.c_str(), true);
   
+  cocos2d::Director::getInstance()->getTextureCache()->removeAllTextures();
   return true;
 }
 
@@ -65,6 +68,15 @@ void WorldObject::updateWorld(float delta) {
   playerPos.x = playerPos.x + offset;
   setViewPointCenter(playerPos);
   mapObject->moveBackgroundLayers();
+  
+  // Check Goal
+  if(obj->colided){
+    auto audio = CocosDenshion::SimpleAudioEngine::getInstance();
+    audio->stopBackgroundMusic();
+    stopAllActions();
+    cocos2d::Director::getInstance()->popScene();
+    
+  }
 }
 
 void WorldObject::setViewPointCenter(const cocos2d::Point position) {
@@ -88,6 +100,8 @@ bool WorldObject::onContactBegan(PhysicsContact &contact) {
   GameObject *nodeA = (GameObject *)contact.getShapeA()->getBody()->getNode();
   GameObject * nodeB = (GameObject *)contact.getShapeB()->getBody()->getNode();
   physic->gameObjectCollision(nodeA, nodeB);
+  nodeA->colideWith(nodeB);
+  nodeB->colideWith(nodeA);
   return true;
 }
 
@@ -111,27 +125,40 @@ void WorldObject::spawnObjects(cocos2d::Vector<GameObject*>* gameObjects) {
     
     if (name == "PlayerObject") {
       player = PlayerObject::create();
-      player->setupHitbox(x, y, 16, 31, 15, 25, false);
+      player->setupHitbox(0.1, 1, 16, 31, 15, 25, false);
       //setAnchorPoint(Point(0,0));
       player->setupPlayer(x, y);
       gameObjects->pushBack(player);
       player->getPhysicsBody()->setCategoryBitmask((int)PhysicsCategory::Player);
       player->getPhysicsBody()->setCollisionBitmask((int)PhysicsCategory::None);
-      player->getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::Bouncer);
+      player->getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::All);
       addChild(player);
     }
     
     else if(name == "CoinObject"){
       // COIN
       auto coin = CoinObject::create();
-      coin->setupHitbox(256, 256, 16, 16, 16, 16, false);
+      coin->setupHitbox(0.1f, 1.0f, 19, 17, 19, 17, false);
       gameObjects->pushBack(coin);
       coin->setObjectPositionX(x);
       coin->setObjectPositionY(y);
       coin->getPhysicsBody()->setCategoryBitmask((int)PhysicsCategory::Bouncer);
       coin->getPhysicsBody()->setCollisionBitmask((int)PhysicsCategory::None);
-      coin->getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::All);
+      coin->getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::Player|(int)PhysicsCategory::Bouncer);
       addChild(coin);
+    }
+    
+    else if(name == "GoalObject"){
+      // COIN
+      this->obj = GoalObject::create();
+      this->obj->setupHitbox(1, 1, 64, 64, 64, 64, false);
+      gameObjects->pushBack(this->obj);
+      this->obj->setObjectPositionX(x);
+      this->obj->setObjectPositionY(y);
+      this->obj->getPhysicsBody()->setCategoryBitmask((int)PhysicsCategory::Goal);
+      this->obj->getPhysicsBody()->setCollisionBitmask((int)PhysicsCategory::None);
+      this->obj->getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::Player);
+      addChild(this->obj);
     }
   }
 }
