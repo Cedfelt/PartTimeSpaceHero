@@ -14,6 +14,7 @@ using namespace cocos2d;
 class GoalObject : public GameObject {
 public:
   virtual bool init();
+  virtual void colideWith(GameObject* oterhObj);
   CREATE_FUNC(GoalObject);
   void update(const float delta);
 private:

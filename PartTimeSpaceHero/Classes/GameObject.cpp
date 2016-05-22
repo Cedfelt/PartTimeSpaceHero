@@ -56,7 +56,6 @@ void GameObject::addAnimation(std::string fileName,std::string animation_name,in
 }
 
 void GameObject::colideWith(GameObject *otherGo){
-  colided = true;
 }
 
 void GameObject::setAnimation(std::string anim){

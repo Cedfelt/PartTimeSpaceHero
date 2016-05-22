@@ -97,8 +97,8 @@ void WorldObject::setViewPointCenter(const cocos2d::Point position) {
 }
 
 bool WorldObject::onContactBegan(PhysicsContact &contact) {
-  GameObject *nodeA = (GameObject *)contact.getShapeA()->getBody()->getNode();
-  GameObject * nodeB = (GameObject *)contact.getShapeB()->getBody()->getNode();
+  auto *nodeA = (GameObject *)contact.getShapeA()->getBody()->getNode();
+  auto * nodeB = (GameObject *)contact.getShapeB()->getBody()->getNode();
   physic->gameObjectCollision(nodeA, nodeB);
   nodeA->colideWith(nodeB);
   nodeB->colideWith(nodeA);

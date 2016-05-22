@@ -30,3 +30,7 @@ bool GoalObject::init() {
 void GoalObject::update(const float delta) {
   
 }
+
+void GoalObject::colideWith(GameObject* oterhObj){
+  colided = true;
+}

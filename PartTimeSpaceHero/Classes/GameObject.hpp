@@ -36,7 +36,7 @@ public:
   void setElastic(const float bGrav);
   float getObjectPositionX();
   float getObjectPositionY();
-  void colideWith(GameObject* otherGo);
+  virtual void colideWith(GameObject* otherGo);
   bool colided;
   
   Rect* getHitbox();
