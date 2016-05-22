@@ -243,6 +243,10 @@ void PlayerObject::playerUpdate(const float delta) {
 
 }
 
+void PlayerObject::colideWith(GameObject* otherObj){
+  otherObj->interActWithPlayer(this);
+}
+
 void PlayerObject::setupPlayer(const float x, const float y) {
   setObjectPositionX(x);
   setObjectPositionY(y);

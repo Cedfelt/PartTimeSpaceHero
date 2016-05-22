@@ -13,6 +13,7 @@ using namespace cocos2d;
 class CoinObject : public GameObject {
 public:
   virtual bool init();
+  virtual void interActWithPlayer(GameObject* player);
   CREATE_FUNC(CoinObject);
   void update(const float delta);
 private:

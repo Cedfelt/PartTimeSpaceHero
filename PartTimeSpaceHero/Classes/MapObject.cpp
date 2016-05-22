@@ -63,7 +63,11 @@ void MapObject::setupBackgroundLayers(){
   int bg_cnt = 1;
   TMXLayer *bg = map->getLayer((bgs + std::to_string(bg_cnt)));
   
+  int cnt = 0;// Make the scala an atribute of the layer!!!
   while (bg != NULL) {
+    if(cnt == 0)
+      bg->setScale(2);
+    cnt++;
     background_layers.pushBack(bg);
     bg = map->getLayer((bgs + std::to_string(bg_cnt)));
     bg_cnt++;

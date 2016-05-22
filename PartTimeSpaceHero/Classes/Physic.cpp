@@ -38,7 +38,9 @@ void Physic::moveGameObjects(cocos2d::Vector<GameObject*>* gameObjects,MapObject
   for (int i = 0;i < obj_cnt;i++) {
     
     GameObject* obj = gameObjects->at(i);
-    
+    if(obj->remove_object){
+      return;
+    }
     if (obj->isAffectedByGravity()) {
       obj->addToVelocityY(delta*GRAVITY);// GRAVITY
       if (obj->getVelocityY()<MAX_FALLSPEED) {
@@ -123,14 +125,21 @@ void Physic::gameObjectCollision(GameObject*  goA,GameObject* goB) {
   nodeA->addToVelocityY(nodeB->getVelocityY());
   nodeB->addToVelocityX(nodeA->getVelocityX());
   nodeB->addToVelocityY(nodeA->getVelocityY());*/
-  const float aMass = goA->getPhysicsBody()->getMass() *0.01;
-  const float bMass = goB->getPhysicsBody()->getMass() *0.01;
+  const float aMass = goA->getPhysicsBody()->getMass() *0.01 ;
+  const float bMass = goB->getPhysicsBody()->getMass() *0.01 * (!goB->remove_object);
   const Vec2 repA = Vec2(goB->getVelocityX(), goB->getVelocityY());
   const Vec2 repB = Vec2(goA->getVelocityX(), goA->getVelocityY());
-  goA->setVelocityX(repA.x * bMass / aMass);
-  goA->setVelocityY(repA.y * bMass / aMass);
-  goB->setVelocityX(repB.x * aMass / bMass);
-  goB->setVelocityY(repB.y * aMass / bMass);
+  
+  //WE DONT WANT COLLISION WITH REMOVED OBJECTS, EG COINS
+  if((!goB->remove_object)){
+    goA->setVelocityX(repA.x * bMass / aMass);
+    goA->setVelocityY(repA.y * bMass / aMass);
+  }
+  
+  if((!goA->remove_object)){
+    goB->setVelocityX(repB.x  * aMass / bMass);
+    goB->setVelocityY(repB.y * aMass / bMass);
+  }
 
   //nodeA->removeFromParent();
   //nodeB->removeFromParent();

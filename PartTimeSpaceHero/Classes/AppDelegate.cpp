@@ -5,6 +5,7 @@
 
 
 USING_NS_CC;
+#define IPAD_AIR
 
 AppDelegate::AppDelegate() {
 
@@ -30,9 +31,15 @@ bool AppDelegate::applicationDidFinishLaunching() {
   
     // initialize director
     const uint32_t scale = 2;
-    uint32_t res_x = 1136;
-    uint32_t res_y = 640;
-    
+  
+#ifdef IPAD_AIR
+  uint32_t res_x = 2048;
+  uint32_t res_y = 1536;
+#else //if IPHONE5
+  uint32_t res_x = 1136;
+  uint32_t res_y = 640;
+#endif
+  
     auto director = Director::getInstance();
     auto glview = director->getOpenGLView();
     if (!glview) {

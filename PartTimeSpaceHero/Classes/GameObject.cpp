@@ -18,6 +18,7 @@ bool GameObject::init() {
   addGravityToObject(true);
   setElastic(0);
   colided = false;
+  remove_object = false;
   resolution_scale = getScaleFactor();
   return true;
 }
@@ -56,6 +57,10 @@ void GameObject::addAnimation(std::string fileName,std::string animation_name,in
 }
 
 void GameObject::colideWith(GameObject *otherGo){
+}
+
+void GameObject::interActWithPlayer(GameObject* player){
+
 }
 
 void GameObject::setAnimation(std::string anim){

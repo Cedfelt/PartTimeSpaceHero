@@ -37,7 +37,9 @@ public:
   float getObjectPositionX();
   float getObjectPositionY();
   virtual void colideWith(GameObject* otherGo);
+  virtual void interActWithPlayer(GameObject* player);
   bool colided;
+  bool remove_object;
   
   Rect* getHitbox();
   cocos2d::SpriteFrameCache *spriteFrameCache;

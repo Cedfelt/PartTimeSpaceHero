@@ -28,9 +28,14 @@ bool CoinObject::init() {
   setAnimation("Coin1");
   objectSprite->setPosition(19/2, 17/2);// Aling sprite in Hitbox
   addChild(objectSprite);
+  const float xVel = cocos2d::random(-50, 50);
+  setVelocityX(xVel);
   return true;
 }
 
+void CoinObject::interActWithPlayer(GameObject* player){
+  remove_object = true;
+}
 
 void CoinObject::update(const float delta) {
 

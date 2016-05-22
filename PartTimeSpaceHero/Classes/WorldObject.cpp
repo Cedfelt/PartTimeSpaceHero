@@ -75,7 +75,18 @@ void WorldObject::updateWorld(float delta) {
     audio->stopBackgroundMusic();
     stopAllActions();
     cocos2d::Director::getInstance()->popScene();
-    
+  }
+  
+  // Iterate objects
+  for (int i = 0; i < gameObjects.size();i++) {
+    // Remove Objects
+    if (gameObjects.at(i)->remove_object) {
+      GameObject *removeObj = gameObjects.at(i);
+      this->removeChild(gameObjects.at(i));
+      gameObjects.eraseObject(removeObj);
+      removeObj->release();
+      continue;
+    }
   }
 }
 
@@ -99,9 +110,9 @@ void WorldObject::setViewPointCenter(const cocos2d::Point position) {
 bool WorldObject::onContactBegan(PhysicsContact &contact) {
   auto *nodeA = (GameObject *)contact.getShapeA()->getBody()->getNode();
   auto * nodeB = (GameObject *)contact.getShapeB()->getBody()->getNode();
-  physic->gameObjectCollision(nodeA, nodeB);
   nodeA->colideWith(nodeB);
   nodeB->colideWith(nodeA);
+  physic->gameObjectCollision(nodeA, nodeB);
   return true;
 }
 
