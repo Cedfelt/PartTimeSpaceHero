@@ -130,15 +130,17 @@ void MainMenu::onTouchEnded(const std::vector<Touch*>& touches, Event*)
   for (int i = 0;i<touches.size();i++) {
     if ((touches.at(i)->getStartLocation().x) < winSize.width / 2) {
       // LEFT
-      setScaleFactor(3);
+      setScaleFactor(2);
+      setMapUrl("level1.tmx");
     }
     else {
       // RIGHT
+      setMapUrl("g2.tmx");
       setScaleFactor(2);
     }
   }
 
-  setMapUrl("g2.tmx");
+  
     auto scene = GameScene::createScene();
     Director::getInstance()->pushScene(scene);
     

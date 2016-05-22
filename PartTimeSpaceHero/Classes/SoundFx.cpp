@@ -9,16 +9,30 @@
 #include "SoundFx.hpp"
 #include "SimpleAudioEngine.h"
 
-SoundFx::SoundFx(const char* fileName) {
+void SoundFx::loadEffect(const char* fileName, const float pan, const float pitch,const bool loop){
   this->fileName = fileName;
   auto audio = CocosDenshion::SimpleAudioEngine::getInstance();
   audio->preloadEffect(fileName);
-  loop = false;
-  pitch = 1.0f;
-  pan = 0.0f;
+  this->loop = loop;
+  this->pitch = pitch;
+  this->pan = pan;
+  playing = false;
 }
 
 void SoundFx::play(float volume) {
+  if(playing){
+    return;
+  }
   auto audio = CocosDenshion::SimpleAudioEngine::getInstance();
   sound_id = audio->playEffect(fileName, loop,pitch, pan, volume);
+  playing = true;
+}
+
+void SoundFx::stop(){
+  if(!playing){
+    return;
+  }
+  auto audio = CocosDenshion::SimpleAudioEngine::getInstance();
+  audio->stopEffect(sound_id);
+  playing = false;
 }

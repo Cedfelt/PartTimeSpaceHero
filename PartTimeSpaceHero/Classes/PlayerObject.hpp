@@ -26,5 +26,6 @@ private:
   bool flying = false;
   virtual void colideWith(GameObject* oterhObj);
   const float jumpStength = 90;
+  SoundFx* jetpack1;
   
 };

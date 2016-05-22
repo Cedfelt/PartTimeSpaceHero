@@ -14,14 +14,16 @@ USING_NS_CC;
 
 class SoundFx : public Node{
 public:
-  SoundFx(const char* fileName);
+  CREATE_FUNC(SoundFx);
   void play(float volume);
-  
+  void stop();
+  void loadEffect(const char* fileName, const float pan, const float pitch,const bool loop);
   const char* fileName;
   int sound_id;
   bool loop;
   float pitch;
   float pan;
+  bool playing;
 };
 
 

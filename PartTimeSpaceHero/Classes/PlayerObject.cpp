@@ -43,6 +43,11 @@ bool PlayerObject::init() {
   objectSprite->setPosition(8, -1);// Aling sprite in Hitbox
   setAnimation("WalkR");
   addChild(objectSprite);
+  
+  // soundfx
+  jetpack1 = SoundFx::create();
+  jetpack1->loadEffect("jet_pack_hum.aif", 0, 1, true);
+  addChild(jetpack1);
   return true;
 }
 
@@ -119,6 +124,7 @@ bool PlayerObject::playerFlyUpdate(float delta) {
   const float uppSpeed = 0.9f;
   const float maxRiseSpeed = 80;
   float upp_threshold;
+  int throtling = 0;
   bool module_active = false;
   if (flying) {
     upp_threshold = 0.0f;
@@ -129,6 +135,7 @@ bool PlayerObject::playerFlyUpdate(float delta) {
   const float movement_status = getMovementStatus();
   if (playerInput->isRight()) {
     if (playerInput->getSwipeR() > upp_threshold) {
+      throtling++;
       module_active = true;
       if (movement_status == GO_ON_GROUND && !flying) {
         addToVelocityY(jumpStength);
@@ -141,15 +148,19 @@ bool PlayerObject::playerFlyUpdate(float delta) {
       if (getVelocityX() < maxSpeed) {
         addToVelocityX(jetPackFlySpeed);
       }
-      return true;
+      module_active = true;
     }
     else {
-      if (movement_status == GO_ON_GROUND)
+      if (movement_status == GO_ON_GROUND){
         flying = false;
+      }
+      
     }
   }
   if (playerInput->isLeft()) {
     if (playerInput->getSwipeL() > upp_threshold) {
+      throtling++;
+      
       if (movement_status == GO_ON_GROUND && !flying) {
         addToVelocityY(jumpStength);
         flying = true;
@@ -161,15 +172,22 @@ bool PlayerObject::playerFlyUpdate(float delta) {
       if (getVelocityX() > -maxSpeed) {
         addToVelocityX(-jetPackFlySpeed);
       }
-      return true;
+      module_active = true;
     }
     else {
 
     }
   }
-  if (movement_status == GO_ON_GROUND)
+  if (movement_status == GO_ON_GROUND){
     flying = false;
-  return false;
+  }
+  if(throtling){
+    jetpack1->play(0.2f);
+  }
+  else{
+    jetpack1->stop();
+  }
+  return module_active;
 }
 bool dashingRight = false;
 bool dashingLeft = false;
@@ -240,7 +258,7 @@ void PlayerObject::playerUpdate(const float delta) {
   else if (playerInput->isRight()) {
     setPrevDir(GO_RIGHT);
   }
-
+  auto pb = this->getPhysicsBody();
 }
 
 void PlayerObject::colideWith(GameObject* otherObj){

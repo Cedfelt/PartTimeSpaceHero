@@ -5,7 +5,7 @@
 
 
 USING_NS_CC;
-#define IPAD_AIR
+
 
 AppDelegate::AppDelegate() {
 
