@@ -23,24 +23,26 @@ bool PlayerObject::init() {
   // SETUP ANIMATIONS
   spriteFrameCache = spriteFrameCache->getInstance();
   animationCache = animationCache->getInstance();
-  spriteFrameCache->addSpriteFramesWithFile("PTSH_new_colors.plist");
-  addAnimation("PTSHR", "IdleR", 1, 4, 0.2f);
-  addAnimation("PTSHR", "IdleL", 1, 4, 0.2f);
-  addAnimation("PTSHR", "WalkR", 5, 8, 0.15f);
-  addAnimation("PTSHR", "WalkL", 5, 8, 0.15f);
-  addAnimation("PTSHR", "FlyR", 9, 12, 0.2f);
-  addAnimation("PTSHR", "FlyL", 9, 12, 0.2f);
-  addAnimation("PTSHR", "FallR", 13, 16, 0.2f);
-  addAnimation("PTSHR", "FallL", 13, 16, 0.2f);
-  addAnimation("PTSHR", "DashR", 17, 20, 0.15f);
-  addAnimation("PTSHR", "DashL", 17, 20, 0.15f);
-  addAnimation("PTSHR", "DieR", 21, 24, 0.15f);
-  addAnimation("PTSHR", "DieL", 21, 24, 0.15f);
+  spriteFrameCache->addSpriteFramesWithFile("ptsh.plist");
+  addAnimation("PTSH", "IdleR", 1, 4, 0.2f);
+  addAnimation("PTSH", "IdleL", 1, 4, 0.2f);
+  addAnimation("PTSH", "WalkR", 5, 8, 0.15f);
+  addAnimation("PTSH", "WalkL", 5, 8, 0.15f);
+  addAnimation("PTSH", "FlyR", 9, 12, 0.2f);
+  addAnimation("PTSH", "FlyL", 9, 12, 0.2f);
+  addAnimation("PTSH", "AscendR", 13, 13, 0.2f);
+  addAnimation("PTSH", "AscendL", 13, 13, 0.2f);
+  addAnimation("PTSH", "FallR", 14, 17, 0.2f);
+  addAnimation("PTSH", "FallL", 14, 17, 0.2f);
+  addAnimation("PTSH", "DashR", 18, 21, 0.15f);
+  addAnimation("PTSH", "DashL", 18, 21, 0.15f);
+  addAnimation("PTSH", "DieR", 22, 25, 0.15f);
+  addAnimation("PTSH", "DieL", 22, 25, 0.15f);
 
 
   objectSprite = cocos2d::Sprite::create();
   objectSprite->setAnchorPoint(Point(0.5, 0));
-  objectSprite->setPosition(8, -1);// Aling sprite in Hitbox
+  objectSprite->setPosition(8, -16);// Aling sprite in Hitbox
   setAnimation("WalkR");
   addChild(objectSprite);
   
@@ -186,6 +188,9 @@ bool PlayerObject::playerFlyUpdate(float delta) {
   }
   else{
     jetpack1->stop();
+    if(getVelocityY()>0)
+    setAnimation("AscendR");
+    
   }
   return module_active;
 }
@@ -195,16 +200,19 @@ float dashLeftCnt = 0;
 float dashRightCnt = 0;
 float dashSpeed = 300;
 const float dashTime = 2.0f;
+int dash_stage = 0;
 bool PlayerObject::playerDashUpdate(float delta) {
   if (playerInput->isDoubleRight() && !dashingRight) {
     objectSprite->setScaleX(1);
     dashRightCnt = dashTime;
     dashLeftCnt = 0;
+    jetpack1->play(0.2,1.7f);
   }
   if (playerInput->isDoubleLeft() && !dashingLeft) {
     objectSprite->setScaleX(-1);
     dashLeftCnt = dashTime;
     dashRightCnt = 0;
+    jetpack1->play(0.2,1.7f);
   }
   if (dashRightCnt > 0) {
 
@@ -214,8 +222,13 @@ bool PlayerObject::playerDashUpdate(float delta) {
       setAnimation("DashR");
     }
     else {
+      dash_stage++;
+      jetpack1->play(0.4,0.7f);
       setVelocityX(dashSpeed);
       setAnimation("DieR");
+    }
+    if(dash_stage== 1){
+      jetpack1->stop();
     }
     dashRightCnt -= delta;
     return true;
@@ -227,12 +240,21 @@ bool PlayerObject::playerDashUpdate(float delta) {
       setAnimation("DashL");
     }
     else {
+      dash_stage++;
       setVelocityX(-dashSpeed);
       setAnimation("DieL");
+      jetpack1->play(0.4,0.7f);
+    }
+    if(dash_stage== 1){
+      jetpack1->stop();
     }
     dashLeftCnt -= delta;
     return true;
   }
+  if(dash_stage > 0){
+    jetpack1->stop();
+  }
+  dash_stage = 0;
   return false;
 }
 

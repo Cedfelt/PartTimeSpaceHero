@@ -28,6 +28,15 @@ void SoundFx::play(float volume) {
   playing = true;
 }
 
+void SoundFx::play(const float volume,const float pitch) {
+  if(playing){
+    return;
+  }
+  auto audio = CocosDenshion::SimpleAudioEngine::getInstance();
+  sound_id = audio->playEffect(fileName, loop,pitch, pan, volume);
+  playing = true;
+}
+
 void SoundFx::stop(){
   if(!playing){
     return;

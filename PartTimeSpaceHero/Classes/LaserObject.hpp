@@ -6,9 +6,26 @@
 //
 //
 
-#ifndef LaserObject_hpp
-#define LaserObject_hpp
-
+#pragma once
 #include <stdio.h>
+#include "cocos2d.h"
+#include "GameObject.hpp"
 
-#endif /* LaserObject_hpp */
+
+USING_NS_CC;
+#define MAX_CAPACITY 25
+class LaserObject : public GameObject{
+public:
+  void setup(float output_time, float input_time, uint32_t direction, uint32_t range, float delay);
+  int range;
+  CREATE_FUNC(LaserObject);
+  void updateGameObject(float delta);
+  void add_updateFunction(float delta);
+  Sprite *laser_sprites[MAX_CAPACITY];
+  int current;
+  bool output;
+  float o_time;
+  float i_time;
+  float laser_delay;
+  float ot_counter;
+};

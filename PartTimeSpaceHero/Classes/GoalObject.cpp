@@ -18,11 +18,13 @@ bool GoalObject::init() {
   }
   
   this->schedule(schedule_selector(GoalObject::update));
+  setScale(1);
   //addGravityToObject(false);
-  setElastic(0.f);
+  setElastic(0);
   // SETUP ANIMATIONS
   objectSprite = cocos2d::Sprite::create("SpaceshipA.png");
   objectSprite->setPosition(32, 32);// Aling sprite in Hitbox
+  objectSprite->getTexture()->setAliasTexParameters();
   addChild(objectSprite);
   return true;
 }

@@ -11,6 +11,7 @@
 #include "Physic.hpp"
 #include "CoinObject.hpp"
 #include "GoalObject.hpp"
+#include "LaserObject.hpp"
 #include <math.h>
 #include "SimpleAudioEngine.h"
 
@@ -170,6 +171,26 @@ void WorldObject::spawnObjects(cocos2d::Vector<GameObject*>* gameObjects) {
       this->obj->getPhysicsBody()->setCollisionBitmask((int)PhysicsCategory::None);
       this->obj->getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::Player);
       addChild(this->obj);
+    }
+    
+    else if(name == "LaserObject"){
+      // LaserObject
+      uint32_t direction = vm["direction"].asInt();
+      uint32_t range = vm["range"].asInt();
+      float delay = vm["delay"].asFloat();
+      float duration = vm["duration"].asFloat();
+      float off_time = vm["off_time"].asFloat();
+      auto obj = LaserObject::create();
+      
+      //obj->setupHitbox(1, 1, 64, 64, 64, 64, false);
+      obj->setup(duration,off_time,direction, range, delay);
+      gameObjects->pushBack(this->obj);
+      obj->setObjectPositionX(x);
+      obj->setObjectPositionY(y);
+      //obj->getPhysicsBody()->setCategoryBitmask((int)PhysicsCategory::Bouncer);
+      //obj->getPhysicsBody()->setCollisionBitmask((int)PhysicsCategory::None);
+      //obj->getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::Player);
+      addChild(obj);
     }
   }
 }
