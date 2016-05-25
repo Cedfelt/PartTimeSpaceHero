@@ -50,6 +50,10 @@ bool PlayerObject::init() {
   jetpack1 = SoundFx::create();
   jetpack1->loadEffect("jet_pack_hum.aif", 0, 1, true);
   addChild(jetpack1);
+
+  fuel = 1.0f;
+  consumeRate = 0.01;
+
   return true;
 }
 
@@ -119,6 +123,9 @@ void PlayerObject::playerFallUpdate(float delta) {
   }
 }
 
+float PlayerObject::getFuel() {
+  return fuel;
+}
 
 bool PlayerObject::playerFlyUpdate(float delta) {
   const float jetPackFlySpeed = 1.5f;
@@ -130,13 +137,16 @@ bool PlayerObject::playerFlyUpdate(float delta) {
   bool module_active = false;
   if (flying) {
     upp_threshold = 0.0f;
+    consumeRate = -0.01f;
   }
   else {
     upp_threshold = 2.1f;
+    consumeRate = 0.00f;;
   }
   const float movement_status = getMovementStatus();
   if (playerInput->isRight()) {
-    if (playerInput->getSwipeR() > upp_threshold) {
+    if (playerInput->getSwipeR() > upp_threshold &&fuel>0) {
+      consumeRate = -0.01f;
       throtling++;
       module_active = true;
       if (movement_status == GO_ON_GROUND && !flying) {
@@ -155,14 +165,15 @@ bool PlayerObject::playerFlyUpdate(float delta) {
     else {
       if (movement_status == GO_ON_GROUND){
         flying = false;
+        consumeRate = 0.01;
       }
       
     }
   }
   if (playerInput->isLeft()) {
-    if (playerInput->getSwipeL() > upp_threshold) {
+    if (playerInput->getSwipeL() > upp_threshold &&fuel>0) {
       throtling++;
-      
+      consumeRate = -0.01f;
       if (movement_status == GO_ON_GROUND && !flying) {
         addToVelocityY(jumpStength);
         flying = true;
@@ -182,6 +193,7 @@ bool PlayerObject::playerFlyUpdate(float delta) {
   }
   if (movement_status == GO_ON_GROUND){
     flying = false;
+    consumeRate = 0.01;
   }
   if(throtling){
     jetpack1->play(0.2f);
@@ -191,6 +203,13 @@ bool PlayerObject::playerFlyUpdate(float delta) {
     if(getVelocityY()>0)
     setAnimation("AscendR");
     
+  }
+  fuel += consumeRate;
+  if (fuel > 1) {
+    fuel = 1;
+  }
+  if (fuel < 0) {
+    fuel = 0;
   }
   return module_active;
 }

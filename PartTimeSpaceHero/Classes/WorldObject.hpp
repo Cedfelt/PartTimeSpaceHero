@@ -23,9 +23,9 @@ public:
   cocos2d::Vector<GameObject*>* getGameObjects();
   CREATE_FUNC(WorldObject);
   // implement the "static create()" method manually
+  PlayerObject* player;
 private:
   MapObject* mapObject;
-  PlayerObject* player;
   cocos2d::Vector<GameObject*> gameObjects;
   void spawnObjects(cocos2d::Vector<GameObject*>* gameObjects);
   void setViewPointCenter(const cocos2d::Point position);

@@ -15,13 +15,7 @@
 #include <math.h>
 #include "SimpleAudioEngine.h"
 
-enum class PhysicsCategory {
-  None = 0,
-  Player = (1 << 0),    // 1
-  Bouncer = (1 << 1), // 2
-  Goal = (1 << 2),
-  All = 0xff // 3
-};
+
 
 bool WorldObject::init() {
   //////////////////////////////
@@ -53,6 +47,8 @@ bool WorldObject::init() {
   auto audio = CocosDenshion::SimpleAudioEngine::getInstance();
     audio->stopBackgroundMusic();
     audio->playBackgroundMusic(track_name.c_str(), true);
+
+   
   
   cocos2d::Director::getInstance()->getTextureCache()->removeAllTextures();
   return true;
@@ -69,6 +65,9 @@ void WorldObject::updateWorld(float delta) {
   playerPos.x = playerPos.x + offset;
   setViewPointCenter(playerPos);
   mapObject->moveBackgroundLayers();
+ 
+
+
   
   // Check Goal
   if(obj->colided){

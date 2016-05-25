@@ -18,6 +18,7 @@ public:
   void setupPlayer(const float x,const float y);
   void playerUpdate(const float delta);
   PlayerInput* playerInput;
+  float getFuel(void);
 private:
   void playerWalkUpdate(float delta);
   void playerFallUpdate(float delta);
@@ -27,5 +28,7 @@ private:
   virtual void colideWith(GameObject* oterhObj);
   const float jumpStength = 90;
   SoundFx* jetpack1;
+  float fuel;
+  float consumeRate;
   
 };

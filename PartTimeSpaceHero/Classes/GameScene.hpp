@@ -12,6 +12,9 @@
 #include "WorldObject.hpp"
 #include "WorldObject.hpp"
 #include "Physic.hpp"
+#include "GameScene.hpp"
+#include "GUI.hpp"
+
 using namespace cocos2d;
 
 
@@ -26,6 +29,7 @@ public:
   
   CREATE_FUNC(GameScene);
   void mainGameLoop(float delta);
+  GUI* gui;
 private:
   float counter;
   WorldObject* worldObject;

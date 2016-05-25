@@ -21,6 +21,7 @@ public:
   CREATE_FUNC(LaserObject);
   void updateGameObject(float delta);
   void add_updateFunction(float delta);
+  void LaserObject::colideWith(GameObject *otherGo);
   Sprite *laser_sprites[MAX_CAPACITY];
   int current;
   bool output;
@@ -28,4 +29,5 @@ public:
   float i_time;
   float laser_delay;
   float ot_counter;
+  float maxLaserRange;
 };

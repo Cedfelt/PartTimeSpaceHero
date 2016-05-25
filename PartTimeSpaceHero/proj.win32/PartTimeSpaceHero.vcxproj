@@ -153,6 +153,7 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClCompile Include="..\Classes\GlobalPList.cpp" />
     <ClCompile Include="..\Classes\GoalObject.cpp" />
     <ClCompile Include="..\Classes\GuardObject.cpp" />
+    <ClCompile Include="..\Classes\GUI.cpp" />
     <ClCompile Include="..\Classes\HelloWorldScene.cpp" />
     <ClCompile Include="..\Classes\LaserObject.cpp" />
     <ClCompile Include="..\Classes\MainMenu.cpp" />
@@ -173,6 +174,7 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClInclude Include="..\Classes\GlobalPList.hpp" />
     <ClInclude Include="..\Classes\GoalObject.hpp" />
     <ClInclude Include="..\Classes\GuardObject.hpp" />
+    <ClInclude Include="..\Classes\GUI.hpp" />
     <ClInclude Include="..\Classes\HelloWorldScene.h" />
     <ClInclude Include="..\Classes\LaserObject.hpp" />
     <ClInclude Include="..\Classes\MainMenu.hpp" />

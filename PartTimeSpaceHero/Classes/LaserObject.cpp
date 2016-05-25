@@ -17,19 +17,13 @@ enum LASER_DIR {
 };
 
 void LaserObject::setup(float output_time, float input_time, uint32_t direction, uint32_t range, float delay) {
-  
   CCASSERT(range < MAX_CAPACITY, "LASER BUGG TO SMALL");
   objectSprite = cocos2d::Sprite::create();
   setAnchorPoint(Point(0.5, 0));
   this->addChild(objectSprite);
   objectSprite->setAnchorPoint(Point(0.5, 0));
-  
-  auto physicsBody = PhysicsBody::createBox(Size(8, 8* range), PhysicsMaterial(0.1, 1, 0.0f));
-  physicsBody->setPositionOffset(Vec2(0,8*2*range + 8 * 4));
-  physicsBody->setDynamic(true);
-  setPhysicsBody(physicsBody);
   //hitBoxWidth =  ;
-  
+  maxLaserRange = 8 * 2 * range + 8 * 4;
   this->setScale(2);
   addGravityToObject(false);
   spriteFrameCache = spriteFrameCache->getInstance();
@@ -47,6 +41,7 @@ void LaserObject::setup(float output_time, float input_time, uint32_t direction,
   laser_delay = delay;
   bool b = true;
   this->range = range;
+  //updateHitBox(1);
   for (int i = 1;i <= range;i++) {
     laser_sprites[i - 1] = Sprite::create("laser_trap.png");
     laser_sprites[i - 1]->setAnchorPoint(Point(0.5, 0));
@@ -64,8 +59,27 @@ void LaserObject::setup(float output_time, float input_time, uint32_t direction,
   output = true;
   ot_counter = o_time;
   ot_counter = 0;
+
+  auto physicsBody = PhysicsBody::createBox(Size(8, 8*range), PhysicsMaterial(0.1, 1, 0.0f));
+  physicsBody->setPositionOffset(Vec2(0, 8 * 2 * range + 8 * 4));
+  physicsBody->setDynamic(true);
+  physicsBody->setCategoryBitmask((int)PhysicsCategory::Bouncer);
+  physicsBody->setCollisionBitmask((int)PhysicsCategory::None);
+  physicsBody->setContactTestBitmask((int)PhysicsCategory::Player | (int)PhysicsCategory::Bouncer);
+  setPhysicsBody(physicsBody);
+
   add_updateFunction(delay);
   
+}
+
+void LaserObject::colideWith(GameObject *otherGo) {
+  const float currentRange = (float)(current) / (float)(range);
+  const float ra = (abs(getPositionY() - otherGo->getPositionY()));
+  bool inRange = (maxLaserRange > ra);
+  
+  if (!output && inRange) {
+    otherGo->interActWithPlayer(this);
+  }
 }
 
 void LaserObject::add_updateFunction(float delta) {
@@ -77,7 +91,6 @@ void LaserObject::updateGameObject(float delta) {
     ot_counter -= delta;
     return;
   }
-  
   if (output) {
     laser_sprites[current]->setOpacity(0xFF);
     current++;

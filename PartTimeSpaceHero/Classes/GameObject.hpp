@@ -79,4 +79,12 @@ private:
   float elastic;
 };
 
+enum class PhysicsCategory {
+  None = 0,
+  Player = (1 << 0),    // 1
+  Bouncer = (1 << 1), // 2
+  Goal = (1 << 2),
+  All = 0xff // 3
+};
+
 
