@@ -21,6 +21,7 @@ public:
   float getFuel(void);
 private:
   void playerWalkUpdate(float delta);
+  void walkAtDir(MovementDirection dir, std::string animName);
   void playerFallUpdate(float delta);
   bool playerFlyUpdate(float delta);
   bool playerDashUpdate(float delta);

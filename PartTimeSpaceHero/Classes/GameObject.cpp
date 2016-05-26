@@ -20,6 +20,7 @@ bool GameObject::init() {
   colided = false;
   remove_object = false;
   resolution_scale = getScaleFactor();
+  HP = 1;
   return true;
 }
 

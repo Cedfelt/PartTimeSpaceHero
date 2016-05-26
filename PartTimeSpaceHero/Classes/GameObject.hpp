@@ -41,6 +41,7 @@ public:
   virtual void interActWithPlayer(GameObject* player);
   bool colided;
   bool remove_object;
+  uint32_t HP;
   
   
   Rect* getHitbox();
@@ -87,4 +88,9 @@ enum class PhysicsCategory {
   All = 0xff // 3
 };
 
-
+enum MovementDirection {
+  LEFT =-1,
+  RIGHT = 1,
+  UP,
+  DOWN
+};

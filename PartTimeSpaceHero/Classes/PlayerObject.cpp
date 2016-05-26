@@ -20,6 +20,8 @@ bool PlayerObject::init() {
   addChild(playerInput);
   this->schedule(schedule_selector(PlayerObject::playerUpdate));
 
+  HP = 3;
+
   // SETUP ANIMATIONS
   spriteFrameCache = spriteFrameCache->getInstance();
   animationCache = animationCache->getInstance();
@@ -57,39 +59,35 @@ bool PlayerObject::init() {
   return true;
 }
 
-
 const float ground_deacceleration = 0.85;
 const float ground_acceleration = 5;
+
+void PlayerObject::walkAtDir(MovementDirection dir,std::string animName) {
+  setAnimation(animName);
+  addToVelocityX(dir*ground_acceleration);
+  if (std::abs(getVelocityX()) > dir*getSpeed()) {
+    setVelocityX(dir*getSpeed());
+  }
+}
+
 void PlayerObject::playerWalkUpdate(float delta) {
   if (getMovementStatus() != GO_ON_GROUND) {
     return;
   }
   if (playerInput->isLeft()) {
-    objectSprite->setScaleX(-1);
-    setAnimation("WalkL");
-    addToVelocityX(-ground_acceleration);
-    if (getVelocityX() < -getSpeed()) {
-      setVelocityX(-getSpeed());
-    }
+    walkAtDir(LEFT,"WalkL");
 
   }
   else if (playerInput->isRight()) {
-    objectSprite->setScaleX(1);
-    setAnimation("WalkR");
-    addToVelocityX(ground_acceleration);
-    if (getVelocityX() > getSpeed()) {
-      setVelocityX(getSpeed());
-    }
+    walkAtDir(RIGHT, "WalkR");
   }
   else {
     setVelocityX(getVelocityX()*ground_deacceleration);
 
     if (getPrevDir() == GO_RIGHT) {
-      objectSprite->setScaleX(1);
       setAnimation("IdleR");
     }
     else {
-      objectSprite->setScaleX(-1);
       setAnimation("IdleL");
     }
 
@@ -100,23 +98,19 @@ void PlayerObject::playerFallUpdate(float delta) {
   if (getMovementStatus() == GO_IN_AIR_DOWN) {
     const float playerFallSpeed = 0.1f;
     if (playerInput->isLeft()) {
-      objectSprite->setScaleX(-1);
       setAnimation("FallL");
       addToVelocityX(-playerFallSpeed);
 
     }
     else if (playerInput->isRight()) {
-      objectSprite->setScaleX(1);
       setAnimation("FallR");
       addToVelocityX(playerFallSpeed);
     }
     else {
       if (getPrevDir() == GO_RIGHT) {
-        objectSprite->setScaleX(1);
         setAnimation("FallR");
       }
       else {
-        objectSprite->setScaleX(-1);
         setAnimation("FallL");
       }
     }
@@ -156,7 +150,6 @@ bool PlayerObject::playerFlyUpdate(float delta) {
       }
       if (getVelocityY() < maxRiseSpeed)
         addToVelocityY(playerInput->getSwipeR()*uppSpeed);
-      objectSprite->setScaleX(1);
       setAnimation("FlyR");
       if (getVelocityX() < maxSpeed) {
         addToVelocityX(jetPackFlySpeed);
@@ -182,7 +175,6 @@ bool PlayerObject::playerFlyUpdate(float delta) {
       }
       if (getVelocityY() < maxRiseSpeed)
         addToVelocityY(playerInput->getSwipeL()*uppSpeed);
-      objectSprite->setScaleX(-1);
       setAnimation("FlyL");
       if (getVelocityX() > -maxSpeed) {
         addToVelocityX(-jetPackFlySpeed);
@@ -232,13 +224,11 @@ bool PlayerObject::playerDashUpdate(float delta) {
     return false;
   }
   if (playerInput->isDoubleRight() && !dashingRight) {
-    objectSprite->setScaleX(1);
     dashRightCnt = dashTime;
     dashLeftCnt = 0;
     jetpack1->play(0.2,1.7f);
   }
   if (playerInput->isDoubleLeft() && !dashingLeft) {
-    objectSprite->setScaleX(-1);
     dashLeftCnt = dashTime;
     dashRightCnt = 0;
     jetpack1->play(0.2,1.7f);
@@ -297,6 +287,12 @@ bool PlayerObject::playerDashUpdate(float delta) {
 
 void PlayerObject::playerUpdate(const float delta) {
 
+  if (playerInput->isLeft()) {
+    objectSprite->setScaleX(-1);
+  }
+  if (playerInput->isRight()) {
+    objectSprite->setScaleX(1);
+  }
 
   // Update priority
   if (playerDashUpdate(delta)) {
