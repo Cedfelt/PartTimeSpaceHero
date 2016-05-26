@@ -24,8 +24,8 @@ bool GUI::init() {
   setElastic(0);
   // SETUP ANIMATIONS
   auto director = Director::getInstance();
-  const float xPos = director->getWinSize().width / 9;
-  const float yPos = director->getWinSize().height*0.9f;
+  const float xPos = director->getWinSize().width / 10;
+  const float yPos = director->getWinSize().height*0.95f;
   setObjectPositionX(xPos);
   setObjectPositionY(yPos);
   setPosition(getPositionX() - 32 * bar_length / 2, getPositionY());

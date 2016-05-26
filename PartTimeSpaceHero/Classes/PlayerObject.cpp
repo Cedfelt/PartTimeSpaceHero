@@ -221,14 +221,21 @@ bool PlayerObject::playerDashUpdate(float delta) {
     jetpack1->stop();
     dashRightCnt = 0;
     dashLeftCnt = 0;
+    dashingLeft = false;
+    dashingRight = false;
+    addGravityToObject(true);
     return false;
   }
   if (playerInput->isDoubleRight() && !dashingRight) {
+    addGravityToObject(false);
+    objectSprite->setScaleX(1);
     dashRightCnt = dashTime;
     dashLeftCnt = 0;
     jetpack1->play(0.2,1.7f);
   }
   if (playerInput->isDoubleLeft() && !dashingLeft) {
+    objectSprite->setScaleX(-1);
+    addGravityToObject(false);
     dashLeftCnt = dashTime;
     dashRightCnt = 0;
     jetpack1->play(0.2,1.7f);
@@ -282,22 +289,24 @@ bool PlayerObject::playerDashUpdate(float delta) {
     jetpack1->stop();
   }
   dash_stage = 0;
+  addGravityToObject(true);
   return false;
 }
 
 void PlayerObject::playerUpdate(const float delta) {
 
+  // Update priority
+  if (playerDashUpdate(delta)) {
+    return;
+  }
+  
   if (playerInput->isLeft()) {
     objectSprite->setScaleX(-1);
   }
   if (playerInput->isRight()) {
     objectSprite->setScaleX(1);
   }
-
-  // Update priority
-  if (playerDashUpdate(delta)) {
-    return;
-  }
+  
   if(!playerFlyUpdate(delta)){
     playerFallUpdate(delta);
     playerWalkUpdate(delta);
