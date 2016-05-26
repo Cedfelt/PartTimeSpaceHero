@@ -19,5 +19,6 @@ public:
   CREATE_FUNC(GUI);
   PlayerObject* player;
   void update(const float delta);
+  Sprite* heartSprite[3];
 private:
 };
