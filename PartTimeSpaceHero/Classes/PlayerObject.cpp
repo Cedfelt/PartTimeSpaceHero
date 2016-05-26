@@ -65,7 +65,7 @@ const float ground_acceleration = 5;
 void PlayerObject::walkAtDir(MovementDirection dir,std::string animName) {
   setAnimation(animName);
   addToVelocityX(dir*ground_acceleration);
-  if (std::abs(getVelocityX()) > dir*getSpeed()) {
+  if (std::abs(getVelocityX()) > std::abs(dir*getSpeed())) {
     setVelocityX(dir*getSpeed());
   }
 }
