@@ -20,7 +20,7 @@ Scene* GameScene::createScene()
   // 'scene' is an autorelease object
   auto scene = Scene::createWithPhysics();
   scene->getPhysicsWorld()->setGravity(Vec2(0, 0));
-  scene->getPhysicsWorld()->setDebugDrawMask(PhysicsWorld::DEBUGDRAW_ALL);
+  //scene->getPhysicsWorld()->setDebugDrawMask(PhysicsWorld::DEBUGDRAW_ALL);
   scene->setAnchorPoint(Point(0, 0));
   // 'layer' is an autorelease object
   auto layer = GameScene::create();
@@ -86,9 +86,6 @@ void GameScene::mainGameLoop(float delta) {
   if (counter > 25) {
     Director::getInstance()->popScene();
   }
-  /*Vec2 guiPos = convertToNodeSpace(Point(gui->getPositionX(), gui->getPositionY()));
-  gui->setObjectPositionX(guiPos.x);
-  gui->setObjectPositionY(guiPos.y);*/
 }
 
 

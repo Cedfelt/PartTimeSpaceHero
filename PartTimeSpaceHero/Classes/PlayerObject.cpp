@@ -52,8 +52,8 @@ bool PlayerObject::init() {
   addChild(jetpack1);
 
   fuel = 1.0f;
-  consumeRate = 0.01;
-
+  consumeRate = currentConsumeRate;
+  currentConsumeRate = 0.0015f;
   return true;
 }
 
@@ -131,13 +131,13 @@ bool PlayerObject::playerFlyUpdate(float delta) {
   const float jetPackFlySpeed = 1.5f;
   const float maxSpeed = getSpeed();
   const float uppSpeed = 0.9f;
-  const float maxRiseSpeed = 80;
+  const float maxRiseSpeed = 100;
   float upp_threshold;
   int throtling = 0;
   bool module_active = false;
   if (flying) {
     upp_threshold = 0.0f;
-    consumeRate = -0.01f;
+    consumeRate = 0.0f;
   }
   else {
     upp_threshold = 2.1f;
@@ -146,12 +146,13 @@ bool PlayerObject::playerFlyUpdate(float delta) {
   const float movement_status = getMovementStatus();
   if (playerInput->isRight()) {
     if (playerInput->getSwipeR() > upp_threshold &&fuel>0) {
-      consumeRate = -0.01f;
+      consumeRate = -currentConsumeRate;
       throtling++;
       module_active = true;
       if (movement_status == GO_ON_GROUND && !flying) {
         addToVelocityY(jumpStength);
         flying = true;
+        return true;
       }
       if (getVelocityY() < maxRiseSpeed)
         addToVelocityY(playerInput->getSwipeR()*uppSpeed);
@@ -165,7 +166,7 @@ bool PlayerObject::playerFlyUpdate(float delta) {
     else {
       if (movement_status == GO_ON_GROUND){
         flying = false;
-        consumeRate = 0.01;
+        consumeRate = currentConsumeRate;
       }
       
     }
@@ -173,10 +174,11 @@ bool PlayerObject::playerFlyUpdate(float delta) {
   if (playerInput->isLeft()) {
     if (playerInput->getSwipeL() > upp_threshold &&fuel>0) {
       throtling++;
-      consumeRate = -0.01f;
+      consumeRate = -currentConsumeRate;
       if (movement_status == GO_ON_GROUND && !flying) {
         addToVelocityY(jumpStength);
         flying = true;
+        return true;
       }
       if (getVelocityY() < maxRiseSpeed)
         addToVelocityY(playerInput->getSwipeL()*uppSpeed);
@@ -193,7 +195,7 @@ bool PlayerObject::playerFlyUpdate(float delta) {
   }
   if (movement_status == GO_ON_GROUND){
     flying = false;
-    consumeRate = 0.01;
+    consumeRate = currentConsumeRate;
   }
   if(throtling){
     jetpack1->play(0.2f);
@@ -220,7 +222,15 @@ float dashRightCnt = 0;
 float dashSpeed = 300;
 const float dashTime = 2.0f;
 int dash_stage = 0;
+
 bool PlayerObject::playerDashUpdate(float delta) {
+  consumeRate = -currentConsumeRate*3;
+  if(fuel<=0){
+    jetpack1->stop();
+    dashRightCnt = 0;
+    dashLeftCnt = 0;
+    return false;
+  }
   if (playerInput->isDoubleRight() && !dashingRight) {
     objectSprite->setScaleX(1);
     dashRightCnt = dashTime;
@@ -244,6 +254,10 @@ bool PlayerObject::playerDashUpdate(float delta) {
       dash_stage++;
       jetpack1->play(0.4,0.7f);
       setVelocityX(dashSpeed);
+      fuel += consumeRate;
+      if(fuel<0){
+        fuel = 0;
+      }
       setAnimation("DieR");
     }
     if(dash_stage== 1){
@@ -261,6 +275,10 @@ bool PlayerObject::playerDashUpdate(float delta) {
     else {
       dash_stage++;
       setVelocityX(-dashSpeed);
+      fuel += consumeRate;
+      if(fuel<0){
+        fuel = 0;
+      }
       setAnimation("DieL");
       jetpack1->play(0.4,0.7f);
     }

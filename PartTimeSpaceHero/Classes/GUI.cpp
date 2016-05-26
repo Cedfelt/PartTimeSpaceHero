@@ -8,7 +8,7 @@
 
 #include "GUI.hpp"
 
-float bar_length = 10;
+float bar_length = 4;
 bool GUI::init() {
   //////////////////////////////
   // 1. super init first
@@ -23,19 +23,33 @@ bool GUI::init() {
   //addGravityToObject(false);
   setElastic(0);
   // SETUP ANIMATIONS
-  objectSprite = cocos2d::Sprite::create("fule_bar.png");
-  objectSprite->setScaleX(bar_length);
   auto director = Director::getInstance();
-  const float xPos = director->getWinSize().width/2;
-  const float yPos = director->getWinSize().height;
+  const float xPos = director->getWinSize().width/9;
+  const float yPos = director->getWinSize().height*0.9f;
   setObjectPositionX(xPos);
   setObjectPositionY(yPos);
-  objectSprite->setAnchorPoint(Point(0.0f, 1.f));
-  setPosition(getPositionX()-32*bar_length /2, getPositionY());// Aling sprite in GUI
-  objectSprite->getTexture()->setAliasTexParameters();
-  
-  addChild(objectSprite);
+  setPosition(getPositionX()-32*bar_length /2, getPositionY());
   addGravityToObject(false);
+  
+  Sprite* barBack = Sprite::create("fule_bar.png");
+  barBack->setScaleX(bar_length);
+  barBack->setAnchorPoint(Point(0.0f, 1.f));
+  barBack->getTexture()->setAliasTexParameters();
+  barBack->setColor(Color3B(0,0,0));
+  addChild(barBack,1);
+  
+  objectSprite = cocos2d::Sprite::create("fule_bar.png");
+  objectSprite->setScaleX(bar_length);
+  objectSprite->setAnchorPoint(Point(0.0f, 1.f));
+  objectSprite->getTexture()->setAliasTexParameters();
+  addChild(objectSprite,2);
+  
+  Label* fuelLabel = Label::createWithTTF("FUEL", "fonts/Marker Felt.ttf", 25);
+  fuelLabel->setAnchorPoint(Point(0.0f, 1.f));
+  fuelLabel->setPositionX(22*bar_length/2.0f);
+  fuelLabel->setPositionY(-5);
+  addChild(fuelLabel,3);
+  
   return true;
 }
 

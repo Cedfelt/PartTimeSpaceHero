@@ -30,5 +30,6 @@ private:
   SoundFx* jetpack1;
   float fuel;
   float consumeRate;
+  float currentConsumeRate;
   
 };
