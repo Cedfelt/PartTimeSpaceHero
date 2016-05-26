@@ -72,7 +72,7 @@ void PlayerObject::walkAtDir(MovementDirection dir,std::string animName) {
 
 void PlayerObject::playerWalkUpdate(float delta) {
   if (getMovementStatus() != GO_ON_GROUND) {
-    return;
+    return; // Flying
   }
   if (playerInput->isLeft()) {
     walkAtDir(LEFT,"WalkL");
