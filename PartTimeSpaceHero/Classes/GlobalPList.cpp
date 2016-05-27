@@ -34,3 +34,10 @@ std::string getMapUrl() {
   return mapUrl;
 }
 
+void setDebuggDraw(const bool debugDraw){
+  cocos2d::UserDefault::getInstance()->setBoolForKey("debugDraw", debugDraw);
+}
+
+bool getDebuggDraw(){
+  return cocos2d::UserDefault::getInstance()->getBoolForKey("debugDraw");
+}

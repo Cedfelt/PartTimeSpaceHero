@@ -20,7 +20,9 @@ Scene* GameScene::createScene()
   // 'scene' is an autorelease object
   auto scene = Scene::createWithPhysics();
   scene->getPhysicsWorld()->setGravity(Vec2(0, 0));
-  //scene->getPhysicsWorld()->setDebugDrawMask(PhysicsWorld::DEBUGDRAW_ALL);
+  if(getDebuggDraw()){
+    scene->getPhysicsWorld()->setDebugDrawMask(PhysicsWorld::DEBUGDRAW_ALL);
+  }
   scene->setAnchorPoint(Point(0, 0));
   // 'layer' is an autorelease object
   auto layer = GameScene::create();
@@ -76,6 +78,7 @@ bool GameScene::init()
 
   return true;
 }
+
 
 
 void GameScene::mainGameLoop(float delta) {

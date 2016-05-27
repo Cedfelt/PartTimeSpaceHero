@@ -10,6 +10,7 @@
 #include "GlobalPList.hpp"
 #include "Physic.hpp"
 #include "CoinObject.hpp"
+#include "TurfelObject.hpp"
 #include "GoalObject.hpp"
 #include "LaserObject.hpp"
 #include <math.h>
@@ -190,6 +191,20 @@ void WorldObject::spawnObjects(cocos2d::Vector<GameObject*>* gameObjects) {
       //obj->getPhysicsBody()->setCollisionBitmask((int)PhysicsCategory::None);
       //obj->getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::Player);
       addChild(obj);
+    }
+    
+    else if(name == "TurfelObject"){
+      // COIN
+      auto turfel = TurfelObject::create();
+      const float turfelScale = 2;
+      turfel->setupHitbox(0.1f, 1.0f, 32, 32, 32, 32, false);
+      gameObjects->pushBack(turfel);
+      turfel->setObjectPositionX(x);
+      turfel->setObjectPositionY(y);
+      turfel->getPhysicsBody()->setCategoryBitmask((int)PhysicsCategory::Bouncer);
+      turfel->getPhysicsBody()->setCollisionBitmask((int)PhysicsCategory::None);
+      turfel->getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::Player|(int)PhysicsCategory::Bouncer);
+      addChild(turfel);
     }
   }
 }

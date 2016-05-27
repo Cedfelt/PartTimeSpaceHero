@@ -26,6 +26,8 @@ void AppDelegate::initGLContextAttrs()
     GLView::setGLContextAttrs(glContextAttrs);
 }
 
+
+
 bool AppDelegate::applicationDidFinishLaunching() {
     // initialize director
   

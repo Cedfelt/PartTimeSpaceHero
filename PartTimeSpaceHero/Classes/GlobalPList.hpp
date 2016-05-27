@@ -19,4 +19,7 @@ size_t getScaleFactor();
 bool setMapUrl(const std::string level);
 std::string getMapUrl();
 
+void setDebuggDraw(bool debugDraw);
+bool getDebuggDraw();
+
 #endif /* GlobalPList_hpp */

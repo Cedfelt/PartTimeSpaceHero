@@ -66,8 +66,18 @@ bool GUI::init() {
   return true;
 }
 
+// Updating Player GUI
 void GUI::update(const float delta) {
   objectSprite->setScaleX(bar_length*player->getFuel());
+  
+  for (int i = 0;i < 3;i++) {
+    if(i+1<=player->HP){
+      heartSprite[i]->setVisible(true);
+    }
+    else{
+      heartSprite[i]->setVisible(false);
+    }
+  }
 }
 
 void GUI::colideWith(GameObject* oterhObj) {

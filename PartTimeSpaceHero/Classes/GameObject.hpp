@@ -33,15 +33,22 @@ public:
   void setObjectPositionY(const float y);
   bool isAffectedByGravity(void);
   void addGravityToObject(const bool bGrav);
+  virtual void imuneUpdate(const float delta);
+  virtual void setImune();
+  virtual bool isImune();
   float getElastic(void);
   void setElastic(const float bGrav);
   float getObjectPositionX();
   float getObjectPositionY();
   virtual void colideWith(GameObject* otherGo);
   virtual void interActWithPlayer(GameObject* player);
+  virtual bool hurt(const int dmg, const Vec2 force);
   bool colided;
   bool remove_object;
-  uint32_t HP;
+  float imuneTime;
+  float imuneCnt;
+  
+  int32_t HP;
   
   
   Rect* getHitbox();
