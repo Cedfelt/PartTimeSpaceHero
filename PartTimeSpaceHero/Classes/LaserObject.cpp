@@ -78,7 +78,7 @@ void LaserObject::colideWith(GameObject *otherGo) {
   bool inRange = (maxLaserRange > ra);
   
   if (!output && inRange) {
-    otherGo->interActWithPlayer(this);
+    otherGo->hurt(1, Vec2(0,0));
   }
 }
 
@@ -96,6 +96,7 @@ void LaserObject::updateGameObject(float delta) {
     current++;
     if (current == range) {
       output = false;
+      solid = true;
       current = range - 1;
       ot_counter = o_time;
     }
@@ -107,9 +108,13 @@ void LaserObject::updateGameObject(float delta) {
       output = true;
       current = 0;
       ot_counter = i_time;
+      solid = false;
     }
   }
 }
+
+
+
 
 //void Laser_Trap::updateAI(float delta) {}
 

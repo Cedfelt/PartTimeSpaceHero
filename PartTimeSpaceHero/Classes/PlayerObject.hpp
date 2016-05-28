@@ -22,6 +22,7 @@ public:
 private:
   void playerWalkUpdate(float delta);
   void walkAtDir(MovementDirection dir, std::string animName);
+  void fallAtDir(MovementDirection dir, std::string animName);
   void playerFallUpdate(float delta);
   bool playerFlyUpdate(float delta);
   bool playerDashUpdate(float delta);

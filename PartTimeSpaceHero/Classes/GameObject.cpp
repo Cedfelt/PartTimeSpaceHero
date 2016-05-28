@@ -22,6 +22,7 @@ bool GameObject::init() {
   resolution_scale = getScaleFactor();
   HP = 1;
   imuneTime = 1;
+  solid  = 1;
   return true;
 }
 

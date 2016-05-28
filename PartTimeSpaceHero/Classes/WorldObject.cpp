@@ -78,6 +78,14 @@ void WorldObject::updateWorld(float delta) {
     cocos2d::Director::getInstance()->popScene();
   }
   
+  // Check if player dead
+  if(player->HP==0){
+    auto audio = CocosDenshion::SimpleAudioEngine::getInstance();
+    audio->stopBackgroundMusic();
+    stopAllActions();
+    cocos2d::Director::getInstance()->popScene();
+  }
+  
   // Iterate objects
   for (int i = 0; i < gameObjects.size();i++) {
     // Remove Objects

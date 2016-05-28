@@ -47,6 +47,7 @@ public:
   bool remove_object;
   float imuneTime;
   float imuneCnt;
+  float solid;
   
   int32_t HP;
   

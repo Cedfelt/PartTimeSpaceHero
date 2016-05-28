@@ -94,25 +94,25 @@ void PlayerObject::playerWalkUpdate(float delta) {
   }
 }
 
+void PlayerObject::fallAtDir(MovementDirection dir,std::string animName) {
+  setAnimation(animName);
+  addToVelocityX(dir*ground_acceleration);
+  if (std::abs(getVelocityX()) > std::abs(dir*getSpeed())) {
+    setVelocityX(dir*getSpeed());
+  }
+}
+
 void PlayerObject::playerFallUpdate(float delta) {
   if (getMovementStatus() == GO_IN_AIR_DOWN) {
     const float playerFallSpeed = 0.1f;
-    if (playerInput->isLeft()) {
+    if (getPrevDir() == GO_LEFT) {
       setAnimation("FallL");
       addToVelocityX(-playerFallSpeed);
 
     }
-    else if (playerInput->isRight()) {
+    else if (getPrevDir() == GO_RIGHT) {
       setAnimation("FallR");
       addToVelocityX(playerFallSpeed);
-    }
-    else {
-      if (getPrevDir() == GO_RIGHT) {
-        setAnimation("FallR");
-      }
-      else {
-        setAnimation("FallL");
-      }
     }
   }
 }

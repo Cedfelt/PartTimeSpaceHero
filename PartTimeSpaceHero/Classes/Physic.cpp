@@ -125,18 +125,18 @@ void Physic::gameObjectCollision(GameObject*  goA,GameObject* goB) {
   nodeA->addToVelocityY(nodeB->getVelocityY());
   nodeB->addToVelocityX(nodeA->getVelocityX());
   nodeB->addToVelocityY(nodeA->getVelocityY());*/
-  const float aMass = goA->getPhysicsBody()->getMass() *0.01 ;
-  const float bMass = goB->getPhysicsBody()->getMass() *0.01 * (!goB->remove_object);
+  const float aMass = goA->getPhysicsBody()->getMass() *0.01 * (!goA->remove_object) *goA->solid;
+  const float bMass = goB->getPhysicsBody()->getMass() *0.01 * (!goB->remove_object) *goA->solid;
   const Vec2 repA = Vec2(goB->getVelocityX(), goB->getVelocityY());
   const Vec2 repB = Vec2(goA->getVelocityX(), goA->getVelocityY());
   
   //WE DONT WANT COLLISION WITH REMOVED OBJECTS, EG COINS
-  if((!goB->remove_object)){
+  if((aMass!=0.0f)){
     goA->setVelocityX(repA.x * bMass / aMass);
     goA->setVelocityY(repA.y * bMass / aMass);
   }
   
-  if((!goA->remove_object)){
+  if((bMass!=0.0f)){
     goB->setVelocityX(repB.x  * aMass / bMass);
     goB->setVelocityY(repB.y * aMass / bMass);
   }

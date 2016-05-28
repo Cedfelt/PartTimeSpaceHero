@@ -56,9 +56,21 @@ bool MainMenu::init()
     _eventDispatcher->addEventListenerWithSceneGraphPriority(touchListener, this);
     
     // Debug Label -
-    auto label = Label::createWithTTF("MainMenu", "fonts/Marker Felt.ttf", 25*scale);
+    auto label = Label::createWithTTF("PartTime Space Hero", "fonts/Marker Felt.ttf", 25*scale);
     label->setPosition(Vec2(origin.x + visibleSize.width/2,origin.y + visibleSize.height - label->getContentSize().height));
     addChild(label);
+  
+  // Sprite
+  auto director = Director::getInstance();
+  const float xPos = director->getWinSize().width / 2;
+  const float yPos = director->getWinSize().height / 2;
+  Sprite* spaceShipSprite = Sprite::create("SpaceshipA.png");
+  spaceShipSprite->getTexture()->setAliasTexParameters();
+  spaceShipSprite->setScale(4);
+  spaceShipSprite->setPositionX(xPos);
+  spaceShipSprite->setPositionY(yPos);
+  addChild(spaceShipSprite);
+  
     return true;
 }
 bool newGame;
