@@ -19,6 +19,7 @@ bool CoinObject::init() {
   this->schedule(schedule_selector(CoinObject::update));
   //addGravityToObject(false);
   setElastic(1.f);
+  addGravityToObject(false);
   // SETUP ANIMATIONS
   pling = SoundFx::create();
   pling->loadEffect("jet_pack_hum.aif", 0, 1, false);
@@ -32,7 +33,7 @@ bool CoinObject::init() {
   objectSprite->setPosition(19/2, 17/2);// Aling sprite in Hitbox
   addChild(objectSprite);
   const float xVel = cocos2d::random(-50, 50);
-  setVelocityX(xVel);
+  setVelocityX(0);
   return true;
 }
 

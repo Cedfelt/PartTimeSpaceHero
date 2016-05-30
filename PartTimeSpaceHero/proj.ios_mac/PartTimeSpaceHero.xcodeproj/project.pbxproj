@@ -81,6 +81,10 @@
 		A82561061CFB167400FC1DD3 /* BabyTurfelObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A82561031CFB167400FC1DD3 /* BabyTurfelObject.cpp */; };
 		A82561091CFB635F00FC1DD3 /* UfoObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A82561071CFB635F00FC1DD3 /* UfoObject.cpp */; };
 		A825610A1CFB635F00FC1DD3 /* UfoObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A82561071CFB635F00FC1DD3 /* UfoObject.cpp */; };
+		A825610D1CFCD64100FC1DD3 /* WorldData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A825610B1CFCD64100FC1DD3 /* WorldData.cpp */; };
+		A825610E1CFCD64100FC1DD3 /* WorldData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A825610B1CFCD64100FC1DD3 /* WorldData.cpp */; };
+		A82561111CFCD65200FC1DD3 /* LevelData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A825610F1CFCD65200FC1DD3 /* LevelData.cpp */; };
+		A82561121CFCD65200FC1DD3 /* LevelData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A825610F1CFCD65200FC1DD3 /* LevelData.cpp */; };
 		A87C27C71CC19F10004520EF /* Physic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A87C27C51CC19F10004520EF /* Physic.cpp */; };
 		A8805F2D1CEFB37400B2AE7A /* CoinObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8805F2B1CEFB37400B2AE7A /* CoinObject.cpp */; };
 		A8805F301CF04C6D00B2AE7A /* SoundFx.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8805F2E1CF04C6D00B2AE7A /* SoundFx.cpp */; };
@@ -177,6 +181,10 @@
 		A82561041CFB167400FC1DD3 /* BabyTurfelObject.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BabyTurfelObject.hpp; sourceTree = "<group>"; };
 		A82561071CFB635F00FC1DD3 /* UfoObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UfoObject.cpp; sourceTree = "<group>"; };
 		A82561081CFB635F00FC1DD3 /* UfoObject.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = UfoObject.hpp; sourceTree = "<group>"; };
+		A825610B1CFCD64100FC1DD3 /* WorldData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WorldData.cpp; sourceTree = "<group>"; };
+		A825610C1CFCD64100FC1DD3 /* WorldData.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = WorldData.hpp; sourceTree = "<group>"; };
+		A825610F1CFCD65200FC1DD3 /* LevelData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LevelData.cpp; sourceTree = "<group>"; };
+		A82561101CFCD65200FC1DD3 /* LevelData.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = LevelData.hpp; sourceTree = "<group>"; };
 		A87C27C51CC19F10004520EF /* Physic.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Physic.cpp; sourceTree = "<group>"; };
 		A87C27C61CC19F10004520EF /* Physic.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Physic.hpp; sourceTree = "<group>"; };
 		A8805F2B1CEFB37400B2AE7A /* CoinObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CoinObject.cpp; sourceTree = "<group>"; };
@@ -358,6 +366,10 @@
 				A81BE1461CBA40CB00C09359 /* WorldObject.hpp */,
 				A82561071CFB635F00FC1DD3 /* UfoObject.cpp */,
 				A82561081CFB635F00FC1DD3 /* UfoObject.hpp */,
+				A825610B1CFCD64100FC1DD3 /* WorldData.cpp */,
+				A825610C1CFCD64100FC1DD3 /* WorldData.hpp */,
+				A825610F1CFCD65200FC1DD3 /* LevelData.cpp */,
+				A82561101CFCD65200FC1DD3 /* LevelData.hpp */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -559,7 +571,9 @@
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 				A81BE1671CBA499F00C09359 /* GlobalPList.cpp in Sources */,
+				A82561111CFCD65200FC1DD3 /* LevelData.cpp in Sources */,
 				A87C27C71CC19F10004520EF /* Physic.cpp in Sources */,
+				A825610D1CFCD64100FC1DD3 /* WorldData.cpp in Sources */,
 				A8805F341CF0F5B100B2AE7A /* GoalObject.cpp in Sources */,
 				A81BE1471CBA40CB00C09359 /* WorldObject.cpp in Sources */,
 				A81BE14B1CBA415400C09359 /* GameObject.cpp in Sources */,
@@ -586,6 +600,8 @@
 				A81BE1581CBA422200C09359 /* GuardObject.cpp in Sources */,
 				A81BE1601CBA465A00C09359 /* PlayerInput.cpp in Sources */,
 				A82561021CF8F01C00FC1DD3 /* TurfelObject.cpp in Sources */,
+				A82561121CFCD65200FC1DD3 /* LevelData.cpp in Sources */,
+				A825610E1CFCD64100FC1DD3 /* WorldData.cpp in Sources */,
 				A81BE1481CBA40CB00C09359 /* WorldObject.cpp in Sources */,
 				A81BE14C1CBA415400C09359 /* GameObject.cpp in Sources */,
 				A81BE1641CBA466D00C09359 /* PlayerControl.cpp in Sources */,
