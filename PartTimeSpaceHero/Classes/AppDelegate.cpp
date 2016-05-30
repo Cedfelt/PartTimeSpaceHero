@@ -6,6 +6,7 @@
 
 USING_NS_CC;
 
+//#define IPAD_RETINA
 
 AppDelegate::AppDelegate() {
 
@@ -34,7 +35,9 @@ bool AppDelegate::applicationDidFinishLaunching() {
     // initialize director
     const uint32_t scale = 2;
   
-#ifdef IPAD_AIR
+
+
+#ifdef IPAD_RETINA
   uint32_t res_x = 2048;
   uint32_t res_y = 1536;
 #else //if IPHONE5

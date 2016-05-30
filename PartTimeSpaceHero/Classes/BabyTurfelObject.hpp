@@ -19,13 +19,13 @@
 #include "SoundFx.hpp"
 
 using namespace cocos2d;
-class TurfelObject : public GameObject {
+class BabyTurfelObject : public GameObject {
 public:
   virtual bool init();
   virtual void interActWithPlayer(GameObject* player);
-  CREATE_FUNC(TurfelObject);
-  SoundFx* turtleCrySFX;
+  CREATE_FUNC(BabyTurfelObject);
+  SoundFx* babyTurfelCrySFX;
   
-  void AIUpdate(const float delta);
+  void update(const float delta);
 private:
 };

@@ -21,15 +21,18 @@ public:
   float getFuel(void);
 private:
   void playerWalkUpdate(float delta);
-  void walkAtDir(MovementDirection dir, std::string animName);
-  void fallAtDir(MovementDirection dir, std::string animName);
+  void walkAtDir(MovementDirectionX dir, std::string animName);
+  void fallAtDir(MovementDirectionX dir, std::string animName);
+  bool flyAtDir(MovementDirectionX dir, std::string animName);
   void playerFallUpdate(float delta);
   bool playerFlyUpdate(float delta);
+  bool hurt(const int dmg, const Vec2 force);
   bool playerDashUpdate(float delta);
   bool flying = false;
   virtual void colideWith(GameObject* oterhObj);
   const float jumpStength = 90;
   SoundFx* jetpack1;
+  SoundFx* playerCrySFX;
   float fuel;
   float consumeRate;
   float currentConsumeRate;

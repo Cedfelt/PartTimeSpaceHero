@@ -13,6 +13,7 @@
 #include "TurfelObject.hpp"
 #include "GoalObject.hpp"
 #include "LaserObject.hpp"
+#include "UfoObject.hpp"
 #include <math.h>
 #include "SimpleAudioEngine.h"
 
@@ -96,6 +97,14 @@ void WorldObject::updateWorld(float delta) {
       removeObj->release();
       continue;
     }
+    // add new objects from other objects
+    if(gameObjects.at(i)->addToGameObjects.size()>0){
+      for(int j = 0;j < gameObjects.at(i)->addToGameObjects.size();j++){
+        gameObjects.pushBack(gameObjects.at(i)->addToGameObjects.at(j));
+        addChild(gameObjects.at(i)->addToGameObjects.at(j));
+      }
+      gameObjects.at(i)->addToGameObjects.clear();
+    }
   }
 }
 
@@ -162,9 +171,9 @@ void WorldObject::spawnObjects(cocos2d::Vector<GameObject*>* gameObjects) {
       gameObjects->pushBack(coin);
       coin->setObjectPositionX(x);
       coin->setObjectPositionY(y);
-      coin->getPhysicsBody()->setCategoryBitmask((int)PhysicsCategory::Bouncer);
+      coin->getPhysicsBody()->setCategoryBitmask((int)PhysicsCategory::PlayerPickups);
       coin->getPhysicsBody()->setCollisionBitmask((int)PhysicsCategory::None);
-      coin->getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::Player|(int)PhysicsCategory::Bouncer);
+      coin->getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::Player|(int)PhysicsCategory::PlayerPickups|(int)PhysicsCategory::Hazard);
       addChild(coin);
     }
     
@@ -209,10 +218,30 @@ void WorldObject::spawnObjects(cocos2d::Vector<GameObject*>* gameObjects) {
       gameObjects->pushBack(turfel);
       turfel->setObjectPositionX(x);
       turfel->setObjectPositionY(y);
-      turfel->getPhysicsBody()->setCategoryBitmask((int)PhysicsCategory::Bouncer);
+      turfel->getPhysicsBody()->setCategoryBitmask((int)PhysicsCategory::Enemy);
       turfel->getPhysicsBody()->setCollisionBitmask((int)PhysicsCategory::None);
-      turfel->getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::Player|(int)PhysicsCategory::Bouncer);
+      turfel->getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::Player|(int)PhysicsCategory::PlayerPickups|(int)PhysicsCategory::Hazard);
+      turfel->target = player;
       addChild(turfel);
     }
+    
+    else if(name == "UfoObject"){
+      // COIN
+      auto patrolUfo = UfoObject::create();
+      const float ufoScale = 4;
+      patrolUfo->setupHitbox(0.1f, 1.0f, 16*ufoScale, 16*ufoScale, 16*ufoScale, 16*ufoScale, false);
+      gameObjects->pushBack(patrolUfo);
+      patrolUfo->setObjectPositionX(x);
+      patrolUfo->setObjectPositionY(y);
+      patrolUfo->getPhysicsBody()->setCategoryBitmask((int)PhysicsCategory::Enemy);
+      patrolUfo->getPhysicsBody()->setCollisionBitmask((int)PhysicsCategory::None);
+      patrolUfo->getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::Player|(int)PhysicsCategory::PlayerPickups|(int)PhysicsCategory::Hazard);
+      patrolUfo->target = player;
+      addChild(patrolUfo);
+    }
+    
+  }
+  for (int i = 0;i < gameObjects->size();i++) {
+    gameObjects->at(i)->target = player;
   }
 }

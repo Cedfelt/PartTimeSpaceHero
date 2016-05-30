@@ -24,7 +24,7 @@ void LaserObject::setup(float output_time, float input_time, uint32_t direction,
   objectSprite->setAnchorPoint(Point(0.5, 0));
   //hitBoxWidth =  ;
   maxLaserRange = 8 * 2 * range + 8 * 4;
-  this->setScale(2);
+  //this->setRotation(180);
   addGravityToObject(false);
   spriteFrameCache = spriteFrameCache->getInstance();
   animationCache = animationCache->getInstance();
@@ -36,6 +36,7 @@ void LaserObject::setup(float output_time, float input_time, uint32_t direction,
   o_time = output_time;
   i_time = input_time;
   ot_counter = o_time;
+  setScale(2);
   setAnchorPoint(Point(0.5, 0));
   //moveWhenOutsideOfScreen = true;
   laser_delay = delay;
@@ -59,15 +60,8 @@ void LaserObject::setup(float output_time, float input_time, uint32_t direction,
   output = true;
   ot_counter = o_time;
   ot_counter = 0;
-
-  auto physicsBody = PhysicsBody::createBox(Size(8, 8*range), PhysicsMaterial(0.1, 1, 0.0f));
-  physicsBody->setPositionOffset(Vec2(0, 8 * 2 * range + 8 * 4));
-  physicsBody->setDynamic(true);
-  physicsBody->setCategoryBitmask((int)PhysicsCategory::Bouncer);
-  physicsBody->setCollisionBitmask((int)PhysicsCategory::None);
-  physicsBody->setContactTestBitmask((int)PhysicsCategory::Player | (int)PhysicsCategory::Bouncer);
-  setPhysicsBody(physicsBody);
-
+  laser_dir = direction;
+  addPhysicBody(laser_dir);
   add_updateFunction(delay);
   
 }
@@ -93,12 +87,26 @@ void LaserObject::updateGameObject(float delta) {
   }
   if (output) {
     laser_sprites[current]->setOpacity(0xFF);
+    laser_sprites[current]->setScaleX(0.1f);
+    laser_sprites[current]->setColor(Color3B::BLUE);
     current++;
+    if(pause_time < 1.0){
+      if(current>=range)
+        current = range-1;
+      pause_time += delta;
+      return;
+    }
     if (current == range) {
       output = false;
       solid = true;
       current = range - 1;
       ot_counter = o_time;
+      pause_time = 0;
+      getPhysicsBody()->setEnabled(true);
+      for(int i = 0;i<range;i++){
+        laser_sprites[i]->setScaleX(1.0f);
+        laser_sprites[i]->setColor(Color3B::WHITE);
+      }
     }
   }
   else {
@@ -109,11 +117,29 @@ void LaserObject::updateGameObject(float delta) {
       current = 0;
       ot_counter = i_time;
       solid = false;
+      getPhysicsBody()->setEnabled(false);
     }
   }
 }
 
-
+void LaserObject::addPhysicBody(uint32_t direction){
+  auto physicsBody = PhysicsBody::createBox(Size(8, 8*range), PhysicsMaterial(0.1, 1, 0.0f));
+  physicsBody->setDynamic(true);
+  if(direction == GO_UP){
+    physicsBody->setPositionOffset(Vec2(0, 8 * 2 * range + 8 * 4));
+    setRotation(0);
+  }
+  if(direction == GO_DOWN){
+    physicsBody->setPositionOffset(Vec2(0, (-(int)range*8*2- 8 * 4)));
+    setRotation(180);
+  }
+  
+  physicsBody->setCategoryBitmask((int)PhysicsCategory::Hazard);
+  physicsBody->setCollisionBitmask((int)PhysicsCategory::None);
+  physicsBody->setContactTestBitmask((int)PhysicsCategory::All);
+  physicsBody->setEnabled(false);
+  setPhysicsBody(physicsBody);
+}
 
 
 //void Laser_Trap::updateAI(float delta) {}

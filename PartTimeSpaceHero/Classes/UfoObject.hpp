@@ -1,16 +1,8 @@
 //
-//  TurfelObject.hpp
+//  UfoObject.hpp
 //  PartTimeSpaceHero
 //
-//  Created by Anders Svensson on 27/05/16.
-//
-//
-
-//
-//  Player.hpp
-//  PartTimeSpaceHero
-//
-//  Created by Anders Svensson on 10/04/16.
+//  Created by Anders Svensson on 29/05/16.
 //
 //
 
@@ -19,13 +11,12 @@
 #include "SoundFx.hpp"
 
 using namespace cocos2d;
-class TurfelObject : public GameObject {
+class UfoObject : public GameObject {
 public:
   virtual bool init();
   virtual void interActWithPlayer(GameObject* player);
-  CREATE_FUNC(TurfelObject);
+  CREATE_FUNC(UfoObject);
   SoundFx* turtleCrySFX;
-  
   void AIUpdate(const float delta);
 private:
 };

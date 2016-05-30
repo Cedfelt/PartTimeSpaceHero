@@ -22,12 +22,15 @@ public:
   void updateGameObject(float delta);
   void add_updateFunction(float delta);
   void colideWith(GameObject *otherGo);
+  void addPhysicBody(uint32_t direction);
   Sprite *laser_sprites[MAX_CAPACITY];
   int current;
   bool output;
+  uint32_t laser_dir;
   float o_time;
   float i_time;
   float laser_delay;
   float ot_counter;
   float maxLaserRange;
+  float pause_time = 0;
 };

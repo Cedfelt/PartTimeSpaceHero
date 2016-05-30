@@ -48,6 +48,8 @@ public:
   float imuneTime;
   float imuneCnt;
   float solid;
+  GameObject* target;
+  cocos2d::Vector<GameObject*> addToGameObjects;
   
   int32_t HP;
   
@@ -91,14 +93,19 @@ private:
 enum class PhysicsCategory {
   None = 0,
   Player = (1 << 0),    // 1
-  Bouncer = (1 << 1), // 2
+  PlayerPickups = (1 << 1), // 2
   Goal = (1 << 2),
+  Hazard = (1 << 3),
+  Enemy = (1 << 4),
   All = 0xff // 3
 };
 
-enum MovementDirection {
+enum MovementDirectionX {
   LEFT =-1,
   RIGHT = 1,
-  UP,
-  DOWN
+};
+
+enum MovementDirectionY {
+  UP = 1,
+  DOWN = -1
 };

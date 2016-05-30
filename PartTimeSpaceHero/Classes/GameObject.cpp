@@ -22,6 +22,7 @@ bool GameObject::init() {
   resolution_scale = getScaleFactor();
   HP = 1;
   imuneTime = 1;
+  imuneCnt = 0;
   solid  = 1;
   return true;
 }
@@ -29,7 +30,7 @@ bool GameObject::init() {
 void GameObject::imuneUpdate(const float delta){
   if(imuneCnt>0){
     imuneCnt-=delta;
-    if(imuneCnt<0){
+    if(imuneCnt<=0){
       imuneCnt = 0;
       this->unschedule(CC_SCHEDULE_SELECTOR(GameObject::imuneUpdate));
     }
@@ -45,7 +46,6 @@ void GameObject::setImune(){
 }
 
 void GameObject::setupHitbox(float aDensity, float aRestitution, const float w, const float h,const float box, const float boy, const bool draw) {
-  setPosition(0, 0);
   hitBox.setRect(0, 0, w, h);
   if (getDebuggDraw()) {
     cocos2d::Vec2 rectangle[4];
@@ -145,8 +145,11 @@ bool GameObject::hurt(const int dmg, const Vec2 force){
     this->schedule(CC_SCHEDULE_SELECTOR(GameObject::imuneUpdate));
     if(HP<=0){
       HP = 0;
+      this->remove_object = true;
     }
+    return true;
   }
+  return false;
 }
 
 void GameObject::setObjectPositionX(const float x){

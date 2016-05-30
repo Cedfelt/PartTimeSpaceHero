@@ -77,6 +77,10 @@
 		A82560FE1CF6269600FC1DD3 /* GUI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A82560FC1CF6269600FC1DD3 /* GUI.cpp */; };
 		A82561011CF8F01C00FC1DD3 /* TurfelObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A82560FF1CF8F01C00FC1DD3 /* TurfelObject.cpp */; };
 		A82561021CF8F01C00FC1DD3 /* TurfelObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A82560FF1CF8F01C00FC1DD3 /* TurfelObject.cpp */; };
+		A82561051CFB167400FC1DD3 /* BabyTurfelObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A82561031CFB167400FC1DD3 /* BabyTurfelObject.cpp */; };
+		A82561061CFB167400FC1DD3 /* BabyTurfelObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A82561031CFB167400FC1DD3 /* BabyTurfelObject.cpp */; };
+		A82561091CFB635F00FC1DD3 /* UfoObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A82561071CFB635F00FC1DD3 /* UfoObject.cpp */; };
+		A825610A1CFB635F00FC1DD3 /* UfoObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A82561071CFB635F00FC1DD3 /* UfoObject.cpp */; };
 		A87C27C71CC19F10004520EF /* Physic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A87C27C51CC19F10004520EF /* Physic.cpp */; };
 		A8805F2D1CEFB37400B2AE7A /* CoinObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8805F2B1CEFB37400B2AE7A /* CoinObject.cpp */; };
 		A8805F301CF04C6D00B2AE7A /* SoundFx.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8805F2E1CF04C6D00B2AE7A /* SoundFx.cpp */; };
@@ -169,6 +173,10 @@
 		A82560FD1CF6269600FC1DD3 /* GUI.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GUI.hpp; sourceTree = "<group>"; };
 		A82560FF1CF8F01C00FC1DD3 /* TurfelObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TurfelObject.cpp; sourceTree = "<group>"; };
 		A82561001CF8F01C00FC1DD3 /* TurfelObject.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TurfelObject.hpp; sourceTree = "<group>"; };
+		A82561031CFB167400FC1DD3 /* BabyTurfelObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BabyTurfelObject.cpp; sourceTree = "<group>"; };
+		A82561041CFB167400FC1DD3 /* BabyTurfelObject.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BabyTurfelObject.hpp; sourceTree = "<group>"; };
+		A82561071CFB635F00FC1DD3 /* UfoObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UfoObject.cpp; sourceTree = "<group>"; };
+		A82561081CFB635F00FC1DD3 /* UfoObject.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = UfoObject.hpp; sourceTree = "<group>"; };
 		A87C27C51CC19F10004520EF /* Physic.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Physic.cpp; sourceTree = "<group>"; };
 		A87C27C61CC19F10004520EF /* Physic.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Physic.hpp; sourceTree = "<group>"; };
 		A8805F2B1CEFB37400B2AE7A /* CoinObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CoinObject.cpp; sourceTree = "<group>"; };
@@ -344,8 +352,12 @@
 				A8805F2F1CF04C6D00B2AE7A /* SoundFx.hpp */,
 				A82560FF1CF8F01C00FC1DD3 /* TurfelObject.cpp */,
 				A82561001CF8F01C00FC1DD3 /* TurfelObject.hpp */,
+				A82561031CFB167400FC1DD3 /* BabyTurfelObject.cpp */,
+				A82561041CFB167400FC1DD3 /* BabyTurfelObject.hpp */,
 				A81BE1451CBA40CB00C09359 /* WorldObject.cpp */,
 				A81BE1461CBA40CB00C09359 /* WorldObject.hpp */,
+				A82561071CFB635F00FC1DD3 /* UfoObject.cpp */,
+				A82561081CFB635F00FC1DD3 /* UfoObject.hpp */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -539,8 +551,10 @@
 				A82560FE1CF6269600FC1DD3 /* GUI.cpp in Sources */,
 				A82561011CF8F01C00FC1DD3 /* TurfelObject.cpp in Sources */,
 				A8805F301CF04C6D00B2AE7A /* SoundFx.cpp in Sources */,
+				A82561051CFB167400FC1DD3 /* BabyTurfelObject.cpp in Sources */,
 				A81BE1531CBA420D00C09359 /* PlayerObject.cpp in Sources */,
 				A81BE1431CBA40AE00C09359 /* GameScene.cpp in Sources */,
+				A82561091CFB635F00FC1DD3 /* UfoObject.cpp in Sources */,
 				A81BE15B1CBA424600C09359 /* LaserObject.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
@@ -559,7 +573,9 @@
 				A81BE1441CBA40AE00C09359 /* GameScene.cpp in Sources */,
 				46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				A81BE1541CBA420D00C09359 /* PlayerObject.cpp in Sources */,
+				A825610A1CFB635F00FC1DD3 /* UfoObject.cpp in Sources */,
 				503AE10517EB98FF00D1A890 /* main.cpp in Sources */,
+				A82561061CFB167400FC1DD3 /* BabyTurfelObject.cpp in Sources */,
 				A8805F311CF04C6D00B2AE7A /* SoundFx.cpp in Sources */,
 				A81BE1501CBA41D500C09359 /* MapObject.cpp in Sources */,
 				A81BE15C1CBA424600C09359 /* LaserObject.cpp in Sources */,

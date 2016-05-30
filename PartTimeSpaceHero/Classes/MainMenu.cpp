@@ -39,7 +39,7 @@ bool MainMenu::init()
         return false;
     }
     
-  setDebuggDraw(false);
+  
   
     Size visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
@@ -90,12 +90,13 @@ void MainMenu::onTouchEnded(const std::vector<Touch*>& touches, Event*)
     if ((touches.at(i)->getStartLocation().x) < winSize.width / 2) {
       // LEFT
       setScaleFactor(2);
-      setMapUrl("level1.tmx");
+      setDebuggDraw(true);
+      setMapUrl("g2.tmx");
     }
     else {
-      // RIGHT
-      setMapUrl("g2.tmx");
       setScaleFactor(2);
+      setDebuggDraw(false);
+      setMapUrl("g2.tmx");
     }
   }
 

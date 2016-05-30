@@ -52,6 +52,10 @@ bool PlayerObject::init() {
   jetpack1 = SoundFx::create();
   jetpack1->loadEffect("jet_pack_hum.aif", 0, 1, true);
   addChild(jetpack1);
+  
+  playerCrySFX = SoundFx::create();
+  playerCrySFX->loadEffect("Cry.aif", 0, 1, false);
+  addChild(playerCrySFX);
 
   fuel = 1.0f;
   consumeRate = currentConsumeRate;
@@ -62,7 +66,7 @@ bool PlayerObject::init() {
 const float ground_deacceleration = 0.85;
 const float ground_acceleration = 5;
 
-void PlayerObject::walkAtDir(MovementDirection dir,std::string animName) {
+void PlayerObject::walkAtDir(MovementDirectionX dir,std::string animName) {
   setAnimation(animName);
   addToVelocityX(dir*ground_acceleration);
   if (std::abs(getVelocityX()) > std::abs(dir*getSpeed())) {
@@ -94,31 +98,31 @@ void PlayerObject::playerWalkUpdate(float delta) {
   }
 }
 
-void PlayerObject::fallAtDir(MovementDirection dir,std::string animName) {
+void PlayerObject::fallAtDir(MovementDirectionX dir,std::string animName) {
+  const float playerFallSpeed = 0.1f;
   setAnimation(animName);
-  addToVelocityX(dir*ground_acceleration);
-  if (std::abs(getVelocityX()) > std::abs(dir*getSpeed())) {
-    setVelocityX(dir*getSpeed());
-  }
+  addToVelocityX(dir*playerFallSpeed);
 }
 
 void PlayerObject::playerFallUpdate(float delta) {
   if (getMovementStatus() == GO_IN_AIR_DOWN) {
-    const float playerFallSpeed = 0.1f;
     if (getPrevDir() == GO_LEFT) {
-      setAnimation("FallL");
-      addToVelocityX(-playerFallSpeed);
-
+      fallAtDir(LEFT, "FallL");
     }
     else if (getPrevDir() == GO_RIGHT) {
-      setAnimation("FallR");
-      addToVelocityX(playerFallSpeed);
+      fallAtDir(RIGHT, "FallR");
     }
   }
 }
 
 float PlayerObject::getFuel() {
   return fuel;
+}
+
+bool PlayerObject::flyAtDir(MovementDirectionX dir,std::string animName) {
+  const float playerFallSpeed = 0.1f;
+  setAnimation(animName);
+  addToVelocityX(dir*playerFallSpeed);
 }
 
 bool PlayerObject::playerFlyUpdate(float delta) {
@@ -294,11 +298,12 @@ bool PlayerObject::playerDashUpdate(float delta) {
 }
 
 void PlayerObject::playerUpdate(const float delta) {
-
+  solid = true;
   // Update priority
   if (playerDashUpdate(delta)) {
     return;
   }
+  solid = false;// Not Dashing
   
   if (playerInput->isLeft()) {
     objectSprite->setScaleX(-1);
@@ -322,7 +327,21 @@ void PlayerObject::playerUpdate(const float delta) {
   else if (playerInput->isRight()) {
     setPrevDir(GO_RIGHT);
   }
-  auto pb = this->getPhysicsBody();
+}
+
+bool PlayerObject::hurt(const int dmg, const Vec2 force){
+  if(!isImune()){
+    setImune();
+    HP-=dmg;
+    playerCrySFX->play(0.3f);
+    this->unschedule(CC_SCHEDULE_SELECTOR(GameObject::imuneUpdate));
+    this->schedule(CC_SCHEDULE_SELECTOR(GameObject::imuneUpdate));
+    if(HP<=0){
+      HP = 0;
+    }
+    return true;
+  }
+  return false;
 }
 
 void PlayerObject::colideWith(GameObject* otherObj){
