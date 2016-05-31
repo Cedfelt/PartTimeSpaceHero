@@ -40,9 +40,7 @@ bool MainMenu::init()
         return false;
     }
   
-    progressData = WorldData::create();
-    progressData->loadWorldData();
-    addChild(progressData);
+  
   
   
     Size visibleSize = Director::getInstance()->getVisibleSize();
@@ -75,6 +73,10 @@ bool MainMenu::init()
   spaceShipSprite->setPositionY(yPos);
   addChild(spaceShipSprite);
   
+  progressData = WorldData::create();
+  progressData->loadWorldData();
+  addChild(progressData);
+  
     return true;
 }
 bool newGame;
@@ -91,6 +93,7 @@ void MainMenu::onTouchEnded(const std::vector<Touch*>& touches, Event*)
   newGame = false;
   CCSize winSize = CCDirector::sharedDirector()->getWinSize();
   for (int i = 0;i<touches.size();i++) {
+    
     if ((touches.at(i)->getStartLocation().x) < winSize.width / 2) {
       // LEFT
       setScaleFactor(2);

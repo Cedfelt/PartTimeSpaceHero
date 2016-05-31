@@ -16,6 +16,7 @@ bool WorldData::init(){
   {
     return false;
   }
+  return true;
 }
 
 void WorldData::loadWorldData() {

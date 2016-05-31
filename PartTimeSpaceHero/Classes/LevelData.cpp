@@ -16,6 +16,7 @@ bool LevelData::init() {
   {
     return false;
   }
+  return true;
 }
 
 void LevelData::setupLevel(std::string mapName,std::string worldName){
