@@ -147,6 +147,7 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\Classes\AppDelegate.cpp" />
+    <ClCompile Include="..\Classes\BabyTurfelObject.cpp" />
     <ClCompile Include="..\Classes\CoinObject.cpp" />
     <ClCompile Include="..\Classes\GameObject.cpp" />
     <ClCompile Include="..\Classes\GameScene.cpp" />
@@ -156,6 +157,7 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClCompile Include="..\Classes\GUI.cpp" />
     <ClCompile Include="..\Classes\HelloWorldScene.cpp" />
     <ClCompile Include="..\Classes\LaserObject.cpp" />
+    <ClCompile Include="..\Classes\LevelData.cpp" />
     <ClCompile Include="..\Classes\MainMenu.cpp" />
     <ClCompile Include="..\Classes\MapObject.cpp" />
     <ClCompile Include="..\Classes\Physic.cpp" />
@@ -163,11 +165,15 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClCompile Include="..\Classes\PlayerInput.cpp" />
     <ClCompile Include="..\Classes\PlayerObject.cpp" />
     <ClCompile Include="..\Classes\SoundFx.cpp" />
+    <ClCompile Include="..\Classes\TurfelObject.cpp" />
+    <ClCompile Include="..\Classes\UfoObject.cpp" />
+    <ClCompile Include="..\Classes\WorldData.cpp" />
     <ClCompile Include="..\Classes\WorldObject.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Classes\AppDelegate.h" />
+    <ClInclude Include="..\Classes\BabyTurfelObject.hpp" />
     <ClInclude Include="..\Classes\CoinObject.hpp" />
     <ClInclude Include="..\Classes\GameObject.hpp" />
     <ClInclude Include="..\Classes\GameScene.hpp" />
@@ -177,6 +183,7 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClInclude Include="..\Classes\GUI.hpp" />
     <ClInclude Include="..\Classes\HelloWorldScene.h" />
     <ClInclude Include="..\Classes\LaserObject.hpp" />
+    <ClInclude Include="..\Classes\LevelData.hpp" />
     <ClInclude Include="..\Classes\MainMenu.hpp" />
     <ClInclude Include="..\Classes\MapObject.hpp" />
     <ClInclude Include="..\Classes\Physic.hpp" />
@@ -184,6 +191,9 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClInclude Include="..\Classes\PlayerInput.hpp" />
     <ClInclude Include="..\Classes\PlayerObject.hpp" />
     <ClInclude Include="..\Classes\SoundFx.hpp" />
+    <ClInclude Include="..\Classes\TurfelObject.hpp" />
+    <ClInclude Include="..\Classes\UfoObject.hpp" />
+    <ClInclude Include="..\Classes\WorldData.hpp" />
     <ClInclude Include="..\Classes\WorldObject.hpp" />
     <ClInclude Include="main.h" />
   </ItemGroup>

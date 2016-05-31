@@ -13,16 +13,21 @@
 
 #include <stdio.h>
 class LevelData : public cocos2d::Node{
+  
+public:
   std::string worldlName;
-  std::string levelName;
+  std::string mapName;
+  std::string description;
   uint32_t highScore;
   uint32_t bestTime;
   bool completed;
   
-  void init(std::string levelName,std::string worldName);
+  CREATE_FUNC(LevelData);
+  virtual bool init();
+  void setupLevel(std::string levelName,std::string worldName);
   bool loadDataFromMemory();
   void saveDataToMemory();
-  std::string getLevelName();
+  std::string getMapName();
   uint32_t getHighScore();
   uint32_t getBestTime();
   bool getCompleted();

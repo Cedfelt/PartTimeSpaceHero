@@ -123,6 +123,7 @@ bool PlayerObject::flyAtDir(MovementDirectionX dir,std::string animName) {
   const float playerFallSpeed = 0.1f;
   setAnimation(animName);
   addToVelocityX(dir*playerFallSpeed);
+  return true;
 }
 
 bool PlayerObject::playerFlyUpdate(float delta) {

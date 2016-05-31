@@ -2,6 +2,7 @@
 #include "GlobalPList.hpp"
 #include "GameScene.hpp"
 #include "cocostudio/CocoStudio.h"
+#include "WorldData.hpp"
 USING_NS_CC;
 
 
@@ -39,7 +40,8 @@ bool MainMenu::init()
         return false;
     }
   
-  
+    progressData = WorldData::create();
+    progressData->loadWorldData();
   
   
     Size visibleSize = Director::getInstance()->getVisibleSize();
