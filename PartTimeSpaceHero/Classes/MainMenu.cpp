@@ -42,6 +42,7 @@ bool MainMenu::init()
   
     progressData = WorldData::create();
     progressData->loadWorldData();
+    addChild(progressData);
   
   
     Size visibleSize = Director::getInstance()->getVisibleSize();
@@ -93,14 +94,17 @@ void MainMenu::onTouchEnded(const std::vector<Touch*>& touches, Event*)
     if ((touches.at(i)->getStartLocation().x) < winSize.width / 2) {
       // LEFT
       setScaleFactor(2);
-      setDebuggDraw(true);
-      setMapUrl("g2.tmx");
+      setDebuggDraw(false);
+      setNewGame(true);
     }
     else {
       setScaleFactor(2);
-      setDebuggDraw(false);
-      setMapUrl("g2.tmx");
+      setNewGame(false);
+      
     }
+    LevelData* nextLevel = progressData->getCurrentLevel();
+    nextLevel->loadDataFromMemory();
+    setMapUrl(nextLevel->getMapName());
   }
 
   

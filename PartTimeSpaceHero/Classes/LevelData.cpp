@@ -35,6 +35,8 @@ bool LevelData::loadDataFromMemory(){
   
   std::string compString = worldlName + "_" + mapName + "_completed";
   completed = userDef->getIntegerForKey(compString.c_str());
+
+  userDef->flush();
   return true;
 }
 
@@ -49,6 +51,8 @@ void LevelData::saveDataToMemory(){
   
   std::string compString = worldlName + "_" + mapName + "_completed";
   completed = userDef->getIntegerForKey(compString.c_str());
+  userDef->flush();
+
 }
 
 std::string LevelData::getMapName() { return mapName; }

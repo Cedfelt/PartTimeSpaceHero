@@ -37,5 +37,24 @@ void WorldData::loadWorldData() {
   level3->loadDataFromMemory();
   world1.pushBack(level3);
   addChild(level3);
+}
 
+std::string currentLevel = "CURRENT_LEVEL";
+std::string currentWorld = "CURRENT_WORLD";
+
+void WorldData::setCurrentLevel (E_LEVEL eLevel, E_WORLD eWorld) {
+  auto userDef = cocos2d::UserDefault::getInstance();
+  userDef->setIntegerForKey(currentLevel.c_str(),eLevel);
+  userDef->setIntegerForKey(currentWorld.c_str(),eWorld);
+  userDef->flush();
+}
+
+LevelData* WorldData::getCurrentLevel() {
+  auto userDef = cocos2d::UserDefault::getInstance();
+  E_LEVEL eLevel = (E_LEVEL)userDef->getIntegerForKey(currentLevel.c_str());
+  E_WORLD eWorld = (E_WORLD)userDef->getIntegerForKey(currentWorld.c_str());
+  if (eWorld == WORLD_1) {
+    return world1.at(eLevel);
+  }
+  return NULL;
 }

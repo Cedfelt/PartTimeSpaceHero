@@ -41,3 +41,13 @@ void setDebuggDraw(const bool debugDraw){
 bool getDebuggDraw(){
   return cocos2d::UserDefault::getInstance()->getBoolForKey("debugDraw");
 }
+
+void setNewGame(bool first) {
+  cocos2d::UserDefault::getInstance()->setBoolForKey("NEW_GAME", first);
+  cocos2d::UserDefault::getInstance()->flush();
+}
+bool getNewGame() {
+  bool newGame = cocos2d::UserDefault::getInstance()->getBoolForKey("NEW_GAME");
+  cocos2d::UserDefault::getInstance()->flush();
+  return newGame;
+}

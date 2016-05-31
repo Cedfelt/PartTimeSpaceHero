@@ -77,6 +77,7 @@ void WorldObject::updateWorld(float delta) {
     audio->stopBackgroundMusic();
     stopAllActions();
     cocos2d::Director::getInstance()->popScene();
+    // setCurrentCompleted
   }
   
   // Check if player dead

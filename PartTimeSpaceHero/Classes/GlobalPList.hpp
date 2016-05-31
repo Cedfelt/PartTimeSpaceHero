@@ -22,4 +22,7 @@ std::string getMapUrl();
 void setDebuggDraw(bool debugDraw);
 bool getDebuggDraw();
 
+void setNewGame(bool first);
+bool getNewGame();
+
 #endif /* GlobalPList_hpp */
