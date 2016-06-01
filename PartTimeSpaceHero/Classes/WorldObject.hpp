@@ -15,6 +15,8 @@
 #include "GameObject.hpp"
 #include "Physic.hpp"
 #include "GoalObject.hpp"
+#include "WorldData.hpp"
+
 class WorldObject : public cocos2d::Node
 {
 public:
@@ -24,6 +26,7 @@ public:
   CREATE_FUNC(WorldObject);
   // implement the "static create()" method manually
   PlayerObject* player;
+  WorldData* worldData;
 private:
   MapObject* mapObject;
   cocos2d::Vector<GameObject*> gameObjects;

@@ -19,6 +19,7 @@
 
 
 
+
 bool WorldObject::init() {
   //////////////////////////////
   // 1. super init first
@@ -73,11 +74,14 @@ void WorldObject::updateWorld(float delta) {
   
   // Check Goal
   if(obj->colided){
+    // setCurrentCompleted
+    auto wd = WorldData::create();
+    wd->setCurrentLevelStatus(TRUE,30,100);
     auto audio = CocosDenshion::SimpleAudioEngine::getInstance();
     audio->stopBackgroundMusic();
     stopAllActions();
     cocos2d::Director::getInstance()->popScene();
-    // setCurrentCompleted
+    
   }
   
   // Check if player dead

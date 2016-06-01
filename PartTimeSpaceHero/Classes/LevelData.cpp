@@ -19,22 +19,21 @@ bool LevelData::init() {
   return true;
 }
 
-void LevelData::setupLevel(std::string mapName,std::string worldName){
+void LevelData::setupLevel(std::string mapName){
   this->mapName = mapName;
-  this->worldlName = worldlName;
   description = "Into the Yonder";
 }
 
 bool LevelData::loadDataFromMemory(){
   auto userDef = cocos2d::UserDefault::getInstance();//->setIntegerForKey("scale_factor", (int)scale);
   
-  std::string hsString = worldlName + "_" + mapName + "_highScore";
+  std::string hsString = mapName + "_highScore";
   highScore = userDef->getIntegerForKey(hsString.c_str());
   
-  std::string btString = worldlName + "_" + mapName + "_bestTime";
+  std::string btString = mapName + "_bestTime";
   bestTime = userDef->getIntegerForKey(btString.c_str());
   
-  std::string compString = worldlName + "_" + mapName + "_completed";
+  std::string compString = mapName + "_completed";
   completed = userDef->getIntegerForKey(compString.c_str());
 
   userDef->flush();
@@ -44,13 +43,13 @@ bool LevelData::loadDataFromMemory(){
 void LevelData::saveDataToMemory(){
   auto userDef = cocos2d::UserDefault::getInstance();//->setIntegerForKey("scale_factor", (int)scale);
   
-  std::string hsString = worldlName + "_" + mapName + "_highScore";
+  std::string hsString =   mapName + "_highScore";
   userDef->setIntegerForKey(hsString.c_str(), highScore);
   
-  std::string btString = worldlName + "_" + mapName + "_bestTime";
+  std::string btString = mapName + "_bestTime";
   userDef->setIntegerForKey(btString.c_str(), bestTime);
   
-  std::string compString = worldlName + "_" + mapName + "_completed";
+  std::string compString = mapName + "_completed";
   completed = userDef->getIntegerForKey(compString.c_str());
   userDef->flush();
 

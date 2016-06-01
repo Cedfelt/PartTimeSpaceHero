@@ -30,6 +30,7 @@ public:
   CREATE_FUNC(GameScene);
   void mainGameLoop(float delta);
   GUI* gui;
+  WorldData* worldData;
 private:
   float counter;
   WorldObject* worldObject;

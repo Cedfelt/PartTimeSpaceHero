@@ -15,7 +15,6 @@
 class LevelData : public cocos2d::Node{
   
 public:
-  std::string worldlName;
   std::string mapName;
   std::string description;
   uint32_t highScore;
@@ -24,7 +23,7 @@ public:
   
   CREATE_FUNC(LevelData);
   virtual bool init();
-  void setupLevel(std::string levelName,std::string worldName);
+  void setupLevel(std::string levelName);
   bool loadDataFromMemory();
   void saveDataToMemory();
   std::string getMapName();
