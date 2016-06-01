@@ -40,24 +40,15 @@ enum E_LEVEL {
   LEVEL_10
 };
 
-class WorldData : public cocos2d::Node {
+class SaveData : public cocos2d::Node {
 public:
   virtual bool init();
-  CREATE_FUNC(WorldData);
+  CREATE_FUNC(SaveData);
   void loadWorldData();
-  cocos2d::Vector<LevelData*> world1;
-  cocos2d::Vector<LevelData*> world2;
-  cocos2d::Vector<LevelData*> world3;
-  cocos2d::Vector<LevelData*> world4;
-  cocos2d::Vector<LevelData*> world5;
-  cocos2d::Vector<LevelData*> world6;
-  cocos2d::Vector<LevelData*> world7;
-  cocos2d::Vector<LevelData*> world8;
-  cocos2d::Vector<LevelData*> world9;
-  cocos2d::Vector<LevelData*> world10;
-  void setCurrentLevel(E_LEVEL eLevel, E_WORLD eWorld);
-  size_t levelCountForWorld(const E_WORLD eWorld);
+  bool prepareNextLevel();
+  cocos2d::Vector<LevelData*> levelDataList;
   LevelData* getCurrentLevel();
+  void eraseMemorey();
   void setCurrentLevelStatus(const bool completed,const uint32_t score,const uint32_t bestTime);
 };
 

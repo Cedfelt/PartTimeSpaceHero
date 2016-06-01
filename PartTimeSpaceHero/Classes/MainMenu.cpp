@@ -2,7 +2,7 @@
 #include "GlobalPList.hpp"
 #include "GameScene.hpp"
 #include "cocostudio/CocoStudio.h"
-#include "WorldData.hpp"
+
 USING_NS_CC;
 
 
@@ -60,6 +60,7 @@ bool MainMenu::init()
     label->setPosition(Vec2(origin.x + visibleSize.width/2,origin.y + visibleSize.height - label->getContentSize().height));
     addChild(label);
   
+  
   // Sprite
   auto director = Director::getInstance();
   const float xPos = director->getWinSize().width / 2;
@@ -71,9 +72,9 @@ bool MainMenu::init()
   spaceShipSprite->setPositionY(yPos);
   addChild(spaceShipSprite);
   
-  progressData = WorldData::create();
-  progressData->loadWorldData();
-  addChild(progressData);
+  gameSave = SaveData::create();
+  gameSave->loadWorldData();
+  addChild(gameSave);
   
     return true;
 }
@@ -96,21 +97,28 @@ void MainMenu::onTouchEnded(const std::vector<Touch*>& touches, Event*)
       // LEFT
       setScaleFactor(2);
       setDebuggDraw(false);
-      setNewGame(true);
+      gameSave->eraseMemorey();
     }
     else {
       setScaleFactor(2);
-      setNewGame(false);
       
     }
-    LevelData* nextLevel = progressData->getCurrentLevel();
-    nextLevel->loadDataFromMemory();
-    setMapUrl(nextLevel->getMapName());
   }
-
+  const bool unplayedLevels = gameSave->prepareNextLevel();
   
+  
+
+  if(unplayedLevels){
+    LevelData* nextLevel = gameSave->getCurrentLevel();
+    setMapUrl(nextLevel->getMapName());
+    cocos2d::log(nextLevel->getMapName().c_str());
     auto scene = GameScene::createScene();
     Director::getInstance()->pushScene(scene);
+  }
+  else{
+    cocos2d::log("Game Cleared");
+  }
+  
     
 }
 

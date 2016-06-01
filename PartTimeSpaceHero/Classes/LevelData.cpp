@@ -50,9 +50,29 @@ void LevelData::saveDataToMemory(){
   userDef->setIntegerForKey(btString.c_str(), bestTime);
   
   std::string compString = mapName + "_completed";
-  completed = userDef->getIntegerForKey(compString.c_str());
+  userDef->setBoolForKey(compString.c_str(),completed);
   userDef->flush();
 
+}
+enum E_DEFAULT_LEVEL_DATA{
+  DEFUALT_HIGH_SCORE = 0,
+  DEFAULT_BEST_TIME = 0xFFFFFFFF,
+  DEFAULT_COMPLETED = 0
+};
+
+void LevelData::eraseDataFromMemory(){
+  auto userDef = cocos2d::UserDefault::getInstance();//->setIntegerForKey("scale_factor", (int)scale);
+  
+  std::string hsString =   mapName + "_highScore";
+  userDef->setIntegerForKey(hsString.c_str(), DEFUALT_HIGH_SCORE);
+  
+  std::string btString = mapName + "_bestTime";
+  userDef->setIntegerForKey(btString.c_str(), DEFAULT_BEST_TIME);
+  
+  std::string compString = mapName + "_completed";
+  userDef->setBoolForKey(compString.c_str(),DEFAULT_COMPLETED);
+  userDef->flush();
+  
 }
 
 std::string LevelData::getMapName() { return mapName; }

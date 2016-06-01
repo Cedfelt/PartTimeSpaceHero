@@ -10,7 +10,6 @@
 
 #include "cocos2d.h"
 #include "WorldObject.hpp"
-#include "WorldObject.hpp"
 #include "Physic.hpp"
 #include "GameScene.hpp"
 #include "GUI.hpp"
@@ -30,7 +29,6 @@ public:
   CREATE_FUNC(GameScene);
   void mainGameLoop(float delta);
   GUI* gui;
-  WorldData* worldData;
 private:
   float counter;
   WorldObject* worldObject;

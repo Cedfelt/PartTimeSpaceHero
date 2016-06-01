@@ -26,6 +26,7 @@ public:
   void setupLevel(std::string levelName);
   bool loadDataFromMemory();
   void saveDataToMemory();
+  void eraseDataFromMemory();
   std::string getMapName();
   uint32_t getHighScore();
   uint32_t getBestTime();

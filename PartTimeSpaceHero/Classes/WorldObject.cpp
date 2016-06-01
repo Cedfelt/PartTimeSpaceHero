@@ -75,8 +75,8 @@ void WorldObject::updateWorld(float delta) {
   // Check Goal
   if(obj->colided){
     // setCurrentCompleted
-    auto wd = WorldData::create();
-    wd->setCurrentLevelStatus(TRUE,30,100);
+    auto sd = SaveData::create();
+    sd->setCurrentLevelStatus(true,30,100);
     auto audio = CocosDenshion::SimpleAudioEngine::getInstance();
     audio->stopBackgroundMusic();
     stopAllActions();
