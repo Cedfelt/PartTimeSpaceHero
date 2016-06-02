@@ -164,10 +164,10 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClCompile Include="..\Classes\PlayerControl.cpp" />
     <ClCompile Include="..\Classes\PlayerInput.cpp" />
     <ClCompile Include="..\Classes\PlayerObject.cpp" />
+    <ClCompile Include="..\Classes\SaveData.cpp" />
     <ClCompile Include="..\Classes\SoundFx.cpp" />
     <ClCompile Include="..\Classes\TurfelObject.cpp" />
     <ClCompile Include="..\Classes\UfoObject.cpp" />
-    <ClCompile Include="..\Classes\WorldData.cpp" />
     <ClCompile Include="..\Classes\WorldObject.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
@@ -190,10 +190,10 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClInclude Include="..\Classes\PlayerControl.hpp" />
     <ClInclude Include="..\Classes\PlayerInput.hpp" />
     <ClInclude Include="..\Classes\PlayerObject.hpp" />
+    <ClInclude Include="..\Classes\SaveData.hpp" />
     <ClInclude Include="..\Classes\SoundFx.hpp" />
     <ClInclude Include="..\Classes\TurfelObject.hpp" />
     <ClInclude Include="..\Classes\UfoObject.hpp" />
-    <ClInclude Include="..\Classes\WorldData.hpp" />
     <ClInclude Include="..\Classes\WorldObject.hpp" />
     <ClInclude Include="main.h" />
   </ItemGroup>

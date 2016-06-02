@@ -81,7 +81,7 @@
     <ClCompile Include="..\Classes\UfoObject.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\WorldData.cpp">
+    <ClCompile Include="..\Classes\SaveData.cpp">
       <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>
@@ -155,7 +155,7 @@
     <ClInclude Include="..\Classes\UfoObject.hpp">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\WorldData.hpp">
+    <ClInclude Include="..\Classes\SaveData.hpp">
       <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>
