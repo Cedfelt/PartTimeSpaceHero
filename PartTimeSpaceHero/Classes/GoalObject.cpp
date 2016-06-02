@@ -18,7 +18,7 @@ bool GoalObject::init() {
   }
   
   this->schedule(schedule_selector(GoalObject::update));
-  setScale(1);
+  setScale(3);
   //addGravityToObject(false);
   setElastic(0);
   // SETUP ANIMATIONS

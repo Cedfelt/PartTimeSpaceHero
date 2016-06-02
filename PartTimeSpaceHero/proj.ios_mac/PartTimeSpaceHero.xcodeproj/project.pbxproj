@@ -85,6 +85,7 @@
 		A825610E1CFCD64100FC1DD3 /* SaveData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A825610B1CFCD64100FC1DD3 /* SaveData.cpp */; };
 		A82561111CFCD65200FC1DD3 /* LevelData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A825610F1CFCD65200FC1DD3 /* LevelData.cpp */; };
 		A82561121CFCD65200FC1DD3 /* LevelData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A825610F1CFCD65200FC1DD3 /* LevelData.cpp */; };
+		A828EC0E1D00D0D70006AA25 /* BottyObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A828EC0C1D00D0D70006AA25 /* BottyObject.cpp */; };
 		A87C27C71CC19F10004520EF /* Physic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A87C27C51CC19F10004520EF /* Physic.cpp */; };
 		A8805F2D1CEFB37400B2AE7A /* CoinObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8805F2B1CEFB37400B2AE7A /* CoinObject.cpp */; };
 		A8805F301CF04C6D00B2AE7A /* SoundFx.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8805F2E1CF04C6D00B2AE7A /* SoundFx.cpp */; };
@@ -185,6 +186,8 @@
 		A825610C1CFCD64100FC1DD3 /* SaveData.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SaveData.hpp; sourceTree = "<group>"; };
 		A825610F1CFCD65200FC1DD3 /* LevelData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LevelData.cpp; sourceTree = "<group>"; };
 		A82561101CFCD65200FC1DD3 /* LevelData.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = LevelData.hpp; sourceTree = "<group>"; };
+		A828EC0C1D00D0D70006AA25 /* BottyObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BottyObject.cpp; sourceTree = "<group>"; };
+		A828EC0D1D00D0D70006AA25 /* BottyObject.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BottyObject.hpp; sourceTree = "<group>"; };
 		A87C27C51CC19F10004520EF /* Physic.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Physic.cpp; sourceTree = "<group>"; };
 		A87C27C61CC19F10004520EF /* Physic.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Physic.hpp; sourceTree = "<group>"; };
 		A8805F2B1CEFB37400B2AE7A /* CoinObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CoinObject.cpp; sourceTree = "<group>"; };
@@ -324,6 +327,8 @@
 		46880B8319C43A87006E1F66 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				A828EC0C1D00D0D70006AA25 /* BottyObject.cpp */,
+				A828EC0D1D00D0D70006AA25 /* BottyObject.hpp */,
 				46880B8419C43A87006E1F66 /* AppDelegate.cpp */,
 				46880B8519C43A87006E1F66 /* AppDelegate.h */,
 				A8805F2B1CEFB37400B2AE7A /* CoinObject.cpp */,
@@ -571,6 +576,7 @@
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 				A81BE1671CBA499F00C09359 /* GlobalPList.cpp in Sources */,
+				A828EC0E1D00D0D70006AA25 /* BottyObject.cpp in Sources */,
 				A82561111CFCD65200FC1DD3 /* LevelData.cpp in Sources */,
 				A87C27C71CC19F10004520EF /* Physic.cpp in Sources */,
 				A825610D1CFCD64100FC1DD3 /* SaveData.cpp in Sources */,

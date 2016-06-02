@@ -11,6 +11,7 @@
 #include "Physic.hpp"
 #include "CoinObject.hpp"
 #include "TurfelObject.hpp"
+#include "BottyObject.hpp"
 #include "GoalObject.hpp"
 #include "LaserObject.hpp"
 #include "UfoObject.hpp"
@@ -79,6 +80,7 @@ void WorldObject::updateWorld(float delta) {
     sd->setCurrentLevelStatus(true,30,100);
     auto audio = CocosDenshion::SimpleAudioEngine::getInstance();
     audio->stopBackgroundMusic();
+    audio->pauseAllEffects();
     stopAllActions();
     cocos2d::Director::getInstance()->popScene();
     
@@ -185,7 +187,7 @@ void WorldObject::spawnObjects(cocos2d::Vector<GameObject*>* gameObjects) {
     else if(name == "GoalObject"){
       // COIN
       this->obj = GoalObject::create();
-      this->obj->setupHitbox(1, 1, 64, 64, 64, 64, false);
+      this->obj->setupHitbox(1, 1, 32, 32, 32, 32, false);
       gameObjects->pushBack(this->obj);
       this->obj->setObjectPositionX(x);
       this->obj->setObjectPositionY(y);
@@ -243,6 +245,20 @@ void WorldObject::spawnObjects(cocos2d::Vector<GameObject*>* gameObjects) {
       patrolUfo->getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::Player|(int)PhysicsCategory::PlayerPickups|(int)PhysicsCategory::Hazard);
       patrolUfo->target = player;
       addChild(patrolUfo);
+    }
+    
+    else if(name == "BottyObject"){
+      // COIN
+      auto botty = BottyObject::create();
+      botty->setupHitbox(0.1, 1, 24, 48, 24, 44, false);
+      gameObjects->pushBack(botty);
+      botty->setObjectPositionX(x);
+      botty->setObjectPositionY(y);
+      botty->getPhysicsBody()->setCategoryBitmask((int)PhysicsCategory::Enemy);
+      botty->getPhysicsBody()->setCollisionBitmask((int)PhysicsCategory::None);
+      botty->getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::Player|(int)PhysicsCategory::PlayerPickups|(int)PhysicsCategory::Hazard);
+      botty->target = player;
+      addChild(botty);
     }
     
   }

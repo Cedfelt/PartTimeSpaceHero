@@ -22,7 +22,7 @@ bool CoinObject::init() {
   addGravityToObject(false);
   // SETUP ANIMATIONS
   pling = SoundFx::create();
-  pling->loadEffect("jet_pack_hum.aif", 0, 1, false);
+  pling->loadEffect("pling.aif", 0, 1, false);
   addChild(pling);
   objectSprite = cocos2d::Sprite::create();
   spriteFrameCache = spriteFrameCache->getInstance();
@@ -39,7 +39,7 @@ bool CoinObject::init() {
 
 void CoinObject::interActWithPlayer(GameObject* player){
   remove_object = true;
-  //pling->play(0.2f);
+  pling->play(0.5f);
 }
 
 void CoinObject::update(const float delta) {

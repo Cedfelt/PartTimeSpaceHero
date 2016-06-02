@@ -59,7 +59,7 @@ bool PlayerObject::init() {
 
   fuel = 1.0f;
   consumeRate = currentConsumeRate;
-  currentConsumeRate = 0.0015f;
+  currentConsumeRate = 0.0095f;
   return true;
 }
 
@@ -221,7 +221,7 @@ const float dashTime = 2.0f;
 int dash_stage = 0;
 
 bool PlayerObject::playerDashUpdate(float delta) {
-  consumeRate = -currentConsumeRate*3;
+  consumeRate = -currentConsumeRate*0.5f;
   if(fuel<=0){
     jetpack1->stop();
     dashRightCnt = 0;
@@ -335,6 +335,8 @@ bool PlayerObject::hurt(const int dmg, const Vec2 force){
     setImune();
     HP-=dmg;
     playerCrySFX->play(0.3f);
+    setVelocityX(force.x);
+    setVelocityY(force.y);
     this->unschedule(CC_SCHEDULE_SELECTOR(GameObject::imuneUpdate));
     this->schedule(CC_SCHEDULE_SELECTOR(GameObject::imuneUpdate));
     if(HP<=0){
