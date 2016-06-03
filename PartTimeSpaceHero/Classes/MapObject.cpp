@@ -10,7 +10,7 @@
 #include "GlobalPList.hpp"
 #include "PlayerObject.hpp"
 
-
+uint32_t attributes[BLOCK_SIZE][BLOCK_SIZE];
 
 bool MapObject::init() {
   //////////////////////////////
@@ -98,6 +98,7 @@ uint32_t MapObject::getMapHeightInTiles(){
 uint32_t MapObject::getMapTileSize(){
   return tileSize;
 }
+
 
 
 

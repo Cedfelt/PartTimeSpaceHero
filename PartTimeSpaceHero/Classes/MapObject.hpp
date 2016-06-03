@@ -41,5 +41,5 @@ private:
   uint32_t tileSize;
   cocos2d::Vector<cocos2d::TMXLayer*> background_layers;
 #define BLOCK_SIZE 1000
-  uint32_t attributes[BLOCK_SIZE][BLOCK_SIZE];
+  
 };

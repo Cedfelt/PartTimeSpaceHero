@@ -8,6 +8,7 @@
 
 #include "BottyObject.hpp"
 #include "BabyTurfelObject.hpp"
+#include "MapObject.hpp"
 
 bool BottyObject::init() {
   //////////////////////////////
@@ -68,6 +69,21 @@ void BottyObject::AIUpdate(const float delta) {
       objectSprite->setScaleX(1);
     }
     else{
+      setVelocityX(-50);
+      setPrevDir(GO_LEFT);
+      objectSprite->setScaleX(-1);
+    }
+  }
+  // Close To Gap
+  MapObject* map = MapObject::create();
+  const float lookAhead = 1.50f*getVelocityX() / delta;
+  if (map->attributeAt((uint32_t)((getPositionX() + lookAhead)/map->getMapTileSize()), (uint32_t)(getPositionY() - 64)/ map->getMapTileSize())==0x2){
+    if (getPrevDir() == GO_LEFT) {
+      setVelocityX(50);
+      setPrevDir(GO_RIGHT);
+      objectSprite->setScaleX(1);
+    }
+    else {
       setVelocityX(-50);
       setPrevDir(GO_LEFT);
       objectSprite->setScaleX(-1);
