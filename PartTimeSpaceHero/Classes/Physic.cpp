@@ -10,6 +10,7 @@
 #include "cocostudio/CocoStudio.h"
 #include "ui/CocosGUI.h"
 #include "GlobalPList.hpp"
+#include "MapData.hpp"
 
 USING_NS_CC;
 
@@ -99,10 +100,10 @@ bool Physic::isBlocked(Rect* hitBox, MapObject* map){
     for(uint32_t yy = y_min; yy<yRange;yy++){
       
       uint32_t attribute = map->attributeAt(xx, yy);
-      if(attribute==MapObject::CLEAR){
+      if(attribute==MapData::CLEAR){
         continue;
       }
-      else if (attribute==MapObject::BLOCKED){
+      else if (attribute ==MapData::BLOCKED){
         tile_rect.setRect(xx*ts,yy*ts,ts,ts);
       }
       

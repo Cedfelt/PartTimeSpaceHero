@@ -10,7 +10,7 @@
 #include "GlobalPList.hpp"
 #include "PlayerObject.hpp"
 
-uint32_t attributes[BLOCK_SIZE][BLOCK_SIZE];
+
 
 bool MapObject::init() {
   //////////////////////////////
@@ -23,39 +23,25 @@ bool MapObject::init() {
   mapWidth = map->getMapSize().width;
   mapHeight = map->getMapSize().height;
   tileSize = map->getTileSize().width;
-  setupAttributes();
+  
+  mapData = MapData::create();
+  addChild(mapData);
+  mapData->setupAttributes(map);
+  
   setupBackgroundLayers();
   
   return true;
 }
 
 void MapObject::setupAttributes() {
-  TMXLayer *tempLayer;
-  tempLayer = map->getLayer("walls");
-  const size_t mh = mapHeight-1;
-  const size_t mw = mapWidth-1;
-  if(!tempLayer){
-    log("NO 'walls' -layer");
-    return;
-  }
-  for(int x = 0;x<mw;x++){
-    for(int y = 0;y<mh;y++){
-      int gid = tempLayer->getTileGIDAt(Point(x, mh - (y)));
-      if(gid>0){
-        attributes[x][y] = BLOCKED;
-      }
-      else{
-        attributes[x][y] = CLEAR;
-      }
-    }
-  }
+  
 }
 
 uint32_t MapObject::attributeAt(const uint32_t x, const uint32_t y) {
-  if (x < BLOCK_SIZE&&y < BLOCK_SIZE) {
-    return attributes[x][y];
+  if (x < TILES_COUNT_X&&y < TILES_COUNT_Y) {
+    return mapData->attributes[x][y];
   }
-  return BLOCKED;
+  return MapData::BLOCKED;
 }
 
 void MapObject::setupBackgroundLayers(){

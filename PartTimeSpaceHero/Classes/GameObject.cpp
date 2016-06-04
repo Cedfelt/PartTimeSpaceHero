@@ -152,6 +152,13 @@ bool GameObject::hurt(const int dmg, const Vec2 force){
   return false;
 }
 
+uint32_t GameObject::isBlocked(uint32_t x,uint32_t y){
+  if (x < TILES_COUNT_X&&y < TILES_COUNT_Y) {
+    return mapData->attributes[x][y] == MapData::BLOCKED;
+  }
+  return true;
+}
+
 void GameObject::setObjectPositionX(const float x){
   modelPositionX = x;
   hitBox.origin.x = int(modelPositionX);

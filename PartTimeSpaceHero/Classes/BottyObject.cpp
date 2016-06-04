@@ -8,7 +8,7 @@
 
 #include "BottyObject.hpp"
 #include "BabyTurfelObject.hpp"
-#include "MapObject.hpp"
+
 
 bool BottyObject::init() {
   //////////////////////////////
@@ -43,7 +43,7 @@ bool BottyObject::init() {
 }
 
 const float forceX = 100;
-const float forceY = 100;
+const float forceY = 170;
 void BottyObject::interActWithPlayer(GameObject* player){
   if(getPrevDir() == GO_RIGHT){
     setVelocityX(50);
@@ -75,9 +75,9 @@ void BottyObject::AIUpdate(const float delta) {
     }
   }
   // Close To Gap
-  MapObject* map = MapObject::create();
+  
   const float lookAhead = 1.50f*getVelocityX() / delta;
-  if (map->attributeAt((uint32_t)((getPositionX() + lookAhead)/map->getMapTileSize()), (uint32_t)(getPositionY() - 64)/ map->getMapTileSize())==0x2){
+  if (!isBlocked((uint32_t)((getPositionX() + lookAhead)/8.0), (uint32_t)(getPositionY() - 64.0)/8.0)){
     if (getPrevDir() == GO_LEFT) {
       setVelocityX(50);
       setPrevDir(GO_RIGHT);

@@ -35,7 +35,7 @@ bool LevelData::loadDataFromMemory(){
   
   std::string compString = mapName + "_completed";
   completed = userDef->getIntegerForKey(compString.c_str());
-
+  
   userDef->flush();
   return true;
 }
@@ -52,7 +52,7 @@ void LevelData::saveDataToMemory(){
   std::string compString = mapName + "_completed";
   userDef->setBoolForKey(compString.c_str(),completed);
   userDef->flush();
-
+  
 }
 enum E_DEFAULT_LEVEL_DATA{
   DEFUALT_HIGH_SCORE = 0,

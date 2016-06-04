@@ -11,18 +11,13 @@
 #include <stdio.h>
 #include "cocos2d.h"
 #include "GameObject.hpp"
+#include "MapData.hpp"
 using namespace cocos2d;
 
 class MapObject : public cocos2d::Node
 {
 public:
   // Here's a difference. Method 'init' in cocos2d-x returns bool, instead of returning 'id' in cocos2d-iphone
-  enum{
-    BLOCKED,
-    WATER,
-    CLEAR,
-    DESTRUCTABLE
-  };
   virtual bool init();
   void spawnObjects(cocos2d::Vector<GameObject*> gameObjects);
   uint32_t attributeAt(const uint32_t x, const uint32_t y);
@@ -31,6 +26,7 @@ public:
   uint32_t getMapTileSize();
   void setupBackgroundLayers();
   void moveBackgroundLayers();
+  MapData* mapData;
   // implement the "static create()" method manually
   CREATE_FUNC(MapObject);
   TMXTiledMap* map;
@@ -40,6 +36,5 @@ private:
   uint32_t mapHeight;
   uint32_t tileSize;
   cocos2d::Vector<cocos2d::TMXLayer*> background_layers;
-#define BLOCK_SIZE 1000
-  
+
 };

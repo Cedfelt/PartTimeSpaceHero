@@ -10,6 +10,7 @@
 #include "cocos2d.h"
 #include <stdio.h>
 #include "SoundFx.hpp"
+#include "MapData.hpp"
 using namespace cocos2d;
 class GameObject : public cocos2d::DrawNode {
 public:
@@ -48,10 +49,15 @@ public:
   float imuneTime;
   float imuneCnt;
   float solid;
+  int32_t dmg;
+  float softXMax;
+  float softXMin;
   GameObject* target;
   cocos2d::Vector<GameObject*> addToGameObjects;
-  
   int32_t HP;
+  
+  
+  MapData* mapData;
   
   
   Rect* getHitbox();
@@ -72,7 +78,7 @@ public:
     GO_IN_AIR_UP,
     GO_IN_AIR_DOWN
   };
-  
+  uint32_t isBlocked(uint32_t x,uint32_t y);
   float maxSpeedX;
   float maxSpeedYUpp;
   float maxSpeedYDown;

@@ -17,6 +17,7 @@
 #include "UfoObject.hpp"
 #include <math.h>
 #include "SimpleAudioEngine.h"
+#include "DamageZone.hpp"
 
 
 
@@ -122,8 +123,9 @@ void WorldObject::setViewPointCenter(const cocos2d::Point position) {
   const size_t scale = getScale();
   const size_t mapWidth = mapObject->getMapWidthInTiles()*scale;
   const size_t mapHeight = mapObject->getMapHeightInTiles()*scale;
+  const size_t tilesOutsideLow = 16;
   float x = fmaxf(scale*position.x, winSize.width);
-  float y = fmaxf(scale*position.y, winSize.height);
+  float y = fmaxf(scale*position.y, winSize.height + tileSize*tilesOutsideLow);
   x = fminf(x, (mapWidth * tileSize) - winSize.width);
   y = fminf(y, (mapHeight * tileSize) - winSize.height);
   const Point actualPosition = Point((int)x, (int)y);
@@ -244,6 +246,8 @@ void WorldObject::spawnObjects(cocos2d::Vector<GameObject*>* gameObjects) {
       patrolUfo->getPhysicsBody()->setCollisionBitmask((int)PhysicsCategory::None);
       patrolUfo->getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::Player|(int)PhysicsCategory::PlayerPickups|(int)PhysicsCategory::Hazard);
       patrolUfo->target = player;
+      patrolUfo->softXMax = x+w;
+      patrolUfo->softXMin = x;
       addChild(patrolUfo);
     }
     
@@ -260,6 +264,22 @@ void WorldObject::spawnObjects(cocos2d::Vector<GameObject*>* gameObjects) {
       botty->target = player;
       addChild(botty);
     }
+    else if(name == "DamageZone"){
+      // COIN
+      auto botty = DamageZone::create();
+      botty->setupHitbox(0.1, 1, w, h, w, h, false);
+      gameObjects->pushBack(botty);
+      botty->setObjectPositionX(x);
+      botty->setObjectPositionY(y);
+      botty->getPhysicsBody()->setCategoryBitmask((int)PhysicsCategory::Enemy);
+      botty->getPhysicsBody()->setCollisionBitmask((int)PhysicsCategory::None);
+      botty->getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::All);
+      botty->dmg = vm["dmg"].asInt();
+      botty->target = player;
+      addChild(botty);
+    }
+    
+    gameObjects->at(gameObjects->size() -1)->mapData = mapObject->mapData;
     
   }
   for (int i = 0;i < gameObjects->size();i++) {
