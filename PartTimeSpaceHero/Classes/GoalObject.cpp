@@ -26,6 +26,7 @@ bool GoalObject::init() {
   objectSprite->setPosition(32, 32);// Aling sprite in Hitbox
   objectSprite->getTexture()->setAliasTexParameters();
   addChild(objectSprite);
+  setAnchorPoint(Point(0.5,0));
   return true;
 }
 

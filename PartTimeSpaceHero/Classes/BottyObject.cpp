@@ -77,7 +77,7 @@ void BottyObject::AIUpdate(const float delta) {
   // Close To Gap
   
   const float lookAhead = 1.50f*getVelocityX() / delta;
-  if (!isBlocked((uint32_t)((getPositionX() + lookAhead)/8.0), (uint32_t)(getPositionY() - 64.0)/8.0)){
+  if (!isBlocked((uint32_t)((getPositionX() + lookAhead)/8.0), (uint32_t)(getPositionY() - 8.0)/8.0)){
     if (getPrevDir() == GO_LEFT) {
       setVelocityX(50);
       setPrevDir(GO_RIGHT);

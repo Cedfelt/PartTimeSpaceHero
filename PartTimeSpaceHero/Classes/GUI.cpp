@@ -50,6 +50,7 @@ bool GUI::init() {
   fuelLabel->setPositionY(-2);
   addChild(fuelLabel, 3);
 
+  // Hearts
   for (int i = 0;i < 3;i++) {
     heartSprite[i] = Sprite::create("heart.png");
     heartSprite[i]->setPositionY((-64));
@@ -61,14 +62,23 @@ bool GUI::init() {
     addChild(heartSprite[i], 1);
   }
 
-  // Hearts
+  
 
   return true;
 }
 
 // Updating Player GUI
 void GUI::update(const float delta) {
+  const float fule = player->getFuel();
   objectSprite->setScaleX(bar_length*player->getFuel());
+  objectSprite->setColor(Color3B::WHITE);
+  if(fule<0.5f){
+    objectSprite->setColor(Color3B::YELLOW);
+  }
+  if(fule<0.2f){
+    objectSprite->setColor(Color3B::RED);
+  }
+  
   
   for (int i = 0;i < 3;i++) {
     if(i+1<=player->HP){
