@@ -21,7 +21,7 @@ public:
   void gameObjectCollision(GameObject*  goA,GameObject* goB);
     
 private:
-  bool isBlocked(Rect* hitBox, MapObject* map);
+  bool isBlocked(const Rect* hitBox, MapObject* map,const uint32_t mask);
 };
 
 

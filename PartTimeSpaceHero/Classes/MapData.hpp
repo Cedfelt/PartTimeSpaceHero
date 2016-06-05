@@ -22,6 +22,7 @@ public:
     BLOCKED,
     WATER,
     CLEAR,
+    ONE_WAY_UP,
     DESTRUCTABLE
   };
 #define TILES_COUNT_X 1000

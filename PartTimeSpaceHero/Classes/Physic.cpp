@@ -33,12 +33,21 @@ int dir_sign(const float num){
 float round_and(float f){
   return floorf(f+0.5f);
 }
-
+enum collision_bits{
+  E_CB_NONE = 0,
+  E_CB_BLOCKED = 1,
+  EB_CB_ONE_WAY_UP = 2
+};
 void Physic::moveGameObjects(cocos2d::Vector<GameObject*>* gameObjects,MapObject* mapObject,const float delta) {
   const size_t obj_cnt = gameObjects->size();
   for (int i = 0;i < obj_cnt;i++) {
     
     GameObject* obj = gameObjects->at(i);
+    uint32_t collision_mask = E_CB_BLOCKED;
+    if(obj->getVelocityY() <= 0){
+      collision_mask |= EB_CB_ONE_WAY_UP;
+    }
+    
     if(obj->remove_object){
       return;
     }
@@ -51,10 +60,10 @@ void Physic::moveGameObjects(cocos2d::Vector<GameObject*>* gameObjects,MapObject
     
     // COLLISION Y-AXIS
     obj->setObjectPositionY((obj->getObjectPositionY()+obj->getVelocityY()*delta));
-    if(isBlocked(obj->getHitbox(),mapObject)){
+    if(isBlocked(obj->getHitbox(),mapObject,collision_mask)){
       const int sign = dir_sign(obj->getVelocityY());
       obj->setObjectPositionY((int)(obj->getObjectPositionY()+sign));
-      while(isBlocked(obj->getHitbox(),mapObject)){
+      while(isBlocked(obj->getHitbox(),mapObject,collision_mask)){
         obj->setObjectPositionY((int)(obj->getObjectPositionY()+sign));
       }
       // BLOCKED Y
@@ -64,10 +73,10 @@ void Physic::moveGameObjects(cocos2d::Vector<GameObject*>* gameObjects,MapObject
     
     // COLLISION X-AXIS
     obj->setObjectPositionX((obj->getObjectPositionX() + delta*obj->getVelocityX()));
-    if(isBlocked(obj->getHitbox(),mapObject)){
+    if(isBlocked(obj->getHitbox(),mapObject,collision_mask)){
       const int sign = dir_sign(obj->getVelocityX());
       obj->setObjectPositionX(int(obj->getObjectPositionX()+sign));
-      while(isBlocked(obj->getHitbox(),mapObject)){
+      while(isBlocked(obj->getHitbox(),mapObject,collision_mask)){
         obj->setObjectPositionX(int(obj->getObjectPositionX()+sign));
       }
       // BLOCKED X
@@ -77,7 +86,7 @@ void Physic::moveGameObjects(cocos2d::Vector<GameObject*>* gameObjects,MapObject
   }
 }
 
-bool Physic::isBlocked(Rect* hitBox, MapObject* map){
+bool Physic::isBlocked(const Rect* hitBox, MapObject* map,const uint32_t mask){
   Rect tile_rect;
   const size_t ts = 8;
   const uint32_t x_min = ((int)(hitBox->getMinX())/(ts));
@@ -105,6 +114,12 @@ bool Physic::isBlocked(Rect* hitBox, MapObject* map){
       }
       else if (attribute ==MapData::BLOCKED){
         tile_rect.setRect(xx*ts,yy*ts,ts,ts);
+      }
+      else if (attribute ==MapData::ONE_WAY_UP){
+        if((mask & EB_CB_ONE_WAY_UP) && yy*ts < hitBox->getMinY())
+          tile_rect.setRect(xx*ts,yy*ts,ts,ts);
+        else
+          continue;
       }
       
       bool cond1 = hitBox->intersectsRect(tile_rect);
