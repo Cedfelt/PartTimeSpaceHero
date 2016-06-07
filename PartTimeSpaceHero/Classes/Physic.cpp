@@ -43,6 +43,8 @@ void Physic::moveGameObjects(cocos2d::Vector<GameObject*>* gameObjects,MapObject
   for (int i = 0;i < obj_cnt;i++) {
     
     GameObject* obj = gameObjects->at(i);
+    obj->lastX = obj->getObjectPositionX();
+    obj->lastY = obj->getObjectPositionY();
     uint32_t collision_mask = E_CB_BLOCKED;
     if(obj->getVelocityY() <= 0){
       collision_mask |= EB_CB_ONE_WAY_UP;
@@ -85,7 +87,7 @@ void Physic::moveGameObjects(cocos2d::Vector<GameObject*>* gameObjects,MapObject
     }
   }
 }
-
+uint32_t print = 0;
 bool Physic::isBlocked(GameObject* obj, const Rect* hitBox, MapObject* map,const uint32_t mask,bool isPlatform,const float delta){
   Rect tile_rect;
   const size_t ts = 8;
@@ -129,12 +131,13 @@ bool Physic::isBlocked(GameObject* obj, const Rect* hitBox, MapObject* map,const
     }
   }
   if(platforms){
+    
+    if(!obj->platform)
+      print += 1;
     for(int i=0;i < platforms->size();i++){
       auto a = platforms->at(i)->getHitbox();
       tile_rect.setRect(a->getMinX(),a->getMinY(),a->getMaxX()-a->getMinX(),a->getMaxY()-a->getMinY());
       if(hitBox->intersectsRect(tile_rect)&&!isPlatform){
-        obj->setObjectPositionX(obj->getObjectPositionX() + platforms->at(i)->deltaX);
-        obj->addToVelocityY(platforms->at(i)->getVelocityY()*delta);
         return true;
       }
     }

@@ -25,7 +25,7 @@ bool PlatformObject::init() {
   }
   
   addGravityToObject(false);
-  this->schedule(schedule_selector(PlatformObject::update));
+  //this->schedule(schedule_selector(PlatformObject::update));
   staticBoody = true;
   platform = true;
   setVelocityX(-50);
@@ -55,10 +55,14 @@ float cnt = 0;
 void PlatformObject::update(const float delta) {
   deltaX = getObjectPositionX() - lastX;
   deltaY = getObjectPositionY() - lastY;
-  lastX = getObjectPositionX();
-  lastY = getObjectPositionY();
   
-  
+  auto h = getHitbox();
+  Rect extRect;
+  extRect.setRect(h->getMinX(),h->getMinY(),h->getMaxX()-h->getMinX(), h->getMaxY() - h->getMinY()+2);
+  if (target->getHitbox()->intersectsRect(extRect)) {
+    target->setObjectPositionX(target->getObjectPositionX() + deltaX);
+    /*obj->addToVelocityY(getVelocityY()*delta);*/
+  }
   if(!getVelocityX()){
     if(getPrevDir()==GO_LEFT){
       setVelocityX(50);

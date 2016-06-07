@@ -150,6 +150,7 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClCompile Include="..\Classes\BabyTurfelObject.cpp" />
     <ClCompile Include="..\Classes\BottyObject.cpp" />
     <ClCompile Include="..\Classes\CoinObject.cpp" />
+    <ClCompile Include="..\Classes\DamageZone.cpp" />
     <ClCompile Include="..\Classes\GameObject.cpp" />
     <ClCompile Include="..\Classes\GameScene.cpp" />
     <ClCompile Include="..\Classes\GlobalPList.cpp" />
@@ -160,8 +161,10 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClCompile Include="..\Classes\LaserObject.cpp" />
     <ClCompile Include="..\Classes\LevelData.cpp" />
     <ClCompile Include="..\Classes\MainMenu.cpp" />
+    <ClCompile Include="..\Classes\MapData.cpp" />
     <ClCompile Include="..\Classes\MapObject.cpp" />
     <ClCompile Include="..\Classes\Physic.cpp" />
+    <ClCompile Include="..\Classes\PlatformObject.cpp" />
     <ClCompile Include="..\Classes\PlayerControl.cpp" />
     <ClCompile Include="..\Classes\PlayerInput.cpp" />
     <ClCompile Include="..\Classes\PlayerObject.cpp" />
@@ -177,6 +180,7 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClInclude Include="..\Classes\BabyTurfelObject.hpp" />
     <ClInclude Include="..\Classes\BottyObject.hpp" />
     <ClInclude Include="..\Classes\CoinObject.hpp" />
+    <ClInclude Include="..\Classes\DamageZone.hpp" />
     <ClInclude Include="..\Classes\GameObject.hpp" />
     <ClInclude Include="..\Classes\GameScene.hpp" />
     <ClInclude Include="..\Classes\GlobalPList.hpp" />
@@ -187,8 +191,10 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClInclude Include="..\Classes\LaserObject.hpp" />
     <ClInclude Include="..\Classes\LevelData.hpp" />
     <ClInclude Include="..\Classes\MainMenu.hpp" />
+    <ClInclude Include="..\Classes\MapData.hpp" />
     <ClInclude Include="..\Classes\MapObject.hpp" />
     <ClInclude Include="..\Classes\Physic.hpp" />
+    <ClInclude Include="..\Classes\PlatformObject.hpp" />
     <ClInclude Include="..\Classes\PlayerControl.hpp" />
     <ClInclude Include="..\Classes\PlayerInput.hpp" />
     <ClInclude Include="..\Classes\PlayerObject.hpp" />
