@@ -28,24 +28,27 @@ void MapData::setupAttributes(cocos2d::TMXTiledMap* map) {
   
   const size_t mh = map->getMapSize().height-1;
   const size_t mw = map->getMapSize().width-1;
-  if(!tempLayer || ! one_way_up){
+  if(!tempLayer){
     cocos2d::log("NO 'walls' -layer");
     return;
   }
   
   for(int x = 0;x<mw;x++){
     for(int y = 0;y<mh;y++){
-      int gid = tempLayer->getTileGIDAt(cocos2d::Point(x, mh - (y)));
-      if(gid>0){
+      const int blocked_gid = tempLayer->getTileGIDAt(cocos2d::Point(x, mh - (y)));
+      if(blocked_gid>0){
         attributes[x][y] = BLOCKED;
       }
       else{
         attributes[x][y] = CLEAR;
       }
-      gid = one_way_up->getTileGIDAt(cocos2d::Point(x, mh - (y)));
-      if(gid>0){
-        attributes[x][y] = ONE_WAY_UP;
+      if(one_way_up){
+        const int one_way_gid = one_way_up->getTileGIDAt(cocos2d::Point(x, mh - (y)));
+        if(one_way_gid>0){
+          attributes[x][y] = ONE_WAY_UP;
+        }
       }
+      
     }
   }
 }

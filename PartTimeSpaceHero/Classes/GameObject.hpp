@@ -50,14 +50,16 @@ public:
   float imuneCnt;
   float solid;
   int32_t dmg;
+  bool skipMove;
   float softXMax;
   float softXMin;
   GameObject* target;
   cocos2d::Vector<GameObject*> addToGameObjects;
   int32_t HP;
-  
-  
+  bool staticBoody;
+  bool platform;
   MapData* mapData;
+  Vec2 extraMove;
   
   
   Rect* getHitbox();

@@ -19,9 +19,9 @@ public:
   void moveGameObjects(cocos2d::Vector<GameObject*>* gameObjects,MapObject* mapObject,float delta);
   void colideGameObjects(cocos2d::Vector<GameObject*>* gameObjects);
   void gameObjectCollision(GameObject*  goA,GameObject* goB);
-    
+  cocos2d::Vector<GameObject*>* platforms;
 private:
-  bool isBlocked(const Rect* hitBox, MapObject* map,const uint32_t mask);
+  bool isBlocked(GameObject* obj,const Rect* hitBox, MapObject* map,const uint32_t mask,bool isPlatform,const float delta);
 };
 
 

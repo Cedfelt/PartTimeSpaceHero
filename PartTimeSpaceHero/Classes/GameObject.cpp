@@ -23,7 +23,9 @@ bool GameObject::init() {
   HP = 1;
   imuneTime = 1;
   imuneCnt = 0;
+  platform = false;
   solid  = 1;
+  staticBoody = false;
   return true;
 }
 

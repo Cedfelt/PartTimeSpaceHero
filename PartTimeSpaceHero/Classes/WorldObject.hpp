@@ -17,6 +17,7 @@
 #include "GoalObject.hpp"
 #include "SaveData.hpp"
 
+
 class WorldObject : public cocos2d::Node
 {
 public:
@@ -29,6 +30,7 @@ public:
 private:
   MapObject* mapObject;
   cocos2d::Vector<GameObject*> gameObjects;
+  cocos2d::Vector<GameObject*> plattis;
   void spawnObjects(cocos2d::Vector<GameObject*>* gameObjects);
   void setViewPointCenter(const cocos2d::Point position);
   void updateWorld(float delta);

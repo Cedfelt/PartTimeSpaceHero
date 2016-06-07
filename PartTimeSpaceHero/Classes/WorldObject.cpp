@@ -18,6 +18,7 @@
 #include <math.h>
 #include "SimpleAudioEngine.h"
 #include "DamageZone.hpp"
+#include "PlatformObject.hpp"
 
 
 
@@ -30,14 +31,15 @@ bool WorldObject::init() {
   mapObject = MapObject::create();
   mapObject->setAnchorPoint(Point(0, 0));
   addChild(mapObject);
-
+  physic = Physic::create();
+  addChild(physic);
   spawnObjects(&gameObjects);
 
   auto contactListener = EventListenerPhysicsContact::create();
   contactListener->onContactBegin = CC_CALLBACK_1(WorldObject::onContactBegan, this);
   this->getEventDispatcher()->addEventListenerWithSceneGraphPriority(contactListener, this);
 
-  physic = Physic::create();
+  
 
   // This Sets the scale for all World Objects
   const size_t scale = getScaleFactor();
@@ -56,6 +58,7 @@ bool WorldObject::init() {
    
   
   cocos2d::Director::getInstance()->getTextureCache()->removeAllTextures();
+  physic->platforms = &plattis;
   return true;
 }
 
@@ -73,6 +76,7 @@ void WorldObject::updateWorld(float delta) {
  
 
 
+  
   
   // Check Goal
   if(obj->colided){
@@ -137,6 +141,9 @@ void WorldObject::setViewPointCenter(const cocos2d::Point position) {
 bool WorldObject::onContactBegan(PhysicsContact &contact) {
   auto *nodeA = (GameObject *)contact.getShapeA()->getBody()->getNode();
   auto * nodeB = (GameObject *)contact.getShapeB()->getBody()->getNode();
+  if(nodeA->platform||nodeB->platform){
+    return true;
+  }
   nodeA->colideWith(nodeB);
   nodeB->colideWith(nodeA);
   physic->gameObjectCollision(nodeA, nodeB);
@@ -276,6 +283,21 @@ void WorldObject::spawnObjects(cocos2d::Vector<GameObject*>* gameObjects) {
       botty->getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::All);
       botty->dmg = vm["dmg"].asInt();
       botty->target = player;
+      addChild(botty);
+    }
+    else if(name == "PlatformObject"){
+      // COIN
+      auto botty = PlatformObject::create();
+      botty->setupHitbox(0.1, 1, 64, 32, 64, 32, false);
+      gameObjects->pushBack(botty);
+      botty->setObjectPositionX(x);
+      botty->setObjectPositionY(y);
+      botty->getPhysicsBody()->setCategoryBitmask((int)PhysicsCategory::Enemy);
+      botty->getPhysicsBody()->setCollisionBitmask((int)PhysicsCategory::None);
+      botty->getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::None);
+      botty->dmg = vm["dmg"].asInt();
+      botty->target = player;
+      plattis.pushBack(botty);
       addChild(botty);
     }
     

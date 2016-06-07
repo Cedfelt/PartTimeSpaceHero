@@ -330,7 +330,7 @@
                 <key>spriteSourceSize</key>
                 <string>{64,64}</string>
                 <key>textureRect</key>
-                <string>{{128,128},{64,64}}</string>
+                <string>{{0,320},{64,64}}</string>
                 <key>textureRotated</key>
                 <false/>
             </dict>
@@ -345,7 +345,7 @@
                 <key>spriteSourceSize</key>
                 <string>{64,64}</string>
                 <key>textureRect</key>
-                <string>{{0,320},{64,64}}</string>
+                <string>{{64,320},{64,64}}</string>
                 <key>textureRotated</key>
                 <false/>
             </dict>
@@ -360,7 +360,7 @@
                 <key>spriteSourceSize</key>
                 <string>{64,64}</string>
                 <key>textureRect</key>
-                <string>{{128,256},{64,64}}</string>
+                <string>{{128,320},{64,64}}</string>
                 <key>textureRotated</key>
                 <false/>
             </dict>
@@ -375,7 +375,7 @@
                 <key>spriteSourceSize</key>
                 <string>{64,64}</string>
                 <key>textureRect</key>
-                <string>{{64,320},{64,64}}</string>
+                <string>{{192,320},{64,64}}</string>
                 <key>textureRotated</key>
                 <false/>
             </dict>
@@ -393,7 +393,7 @@
             <key>size</key>
             <string>{256,512}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:7095de565a08890d32ddb2c3cfdf0607:959dd5db3397c814d7fec29f08b7152d:18cda6628a46cf048b93fae626983829$</string>
+            <string>$TexturePacker:SmartUpdate:e553c04d0687de8832319a81e203ac22:0f202d236f857da8d4aa049055c6c493:18cda6628a46cf048b93fae626983829$</string>
             <key>textureFileName</key>
             <string>ptsh.png</string>
         </dict>
