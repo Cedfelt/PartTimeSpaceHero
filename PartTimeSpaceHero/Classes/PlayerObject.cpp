@@ -302,7 +302,7 @@ bool PlayerObject::playerDashUpdate(float delta) {
 
 void PlayerObject::playerUpdate(const float delta) {
   solid = true;
-  objectSprite->setPosition(Point(std::round(modelPositionX),std::round(modelPositionY)));
+  objectSprite->setPosition(Point((modelPositionX),(modelPositionY)));
   // Update priority
   if (playerDashUpdate(delta)) {
     return;
