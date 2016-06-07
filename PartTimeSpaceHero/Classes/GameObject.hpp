@@ -62,6 +62,11 @@ public:
   Vec2 extraMove;
   
   
+  float lastX;
+  float lastY;
+  float deltaX;
+  float deltaY;
+  
   Rect* getHitbox();
   cocos2d::SpriteFrameCache *spriteFrameCache;
   cocos2d::AnimationCache *animationCache;

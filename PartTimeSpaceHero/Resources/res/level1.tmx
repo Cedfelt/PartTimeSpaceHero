@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="1000" height="200" tilewidth="8" tileheight="8" nextobjectid="544">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="1000" height="200" tilewidth="8" tileheight="8" nextobjectid="545">
  <properties>
   <property name="music_track" value="adventure.mp3"/>
  </properties>
@@ -155,6 +155,7 @@
   <object id="539" name="CoinObject" x="2720" y="1312" width="12" height="25"/>
   <object id="540" name="PlayerObject" x="57.7774" y="1456.55" width="12" height="25"/>
   <object id="543" name="PlatformObject" x="1432.75" y="908.57" width="12" height="25"/>
+  <object id="544" name="PlatformObject" x="375.874" y="1411.46" width="12" height="25"/>
  </objectgroup>
  <layer name="water" width="1000" height="200">
   <data encoding="base64" compression="zlib">

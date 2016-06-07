@@ -27,6 +27,7 @@ public:
   bool isBlocked(Rect* playerRect);
   SoundFx* pling;
   
+  
   void update(const float delta);
 private:
 };

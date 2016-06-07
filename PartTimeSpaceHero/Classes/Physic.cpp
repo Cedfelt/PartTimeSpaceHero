@@ -133,7 +133,7 @@ bool Physic::isBlocked(GameObject* obj, const Rect* hitBox, MapObject* map,const
       auto a = platforms->at(i)->getHitbox();
       tile_rect.setRect(a->getMinX(),a->getMinY(),a->getMaxX()-a->getMinX(),a->getMaxY()-a->getMinY());
       if(hitBox->intersectsRect(tile_rect)&&!isPlatform){
-        obj->setObjectPositionX(obj->getObjectPositionX() + platforms->at(i)->getVelocityX()*delta);
+        obj->setObjectPositionX(obj->getObjectPositionX() + platforms->at(i)->deltaX);
         obj->addToVelocityY(platforms->at(i)->getVelocityY()*delta);
         return true;
       }

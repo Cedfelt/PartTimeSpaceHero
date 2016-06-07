@@ -68,6 +68,7 @@ cocos2d::Vector<GameObject*>* WorldObject::getGameObjects() {
 
 void WorldObject::updateWorld(float delta) {
   physic->moveGameObjects(getGameObjects(), mapObject, delta);
+  physic->moveGameObjects(physic->platforms, mapObject, delta);
   Point playerPos = player->getPosition();
   const uint32_t offset = 71;
   playerPos.x = playerPos.x + offset;
@@ -289,7 +290,7 @@ void WorldObject::spawnObjects(cocos2d::Vector<GameObject*>* gameObjects) {
       // COIN
       auto botty = PlatformObject::create();
       botty->setupHitbox(0.1, 1, 64, 32, 64, 32, false);
-      gameObjects->pushBack(botty);
+      //gameObjects->pushBack(botty);
       botty->setObjectPositionX(x);
       botty->setObjectPositionY(y);
       botty->getPhysicsBody()->setCategoryBitmask((int)PhysicsCategory::Enemy);

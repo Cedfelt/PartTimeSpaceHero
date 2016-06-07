@@ -36,6 +36,8 @@ bool PlatformObject::init() {
   objectSprite->setScaleX(2);
   addChild(objectSprite);
   setElastic(0);
+  lastX = getObjectPositionX();
+  lastY = getObjectPositionY();
   return true;
 }
 
@@ -51,7 +53,12 @@ static int dir_sign(const float num){
 }
 float cnt = 0;
 void PlatformObject::update(const float delta) {
-  cnt+=delta;
+  deltaX = getObjectPositionX() - lastX;
+  deltaY = getObjectPositionY() - lastY;
+  lastX = getObjectPositionX();
+  lastY = getObjectPositionY();
+  
+  
   if(!getVelocityX()){
     if(getPrevDir()==GO_LEFT){
       setVelocityX(50);
