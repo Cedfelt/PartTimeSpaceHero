@@ -45,7 +45,7 @@ bool WorldObject::init() {
   const size_t scale = getScaleFactor();
   setScale(scale);
   this->schedule(schedule_selector(WorldObject::updateWorld));
-  setViewPointCenter(Point(player->getObjectPositionX(),player->getObjectPositionY()));
+  setViewPointCenter(Point(std::round(player->getObjectPositionX()),std::round(player->getObjectPositionY())));
   
   ////////////////////////////////////
   // MUSIC SETUP - SPECIFIC
@@ -179,6 +179,8 @@ void WorldObject::spawnObjects(cocos2d::Vector<GameObject*>* gameObjects) {
       player->getPhysicsBody()->setCollisionBitmask((int)PhysicsCategory::None);
       player->getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::All);
       addChild(player);
+      addChild(player->objectSprite);
+      player->objectSprite->autorelease();
     }
     
     else if(name == "CoinObject"){
@@ -299,7 +301,7 @@ void WorldObject::spawnObjects(cocos2d::Vector<GameObject*>* gameObjects) {
       botty->dmg = vm["dmg"].asInt();
       botty->target = player;
       plattis.pushBack(botty);
-      addChild(botty);
+      addChild(botty,3);
     }
     
     gameObjects->at(gameObjects->size() -1)->mapData = mapObject->mapData;
@@ -307,5 +309,8 @@ void WorldObject::spawnObjects(cocos2d::Vector<GameObject*>* gameObjects) {
   }
   for (int i = 0;i < gameObjects->size();i++) {
     gameObjects->at(i)->target = player;
+  }
+  for (int i = 0;i < plattis.size();i++) {
+    plattis.at(i)->target = player;
   }
 }

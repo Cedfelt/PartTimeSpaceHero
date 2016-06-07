@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="100" height="200" tilewidth="8" tileheight="8" nextobjectid="547">
+ <properties>
+  <property name="music_track" value="adventure.mp3"/>
+ </properties>
+ <tileset firstgid="1" name="db32_border" tilewidth="8" tileheight="8" spacing="1" margin="1" tilecount="36" columns="36">
+  <image source="db32_border.png" width="325" height="10"/>
+ </tileset>
+ <tileset firstgid="37" name="SpaceBGC_recolor2" tilewidth="8" tileheight="8" spacing="1" margin="1" tilecount="289" columns="17">
+  <image source="SpaceBGC_recolor2.png" width="160" height="160"/>
+ </tileset>
+ <tileset firstgid="326" name="SIGN" tilewidth="8" tileheight="8" tilecount="8192" columns="128">
+  <image source="SIGN.png" width="1024" height="512"/>
+ </tileset>
+ <layer name="background1" width="100" height="200">
+  <data encoding="base64" compression="zlib">
+   eJztwwEJAAAMA6Cx/qEX4QGuYAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAXKqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqoPD2wKXDE=
+  </data>
+ </layer>
+ <layer name="background2" width="100" height="200" opacity="0.7">
+  <properties>
+   <property name="BACKGROUND_SPEED" value="0.97999999999999998"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJzt2VXXFVQURuHzqdjd2EV3d4eFit0tomAjdoCd2IUtdnd3g6iAiaAcGxW72/kLvNpjrHXOmO/Yz+Wef2BVKs4555xzzjnnnHPOOeecc84555xzzjnnnHPOOeecc84555xzzjnnnHPOOeecc84555xzzjnnnHPOOeecc84555xzzjnnnHPOOeecc84555zLviZoimZojhZoiVZojTZoi3Zojw7oiE7ojC42ija6ohu6owd6ohd6ow/6oh/6YwAGYhAGYwiG2ijaWB8bYENshI0xDJtgU2yG4dgcW2BLbIWtsQ22tVG0sR22xw7YETthZ+yCXbEbdsce2BN7YQT2xkjsY6NoY1+Mwmjsh/1xAA7EQTgYh2AMDsVYHIbDcQSOtFG0cRSOxjE4FsfheIzDeJyAE3ESTsYpOBWn4XScYaNo40ychbMxAefgXJyH83EBLsRFuBiX4FJchom43EbRxhW4ElfhalyDa3EdJuF63IAbcRNuxi24FbfhdhtFG3fgTtyFu3EP7sV9uB8P4EE8hIfxCB7FY3gcT9go2ngST+FpPINn8Ryexwt4ES/hZUzGFLyCqXgVr9ko2ngd0zAdM/AG3sRbeBvv4F3MxHuYhdl4Hx9gjo2ijSo+xEf4GJ/gU3yGzzEXX+BLfIV5+Brf4Ft8Z6No43v8gB/xE37GL/gVv+F3/IE/8Rf+xj/4F5UGXoONko35+D8/FkAjLIiFsDAWwaJYDItjCSyJpbA0lsGyDTZKNpbD8lgBK2IlrIzGWAWrYjWsjjWwJtbC2lgH69oo2lgPTdAUzdAcLdASrdAabdAW7dAeHdARndDZRtFGF3RFN3RHD/REL/RGH/RFP/THAAzEIAzGEBtFG9H3FxveozI3ou8vNrxHZW5E319seI/K3Ii+v9jwHpW5EX1/seE9KnMj+v5iw3tU5kb0/cWG96jMjej7iw3vUZkb0fcXG96jMjei7y82vEdlbkTfX2x4j8rciL6/2PAelbkRfX+x4T0qcyP6/mLDe1TmRrVS+zecempE319seI/K3Ii+v9jwHpW5EX1/seE9KnMj+v5iw3tU5kb0/cWG96jMjej7iw3vUZkb0fcXG96jMjei7y82vEdlblQrtX/DqadG9P3FhveozI3o+4sN71GZG9H3FxveozI3ou8vNrxHZW5E319seI/K3Ii+v9jwHpW5EX1/seE9KnMj+v5iw3tU5ka1Uvs3nHpqRN9fbHiPytyIvr/Y8B6VuRF9f7HhPSpzI/r+YsN7VOZG9P3FhveozI3o+4sN71GZG9H3FxveozI3ou8vNrxHZW5UK7V/w6mnRvT9xYb3qMyN6PuLDe9RmRvR9xcb3qMyN6LvLza8R2VuRN9fbHiPytyIvr/Y8B6VuRF9f7HhPSpzI/r+YsN7VOZGtVL7N5x6akTfX2x4j8rciL6/2LDxf43/AJT9iuc=
+  </data>
+ </layer>
+ <layer name="wall" width="100" height="200">
+  <data encoding="base64" compression="zlib">
+   eJztwYEAAAAAw6D5Ux/gClUBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAbOI8AAQ==
+  </data>
+ </layer>
+ <layer name="free_ga" width="100" height="200">
+  <properties>
+   <property name="BACKGROUND_SPEED" value="1"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJzt1EEJADAQA8HKaP0brYeDg33MQBQs5BwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABousOxQ48WPVr0aNGjRY8WPVr0aNGjRY8WPVr0aNGj5Q3HDj1a/FWLHi16tOjRokeLHi16tOgBAAAAALDvA4PVHk0=
+  </data>
+ </layer>
+ <layer name="one_way_up" width="100" height="200">
+  <data encoding="base64" compression="zlib">
+   eJztw0EJAAAIBLBrYP+2Zjh/wgZLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABozTEAAAAAAAAAAMAnC6MVANM=
+  </data>
+ </layer>
+ <layer name="sign" width="100" height="200">
+  <data encoding="base64" compression="zlib">
+   eJztwYEAAAAAw6D5Ux/gClUBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAbOI8AAQ==
+  </data>
+ </layer>
+ <layer name="background_bush" width="100" height="200">
+  <data encoding="base64" compression="zlib">
+   eJztwYEAAAAAw6D5Ux/gClUBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAbOI8AAQ==
+  </data>
+ </layer>
+ <layer name="walls" width="100" height="200">
+  <data encoding="base64" compression="zlib">
+   eJzt10FuwjAQBVBukeT+F203ldyvP86KCjXvSYg2gInHM2PzegEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8N8c349reT6XxxHXf/6+ltfO5fX1OT+zXs/3t3s43jnpD5ZxWh8Z73O5dpbXp/ger9/ru47R1vlnnCeaamAXu+kzGd/2vI65jp11c71z0h8sczNjvtZAxjdjnOsyrVGO2dbjqf2q1cUak7v+kn0mx5n6YXtf9sEnWush4517RObyFZ/Pz0zPWWPtHPHUfrXL3bav53kp4519qY3T9qN2/Ylar8r+P+0NLc5tzXZ9qu33T16PzM+2r077RquH1tOm61mLmQdP1Ooh16X1onb+nc6tuzPXbj95opbHuR/saqedeVu/m/b1aW9pZ+tdrbXxp70t59Hu6Xj1/Jl+P7Xvm3p41kDOYRfb9vuk9a7d3jyt7VRTGZfWP/P+2jl9t75tf2x9YarxdmZp++bduTXn3O6nnZHavbZHjtnWueX0dH6YcjH3oZbX7R5aLPO7d/Od7mlazxaLdq+t9lt+tvi2+mk9Kcdue/fUM6b/dzWc85/2qtYrWx+bcmDqHS03plhN40w9oH1fy72WV1OO5prlPDLmU29uNTn1wtanWn5nnHKOWQutHlpMWg20fGjfedfHpn7X1nWq57sYrtcAAAD+yhd6nVca
+  </data>
+ </layer>
+ <layer name="foreground" width="100" height="200">
+  <data encoding="base64" compression="zlib">
+   eJztwYEAAAAAw6D5Ux/gClUBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAbOI8AAQ==
+  </data>
+ </layer>
+ <objectgroup name="GameObjects">
+  <object id="424" name="CoinObject" x="500.765" y="1368.32" width="12" height="25"/>
+  <object id="544" name="PlatformObject" x="376" y="1408" width="12" height="25"/>
+  <object id="545" name="GoalObject" x="544" y="1260.5" width="12" height="25"/>
+  <object id="546" name="PlayerObject" x="187.52" y="1352.4" width="12" height="25"/>
+ </objectgroup>
+ <layer name="water" width="100" height="200">
+  <data encoding="base64" compression="zlib">
+   eJztwYEAAAAAw6D5Ux/gClUBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAbOI8AAQ==
+  </data>
+ </layer>
+ <objectgroup name="object_pool" visible="0">
+  <object id="301" name="passage" x="27.1178" y="1492.9" width="4" height="19">
+   <properties>
+    <property name="to_passage" value="hall1_f1"/>
+    <property name="to_scene" value="hall.tmx"/>
+   </properties>
+  </object>
+  <object id="304" name="LaserObject" x="510.118" y="1271.9" width="12" height="16">
+   <properties>
+    <property name="delay" value="0"/>
+    <property name="direction" value="3"/>
+    <property name="duration" value="1"/>
+    <property name="off_time" value="3"/>
+    <property name="range" value="13"/>
+   </properties>
+  </object>
+  <object id="305" name="LaserObject" x="566.118" y="1271.9" width="12" height="16">
+   <properties>
+    <property name="delay" value="0"/>
+    <property name="direction" value="3"/>
+    <property name="duration" value="1"/>
+    <property name="off_time" value="3"/>
+    <property name="range" value="13"/>
+   </properties>
+  </object>
+  <object id="306" name="LaserObject" x="614.118" y="1271.9" width="12" height="16">
+   <properties>
+    <property name="delay" value="0"/>
+    <property name="direction" value="3"/>
+    <property name="duration" value="1"/>
+    <property name="off_time" value="3"/>
+    <property name="range" value="13"/>
+   </properties>
+  </object>
+  <object id="307" name="TurfelObject" x="169.06" y="1355.74" width="12" height="16">
+   <properties>
+    <property name="delay" value="0"/>
+    <property name="direction" value="2"/>
+    <property name="duration" value="1"/>
+    <property name="off_time" value="3"/>
+    <property name="range" value="13"/>
+   </properties>
+  </object>
+  <object id="308" name="TurfelObject" x="235.048" y="1064.39" width="12" height="16">
+   <properties>
+    <property name="delay" value="0"/>
+    <property name="direction" value="2"/>
+    <property name="duration" value="1"/>
+    <property name="off_time" value="3"/>
+    <property name="range" value="13"/>
+   </properties>
+  </object>
+  <object id="309" name="TurfelObject" x="383.706" y="757.405" width="12" height="16">
+   <properties>
+    <property name="delay" value="0"/>
+    <property name="direction" value="2"/>
+    <property name="duration" value="1"/>
+    <property name="off_time" value="3"/>
+    <property name="range" value="13"/>
+   </properties>
+  </object>
+  <object id="310" name="TurfelObject" x="158.906" y="480.635" width="12" height="16">
+   <properties>
+    <property name="delay" value="0"/>
+    <property name="direction" value="2"/>
+    <property name="duration" value="1"/>
+    <property name="off_time" value="3"/>
+    <property name="range" value="13"/>
+   </properties>
+  </object>
+  <object id="314" name="CoinObject" x="414.257" y="1411.02" width="12" height="25"/>
+  <object id="315" name="CoinObject" x="355.767" y="1360.25" width="12" height="25"/>
+  <object id="316" name="CoinObject" x="343.627" y="1411.02" width="12" height="25"/>
+  <object id="317" name="CoinObject" x="387.767" y="1313.91" width="12" height="25"/>
+  <object id="318" name="CoinObject" x="247.627" y="1456.25" width="12" height="25"/>
+  <object id="319" name="CoinObject" x="426.387" y="1360.25" width="12" height="25"/>
+  <object id="321" name="CoinObject" x="279.627" y="1409.91" width="12" height="25"/>
+  <object id="322" name="CoinObject" x="221.137" y="1359.14" width="12" height="25"/>
+  <object id="323" name="CoinObject" x="285.147" y="1360.25" width="12" height="25"/>
+  <object id="324" name="CoinObject" x="311.627" y="1457.36" width="12" height="25"/>
+  <object id="325" name="CoinObject" x="253.137" y="1312.8" width="12" height="25"/>
+  <object id="326" name="CoinObject" x="382.257" y="1457.36" width="12" height="25"/>
+  <object id="480" name="CoinObject" x="386.846" y="494.51" width="12" height="25"/>
+  <object id="481" name="CoinObject" x="560.915" y="468.51" width="12" height="25"/>
+  <object id="482" name="CoinObject" x="484.557" y="642.57" width="12" height="25"/>
+  <object id="483" name="CoinObject" x="438.846" y="462.51" width="12" height="25"/>
+  <object id="484" name="CoinObject" x="504.917" y="438.18" width="12" height="25"/>
+  <object id="486" name="CoinObject" x="617.775" y="497.92" width="12" height="25"/>
+ </objectgroup>
+</map>

@@ -89,6 +89,8 @@ public:
   float maxSpeedX;
   float maxSpeedYUpp;
   float maxSpeedYDown;
+  float modelPositionX;
+  float modelPositionY;
 private:
   int32_t goMovementStatus;
   std::string prevAnimation;
@@ -97,9 +99,9 @@ private:
   float velocityY;
   float resolution_scale;
   int32_t prevDirection;
-  float modelPositionX;
-  float modelPositionY;
+  
   bool affectedByGravity;
+ 
   float elastic;
 };
 

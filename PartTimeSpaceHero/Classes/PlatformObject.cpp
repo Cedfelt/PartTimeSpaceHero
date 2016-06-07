@@ -30,10 +30,10 @@ bool PlatformObject::init() {
   platform = true;
   setVelocityX(-50);
   setPrevDir(GO_LEFT);
-  objectSprite = Sprite::create("stone_back.png");
+  objectSprite = Sprite::create("wagon1.png");
   objectSprite->getTexture()->setAliasTexParameters();
   objectSprite->setPosition(32,16);
-  objectSprite->setScaleX(2);
+  objectSprite->setScale(2);
   addChild(objectSprite);
   setElastic(0);
   lastX = getObjectPositionX();
@@ -52,16 +52,22 @@ static int dir_sign(const float num){
   return -1;
 }
 float cnt = 0;
+
 void PlatformObject::update(const float delta) {
   deltaX = getObjectPositionX() - lastX;
   deltaY = getObjectPositionY() - lastY;
-  
+  setVelocityY(0*std::sin(cnt));
+  cnt+=delta;
   auto h = getHitbox();
   Rect extRect;
-  extRect.setRect(h->getMinX(),h->getMinY(),h->getMaxX()-h->getMinX(), h->getMaxY() - h->getMinY()+2);
+  extRect.setRect(h->getMinX(),h->getMinY(),h->getMaxX()-h->getMinX(), h->getMaxY() - h->getMinY()+10);
   if (target->getHitbox()->intersectsRect(extRect)) {
     target->setObjectPositionX(target->getObjectPositionX() + deltaX);
-    /*obj->addToVelocityY(getVelocityY()*delta);*/
+    target->setObjectPositionY(target->getObjectPositionY() + deltaY);
+    target->addGravityToObject(false);
+  }
+  else{
+    target->addGravityToObject(true);
   }
   if(!getVelocityX()){
     if(getPrevDir()==GO_LEFT){

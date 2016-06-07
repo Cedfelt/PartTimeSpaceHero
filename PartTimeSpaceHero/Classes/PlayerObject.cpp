@@ -43,10 +43,11 @@ bool PlayerObject::init() {
 
 
   objectSprite = cocos2d::Sprite::create();
-  objectSprite->setAnchorPoint(Point(0.5, 0));
-  objectSprite->setPosition(8, -16);// Aling sprite in Hitbox
+  objectSprite->setAnchorPoint(Point(0.5, 0.25));
+  objectSprite->setPosition(8, -64);// Aling sprite in Hitbox
   setAnimation("WalkR");
-  addChild(objectSprite);
+  //addChild(objectSprite);
+  
   
   // soundfx
   jetpack1 = SoundFx::create();
@@ -60,6 +61,7 @@ bool PlayerObject::init() {
   fuel = 1.0f;
   consumeRate = currentConsumeRate;
   currentConsumeRate = 0.0095f;
+  objectSprite->retain();
   return true;
 }
 
@@ -300,6 +302,7 @@ bool PlayerObject::playerDashUpdate(float delta) {
 
 void PlayerObject::playerUpdate(const float delta) {
   solid = true;
+  objectSprite->setPosition(Point(std::round(modelPositionX),std::round(modelPositionY)));
   // Update priority
   if (playerDashUpdate(delta)) {
     return;

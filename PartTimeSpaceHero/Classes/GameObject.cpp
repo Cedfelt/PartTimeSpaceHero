@@ -139,6 +139,8 @@ int32_t GameObject::getPrevDir(){
   return prevDirection;
 }
 
+
+
 bool GameObject::hurt(const int dmg, const Vec2 force){
   if(!isImune()){
     setImune();
@@ -163,8 +165,8 @@ uint32_t GameObject::isBlocked(uint32_t x,uint32_t y){
 
 void GameObject::setObjectPositionX(const float x){
   modelPositionX = x;
-  hitBox.origin.x = int(modelPositionX);
-  setPositionX(int(modelPositionX));
+  hitBox.origin.x = (modelPositionX);
+  setPositionX(x);
 }
 
 float GameObject::getObjectPositionX(){
@@ -174,7 +176,7 @@ float GameObject::getObjectPositionX(){
 void GameObject::setObjectPositionY(const float y){
   modelPositionY = y;
   hitBox.origin.y = int(modelPositionY);
-  setPositionY(int(modelPositionY));
+  setPositionY(y);
 }
 
 float GameObject::getObjectPositionY(){

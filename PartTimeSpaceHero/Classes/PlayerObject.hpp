@@ -37,4 +37,5 @@ private:
   float consumeRate;
   float currentConsumeRate;
   
+  
 };
