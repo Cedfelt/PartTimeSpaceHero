@@ -30,7 +30,8 @@ Scene* GameScene::createScene()
   // add layer as a child to scene
   scene->addChild(layer);
 
-
+  auto director = Director::getInstance();
+  director->setProjection(Director::Projection::_2D);
 
   // return the scene
   return scene;

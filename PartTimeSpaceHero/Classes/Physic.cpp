@@ -55,9 +55,8 @@ void Physic::movePlatforms(cocos2d::Vector<GameObject*>* gameObjects, MapObject*
       continue;
     }
     if (obj->isAffectedByGravity()) {
-      obj->addToVelocityY(delta*GRAVITY);// GRAVITY
-      if (obj->getVelocityY() < MAX_FALLSPEED) {
-        obj->setVelocityY(MAX_FALLSPEED);
+      if (obj->getVelocityY() > MAX_FALLSPEED) {
+        obj->addToVelocityY(delta*GRAVITY);// GRAVITY;
       }
     }
 
@@ -108,9 +107,8 @@ void Physic::moveGameObjects(cocos2d::Vector<GameObject*>* gameObjects, MapObjec
       continue;
     }
     if (obj->isAffectedByGravity()) {
-      obj->addToVelocityY(delta*GRAVITY);// GRAVITY
-      if (obj->getVelocityY() < MAX_FALLSPEED) {
-        obj->setVelocityY(MAX_FALLSPEED);
+      if (obj->getVelocityY() > MAX_FALLSPEED) {
+        obj->addToVelocityY(delta*GRAVITY);// GRAVITY;
       }
     }
 

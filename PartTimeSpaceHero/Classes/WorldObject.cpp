@@ -45,7 +45,6 @@ bool WorldObject::init() {
   const size_t scale = getScaleFactor();
   setScale(scale);
   this->schedule(schedule_selector(WorldObject::updateWorld));
-  setViewPointCenter(Point(std::round(player->getObjectPositionX()),std::round(player->getObjectPositionY())));
   
   ////////////////////////////////////
   // MUSIC SETUP - SPECIFIC
@@ -67,9 +66,9 @@ cocos2d::Vector<GameObject*>* WorldObject::getGameObjects() {
 }
 
 void WorldObject::updateWorld(float delta) {
-  physic->moveGameObjects(getGameObjects(), mapObject, delta);
+  physic->moveGameObjects(getGameObjects(), mapObject, 1.0f  / 60.0f);
   physic->movePlatforms(physic->platforms, mapObject, delta);
-  Point playerPos = player->getPosition();
+  cocos2d::Point playerPos = cocos2d::Point(player->getObjectPositionX(),player->getObjectPositionY());
   const uint32_t offset = 71;
   playerPos.x = playerPos.x + offset;
   setViewPointCenter(playerPos);
@@ -133,9 +132,18 @@ void WorldObject::setViewPointCenter(const cocos2d::Point position) {
   float y = fmaxf(scale*position.y, winSize.height + tileSize*tilesOutsideLow);
   x = fminf(x, (mapWidth * tileSize) - winSize.width);
   y = fminf(y, (mapHeight * tileSize) - winSize.height);
-  const Point actualPosition = Point((int)x, (int)y);
-  Point centerOfView = Point(winSize.width, winSize.height);
+  const cocos2d::Point actualPosition = cocos2d::Point(x, y);
+  cocos2d::Point centerOfView = cocos2d::Point(winSize.width, winSize.height);
   centerOfView.subtract(actualPosition);// ccpSub(centerOfView, actualPosition);
+#ifdef ROUND_TEST
+  centerOfView.x = std::roundf(centerOfView.x);
+  centerOfView.y = std::roundf(centerOfView.y);
+#else
+#endif
+  
+  //centerOfView.x = std::roundf(centerOfView.x);
+  //centerOfView.y = std::roundf(centerOfView.y);
+  
   this->setPosition(centerOfView);
 }
 
@@ -226,7 +234,7 @@ void WorldObject::spawnObjects(cocos2d::Vector<GameObject*>* gameObjects) {
       //obj->getPhysicsBody()->setCategoryBitmask((int)PhysicsCategory::Bouncer);
       //obj->getPhysicsBody()->setCollisionBitmask((int)PhysicsCategory::None);
       //obj->getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::Player);
-      addChild(obj);
+      addChild(obj,3);
     }
     
     else if(name == "TurfelObject"){

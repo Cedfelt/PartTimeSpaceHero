@@ -101,7 +101,7 @@ void PlayerObject::playerWalkUpdate(float delta) {
 }
 
 void PlayerObject::fallAtDir(MovementDirectionX dir,std::string animName) {
-  const float playerFallSpeed = 0.1f;
+  const float playerFallSpeed = 0.5f;
   setAnimation(animName);
   addToVelocityX(dir*playerFallSpeed);
 }
@@ -121,12 +121,7 @@ float PlayerObject::getFuel() {
   return fuel;
 }
 
-bool PlayerObject::flyAtDir(MovementDirectionX dir,std::string animName) {
-  const float playerFallSpeed = 0.1f;
-  setAnimation(animName);
-  addToVelocityX(dir*playerFallSpeed);
-  return true;
-}
+
 
 bool PlayerObject::playerFlyUpdate(float delta) {
   const float jetPackFlySpeed = 1.5f;
@@ -302,7 +297,7 @@ bool PlayerObject::playerDashUpdate(float delta) {
 
 void PlayerObject::playerUpdate(const float delta) {
   solid = true;
-  objectSprite->setPosition(Point((modelPositionX),(modelPositionY)));
+  objectSprite->setPosition(cocos2d::Point((modelPositionX),(modelPositionY)));
   // Update priority
   if (playerDashUpdate(delta)) {
     return;
