@@ -52,3 +52,4 @@ void MapData::setupAttributes(cocos2d::TMXTiledMap* map) {
     }
   }
 }
+

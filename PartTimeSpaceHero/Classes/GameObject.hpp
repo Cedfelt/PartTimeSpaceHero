@@ -11,6 +11,7 @@
 #include <stdio.h>
 #include "SoundFx.hpp"
 #include "MapData.hpp"
+
 using namespace cocos2d;
 class GameObject : public cocos2d::DrawNode {
 public:
@@ -61,6 +62,8 @@ public:
   MapData* mapData;
   Vec2 extraMove;
   
+  float moveX;
+  float moveY;
   
   float lastX;
   float lastY;
