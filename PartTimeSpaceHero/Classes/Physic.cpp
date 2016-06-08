@@ -24,7 +24,7 @@ bool Physic::init() {
 }
 
 int dir_sign(const float num) {
-  if (num < 0) {
+  if (num < 0 ) {
     return 1;
   }
   return -1;
@@ -64,7 +64,7 @@ void Physic::movePlatforms(cocos2d::Vector<GameObject*>* gameObjects, MapObject*
     // COLLISION Y-AXIS
     obj->setObjectPositionY((obj->getObjectPositionY() + (obj->getVelocityY()*delta + obj->moveY)));
     if (isBlockedPlatform(obj, obj->getHitbox(), mapObject, collision_mask, delta)) {
-      const int sign = dir_sign(obj->getVelocityY());
+      const int sign = dir_sign(obj->getVelocityY()+obj->moveY/delta);
       obj->setObjectPositionY((int)(obj->getObjectPositionY() + sign));
       while (isBlockedPlatform(obj, obj->getHitbox(), mapObject, collision_mask, delta)) {
         obj->setObjectPositionY((int)(obj->getObjectPositionY() + sign));
@@ -77,7 +77,7 @@ void Physic::movePlatforms(cocos2d::Vector<GameObject*>* gameObjects, MapObject*
     // COLLISION X-AXIS
     obj->setObjectPositionX((obj->getObjectPositionX() + (delta*obj->getVelocityX() + obj->moveX)));
     if (isBlockedPlatform(obj, obj->getHitbox(), mapObject, collision_mask, delta)) {
-      const int sign = dir_sign(obj->getVelocityX());
+      const int sign = dir_sign(obj->getVelocityX() + obj->moveX / delta);
       obj->setObjectPositionX(int(obj->getObjectPositionX() + sign));
       while (isBlockedPlatform(obj, obj->getHitbox(), mapObject, collision_mask, delta)) {
         obj->setObjectPositionX(int(obj->getObjectPositionX() + sign));
@@ -117,7 +117,7 @@ void Physic::moveGameObjects(cocos2d::Vector<GameObject*>* gameObjects, MapObjec
     // COLLISION Y-AXIS
     obj->setObjectPositionY((obj->getObjectPositionY() + (obj->getVelocityY()*delta + obj->moveY)));
     if (isBlocked(obj, obj->getHitbox(), mapObject, collision_mask, delta)) {
-      const int sign = dir_sign(obj->getVelocityY());
+      const int sign = dir_sign(obj->getVelocityY() + obj->moveY / delta);
       obj->setObjectPositionY((int)(obj->getObjectPositionY() + sign));
       while (isBlocked(obj, obj->getHitbox(), mapObject, collision_mask, delta)) {
         obj->setObjectPositionY((int)(obj->getObjectPositionY() + sign));
@@ -130,7 +130,7 @@ void Physic::moveGameObjects(cocos2d::Vector<GameObject*>* gameObjects, MapObjec
     // COLLISION X-AXIS
     obj->setObjectPositionX((obj->getObjectPositionX() + (delta*obj->getVelocityX() + obj->moveX)));
     if (isBlocked(obj, obj->getHitbox(), mapObject, collision_mask,  delta)) {
-      const int sign = dir_sign(obj->getVelocityX());
+      const int sign = dir_sign(obj->getVelocityX() + obj->moveX / delta);
       obj->setObjectPositionX(int(obj->getObjectPositionX() + sign));
       while (isBlocked(obj, obj->getHitbox(), mapObject, collision_mask, delta)) {
         obj->setObjectPositionX(int(obj->getObjectPositionX() + sign));

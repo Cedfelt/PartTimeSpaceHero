@@ -155,8 +155,8 @@
   <object id="539" name="CoinObject" x="2720" y="1312" width="12" height="25"/>
   <object id="540" name="PlayerObject" x="57.7774" y="1456.55" width="12" height="25"/>
   <object id="544" name="PlatformObject" x="375.874" y="1411.46" width="12" height="25"/>
-  <object id="545" name="PlatformObject2" x="2118.51" y="767.384" width="12" height="25"/>
-  <object id="546" name="PlatformObject2" x="2929.32" y="1204.39" width="12" height="25"/>
+  <object id="545" name="PlatformObject" x="2118.51" y="767.384" width="12" height="25"/>
+  <object id="546" name="PlatformObject" x="2929.32" y="1204.39" width="12" height="25"/>
   <object id="547" name="CoinObject" x="2235.5" y="33.2174" width="12" height="25"/>
  </objectgroup>
  <layer name="water" width="1000" height="200">
