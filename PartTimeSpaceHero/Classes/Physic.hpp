@@ -17,11 +17,13 @@ public:
   virtual bool init();
   CREATE_FUNC(Physic);
   void moveGameObjects(cocos2d::Vector<GameObject*>* gameObjects,MapObject* mapObject,float delta);
+  void movePlatform(cocos2d::Vector<GameObject*>* gameObjects, MapObject* mapObject, float delta);
   void colideGameObjects(cocos2d::Vector<GameObject*>* gameObjects);
   void gameObjectCollision(GameObject*  goA,GameObject* goB);
   cocos2d::Vector<GameObject*>* platforms;
 private:
-  bool isBlocked(GameObject* obj,const Rect* hitBox, MapObject* map,const uint32_t mask,bool isPlatform,const float delta);
+  bool isBlockedPlatform(GameObject* obj,const Rect* hitBox, MapObject* map,const uint32_t mask,const float delta);
+  bool isBlocked(GameObject* obj, const Rect* hitBox, MapObject* map, const uint32_t mask, const float delta);
 };
 
 

@@ -61,7 +61,9 @@ public:
   MapData* mapData;
   Vec2 extraMove;
   
-  
+  float moveX;
+  float moveY;
+
   float lastX;
   float lastY;
   float deltaX;

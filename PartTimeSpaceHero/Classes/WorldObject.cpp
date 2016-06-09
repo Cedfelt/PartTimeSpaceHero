@@ -68,7 +68,7 @@ cocos2d::Vector<GameObject*>* WorldObject::getGameObjects() {
 
 void WorldObject::updateWorld(float delta) {
   physic->moveGameObjects(getGameObjects(), mapObject, delta);
-  physic->moveGameObjects(physic->platforms, mapObject, delta);
+  physic->movePlatform(physic->platforms, mapObject, delta);
   Point playerPos = player->getPosition();
   const uint32_t offset = 71;
   playerPos.x = playerPos.x + offset;
