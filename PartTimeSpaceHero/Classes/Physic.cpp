@@ -51,6 +51,15 @@ void Physic::movePlatforms(cocos2d::Vector<GameObject*>* gameObjects, MapObject*
       collision_mask |= EB_CB_ONE_WAY_UP;
     }
 
+    if (obj->moveX > 0 || obj->moveY>0) {
+      obj->setObjectPositionY((obj->getObjectPositionY() + obj->moveY));
+      obj->setObjectPositionX((obj->getObjectPositionX() + obj->moveX));
+      if (isBlocked(obj, obj->getHitbox(), mapObject, collision_mask, obj->platform)) {
+        obj->setObjectPositionX(obj->lastX);
+        obj->setObjectPositionX(obj->lastY);
+      }
+    }
+
     if (obj->remove_object || obj->skipMove) {
       continue;
     }
@@ -61,7 +70,7 @@ void Physic::movePlatforms(cocos2d::Vector<GameObject*>* gameObjects, MapObject*
     }
 
     // COLLISION Y-AXIS
-    obj->setObjectPositionY((obj->getObjectPositionY() + (obj->getVelocityY()*delta + obj->moveY)));
+    obj->setObjectPositionY((obj->getObjectPositionY() + (obj->getVelocityY()*delta)));
     if (isBlockedPlatform(obj, obj->getHitbox(), mapObject, collision_mask, delta)) {
       const int sign = dir_sign(obj->getVelocityY()+obj->moveY/delta);
       obj->setObjectPositionY((int)(obj->getObjectPositionY() + sign));
@@ -74,7 +83,7 @@ void Physic::movePlatforms(cocos2d::Vector<GameObject*>* gameObjects, MapObject*
     }
 
     // COLLISION X-AXIS
-    obj->setObjectPositionX((obj->getObjectPositionX() + (delta*obj->getVelocityX() + obj->moveX)));
+    obj->setObjectPositionX((obj->getObjectPositionX() + (delta*obj->getVelocityX())));
     if (isBlockedPlatform(obj, obj->getHitbox(), mapObject, collision_mask, delta)) {
       const int sign = dir_sign(obj->getVelocityX() + obj->moveX / delta);
       obj->setObjectPositionX(int(obj->getObjectPositionX() + sign));
@@ -93,12 +102,25 @@ void Physic::movePlatforms(cocos2d::Vector<GameObject*>* gameObjects, MapObject*
 
 void Physic::moveGameObjects(cocos2d::Vector<GameObject*>* gameObjects, MapObject* mapObject, const float delta) {
   const size_t obj_cnt = gameObjects->size();
+  uint32_t collision_mask = E_CB_BLOCKED;
   for (int i = 0;i < obj_cnt;i++) {
 
     GameObject* obj = gameObjects->at(i);
     obj->lastX = obj->getObjectPositionX();
     obj->lastY = obj->getObjectPositionY();
-    uint32_t collision_mask = E_CB_BLOCKED;
+    if (obj->moveX > 0 || obj->moveY>0) {
+      obj->setObjectPositionY((obj->getObjectPositionY() + obj->moveY));
+      obj->setObjectPositionX((obj->getObjectPositionX() + obj->moveX));
+      if (isBlocked(obj, obj->getHitbox(), mapObject, collision_mask, delta)) {
+       /* obj->setObjectPositionX(obj->lastX);
+        obj->setObjectPositionX(obj->lastY);*/
+      }
+    }
+
+
+
+
+
     if (obj->getVelocityY() <= 0) {
       collision_mask |= EB_CB_ONE_WAY_UP;
     }
@@ -107,15 +129,16 @@ void Physic::moveGameObjects(cocos2d::Vector<GameObject*>* gameObjects, MapObjec
       continue;
     }
     if (obj->isAffectedByGravity()) {
-      if (obj->getVelocityY() > MAX_FALLSPEED) {
-        obj->addToVelocityY(delta*GRAVITY);// GRAVITY;
+      obj->addToVelocityY(delta*GRAVITY);// GRAVITY
+      if (obj->getVelocityY() < MAX_FALLSPEED) {
+        obj->setVelocityY(MAX_FALLSPEED);
       }
     }
 
     // COLLISION Y-AXIS
-    obj->setObjectPositionY((obj->getObjectPositionY() + (obj->getVelocityY()*delta + obj->moveY)));
+    obj->setObjectPositionY((obj->getObjectPositionY() + obj->getVelocityY()*delta));
     if (isBlocked(obj, obj->getHitbox(), mapObject, collision_mask, delta)) {
-      const int sign = dir_sign(obj->getVelocityY() + obj->moveY / delta);
+      const int sign = dir_sign(obj->getVelocityY() + obj->moveY);
       obj->setObjectPositionY((int)(obj->getObjectPositionY() + sign));
       while (isBlocked(obj, obj->getHitbox(), mapObject, collision_mask, delta)) {
         obj->setObjectPositionY((int)(obj->getObjectPositionY() + sign));
@@ -125,18 +148,20 @@ void Physic::moveGameObjects(cocos2d::Vector<GameObject*>* gameObjects, MapObjec
       obj->setVelocityY(newVel* -1);
     }
 
+
     // COLLISION X-AXIS
-    obj->setObjectPositionX((obj->getObjectPositionX() + (delta*obj->getVelocityX() + obj->moveX)));
-    if (isBlocked(obj, obj->getHitbox(), mapObject, collision_mask,  delta)) {
-      const int sign = dir_sign(obj->getVelocityX() + obj->moveX / delta);
+    obj->setObjectPositionX((obj->getObjectPositionX() + delta*obj->getVelocityX()));
+    if (isBlocked(obj, obj->getHitbox(), mapObject, collision_mask, obj->platform)) {
+      const int sign = dir_sign(obj->getVelocityX());
       obj->setObjectPositionX(int(obj->getObjectPositionX() + sign));
-      while (isBlocked(obj, obj->getHitbox(), mapObject, collision_mask, delta)) {
+      while (isBlocked(obj, obj->getHitbox(), mapObject, collision_mask, obj->platform)) {
         obj->setObjectPositionX(int(obj->getObjectPositionX() + sign));
       }
       // BLOCKED X
       const float newVel = obj->getVelocityX() * obj->getElastic();
       obj->setVelocityX(newVel * -1);
     }
+
     obj->moveX = 0;
     obj->moveY = 0;
   }
