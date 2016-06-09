@@ -19,3 +19,5 @@
 obj/
 [Rr]elease*/
 _ReSharper*/
+
+*.xcuserstate
