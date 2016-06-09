@@ -165,7 +165,7 @@ uint32_t GameObject::isBlocked(uint32_t x,uint32_t y){
 
 void GameObject::setObjectPositionX(const float x){
   modelPositionX = x;
-  hitBox.origin.x = (modelPositionX);
+  hitBox.origin.x = (int)(modelPositionX);
   setPositionX(x);
 }
 
@@ -175,7 +175,7 @@ float GameObject::getObjectPositionX(){
 
 void GameObject::setObjectPositionY(const float y){
   modelPositionY = y;
-  hitBox.origin.y = modelPositionY;
+  hitBox.origin.y = (int)(modelPositionY);
   setPositionY(y);
 }
 
