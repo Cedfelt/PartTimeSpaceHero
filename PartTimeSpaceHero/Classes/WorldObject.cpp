@@ -69,7 +69,7 @@ cocos2d::Vector<GameObject*>* WorldObject::getGameObjects() {
 void WorldObject::updateWorld(float delta) {
   physic->moveGameObjects(getGameObjects(), mapObject, delta);
   physic->movePlatform(physic->platforms, mapObject, delta);
-  Point playerPos = player->getPosition();
+  Point playerPos = cocos2d::Point(player->getObjectPositionX(),player->getObjectPositionY());
   const uint32_t offset = 71;
   playerPos.x = playerPos.x + offset;
   setViewPointCenter(playerPos);
@@ -133,7 +133,7 @@ void WorldObject::setViewPointCenter(const cocos2d::Point position) {
   float y = fmaxf(scale*position.y, winSize.height + tileSize*tilesOutsideLow);
   x = fminf(x, (mapWidth * tileSize) - winSize.width);
   y = fminf(y, (mapHeight * tileSize) - winSize.height);
-  const Point actualPosition = Point((int)x, (int)y);
+  const Point actualPosition = Point(x, y);
   Point centerOfView = Point(winSize.width, winSize.height);
   centerOfView.subtract(actualPosition);// ccpSub(centerOfView, actualPosition);
   this->setPosition(centerOfView);
