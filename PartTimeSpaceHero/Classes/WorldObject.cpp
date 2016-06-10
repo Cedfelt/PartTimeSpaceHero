@@ -69,11 +69,11 @@ cocos2d::Vector<GameObject*>* WorldObject::getGameObjects() {
 void WorldObject::updateWorld(float delta) {
   physic->moveGameObjects(getGameObjects(), mapObject, delta);
   physic->movePlatform(physic->platforms, mapObject, delta);
-  Point playerPos = cocos2d::Point(player->getObjectPositionX(),player->getObjectPositionY());
-  const uint32_t offset = 71;
+  Vec2 playerPos = Vec2(player->getObjectPositionX(),player->getObjectPositionY());
+  const float offset = 71.0;
   playerPos.x = playerPos.x + offset;
-  setViewPointCenter(playerPos);
   mapObject->moveBackgroundLayers();
+  setViewPointCenter(playerPos);
  
 
 
@@ -123,18 +123,18 @@ void WorldObject::updateWorld(float delta) {
 
 void WorldObject::setViewPointCenter(const cocos2d::Point position) {
   // NO PROBS HERE
-  Size winSize = Director::getInstance()->getWinSize() / 2;//Scene Scale Factor
-  const size_t tileSize = mapObject->getMapTileSize();
-  const size_t scale = getScale();
-  const size_t mapWidth = mapObject->getMapWidthInTiles()*scale;
-  const size_t mapHeight = mapObject->getMapHeightInTiles()*scale;
-  const size_t tilesOutsideLow = 16;
+  Size winSize = Director::getInstance()->getWinSize() / 2.0;//Scene Scale Factor
+  const float tileSize = mapObject->getMapTileSize();
+  const float scale = getScale();
+  const float mapWidth = mapObject->getMapWidthInTiles()*scale;
+  const float mapHeight = mapObject->getMapHeightInTiles()*scale;
+  const float tilesOutsideLow = 16;
   float x = fmaxf(scale*position.x, winSize.width);
   float y = fmaxf(scale*position.y, winSize.height + tileSize*tilesOutsideLow);
   x = fminf(x, (mapWidth * tileSize) - winSize.width);
   y = fminf(y, (mapHeight * tileSize) - winSize.height);
-  const Point actualPosition = Point(x, y);
-  Point centerOfView = Point(winSize.width, winSize.height);
+  const cocos2d::Point actualPosition = cocos2d::Point(x, y);
+  cocos2d::Point centerOfView = cocos2d::Point(winSize.width, winSize.height);
   centerOfView.subtract(actualPosition);// ccpSub(centerOfView, actualPosition);
   this->setPosition(centerOfView);
 }

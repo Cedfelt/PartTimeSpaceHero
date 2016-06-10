@@ -43,7 +43,7 @@ bool PlayerObject::init() {
 
 
   objectSprite = cocos2d::Sprite::create();
-  objectSprite->setAnchorPoint(Point(0.5, 0.25));
+  objectSprite->setAnchorPoint(cocos2d::Point(0.5, 0.25));
   objectSprite->setPosition(8, -64);// Aling sprite in Hitbox
   setAnimation("WalkR");
   //addChild(objectSprite);
@@ -302,7 +302,7 @@ bool PlayerObject::playerDashUpdate(float delta) {
 
 void PlayerObject::playerUpdate(const float delta) {
   solid = true;
-  objectSprite->setPosition(Point((modelPositionX),(modelPositionY)));
+  objectSprite->setPosition(cocos2d::Point((modelPositionX),(modelPositionY)));
   // Update priority
   if (playerDashUpdate(delta)) {
     return;
