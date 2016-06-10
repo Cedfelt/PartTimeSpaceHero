@@ -19,3 +19,7 @@
 obj/
 [Rr]elease*/
 _ReSharper*/
+
+*.xcbkptlist
+
+*.xcuserstate

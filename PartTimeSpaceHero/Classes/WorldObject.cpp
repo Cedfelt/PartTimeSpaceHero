@@ -45,7 +45,7 @@ bool WorldObject::init() {
   const size_t scale = getScaleFactor();
   setScale(scale);
   this->schedule(schedule_selector(WorldObject::updateWorld));
-  setViewPointCenter(Point(std::round(player->getObjectPositionX()),std::round(player->getObjectPositionY())));
+  setViewPointCenter(Point((player->getObjectPositionX()),(player->getObjectPositionY())));
   
   ////////////////////////////////////
   // MUSIC SETUP - SPECIFIC

@@ -49,6 +49,10 @@ bool GameScene::init()
   {
     return false;
   }
+  
+  auto director = Director::getInstance();
+  director->setProjection(Director::Projection::_2D);
+  
   setAnchorPoint(Point(0, 0));
   Size visibleSize = Director::getInstance()->getVisibleSize();
   Vec2 origin = Director::getInstance()->getVisibleOrigin();
