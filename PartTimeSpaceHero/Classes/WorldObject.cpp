@@ -67,7 +67,7 @@ cocos2d::Vector<GameObject*>* WorldObject::getGameObjects() {
 }
 float int_delta = 0;
 uint32_t delta_cnt = 0;
-float delta_max = 120;
+const float delta_max = 120;
 float new_delta = 1.0 / 60.0;
 void WorldObject::updateWorld(float delta) {
   if(delta_cnt ==delta_max){
@@ -75,10 +75,9 @@ void WorldObject::updateWorld(float delta) {
     new_delta = int_delta / (delta_max-1);
     int_delta = 0;
   }
-  delta = new_delta;
   int_delta += delta;
-  physic->moveGameObjects(getGameObjects(), mapObject, delta);
-  physic->movePlatform(physic->platforms, mapObject, delta);
+  physic->moveGameObjects(getGameObjects(), mapObject, new_delta);
+  physic->movePlatform(physic->platforms, mapObject, new_delta);
   Vec2 playerPos = Vec2(player->getObjectPositionX(),player->getObjectPositionY());
   const float offset = 71.0;
   playerPos.x = playerPos.x + offset;
