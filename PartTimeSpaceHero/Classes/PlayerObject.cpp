@@ -21,7 +21,7 @@ bool PlayerObject::init() {
   this->schedule(schedule_selector(PlayerObject::playerUpdate));
 
   HP = 3;
-
+  playerLookAhead = 0;
   // SETUP ANIMATIONS
   spriteFrameCache = spriteFrameCache->getInstance();
   animationCache = animationCache->getInstance();
@@ -311,9 +311,14 @@ void PlayerObject::playerUpdate(const float delta) {
   
   if (playerInput->isLeft()) {
     objectSprite->setScaleX(-1);
+    if(playerLookAhead>-71)
+      playerLookAhead -=0.2;
+    
   }
   if (playerInput->isRight()) {
     objectSprite->setScaleX(1);
+    if(playerLookAhead<71)
+      playerLookAhead +=0.2;
   }
   
   if(!playerFlyUpdate(delta)){

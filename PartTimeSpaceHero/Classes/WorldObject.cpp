@@ -79,7 +79,7 @@ void WorldObject::updateWorld(float delta) {
   physic->moveGameObjects(getGameObjects(), mapObject, new_delta);
   physic->movePlatform(physic->platforms, mapObject, new_delta);
   Vec2 playerPos = Vec2(player->getObjectPositionX(),player->getObjectPositionY());
-  const float offset = 71.0;
+  const float offset = player->playerLookAhead;
   playerPos.x = playerPos.x + offset;
   mapObject->moveBackgroundLayers();
   setViewPointCenter(playerPos);

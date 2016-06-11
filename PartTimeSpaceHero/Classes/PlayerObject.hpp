@@ -19,6 +19,8 @@ public:
   void playerUpdate(const float delta);
   PlayerInput* playerInput;
   float getFuel(void);
+  float playerLookAhead;
+
 private:
   void playerWalkUpdate(float delta);
   void walkAtDir(MovementDirectionX dir, std::string animName);
