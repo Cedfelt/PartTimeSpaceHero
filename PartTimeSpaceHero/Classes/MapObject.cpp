@@ -29,6 +29,8 @@ bool MapObject::init() {
   mapData->setupAttributes(map);
   
   setupBackgroundLayers();
+  setupLiquidLayers();
+  setupForegroundLayers();
   
   return true;
 }
@@ -51,12 +53,46 @@ void MapObject::setupBackgroundLayers(){
   
   int cnt = 0;// Make the scala an atribute of the layer!!!
   while (bg != NULL) {
-    if(cnt == 0)
+    if(cnt == 0){
       bg->setScale(2);
+    }
     cnt++;
     background_layers.pushBack(bg);
-    bg = map->getLayer((bgs + std::to_string(bg_cnt)));
     bg_cnt++;
+    bg = map->getLayer((bgs + std::to_string(bg_cnt)));
+    
+  }
+}
+float animation_speed = 0.2f;
+float animation_speed_total;
+int liquidIndex = 0;
+int layers;
+float timeCnt = 0;
+void MapObject::setupLiquidLayers(){
+  layers = 4;
+  animation_speed_total = animation_speed*layers;
+  
+  std::string bgs = "liquid";
+  int bg_cnt = 1;
+  TMXLayer *liq = map->getLayer((bgs + std::to_string(bg_cnt)));
+  while (liq != NULL) {
+    liquid_layers.pushBack(liq);
+    liq->setGlobalZOrder(5);
+    bg_cnt++;
+    liq = map->getLayer((bgs + std::to_string(bg_cnt)));
+    
+    
+  }
+}
+
+void MapObject::setupForegroundLayers(){
+  std::string bgs = "foreground";
+  int bg_cnt = 1;
+  TMXLayer *fgr = map->getLayer((bgs + std::to_string(bg_cnt)));
+  while (fgr != NULL) {
+    fgr->setGlobalZOrder(5);
+    bg_cnt++;
+    fgr = map->getLayer((bgs + std::to_string(bg_cnt)));
   }
 }
 
@@ -74,7 +110,28 @@ void MapObject::moveBackgroundLayers(){
   }
 }
 
-
+int a = 0;
+void MapObject::updateLiquids(const float delta){
+  timeCnt+=delta;
+  if(timeCnt>=animation_speed_total){
+    timeCnt = 0;
+    //liquid_layers.at(1)->setVisible(a);
+    a++;
+    if( a>1){
+      a = 0;
+    }
+  }
+  //cocos2d::log("%u",liquidIndex);
+  liquidIndex = (int)(timeCnt/animation_speed);
+  for (int i = 0; i < liquid_layers.size();i++) {
+    if(i == liquidIndex)
+      liquid_layers.at(i)->setVisible(true);
+    else{
+      liquid_layers.at(i)->setVisible(false);
+    }
+  }
+  
+}
 
 uint32_t MapObject::getMapWidthInTiles(){
   return mapWidth;

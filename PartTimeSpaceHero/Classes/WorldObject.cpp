@@ -59,6 +59,14 @@ bool WorldObject::init() {
   
   cocos2d::Director::getInstance()->getTextureCache()->removeAllTextures();
   physic->platforms = &plattis;
+  
+  
+  // Water Test
+  cocos2d::TMXTilesetInfo *tilesetInfo;
+  cocos2d::TMXLayerInfo *layerInfo;
+  cocos2d::TMXMapInfo *mapInfo;
+  //TMXLayer* water = TMXLayer::create(tilesetInfo, layerInfo, mapInfo);
+  TMXLayer* water = mapObject->map->getLayer("water");
   return true;
 }
 
@@ -83,6 +91,7 @@ void WorldObject::updateWorld(float delta) {
   playerPos.x = playerPos.x + offset;
   mapObject->moveBackgroundLayers();
   setViewPointCenter(playerPos);
+  mapObject->updateLiquids(new_delta);
  
 
 

@@ -30,11 +30,15 @@ public:
   // implement the "static create()" method manually
   CREATE_FUNC(MapObject);
   TMXTiledMap* map;
+  void setupForegroundLayers();
+  void setupLiquidLayers();
+  void updateLiquids(const float delta);
 private:
   void setupAttributes();
   uint32_t mapWidth;
   uint32_t mapHeight;
   uint32_t tileSize;
   cocos2d::Vector<cocos2d::TMXLayer*> background_layers;
+  cocos2d::Vector<cocos2d::TMXLayer*> liquid_layers;
 
 };

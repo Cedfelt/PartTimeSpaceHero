@@ -16,6 +16,7 @@
 #include "Physic.hpp"
 #include "GoalObject.hpp"
 #include "SaveData.hpp"
+#include "WaterTiles.hpp"
 
 
 class WorldObject : public cocos2d::Node
@@ -37,5 +38,6 @@ private:
   bool onContactBegan(PhysicsContact &contact);
   GoalObject* obj;
   Physic* physic;
+  WaterTiles* water;
 };
 
