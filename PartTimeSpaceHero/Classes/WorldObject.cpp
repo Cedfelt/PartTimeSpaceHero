@@ -19,7 +19,7 @@
 #include "SimpleAudioEngine.h"
 #include "DamageZone.hpp"
 #include "PlatformObject.hpp"
-
+#include "FlowerShootaObject.hpp"
 
 
 
@@ -321,6 +321,20 @@ void WorldObject::spawnObjects(cocos2d::Vector<GameObject*>* gameObjects) {
       botty->target = player;
       plattis.pushBack(botty);
       addChild(botty,3);
+    }
+    else if (name == "FlowerShootaObject") {
+      // COIN
+      auto patrolUfo = FlowerShootaObject::create();
+      const float ufoScale = 1;
+      patrolUfo->setupHitbox(0.1f, 1.0f, 16 * ufoScale, 16 * ufoScale, 16 * ufoScale, 16 * ufoScale, false);
+      gameObjects->pushBack(patrolUfo);
+      patrolUfo->setObjectPositionX(x);
+      patrolUfo->setObjectPositionY(y);
+      patrolUfo->getPhysicsBody()->setCategoryBitmask((int)PhysicsCategory::Enemy);
+      patrolUfo->getPhysicsBody()->setCollisionBitmask((int)PhysicsCategory::None);
+      patrolUfo->getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::Player | (int)PhysicsCategory::PlayerPickups | (int)PhysicsCategory::Hazard);
+      patrolUfo->target = player;
+      addChild(patrolUfo);
     }
     
     gameObjects->at(gameObjects->size() -1)->mapData = mapObject->mapData;

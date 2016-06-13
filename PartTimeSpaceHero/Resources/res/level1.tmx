@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="1000" height="200" tilewidth="8" tileheight="8" nextobjectid="554">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="1000" height="200" tilewidth="8" tileheight="8" nextobjectid="555">
  <properties>
   <property name="music_track" value="adventure.mp3"/>
  </properties>
@@ -174,6 +174,7 @@
   <object id="544" name="PlatformObject" x="375.874" y="1411.46" width="12" height="25"/>
   <object id="547" name="CoinObject" x="2235.5" y="33.2174" width="12" height="25"/>
   <object id="552" name="PlayerObject" x="375.655" y="1298.04" width="12" height="25"/>
+  <object id="554" name="FlowerShootaObject" x="593" y="1323.5" width="12" height="25"/>
  </objectgroup>
  <objectgroup name="object_pool" visible="0">
   <object id="301" name="passage" x="27.1178" y="1492.9" width="4" height="19">

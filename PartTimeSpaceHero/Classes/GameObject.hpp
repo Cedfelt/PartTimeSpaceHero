@@ -21,6 +21,7 @@ public:
   void addAnimation(std::string fileName,std::string animation_name,int start,int end,float animSpeed);
   void setAnimation(std::string anim);
   bool setAnimationOnce(std::string anim);
+  uint32_t getCurrentAnimationFrameIndex();
   Repeat* r;
   CREATE_FUNC(GameObject);
   void setupHitbox(const float x, const float y, const float w, const float h, const float box, const float boy, const bool draw);
@@ -127,4 +128,17 @@ enum MovementDirectionX {
 enum MovementDirectionY {
   UP = 1,
   DOWN = -1
+};
+
+enum E_Z_LEVELS {
+  E_Z_LEVEL1 = -5,
+  E_Z_LEVEL2,
+  E_Z_LEVEL3,
+  E_Z_LEVEL_ONE_BEHIND_PLAYER,
+  E_Z_LEVEL_PLAYER,
+  E_Z_LEVEL6,
+  E_Z_LEVEL7,
+  E_Z_LEVEL8,
+  E_Z_LEVEL9,
+  E_Z_LEVEL10,
 };

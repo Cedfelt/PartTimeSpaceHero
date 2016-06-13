@@ -104,6 +104,10 @@ bool GameObject::setAnimationOnce(std::string anim){
   return objectSprite->getNumberOfRunningActions()==0;
 }
 
+uint32_t GameObject::getCurrentAnimationFrameIndex() {
+  return 0;
+}
+
 int32_t GameObject::getMovementStatus(){
   if(velocityY==0){
     return GO_ON_GROUND;
