@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="1000" height="200" tilewidth="8" tileheight="8" nextobjectid="553">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="1000" height="200" tilewidth="8" tileheight="8" nextobjectid="554">
  <properties>
   <property name="music_track" value="adventure.mp3"/>
  </properties>
@@ -90,7 +90,7 @@
   <object id="436" name="CoinObject" x="2840" y="1096" width="12" height="25"/>
   <object id="439" name="CoinObject" x="3518.26" y="990.955" width="12" height="25"/>
   <object id="442" name="GoalObject" x="4230.21" y="1426.32" width="12" height="25"/>
-  <object id="450" name="DamageZone" x="2.64257" y="1589.77" width="4948.95" height="5.08892">
+  <object id="450" name="DamageZone" x="9.15761" y="1586.81" width="4948.95" height="5.08892">
    <properties>
     <property name="dmg" value="3"/>
     <property name="force" value="-1"/>
@@ -172,10 +172,8 @@
   <object id="537" name="CoinObject" x="3256" y="1096" width="12" height="25"/>
   <object id="539" name="CoinObject" x="2720" y="1312" width="12" height="25"/>
   <object id="544" name="PlatformObject" x="375.874" y="1411.46" width="12" height="25"/>
-  <object id="545" name="PlatformObject" x="2118.51" y="767.384" width="12" height="25"/>
-  <object id="546" name="PlatformObject" x="2929.32" y="1204.39" width="12" height="25"/>
   <object id="547" name="CoinObject" x="2235.5" y="33.2174" width="12" height="25"/>
-  <object id="552" name="PlayerObject" x="104.106" y="1456.24" width="12" height="25"/>
+  <object id="552" name="PlayerObject" x="375.655" y="1298.04" width="12" height="25"/>
  </objectgroup>
  <objectgroup name="object_pool" visible="0">
   <object id="301" name="passage" x="27.1178" y="1492.9" width="4" height="19">

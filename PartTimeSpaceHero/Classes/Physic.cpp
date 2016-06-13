@@ -53,6 +53,11 @@ void Physic::moveGameObjects(cocos2d::Vector<GameObject*>* gameObjects, MapObjec
 
     obj->setObjectPositionX(obj->getObjectPositionX() + obj->moveX);
     obj->setObjectPositionY(obj->getObjectPositionY() + obj->moveY);
+    
+    if(isBlocked(obj, obj->getHitbox(), mapObject, collision_mask, delta)){
+      obj->setObjectPositionX(obj->getObjectPositionX() - obj->moveX);
+      obj->setObjectPositionY(obj->getObjectPositionY() - obj->moveY);
+    }
 
     if (obj->remove_object || obj->skipMove) {
       continue;

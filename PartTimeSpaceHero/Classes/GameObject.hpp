@@ -20,6 +20,8 @@ public:
   virtual bool init();
   void addAnimation(std::string fileName,std::string animation_name,int start,int end,float animSpeed);
   void setAnimation(std::string anim);
+  bool setAnimationOnce(std::string anim);
+  Repeat* r;
   CREATE_FUNC(GameObject);
   void setupHitbox(const float x, const float y, const float w, const float h, const float box, const float boy, const bool draw);
   void addToVelocityX(float velX);

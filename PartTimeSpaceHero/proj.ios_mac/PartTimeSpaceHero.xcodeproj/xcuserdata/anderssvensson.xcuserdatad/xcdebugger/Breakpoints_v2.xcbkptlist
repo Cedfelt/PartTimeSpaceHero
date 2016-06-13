@@ -72,11 +72,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/PlayerObject.cpp"
-            timestampString = "487117923.509213"
+            timestampString = "487454148.476604"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "283"
-            endingLineNumber = "283"
+            startingLineNumber = "286"
+            endingLineNumber = "286"
             landmarkName = "PlayerObject::playerDashUpdate(float delta)"
             landmarkType = "5">
          </BreakpointContent>
@@ -88,11 +88,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/PlayerObject.cpp"
-            timestampString = "487296383.793506"
+            timestampString = "487455157.839335"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "326"
-            endingLineNumber = "326"
+            startingLineNumber = "392"
+            endingLineNumber = "392"
             landmarkName = "PlayerObject::playerUpdate(const float delta)"
             landmarkType = "5">
          </BreakpointContent>
@@ -104,27 +104,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/Physic.cpp"
-            timestampString = "487283170.191698"
+            timestampString = "487445283.584332"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "93"
-            endingLineNumber = "93"
-            landmarkName = "Physic::moveGameObjects(cocos2d::Vector&lt;GameObject*&gt;* gameObjects, MapObject* mapObject, const float delta)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../Classes/Physic.cpp"
-            timestampString = "487283170.191698"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "116"
-            endingLineNumber = "116"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
             landmarkName = "Physic::movePlatform(cocos2d::Vector&lt;GameObject*&gt;* gameObjects,MapObject* mapObject,const float delta)"
             landmarkType = "5">
          </BreakpointContent>
@@ -136,11 +120,27 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/Physic.cpp"
-            timestampString = "487283170.191698"
+            timestampString = "487445283.584332"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "97"
-            endingLineNumber = "97"
+            startingLineNumber = "127"
+            endingLineNumber = "127"
+            landmarkName = "Physic::movePlatform(cocos2d::Vector&lt;GameObject*&gt;* gameObjects,MapObject* mapObject,const float delta)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Classes/Physic.cpp"
+            timestampString = "487445283.584332"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "108"
+            endingLineNumber = "108"
             landmarkName = "Physic::movePlatform(cocos2d::Vector&lt;GameObject*&gt;* gameObjects,MapObject* mapObject,const float delta)"
             landmarkType = "5">
          </BreakpointContent>
@@ -168,11 +168,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/PlayerObject.cpp"
-            timestampString = "487018752.91203"
+            timestampString = "487454148.476604"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "109"
-            endingLineNumber = "109"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
             landmarkName = "PlayerObject::playerFallUpdate(float delta)"
             landmarkType = "5">
          </BreakpointContent>
@@ -184,11 +184,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/PlayerObject.cpp"
-            timestampString = "487018752.91203"
+            timestampString = "487454148.476604"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "101"
-            endingLineNumber = "101"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
             landmarkName = "PlayerObject::playerWalkUpdate(float delta)"
             landmarkType = "5">
          </BreakpointContent>
@@ -232,11 +232,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/PlayerObject.cpp"
-            timestampString = "487018752.91203"
+            timestampString = "487454148.476604"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
             landmarkName = "PlayerObject::init()"
             landmarkType = "5">
          </BreakpointContent>
@@ -248,11 +248,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/Physic.cpp"
-            timestampString = "487283170.191698"
+            timestampString = "487445283.584332"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
             landmarkName = "Physic::moveGameObjects(cocos2d::Vector&lt;GameObject*&gt;* gameObjects, MapObject* mapObject, const float delta)"
             landmarkType = "5">
          </BreakpointContent>
@@ -264,11 +264,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/Physic.cpp"
-            timestampString = "487117622.303191"
+            timestampString = "487445283.584332"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
             landmarkName = "Physic::moveGameObjects(cocos2d::Vector&lt;GameObject*&gt;* gameObjects, MapObject* mapObject, const float delta)"
             landmarkType = "5">
          </BreakpointContent>
@@ -280,11 +280,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/PlayerObject.cpp"
-            timestampString = "487018752.91203"
+            timestampString = "487454148.476604"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
             landmarkName = "PlayerObject::init()"
             landmarkType = "5">
          </BreakpointContent>
@@ -296,11 +296,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/Physic.cpp"
-            timestampString = "487283170.191698"
+            timestampString = "487445283.584332"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "86"
-            endingLineNumber = "86"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
             landmarkName = "Physic::moveGameObjects(cocos2d::Vector&lt;GameObject*&gt;* gameObjects, MapObject* mapObject, const float delta)"
             landmarkType = "5">
          </BreakpointContent>
@@ -312,11 +312,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/Physic.cpp"
-            timestampString = "487283170.191698"
+            timestampString = "487445283.584332"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "96"
-            endingLineNumber = "96">
+            startingLineNumber = "107"
+            endingLineNumber = "107"
+            landmarkName = "Physic::movePlatform(cocos2d::Vector&lt;GameObject*&gt;* gameObjects,MapObject* mapObject,const float delta)"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -326,11 +328,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/Physic.cpp"
-            timestampString = "487283170.191698"
+            timestampString = "487445283.584332"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
             landmarkName = "Physic::moveGameObjects(cocos2d::Vector&lt;GameObject*&gt;* gameObjects, MapObject* mapObject, const float delta)"
             landmarkType = "5">
          </BreakpointContent>
@@ -342,11 +344,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/PlayerObject.cpp"
-            timestampString = "487117923.509213"
+            timestampString = "487454148.476604"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "144"
-            endingLineNumber = "144"
+            startingLineNumber = "147"
+            endingLineNumber = "147"
             landmarkName = "PlayerObject::playerFlyUpdate(float delta)"
             landmarkType = "5">
          </BreakpointContent>
@@ -390,11 +392,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/Physic.cpp"
-            timestampString = "487283170.191698"
+            timestampString = "487445283.584332"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
             landmarkName = "Physic::moveGameObjects(cocos2d::Vector&lt;GameObject*&gt;* gameObjects, MapObject* mapObject, const float delta)"
             landmarkType = "5">
          </BreakpointContent>
@@ -470,11 +472,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/PlayerObject.cpp"
-            timestampString = "487117923.509213"
+            timestampString = "487454148.476604"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "159"
-            endingLineNumber = "159"
+            startingLineNumber = "162"
+            endingLineNumber = "162"
             landmarkName = "PlayerObject::playerFlyUpdate(float delta)"
             landmarkType = "5">
          </BreakpointContent>
@@ -486,11 +488,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/PlayerObject.cpp"
-            timestampString = "487117923.509213"
+            timestampString = "487454148.476604"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "142"
-            endingLineNumber = "142"
+            startingLineNumber = "145"
+            endingLineNumber = "145"
             landmarkName = "PlayerObject::playerFlyUpdate(float delta)"
             landmarkType = "5">
          </BreakpointContent>
@@ -502,11 +504,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/PlayerObject.cpp"
-            timestampString = "487117923.509213"
+            timestampString = "487454148.476604"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "168"
-            endingLineNumber = "168"
+            startingLineNumber = "171"
+            endingLineNumber = "171"
             landmarkName = "PlayerObject::playerFlyUpdate(float delta)"
             landmarkType = "5">
          </BreakpointContent>
@@ -518,11 +520,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/PlayerObject.cpp"
-            timestampString = "487117923.509213"
+            timestampString = "487454148.476604"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "280"
-            endingLineNumber = "280"
+            startingLineNumber = "283"
+            endingLineNumber = "283"
             landmarkName = "PlayerObject::playerDashUpdate(float delta)"
             landmarkType = "5">
          </BreakpointContent>
@@ -534,11 +536,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/PlayerObject.cpp"
-            timestampString = "487117923.509213"
+            timestampString = "487454148.476604"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "208"
-            endingLineNumber = "208"
+            startingLineNumber = "211"
+            endingLineNumber = "211"
             landmarkName = "PlayerObject::playerFlyUpdate(float delta)"
             landmarkType = "5">
          </BreakpointContent>
@@ -566,11 +568,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/PlayerObject.cpp"
-            timestampString = "487117923.509213"
+            timestampString = "487454148.476604"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "207"
-            endingLineNumber = "207"
+            startingLineNumber = "210"
+            endingLineNumber = "210"
             landmarkName = "PlayerObject::playerFlyUpdate(float delta)"
             landmarkType = "5">
          </BreakpointContent>
@@ -582,11 +584,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/PlayerObject.cpp"
-            timestampString = "487117923.509213"
+            timestampString = "487454148.476604"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "209"
-            endingLineNumber = "209"
+            startingLineNumber = "212"
+            endingLineNumber = "212"
             landmarkName = "PlayerObject::playerFlyUpdate(float delta)"
             landmarkType = "5">
          </BreakpointContent>
@@ -598,11 +600,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/PlayerObject.cpp"
-            timestampString = "487117923.509213"
+            timestampString = "487454148.476604"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "215"
-            endingLineNumber = "215"
+            startingLineNumber = "218"
+            endingLineNumber = "218"
             landmarkName = "PlayerObject::playerFlyUpdate(float delta)"
             landmarkType = "5">
          </BreakpointContent>
@@ -614,23 +616,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/PlayerObject.cpp"
-            timestampString = "487117923.509213"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "133"
-            endingLineNumber = "133"
-            landmarkName = "PlayerObject::playerFlyUpdate(float delta)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../Classes/PlayerObject.cpp"
-            timestampString = "487117923.509213"
+            timestampString = "487454148.476604"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "136"
@@ -646,11 +632,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/PlayerObject.cpp"
-            timestampString = "487117923.509213"
+            timestampString = "487454148.476604"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "132"
-            endingLineNumber = "132"
+            startingLineNumber = "139"
+            endingLineNumber = "139"
             landmarkName = "PlayerObject::playerFlyUpdate(float delta)"
             landmarkType = "5">
          </BreakpointContent>
@@ -662,11 +648,27 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/PlayerObject.cpp"
-            timestampString = "487117923.509213"
+            timestampString = "487454148.476604"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "228"
-            endingLineNumber = "228"
+            startingLineNumber = "135"
+            endingLineNumber = "135"
+            landmarkName = "PlayerObject::playerFlyUpdate(float delta)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Classes/PlayerObject.cpp"
+            timestampString = "487454148.476604"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "231"
+            endingLineNumber = "231"
             landmarkName = "PlayerObject::playerDashUpdate(float delta)"
             landmarkType = "5">
          </BreakpointContent>
@@ -678,11 +680,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/PlayerObject.cpp"
-            timestampString = "487117923.509213"
+            timestampString = "487454148.476604"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "246"
-            endingLineNumber = "246"
+            startingLineNumber = "249"
+            endingLineNumber = "249"
             landmarkName = "PlayerObject::playerDashUpdate(float delta)"
             landmarkType = "5">
          </BreakpointContent>
@@ -694,11 +696,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/PlayerObject.cpp"
-            timestampString = "487117923.509213"
+            timestampString = "487454148.476604"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "126"
-            endingLineNumber = "126"
+            startingLineNumber = "129"
+            endingLineNumber = "129"
             landmarkName = "PlayerObject::flyAtDir(MovementDirectionX dir,std::string animName)"
             landmarkType = "5">
          </BreakpointContent>
@@ -710,11 +712,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/Physic.cpp"
-            timestampString = "487283170.191698"
+            timestampString = "487445283.584332"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "153"
-            endingLineNumber = "153">
+            startingLineNumber = "164"
+            endingLineNumber = "164"
+            landmarkName = "Physic::isBlocked(GameObject* obj, const Rect* hitBox, MapObject* map,const uint32_t mask,const float delta)"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -754,11 +758,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/WorldObject.cpp"
-            timestampString = "487371326.194094"
+            timestampString = "487444140.404649"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "224"
-            endingLineNumber = "224"
+            startingLineNumber = "221"
+            endingLineNumber = "221"
             landmarkName = "WorldObject::spawnObjects(cocos2d::Vector&lt;GameObject*&gt;* gameObjects)"
             landmarkType = "5">
          </BreakpointContent>
@@ -770,11 +774,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/PlayerObject.cpp"
-            timestampString = "487018752.91203"
+            timestampString = "487454148.476604"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
             landmarkName = "PlayerObject::init()"
             landmarkType = "5">
          </BreakpointContent>
@@ -818,11 +822,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/PlayerObject.cpp"
-            timestampString = "487117923.509213"
+            timestampString = "487454148.476604"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "189"
-            endingLineNumber = "189"
+            startingLineNumber = "192"
+            endingLineNumber = "192"
             landmarkName = "PlayerObject::playerFlyUpdate(float delta)"
             landmarkType = "5">
          </BreakpointContent>
@@ -834,11 +838,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/PlayerObject.cpp"
-            timestampString = "487117923.509213"
+            timestampString = "487454148.476604"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "190"
-            endingLineNumber = "190"
+            startingLineNumber = "193"
+            endingLineNumber = "193"
             landmarkName = "PlayerObject::playerFlyUpdate(float delta)"
             landmarkType = "5">
          </BreakpointContent>
@@ -866,11 +870,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/PlayerObject.cpp"
-            timestampString = "487117923.509213"
+            timestampString = "487454148.476604"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "155"
-            endingLineNumber = "155"
+            startingLineNumber = "158"
+            endingLineNumber = "158"
             landmarkName = "PlayerObject::playerFlyUpdate(float delta)"
             landmarkType = "5">
          </BreakpointContent>
@@ -882,11 +886,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/PlayerObject.cpp"
-            timestampString = "487117923.509213"
+            timestampString = "487454148.476604"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "181"
-            endingLineNumber = "181"
+            startingLineNumber = "184"
+            endingLineNumber = "184"
             landmarkName = "PlayerObject::playerFlyUpdate(float delta)"
             landmarkType = "5">
          </BreakpointContent>
@@ -978,11 +982,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/GameObject.cpp"
-            timestampString = "487018391.256012"
+            timestampString = "487453224.376884"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "145"
-            endingLineNumber = "145"
+            startingLineNumber = "156"
+            endingLineNumber = "156"
             landmarkName = "GameObject::hurt(const int dmg, const Vec2 force)"
             landmarkType = "5">
          </BreakpointContent>
@@ -994,11 +998,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/GameObject.cpp"
-            timestampString = "487018391.256012"
+            timestampString = "487453224.376884"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "150"
-            endingLineNumber = "150"
+            startingLineNumber = "161"
+            endingLineNumber = "161"
             landmarkName = "GameObject::hurt(const int dmg, const Vec2 force)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1058,11 +1062,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/PlayerObject.cpp"
-            timestampString = "487296383.793506"
+            timestampString = "487455157.839335"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "339"
-            endingLineNumber = "339"
+            startingLineNumber = "405"
+            endingLineNumber = "405"
             landmarkName = "PlayerObject::playerUpdate(const float delta)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1122,43 +1126,43 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/PlayerObject.cpp"
-            timestampString = "487117923.509213"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "134"
-            endingLineNumber = "134"
-            landmarkName = "PlayerObject::playerFlyUpdate(float delta)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../Classes/PlayerObject.cpp"
-            timestampString = "487117923.509213"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "138"
-            endingLineNumber = "138"
-            landmarkName = "PlayerObject::playerFlyUpdate(float delta)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../Classes/PlayerObject.cpp"
-            timestampString = "487117923.509213"
+            timestampString = "487454148.476604"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "137"
             endingLineNumber = "137"
+            landmarkName = "PlayerObject::playerFlyUpdate(float delta)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Classes/PlayerObject.cpp"
+            timestampString = "487454148.476604"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "141"
+            endingLineNumber = "141"
+            landmarkName = "PlayerObject::playerFlyUpdate(float delta)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Classes/PlayerObject.cpp"
+            timestampString = "487454148.476604"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "140"
+            endingLineNumber = "140"
             landmarkName = "PlayerObject::playerFlyUpdate(float delta)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1358,7 +1362,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/BottyObject.cpp"
@@ -1378,11 +1382,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/WorldObject.cpp"
-            timestampString = "487371326.194094"
+            timestampString = "487444140.404649"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "301"
-            endingLineNumber = "301"
+            startingLineNumber = "298"
+            endingLineNumber = "298"
             landmarkName = "WorldObject::spawnObjects(cocos2d::Vector&lt;GameObject*&gt;* gameObjects)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1390,7 +1394,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/BottyObject.cpp"
@@ -1410,11 +1414,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/Physic.cpp"
-            timestampString = "487283170.191698"
+            timestampString = "487445283.584332"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "140"
-            endingLineNumber = "140"
+            startingLineNumber = "151"
+            endingLineNumber = "151"
             landmarkName = "Physic::movePlatform(cocos2d::Vector&lt;GameObject*&gt;* gameObjects,MapObject* mapObject,const float delta)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1426,7 +1430,23 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/Physic.cpp"
-            timestampString = "487283170.191698"
+            timestampString = "487445283.584332"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "152"
+            endingLineNumber = "152"
+            landmarkName = "Physic::movePlatform(cocos2d::Vector&lt;GameObject*&gt;* gameObjects,MapObject* mapObject,const float delta)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Classes/Physic.cpp"
+            timestampString = "487445283.584332"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "141"
@@ -1441,28 +1461,12 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../Classes/Physic.cpp"
-            timestampString = "487283170.191698"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "130"
-            endingLineNumber = "130"
-            landmarkName = "Physic::movePlatform(cocos2d::Vector&lt;GameObject*&gt;* gameObjects,MapObject* mapObject,const float delta)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "../Classes/WorldObject.cpp"
-            timestampString = "487371326.194094"
+            timestampString = "487444140.404649"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "322"
-            endingLineNumber = "322"
+            startingLineNumber = "319"
+            endingLineNumber = "319"
             landmarkName = "WorldObject::spawnObjects(cocos2d::Vector&lt;GameObject*&gt;* gameObjects)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1474,11 +1478,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/Physic.cpp"
-            timestampString = "487283170.191698"
+            timestampString = "487445283.584332"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "131"
-            endingLineNumber = "131"
+            startingLineNumber = "142"
+            endingLineNumber = "142"
             landmarkName = "Physic::movePlatform(cocos2d::Vector&lt;GameObject*&gt;* gameObjects,MapObject* mapObject,const float delta)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1490,11 +1494,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/WorldObject.cpp"
-            timestampString = "487371326.194094"
+            timestampString = "487444140.404649"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "175"
-            endingLineNumber = "175"
+            startingLineNumber = "172"
+            endingLineNumber = "172"
             landmarkName = "WorldObject::spawnObjects(cocos2d::Vector&lt;GameObject*&gt;* gameObjects)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1506,11 +1510,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/Physic.cpp"
-            timestampString = "487283170.191698"
+            timestampString = "487445283.584332"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "133"
-            endingLineNumber = "133"
+            startingLineNumber = "144"
+            endingLineNumber = "144"
             landmarkName = "Physic::movePlatform(cocos2d::Vector&lt;GameObject*&gt;* gameObjects,MapObject* mapObject,const float delta)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1522,7 +1526,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/PlatformObject.cpp"
-            timestampString = "487025333.125725"
+            timestampString = "487442858.142018"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "57"
@@ -1538,11 +1542,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/Physic.cpp"
-            timestampString = "487283170.191698"
+            timestampString = "487445283.584332"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "134"
-            endingLineNumber = "134"
+            startingLineNumber = "145"
+            endingLineNumber = "145"
             landmarkName = "Physic::movePlatform(cocos2d::Vector&lt;GameObject*&gt;* gameObjects,MapObject* mapObject,const float delta)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1554,11 +1558,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/WorldObject.cpp"
-            timestampString = "487371326.194094"
+            timestampString = "487444140.404649"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "176"
-            endingLineNumber = "176"
+            startingLineNumber = "173"
+            endingLineNumber = "173"
             landmarkName = "WorldObject::spawnObjects(cocos2d::Vector&lt;GameObject*&gt;* gameObjects)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1570,11 +1574,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/WorldObject.cpp"
-            timestampString = "487371326.194094"
+            timestampString = "487444140.404649"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "174"
-            endingLineNumber = "174"
+            startingLineNumber = "171"
+            endingLineNumber = "171"
             landmarkName = "WorldObject::spawnObjects(cocos2d::Vector&lt;GameObject*&gt;* gameObjects)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1614,7 +1618,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/WorldObject.cpp"
@@ -1630,7 +1634,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/MapObject.cpp"
@@ -1662,7 +1666,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/MapObject.cpp"
@@ -1672,6 +1676,278 @@
             startingLineNumber = "118"
             endingLineNumber = "118"
             landmarkName = "MapObject::updateLiquids(const float delta)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Classes/Physic.cpp"
+            timestampString = "487445283.584332"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
+            landmarkName = "Physic::moveGameObjects(cocos2d::Vector&lt;GameObject*&gt;* gameObjects, MapObject* mapObject, const float delta)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Classes/Physic.cpp"
+            timestampString = "487445283.584332"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "216"
+            endingLineNumber = "216"
+            landmarkName = "Physic::isBlocked(GameObject* obj, const Rect* hitBox, MapObject* map,const uint32_t mask,const float delta)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Classes/Physic.cpp"
+            timestampString = "487445283.584332"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "183"
+            endingLineNumber = "183"
+            landmarkName = "Physic::isBlocked(GameObject* obj, const Rect* hitBox, MapObject* map,const uint32_t mask,const float delta)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Classes/Physic.cpp"
+            timestampString = "487445283.584332"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "180"
+            endingLineNumber = "180"
+            landmarkName = "Physic::isBlocked(GameObject* obj, const Rect* hitBox, MapObject* map,const uint32_t mask,const float delta)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Classes/GameObject.cpp"
+            timestampString = "487453224.376884"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
+            landmarkName = "GameObject::getMovementStatus()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Classes/GameObject.cpp"
+            timestampString = "487453224.376884"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "113"
+            endingLineNumber = "113"
+            landmarkName = "GameObject::getMovementStatus()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Classes/GameObject.cpp"
+            timestampString = "487453224.376884"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "116"
+            endingLineNumber = "116"
+            landmarkName = "GameObject::getMovementStatus()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Classes/PlatformObject.cpp"
+            timestampString = "487444822.924244"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
+            landmarkName = "PlatformObject::update(const float delta)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Classes/PlatformObject.cpp"
+            timestampString = "487444822.924244"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "PlatformObject::update(const float delta)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Classes/GameObject.cpp"
+            timestampString = "487453224.376884"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "108"
+            endingLineNumber = "108"
+            landmarkName = "GameObject::getMovementStatus()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Classes/GameObject.cpp"
+            timestampString = "487453224.376884"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "206"
+            endingLineNumber = "206"
+            landmarkName = "GameObject::isAffectedByGravity(void)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Classes/GameObject.cpp"
+            timestampString = "487453224.376884"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
+            landmarkName = "GameObject::getMovementStatus()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Classes/WorldObject.cpp"
+            timestampString = "487444140.404649"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "309"
+            endingLineNumber = "309"
+            landmarkName = "WorldObject::spawnObjects(cocos2d::Vector&lt;GameObject*&gt;* gameObjects)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Classes/PlayerObject.cpp"
+            timestampString = "487455157.839335"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "347"
+            endingLineNumber = "347"
+            landmarkName = "PlayerObject::playerShoot(float delta)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Classes/PlayerObject.cpp"
+            timestampString = "487454148.476604"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "311"
+            endingLineNumber = "311"
+            landmarkName = "PlayerObject::playerShoot(float delta)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Classes/GameObject.cpp"
+            timestampString = "487453265.647611"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
+            landmarkName = "GameObject::setAnimationOnce(std::string anim)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Classes/Hero_Bullet.cpp"
+            timestampString = "487454901.47982"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "HeroBullet::colideWith(GameObject *otherGo)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

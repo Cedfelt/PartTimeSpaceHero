@@ -30,6 +30,7 @@ private:
   bool playerFlyUpdate(float delta);
   bool hurt(const int dmg, const Vec2 force);
   bool playerDashUpdate(float delta);
+  bool playerShoot(float delta);
   bool flying = false;
   virtual void colideWith(GameObject* oterhObj);
   const float jumpStength = 90;

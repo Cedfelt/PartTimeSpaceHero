@@ -7,6 +7,7 @@
 //
 
 #include "PlayerObject.hpp"
+#include "Hero_Bullet.hpp"
 
 bool PlayerObject::init() {
   //////////////////////////////
@@ -40,6 +41,8 @@ bool PlayerObject::init() {
   addAnimation("PTSH", "DashL", 18, 21, 0.15f);
   addAnimation("PTSH", "DieR", 22, 25, 0.15f);
   addAnimation("PTSH", "DieL", 22, 25, 0.15f);
+  addAnimation("PTSH", "PlayerShootR", 30, 33, 0.06f);
+  addAnimation("PTSH", "PlayerShootL", 30, 33, 0.06f);
 
 
   objectSprite = cocos2d::Sprite::create();
@@ -300,11 +303,74 @@ bool PlayerObject::playerDashUpdate(float delta) {
   return false;
 }
 
+bool bPlayerShoot = false;
+
+bool PlayerObject::playerShoot(float delta) {
+  
+  if (playerInput->isDoubleRight()&&!bPlayerShoot) {
+    objectSprite->setScaleX(1);
+    setAnimationOnce("PlayerShootR");
+    setVelocityX(0);
+    setPrevDir(GO_RIGHT);
+    auto babyTurf = HeroBullet::create();
+    babyTurf->setupHitbox(0.1f, 1.0f, 16, 16, 16, 16, false);
+    babyTurf->setObjectPositionX(getPositionX()+10);
+    babyTurf->setObjectPositionY(getPositionY()+2);
+    babyTurf->getPhysicsBody()->setCategoryBitmask((int)PhysicsCategory::Player);
+    babyTurf->getPhysicsBody()->setCollisionBitmask((int)PhysicsCategory::None);
+    babyTurf->getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::Enemy);
+    addToGameObjects.pushBack(babyTurf);
+    bPlayerShoot = true;
+    babyTurf->setVelocityX(200);
+  }
+  if (playerInput->isDoubleLeft()&&!bPlayerShoot) {
+    objectSprite->setScaleX(-1);
+    setVelocityX(0);
+    setAnimationOnce("PlayerShootL");
+    bPlayerShoot = true;
+    setPrevDir(GO_LEFT);
+    auto babyTurf = HeroBullet::create();
+    babyTurf->setupHitbox(0.1f, 1.0f, 16, 16, 16, 16, false);
+    babyTurf->setObjectPositionX(getPositionX()-20);
+    babyTurf->setObjectPositionY(getPositionY()+2);
+    babyTurf->getPhysicsBody()->setCategoryBitmask((int)PhysicsCategory::Player);
+    babyTurf->getPhysicsBody()->setCollisionBitmask((int)PhysicsCategory::None);
+    babyTurf->getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::Enemy);
+    addToGameObjects.pushBack(babyTurf);
+    bPlayerShoot = true;
+    babyTurf->setVelocityX(-200);
+  }
+  if(bPlayerShoot){
+    if(getPrevDir() == GO_RIGHT){
+      if(setAnimationOnce("PlayerShootR")){
+        bPlayerShoot = false;
+        return false;
+      }
+    }
+    else if(getPrevDir() == GO_LEFT){
+      if(setAnimationOnce("PlayerShootL"))
+      {
+        bPlayerShoot = false;
+        return false;
+      }
+      
+    }
+    return true;
+  }
+  return false;
+}
+
 void PlayerObject::playerUpdate(const float delta) {
   solid = true;
   objectSprite->setPosition(cocos2d::Point((modelPositionX),(modelPositionY)));
   // Update priority
-  if (playerDashUpdate(delta)) {
+  
+  if(false){
+    if (playerDashUpdate(delta)) {
+      return;
+    }
+  }
+  else if(playerShoot(delta)){
     return;
   }
   solid = false;// Not Dashing

@@ -81,6 +81,8 @@ void PlatformObject::update(const float delta) {
   }
 }
 
+
+
 bool PlatformObject::isBlocked(Rect* playerRect){
   auto platformRect = getHitbox();
   return playerRect->intersectsRect(*platformRect);

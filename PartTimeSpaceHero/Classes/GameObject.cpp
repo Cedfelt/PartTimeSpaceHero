@@ -94,6 +94,16 @@ void GameObject::setAnimation(std::string anim){
   prevAnimation = anim;
 }
 
+bool GameObject::setAnimationOnce(std::string anim){
+  if(prevAnimation!=anim){
+    objectSprite->stopAllActions();
+    r = cocos2d::Repeat::create(cocos2d::Animate::create(animationCache->getAnimation(anim)),1);
+    objectSprite->runAction(r);
+  }
+  prevAnimation = anim;
+  return objectSprite->getNumberOfRunningActions()==0;
+}
+
 int32_t GameObject::getMovementStatus(){
   if(velocityY==0){
     return GO_ON_GROUND;
@@ -158,7 +168,7 @@ bool GameObject::hurt(const int dmg, const Vec2 force){
 
 uint32_t GameObject::isBlocked(uint32_t x,uint32_t y){
   if (x < TILES_COUNT_X&&y < TILES_COUNT_Y) {
-    return mapData->attributes[x][y] == MapData::BLOCKED;
+    return mapData->attributes[x][y] == MapData::BLOCKED||mapData->attributes[x][y] == MapData::ONE_WAY_UP;
   }
   return true;
 }
