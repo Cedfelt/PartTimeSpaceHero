@@ -101,6 +101,7 @@
 		A8805F311CF04C6D00B2AE7A /* SoundFx.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8805F2E1CF04C6D00B2AE7A /* SoundFx.cpp */; };
 		A8805F341CF0F5B100B2AE7A /* GoalObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8805F321CF0F5B100B2AE7A /* GoalObject.cpp */; };
 		A8805F351CF0F5B100B2AE7A /* GoalObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8805F321CF0F5B100B2AE7A /* GoalObject.cpp */; };
+		A8B094CF1D0F580E00D32FBE /* FlowerShootaObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8B094CD1D0F580E00D32FBE /* FlowerShootaObject.cpp */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
 		BF1C47F01293687400B63C5D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1C47EA1293683800B63C5D /* QuartzCore.framework */; };
@@ -215,6 +216,8 @@
 		A8805F2F1CF04C6D00B2AE7A /* SoundFx.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SoundFx.hpp; sourceTree = "<group>"; };
 		A8805F321CF0F5B100B2AE7A /* GoalObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GoalObject.cpp; sourceTree = "<group>"; };
 		A8805F331CF0F5B100B2AE7A /* GoalObject.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GoalObject.hpp; sourceTree = "<group>"; };
+		A8B094CD1D0F580E00D32FBE /* FlowerShootaObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FlowerShootaObject.cpp; sourceTree = "<group>"; };
+		A8B094CE1D0F580E00D32FBE /* FlowerShootaObject.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = FlowerShootaObject.hpp; sourceTree = "<group>"; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		BF1C47EA1293683800B63C5D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -356,6 +359,8 @@
 				A8805F2C1CEFB37400B2AE7A /* CoinObject.hpp */,
 				A828EC131D02C6080006AA25 /* DamageZone.cpp */,
 				A828EC141D02C6080006AA25 /* DamageZone.hpp */,
+				A8B094CD1D0F580E00D32FBE /* FlowerShootaObject.cpp */,
+				A8B094CE1D0F580E00D32FBE /* FlowerShootaObject.hpp */,
 				A81BE1491CBA415400C09359 /* GameObject.cpp */,
 				A81BE14A1CBA415400C09359 /* GameObject.hpp */,
 				A81BE1411CBA40AE00C09359 /* GameScene.cpp */,
@@ -370,6 +375,8 @@
 				A82560FD1CF6269600FC1DD3 /* GUI.hpp */,
 				46880B8619C43A87006E1F66 /* HelloWorldScene.cpp */,
 				46880B8719C43A87006E1F66 /* HelloWorldScene.h */,
+				A87396AE1D0DF44800ADE298 /* Hero_Bullet.cpp */,
+				A87396AF1D0DF44800ADE298 /* Hero_Bullet.hpp */,
 				A81BE1591CBA424600C09359 /* LaserObject.cpp */,
 				A81BE15A1CBA424600C09359 /* LaserObject.hpp */,
 				A825610F1CFCD65200FC1DD3 /* LevelData.cpp */,
@@ -398,12 +405,10 @@
 				A82561001CF8F01C00FC1DD3 /* TurfelObject.hpp */,
 				A82561071CFB635F00FC1DD3 /* UfoObject.cpp */,
 				A82561081CFB635F00FC1DD3 /* UfoObject.hpp */,
-				A81BE1451CBA40CB00C09359 /* WorldObject.cpp */,
-				A81BE1461CBA40CB00C09359 /* WorldObject.hpp */,
 				A87396AB1D0CA6BC00ADE298 /* WaterTiles.cpp */,
 				A87396AC1D0CA6BC00ADE298 /* WaterTiles.hpp */,
-				A87396AE1D0DF44800ADE298 /* Hero_Bullet.cpp */,
-				A87396AF1D0DF44800ADE298 /* Hero_Bullet.hpp */,
+				A81BE1451CBA40CB00C09359 /* WorldObject.cpp */,
+				A81BE1461CBA40CB00C09359 /* WorldObject.hpp */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -587,6 +592,7 @@
 			files = (
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				A81BE1571CBA422200C09359 /* GuardObject.cpp in Sources */,
+				A8B094CF1D0F580E00D32FBE /* FlowerShootaObject.cpp in Sources */,
 				A81BE13F1CBA408300C09359 /* MainMenu.cpp in Sources */,
 				A87396AD1D0CA6BC00ADE298 /* WaterTiles.cpp in Sources */,
 				A81BE15F1CBA465A00C09359 /* PlayerInput.cpp in Sources */,

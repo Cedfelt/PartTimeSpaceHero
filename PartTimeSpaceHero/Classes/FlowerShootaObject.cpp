@@ -33,7 +33,7 @@ bool FlowerShootaObject::init() {
   addChild(objectSprite);
   const float xVel = cocos2d::random(0, 0);
   setVelocityX(0);
-  shoot_timer = 0.2 * 2;
+  shoot_timer = 0.2 * 6;
   return true;
 }
 
@@ -49,11 +49,11 @@ void FlowerShootaObject::update(const float delta) {
       auto babyTurf = BabyTurfelObject::create();
       babyTurf->setupHitbox(0.1f, 1.0f, 16, 16, 16, 16, false);
       babyTurf->setObjectPositionX(getPositionX() + 12);
-      babyTurf->setObjectPositionY(getPositionY() + 4);
+      babyTurf->setObjectPositionY(getPositionY() + 12);
       babyTurf->getPhysicsBody()->setCategoryBitmask((int)PhysicsCategory::Enemy);
       babyTurf->getPhysicsBody()->setCollisionBitmask((int)PhysicsCategory::None);
       babyTurf->getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::Player | (int)PhysicsCategory::PlayerPickups | (int)PhysicsCategory::Hazard);
-      babyTurf->setVelocityX(distanceX + cocos2d::random(-5, 5));
+      babyTurf->setVelocityX(distanceX/2 + cocos2d::random(-5, 5));
       babyTurf->setVelocityY(yForce);
       babyTurf->setGlobalZOrder(E_Z_LEVEL_ONE_BEHIND_PLAYER);
       addToGameObjects.pushBack(babyTurf);
@@ -63,7 +63,7 @@ void FlowerShootaObject::update(const float delta) {
   }
   else {
     setAnimation("flower_idle");
-    shoot_timer = 4 * 0.2;
+    shoot_timer = 6 * 0.2;
   }
 
 }

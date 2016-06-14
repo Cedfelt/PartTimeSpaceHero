@@ -58,19 +58,30 @@ bool MainMenu::init()
     // Debug Label -
     auto label = Label::createWithTTF("PartTime Space Hero", "fonts/Marker Felt.ttf", 25*scale);
     label->setPosition(Vec2(origin.x + visibleSize.width/2,origin.y + visibleSize.height - label->getContentSize().height));
-    addChild(label);
+    //addChild(label);
   
   
   // Sprite
   auto director = Director::getInstance();
-  const float xPos = director->getWinSize().width / 2;
-  const float yPos = director->getWinSize().height / 2;
+  const float xPos = director->getWinSize().width *0.75;
+  const float yPos = director->getWinSize().height / 4;
   Sprite* spaceShipSprite = Sprite::create("SpaceshipA.png");
   spaceShipSprite->getTexture()->setAliasTexParameters();
-  spaceShipSprite->setScale(4);
+  spaceShipSprite->setScale(3);
   spaceShipSprite->setPositionX(xPos);
   spaceShipSprite->setPositionY(yPos);
-  addChild(spaceShipSprite);
+  spaceShipSprite->setRotation(60);
+  addChild(spaceShipSprite,0);
+  
+  
+  const float xPosLogo = director->getWinSize().width / 2;
+  const float yPosLogo = director->getWinSize().height*0.5;
+  Sprite* logo = Sprite::create("logo3.png");
+  logo->getTexture()->setAliasTexParameters();
+  logo->setScale(2);
+  logo->setPositionX(xPosLogo);
+  logo->setPositionY(yPosLogo);
+  addChild(logo,1);
   
   gameSave = SaveData::create();
   gameSave->loadWorldData();
