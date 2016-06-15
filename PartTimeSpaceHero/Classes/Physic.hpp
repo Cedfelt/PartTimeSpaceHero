@@ -21,6 +21,7 @@ public:
   void colideGameObjects(cocos2d::Vector<GameObject*>* gameObjects);
   void gameObjectCollision(GameObject*  goA,GameObject* goB);
   cocos2d::Vector<GameObject*>* platforms;
+  uint32_t ramp(GameObject* obj, const Rect* hitBox, MapObject* map,const uint32_t mask,const float delta);
 private:
   bool isBlockedPlatform(GameObject* obj,const Rect* hitBox, MapObject* map,const uint32_t mask,const float delta);
   bool isBlocked(GameObject* obj, const Rect* hitBox, MapObject* map, const uint32_t mask, const float delta);

@@ -80,7 +80,7 @@ float new_delta = 1.0 / 60.0;
 void WorldObject::updateWorld(float delta) {
   if(delta_cnt ==delta_max){
     delta_cnt = 0;
-    new_delta = int_delta / (delta_max-1);
+    //new_delta = int_delta / (delta_max-1);
     int_delta = 0;
   }
   int_delta += delta;

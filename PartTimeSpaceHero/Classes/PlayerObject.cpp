@@ -105,7 +105,7 @@ void PlayerObject::playerWalkUpdate(float delta) {
 
 void PlayerObject::fallAtDir(MovementDirectionX dir,std::string animName) {
   const float playerFallSpeed = 0.1f;
-  setAnimation(animName);
+  //setAnimation(animName);
   addToVelocityX(dir*playerFallSpeed);
 }
 
@@ -362,7 +362,7 @@ bool PlayerObject::playerShoot(float delta) {
 
 void PlayerObject::playerUpdate(const float delta) {
   solid = true;
-  objectSprite->setPosition(cocos2d::Point((modelPositionX),(modelPositionY)));
+  objectSprite->setPosition(cocos2d::Point((modelPositionX)+8,(modelPositionY)));
   // Update priority
   
   if(false){

@@ -104,11 +104,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/Physic.cpp"
-            timestampString = "487445283.584332"
+            timestampString = "487717217.734568"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "104"
-            endingLineNumber = "104"
+            startingLineNumber = "119"
+            endingLineNumber = "119"
             landmarkName = "Physic::movePlatform(cocos2d::Vector&lt;GameObject*&gt;* gameObjects,MapObject* mapObject,const float delta)"
             landmarkType = "5">
          </BreakpointContent>
@@ -120,11 +120,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/Physic.cpp"
-            timestampString = "487445283.584332"
+            timestampString = "487717217.734568"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "127"
-            endingLineNumber = "127"
+            startingLineNumber = "142"
+            endingLineNumber = "142"
             landmarkName = "Physic::movePlatform(cocos2d::Vector&lt;GameObject*&gt;* gameObjects,MapObject* mapObject,const float delta)"
             landmarkType = "5">
          </BreakpointContent>
@@ -136,11 +136,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/Physic.cpp"
-            timestampString = "487445283.584332"
+            timestampString = "487717217.734568"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "108"
-            endingLineNumber = "108"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
             landmarkName = "Physic::movePlatform(cocos2d::Vector&lt;GameObject*&gt;* gameObjects,MapObject* mapObject,const float delta)"
             landmarkType = "5">
          </BreakpointContent>
@@ -152,7 +152,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/Physic.cpp"
-            timestampString = "486853608.018749"
+            timestampString = "487717217.734568"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "54"
@@ -248,11 +248,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/Physic.cpp"
-            timestampString = "487445283.584332"
+            timestampString = "487717217.734568"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "75"
-            endingLineNumber = "75"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
             landmarkName = "Physic::moveGameObjects(cocos2d::Vector&lt;GameObject*&gt;* gameObjects, MapObject* mapObject, const float delta)"
             landmarkType = "5">
          </BreakpointContent>
@@ -264,7 +264,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/Physic.cpp"
-            timestampString = "487445283.584332"
+            timestampString = "487717217.734568"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "68"
@@ -296,11 +296,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/Physic.cpp"
-            timestampString = "487445283.584332"
+            timestampString = "487717217.734568"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "97"
-            endingLineNumber = "97"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
             landmarkName = "Physic::moveGameObjects(cocos2d::Vector&lt;GameObject*&gt;* gameObjects, MapObject* mapObject, const float delta)"
             landmarkType = "5">
          </BreakpointContent>
@@ -312,11 +312,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/Physic.cpp"
-            timestampString = "487445283.584332"
+            timestampString = "487717217.734568"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "107"
-            endingLineNumber = "107"
+            startingLineNumber = "122"
+            endingLineNumber = "122"
             landmarkName = "Physic::movePlatform(cocos2d::Vector&lt;GameObject*&gt;* gameObjects,MapObject* mapObject,const float delta)"
             landmarkType = "5">
          </BreakpointContent>
@@ -328,11 +328,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/Physic.cpp"
-            timestampString = "487445283.584332"
+            timestampString = "487717217.734568"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "98"
-            endingLineNumber = "98"
+            startingLineNumber = "113"
+            endingLineNumber = "113"
             landmarkName = "Physic::moveGameObjects(cocos2d::Vector&lt;GameObject*&gt;* gameObjects, MapObject* mapObject, const float delta)"
             landmarkType = "5">
          </BreakpointContent>
@@ -392,11 +392,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/Physic.cpp"
-            timestampString = "487445283.584332"
+            timestampString = "487717217.734568"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
             landmarkName = "Physic::moveGameObjects(cocos2d::Vector&lt;GameObject*&gt;* gameObjects, MapObject* mapObject, const float delta)"
             landmarkType = "5">
          </BreakpointContent>
@@ -712,11 +712,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/Physic.cpp"
-            timestampString = "487445283.584332"
+            timestampString = "487717217.734568"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "164"
-            endingLineNumber = "164"
+            startingLineNumber = "179"
+            endingLineNumber = "179"
             landmarkName = "Physic::isBlocked(GameObject* obj, const Rect* hitBox, MapObject* map,const uint32_t mask,const float delta)"
             landmarkType = "5">
          </BreakpointContent>
@@ -986,9 +986,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "156"
-            endingLineNumber = "156"
-            landmarkName = "GameObject::hurt(const int dmg, const Vec2 force)"
-            landmarkType = "5">
+            endingLineNumber = "156">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1414,11 +1412,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/Physic.cpp"
-            timestampString = "487445283.584332"
+            timestampString = "487717217.734568"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "151"
-            endingLineNumber = "151"
+            startingLineNumber = "166"
+            endingLineNumber = "166"
             landmarkName = "Physic::movePlatform(cocos2d::Vector&lt;GameObject*&gt;* gameObjects,MapObject* mapObject,const float delta)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1430,11 +1428,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/Physic.cpp"
-            timestampString = "487445283.584332"
+            timestampString = "487717217.734568"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "152"
-            endingLineNumber = "152"
+            startingLineNumber = "167"
+            endingLineNumber = "167"
             landmarkName = "Physic::movePlatform(cocos2d::Vector&lt;GameObject*&gt;* gameObjects,MapObject* mapObject,const float delta)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1446,11 +1444,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/Physic.cpp"
-            timestampString = "487445283.584332"
+            timestampString = "487717217.734568"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "141"
-            endingLineNumber = "141"
+            startingLineNumber = "156"
+            endingLineNumber = "156"
             landmarkName = "Physic::movePlatform(cocos2d::Vector&lt;GameObject*&gt;* gameObjects,MapObject* mapObject,const float delta)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1478,11 +1476,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/Physic.cpp"
-            timestampString = "487445283.584332"
+            timestampString = "487717217.734568"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "142"
-            endingLineNumber = "142"
+            startingLineNumber = "157"
+            endingLineNumber = "157"
             landmarkName = "Physic::movePlatform(cocos2d::Vector&lt;GameObject*&gt;* gameObjects,MapObject* mapObject,const float delta)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1508,11 +1506,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/Physic.cpp"
-            timestampString = "487445283.584332"
+            timestampString = "487717217.734568"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "144"
-            endingLineNumber = "144"
+            startingLineNumber = "159"
+            endingLineNumber = "159"
             landmarkName = "Physic::movePlatform(cocos2d::Vector&lt;GameObject*&gt;* gameObjects,MapObject* mapObject,const float delta)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1540,11 +1538,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/Physic.cpp"
-            timestampString = "487445283.584332"
+            timestampString = "487717217.734568"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "145"
-            endingLineNumber = "145"
+            startingLineNumber = "160"
+            endingLineNumber = "160"
             landmarkName = "Physic::movePlatform(cocos2d::Vector&lt;GameObject*&gt;* gameObjects,MapObject* mapObject,const float delta)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1684,27 +1682,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/Physic.cpp"
-            timestampString = "487445283.584332"
+            timestampString = "487717217.734568"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "86"
-            endingLineNumber = "86"
-            landmarkName = "Physic::moveGameObjects(cocos2d::Vector&lt;GameObject*&gt;* gameObjects, MapObject* mapObject, const float delta)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../Classes/Physic.cpp"
-            timestampString = "487445283.584332"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "216"
-            endingLineNumber = "216"
+            startingLineNumber = "230"
+            endingLineNumber = "230"
             landmarkName = "Physic::isBlocked(GameObject* obj, const Rect* hitBox, MapObject* map,const uint32_t mask,const float delta)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1716,11 +1698,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/Physic.cpp"
-            timestampString = "487445283.584332"
+            timestampString = "487717217.734568"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "183"
-            endingLineNumber = "183"
+            startingLineNumber = "198"
+            endingLineNumber = "198"
             landmarkName = "Physic::isBlocked(GameObject* obj, const Rect* hitBox, MapObject* map,const uint32_t mask,const float delta)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1732,11 +1714,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/Physic.cpp"
-            timestampString = "487445283.584332"
+            timestampString = "487717217.734568"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "180"
-            endingLineNumber = "180"
+            startingLineNumber = "195"
+            endingLineNumber = "195"
             landmarkName = "Physic::isBlocked(GameObject* obj, const Rect* hitBox, MapObject* map,const uint32_t mask,const float delta)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1752,9 +1734,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "110"
-            endingLineNumber = "110"
-            landmarkName = "GameObject::getMovementStatus()"
-            landmarkType = "5">
+            endingLineNumber = "110">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1833,7 +1813,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "108"
             endingLineNumber = "108"
-            landmarkName = "GameObject::getMovementStatus()"
+            landmarkName = "GameObject::getCurrentAnimationFrameIndex()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1849,7 +1829,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "206"
             endingLineNumber = "206"
-            landmarkName = "GameObject::isAffectedByGravity(void)"
+            landmarkName = "GameObject::getSpeed()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1865,7 +1845,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "109"
             endingLineNumber = "109"
-            landmarkName = "GameObject::getMovementStatus()"
+            landmarkName = "GameObject::getCurrentAnimationFrameIndex()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1946,6 +1926,166 @@
             startingLineNumber = "32"
             endingLineNumber = "32"
             landmarkName = "HeroBullet::colideWith(GameObject *otherGo)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Classes/MapData.cpp"
+            timestampString = "487638411.633797"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "MapData::setupAttributes(cocos2d::TMXTiledMap* map)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Classes/MapData.cpp"
+            timestampString = "487638411.633797"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "MapData::setupAttributes(cocos2d::TMXTiledMap* map)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Classes/MapData.cpp"
+            timestampString = "487640969.28235"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "MapData::setupAttributes(cocos2d::TMXTiledMap* map)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Classes/Physic.cpp"
+            timestampString = "487717217.734568"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
+            landmarkName = "Physic::moveGameObjects(cocos2d::Vector&lt;GameObject*&gt;* gameObjects, MapObject* mapObject, const float delta)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Classes/Physic.cpp"
+            timestampString = "487717217.734568"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
+            landmarkName = "Physic::moveGameObjects(cocos2d::Vector&lt;GameObject*&gt;* gameObjects, MapObject* mapObject, const float delta)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Classes/Physic.cpp"
+            timestampString = "487717217.734568"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
+            landmarkName = "Physic::moveGameObjects(cocos2d::Vector&lt;GameObject*&gt;* gameObjects, MapObject* mapObject, const float delta)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Classes/Physic.cpp"
+            timestampString = "487717217.734568"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
+            landmarkName = "Physic::moveGameObjects(cocos2d::Vector&lt;GameObject*&gt;* gameObjects, MapObject* mapObject, const float delta)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Classes/Physic.cpp"
+            timestampString = "487717217.734568"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
+            landmarkName = "Physic::moveGameObjects(cocos2d::Vector&lt;GameObject*&gt;* gameObjects, MapObject* mapObject, const float delta)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Classes/GameObject.cpp"
+            timestampString = "487712827.882664"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "132"
+            endingLineNumber = "132"
+            landmarkName = "GameObject::getVelocityX()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Classes/GameObject.cpp"
+            timestampString = "487712884.837863"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "129"
+            endingLineNumber = "129"
+            landmarkName = "GameObject::setVelocityX(const float velX)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

@@ -14,7 +14,7 @@
 
 USING_NS_CC;
 
-# define GRAVITY -90.0
+# define GRAVITY -300.0
 # define MAX_FALLSPEED -750.0
 
 // on "init" you need to initialize your instance
@@ -68,6 +68,34 @@ void Physic::moveGameObjects(cocos2d::Vector<GameObject*>* gameObjects, MapObjec
         obj->setVelocityY(MAX_FALLSPEED);
       }
     }
+    
+    
+    // COLLISION X-AXIS
+    obj->setObjectPositionX((obj->getObjectPositionX() + delta*obj->getVelocityX()));
+    if (isBlocked(obj, obj->getHitbox(), mapObject, collision_mask, delta)) {
+      const int sign = dir_sign(obj->getVelocityX());
+      obj->setObjectPositionX(int(obj->getObjectPositionX() + sign));
+      while (isBlocked(obj, obj->getHitbox(), mapObject, collision_mask, delta)) {
+        obj->setObjectPositionX(int(obj->getObjectPositionX() + sign));
+      }
+      // BLOCKED X
+      const float newVel = obj->getVelocityX() * obj->getElastic();
+      obj->setVelocityX(newVel * -1);
+    }
+    auto r = obj->getHitbox();
+    const int tilestartX = int(r->getMaxX()-(int)r->getMaxX() %8);
+    const float tilestartY = int(r->getMinY()-(int)r->getMinY() %8);
+    const float player_pos_x = r->getMaxX();
+    if(ramp(obj, obj->getHitbox(), mapObject, collision_mask, delta) == MapData::RIGHT_RAMP){
+      float addY = (player_pos_x-(float)tilestartX);
+      obj->setObjectPositionY((tilestartY +addY +2));
+      obj->setVelocityY(0);
+      obj->platform = true;
+    }
+    else{
+      obj->platform = false;
+    }
+
 
     // COLLISION Y-AXIS
     obj->setObjectPositionY((obj->getObjectPositionY() + obj->getVelocityY()*delta));
@@ -81,20 +109,7 @@ void Physic::moveGameObjects(cocos2d::Vector<GameObject*>* gameObjects, MapObjec
       const float newVel = obj->getVelocityY() * obj->getElastic();
       obj->setVelocityY(newVel* -1);
     }
-
-    // COLLISION X-AXIS
-    obj->setObjectPositionX((obj->getObjectPositionX() + delta*obj->getVelocityX()));
-    if (isBlocked(obj, obj->getHitbox(), mapObject, collision_mask, delta)) {
-      const int sign = dir_sign(obj->getVelocityX());
-      obj->setObjectPositionX(int(obj->getObjectPositionX() + sign));
-      while (isBlocked(obj, obj->getHitbox(), mapObject, collision_mask, delta)) {
-        obj->setObjectPositionX(int(obj->getObjectPositionX() + sign));
-      }
-      // BLOCKED X
-      const float newVel = obj->getVelocityX() * obj->getElastic();
-      obj->setVelocityX(newVel * -1);
-    }
-    obj->moveX = 0;
+        obj->moveX = 0;
     obj->moveY = 0;
   }
 }
@@ -157,7 +172,7 @@ void Physic::movePlatform(cocos2d::Vector<GameObject*>* gameObjects,MapObject* m
 
 
 
-uint32_t print = 0;
+
 bool Physic::isBlocked(GameObject* obj, const Rect* hitBox, MapObject* map,const uint32_t mask,const float delta){
   Rect tile_rect;
   const size_t ts = 8;
@@ -171,7 +186,7 @@ bool Physic::isBlocked(GameObject* obj, const Rect* hitBox, MapObject* map,const
   const uint32_t mapHeight = map->getMapWidthInTiles();
   // Out of bounds
   if(x_min>mapWidth||x_max>mapWidth){
-    return true;
+    return true; // SHOULD DO COLLISION TEST FOR THESE CASES
   }
   if(y_min>mapHeight||y_max>mapHeight){
     return true;
@@ -184,7 +199,7 @@ bool Physic::isBlocked(GameObject* obj, const Rect* hitBox, MapObject* map,const
       if(attribute==MapData::CLEAR){
         continue;
       }
-      else if (attribute ==MapData::BLOCKED){
+      else if (attribute >=MapData::BLOCKED){
         tile_rect.setRect(xx*ts,yy*ts,ts,ts);
       }
       else if (attribute ==MapData::ONE_WAY_UP){
@@ -203,7 +218,6 @@ bool Physic::isBlocked(GameObject* obj, const Rect* hitBox, MapObject* map,const
   if(true){
     
     if(!obj->platform)
-      print += 1;
     for(int i=0;i < platforms->size();i++){
       auto a = platforms->at(i)->getHitbox();
       tile_rect.setRect(a->getMinX(),a->getMinY(),a->getMaxX()-a->getMinX(),a->getMaxY()-a->getMinY());
@@ -214,6 +228,41 @@ bool Physic::isBlocked(GameObject* obj, const Rect* hitBox, MapObject* map,const
   }
   
   return false;
+}
+
+uint32_t Physic::ramp(GameObject* obj, const Rect* hitBox, MapObject* map,const uint32_t mask,const float delta){
+  Rect tile_rect;
+  const size_t ts = 8;
+  const uint32_t x_min = ((int)(hitBox->getMinX())/(ts));
+  const uint32_t x_max = ((int)(hitBox->getMaxX())/(ts));
+  const uint32_t y_min = ((int)(hitBox->getMinY())/(ts));
+  const uint32_t y_max = ((int)(hitBox->getMaxY())/(ts));
+  const uint32_t xRange = x_min + x_max-x_min+1;
+  const uint32_t yRange = y_min + y_max-y_min+1;
+  const uint32_t mapWidth = map->getMapWidthInTiles();
+  const uint32_t mapHeight = map->getMapWidthInTiles();
+  // Out of bounds
+  if(x_min>mapWidth||x_max>mapWidth){
+    return MapData::CLEAR;
+  }
+  if(y_min>mapHeight||y_max>mapHeight){
+    return MapData::CLEAR;;
+  }
+  
+  for(uint32_t xx = x_min; xx<xRange;xx++){
+    for(uint32_t yy = y_min; yy<yRange;yy++){
+      
+      uint32_t attribute = map->attributeAt(xx, yy);
+      if (attribute ==MapData::RIGHT_RAMP){
+        tile_rect.setRect(xx*ts,yy*ts,ts,ts);
+      }
+      bool cond1 = hitBox->intersectsRect(tile_rect);
+      if(cond1){
+        return attribute;
+      }
+    }
+  }
+  return MapData::CLEAR;
 }
 
 bool Physic::isBlockedPlatform(GameObject* obj, const Rect* hitBox, MapObject* map, const uint32_t mask, const float delta) {

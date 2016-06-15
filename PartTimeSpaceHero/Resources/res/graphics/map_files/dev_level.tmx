@@ -12,12 +12,15 @@
  <tileset firstgid="326" name="SIGN" tilewidth="8" tileheight="8" tilecount="8192" columns="128">
   <image source="SIGN.png" width="1024" height="512"/>
  </tileset>
+ <tileset firstgid="8518" name="rLJjmOe" tilewidth="8" tileheight="8" tilecount="6720" columns="112">
+  <image source="rLJjmOe.png" width="896" height="480"/>
+ </tileset>
  <layer name="background1" width="100" height="200">
   <data encoding="base64" compression="zlib">
-   eJztwwEJAAAMA6Cx/qEX4QGuYAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAXKqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqoPD2wKXDE=
+   eJztwzENAAAMA6A+9W+5EiZgkJAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAJeqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqrqwwM5SuZ5
   </data>
  </layer>
- <layer name="background2" width="100" height="200" opacity="0.7">
+ <layer name="background2" width="100" height="200" visible="0" opacity="0.7">
   <properties>
    <property name="BACKGROUND_SPEED" value="0.97999999999999998"/>
   </properties>
@@ -38,7 +41,7 @@
    eJzt1EEJADAQA8HKaP0brYeDg33MQBQs5BwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABousOxQ48WPVr0aNGjRY8WPVr0aNGjRY8WPVr0aNGj5Q3HDj1a/FWLHi16tOjRokeLHi16tOgBAAAAALDvA4PVHk0=
   </data>
  </layer>
- <layer name="one_way_up" width="100" height="200">
+ <layer name="one_way_up" width="100" height="200" visible="0">
   <data encoding="base64" compression="zlib">
    eJztw0EJAAAIBLBrYP+2Zjh/wgZLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABozTEAAAAAAAAAAMAnC6MVANM=
   </data>
@@ -53,11 +56,6 @@
    eJztwYEAAAAAw6D5Ux/gClUBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAbOI8AAQ==
   </data>
  </layer>
- <layer name="walls" width="100" height="200">
-  <data encoding="base64" compression="zlib">
-   eJzt10FuwjAQBVBukeT+F203ldyvP86KCjXvSYg2gInHM2PzegEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8N8c349reT6XxxHXf/6+ltfO5fX1OT+zXs/3t3s43jnpD5ZxWh8Z73O5dpbXp/ger9/ru47R1vlnnCeaamAXu+kzGd/2vI65jp11c71z0h8sczNjvtZAxjdjnOsyrVGO2dbjqf2q1cUak7v+kn0mx5n6YXtf9sEnWush4517RObyFZ/Pz0zPWWPtHPHUfrXL3bav53kp4519qY3T9qN2/Ylar8r+P+0NLc5tzXZ9qu33T16PzM+2r077RquH1tOm61mLmQdP1Ooh16X1onb+nc6tuzPXbj95opbHuR/saqedeVu/m/b1aW9pZ+tdrbXxp70t59Hu6Xj1/Jl+P7Xvm3p41kDOYRfb9vuk9a7d3jyt7VRTGZfWP/P+2jl9t75tf2x9YarxdmZp++bduTXn3O6nnZHavbZHjtnWueX0dH6YcjH3oZbX7R5aLPO7d/Od7mlazxaLdq+t9lt+tvi2+mk9Kcdue/fUM6b/dzWc85/2qtYrWx+bcmDqHS03plhN40w9oH1fy72WV1OO5prlPDLmU29uNTn1wtanWn5nnHKOWQutHlpMWg20fGjfedfHpn7X1nWq57sYrtcAAAD+yhd6nVca
-  </data>
- </layer>
  <layer name="foreground" width="100" height="200">
   <data encoding="base64" compression="zlib">
    eJztwYEAAAAAw6D5Ux/gClUBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAbOI8AAQ==
@@ -67,11 +65,11 @@
   <object id="424" name="CoinObject" x="500.765" y="1368.32" width="12" height="25"/>
   <object id="544" name="PlatformObject" x="376" y="1408" width="12" height="25"/>
   <object id="545" name="GoalObject" x="544" y="1260.5" width="12" height="25"/>
-  <object id="546" name="PlayerObject" x="187.52" y="1352.4" width="12" height="25"/>
+  <object id="546" name="PlayerObject" x="224.283" y="1477.93" width="12" height="25"/>
  </objectgroup>
  <layer name="water" width="100" height="200">
   <data encoding="base64" compression="zlib">
-   eJztwYEAAAAAw6D5Ux/gClUBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAbOI8AAQ==
+   eJzt1UlOG1EUhtEnAtgGsgnbVNGEzaWxsYFNEBobyDbSbCd9Q/aQX4IBcpjUgJRQzpE+1eQOnt6VXpUCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPAw3vZLeZfepw/9tk9DNSilTltpe9D2aTjLDs7TLM3toxV336jVYSmd1E29Ydsn+z/dfaNG2cE47aeJfbRi8Y2aZg+Hw5sv/97iG7WW1m/jb/2qlEEaps1UpTptpe20k3bTs7RXNZ9ffKOmt7u48D+/13Hu7HU6SafpLJ2nWZqni3SZrtKbqvk8zSzVpTxJy2klraZO6qZeWkvraSM9rZvP08zz3NmL9DK9SqM0TvtpkqbpIB2mo7r5PM18zJ19Sp/Tl/Q1fUvf04/0M/1K1+l33XweAOAx+wNrl12U
   </data>
  </layer>
  <objectgroup name="object_pool" visible="0">
@@ -163,4 +161,9 @@
   <object id="484" name="CoinObject" x="504.917" y="438.18" width="12" height="25"/>
   <object id="486" name="CoinObject" x="617.775" y="497.92" width="12" height="25"/>
  </objectgroup>
+ <layer name="walls" width="100" height="200">
+  <data encoding="base64" compression="zlib">
+   eJzt08sKgCAURVG5jYL+/3sraBDSAxt4Q9aCgzreWAoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAK2mjwMAAPiL2La8jD7iOPXIF6e7HrmieuuRp26x0yPHVYuaHn08tRj9f8xmdjsAABjZCmlzCb0=
+  </data>
+ </layer>
 </map>

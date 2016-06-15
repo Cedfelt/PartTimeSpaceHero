@@ -109,7 +109,7 @@ uint32_t GameObject::getCurrentAnimationFrameIndex() {
 }
 
 int32_t GameObject::getMovementStatus(){
-  if(velocityY==0){
+  if(velocityY==0 || platform){
     return GO_ON_GROUND;
   }
   else if(velocityY<0){
