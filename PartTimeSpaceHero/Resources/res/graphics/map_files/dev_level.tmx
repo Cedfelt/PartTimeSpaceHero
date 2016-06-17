@@ -15,9 +15,14 @@
  <tileset firstgid="8518" name="rLJjmOe" tilewidth="8" tileheight="8" tilecount="6720" columns="112">
   <image source="rLJjmOe.png" width="896" height="480"/>
  </tileset>
+ <layer name="walls" width="100" height="200">
+  <data encoding="base64" compression="zlib">
+   eJzt1jsKwkAARdEQK8EtuP9t2lgp+ahkvIRz4JEm3SWZmSYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACA/5qfz/vKGGPefoVBtOjQokOLDi06tOjQokOLDi06tOjQokOLDi06tOjQokOLDi06tHh3+XK/0qJDiw4tOrTo0KJDiw4tOrTo0KJjqcXtZRxv7bvQY6ytf5Qe4+w5L/QYY+/ZrcfxPrlHna3H1cwWBwAAZ/YAhDUJYg==
+  </data>
+ </layer>
  <layer name="background1" width="100" height="200">
   <data encoding="base64" compression="zlib">
-   eJztwzENAAAMA6A+9W+5EiZgkJAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAJeqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqrqwwM5SuZ5
+   eJztwwENAAAMAiAr2L+sER7gsJEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAJeqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqrqwwNuOw/G
   </data>
  </layer>
  <layer name="background2" width="100" height="200" visible="0" opacity="0.7">
@@ -59,11 +64,6 @@
   <object id="545" name="GoalObject" x="609" y="1298" width="12" height="25"/>
   <object id="546" name="PlayerObject" x="224.283" y="1477.93" width="12" height="25"/>
  </objectgroup>
- <layer name="water" width="100" height="200">
-  <data encoding="base64" compression="zlib">
-   eJzt1UlOG1EUhtEnAtgGsgnbVNGEzaWxsYFNEBobyDbSbCd9Q/aQX4IBcpjUgJRQzpE+1eQOnt6VXpUCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPAw3vZLeZfepw/9tk9DNSilTltpe9D2aTjLDs7TLM3toxV336jVYSmd1E29Ydsn+z/dfaNG2cE47aeJfbRi8Y2aZg+Hw5sv/97iG7WW1m/jb/2qlEEaps1UpTptpe20k3bTs7RXNZ9ffKOmt7u48D+/13Hu7HU6SafpLJ2nWZqni3SZrtKbqvk8zSzVpTxJy2klraZO6qZeWkvraSM9rZvP08zz3NmL9DK9SqM0TvtpkqbpIB2mo7r5PM18zJ19Sp/Tl/Q1fUvf04/0M/1K1+l33XweAOAx+wNrl12U
-  </data>
- </layer>
  <objectgroup name="object_pool" visible="0">
   <object id="301" name="passage" x="27.1178" y="1492.9" width="4" height="19">
    <properties>
@@ -153,9 +153,9 @@
   <object id="484" name="CoinObject" x="504.917" y="438.18" width="12" height="25"/>
   <object id="486" name="CoinObject" x="617.775" y="497.92" width="12" height="25"/>
  </objectgroup>
- <layer name="walls" width="100" height="200">
+ <layer name="water" width="100" height="200">
   <data encoding="base64" compression="zlib">
-   eJzt1jEKwkAARcGgleAVvP81rbRQYqKyySPMwO8Dj83uNAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADs67T3B/D0aHFbGOM5Fx1adGjRoUWHFh1adGjRoUWHFh1adGjRoUWHFh1adGjRoUWHFu/OP+5fWnRo0aFFhxYdWnRo0aFFhxYdWnTMtbi+jPE+nQs9trX0j9JjO2vuCz22sfbu1mO8b95RR+txMbPZAQDAkd0BllMJfw==
+   eJzt22ly20YQhmFWAIJekktYMmBnuVwWL4p9CZMCbCe5RpbrZF/vkEZxvsLHNm2aMqkqlt+nqkuUBOnHNKd7ZkDMZgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMD74fs7s9kPET9G/BTRtbNZG3EecRZxt13/rCuvcVztWYx1xL2I+xHLGPNVxGVEHzGk1ziuPnIwRDyPeBFRdbNZHTGPaCIW6TUOz2tUcx7jHHEj4mbEFzHmX0Z8FfEg4mF6jcPzGvUgcvAw4lHE44hfYsx/jfgt4veIP9JrHF6uUWMdGnvGWJc8H9tyg8PLNWpeegP94XrkNW2uUWOvHtdQS9ZP1yKvafsy9uO8GNdT4+uK+XFtcr9QPpSHMXrmx7XJ/WJV9nyaE33Z87HfO45d/eKynXq4ctKUNRYOb9sZyGWZE3UZ+6Gd5onOR+b0j6PI/WIc68b69vh1UXJSl7VV3dE/jiX3i76Mf116xaqdzg2HdurnNfPjIN6mX1y2m73Cc9B0rHcPKfcL7xWaG02J2s5GNE8q6yd4d7lf6J7FUMbd81N1m7lSTvQ7vLvcLyp77y+6qVapRlV2PjIv9zfo51e3q1/4+A7Ws5tuOiNRvepLTlS3sL9t/UJzQmeDdfpedUv3+XqrYbr/1zM/riT3i6bbXD8pF9rn1ZaT2vblPo+4P351uV9oPbuyeaE9uda02m8s2+lsRPc8fP2L3Xb1C80Dr0Ma98Feq0doDazrfL+O3XK/yL1Y5x5zqz16vbC+3lifUD5U49TnsVvuFzrn8NqvHOhnS8uR5kxludEZu9bDOu/FbrlfDDb+2nNrD6h1lnJT2e9WlgvNC62HdT1etatfaEy1TvKa4+e2g73vlQOte7XOWtq11KvtXncepfHPZxyaA1rran2rOqS/9c8tqH/oGvV9vGrb56M05n52rp6ufqG6pHWscqIerr9Vb1fu/FqsvekznBpfjZ/mhNcn9WvVHe03esuVxl393eeZ+j7W3vQZTt8/VzY3KqtFfnaoMa/svZ/PF32N62ssrOUadRF5eHK+/qq9tt7/+b6G+rFyplDe1E8ay6PyurBr6OeTXKNuRdwuofmxsDo07zbPSdRD/CxxnsZf80b7QvUV7eNPKR932vXzQuNzQ+NzQuMzROMzQ/ci7kd8HPFJxKcRn7X7X59r1EXJxcuzKQ9Vt3mfT/VH73uNr3Li+3jVpcrmhM56lddT6ufP2u3PDj2PeBHxMuKbiG8jvmv3vz7Xcb+HurKf+WcJfX+hNZPfh9V73/fuWmdpXmluqMefig+s5vrzQjcibkbcirgd8WHER93+1/vaSOtWraf8bEr385S7od18z/t5lteyvK7VGaPWbqeWj8+77c8OPYp4HHER8XXEk4in3f7X+xj6uazvo308tT4a2s26o58pb/renzvT/6rsWs2dU/Fzt/35lD8j/or4O+KfiH8j/uv2v159QWOkfqG+rV6tOaEeku/5aWz9HofXJM2Lxv63r9UAAACu4n+S1OTr
   </data>
  </layer>
  <layer name="free_ga" width="100" height="200">
