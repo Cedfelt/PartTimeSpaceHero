@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="100" height="200" tilewidth="8" tileheight="8" nextobjectid="547">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="200" height="200" tilewidth="8" tileheight="8" nextobjectid="569">
  <properties>
   <property name="music_track" value="adventure.mp3"/>
  </properties>
@@ -9,19 +9,43 @@
  <tileset firstgid="6" name="db32_border" tilewidth="8" tileheight="8" spacing="1" margin="1" tilecount="36" columns="36">
   <image source="db32_border.png" width="325" height="10"/>
  </tileset>
- <layer name="background1" width="100" height="200">
+ <layer name="background1" width="200" height="200">
   <data encoding="base64" compression="zlib">
-   eJztwzEJAAAMA7BqqH+xVbFjkEASAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA4EpVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV9fEBvVQIbw==
+   eJzt0wENACAAwzBM4N8qMj6SNpmD/xwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA+M9VKlrWe5B/lK33IP8oW+9B/lG23oP8o2y9B/lH2XoP8o+y9R7kH2XrPcg/ytZ7kH+Urfcg/yhb70H+Ubbeg/yjbL0H+UfZeg/yj7L1HuQfZes9yD/K1nuQf5St9yD/KFvvQf5Rtt6D/KNsvQf5R9l6D/KPsvUe5B9l6z3IP8rWe5B/lK33IP8oW+9B/lG23oP8o2y9B/lH2XoP8o+y9R7kH2XrPcg/ytZ7kH+Urfcg/yhb70H+Ubbeg/yjbL0H+UfZeg/yj7L1HuQfZes9yD/K1nuQf5St9yD/KFvvQf5Rtt6D/KNsvQf5R9l6D/KPsvUe5B9l6z3IP8rWe5B/lK33IP8oW+9B/lG23oP8o2y9B/lH2XoP8o+y9R7kH2XrPcg/ytZ7kH+Urfcg/yhb70H+Ubbeg/yjbL0H+UfZeg/yj7L1HuQfZes9yD/K1nuQf5St9yD/KFvvQf5Rtt6D/KNsvQf5R9l6D/KPsvUe5B9l6z3IP8rWe5B/lD2YA18n
   </data>
  </layer>
- <layer name="walls" width="100" height="200">
+ <layer name="walls" width="200" height="200">
   <data encoding="base64" compression="zlib">
-   eJzt2UkKwzAURMEM5P5XTg6QQGxL2N2qgt4LHn+l2w0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgF8en73+3P2kN65iSwtN5trTQpM5jrTQZKwRLTQZY2QLTY6Z0UKTfWa2GLGVXL3FSj0SWqzSI6XFCj2SWrT3SGvR3COxRWuP1BaNPZJbzOrx3Lmj0ls03UdDi5YeLS0aejS1SO/R1iK5R2OL1B6tLRJ7NLdI69HeIqnHCi1SeqzSYsvO+qfX4jpNtLhOEy2u00QLM/s2AABo9gaAph8e
+   eJzt3EuO21AQA0Anwdz/ytkHcca2nsL+VAHcC2xwIwh6PAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/r+vA4Gp7AOesw94zj7gOfuA5+zjrJ+P13v7EXpGXmcf57yzDRvpoeo+fl1IwifbsJH6qu6jkyvbsJHa7OOaE9uwkbrs43Mnt2EjNdnHZ+7Yho3UYx/vu3Mb7nFduv/N96i+jW33+Jt0/4l7VHin22Eb9pHvf+M9umxjyz3+Jd3/tnt02saGe3wn3f+me3TbxvR7vCLd/5Z7dNzG5Hu8Kt3/hnt03cbUe7wj3f/0e3TexsR7vCvd/x33uPK97sl3v923YR/5/qfeY8I2Jt3jU+n+J95jyjam3OOKdP/T7jFpGxPucVW6/0n3mLaN7vc4Id3/lHtM3Ebne5yS7n/CPaZuo+s9Tkr33/0ek7fR8R6npfvvfI/p2+h2jzuk++96jw3b6HSPu6T773iPLdvoco87pfv/NKn/Dmzahn3k+++0kW3bsI98/102snEb9pHvv8NGtm7DPvL9S+1sl+5fame7dP9SO9ul+5fa2S7dv9TOdun+pXa2S/cvtbNdun+pne3S/UvtbJfuX2pnu3T/UjvbpfuX2tku3b/Uznbp/qV2tkv3L7WzXbp/qZ3t0v1L7WyX7l9qZ7t0/3/mN9MEYJc=
   </data>
  </layer>
  <objectgroup name="GameObjects">
-  <object id="424" name="CoinObject" x="570.871" y="1243.86" width="12" height="25"/>
-  <object id="544" name="PlatformObject" x="304.422" y="1163.47" width="12" height="25"/>
-  <object id="546" name="PlayerObject" x="224.283" y="1477.93" width="12" height="25"/>
+  <object id="424" name="CoinObject" x="575.896" y="1174.52" width="12" height="25"/>
+  <object id="546" name="PlayerObject" x="229.308" y="1408.59" width="12" height="25"/>
+  <object id="547" x="381.871" y="1538.54"/>
+  <object id="549" name="CoinObject" x="224" y="1248" width="12" height="25"/>
+  <object id="550" name="CoinObject" x="224" y="1304" width="12" height="25"/>
+  <object id="551" name="CoinObject" x="224" y="1192" width="12" height="25"/>
+  <object id="552" name="PlatformObject" x="920" y="1304" width="12" height="25"/>
+  <object id="553" name="PlatformObject" x="1193.04" y="1417.74" width="12" height="25"/>
+  <object id="554" name="CoinObject" x="1112" y="1376" width="12" height="25"/>
+  <object id="555" name="CoinObject" x="1072" y="1376" width="12" height="25"/>
+  <object id="556" name="CoinObject" x="992" y="1376" width="12" height="25"/>
+  <object id="557" name="CoinObject" x="1032" y="1376" width="12" height="25"/>
+  <object id="558" name="CoinObject" x="904" y="1376" width="12" height="25"/>
+  <object id="559" name="CoinObject" x="944" y="1376" width="12" height="25"/>
+  <object id="560" name="CoinObject" x="824" y="1376" width="12" height="25"/>
+  <object id="561" name="CoinObject" x="864" y="1376" width="12" height="25"/>
+  <object id="562" name="CoinObject" x="1232" y="1376" width="12" height="25"/>
+  <object id="563" name="CoinObject" x="1272" y="1376" width="12" height="25"/>
+  <object id="564" name="CoinObject" x="1152" y="1376" width="12" height="25"/>
+  <object id="565" name="CoinObject" x="1192" y="1376" width="12" height="25"/>
+  <object id="566" name="DamageZone" x="803.622" y="1575.43" width="502.57" height="13.317">
+   <properties>
+    <property name="dmg" type="int" value="3"/>
+    <property name="force" type="int" value="-1"/>
+   </properties>
+  </object>
+  <object id="568" name="FlowerShootaObject" x="1386.67" y="1229.24" width="12" height="25"/>
  </objectgroup>
 </map>

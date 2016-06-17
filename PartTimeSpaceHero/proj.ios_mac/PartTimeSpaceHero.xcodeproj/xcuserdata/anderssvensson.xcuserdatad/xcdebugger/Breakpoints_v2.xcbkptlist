@@ -1104,7 +1104,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/BabyTurfelObject.cpp"
@@ -1804,7 +1804,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/Hero_Bullet.cpp"
@@ -1926,6 +1926,22 @@
             startingLineNumber = "183"
             endingLineNumber = "183"
             landmarkName = "Physic::leftRamp(GameObject* obj,const uint32_t xPre,const uint32_t yPre, MapObject* mapObject,const uint32_t collision_mask)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Classes/GameObject.cpp"
+            timestampString = "487897045.540013"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "119"
+            endingLineNumber = "119"
+            landmarkName = "GameObject::getMovementStatus()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

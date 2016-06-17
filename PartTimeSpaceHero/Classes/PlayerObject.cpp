@@ -134,7 +134,7 @@ bool PlayerObject::flyAtDir(MovementDirectionX dir,std::string animName) {
 bool PlayerObject::playerFlyUpdate(float delta) {
   const float jetPackFlySpeed = 1.5f;
   const float maxSpeed = getSpeed();
-  const float uppSpeed = 0.9f;
+  const float uppSpeed = 1.9f;
   const float maxRiseSpeed = 100;
   float upp_threshold;
   int throtling = 0;
