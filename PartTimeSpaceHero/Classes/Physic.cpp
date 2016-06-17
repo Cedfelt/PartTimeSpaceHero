@@ -53,9 +53,10 @@ void Physic::moveGameObjects(cocos2d::Vector<GameObject*>* gameObjects, MapObjec
 
     obj->setObjectPositionX(obj->getObjectPositionX() + obj->moveX);
     obj->setObjectPositionY(obj->getObjectPositionY() + obj->moveY);
-
-    int xPre = (int)((obj->getObjectPositionX()+8.0f) / 8.0f);
-    int yPre = (int)(obj->getObjectPositionY() / 8.0f);
+    
+    auto r = obj->getHitbox();
+    int xPre = (int)((r->getMaxX() +2) / 8.0f);
+    int yPre = (int)(r->getMinY() / 8.0f);
 
     if (isBlocked(obj, obj->getHitbox(), mapObject, collision_mask, delta)) {
       obj->setObjectPositionX(obj->getObjectPositionX() - obj->moveX);
@@ -86,8 +87,9 @@ void Physic::moveGameObjects(cocos2d::Vector<GameObject*>* gameObjects, MapObjec
       obj->setVelocityX(newVel * -1);
     }
     
-    float yPos = obj->getObjectPositionY();
-    float xPos = obj->getObjectPositionX()+8.0f;
+    auto r2 = obj->getHitbox();
+    float yPos = r2->getMinY();
+    float xPos = r2->getMaxX()+2;
     int xCHECK = (int)(xPos / 8.0f);
     int yCHECK = (int)(yPos / 8.0f);
     const float tilestartY = int(yPos - (int)yPos % 8);
