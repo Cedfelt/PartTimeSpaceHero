@@ -55,10 +55,11 @@ void Physic::moveGameObjects(cocos2d::Vector<GameObject*>* gameObjects, MapObjec
     obj->setObjectPositionY(obj->getObjectPositionY() + obj->moveY);
     
     auto r = obj->getHitbox();
-    int xPre = (int)((r->getMaxX() +2) / 8.0f);
+    int xPreR = (int)((r->getMaxX()) / 8.0f);
+    int xPreL = (int)((r->getMinX()) / 8.0f);
     int yPre = (int)(r->getMinY() / 8.0f);
 
-    if (isBlocked(obj, obj->getHitbox(), mapObject, collision_mask, delta)) {
+    if (isBlocked(obj, obj->getHitbox(), mapObject, collision_mask)) {
       obj->setObjectPositionX(obj->getObjectPositionX() - obj->moveX);
       obj->setObjectPositionY(obj->getObjectPositionY() - obj->moveY);
     }
@@ -76,10 +77,14 @@ void Physic::moveGameObjects(cocos2d::Vector<GameObject*>* gameObjects, MapObjec
 
     // COLLISION X-AXIS
     obj->setObjectPositionX((obj->getObjectPositionX() + delta*obj->getVelocityX()));
-    if (isBlocked(obj, obj->getHitbox(), mapObject, collision_mask, delta)) {
+    
+    rightRamp(obj,xPreR,yPre,mapObject,collision_mask);
+    leftRamp(obj,xPreL,yPre,mapObject,collision_mask);
+    
+    if (isBlocked(obj, obj->getHitbox(), mapObject, collision_mask)) {
       const int sign = dir_sign(obj->getVelocityX());
       obj->setObjectPositionX(int(obj->getObjectPositionX() + sign));
-      while (isBlocked(obj, obj->getHitbox(), mapObject, collision_mask, delta)) {
+      while (isBlocked(obj, obj->getHitbox(), mapObject, collision_mask)) {
         obj->setObjectPositionX(int(obj->getObjectPositionX() + sign));
       }
       // BLOCKED X
@@ -87,64 +92,14 @@ void Physic::moveGameObjects(cocos2d::Vector<GameObject*>* gameObjects, MapObjec
       obj->setVelocityX(newVel * -1);
     }
     
-    auto r2 = obj->getHitbox();
-    float yPos = r2->getMinY();
-    float xPos = r2->getMaxX()+2;
-    int xCHECK = (int)(xPos / 8.0f);
-    int yCHECK = (int)(yPos / 8.0f);
-    const float tilestartY = int(yPos - (int)yPos % 8);
-    const float tilestartX = int(xPos - (int)xPos % 8);
-    bool cond1 = (mapObject->attributeAt(xPre, yPre) == MapData::RIGHT_RAMP);
-    bool cond2 = (mapObject->attributeAt(xCHECK, yCHECK) == MapData::RIGHT_RAMP);
-
-    if ((cond1) || (cond2)) {
-      
-      if (obj->getVelocityX() > 0) {
-        float addY = (xPos - (float)tilestartX + 1);
-        if (cond1&&!cond2) {
-          addY += 8;
-        }
-        obj->setObjectPositionY((tilestartY + addY));
-        if(obj->getVelocityY()<=0){
-          obj->setVelocityY(0);
-          obj->platform = true;
-        }
-        else{
-          obj->platform = false;
-        }
-        
-      }
-      else {
-        float addY = (xPos - (float)tilestartX);
-        if (cond1&&!cond2) {
-          addY -= 8;
-        }
-        
-        obj->setObjectPositionY((tilestartY + addY));
-        if(isBlocked(obj, obj->getHitbox(), mapObject, collision_mask, delta)){
-          obj->setObjectPositionY(yPos);
-        }
-        if(obj->getVelocityY()<=0){
-          obj->setVelocityY(0);
-          obj->platform = true;
-        }
-        else{
-          obj->platform = false;
-        }
-      }
-      
-    }
-    else {
-      obj->platform = false;
-    }
-
-
+    
+    
     // COLLISION Y-AXIS
     obj->setObjectPositionY((obj->getObjectPositionY() + obj->getVelocityY()*delta));
-    if (isBlocked(obj, obj->getHitbox(), mapObject, collision_mask, delta)) {
+    if (isBlocked(obj, obj->getHitbox(), mapObject, collision_mask)) {
       const int sign = dir_sign(obj->getVelocityY());
       obj->setObjectPositionY((int)(obj->getObjectPositionY() + sign));
-      while (isBlocked(obj, obj->getHitbox(), mapObject, collision_mask, delta)) {
+      while (isBlocked(obj, obj->getHitbox(), mapObject, collision_mask)) {
         obj->setObjectPositionY((int)(obj->getObjectPositionY() + sign));
       }
       // BLOCKED Y
@@ -153,6 +108,112 @@ void Physic::moveGameObjects(cocos2d::Vector<GameObject*>* gameObjects, MapObjec
     }
     obj->moveX = 0;
     obj->moveY = 0;
+    
+      }
+}
+
+void Physic::rightRamp(GameObject* obj,const uint32_t xPre,const uint32_t yPre, MapObject* mapObject,const uint32_t collision_mask){
+  
+  auto r2 = obj->getHitbox();
+  const float yPos = r2->getMinY();
+  const float xPos = r2->getMaxX();
+  const uint32_t tileSize = (float)mapObject->getMapTileSize();
+  const int xCHECK = (int)(xPos / tileSize);
+  const int yCHECK = (int)(yPos / tileSize);
+  const bool cond1 = (mapObject->attributeAt(xPre, yPre) == MapData::RIGHT_RAMP);
+  const bool cond2 = (mapObject->attributeAt(xCHECK, yCHECK) == MapData::RIGHT_RAMP);
+  
+  if ((cond1) || (cond2)) {
+    const float tilestartY = int(yPos - (int)yPos % tileSize);
+    const float tilestartX = int(xPos - (int)xPos % tileSize);
+    if (obj->getVelocityX() > 0) {
+      float addY = (xPos - (float)tilestartX + 1);
+      if (cond1&&!cond2) {
+        addY += tileSize;
+      }
+      obj->setObjectPositionY((tilestartY + addY));
+      if(obj->getVelocityY()<=0){
+        obj->setVelocityY(0);
+        obj->platform = true;
+      }
+      else{
+        obj->platform = false;
+      }
+    }
+    else {
+      float addY = (xPos - (float)tilestartX);
+      if (cond1&&!cond2) {
+        addY -= tileSize;
+      }
+      
+      obj->setObjectPositionY((tilestartY + addY));
+      if(isBlocked(obj, obj->getHitbox(), mapObject, collision_mask)){
+        obj->setObjectPositionY(yPos);
+      }
+      if(obj->getVelocityY()<=0){
+        obj->setVelocityY(0);
+        obj->platform = true;
+      }
+      else{
+        obj->platform = false;
+      }
+    }
+    
+  }
+  else {
+    obj->platform = false;
+  }
+}
+
+void Physic::leftRamp(GameObject* obj,const uint32_t xPre,const uint32_t yPre, MapObject* mapObject,const uint32_t collision_mask){
+  
+  auto r2 = obj->getHitbox();
+  const float yPos = r2->getMinY();
+  const float xPos = r2->getMinX();
+  const uint32_t tileSize = (float)mapObject->getMapTileSize();
+  const int xCHECK = (int)(xPos / tileSize);
+  const int yCHECK = (int)(yPos / tileSize);
+  const bool cond1 = (mapObject->attributeAt(xPre, yPre) == MapData::LEFT_RAMP);
+  const bool cond2 = (mapObject->attributeAt(xCHECK, yCHECK) == MapData::LEFT_RAMP);
+  
+  if ((cond1) || (cond2)) {
+    const float tilestartY = int(yPos - (int)yPos % tileSize);
+    const float tilestartX = int(xPos - (int)xPos % tileSize);
+    if (obj->getVelocityX() < 0) {
+      float addY = tileSize - (xPos - (float)tilestartX - 1);;
+      if (cond1&&!cond2) {
+        addY += tileSize;
+      }
+      obj->setObjectPositionY((tilestartY + addY));
+      if(obj->getVelocityY()<=0){
+        obj->setVelocityY(0);
+        obj->platform = true;
+      }
+      else{
+        obj->platform = false;
+      }
+    }
+    else {
+      float addY = tileSize - (xPos - (float)tilestartX);;
+      if (cond1&&!cond2) {
+        addY -= tileSize;
+      }
+      obj->setObjectPositionY((tilestartY + addY));
+      if(isBlocked(obj, obj->getHitbox(), mapObject, collision_mask)){
+        obj->setObjectPositionY(yPos);
+      }
+      if(obj->getVelocityY()<=0){
+        obj->setVelocityY(0);
+        obj->platform = true;
+      }
+      else{
+        obj->platform = false;
+      }
+    }
+    
+  }
+  else {
+    obj->platform = false;
   }
 }
 
@@ -215,7 +276,7 @@ void Physic::movePlatform(cocos2d::Vector<GameObject*>* gameObjects, MapObject* 
 
 
 
-bool Physic::isBlocked(GameObject* obj, const Rect* hitBox, MapObject* map, const uint32_t mask, const float delta) {
+bool Physic::isBlocked(GameObject* obj, const Rect* hitBox, MapObject* map, const uint32_t mask) {
   Rect tile_rect;
   const size_t ts = 8;
   const uint32_t x_min = ((int)(hitBox->getMinX()) / (ts));

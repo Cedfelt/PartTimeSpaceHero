@@ -23,7 +23,9 @@ public:
   cocos2d::Vector<GameObject*>* platforms;
 private:
   bool isBlockedPlatform(GameObject* obj,const Rect* hitBox, MapObject* map,const uint32_t mask,const float delta);
-  bool isBlocked(GameObject* obj, const Rect* hitBox, MapObject* map, const uint32_t mask, const float delta);
+  bool isBlocked(GameObject* obj, const Rect* hitBox, MapObject* map, const uint32_t mask);
+  void rightRamp(GameObject* obj,const uint32_t xPre,const uint32_t yPre, MapObject* mapObject,const uint32_t collision_mask);
+  void leftRamp(GameObject* obj,const uint32_t xPre,const uint32_t yPre, MapObject* mapObject,const uint32_t collision_mask);
 };
 
 

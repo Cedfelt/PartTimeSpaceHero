@@ -98,16 +98,17 @@ void WorldObject::updateWorld(float delta) {
   
   
   // Check Goal
-  if(obj->colided){
-    // setCurrentCompleted
-    auto sd = SaveData::create();
-    sd->setCurrentLevelStatus(true,30,100);
-    auto audio = CocosDenshion::SimpleAudioEngine::getInstance();
-    audio->stopBackgroundMusic();
-    audio->pauseAllEffects();
-    stopAllActions();
-    cocos2d::Director::getInstance()->popScene();
-    
+  if(obj!=NULL){
+    if(obj->colided){
+      // setCurrentCompleted
+      auto sd = SaveData::create();
+      sd->setCurrentLevelStatus(true,30,100);
+      auto audio = CocosDenshion::SimpleAudioEngine::getInstance();
+      audio->stopBackgroundMusic();
+      audio->pauseAllEffects();
+      stopAllActions();
+      cocos2d::Director::getInstance()->popScene();
+    }
   }
   
   // Check if player dead
