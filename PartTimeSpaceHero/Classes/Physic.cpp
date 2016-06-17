@@ -54,7 +54,7 @@ void Physic::moveGameObjects(cocos2d::Vector<GameObject*>* gameObjects, MapObjec
     obj->setObjectPositionX(obj->getObjectPositionX() + obj->moveX);
     obj->setObjectPositionY(obj->getObjectPositionY() + obj->moveY);
 
-    int xPre = (int)(obj->getObjectPositionX()/ 8.0f);
+    int xPre = (int)(obj->getObjectPositionX() / 8.0f);
     int yPre = (int)(obj->getObjectPositionY() / 8.0f);
 
     if (isBlocked(obj, obj->getHitbox(), mapObject, collision_mask, delta)) {
@@ -94,13 +94,18 @@ void Physic::moveGameObjects(cocos2d::Vector<GameObject*>* gameObjects, MapObjec
     const float tilestartX = int(xPos - (int)xPos % 8);
     bool cond1 = (mapObject->attributeAt(xPre, yPre) == MapData::RIGHT_RAMP);
     bool cond2 = (mapObject->attributeAt(xCHECK, yCHECK) == MapData::RIGHT_RAMP);
-    
-    if ((cond1)||(cond2)) {
+
+    if ((cond1) || (cond2)) {
       float addY = (xPos - (float)tilestartX + 1);
       if (cond1&&!cond2) {
         addY += 8;
       }
-      obj->setObjectPositionY((tilestartY + addY));
+      if (obj->getVelocityX() >= 0) {
+        obj->setObjectPositionY((tilestartY + addY));
+      }
+      else {
+        //obj->setObjectPositionY((tilestartY - 8 + addY));
+      }
       obj->setVelocityY(0);
       obj->platform = true;
     }
