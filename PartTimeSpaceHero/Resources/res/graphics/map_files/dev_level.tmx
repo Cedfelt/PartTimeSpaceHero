@@ -3,166 +3,25 @@
  <properties>
   <property name="music_track" value="adventure.mp3"/>
  </properties>
- <tileset firstgid="1" name="db32_border" tilewidth="8" tileheight="8" spacing="1" margin="1" tilecount="36" columns="36">
+ <tileset firstgid="1" name="BaseTS" tilewidth="8" tileheight="8" tilecount="5" columns="1">
+  <image source="BaseTS.png" width="8" height="40"/>
+ </tileset>
+ <tileset firstgid="6" name="db32_border" tilewidth="8" tileheight="8" spacing="1" margin="1" tilecount="36" columns="36">
   <image source="db32_border.png" width="325" height="10"/>
- </tileset>
- <tileset firstgid="37" name="SpaceBGC_recolor2" tilewidth="8" tileheight="8" spacing="1" margin="1" tilecount="289" columns="17">
-  <image source="SpaceBGC_recolor2.png" width="160" height="160"/>
- </tileset>
- <tileset firstgid="326" name="SIGN" tilewidth="8" tileheight="8" tilecount="8192" columns="128">
-  <image source="SIGN.png" width="1024" height="512"/>
- </tileset>
- <tileset firstgid="8518" name="rLJjmOe" tilewidth="8" tileheight="8" tilecount="6720" columns="112">
-  <image source="rLJjmOe.png" width="896" height="480"/>
  </tileset>
  <layer name="background1" width="100" height="200">
   <data encoding="base64" compression="zlib">
-   eJztwwENAAAMAiAr2L+sER7gsJEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAJeqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqrqwwNuOw/G
+   eJztwzEJAAAMA7BqqH+xVbFjkEASAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA4EpVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV9fEBvVQIbw==
   </data>
  </layer>
  <layer name="walls" width="100" height="200">
   <data encoding="base64" compression="zlib">
-   eJzt1kEKwjAARNFaV4pX8P7XtFnoQqmtismQvAezD3zaZJoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA2pqXXTdGHXPrA/CgRQ4tcmiRQ4scWuTQIocWObTIoUUOLXJokUOLHFrk0CKHFjm0yKHFq+OX+5UWObTIoUUOLXJokUOLHFrk0CKHFjnWWlye1rvzskPjM7z7LkbrcdeqydY/atQeRe0me+6LkXsUtZrsvbtH71H8u8kn76jeepzMbHUAANCzGzdkCY4=
-  </data>
- </layer>
- <layer name="background2" width="100" height="200" visible="0" opacity="0.7">
-  <properties>
-   <property name="BACKGROUND_SPEED" value="0.97999999999999998"/>
-  </properties>
-  <data encoding="base64" compression="zlib">
-   eJzt2VXXFVQURuHzqdjd2EV3d4eFit0tomAjdoCd2IUtdnd3g6iAiaAcGxW72/kLvNpjrHXOmO/Yz+Wef2BVKs4555xzzjnnnHPOOeecc84555xzzjnnnHPOOeecc84555xzzjnnnHPOOeecc84555xzzjnnnHPOOeecc84555xzzjnnnHPOOeecc84555zLviZoimZojhZoiVZojTZoi3Zojw7oiE7ojC42ija6ohu6owd6ohd6ow/6oh/6YwAGYhAGYwiG2ijaWB8bYENshI0xDJtgU2yG4dgcW2BLbIWtsQ22tVG0sR22xw7YETthZ+yCXbEbdsce2BN7YQT2xkjsY6NoY1+Mwmjsh/1xAA7EQTgYh2AMDsVYHIbDcQSOtFG0cRSOxjE4FsfheIzDeJyAE3ESTsYpOBWn4XScYaNo40ychbMxAefgXJyH83EBLsRFuBiX4FJchom43EbRxhW4ElfhalyDa3EdJuF63IAbcRNuxi24FbfhdhtFG3fgTtyFu3EP7sV9uB8P4EE8hIfxCB7FY3gcT9go2ngST+FpPINn8Ryexwt4ES/hZUzGFLyCqXgVr9ko2ngd0zAdM/AG3sRbeBvv4F3MxHuYhdl4Hx9gjo2ijSo+xEf4GJ/gU3yGzzEXX+BLfIV5+Brf4Ft8Z6No43v8gB/xE37GL/gVv+F3/IE/8Rf+xj/4F5UGXoONko35+D8/FkAjLIiFsDAWwaJYDItjCSyJpbA0lsGyDTZKNpbD8lgBK2IlrIzGWAWrYjWsjjWwJtbC2lgH69oo2lgPTdAUzdAcLdASrdAabdAW7dAeHdARndDZRtFGF3RFN3RHD/REL/RGH/RFP/THAAzEIAzGEBtFG9H3FxveozI3ou8vNrxHZW5E319seI/K3Ii+v9jwHpW5EX1/seE9KnMj+v5iw3tU5kb0/cWG96jMjej7iw3vUZkb0fcXG96jMjei7y82vEdlbkTfX2x4j8rciL6/2PAelbkRfX+x4T0qcyP6/mLDe1TmRrVS+zecempE319seI/K3Ii+v9jwHpW5EX1/seE9KnMj+v5iw3tU5kb0/cWG96jMjej7iw3vUZkb0fcXG96jMjei7y82vEdlblQrtX/DqadG9P3FhveozI3o+4sN71GZG9H3FxveozI3ou8vNrxHZW5E319seI/K3Ii+v9jwHpW5EX1/seE9KnMj+v5iw3tU5ka1Uvs3nHpqRN9fbHiPytyIvr/Y8B6VuRF9f7HhPSpzI/r+YsN7VOZG9P3FhveozI3o+4sN71GZG9H3FxveozI3ou8vNrxHZW5UK7V/w6mnRvT9xYb3qMyN6PuLDe9RmRvR9xcb3qMyN6LvLza8R2VuRN9fbHiPytyIvr/Y8B6VuRF9f7HhPSpzI/r+YsN7VOZGtVL7N5x6akTfX2x4j8rciL6/2LDxf43/AJT9iuc=
-  </data>
- </layer>
- <layer name="wall" width="100" height="200">
-  <data encoding="base64" compression="zlib">
-   eJztwYEAAAAAw6D5Ux/gClUBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAbOI8AAQ==
-  </data>
- </layer>
- <layer name="one_way_up" width="100" height="200" visible="0">
-  <data encoding="base64" compression="zlib">
-   eJztw0EJAAAIBLBrYP+2Zjh/wgZLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABozTEAAAAAAAAAAMAnC6MVANM=
-  </data>
- </layer>
- <layer name="sign" width="100" height="200">
-  <data encoding="base64" compression="zlib">
-   eJztwYEAAAAAw6D5Ux/gClUBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAbOI8AAQ==
-  </data>
- </layer>
- <layer name="background_bush" width="100" height="200">
-  <data encoding="base64" compression="zlib">
-   eJztwYEAAAAAw6D5Ux/gClUBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAbOI8AAQ==
-  </data>
- </layer>
- <layer name="foreground" width="100" height="200">
-  <data encoding="base64" compression="zlib">
-   eJztwYEAAAAAw6D5Ux/gClUBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAbOI8AAQ==
+   eJzt2UkKwzAURMEM5P5XTg6QQGxL2N2qgt4LHn+l2w0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgF8en73+3P2kN65iSwtN5trTQpM5jrTQZKwRLTQZY2QLTY6Z0UKTfWa2GLGVXL3FSj0SWqzSI6XFCj2SWrT3SGvR3COxRWuP1BaNPZJbzOrx3Lmj0ls03UdDi5YeLS0aejS1SO/R1iK5R2OL1B6tLRJ7NLdI69HeIqnHCi1SeqzSYsvO+qfX4jpNtLhOEy2u00QLM/s2AABo9gaAph8e
   </data>
  </layer>
  <objectgroup name="GameObjects">
-  <object id="424" name="CoinObject" x="500.765" y="1368.32" width="12" height="25"/>
-  <object id="544" name="PlatformObject" x="363.5" y="1232" width="12" height="25"/>
+  <object id="424" name="CoinObject" x="570.871" y="1243.86" width="12" height="25"/>
+  <object id="544" name="PlatformObject" x="304.422" y="1163.47" width="12" height="25"/>
   <object id="546" name="PlayerObject" x="224.283" y="1477.93" width="12" height="25"/>
  </objectgroup>
- <objectgroup name="object_pool" visible="0">
-  <object id="301" name="passage" x="27.1178" y="1492.9" width="4" height="19">
-   <properties>
-    <property name="to_passage" value="hall1_f1"/>
-    <property name="to_scene" value="hall.tmx"/>
-   </properties>
-  </object>
-  <object id="304" name="LaserObject" x="510.118" y="1271.9" width="12" height="16">
-   <properties>
-    <property name="delay" value="0"/>
-    <property name="direction" value="3"/>
-    <property name="duration" value="1"/>
-    <property name="off_time" value="3"/>
-    <property name="range" value="13"/>
-   </properties>
-  </object>
-  <object id="305" name="LaserObject" x="566.118" y="1271.9" width="12" height="16">
-   <properties>
-    <property name="delay" value="0"/>
-    <property name="direction" value="3"/>
-    <property name="duration" value="1"/>
-    <property name="off_time" value="3"/>
-    <property name="range" value="13"/>
-   </properties>
-  </object>
-  <object id="306" name="LaserObject" x="614.118" y="1271.9" width="12" height="16">
-   <properties>
-    <property name="delay" value="0"/>
-    <property name="direction" value="3"/>
-    <property name="duration" value="1"/>
-    <property name="off_time" value="3"/>
-    <property name="range" value="13"/>
-   </properties>
-  </object>
-  <object id="307" name="TurfelObject" x="169.06" y="1355.74" width="12" height="16">
-   <properties>
-    <property name="delay" value="0"/>
-    <property name="direction" value="2"/>
-    <property name="duration" value="1"/>
-    <property name="off_time" value="3"/>
-    <property name="range" value="13"/>
-   </properties>
-  </object>
-  <object id="308" name="TurfelObject" x="235.048" y="1064.39" width="12" height="16">
-   <properties>
-    <property name="delay" value="0"/>
-    <property name="direction" value="2"/>
-    <property name="duration" value="1"/>
-    <property name="off_time" value="3"/>
-    <property name="range" value="13"/>
-   </properties>
-  </object>
-  <object id="309" name="TurfelObject" x="383.706" y="757.405" width="12" height="16">
-   <properties>
-    <property name="delay" value="0"/>
-    <property name="direction" value="2"/>
-    <property name="duration" value="1"/>
-    <property name="off_time" value="3"/>
-    <property name="range" value="13"/>
-   </properties>
-  </object>
-  <object id="310" name="TurfelObject" x="158.906" y="480.635" width="12" height="16">
-   <properties>
-    <property name="delay" value="0"/>
-    <property name="direction" value="2"/>
-    <property name="duration" value="1"/>
-    <property name="off_time" value="3"/>
-    <property name="range" value="13"/>
-   </properties>
-  </object>
-  <object id="314" name="CoinObject" x="414.257" y="1411.02" width="12" height="25"/>
-  <object id="315" name="CoinObject" x="355.767" y="1360.25" width="12" height="25"/>
-  <object id="316" name="CoinObject" x="343.627" y="1411.02" width="12" height="25"/>
-  <object id="317" name="CoinObject" x="387.767" y="1313.91" width="12" height="25"/>
-  <object id="318" name="CoinObject" x="247.627" y="1456.25" width="12" height="25"/>
-  <object id="319" name="CoinObject" x="426.387" y="1360.25" width="12" height="25"/>
-  <object id="321" name="CoinObject" x="279.627" y="1409.91" width="12" height="25"/>
-  <object id="322" name="CoinObject" x="221.137" y="1359.14" width="12" height="25"/>
-  <object id="323" name="CoinObject" x="285.147" y="1360.25" width="12" height="25"/>
-  <object id="324" name="CoinObject" x="311.627" y="1457.36" width="12" height="25"/>
-  <object id="325" name="CoinObject" x="253.137" y="1312.8" width="12" height="25"/>
-  <object id="326" name="CoinObject" x="382.257" y="1457.36" width="12" height="25"/>
-  <object id="480" name="CoinObject" x="386.846" y="494.51" width="12" height="25"/>
-  <object id="481" name="CoinObject" x="560.915" y="468.51" width="12" height="25"/>
-  <object id="482" name="CoinObject" x="484.557" y="642.57" width="12" height="25"/>
-  <object id="483" name="CoinObject" x="438.846" y="462.51" width="12" height="25"/>
-  <object id="484" name="CoinObject" x="504.917" y="438.18" width="12" height="25"/>
-  <object id="486" name="CoinObject" x="617.775" y="497.92" width="12" height="25"/>
- </objectgroup>
- <layer name="water" width="100" height="200" visible="0">
-  <data encoding="base64" compression="zlib">
-   eJzt22ly20YQhmFWAIJekktYCmBnuVwWL4pzCZMCbCe5RpbrZF/vkEZxvsLHNm2EMin9yPtUdYkmx5RqmjM9MyAWCwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOD/4dt7i8V3Ed9H/BDRtYtFG3EecRbxfrt9riuPcTrtWfRzxP2IB2fb59bR55uIy4g+YkiPcTp95GCIeB7xouSj6haLOmIZ0USs0mMcl89PzXn0ccStiNvn29c/jT7/LOLziIcRj9JjHJfPUQ8jB48iHkc8Kfn4Kfr854hfIn6N+C09xnHlOWqcg8Z6sSx97fnYlxscV56jlqUuUBuuR17P5jlqrNPj+mnN2ula5DVtX/p+HBfjWmp8XDE+rk2uF8qH8jBGz/i4NrlebMp+T2OiL/s99nqnMVcvLtuphisnTVlj4fhyvViXz//Y33Xp+6GdxonORpbUj5PI9WLs68bq9vhzVXJSl7VV3VE/TiXXi770f11qxaadzgyHdqrnNePjKP5Lvbhsd2uF56DpWO8eU64XXis0NpoStZ2NaJxUVk/w9nK90PWKofS756fqdnOlnOg1vL1cLyr77K+6aa7SHFXZ+ciyXNugnl/dXL3w/h2sZjfddEai+aovOdG8hcPtqxcaEzobrNO/NW/pGl9vc5iu/fWMjyvJ9aLpdtdPyoX2ebXlpLZ9uY8jro1fXa4XWs9ubFxoT641rfYb63Y6G9E1D1//Yt5cvdA48HlI/T7YY9UIrYHVzvfrmJfrRa7FOvdY2tyjxyur643VCeVDc5zqPObleqFzDp/7lQM9t7YcacxUlhudsWs9rPNezMv1YrD+155be0Cts5Sbyl7bWC40LrQeVnu8aq5eqE+1TvI5x89tB/vcKwda92qdtba2zFf7ve48Sv2fzzg0BrTW1fpW85D+r39vQfVDbVT38ap9349Sn/vZuWq66oXmJa1jlRPVcP1f1Xblztti603f4VT/qv80Jnx+Ur3WvKP9Rm+5Ur+rvvs4U93H1pu+w+n758rGRmVzkZ8dqs8r++zn80Vf4/oaC1t5jrqIPDw93/7UXluf/3xdQ/VYOVMob6onjeVReV1ZG+r5JM9RdyLultD4WNk8tOx2z0lUQ/wscZn6X+NG+0LVFe3jbzIfD+L3fxDxYcRHER9H3Gu39wON9wWN9wGN9wiN9wTdb6f2c68f+n5qn+eoi5KLl2dTHqpu9zqf5h997tW/yonv4zUvVTYmdNarvN5kPX8Rv/tlxFcRX0d8E/Gs3X9v0PN2aj/3+qHvp/Z5HvdrqBt7zr9L6PsLrZn8Oqw++7531zpL40pjQzX+ptyOv+NOxN2IdyPei3jH5lW/H+hWN7Wfe/3Q91N7Xxtp3ar1lJ9N6Xqecje0u595P8/yuSyva3XGqLXbTefjSfwNFxFfRDyN+DLik27/vUGPu6n93OuHvp/aex/6uazvo70/tT4a2t15R88pb/q333Om96qsrcbOTfkjfv+fEX9F/B3xT8SP3f77T37vpvZzrx/6fmqvuqA+Ur1Q3Vat1phQDcnX/NS3fo3D5ySNi8be29dqAAAAV/UvwSIH3A==
-  </data>
- </layer>
- <layer name="free_ga" width="100" height="200">
-  <properties>
-   <property name="BACKGROUND_SPEED" value="1"/>
-  </properties>
-  <data encoding="base64" compression="zlib">
-   eJzt1EEJADAQA8HKaP0brYeDg33MQBQs5BwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABousOxQ48WPVr0aNGjRY8WPVr0aNGjRY8WPVr0aNGj5Q3HDj1a/FWLHi16tOjRokeLHi16tOgBAAAAALDvA4PVHk0=
-  </data>
- </layer>
 </map>

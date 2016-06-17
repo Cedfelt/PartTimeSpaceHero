@@ -105,7 +105,7 @@ void PlayerObject::playerWalkUpdate(float delta) {
 
 void PlayerObject::fallAtDir(MovementDirectionX dir,std::string animName) {
   const float playerFallSpeed = 0.1f;
-  //setAnimation(animName);
+  setAnimation(animName);
   addToVelocityX(dir*playerFallSpeed);
 }
 

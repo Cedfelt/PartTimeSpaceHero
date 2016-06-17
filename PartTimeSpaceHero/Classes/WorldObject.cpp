@@ -94,9 +94,6 @@ void WorldObject::updateWorld(float delta) {
   mapObject->updateLiquids(new_delta);
  
 
-
-  
-  
   // Check Goal
   if(obj!=NULL){
     if(obj->colided){
