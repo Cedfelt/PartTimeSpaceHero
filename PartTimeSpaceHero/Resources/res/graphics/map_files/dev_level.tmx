@@ -33,14 +33,6 @@
    eJztwYEAAAAAw6D5Ux/gClUBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAbOI8AAQ==
   </data>
  </layer>
- <layer name="free_ga" width="100" height="200">
-  <properties>
-   <property name="BACKGROUND_SPEED" value="1"/>
-  </properties>
-  <data encoding="base64" compression="zlib">
-   eJzt1EEJADAQA8HKaP0brYeDg33MQBQs5BwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABousOxQ48WPVr0aNGjRY8WPVr0aNGjRY8WPVr0aNGj5Q3HDj1a/FWLHi16tOjRokeLHi16tOgBAAAAALDvA4PVHk0=
-  </data>
- </layer>
  <layer name="one_way_up" width="100" height="200" visible="0">
   <data encoding="base64" compression="zlib">
    eJztw0EJAAAIBLBrYP+2Zjh/wgZLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABozTEAAAAAAAAAAMAnC6MVANM=
@@ -63,8 +55,8 @@
  </layer>
  <objectgroup name="GameObjects">
   <object id="424" name="CoinObject" x="500.765" y="1368.32" width="12" height="25"/>
-  <object id="544" name="PlatformObject" x="376" y="1408" width="12" height="25"/>
-  <object id="545" name="GoalObject" x="544" y="1260.5" width="12" height="25"/>
+  <object id="544" name="PlatformObject" x="363.5" y="1232" width="12" height="25"/>
+  <object id="545" name="GoalObject" x="609" y="1298" width="12" height="25"/>
   <object id="546" name="PlayerObject" x="224.283" y="1477.93" width="12" height="25"/>
  </objectgroup>
  <layer name="water" width="100" height="200">
@@ -163,7 +155,15 @@
  </objectgroup>
  <layer name="walls" width="100" height="200">
   <data encoding="base64" compression="zlib">
-   eJzt08sKgCAURVG5jYL+/3sraBDSAxt4Q9aCgzreWAoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAK2mjwMAAPiL2La8jD7iOPXIF6e7HrmieuuRp26x0yPHVYuaHn08tRj9f8xmdjsAABjZCmlzCb0=
+   eJzt1sEKgkAARVGpldD/f2+7FoVmieNFzoG3H7g44zQBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAnOt29gF40aJDiw4tOrTo0KJDiw4tOrTo0KJDiw4tOrTo0KJDiw4tOrTo0KJDi0/3P7eXFh1adGjRoUWHFh1adGjRoUWHFh1LLR5v43hr34UeY327o/QYZ8t7occYW99uPY73y3/U1XrMZrY4AAC4sicn/QiX
+  </data>
+ </layer>
+ <layer name="free_ga" width="100" height="200">
+  <properties>
+   <property name="BACKGROUND_SPEED" value="1"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJzt1MEJACEQBEG/ZuDln+jlIIgNVsH8Fxp2DAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGham+MMPVr0aNGjRY8WPVr0aNGjRY8WPVr0aNGjRY+Wb3OcoUeLf9WiR4seLXq06NGiR4seLXoAr5m3DwAAAACe9AMZGB5W
   </data>
  </layer>
 </map>

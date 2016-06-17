@@ -188,6 +188,7 @@ float GameObject::getObjectPositionX(){
 }
 
 void GameObject::setObjectPositionY(const float y){
+  
   modelPositionY = y;
   hitBox.origin.y = int(modelPositionY);
   setPositionY(y);
