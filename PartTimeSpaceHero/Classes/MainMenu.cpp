@@ -107,7 +107,7 @@ void MainMenu::onTouchEnded(const std::vector<Touch*>& touches, Event*)
     if ((touches.at(i)->getStartLocation().x) < winSize.width / 2) {
       // LEFT
       setScaleFactor(2);
-      setDebuggDraw(true);
+      setDebuggDraw(false);
       gameSave->eraseMemorey();
     }
     else {

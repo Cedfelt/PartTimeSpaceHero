@@ -96,18 +96,30 @@ void Physic::moveGameObjects(cocos2d::Vector<GameObject*>* gameObjects, MapObjec
     bool cond2 = (mapObject->attributeAt(xCHECK, yCHECK) == MapData::RIGHT_RAMP);
 
     if ((cond1) || (cond2)) {
-      float addY = (xPos - (float)tilestartX + 1);
-      if (cond1&&!cond2) {
-        addY += 8;
-      }
-      if (obj->getVelocityX() >= 0) {
+      
+      if (obj->getVelocityX() > 0) {
+        float addY = (xPos - (float)tilestartX + 1);
+        if (cond1&&!cond2) {
+          addY += 8;
+        }
         obj->setObjectPositionY((tilestartY + addY));
+        obj->setVelocityY(0);
+        obj->platform = true;
       }
       else {
-        //obj->setObjectPositionY((tilestartY - 8 + addY));
+        float addY = (xPos - (float)tilestartX);
+        if (cond1&&!cond2) {
+          addY -= 8;
+        }
+        
+        obj->setObjectPositionY((tilestartY + addY));
+        if(isBlocked(obj, obj->getHitbox(), mapObject, collision_mask, delta)){
+          obj->setObjectPositionY(yPos);
+        }
+        obj->setVelocityY(0);
+        obj->platform = true;
       }
-      obj->setVelocityY(0);
-      obj->platform = true;
+      
     }
     else {
       obj->platform = false;
