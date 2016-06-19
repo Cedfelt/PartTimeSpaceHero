@@ -63,7 +63,7 @@ public:
   bool platform;
   MapData* mapData;
   Vec2 extraMove;
-  
+  virtual void deadState();
   float moveX;
   float moveY;
 
@@ -96,7 +96,7 @@ public:
   float maxSpeedYDown;
   float modelPositionX;
   float modelPositionY;
-private:
+protected:
   int32_t goMovementStatus;
   std::string prevAnimation;
   float speed;
@@ -106,7 +106,6 @@ private:
   int32_t prevDirection;
   
   bool affectedByGravity;
- 
   float elastic;
 };
 

@@ -118,14 +118,6 @@ void WorldObject::updateWorld(float delta) {
   
   // Iterate objects
   for (int i = 0; i < gameObjects.size();i++) {
-    // Remove Objects
-    if (gameObjects.at(i)->remove_object) {
-      GameObject *removeObj = gameObjects.at(i);
-      this->removeChild(gameObjects.at(i));
-      gameObjects.eraseObject(removeObj);
-      removeObj->release();
-      continue;
-    }
     // add new objects from other objects
     if(gameObjects.at(i)->addToGameObjects.size()>0){
       for(int j = 0;j < gameObjects.at(i)->addToGameObjects.size();j++){
@@ -134,6 +126,15 @@ void WorldObject::updateWorld(float delta) {
       }
       gameObjects.at(i)->addToGameObjects.clear();
     }
+    // Remove Objects
+    if (gameObjects.at(i)->remove_object) {
+      GameObject *removeObj = gameObjects.at(i);
+      this->removeChild(gameObjects.at(i));
+      gameObjects.eraseObject(removeObj);
+      removeObj->release();
+      continue;
+    }
+    
   }
   delta_cnt += 1;
 }

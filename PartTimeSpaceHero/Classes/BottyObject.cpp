@@ -8,6 +8,7 @@
 
 #include "BottyObject.hpp"
 #include "BabyTurfelObject.hpp"
+#include "CoinObject.hpp"
 
 
 bool BottyObject::init() {
@@ -34,6 +35,7 @@ bool BottyObject::init() {
   objectSprite->setScale(1);
   addChild(objectSprite);
   
+  
   // Start Speed
   const float xVel = -50;
   setVelocityX(xVel);
@@ -45,13 +47,26 @@ bool BottyObject::init() {
 const float forceX = 100;
 const float forceY = 170;
 void BottyObject::interActWithPlayer(GameObject* player){
+  auto p = player->getHitbox();
+  auto r = getHitbox();
   if(getPrevDir() == GO_RIGHT){
     setVelocityX(50);
-    player->hurt(0, Vec2(forceX,forceY));
+    
+    if(p->getMinY() +10 > r->getMaxY()){
+      player->hurt(0, Vec2(player->getVelocityX(),player->getVelocityY()));
+    }
+    else{
+      player->hurt(1, Vec2(forceX,forceY));
+    }
+    
   }
   else{
-    setVelocityX(-50);
-    player->hurt(0, Vec2(-forceX,forceY));
+    if(p->getMinY() +10 > r->getMaxY()){
+      player->hurt(0, Vec2(player->getVelocityX(),player->getVelocityY()));
+    }
+    else{
+      player->hurt(1, Vec2(-forceX,forceY));
+    }
   }
   
 }
@@ -77,7 +92,7 @@ void BottyObject::AIUpdate(const float delta) {
   // Close To Gap
   
   const float lookAhead = 1.50f*getVelocityX() / delta;
-  if (!isBlocked((uint32_t)((getPositionX() + lookAhead)/8.0), (uint32_t)(getPositionY() - 1.0)/8.0)){
+  if (!isBlocked((uint32_t)((getPositionX() + lookAhead)/16.0), (uint32_t)(getPositionY() - 1.0)/16.0)){
     if (getPrevDir() == GO_LEFT) {
       setVelocityX(50);
       setPrevDir(GO_RIGHT);
@@ -90,3 +105,21 @@ void BottyObject::AIUpdate(const float delta) {
     }
   }
 }
+
+void BottyObject::deadState(){
+  HP = 0;
+  this->remove_object = true;
+  auto coin = CoinObject::create();
+  coin->setupHitbox(0.1f, 1.0f, 16, 16, 16, 16, false);
+  coin->setObjectPositionX(getPositionX());
+  coin->setObjectPositionY(getPositionY() + 5);
+  coin->getPhysicsBody()->setCategoryBitmask((int)PhysicsCategory::PlayerPickups);
+  coin->getPhysicsBody()->setCollisionBitmask((int)PhysicsCategory::None);
+  coin->getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::Player|(int)PhysicsCategory::PlayerPickups|(int)PhysicsCategory::Hazard);
+  coin->setVelocityX(cocos2d::random(-25, 25));
+  coin->setVelocityY(cocos2d::random(10,50));
+  coin->addGravityToObject(true);
+  coin->setElastic(1);
+  addToGameObjects.pushBack(coin);
+}
+

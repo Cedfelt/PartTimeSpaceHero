@@ -48,9 +48,7 @@ void Physic::moveGameObjects(cocos2d::Vector<GameObject*>* gameObjects, MapObjec
     obj->lastX = obj->getObjectPositionX();
     obj->lastY = obj->getObjectPositionY();
     uint32_t collision_mask = E_CB_BLOCKED;
-    if (obj->getVelocityY() <= 0) {
-      collision_mask |= EB_CB_ONE_WAY_UP;
-    }
+    
 
     obj->setObjectPositionX(obj->getObjectPositionX() + obj->moveX);
     obj->setObjectPositionY(obj->getObjectPositionY() + obj->moveY);
@@ -94,7 +92,9 @@ void Physic::moveGameObjects(cocos2d::Vector<GameObject*>* gameObjects, MapObjec
     }
     
     
-    
+    if (obj->getVelocityY() <= 0) {
+      collision_mask |= EB_CB_ONE_WAY_UP;
+    }
     // COLLISION Y-AXIS
     obj->setObjectPositionY((obj->getObjectPositionY() + obj->getVelocityY()*delta));
     if (isBlocked(obj, obj->getHitbox(), mapObject, collision_mask)) {
@@ -226,9 +226,7 @@ void Physic::movePlatform(cocos2d::Vector<GameObject*>* gameObjects, MapObject* 
     obj->lastX = obj->getObjectPositionX();
     obj->lastY = obj->getObjectPositionY();
     uint32_t collision_mask = E_CB_BLOCKED;
-    if (obj->getVelocityY() <= 0) {
-      collision_mask |= EB_CB_ONE_WAY_UP;
-    }
+    
 
     obj->setObjectPositionX(obj->getObjectPositionX() + obj->moveX);
     obj->setObjectPositionY(obj->getObjectPositionY() + obj->moveY);
@@ -255,7 +253,10 @@ void Physic::movePlatform(cocos2d::Vector<GameObject*>* gameObjects, MapObject* 
       const float newVel = obj->getVelocityY() * obj->getElastic();
       obj->setVelocityY(newVel* -1);
     }
-
+    
+    if (obj->getVelocityY() <= 0) {
+      collision_mask |= EB_CB_ONE_WAY_UP;
+    }
     // COLLISION X-AXIS
     obj->setObjectPositionX((obj->getObjectPositionX() + delta*obj->getVelocityX()));
     if (isBlockedPlatform(obj, obj->getHitbox(), mapObject, collision_mask, delta)) {

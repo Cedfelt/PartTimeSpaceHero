@@ -325,7 +325,7 @@ bool PlayerObject::playerShoot(float delta) {
   }
   if (playerInput->isDoubleLeft()&&!bPlayerShoot) {
     objectSprite->setScaleX(-1);
-    setVelocityX(0);
+    //setVelocityX(0);
     setAnimationOnce("PlayerShootL");
     bPlayerShoot = true;
     setPrevDir(GO_LEFT);
@@ -406,9 +406,14 @@ void PlayerObject::playerUpdate(const float delta) {
 
 bool PlayerObject::hurt(const int dmg, const Vec2 force){
   if(!isImune()){
-    setImune();
-    HP-=dmg;
-    playerCrySFX->play(0.3f);
+    if(dmg > 0){
+      setImune();
+      HP-=dmg;
+      playerCrySFX->play(0.3f);
+    }
+    
+    
+    
     setVelocityX(force.x);
     setVelocityY(force.y);
     this->unschedule(CC_SCHEDULE_SELECTOR(GameObject::imuneUpdate));
@@ -418,11 +423,23 @@ bool PlayerObject::hurt(const int dmg, const Vec2 force){
     }
     return true;
   }
+  
   return false;
 }
 
 void PlayerObject::colideWith(GameObject* otherObj){
+  auto p = getHitbox();
+  auto r = otherObj->getHitbox();
+  if(p->getMinY() +10 > r->getMaxY()){
+    // Above Enemy
+      setVelocityY(getVelocityY()*-1);
+      otherObj->hurt(1, Vec2(0,0));
+  }
   otherObj->interActWithPlayer(this);
+  
+  
+  
+  
 }
 
 void PlayerObject::setupPlayer(const float x, const float y) {

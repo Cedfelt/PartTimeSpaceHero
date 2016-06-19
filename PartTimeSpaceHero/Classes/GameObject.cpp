@@ -161,18 +161,23 @@ bool GameObject::hurt(const int dmg, const Vec2 force){
     HP-=dmg;
     this->unschedule(CC_SCHEDULE_SELECTOR(GameObject::imuneUpdate));
     this->schedule(CC_SCHEDULE_SELECTOR(GameObject::imuneUpdate));
-    if(HP<=0){
+    if(HP<=0 ){
       HP = 0;
       this->remove_object = true;
+      deadState();
     }
     return true;
   }
   return false;
 }
 
+void GameObject::deadState(){
+
+}
+
 uint32_t GameObject::isBlocked(uint32_t x,uint32_t y){
   if (x < TILES_COUNT_X&&y < TILES_COUNT_Y) {
-    return mapData->attributes[x][y] == MapData::BLOCKED||mapData->attributes[x][y] == MapData::ONE_WAY_UP;
+    return mapData->attributes[x][y] >MapData::CLEAR;
   }
   return true;
 }

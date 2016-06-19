@@ -18,5 +18,6 @@ public:
   CREATE_FUNC(BottyObject);
   SoundFx* turtleCrySFX;
   void AIUpdate(const float delta);
+  virtual void deadState();
 private:
 };
