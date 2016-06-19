@@ -41,6 +41,7 @@ enum collision_bits {
 
 void Physic::moveGameObjects(cocos2d::Vector<GameObject*>* gameObjects, MapObject* mapObject, const float delta) {
   const size_t obj_cnt = gameObjects->size();
+  const size_t ts = mapObject->getMapTileSize();
   for (int i = 0;i < obj_cnt;i++) {
 
     GameObject* obj = gameObjects->at(i);
@@ -55,9 +56,9 @@ void Physic::moveGameObjects(cocos2d::Vector<GameObject*>* gameObjects, MapObjec
     obj->setObjectPositionY(obj->getObjectPositionY() + obj->moveY);
     
     auto r = obj->getHitbox();
-    int xPreR = (int)((r->getMaxX()) / 8.0f);
-    int xPreL = (int)((r->getMinX()) / 8.0f);
-    int yPre = (int)(r->getMinY() / 8.0f);
+    int xPreR = (int)((r->getMaxX()) / ts);
+    int xPreL = (int)((r->getMinX()) / ts);
+    int yPre = (int)(r->getMinY() / ts);
 
     if (isBlocked(obj, obj->getHitbox(), mapObject, collision_mask)) {
       obj->setObjectPositionX(obj->getObjectPositionX() - obj->moveX);
@@ -278,7 +279,7 @@ void Physic::movePlatform(cocos2d::Vector<GameObject*>* gameObjects, MapObject* 
 
 bool Physic::isBlocked(GameObject* obj, const Rect* hitBox, MapObject* map, const uint32_t mask) {
   Rect tile_rect;
-  const size_t ts = 8;
+  const size_t ts = map->getMapTileSize();
   const uint32_t x_min = ((int)(hitBox->getMinX()) / (ts));
   const uint32_t x_max = ((int)(hitBox->getMaxX()) / (ts));
   const uint32_t y_min = ((int)(hitBox->getMinY()) / (ts));
@@ -337,7 +338,7 @@ bool Physic::isBlocked(GameObject* obj, const Rect* hitBox, MapObject* map, cons
 
 bool Physic::isBlockedPlatform(GameObject* obj, const Rect* hitBox, MapObject* map, const uint32_t mask, const float delta) {
   Rect tile_rect;
-  const size_t ts = 8;
+  const size_t ts = map->getMapTileSize();
   const uint32_t x_min = ((int)(hitBox->getMinX()) / (ts));
   const uint32_t x_max = ((int)(hitBox->getMaxX()) / (ts));
   const uint32_t y_min = ((int)(hitBox->getMinY()) / (ts));

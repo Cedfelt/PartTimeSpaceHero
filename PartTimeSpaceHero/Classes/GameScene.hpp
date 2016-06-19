@@ -17,7 +17,7 @@
 using namespace cocos2d;
 
 
-class GameScene : public cocos2d::Layer
+class GameScene : public cocos2d::LayerColor
 {
 public:
   // there's no 'id' in cpp, so we recommend returning the class instance pointer

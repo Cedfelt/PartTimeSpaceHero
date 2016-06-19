@@ -200,31 +200,39 @@
         </struct>
         <key>individualSpriteSettings</key>
         <map type="IndividualSpriteSettingsMap">
-            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V3/PTSH1.png</key>
-            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V3/PTSH10.png</key>
-            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V3/PTSH11.png</key>
-            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V3/PTSH12.png</key>
-            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V3/PTSH13.png</key>
-            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V3/PTSH14.png</key>
-            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V3/PTSH15.png</key>
-            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V3/PTSH16.png</key>
-            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V3/PTSH17.png</key>
-            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V3/PTSH18.png</key>
-            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V3/PTSH19.png</key>
-            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V3/PTSH2.png</key>
-            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V3/PTSH20.png</key>
-            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V3/PTSH21.png</key>
-            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V3/PTSH22.png</key>
-            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V3/PTSH23.png</key>
-            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V3/PTSH24.png</key>
-            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V3/PTSH25.png</key>
-            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V3/PTSH3.png</key>
-            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V3/PTSH4.png</key>
-            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V3/PTSH5.png</key>
-            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V3/PTSH6.png</key>
-            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V3/PTSH7.png</key>
-            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V3/PTSH8.png</key>
-            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V3/PTSH9.png</key>
+            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V5-Contour/PTSH1.png</key>
+            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V5-Contour/PTSH10.png</key>
+            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V5-Contour/PTSH11.png</key>
+            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V5-Contour/PTSH12.png</key>
+            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V5-Contour/PTSH13.png</key>
+            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V5-Contour/PTSH14.png</key>
+            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V5-Contour/PTSH15.png</key>
+            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V5-Contour/PTSH16.png</key>
+            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V5-Contour/PTSH17.png</key>
+            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V5-Contour/PTSH18.png</key>
+            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V5-Contour/PTSH19.png</key>
+            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V5-Contour/PTSH2.png</key>
+            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V5-Contour/PTSH20.png</key>
+            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V5-Contour/PTSH21.png</key>
+            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V5-Contour/PTSH22.png</key>
+            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V5-Contour/PTSH23.png</key>
+            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V5-Contour/PTSH24.png</key>
+            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V5-Contour/PTSH25.png</key>
+            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V5-Contour/PTSH26.png</key>
+            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V5-Contour/PTSH27.png</key>
+            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V5-Contour/PTSH28.png</key>
+            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V5-Contour/PTSH29.png</key>
+            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V5-Contour/PTSH3.png</key>
+            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V5-Contour/PTSH30.png</key>
+            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V5-Contour/PTSH31.png</key>
+            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V5-Contour/PTSH32.png</key>
+            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V5-Contour/PTSH33.png</key>
+            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V5-Contour/PTSH4.png</key>
+            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V5-Contour/PTSH5.png</key>
+            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V5-Contour/PTSH6.png</key>
+            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V5-Contour/PTSH7.png</key>
+            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V5-Contour/PTSH8.png</key>
+            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V5-Contour/PTSH9.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -232,31 +240,39 @@
         </map>
         <key>fileList</key>
         <array>
-            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V3/PTSH1.png</filename>
-            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V3/PTSH2.png</filename>
-            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V3/PTSH3.png</filename>
-            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V3/PTSH4.png</filename>
-            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V3/PTSH5.png</filename>
-            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V3/PTSH6.png</filename>
-            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V3/PTSH7.png</filename>
-            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V3/PTSH8.png</filename>
-            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V3/PTSH9.png</filename>
-            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V3/PTSH10.png</filename>
-            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V3/PTSH11.png</filename>
-            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V3/PTSH12.png</filename>
-            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V3/PTSH13.png</filename>
-            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V3/PTSH14.png</filename>
-            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V3/PTSH15.png</filename>
-            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V3/PTSH16.png</filename>
-            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V3/PTSH17.png</filename>
-            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V3/PTSH18.png</filename>
-            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V3/PTSH19.png</filename>
-            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V3/PTSH20.png</filename>
-            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V3/PTSH21.png</filename>
-            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V3/PTSH22.png</filename>
-            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V3/PTSH23.png</filename>
-            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V3/PTSH24.png</filename>
-            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V3/PTSH25.png</filename>
+            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V5-Contour/PTSH1.png</filename>
+            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V5-Contour/PTSH2.png</filename>
+            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V5-Contour/PTSH3.png</filename>
+            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V5-Contour/PTSH4.png</filename>
+            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V5-Contour/PTSH5.png</filename>
+            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V5-Contour/PTSH6.png</filename>
+            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V5-Contour/PTSH7.png</filename>
+            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V5-Contour/PTSH8.png</filename>
+            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V5-Contour/PTSH9.png</filename>
+            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V5-Contour/PTSH10.png</filename>
+            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V5-Contour/PTSH11.png</filename>
+            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V5-Contour/PTSH12.png</filename>
+            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V5-Contour/PTSH13.png</filename>
+            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V5-Contour/PTSH14.png</filename>
+            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V5-Contour/PTSH15.png</filename>
+            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V5-Contour/PTSH16.png</filename>
+            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V5-Contour/PTSH17.png</filename>
+            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V5-Contour/PTSH18.png</filename>
+            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V5-Contour/PTSH19.png</filename>
+            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V5-Contour/PTSH20.png</filename>
+            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V5-Contour/PTSH21.png</filename>
+            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V5-Contour/PTSH22.png</filename>
+            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V5-Contour/PTSH23.png</filename>
+            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V5-Contour/PTSH24.png</filename>
+            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V5-Contour/PTSH25.png</filename>
+            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V5-Contour/PTSH26.png</filename>
+            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V5-Contour/PTSH27.png</filename>
+            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V5-Contour/PTSH28.png</filename>
+            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V5-Contour/PTSH29.png</filename>
+            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V5-Contour/PTSH30.png</filename>
+            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V5-Contour/PTSH31.png</filename>
+            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V5-Contour/PTSH32.png</filename>
+            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/PTSH/V5-Contour/PTSH33.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

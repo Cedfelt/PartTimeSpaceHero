@@ -188,7 +188,7 @@ void WorldObject::spawnObjects(cocos2d::Vector<GameObject*>* gameObjects) {
     
     if (name == "PlayerObject") {
       player = PlayerObject::create();
-      player->setupHitbox(0.1, 1, 16, 31, 15, 25, false);
+      player->setupHitbox(0.1, 1, 10, 25, 10, 25, false);
       //setAnchorPoint(Point(0,0));
       player->setupPlayer(x, y);
       gameObjects->pushBack(player);

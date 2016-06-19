@@ -63,7 +63,7 @@ bool PlayerObject::init() {
 
   fuel = 1.0f;
   consumeRate = currentConsumeRate;
-  currentConsumeRate = 0.0095f;
+  currentConsumeRate = 0.0075f;
   objectSprite->retain();
   return true;
 }
@@ -104,7 +104,7 @@ void PlayerObject::playerWalkUpdate(float delta) {
 }
 
 void PlayerObject::fallAtDir(MovementDirectionX dir,std::string animName) {
-  const float playerFallSpeed = 0.1f;
+  const float playerFallSpeed = 0.75;
   setAnimation(animName);
   addToVelocityX(dir*playerFallSpeed);
 }
@@ -132,9 +132,9 @@ bool PlayerObject::flyAtDir(MovementDirectionX dir,std::string animName) {
 }
 
 bool PlayerObject::playerFlyUpdate(float delta) {
-  const float jetPackFlySpeed = 1.5f;
+  const float jetPackFlySpeed = 1.7f;
   const float maxSpeed = getSpeed();
-  const float uppSpeed = 1.9f;
+  const float uppSpeed = 2.2f;
   const float maxRiseSpeed = 100;
   float upp_threshold;
   int throtling = 0;
@@ -310,7 +310,7 @@ bool PlayerObject::playerShoot(float delta) {
   if (playerInput->isDoubleRight()&&!bPlayerShoot) {
     objectSprite->setScaleX(1);
     setAnimationOnce("PlayerShootR");
-    setVelocityX(0);
+    //setVelocityX(0);
     setPrevDir(GO_RIGHT);
     auto babyTurf = HeroBullet::create();
     babyTurf->setupHitbox(0.1f, 1.0f, 16, 16, 16, 16, false);
@@ -362,7 +362,7 @@ bool PlayerObject::playerShoot(float delta) {
 
 void PlayerObject::playerUpdate(const float delta) {
   solid = true;
-  objectSprite->setPosition(cocos2d::Point((modelPositionX)+8,(modelPositionY)));
+  objectSprite->setPosition(cocos2d::Point((modelPositionX)+4,(modelPositionY)));
   // Update priority
   
   if(false){

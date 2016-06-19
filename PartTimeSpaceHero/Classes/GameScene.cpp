@@ -45,13 +45,15 @@ bool GameScene::init()
 
   //////////////////////////////
   // 1. super init first
-  if (!Layer::init())
+  if (!LayerColor::initWithColor(Color4B(95, 208, 228, 255)))
   {
     return false;
   }
   
   auto director = Director::getInstance();
   director->setProjection(Director::Projection::_2D);
+  
+  
   
   setAnchorPoint(Point(0, 0));
   Size visibleSize = Director::getInstance()->getVisibleSize();
@@ -60,12 +62,12 @@ bool GameScene::init()
   const size_t scale = getScaleFactor();
 
   // Debug Label -
-  auto label = Label::createWithTTF("GameScene", "fonts/Marker Felt.ttf", 25 * scale);
+  /*auto label = Label::createWithTTF("GameScene", "fonts/Marker Felt.ttf", 25 * scale);
   label->setPosition(Vec2(origin.x + visibleSize.width / 2, origin.y + visibleSize.height - label->getContentSize().height));
-  addChild(label);
+  addChild(label);*/
 
 
-
+  
 
   this->schedule(schedule_selector(GameScene::mainGameLoop));
 
