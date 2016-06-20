@@ -336,6 +336,14 @@ void WorldObject::spawnObjects(cocos2d::Vector<GameObject*>* gameObjects) {
       addChild(patrolUfo);
     }
     
+    else if (name == "LabelObject") {
+      // LABEL
+      auto label = Label::createWithTTF(vm["msg"].asString(), "fonts/Marker Felt.ttf", 25);
+      label->setPosition(Vec2((int)x,(int)y));
+      
+      addChild(label,-1);
+    }
+    
     gameObjects->at(gameObjects->size() -1)->mapData = mapObject->mapData;
     
   }
