@@ -121,8 +121,8 @@ void MainMenu::onTouchEnded(const std::vector<Touch*>& touches, Event*)
 
   if(unplayedLevels){
     LevelData* nextLevel = gameSave->getCurrentLevel();
-    setMapUrl(nextLevel->getMapName());
-    //setMapUrl("dev_level.tmx");
+    //setMapUrl(nextLevel->getMapName());
+    setMapUrl("dev_level.tmx");
     cocos2d::log(nextLevel->getMapName().c_str());
     auto scene = GameScene::createScene();
     Director::getInstance()->pushScene(scene);
