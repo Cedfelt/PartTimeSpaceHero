@@ -132,8 +132,14 @@ void Physic::rightRamp(GameObject* obj,const uint32_t xPre,const uint32_t yPre, 
       if (cond1&&!cond2) {
         addY += tileSize;
       }
-      obj->setObjectPositionY((tilestartY + addY));
-      if(obj->getVelocityY()<=0){
+      if(yPos<=tilestartY + addY){
+        obj->setObjectPositionY((tilestartY + addY));
+      }
+      else{
+        return;
+      }
+      
+      if(obj->getVelocityY()<0){
         obj->setVelocityY(0);
         obj->platform = true;
       }
@@ -147,11 +153,13 @@ void Physic::rightRamp(GameObject* obj,const uint32_t xPre,const uint32_t yPre, 
         addY -= tileSize;
       }
       
+      
       obj->setObjectPositionY((tilestartY + addY));
+      
       if(isBlocked(obj, obj->getHitbox(), mapObject, collision_mask)){
         obj->setObjectPositionY(yPos);
       }
-      if(obj->getVelocityY()<=0){
+      if(obj->getVelocityY()<0){
         obj->setVelocityY(0);
         obj->platform = true;
       }
@@ -185,8 +193,13 @@ void Physic::leftRamp(GameObject* obj,const uint32_t xPre,const uint32_t yPre, M
       if (cond1&&!cond2) {
         addY += tileSize;
       }
-      obj->setObjectPositionY((tilestartY + addY));
-      if(obj->getVelocityY()<=0){
+      if(yPos<=tilestartY + addY){
+        obj->setObjectPositionY((tilestartY + addY));
+      }
+      else{
+        return;
+      }
+      if(obj->getVelocityY()<0){
         obj->setVelocityY(0);
         obj->platform = true;
       }
@@ -203,7 +216,7 @@ void Physic::leftRamp(GameObject* obj,const uint32_t xPre,const uint32_t yPre, M
       if(isBlocked(obj, obj->getHitbox(), mapObject, collision_mask)){
         obj->setObjectPositionY(yPos);
       }
-      if(obj->getVelocityY()<=0){
+      if(obj->getVelocityY()<0){
         obj->setVelocityY(0);
         obj->platform = true;
       }
@@ -391,28 +404,25 @@ void Physic::colideGameObjects(cocos2d::Vector<GameObject*>* gameObjects) {
 
 void Physic::gameObjectCollision(GameObject*  goA, GameObject* goB) {
 
-  /*nodeA->addToVelocityX(nodeB->getVelocityX());
-  nodeA->addToVelocityY(nodeB->getVelocityY());
-  nodeB->addToVelocityX(nodeA->getVelocityX());
-  nodeB->addToVelocityY(nodeA->getVelocityY());*/
-  const float aMass = goA->getPhysicsBody()->getMass() *0.01 * (!goA->remove_object) *goA->solid;
-  const float bMass = goB->getPhysicsBody()->getMass() *0.01 * (!goB->remove_object) *goA->solid;
-  const Vec2 repA = Vec2(goB->getVelocityX(), goB->getVelocityY());
-  const Vec2 repB = Vec2(goA->getVelocityX(), goA->getVelocityY());
-
-  //WE DONT WANT COLLISION WITH REMOVED OBJECTS, EG COINS
-  if ((aMass != 0.0f) && !goB->remove_object&&!goA->staticBoody) {
-    goA->setVelocityX(repA.x * bMass / aMass);
-    goA->setVelocityY(repA.y * bMass / aMass);
-  }
-
-  if ((bMass != 0.0f) && !goA->remove_object&&!goA->staticBoody) {
-    goB->setVelocityX(repB.x  * aMass / bMass);
-    goB->setVelocityY(repB.y * aMass / bMass);
-  }
-
-  //nodeA->removeFromParent();
-  //nodeB->removeFromParent();
-  //return true;
+//  
+//  const float aMass = goA->getPhysicsBody()->getMass() *0.01 * (!goA->remove_object) *goA->solid;
+//  const float bMass = goB->getPhysicsBody()->getMass() *0.01 * (!goB->remove_object) *goA->solid;
+//  const Vec2 repA = Vec2(goB->getVelocityX(), goB->getVelocityY());
+//  const Vec2 repB = Vec2(goA->getVelocityX(), goA->getVelocityY());
+//
+//  //WE DONT WANT COLLISION WITH REMOVED OBJECTS, EG COINS
+//  if ((aMass != 0.0f) && !goB->remove_object&&!goA->staticBoody) {
+//    goA->setVelocityX(repA.x * bMass / aMass);
+//    goA->setVelocityY(repA.y * bMass / aMass);
+//  }
+//
+//  if ((bMass != 0.0f) && !goA->remove_object&&!goA->staticBoody) {
+//    goB->setVelocityX(repB.x  * aMass / bMass);
+//    goB->setVelocityY(repB.y * aMass / bMass);
+//  }
+//
+//  //nodeA->removeFromParent();
+//  //nodeB->removeFromParent();
+//  //return true;
 }
 

@@ -14,6 +14,7 @@
 using namespace cocos2d;
 class GameObject : public cocos2d::DrawNode {
 public:
+  uint32_t getObjectType();
   void setPrevDir(int32_t prevDir);
   int32_t getPrevDir();
   int32_t getMovementStatus();
@@ -44,8 +45,7 @@ public:
   void setElastic(const float bGrav);
   float getObjectPositionX();
   float getObjectPositionY();
-  virtual void colideWith(GameObject* otherGo);
-  virtual void interActWithPlayer(GameObject* player);
+  virtual void colideWith(GameObject* otherGo,const uint32_t otherType);
   virtual bool hurt(const int dmg, const Vec2 force);
   bool colided;
   bool remove_object;
@@ -109,6 +109,8 @@ protected:
   float elastic;
 };
 
+
+
 enum class PhysicsCategory {
   None = 0,
   Player = (1 << 0),    // 1
@@ -128,6 +130,8 @@ enum MovementDirectionY {
   UP = 1,
   DOWN = -1
 };
+
+
 
 enum E_Z_LEVELS {
   E_Z_LEVEL1 = -5,

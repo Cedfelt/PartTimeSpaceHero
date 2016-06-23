@@ -11,12 +11,12 @@
 #include "SoundFx.hpp"
 
 using namespace cocos2d;
-class HeroBullet : public GameObject {
+class SimpleBullet : public GameObject {
 public:
   virtual bool init();
-  CREATE_FUNC(HeroBullet);
+  CREATE_FUNC(SimpleBullet);
   SoundFx* babyTurfelCrySFX;
-  virtual void colideWith(GameObject *otherGo);
+  virtual void colideWith(GameObject* oterhObj,const uint32_t otherType);
   
   void update(const float delta);
 private:

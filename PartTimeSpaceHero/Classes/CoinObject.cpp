@@ -37,9 +37,12 @@ bool CoinObject::init() {
   return true;
 }
 
-void CoinObject::interActWithPlayer(GameObject* player){
-  remove_object = true;
-  pling->play(0.5f);
+void CoinObject::colideWith(GameObject* otherGo,const uint32_t otherType){
+  if(otherType&(uint32_t)PhysicsCategory::Player){
+    remove_object = true;
+    pling->play(0.5f);
+  }
+  
 }
 
 void CoinObject::update(const float delta) {

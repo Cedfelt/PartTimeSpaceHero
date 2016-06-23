@@ -32,7 +32,7 @@ private:
   bool playerDashUpdate(float delta);
   bool playerShoot(float delta);
   bool flying = false;
-  virtual void colideWith(GameObject* oterhObj);
+  virtual void colideWith(GameObject* oterhObj,const uint32_t otherType);
   const float jumpStength = 90;
   SoundFx* jetpack1;
   SoundFx* playerCrySFX;

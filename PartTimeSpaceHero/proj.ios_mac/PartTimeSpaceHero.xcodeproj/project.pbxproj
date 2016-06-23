@@ -93,8 +93,8 @@
 		A828EC191D060C680006AA25 /* PlatformObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A828EC171D060C680006AA25 /* PlatformObject.cpp */; };
 		A828EC1A1D060C680006AA25 /* PlatformObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A828EC171D060C680006AA25 /* PlatformObject.cpp */; };
 		A87396AD1D0CA6BC00ADE298 /* WaterTiles.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A87396AB1D0CA6BC00ADE298 /* WaterTiles.cpp */; };
-		A87396B01D0DF44800ADE298 /* Hero_Bullet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A87396AE1D0DF44800ADE298 /* Hero_Bullet.cpp */; };
-		A87396B11D0DF44800ADE298 /* Hero_Bullet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A87396AE1D0DF44800ADE298 /* Hero_Bullet.cpp */; };
+		A87396B01D0DF44800ADE298 /* Simple_Bullet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A87396AE1D0DF44800ADE298 /* Simple_Bullet.cpp */; };
+		A87396B11D0DF44800ADE298 /* Simple_Bullet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A87396AE1D0DF44800ADE298 /* Simple_Bullet.cpp */; };
 		A87C27C71CC19F10004520EF /* Physic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A87C27C51CC19F10004520EF /* Physic.cpp */; };
 		A8805F2D1CEFB37400B2AE7A /* CoinObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8805F2B1CEFB37400B2AE7A /* CoinObject.cpp */; };
 		A8805F301CF04C6D00B2AE7A /* SoundFx.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8805F2E1CF04C6D00B2AE7A /* SoundFx.cpp */; };
@@ -206,8 +206,8 @@
 		A828EC181D060C680006AA25 /* PlatformObject.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = PlatformObject.hpp; sourceTree = "<group>"; };
 		A87396AB1D0CA6BC00ADE298 /* WaterTiles.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WaterTiles.cpp; sourceTree = "<group>"; };
 		A87396AC1D0CA6BC00ADE298 /* WaterTiles.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = WaterTiles.hpp; sourceTree = "<group>"; };
-		A87396AE1D0DF44800ADE298 /* Hero_Bullet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Hero_Bullet.cpp; sourceTree = "<group>"; };
-		A87396AF1D0DF44800ADE298 /* Hero_Bullet.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Hero_Bullet.hpp; sourceTree = "<group>"; };
+		A87396AE1D0DF44800ADE298 /* Simple_Bullet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Simple_Bullet.cpp; sourceTree = "<group>"; };
+		A87396AF1D0DF44800ADE298 /* Simple_Bullet.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Simple_Bullet.hpp; sourceTree = "<group>"; };
 		A87C27C51CC19F10004520EF /* Physic.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Physic.cpp; sourceTree = "<group>"; };
 		A87C27C61CC19F10004520EF /* Physic.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Physic.hpp; sourceTree = "<group>"; };
 		A8805F2B1CEFB37400B2AE7A /* CoinObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CoinObject.cpp; sourceTree = "<group>"; };
@@ -375,8 +375,8 @@
 				A82560FD1CF6269600FC1DD3 /* GUI.hpp */,
 				46880B8619C43A87006E1F66 /* HelloWorldScene.cpp */,
 				46880B8719C43A87006E1F66 /* HelloWorldScene.h */,
-				A87396AE1D0DF44800ADE298 /* Hero_Bullet.cpp */,
-				A87396AF1D0DF44800ADE298 /* Hero_Bullet.hpp */,
+				A87396AE1D0DF44800ADE298 /* Simple_Bullet.cpp */,
+				A87396AF1D0DF44800ADE298 /* Simple_Bullet.hpp */,
 				A81BE1591CBA424600C09359 /* LaserObject.cpp */,
 				A81BE15A1CBA424600C09359 /* LaserObject.hpp */,
 				A825610F1CFCD65200FC1DD3 /* LevelData.cpp */,
@@ -612,7 +612,7 @@
 				A82561091CFB635F00FC1DD3 /* UfoObject.cpp in Sources */,
 				A81BE15B1CBA424600C09359 /* LaserObject.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
-				A87396B01D0DF44800ADE298 /* Hero_Bullet.cpp in Sources */,
+				A87396B01D0DF44800ADE298 /* Simple_Bullet.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 				A81BE1671CBA499F00C09359 /* GlobalPList.cpp in Sources */,
 				A828EC0E1D00D0D70006AA25 /* BottyObject.cpp in Sources */,
@@ -649,7 +649,7 @@
 				A82561021CF8F01C00FC1DD3 /* TurfelObject.cpp in Sources */,
 				A82561121CFCD65200FC1DD3 /* LevelData.cpp in Sources */,
 				A825610E1CFCD64100FC1DD3 /* SaveData.cpp in Sources */,
-				A87396B11D0DF44800ADE298 /* Hero_Bullet.cpp in Sources */,
+				A87396B11D0DF44800ADE298 /* Simple_Bullet.cpp in Sources */,
 				A828EC121D020A3D0006AA25 /* MapData.cpp in Sources */,
 				A81BE1481CBA40CB00C09359 /* WorldObject.cpp in Sources */,
 				A81BE14C1CBA415400C09359 /* GameObject.cpp in Sources */,

@@ -79,11 +79,7 @@ void GameObject::addAnimation(std::string fileName,std::string animation_name,in
     animationCache->addAnimation(cocos2d::Animation::createWithSpriteFrames(animFrames,animSpeed), animation_name);
 }
 
-void GameObject::colideWith(GameObject *otherGo){
-}
-
-void GameObject::interActWithPlayer(GameObject* player){
-
+void GameObject::colideWith(GameObject *otherGo,const uint32_t otherType){
 }
 
 void GameObject::setAnimation(std::string anim){
@@ -153,7 +149,9 @@ int32_t GameObject::getPrevDir(){
   return prevDirection;
 }
 
-
+uint32_t GameObject::getObjectType(){
+  return getPhysicsBody()->getCategoryBitmask();
+}
 
 bool GameObject::hurt(const int dmg, const Vec2 force){
   if(!isImune()){

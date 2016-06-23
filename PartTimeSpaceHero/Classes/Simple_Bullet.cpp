@@ -6,8 +6,8 @@
 //
 //
 
-#include "Hero_Bullet.hpp"
-bool HeroBullet::init() {
+#include "Simple_Bullet.hpp"
+bool SimpleBullet::init() {
   //////////////////////////////
   // 1. super init first
   if (!GameObject::init())
@@ -15,7 +15,7 @@ bool HeroBullet::init() {
     return false;
   }
   
-  this->schedule(schedule_selector(HeroBullet::update));
+  this->schedule(schedule_selector(SimpleBullet::update));
   addGravityToObject(false);
   setElastic(0.f);
   // SETUP ANIMATIONS
@@ -28,12 +28,12 @@ bool HeroBullet::init() {
   return true;
 }
 
-void HeroBullet::colideWith(GameObject *otherGo){
-  otherGo->hurt(dmg, Vec2(0,0));
+void SimpleBullet::colideWith(GameObject* oterhObj,const uint32_t otherType){
+  oterhObj->hurt(dmg, Vec2(0,0));
   remove_object = true;
 }
 
-void HeroBullet::update(const float delta) {
+void SimpleBullet::update(const float delta) {
   if(!getVelocityX()){
     remove_object = true;
   }

@@ -69,6 +69,8 @@ bool AppDelegate::applicationDidFinishLaunching() {
   FileUtils::getInstance()->addSearchPath("res/graphics/map_files");
   FileUtils::getInstance()->addSearchPath("res/graphics/sprites");
   FileUtils::getInstance()->addSearchPath("res/graphics/gui");
+  FileUtils::getInstance()->addSearchPath("Classes/gameobjects");
+  
 
     // create a scene. it's an autorelease object
     auto scene = MainMenu::createScene();

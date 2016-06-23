@@ -7,7 +7,7 @@
 //
 
 #include "PlayerObject.hpp"
-#include "Hero_Bullet.hpp"
+#include "Simple_Bullet.hpp"
 
 bool PlayerObject::init() {
   //////////////////////////////
@@ -60,6 +60,10 @@ bool PlayerObject::init() {
   weaponSFX = SoundFx::create();
   weaponSFX->loadEffect("weapon.aif", 0, 1, false);
   addChild(weaponSFX);
+  
+  playerCrySFX = SoundFx::create();
+  playerCrySFX->loadEffect("Cry.aif", 0, 1, false);
+  addChild(playerCrySFX);
   
   
 
@@ -155,8 +159,8 @@ bool PlayerObject::playerFlyUpdate(float delta) {
       consumeRate = -currentConsumeRate;
       throtling++;
       module_active = true;
-      if (movement_status == GO_ON_GROUND && !flying) {
-        addToVelocityY(jumpStength);
+      if (movement_status == GO_ON_GROUND || platform) {
+        setVelocityY(jumpStength);
         flying = true;
         return true;
       }
@@ -314,7 +318,7 @@ bool PlayerObject::playerShoot(float delta) {
     setAnimationOnce("PlayerShootR");
     //setVelocityX(0);
     setPrevDir(GO_RIGHT);
-    auto babyTurf = HeroBullet::create();
+    auto babyTurf = SimpleBullet::create();
     babyTurf->setupHitbox(0.1f, 1.0f, 16, 16, 16, 16, false);
     babyTurf->setObjectPositionX(getPositionX()+10);
     babyTurf->setObjectPositionY(getPositionY()+2);
@@ -332,7 +336,7 @@ bool PlayerObject::playerShoot(float delta) {
     setAnimationOnce("PlayerShootL");
     bPlayerShoot = true;
     setPrevDir(GO_LEFT);
-    auto babyTurf = HeroBullet::create();
+    auto babyTurf = SimpleBullet::create();
     babyTurf->setupHitbox(0.1f, 1.0f, 16, 16, 16, 16, false);
     babyTurf->setObjectPositionX(getPositionX()-20);
     babyTurf->setObjectPositionY(getPositionY()+2);
@@ -431,15 +435,14 @@ bool PlayerObject::hurt(const int dmg, const Vec2 force){
   return false;
 }
 
-void PlayerObject::colideWith(GameObject* otherObj){
+void PlayerObject::colideWith(GameObject* otherObj,const uint32_t otherType){
   auto p = getHitbox();
   auto r = otherObj->getHitbox();
-  if(p->getMinY() +10 > r->getMaxY()){
+  if(p->getMinY() +20 > r->getMaxY()){
     // Above Enemy
-      setVelocityY(getVelocityY()*-1);
+      setVelocityY(getVelocityY()*-0.9f);
       otherObj->hurt(1, Vec2(0,0));
   }
-  otherObj->interActWithPlayer(this);
   
   
   

@@ -14,7 +14,7 @@ using namespace cocos2d;
 class CoinObject : public GameObject {
 public:
   virtual bool init();
-  virtual void interActWithPlayer(GameObject* player);
+  virtual void colideWith(GameObject* oterhObj,const uint32_t otherType);
   CREATE_FUNC(CoinObject);
   SoundFx* pling;
   

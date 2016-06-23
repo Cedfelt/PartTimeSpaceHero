@@ -160,11 +160,19 @@ void WorldObject::setViewPointCenter(const cocos2d::Point position) {
 bool WorldObject::onContactBegan(PhysicsContact &contact) {
   auto *nodeA = (GameObject *)contact.getShapeA()->getBody()->getNode();
   auto * nodeB = (GameObject *)contact.getShapeB()->getBody()->getNode();
+  const uint32_t aType = nodeA->getObjectType();
+  const uint32_t bType = nodeB->getObjectType();
+  
   if(nodeA->platform||nodeB->platform){
     return true;
   }
-  nodeA->colideWith(nodeB);
-  nodeB->colideWith(nodeA);
+  //  Player = (1 << 0),    // 1
+  //  PlayerPickups = (1 << 1), // 2
+  //  Goal = (1 << 2),
+  //  Hazard = (1 << 3),
+  //  Enemy = (1 << 4),
+  nodeA->colideWith(nodeB,bType);
+  nodeB->colideWith(nodeA,aType);
   physic->gameObjectCollision(nodeA, nodeB);
   return true;
 }

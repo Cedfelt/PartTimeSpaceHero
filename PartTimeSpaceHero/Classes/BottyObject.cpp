@@ -46,28 +46,30 @@ bool BottyObject::init() {
 
 const float forceX = 100;
 const float forceY = 170;
-void BottyObject::interActWithPlayer(GameObject* player){
-  auto p = player->getHitbox();
+void BottyObject::colideWith(GameObject* oterhObj,const uint32_t otherType){
+  if(otherType&(uint32_t)PhysicsCategory::Player){
+  auto p = oterhObj->getHitbox();
   auto r = getHitbox();
   if(getPrevDir() == GO_RIGHT){
     setVelocityX(50);
     
-    if(p->getMinY() +10 > r->getMaxY()){
-      player->hurt(0, Vec2(player->getVelocityX(),player->getVelocityY()));
+    if(p->getMinY() +20 > r->getMaxY()){
+      oterhObj->hurt(0, Vec2(oterhObj->getVelocityX(),oterhObj->getVelocityY()));
     }
     else{
-      player->hurt(1, Vec2(forceX,forceY));
+      oterhObj->hurt(1, Vec2(forceX,forceY));
     }
     
   }
   else{
-    if(p->getMinY() +10 > r->getMaxY()){
-      player->hurt(0, Vec2(player->getVelocityX(),player->getVelocityY()));
+    if(p->getMinY() +20 > r->getMaxY()){
+      oterhObj->hurt(0, Vec2(oterhObj->getVelocityX(),oterhObj->getVelocityY()));
     }
     else{
-      player->hurt(1, Vec2(-forceX,forceY));
+      oterhObj->hurt(1, Vec2(-forceX,forceY));
     }
   }
+    }
   
 }
 
