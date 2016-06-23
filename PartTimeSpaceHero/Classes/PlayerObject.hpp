@@ -41,5 +41,27 @@ private:
   float consumeRate;
   float currentConsumeRate;
   
+  enum {
+    IdleR,
+    IdleL,
+    WalkR,
+    WalkL,
+    FlyR,
+    FlyL,
+    AscendR,
+    AscendL,
+    FallR,
+    FallL,
+    DashR,
+    DashL,
+    DieR,
+    DieL,
+    PlayerShootR,
+    PlayerShootL,
+    AnimationCount
+  };
+  
+  std::vector<std::string> animationStrings;
+  
   
 };

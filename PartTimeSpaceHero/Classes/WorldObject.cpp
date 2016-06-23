@@ -77,6 +77,8 @@ float int_delta = 0;
 uint32_t delta_cnt = 0;
 const float delta_max = 120;
 float new_delta = 1.0 / 60.0;
+float lastX;
+float lastY;
 void WorldObject::updateWorld(float delta) {
   if(delta_cnt ==delta_max){
     delta_cnt = 0;
@@ -90,9 +92,10 @@ void WorldObject::updateWorld(float delta) {
   const float offset = player->playerLookAhead;
   playerPos.x = playerPos.x + offset;
   mapObject->moveBackgroundLayers();
-  setViewPointCenter(playerPos);
+  setViewPointCenter(Vec2((playerPos.x + lastX)/2,(playerPos.y + lastY)/2));
   mapObject->updateLiquids(new_delta);
- 
+  lastX = playerPos.x;
+  lastY = playerPos.y;
 
   // Check Goal
   if(obj!=NULL){

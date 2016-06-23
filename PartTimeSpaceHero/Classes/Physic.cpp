@@ -136,7 +136,7 @@ void Physic::rightRamp(GameObject* obj,const uint32_t xPre,const uint32_t yPre, 
         obj->setObjectPositionY((tilestartY + addY));
       }
       else{
-        return;
+        //return;
       }
       
       if(obj->getVelocityY()<0){
@@ -197,7 +197,7 @@ void Physic::leftRamp(GameObject* obj,const uint32_t xPre,const uint32_t yPre, M
         obj->setObjectPositionY((tilestartY + addY));
       }
       else{
-        return;
+        //return;
       }
       if(obj->getVelocityY()<0){
         obj->setVelocityY(0);

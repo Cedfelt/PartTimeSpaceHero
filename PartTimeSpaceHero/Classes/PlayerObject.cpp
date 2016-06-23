@@ -9,6 +9,8 @@
 #include "PlayerObject.hpp"
 #include "Simple_Bullet.hpp"
 
+
+
 bool PlayerObject::init() {
   //////////////////////////////
   // 1. super init first
@@ -43,12 +45,28 @@ bool PlayerObject::init() {
   addAnimation("PTSH", "DieL", 22, 25, 0.15f);
   addAnimation("PTSH", "PlayerShootR", 30, 33, 0.06f);
   addAnimation("PTSH", "PlayerShootL", 30, 33, 0.06f);
-
+  
+  animationStrings.push_back("IdleR");
+  animationStrings.push_back("IdleL");
+  animationStrings.push_back("WalkR");
+  animationStrings.push_back("WalkL");
+  animationStrings.push_back("FlyR");
+  animationStrings.push_back("FlyL");
+  animationStrings.push_back("AscendR");
+  animationStrings.push_back("AscendL");
+  animationStrings.push_back("FallR");
+  animationStrings.push_back("FallL");
+  animationStrings.push_back("DashR");
+  animationStrings.push_back("DashL");
+  animationStrings.push_back("DieR");
+  animationStrings.push_back("DieL");
+  animationStrings.push_back("PlayerShootR");
+  animationStrings.push_back("PlayerShootL");
 
   objectSprite = cocos2d::Sprite::create();
   objectSprite->setAnchorPoint(cocos2d::Point(0.5, 0.25));
   objectSprite->setPosition(8, -64);// Aling sprite in Hitbox
-  setAnimation("WalkR");
+  setAnimation(animationStrings.at((WalkR)));
   //addChild(objectSprite);
   
   
@@ -90,20 +108,20 @@ void PlayerObject::playerWalkUpdate(float delta) {
     return; // Flying
   }
   if (playerInput->isLeft()) {
-    walkAtDir(LEFT,"WalkL");
+    walkAtDir(LEFT,animationStrings.at(WalkL));
 
   }
   else if (playerInput->isRight()) {
-    walkAtDir(RIGHT, "WalkR");
+    walkAtDir(RIGHT, animationStrings.at(WalkR));
   }
   else {
     setVelocityX(getVelocityX()*ground_deacceleration);
 
     if (getPrevDir() == GO_RIGHT) {
-      setAnimation("IdleR");
+      setAnimation(animationStrings.at(IdleR));
     }
     else {
-      setAnimation("IdleL");
+      setAnimation(animationStrings.at(IdleL));
     }
 
   }
@@ -118,10 +136,10 @@ void PlayerObject::fallAtDir(MovementDirectionX dir,std::string animName) {
 void PlayerObject::playerFallUpdate(float delta) {
   if (getMovementStatus() == GO_IN_AIR_DOWN) {
     if (getPrevDir() == GO_LEFT) {
-      fallAtDir(LEFT, "FallL");
+      fallAtDir(LEFT, animationStrings.at(FallL));
     }
     else if (getPrevDir() == GO_RIGHT) {
-      fallAtDir(RIGHT, "FallR");
+      fallAtDir(RIGHT, animationStrings.at(FallR));
     }
   }
 }
@@ -166,7 +184,7 @@ bool PlayerObject::playerFlyUpdate(float delta) {
       }
       if (getVelocityY() < maxRiseSpeed)
         addToVelocityY(playerInput->getSwipeR()*uppSpeed);
-      setAnimation("FlyR");
+      setAnimation(animationStrings.at(FlyR));
       if (getVelocityX() < maxSpeed) {
         addToVelocityX(jetPackFlySpeed);
       }
@@ -191,7 +209,7 @@ bool PlayerObject::playerFlyUpdate(float delta) {
       }
       if (getVelocityY() < maxRiseSpeed)
         addToVelocityY(playerInput->getSwipeL()*uppSpeed);
-      setAnimation("FlyL");
+      setAnimation(animationStrings.at(FlyL));
       if (getVelocityX() > -maxSpeed) {
         addToVelocityX(-jetPackFlySpeed);
       }
@@ -211,7 +229,7 @@ bool PlayerObject::playerFlyUpdate(float delta) {
   else{
     jetpack1->stop();
     if(getVelocityY()>0)
-    setAnimation("AscendR");
+    setAnimation(animationStrings.at(AscendR));
     
   }
   fuel += consumeRate;
@@ -261,7 +279,7 @@ bool PlayerObject::playerDashUpdate(float delta) {
     setVelocityY(0);
     if (dashRightCnt > 0.5*dashTime) {
       setVelocityX(0);
-      setAnimation("DashR");
+      setAnimation(animationStrings.at(DashR));
     }
     else {
       dash_stage++;
@@ -271,7 +289,7 @@ bool PlayerObject::playerDashUpdate(float delta) {
       if(fuel<0){
         fuel = 0;
       }
-      setAnimation("DieR");
+      setAnimation(animationStrings.at(DieR));
     }
     if(dash_stage== 1){
       jetpack1->stop();
@@ -283,7 +301,7 @@ bool PlayerObject::playerDashUpdate(float delta) {
     setVelocityY(0);
     if (dashLeftCnt > 0.5*dashTime) {
       setVelocityX(0);
-      setAnimation("DashL");
+      setAnimation(animationStrings.at(DashL));
     }
     else {
       dash_stage++;
@@ -292,7 +310,7 @@ bool PlayerObject::playerDashUpdate(float delta) {
       if(fuel<0){
         fuel = 0;
       }
-      setAnimation("DieL");
+      setAnimation(animationStrings.at(DieL));
       jetpack1->play(0.4,0.7f);
     }
     if(dash_stage== 1){
@@ -315,7 +333,7 @@ bool PlayerObject::playerShoot(float delta) {
   
   if (playerInput->isDoubleRight()&&!bPlayerShoot) {
     objectSprite->setScaleX(1);
-    setAnimationOnce("PlayerShootR");
+    setAnimationOnce(animationStrings.at(PlayerShootR));
     //setVelocityX(0);
     setPrevDir(GO_RIGHT);
     auto babyTurf = SimpleBullet::create();
@@ -333,7 +351,7 @@ bool PlayerObject::playerShoot(float delta) {
   if (playerInput->isDoubleLeft()&&!bPlayerShoot) {
     objectSprite->setScaleX(-1);
     //setVelocityX(0);
-    setAnimationOnce("PlayerShootL");
+    setAnimationOnce(animationStrings.at(PlayerShootL));
     bPlayerShoot = true;
     setPrevDir(GO_LEFT);
     auto babyTurf = SimpleBullet::create();
@@ -350,13 +368,13 @@ bool PlayerObject::playerShoot(float delta) {
   }
   if(bPlayerShoot){
     if(getPrevDir() == GO_RIGHT){
-      if(setAnimationOnce("PlayerShootR")){
+      if(setAnimationOnce(animationStrings.at(PlayerShootR))){
         bPlayerShoot = false;
         return false;
       }
     }
     else if(getPrevDir() == GO_LEFT){
-      if(setAnimationOnce("PlayerShootL"))
+      if(setAnimationOnce(animationStrings.at(PlayerShootL)))
       {
         bPlayerShoot = false;
         return false;
@@ -436,17 +454,15 @@ bool PlayerObject::hurt(const int dmg, const Vec2 force){
 }
 
 void PlayerObject::colideWith(GameObject* otherObj,const uint32_t otherType){
-  auto p = getHitbox();
-  auto r = otherObj->getHitbox();
-  if(p->getMinY() +20 > r->getMaxY()){
-    // Above Enemy
+  if(otherType&(uint32_t)PhysicsCategory::Enemy){
+    auto p = getHitbox();
+    auto r = otherObj->getHitbox();
+    if(p->getMinY() +20 > r->getMaxY()){
+      // Above Enemy
       setVelocityY(getVelocityY()*-0.9f);
       otherObj->hurt(1, Vec2(0,0));
+    }
   }
-  
-  
-  
-  
 }
 
 void PlayerObject::setupPlayer(const float x, const float y) {
