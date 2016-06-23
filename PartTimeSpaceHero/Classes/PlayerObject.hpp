@@ -36,6 +36,7 @@ private:
   const float jumpStength = 90;
   SoundFx* jetpack1;
   SoundFx* playerCrySFX;
+  SoundFx* weaponSFX;
   float fuel;
   float consumeRate;
   float currentConsumeRate;

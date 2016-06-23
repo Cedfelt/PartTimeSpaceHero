@@ -57,9 +57,11 @@ bool PlayerObject::init() {
   jetpack1->loadEffect("jet_pack_hum.aif", 0, 1, true);
   addChild(jetpack1);
   
-  playerCrySFX = SoundFx::create();
-  playerCrySFX->loadEffect("Cry.aif", 0, 1, false);
-  addChild(playerCrySFX);
+  weaponSFX = SoundFx::create();
+  weaponSFX->loadEffect("weapon.aif", 0, 1, false);
+  addChild(weaponSFX);
+  
+  
 
   fuel = 1.0f;
   consumeRate = currentConsumeRate;
@@ -322,6 +324,7 @@ bool PlayerObject::playerShoot(float delta) {
     addToGameObjects.pushBack(babyTurf);
     bPlayerShoot = true;
     babyTurf->setVelocityX(200);
+    weaponSFX->play(0.4f);
   }
   if (playerInput->isDoubleLeft()&&!bPlayerShoot) {
     objectSprite->setScaleX(-1);
@@ -339,6 +342,7 @@ bool PlayerObject::playerShoot(float delta) {
     addToGameObjects.pushBack(babyTurf);
     bPlayerShoot = true;
     babyTurf->setVelocityX(-200);
+    weaponSFX->play(0.4f);
   }
   if(bPlayerShoot){
     if(getPrevDir() == GO_RIGHT){
