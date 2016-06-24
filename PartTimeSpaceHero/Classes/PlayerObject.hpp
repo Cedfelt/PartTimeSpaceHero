@@ -29,8 +29,6 @@ private:
   void playerFallUpdate(float delta);
   bool playerFlyUpdate(float delta);
   bool hurt(const int dmg, const Vec2 force);
-  bool playerDashUpdate(float delta);
-  bool playerShoot(float delta);
   bool flying = false;
   virtual void colideWith(GameObject* oterhObj,const uint32_t otherType);
   const float jumpStength = 90;
@@ -63,13 +61,18 @@ private:
   };
 
   bool rifle_item(float);
-  enum PlayerItems {
+  bool playerDashUpdate(float delta);
+  
+  bool (PlayerObject::*pItem)(float);
+  enum PlayerItem_ID {
   E_NO_ITEM,
   E_RIFLE_ITEM,
   E_DASH_ITEM
   };
+
+  void setItem(PlayerItem_ID id );
   
-  bool (PlayerObject::*pItem)(float);
+  
  
 
   
