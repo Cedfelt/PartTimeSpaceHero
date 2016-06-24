@@ -10,7 +10,6 @@
 #include "Simple_Bullet.hpp"
 
 
-
 bool PlayerObject::init() {
   //////////////////////////////
   // 1. super init first
@@ -28,40 +27,61 @@ bool PlayerObject::init() {
   // SETUP ANIMATIONS
   spriteFrameCache = spriteFrameCache->getInstance();
   animationCache = animationCache->getInstance();
-  spriteFrameCache->addSpriteFramesWithFile("ptsh.plist");
-  addAnimation("PTSH", "IdleR", 1, 4, 0.2f);
-  addAnimation("PTSH", "IdleL", 1, 4, 0.2f);
-  addAnimation("PTSH", "WalkR", 5, 8, 0.15f);
-  addAnimation("PTSH", "WalkL", 5, 8, 0.15f);
-  addAnimation("PTSH", "FlyR", 9, 12, 0.2f);
-  addAnimation("PTSH", "FlyL", 9, 12, 0.2f);
-  addAnimation("PTSH", "AscendR", 13, 13, 0.2f);
-  addAnimation("PTSH", "AscendL", 13, 13, 0.2f);
-  addAnimation("PTSH", "FallR", 14, 17, 0.2f);
-  addAnimation("PTSH", "FallL", 14, 17, 0.2f);
-  addAnimation("PTSH", "DashR", 18, 21, 0.15f);
-  addAnimation("PTSH", "DashL", 18, 21, 0.15f);
-  addAnimation("PTSH", "DieR", 22, 25, 0.15f);
-  addAnimation("PTSH", "DieL", 22, 25, 0.15f);
-  addAnimation("PTSH", "PlayerShootR", 30, 33, 0.06f);
-  addAnimation("PTSH", "PlayerShootL", 30, 33, 0.06f);
   
-  animationStrings.push_back("IdleR");
-  animationStrings.push_back("IdleL");
-  animationStrings.push_back("WalkR");
-  animationStrings.push_back("WalkL");
-  animationStrings.push_back("FlyR");
-  animationStrings.push_back("FlyL");
-  animationStrings.push_back("AscendR");
-  animationStrings.push_back("AscendL");
-  animationStrings.push_back("FallR");
-  animationStrings.push_back("FallL");
-  animationStrings.push_back("DashR");
-  animationStrings.push_back("DashL");
-  animationStrings.push_back("DieR");
-  animationStrings.push_back("DieL");
-  animationStrings.push_back("PlayerShootR");
-  animationStrings.push_back("PlayerShootL");
+  
+  ///////////////////////////
+  // Normal
+
+  /////////////////////////
+  
+  //Animations
+  //-
+  
+  // Strings
+  //-
+  
+  
+  //////////////////////////
+  // Weapon
+  /////////////////////////
+  
+  //Animations
+  spriteFrameCache->addSpriteFramesWithFile("ptshwep.plist");
+  addAnimation("PTSH_WEP", "IdleRWep", 1, 4, 0.2f);
+  addAnimation("PTSH_WEP", "IdleLWep", 1, 4, 0.2f);
+  addAnimation("PTSH_WEP", "WalkRWep", 5, 8, 0.15f);
+  addAnimation("PTSH_WEP", "WalkLWep", 5, 8, 0.15f);
+  addAnimation("PTSH_WEP", "FlyRWep", 9, 12, 0.2f);
+  addAnimation("PTSH_WEP", "FlyLWep", 9, 12, 0.2f);
+  addAnimation("PTSH_WEP", "AscendRWep", 13, 13, 0.2f);
+  addAnimation("PTSH_WEP", "AscendLWep", 13, 13, 0.2f);
+  addAnimation("PTSH_WEP", "FallRWep", 14, 17, 0.2f);
+  addAnimation("PTSH_WEP", "FallLWep", 14, 17, 0.2f);
+  addAnimation("PTSH_WEP", "DashRWep", 18, 21, 0.15f);
+  addAnimation("PTSH_WEP", "DashLWep", 18, 21, 0.15f);
+  addAnimation("PTSH_WEP", "DieRWep", 22, 25, 0.15f);
+  addAnimation("PTSH_WEP", "DieLWep", 22, 25, 0.15f);
+  addAnimation("PTSH_WEP", "PlayerShootRWep", 26, 29, 0.06f);
+  addAnimation("PTSH_WEP", "PlayerShootLWep", 26, 29, 0.06f);
+  
+  
+  // Strings
+  animationStrings.push_back("IdleRWep");
+  animationStrings.push_back("IdleLWep");
+  animationStrings.push_back("WalkRWep");
+  animationStrings.push_back("WalkLWep");
+  animationStrings.push_back("FlyRWep");
+  animationStrings.push_back("FlyLWep");
+  animationStrings.push_back("AscendRWep");
+  animationStrings.push_back("AscendLWep");
+  animationStrings.push_back("FallRWep");
+  animationStrings.push_back("FallLWep");
+  animationStrings.push_back("DashRWep");
+  animationStrings.push_back("DashLWep");
+  animationStrings.push_back("DieRWep");
+  animationStrings.push_back("DieLWep");
+  animationStrings.push_back("PlayerShootRWep");
+  animationStrings.push_back("PlayerShootLWep");
 
   objectSprite = cocos2d::Sprite::create();
   objectSprite->setAnchorPoint(cocos2d::Point(0.5, 0.25));
