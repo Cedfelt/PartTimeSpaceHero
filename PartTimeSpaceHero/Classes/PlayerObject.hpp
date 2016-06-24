@@ -41,6 +41,7 @@ private:
   float consumeRate;
   float currentConsumeRate;
   
+  std::vector<std::string> animationStrings;
   enum {
     IdleR,
     IdleL,
@@ -60,8 +61,17 @@ private:
     PlayerShootL,
     AnimationCount
   };
+
+  bool rifle_item(float);
+  enum PlayerItems {
+  E_NO_ITEM,
+  E_RIFLE_ITEM,
+  E_DASH_ITEM
+  };
   
-  std::vector<std::string> animationStrings;
+  bool (PlayerObject::*pItem)(float);
+ 
+
   
   
 };

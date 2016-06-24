@@ -109,6 +109,9 @@ bool PlayerObject::init() {
   consumeRate = currentConsumeRate;
   currentConsumeRate = 0.0075f;
   objectSprite->retain();
+
+  // ITEM POINTERS
+  pItem = &PlayerObject::rifle_item; // note: <pt2Member> may also legally point to &DoMore
   return true;
 }
 
@@ -348,7 +351,61 @@ bool PlayerObject::playerDashUpdate(float delta) {
 }
 
 bool bPlayerShoot = false;
+bool PlayerObject::rifle_item(float delta) {
+  if (playerInput->isDoubleRight() && !bPlayerShoot) {
+    objectSprite->setScaleX(1);
+    setAnimationOnce(animationStrings.at(PlayerShootR));
+    //setVelocityX(0);
+    setPrevDir(GO_RIGHT);
+    auto babyTurf = SimpleBullet::create();
+    babyTurf->setupHitbox(0.1f, 1.0f, 16, 16, 16, 16, false);
+    babyTurf->setObjectPositionX(getPositionX() + 10);
+    babyTurf->setObjectPositionY(getPositionY() + 2);
+    babyTurf->getPhysicsBody()->setCategoryBitmask((int)PhysicsCategory::Player);
+    babyTurf->getPhysicsBody()->setCollisionBitmask((int)PhysicsCategory::None);
+    babyTurf->getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::Enemy);
+    addToGameObjects.pushBack(babyTurf);
+    bPlayerShoot = true;
+    babyTurf->setVelocityX(200);
+    weaponSFX->play(0.4f);
+  }
+  if (playerInput->isDoubleLeft() && !bPlayerShoot) {
+    objectSprite->setScaleX(-1);
+    //setVelocityX(0);
+    setAnimationOnce(animationStrings.at(PlayerShootL));
+    bPlayerShoot = true;
+    setPrevDir(GO_LEFT);
+    auto babyTurf = SimpleBullet::create();
+    babyTurf->setupHitbox(0.1f, 1.0f, 16, 16, 16, 16, false);
+    babyTurf->setObjectPositionX(getPositionX() - 20);
+    babyTurf->setObjectPositionY(getPositionY() + 2);
+    babyTurf->getPhysicsBody()->setCategoryBitmask((int)PhysicsCategory::Player);
+    babyTurf->getPhysicsBody()->setCollisionBitmask((int)PhysicsCategory::None);
+    babyTurf->getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::Enemy);
+    addToGameObjects.pushBack(babyTurf);
+    bPlayerShoot = true;
+    babyTurf->setVelocityX(-200);
+    weaponSFX->play(0.4f);
+  }
+  if (bPlayerShoot) {
+    if (getPrevDir() == GO_RIGHT) {
+      if (setAnimationOnce(animationStrings.at(PlayerShootR))) {
+        bPlayerShoot = false;
+        return false;
+      }
+    }
+    else if (getPrevDir() == GO_LEFT) {
+      if (setAnimationOnce(animationStrings.at(PlayerShootL)))
+      {
+        bPlayerShoot = false;
+        return false;
+      }
 
+    }
+    return true;
+  }
+  return false;
+}
 bool PlayerObject::playerShoot(float delta) {
   
   if (playerInput->isDoubleRight()&&!bPlayerShoot) {
@@ -416,7 +473,7 @@ void PlayerObject::playerUpdate(const float delta) {
       return;
     }
   }
-  else if(playerShoot(delta)){
+  else if((*this.*pItem)(delta)){
     return;
   }
   solid = false;// Not Dashing

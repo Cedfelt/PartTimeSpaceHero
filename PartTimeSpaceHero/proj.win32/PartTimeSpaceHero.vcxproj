@@ -159,7 +159,6 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClCompile Include="..\Classes\GuardObject.cpp" />
     <ClCompile Include="..\Classes\GUI.cpp" />
     <ClCompile Include="..\Classes\HelloWorldScene.cpp" />
-    <ClCompile Include="..\Classes\Hero_Bullet.cpp" />
     <ClCompile Include="..\Classes\LaserObject.cpp" />
     <ClCompile Include="..\Classes\LevelData.cpp" />
     <ClCompile Include="..\Classes\MainMenu.cpp" />
@@ -171,6 +170,7 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClCompile Include="..\Classes\PlayerInput.cpp" />
     <ClCompile Include="..\Classes\PlayerObject.cpp" />
     <ClCompile Include="..\Classes\SaveData.cpp" />
+    <ClCompile Include="..\Classes\Simple_Bullet.cpp" />
     <ClCompile Include="..\Classes\SoundFx.cpp" />
     <ClCompile Include="..\Classes\TurfelObject.cpp" />
     <ClCompile Include="..\Classes\UfoObject.cpp" />
@@ -192,7 +192,6 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClInclude Include="..\Classes\GuardObject.hpp" />
     <ClInclude Include="..\Classes\GUI.hpp" />
     <ClInclude Include="..\Classes\HelloWorldScene.h" />
-    <ClInclude Include="..\Classes\Hero_Bullet.hpp" />
     <ClInclude Include="..\Classes\LaserObject.hpp" />
     <ClInclude Include="..\Classes\LevelData.hpp" />
     <ClInclude Include="..\Classes\MainMenu.hpp" />
@@ -204,6 +203,7 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClInclude Include="..\Classes\PlayerInput.hpp" />
     <ClInclude Include="..\Classes\PlayerObject.hpp" />
     <ClInclude Include="..\Classes\SaveData.hpp" />
+    <ClInclude Include="..\Classes\Simple_Bullet.hpp" />
     <ClInclude Include="..\Classes\SoundFx.hpp" />
     <ClInclude Include="..\Classes\TurfelObject.hpp" />
     <ClInclude Include="..\Classes\UfoObject.hpp" />
