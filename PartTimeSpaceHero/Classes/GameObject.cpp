@@ -222,3 +222,7 @@ float GameObject::getElastic(void) {
 void GameObject::setElastic(const float fElastic) {
   elastic = fElastic;
 }
+
+void GameObject::setItem(PlayerItem_ID id){
+
+}

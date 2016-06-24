@@ -36,6 +36,22 @@ bool PlayerObject::init() {
 
   //Animations
   //-
+  spriteFrameCache->addSpriteFramesWithFile("ptsh.plist");
+  addAnimation("PTSH", "IdleR", 1, 4, 0.2f);
+  addAnimation("PTSH", "IdleL", 1, 4, 0.2f);
+  addAnimation("PTSH", "WalkR", 5, 8, 0.15f);
+  addAnimation("PTSH", "WalkL", 5, 8, 0.15f);
+  addAnimation("PTSH", "FlyR", 9, 12, 0.2f);
+  addAnimation("PTSH", "FlyL", 9, 12, 0.2f);
+  addAnimation("PTSH", "AscendR", 13, 13, 0.2f);
+  addAnimation("PTSH", "AscendL", 13, 13, 0.2f);
+  addAnimation("PTSH", "FallR", 14, 17, 0.2f);
+  addAnimation("PTSH", "FallL", 14, 17, 0.2f);
+  addAnimation("PTSH", "DashChargeR", 18, 21, 0.15f);
+  addAnimation("PTSH", "DashChargeL", 18, 21, 0.15f);
+  addAnimation("PTSH", "DashR", 22, 25, 0.15f);
+  addAnimation("PTSH", "DashL", 22, 25, 0.15f);
+  
 
   // Strings
   //-
@@ -57,31 +73,25 @@ bool PlayerObject::init() {
   addAnimation("PTSH_WEP", "AscendLWep", 13, 13, 0.2f);
   addAnimation("PTSH_WEP", "FallRWep", 14, 17, 0.2f);
   addAnimation("PTSH_WEP", "FallLWep", 14, 17, 0.2f);
-  addAnimation("PTSH_WEP", "DashRWep", 18, 21, 0.15f);
-  addAnimation("PTSH_WEP", "DashLWep", 18, 21, 0.15f);
-  addAnimation("PTSH_WEP", "DieRWep", 22, 25, 0.15f);
-  addAnimation("PTSH_WEP", "DieLWep", 22, 25, 0.15f);
   addAnimation("PTSH_WEP", "PlayerShootRWep", 26, 29, 0.06f);
   addAnimation("PTSH_WEP", "PlayerShootLWep", 26, 29, 0.06f);
 
 
   // Strings
-  animationStrings.push_back("IdleRWep");
-  animationStrings.push_back("IdleLWep");
-  animationStrings.push_back("WalkRWep");
-  animationStrings.push_back("WalkLWep");
-  animationStrings.push_back("FlyRWep");
-  animationStrings.push_back("FlyLWep");
-  animationStrings.push_back("AscendRWep");
-  animationStrings.push_back("AscendLWep");
-  animationStrings.push_back("FallRWep");
-  animationStrings.push_back("FallLWep");
-  animationStrings.push_back("DashRWep");
-  animationStrings.push_back("DashLWep");
-  animationStrings.push_back("DieRWep");
-  animationStrings.push_back("DieLWep");
-  animationStrings.push_back("PlayerShootRWep");
-  animationStrings.push_back("PlayerShootLWep");
+  animationStrings.push_back("IdleR");
+  animationStrings.push_back("IdleL");
+  animationStrings.push_back("WalkR");
+  animationStrings.push_back("WalkL");
+  animationStrings.push_back("FlyR");
+  animationStrings.push_back("FlyL");
+  animationStrings.push_back("AscendR");
+  animationStrings.push_back("AscendL");
+  animationStrings.push_back("FallR");
+  animationStrings.push_back("FallL");
+  animationStrings.push_back("ItemR");
+  animationStrings.push_back("ItemL");
+  animationStrings.push_back("Item2R");
+  animationStrings.push_back("Item2L");
 
   objectSprite = cocos2d::Sprite::create();
   objectSprite->setAnchorPoint(cocos2d::Point(0.5, 0.25));
@@ -111,7 +121,7 @@ bool PlayerObject::init() {
   objectSprite->retain();
 
   // ITEM POINTERS
-  setItem(E_RIFLE_ITEM);
+  setItem(E_NO_ITEM);
   /*setItem(E_DASH_ITEM);*/
   return true;
 }
@@ -130,12 +140,52 @@ void PlayerObject::walkAtDir(MovementDirectionX dir, std::string animName) {
 void PlayerObject::setItem(PlayerItem_ID id) {
   if (id == E_RIFLE_ITEM) {
     pItem = &PlayerObject::rifle_item; // note: <pt2Member> may also legally point to &DoMore
+    animationStrings.at(IdleR) = ("IdleRWep");
+    animationStrings.at(IdleL) = ("IdleLWep");
+    animationStrings.at(WalkR) = ("WalkRWep");
+    animationStrings.at(WalkL) = ("WalkLWep");
+    animationStrings.at(FlyR) = ("FlyRWep");
+    animationStrings.at(FlyL) = ("FlyLWep");
+    animationStrings.at(AscendR) = ("AscendRWep");
+    animationStrings.at(AscendL) = ("AscendLWep");
+    animationStrings.at(FallR) = ("FallRWep");
+    animationStrings.at(FallL) = ("FallLWep");
+    animationStrings.at(ItemR) = ("PlayerShootRWep");
+    animationStrings.at(ItemL) = ("PlayerShootLWep");
   }
   else if (id == E_DASH_ITEM) {
     pItem = &PlayerObject::playerDashUpdate;
+    animationStrings.at(IdleR) = ("IdleR");
+    animationStrings.at(IdleL) = ("IdleL");
+    animationStrings.at(WalkR) = ("WalkR");
+    animationStrings.at(WalkL) = ("WalkL");
+    animationStrings.at(FlyR) = ("FlyR");
+    animationStrings.at(FlyL) = ("FlyL");
+    animationStrings.at(AscendR) = ("AscendR");
+    animationStrings.at(AscendL) = ("AscendL");
+    animationStrings.at(FallR) = ("FallR");
+    animationStrings.at(FallL) = ("FallL");
+    animationStrings.at(ItemR) = ("DashChargeR");
+    animationStrings.at(ItemL) = ("DashChargeL");
+    animationStrings.at(Item2R) = ("DashR");
+    animationStrings.at(Item2L) = ("DashL");
   }
-
-
+  else if (id == E_NO_ITEM) {
+    pItem = &PlayerObject::no_item;
+    animationStrings.at(IdleR) = ("IdleR");
+    animationStrings.at(IdleL) = ("IdleL");
+    animationStrings.at(WalkR) = ("WalkR");
+    animationStrings.at(WalkL) = ("WalkL");
+    animationStrings.at(FlyR) = ("FlyR");
+    animationStrings.at(FlyL) = ("FlyL");
+    animationStrings.at(AscendR) = ("AscendR");
+    animationStrings.at(AscendL) = ("AscendL");
+    animationStrings.at(FallR) = ("FallR");
+    animationStrings.at(FallL) = ("FallL");
+  }
+  else {
+    assert(false); // The Requested item dont exsist
+  }
 }
 
 void PlayerObject::playerWalkUpdate(float delta) {
@@ -314,7 +364,7 @@ bool PlayerObject::playerDashUpdate(float delta) {
     setVelocityY(0);
     if (dashRightCnt > 0.5*dashTime) {
       setVelocityX(0);
-      setAnimation(animationStrings.at(DashR));
+      setAnimation(animationStrings.at(ItemR));
     }
     else {
       dash_stage++;
@@ -324,7 +374,7 @@ bool PlayerObject::playerDashUpdate(float delta) {
       if (fuel < 0) {
         fuel = 0;
       }
-      setAnimation(animationStrings.at(DieR));
+      setAnimation(animationStrings.at(Item2R));
     }
     if (dash_stage == 1) {
       jetpack1->stop();
@@ -336,7 +386,7 @@ bool PlayerObject::playerDashUpdate(float delta) {
     setVelocityY(0);
     if (dashLeftCnt > 0.5*dashTime) {
       setVelocityX(0);
-      setAnimation(animationStrings.at(DashL));
+      setAnimation(animationStrings.at(ItemL));
     }
     else {
       dash_stage++;
@@ -345,7 +395,7 @@ bool PlayerObject::playerDashUpdate(float delta) {
       if (fuel < 0) {
         fuel = 0;
       }
-      setAnimation(animationStrings.at(DieL));
+      setAnimation(animationStrings.at(Item2L));
       jetpack1->play(0.4, 0.7f);
     }
     if (dash_stage == 1) {
@@ -366,7 +416,7 @@ bool bPlayerShoot = false;
 bool PlayerObject::rifle_item(float delta) {
   if (playerInput->isDoubleRight() && !bPlayerShoot) {
     objectSprite->setScaleX(1);
-    setAnimationOnce(animationStrings.at(PlayerShootR));
+    setAnimationOnce(animationStrings.at(ItemR));
     //setVelocityX(0);
     setPrevDir(GO_RIGHT);
     auto babyTurf = SimpleBullet::create();
@@ -384,7 +434,7 @@ bool PlayerObject::rifle_item(float delta) {
   if (playerInput->isDoubleLeft() && !bPlayerShoot) {
     objectSprite->setScaleX(-1);
     //setVelocityX(0);
-    setAnimationOnce(animationStrings.at(PlayerShootL));
+    setAnimationOnce(animationStrings.at(ItemL));
     bPlayerShoot = true;
     setPrevDir(GO_LEFT);
     auto babyTurf = SimpleBullet::create();
@@ -401,13 +451,13 @@ bool PlayerObject::rifle_item(float delta) {
   }
   if (bPlayerShoot) {
     if (getPrevDir() == GO_RIGHT) {
-      if (setAnimationOnce(animationStrings.at(PlayerShootR))) {
+      if (setAnimationOnce(animationStrings.at(ItemR))) {
         bPlayerShoot = false;
         return false;
       }
     }
     else if (getPrevDir() == GO_LEFT) {
-      if (setAnimationOnce(animationStrings.at(PlayerShootL)))
+      if (setAnimationOnce(animationStrings.at(ItemL)))
       {
         bPlayerShoot = false;
         return false;
@@ -416,6 +466,10 @@ bool PlayerObject::rifle_item(float delta) {
     }
     return true;
   }
+  return false;
+}
+
+bool PlayerObject::no_item(float delta) {
   return false;
 }
 

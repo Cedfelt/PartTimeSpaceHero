@@ -20,6 +20,7 @@ public:
   PlayerInput* playerInput;
   float getFuel(void);
   float playerLookAhead;
+  virtual void setItem(PlayerItem_ID id);
 
 private:
   void playerWalkUpdate(float delta);
@@ -51,30 +52,17 @@ private:
     AscendL,
     FallR,
     FallL,
-    DashR,
-    DashL,
-    DieR,
-    DieL,
-    PlayerShootR,
-    PlayerShootL,
+    ItemR,
+    ItemL,
+    Item2R,
+    Item2L,
     AnimationCount
   };
 
   bool rifle_item(float);
   bool playerDashUpdate(float delta);
+  bool no_item(float delta);
   
   bool (PlayerObject::*pItem)(float);
-  enum PlayerItem_ID {
-  E_NO_ITEM,
-  E_RIFLE_ITEM,
-  E_DASH_ITEM
+
   };
-
-  void setItem(PlayerItem_ID id );
-  
-  
- 
-
-  
-  
-};

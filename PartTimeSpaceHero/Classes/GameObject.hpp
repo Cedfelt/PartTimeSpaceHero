@@ -96,6 +96,14 @@ public:
   float maxSpeedYDown;
   float modelPositionX;
   float modelPositionY;
+
+  enum PlayerItem_ID {
+    E_NO_ITEM,
+    E_RIFLE_ITEM,
+    E_DASH_ITEM,
+    E_ITEM_CNT
+  };
+  virtual void GameObject::setItem(PlayerItem_ID id);
 protected:
   int32_t goMovementStatus;
   std::string prevAnimation;
@@ -107,6 +115,10 @@ protected:
   
   bool affectedByGravity;
   float elastic;
+
+  
+  
+  
 };
 
 
@@ -145,3 +157,4 @@ enum E_Z_LEVELS {
   E_Z_LEVEL9,
   E_Z_LEVEL10,
 };
+

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="400" height="100" tilewidth="16" tileheight="16" nextobjectid="9">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="400" height="100" tilewidth="16" tileheight="16" nextobjectid="7">
  <properties>
   <property name="music_track" value="echo.mp3"/>
  </properties>
@@ -47,8 +47,6 @@
   <object id="4" name="BottyObject" x="198.715" y="807.512" width="12" height="25"/>
   <object id="5" name="BottyObject" x="311.424" y="801.761" width="12" height="25"/>
   <object id="6" name="ItemCreate" x="311" y="1334.5" width="12" height="25"/>
-  <object id="7" name="ItemCreate" x="658" y="1096.83" width="12" height="25"/>
-  <object id="8" name="ItemCreate" x="516.667" y="803.5" width="12" height="25"/>
  </objectgroup>
  <layer name="decoration3" width="400" height="100">
   <data encoding="base64">

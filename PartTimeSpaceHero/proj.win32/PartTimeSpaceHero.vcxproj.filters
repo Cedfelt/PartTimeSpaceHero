@@ -105,6 +105,9 @@
     <ClCompile Include="..\Classes\Simple_Bullet.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\ItemCreate.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -198,6 +201,9 @@
       <Filter>src</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\Simple_Bullet.hpp">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ItemCreate.hpp">
       <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>

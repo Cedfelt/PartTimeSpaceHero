@@ -20,6 +20,7 @@
 #include "DamageZone.hpp"
 #include "PlatformObject.hpp"
 #include "FlowerShootaObject.hpp"
+#include "ItemCreate.hpp"
 
 
 
@@ -222,6 +223,19 @@ void WorldObject::spawnObjects(cocos2d::Vector<GameObject*>* gameObjects) {
       coin->getPhysicsBody()->setCategoryBitmask((int)PhysicsCategory::PlayerPickups);
       coin->getPhysicsBody()->setCollisionBitmask((int)PhysicsCategory::None);
       coin->getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::Player|(int)PhysicsCategory::PlayerPickups|(int)PhysicsCategory::Hazard);
+      addChild(coin);
+    }
+
+    else if (name == "ItemCreate") {
+      // COIN
+      auto coin = ItemCreate::create();
+      coin->setupHitbox(0.1f, 1.0f, 32, 32, 32, 32, false);
+      gameObjects->pushBack(coin);
+      coin->setObjectPositionX(x);
+      coin->setObjectPositionY(y);
+      coin->getPhysicsBody()->setCategoryBitmask((int)PhysicsCategory::PlayerPickups);
+      coin->getPhysicsBody()->setCollisionBitmask((int)PhysicsCategory::None);
+      coin->getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::Player | (int)PhysicsCategory::PlayerPickups | (int)PhysicsCategory::Hazard);
       addChild(coin);
     }
     
