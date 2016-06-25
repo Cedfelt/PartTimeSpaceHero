@@ -62,6 +62,21 @@ bool GUI::init() {
     addChild(heartSprite[i], 1);
   }
 
+  // Money
+  auto coin = cocos2d::Sprite::create("coin.png");
+  coin->getTexture()->setAliasTexParameters();
+  coin->setScale(2);
+  coin->setAnchorPoint(Point(0.0f, 1.f));
+  coin->setPositionY((-128));
+  addChild(coin, 2);
+
+  Label* moneyLabel = Label::createWithTTF("0", "fonts/arial.ttf", 30);
+  moneyLabel->setAnchorPoint(Point(0.0f, 1.f));
+  moneyLabel->setPositionX(48);
+  moneyLabel->setPositionY(-128);
+  addChild(moneyLabel, 3);
+
+
   
 
   return true;
@@ -71,11 +86,11 @@ bool GUI::init() {
 void GUI::update(const float delta) {
   const float fule = player->getFuel();
   objectSprite->setScaleX(bar_length*player->getFuel());
-  objectSprite->setColor(Color3B::WHITE);
+  objectSprite->setColor(Color3B::GREEN);
   if(fule<0.5f){
     objectSprite->setColor(Color3B::YELLOW);
   }
-  if(fule<0.2f){
+  if(fule<0.3f){
     objectSprite->setColor(Color3B::RED);
   }
   
