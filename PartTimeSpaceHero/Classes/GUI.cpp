@@ -70,7 +70,7 @@ bool GUI::init() {
   coin->setPositionY((-128));
   addChild(coin, 2);
 
-  Label* moneyLabel = Label::createWithTTF("0", "fonts/arial.ttf", 30);
+  moneyLabel = Label::createWithTTF("0", "fonts/arial.ttf", 30);
   moneyLabel->setAnchorPoint(Point(0.0f, 1.f));
   moneyLabel->setPositionX(48);
   moneyLabel->setPositionY(-128);
@@ -94,6 +94,8 @@ void GUI::update(const float delta) {
     objectSprite->setColor(Color3B::RED);
   }
   
+  const std::string moneyString = std::to_string(player->getCoins());
+  moneyLabel->setString(moneyString);
   
   for (int i = 0;i < 3;i++) {
     if(i+1<=player->HP){

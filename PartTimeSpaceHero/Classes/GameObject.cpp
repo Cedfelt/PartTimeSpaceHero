@@ -190,6 +190,18 @@ float GameObject::getObjectPositionX(){
   return modelPositionX;
 }
 
+void GameObject::addCoins(uint32_t coinsToAdd) {
+  coins += coinsToAdd;
+}
+
+void GameObject::setCoins(uint32_t coinsSet) {
+  coins = coinsSet;
+}
+
+uint32_t GameObject::getCoins() {
+  return coins;
+}
+
 void GameObject::setObjectPositionY(const float y){
   
   modelPositionY = y;

@@ -19,6 +19,7 @@ public:
   CREATE_FUNC(GUI);
   PlayerObject* player;
   void update(const float delta);
+  Label* moneyLabel;
   Sprite* heartSprite[3];
 private:
 };

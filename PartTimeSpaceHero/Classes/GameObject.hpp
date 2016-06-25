@@ -41,6 +41,12 @@ public:
   virtual void imuneUpdate(const float delta);
   virtual void setImune();
   virtual bool isImune();
+
+  void addCoins(uint32_t coinsToAdd);
+  uint32_t GameObject::getCoins();
+  uint32_t coins;
+  void GameObject::setCoins(uint32_t coinsSet);
+
   float getElastic(void);
   void setElastic(const float bGrav);
   float getObjectPositionX();
