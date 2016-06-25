@@ -44,10 +44,10 @@ bool GUI::init() {
   objectSprite->getTexture()->setAliasTexParameters();
   addChild(objectSprite, 2);
 
-  Label* fuelLabel = Label::createWithTTF("FUEL", "fonts/arial.ttf", 25);
+  Label* fuelLabel = Label::createWithTTF("POWER", "fonts/PressStart2P.ttf", 20);
   fuelLabel->setAnchorPoint(Point(0.0f, 1.f));
-  fuelLabel->setPositionX(18 * bar_length / 2.0f);
-  fuelLabel->setPositionY(-2);
+  fuelLabel->setPositionX(9 * bar_length / 2.0f);
+  fuelLabel->setPositionY(-8);
   addChild(fuelLabel, 3);
 
   // Hearts
@@ -70,10 +70,10 @@ bool GUI::init() {
   coin->setPositionY((-128));
   addChild(coin, 2);
 
-  moneyLabel = Label::createWithTTF("0", "fonts/arial.ttf", 30);
+  moneyLabel = Label::createWithTTF("0", "fonts/PressStart2P.ttf", 28);
   moneyLabel->setAnchorPoint(Point(0.0f, 1.f));
   moneyLabel->setPositionX(48);
-  moneyLabel->setPositionY(-128);
+  moneyLabel->setPositionY(-134);
   addChild(moneyLabel, 3);
 
 
