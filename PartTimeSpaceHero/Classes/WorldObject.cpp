@@ -133,9 +133,10 @@ void WorldObject::updateWorld(float delta) {
     // Remove Objects
     if (gameObjects.at(i)->remove_object) {
       GameObject *removeObj = gameObjects.at(i);
+      /*removeObj->release();*/
       this->removeChild(gameObjects.at(i));
       gameObjects.eraseObject(removeObj);
-      removeObj->release();
+      
       continue;
     }
     
