@@ -331,7 +331,8 @@ bool dashingLeft = false;
 float dashLeftCnt = 0;
 float dashRightCnt = 0;
 float dashSpeed = 300;
-const float dashTime = 2.0f;
+const float dashTime = 1.0f;
+const float chargePart = 0.5f;
 int dash_stage = 0;
 
 bool PlayerObject::playerDashUpdate(float delta) {
@@ -362,7 +363,7 @@ bool PlayerObject::playerDashUpdate(float delta) {
   if (dashRightCnt > 0) {
 
     setVelocityY(0);
-    if (dashRightCnt > 0.5*dashTime) {
+    if (dashRightCnt > chargePart*dashTime) {
       setVelocityX(0);
       setAnimation(animationStrings.at(ItemR));
     }
@@ -384,7 +385,7 @@ bool PlayerObject::playerDashUpdate(float delta) {
   }
   if (dashLeftCnt > 0) {
     setVelocityY(0);
-    if (dashLeftCnt > 0.5*dashTime) {
+    if (dashLeftCnt > chargePart*dashTime) {
       setVelocityX(0);
       setAnimation(animationStrings.at(ItemL));
     }
@@ -425,7 +426,7 @@ bool PlayerObject::rifle_item(float delta) {
     babyTurf->setObjectPositionY(getPositionY() + 2);
     babyTurf->getPhysicsBody()->setCategoryBitmask((int)PhysicsCategory::Player);
     babyTurf->getPhysicsBody()->setCollisionBitmask((int)PhysicsCategory::None);
-    babyTurf->getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::Enemy);
+    babyTurf->getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::Enemy | (int)PhysicsCategory::PlayerPickups);
     addToGameObjects.pushBack(babyTurf);
     bPlayerShoot = true;
     babyTurf->setVelocityX(200);

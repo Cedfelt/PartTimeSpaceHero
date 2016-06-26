@@ -149,6 +149,7 @@ void WorldObject::updateWorld(float delta) {
       createSpawned = true;
       auto coin = ItemCreate::create();
       coin->setupHitbox(0.1f, 1.0f, 32, 32, 32, 32, false);
+      coin->target = player;
       gameObjects.pushBack(coin);
       coin->setObjectPositionX(player->getObjectPositionX());
       coin->setObjectPositionY(player->getObjectPositionY()+128);

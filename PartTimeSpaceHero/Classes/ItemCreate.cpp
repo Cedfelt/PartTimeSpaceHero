@@ -7,6 +7,7 @@
 //
 
 #include "ItemCreate.hpp"
+#include "ItemObject.hpp"
 
 bool ItemCreate::init() {
   //////////////////////////////
@@ -36,14 +37,47 @@ bool ItemCreate::init() {
 
 void ItemCreate::colideWith(GameObject* otherGo,const uint32_t otherType){
   if(otherType&(uint32_t)PhysicsCategory::Player){
+    otherGo->setVelocityY(otherGo->getVelocityY()*-1.0);
+    otherGo->setVelocityX(otherGo->getVelocityX()*-1.0f);
+    if(otherGo->getVelocityY()== 0.0f){
+      otherGo->setVelocityY(50);
+    }
     remove_object = true;
-    pling->play(0.18f);
-    const uint32_t itemId = cocos2d::random(1, (int)(E_ITEM_CNT)-1);
-    otherGo->setItem((PlayerItem_ID)itemId);
+    //pling->play(0.18f);
+//    const uint32_t itemId = cocos2d::random(1, (int)(E_ITEM_CNT)-1);
+//    otherGo->setItem((PlayerItem_ID)itemId);
+    auto coin = ItemObject::create();
+    coin->setupHitbox(0.1f, 1.0f, 16, 16, 16, 16, false);
+    addToGameObjects.pushBack(coin);
+    coin->setObjectPositionX(getObjectPositionX());
+    coin->setObjectPositionY(getObjectPositionY()+4);
+    coin->getPhysicsBody()->setCategoryBitmask((int)PhysicsCategory::PlayerPickups);
+    coin->getPhysicsBody()->setCollisionBitmask((int)PhysicsCategory::None);
+    coin->getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::Player | (int)PhysicsCategory::Hazard);
+    
+    
   }
   
 }
 
 void ItemCreate::update(const float delta) {
-  
+//  deltaX = getObjectPositionX() - lastX;
+//  deltaY = getObjectPositionY() - lastY;
+//  auto h = getHitbox();
+//  Rect extRect;
+//  extRect.setRect(h->getMinX(),h->getMinY(),h->getMaxX()-h->getMinX(), h->getMaxY() - h->getMinY());
+//  if (target->getHitbox()->intersectsRect(extRect)) {
+//    target->moveX = (deltaX);
+//    target->moveY = (deltaY);
+//  }
+//  else{
+//    target->addGravityToObject(true);
+//  }
+}
+
+
+
+bool ItemCreate::isBlocked(Rect* playerRect){
+  auto platformRect = getHitbox();
+  return playerRect->intersectsRect(*platformRect);
 }

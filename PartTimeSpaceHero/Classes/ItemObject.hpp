@@ -11,13 +11,13 @@
 #include "SoundFx.hpp"
 
 using namespace cocos2d;
-class ItemCreate : public GameObject {
+class ItemObject : public GameObject {
 public:
   virtual bool init();
   virtual void colideWith(GameObject* oterhObj,const uint32_t otherType);
-  CREATE_FUNC(ItemCreate);
+  CREATE_FUNC(ItemObject);
   SoundFx* pling;
-  bool isBlocked(Rect* playerRect);
+  
   void update(const float delta);
 private:
 };
