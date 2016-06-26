@@ -26,7 +26,7 @@ bool ItemCreate::init() {
   addChild(pling);
   objectSprite = cocos2d::Sprite::create("item_create.png");
   objectSprite->getTexture()->setAliasTexParameters();
-  objectSprite->setPosition(32/2, 32/2);// Aling sprite in Hitbox
+  objectSprite->setPosition(32/2, 32/2 + 32);// Aling sprite in Hitbox
   addChild(objectSprite);
   const float xVel = cocos2d::random(-50, 50);
   setVelocityX(0);

@@ -151,7 +151,7 @@ void WorldObject::updateWorld(float delta) {
       coin->setupHitbox(0.1f, 1.0f, 32, 32, 32, 32, false);
       gameObjects.pushBack(coin);
       coin->setObjectPositionX(player->getObjectPositionX());
-      coin->setObjectPositionY(player->getObjectPositionY()+96);
+      coin->setObjectPositionY(player->getObjectPositionY()+128);
       coin->getPhysicsBody()->setCategoryBitmask((int)PhysicsCategory::PlayerPickups);
       coin->getPhysicsBody()->setCollisionBitmask((int)PhysicsCategory::None);
       coin->getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::Player | (int)PhysicsCategory::PlayerPickups | (int)PhysicsCategory::Hazard);
