@@ -1,0 +1,10 @@
+TODO KARIN
+
+Color
+Glider
+Colision Types ex player playerProjectile, hazards, items etc
+ColisionProfiles ex #define Enemy mask = ( Player || Hazards || Projectile)
+Intro to c++
+Practice Some simple game frome scratch
+Goat Iteme lol
+Come up with a new item ex granade 

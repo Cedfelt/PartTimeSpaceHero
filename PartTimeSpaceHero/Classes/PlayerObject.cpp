@@ -331,8 +331,8 @@ bool dashingLeft = false;
 float dashLeftCnt = 0;
 float dashRightCnt = 0;
 float dashSpeed = 300;
-const float dashTime = 1.0f;
-const float chargePart = 0.5f;
+const float dashTime = 0.6f;
+const float chargePart = 0.75f;
 int dash_stage = 0;
 
 bool PlayerObject::playerDashUpdate(float delta) {
@@ -424,7 +424,7 @@ bool PlayerObject::rifle_item(float delta) {
     babyTurf->setupHitbox(0.1f, 1.0f, 16, 16, 16, 16, false);
     babyTurf->setObjectPositionX(getPositionX() + 10);
     babyTurf->setObjectPositionY(getPositionY() + 2);
-    babyTurf->getPhysicsBody()->setCategoryBitmask((int)PhysicsCategory::Player);
+    babyTurf->getPhysicsBody()->setCategoryBitmask((int)PhysicsCategory::PlayerProjectile);
     babyTurf->getPhysicsBody()->setCollisionBitmask((int)PhysicsCategory::None);
     babyTurf->getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::Enemy | (int)PhysicsCategory::PlayerPickups);
     addToGameObjects.pushBack(babyTurf);
@@ -434,17 +434,16 @@ bool PlayerObject::rifle_item(float delta) {
   }
   if (playerInput->isDoubleLeft() && !bPlayerShoot) {
     objectSprite->setScaleX(-1);
+    setAnimationOnce(animationStrings.at(ItemR));
     //setVelocityX(0);
-    setAnimationOnce(animationStrings.at(ItemL));
-    bPlayerShoot = true;
-    setPrevDir(GO_LEFT);
+    setPrevDir(GO_RIGHT);
     auto babyTurf = SimpleBullet::create();
     babyTurf->setupHitbox(0.1f, 1.0f, 16, 16, 16, 16, false);
     babyTurf->setObjectPositionX(getPositionX() - 20);
     babyTurf->setObjectPositionY(getPositionY() + 2);
-    babyTurf->getPhysicsBody()->setCategoryBitmask((int)PhysicsCategory::Player);
+    babyTurf->getPhysicsBody()->setCategoryBitmask((int)PhysicsCategory::PlayerProjectile);
     babyTurf->getPhysicsBody()->setCollisionBitmask((int)PhysicsCategory::None);
-    babyTurf->getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::Enemy);
+    babyTurf->getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::Enemy | (int)PhysicsCategory::PlayerPickups);
     addToGameObjects.pushBack(babyTurf);
     bPlayerShoot = true;
     babyTurf->setVelocityX(-200);

@@ -131,11 +131,12 @@ protected:
 
 enum class PhysicsCategory {
   None = 0,
-  Player = (1 << 0),    // 1
+  Player = (1 << 0),// 1
   PlayerPickups = (1 << 1), // 2
   Goal = (1 << 2),
   Hazard = (1 << 3),
   Enemy = (1 << 4),
+  PlayerProjectile = (1 << 5),
   All = 0xff // 3
 };
 

@@ -355,8 +355,6 @@
 		46880B8319C43A87006E1F66 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				A8229BC61D202960006DDAD7 /* ItemObject.cpp */,
-				A8229BC71D202960006DDAD7 /* ItemObject.hpp */,
 				46880B8419C43A87006E1F66 /* AppDelegate.cpp */,
 				46880B8519C43A87006E1F66 /* AppDelegate.h */,
 				A82561031CFB167400FC1DD3 /* BabyTurfelObject.cpp */,
@@ -385,6 +383,8 @@
 				46880B8719C43A87006E1F66 /* HelloWorldScene.h */,
 				A800448C1D1FD5B2003A11A1 /* ItemCreate.cpp */,
 				A800448D1D1FD5B2003A11A1 /* ItemCreate.hpp */,
+				A8229BC61D202960006DDAD7 /* ItemObject.cpp */,
+				A8229BC71D202960006DDAD7 /* ItemObject.hpp */,
 				A81BE1591CBA424600C09359 /* LaserObject.cpp */,
 				A81BE15A1CBA424600C09359 /* LaserObject.hpp */,
 				A825610F1CFCD65200FC1DD3 /* LevelData.cpp */,
