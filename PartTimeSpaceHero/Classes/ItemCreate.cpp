@@ -19,7 +19,7 @@ bool ItemCreate::init() {
   this->schedule(schedule_selector(ItemCreate::update));
   //addGravityToObject(false);
   setElastic(0.f);
-  addGravityToObject(true);
+  addGravityToObject(false);
   // SETUP ANIMATIONS
   pling = SoundFx::create();
   pling->loadEffect("pling.aif", 0, 1, false);
@@ -30,6 +30,7 @@ bool ItemCreate::init() {
   addChild(objectSprite);
   const float xVel = cocos2d::random(-50, 50);
   setVelocityX(0);
+  setVelocityY(-25);
   return true;
 }
 
@@ -44,5 +45,5 @@ void ItemCreate::colideWith(GameObject* otherGo,const uint32_t otherType){
 }
 
 void ItemCreate::update(const float delta) {
-
+  
 }

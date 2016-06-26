@@ -37,7 +37,7 @@ bool FlowerShootaObject::init() {
   return true;
 }
 
-const float yForce = 160;
+const float yForce = 250;
 const float rangeX = 200;
 const float rangeY = -3;
 void FlowerShootaObject::update(const float delta) {

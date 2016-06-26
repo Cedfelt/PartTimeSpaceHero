@@ -80,6 +80,7 @@ const float delta_max = 120;
 float new_delta = 1.0 / 60.0;
 float lastX;
 float lastY;
+bool createSpawned = false;
 void WorldObject::updateWorld(float delta) {
   if(delta_cnt ==delta_max){
     delta_cnt = 0;
@@ -141,6 +142,27 @@ void WorldObject::updateWorld(float delta) {
     }
     
   }
+
+  // Spawn
+  if ((player->getCoins() % 2 == 0) && (player->getCoins()>0)) {
+    if (!createSpawned) {
+      createSpawned = true;
+      auto coin = ItemCreate::create();
+      coin->setupHitbox(0.1f, 1.0f, 32, 32, 32, 32, false);
+      gameObjects.pushBack(coin);
+      coin->setObjectPositionX(player->getObjectPositionX());
+      coin->setObjectPositionY(player->getObjectPositionY()+96);
+      coin->getPhysicsBody()->setCategoryBitmask((int)PhysicsCategory::PlayerPickups);
+      coin->getPhysicsBody()->setCollisionBitmask((int)PhysicsCategory::None);
+      coin->getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::Player | (int)PhysicsCategory::PlayerPickups | (int)PhysicsCategory::Hazard);
+      addChild(coin);
+
+    }
+  }
+  else {
+    createSpawned = false;
+  }
+
   delta_cnt += 1;
 }
 
