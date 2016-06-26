@@ -46,7 +46,9 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "72"
-            endingLineNumber = "72">
+            endingLineNumber = "72"
+            landmarkName = "WorldObject::init()"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -76,9 +78,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "331"
-            endingLineNumber = "331"
-            landmarkName = "PlayerObject::playerDashUpdate(float delta)"
-            landmarkType = "5">
+            endingLineNumber = "331">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -93,7 +93,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "439"
             endingLineNumber = "439"
-            landmarkName = "PlayerObject::playerUpdate(const float delta)"
+            landmarkName = "PlayerObject::rifle_item(float delta)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -141,7 +141,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "157"
             endingLineNumber = "157"
-            landmarkName = "PlayerObject::playerFallUpdate(float delta)"
+            landmarkName = "PlayerObject::setItem(PlayerItem_ID id)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -157,7 +157,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "149"
             endingLineNumber = "149"
-            landmarkName = "PlayerObject::playerWalkUpdate(float delta)"
+            landmarkName = "PlayerObject::setItem(PlayerItem_ID id)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -253,7 +253,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "192"
             endingLineNumber = "192"
-            landmarkName = "PlayerObject::playerFlyUpdate(float delta)"
+            landmarkName = "PlayerObject::playerWalkUpdate(float delta)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -365,7 +365,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "207"
             endingLineNumber = "207"
-            landmarkName = "PlayerObject::playerFlyUpdate(float delta)"
+            landmarkName = "PlayerObject::playerWalkUpdate(float delta)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -380,9 +380,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "190"
-            endingLineNumber = "190"
-            landmarkName = "PlayerObject::playerFlyUpdate(float delta)"
-            landmarkType = "5">
+            endingLineNumber = "190">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -397,7 +395,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "216"
             endingLineNumber = "216"
-            landmarkName = "PlayerObject::playerFlyUpdate(float delta)"
+            landmarkName = "PlayerObject::fallAtDir(MovementDirectionX dir, std::string animName)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -413,7 +411,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "328"
             endingLineNumber = "328"
-            landmarkName = "PlayerObject::playerDashUpdate(float delta)"
+            landmarkName = "PlayerObject::playerFlyUpdate(float delta)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -509,7 +507,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "181"
             endingLineNumber = "181"
-            landmarkName = "PlayerObject::playerFlyUpdate(float delta)"
+            landmarkName = "PlayerObject::setItem(PlayerItem_ID id)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -525,7 +523,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "184"
             endingLineNumber = "184"
-            landmarkName = "PlayerObject::playerFlyUpdate(float delta)"
+            landmarkName = "PlayerObject::setItem(PlayerItem_ID id)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -541,7 +539,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "180"
             endingLineNumber = "180"
-            landmarkName = "PlayerObject::playerFlyUpdate(float delta)"
+            landmarkName = "PlayerObject::setItem(PlayerItem_ID id)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -557,7 +555,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "276"
             endingLineNumber = "276"
-            landmarkName = "PlayerObject::playerDashUpdate(float delta)"
+            landmarkName = "PlayerObject::playerFlyUpdate(float delta)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -573,7 +571,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "294"
             endingLineNumber = "294"
-            landmarkName = "PlayerObject::playerDashUpdate(float delta)"
+            landmarkName = "PlayerObject::playerFlyUpdate(float delta)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -589,7 +587,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "174"
             endingLineNumber = "174"
-            landmarkName = "PlayerObject::flyAtDir(MovementDirectionX dir,std::string animName)"
+            landmarkName = "PlayerObject::setItem(PlayerItem_ID id)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -715,7 +713,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "237"
             endingLineNumber = "237"
-            landmarkName = "PlayerObject::playerFlyUpdate(float delta)"
+            landmarkName = "PlayerObject::flyAtDir(MovementDirectionX dir, std::string animName)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -731,7 +729,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "238"
             endingLineNumber = "238"
-            landmarkName = "PlayerObject::playerFlyUpdate(float delta)"
+            landmarkName = "PlayerObject::flyAtDir(MovementDirectionX dir, std::string animName)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -763,7 +761,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "203"
             endingLineNumber = "203"
-            landmarkName = "PlayerObject::playerFlyUpdate(float delta)"
+            landmarkName = "PlayerObject::playerWalkUpdate(float delta)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -779,7 +777,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "229"
             endingLineNumber = "229"
-            landmarkName = "PlayerObject::playerFlyUpdate(float delta)"
+            landmarkName = "PlayerObject::playerFallUpdate(float delta)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -955,7 +953,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "452"
             endingLineNumber = "452"
-            landmarkName = "PlayerObject::playerUpdate(const float delta)"
+            landmarkName = "PlayerObject::rifle_item(float delta)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1019,7 +1017,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "182"
             endingLineNumber = "182"
-            landmarkName = "PlayerObject::playerFlyUpdate(float delta)"
+            landmarkName = "PlayerObject::setItem(PlayerItem_ID id)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1035,7 +1033,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "186"
             endingLineNumber = "186"
-            landmarkName = "PlayerObject::playerFlyUpdate(float delta)"
+            landmarkName = "PlayerObject::setItem(PlayerItem_ID id)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1051,7 +1049,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "185"
             endingLineNumber = "185"
-            landmarkName = "PlayerObject::playerFlyUpdate(float delta)"
+            landmarkName = "PlayerObject::setItem(PlayerItem_ID id)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1386,7 +1384,9 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "182"
-            endingLineNumber = "182">
+            endingLineNumber = "182"
+            landmarkName = "WorldObject::setViewPointCenter(const cocos2d::Point position)"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1449,7 +1449,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "183"
             endingLineNumber = "183"
-            landmarkName = "WorldObject::spawnObjects(cocos2d::Vector&lt;GameObject*&gt;* gameObjects)"
+            landmarkName = "WorldObject::setViewPointCenter(const cocos2d::Point position)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1465,7 +1465,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "181"
             endingLineNumber = "181"
-            landmarkName = "WorldObject::onContactBegan(PhysicsContact &amp;contact)"
+            landmarkName = "WorldObject::setViewPointCenter(const cocos2d::Point position)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1481,7 +1481,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "160"
             endingLineNumber = "160"
-            landmarkName = "WorldObject::setViewPointCenter(const cocos2d::Point position)"
+            landmarkName = "WorldObject::updateWorld(float delta)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1767,7 +1767,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "394"
             endingLineNumber = "394"
-            landmarkName = "PlayerObject::playerShoot(float delta)"
+            landmarkName = "PlayerObject::playerDashUpdate(float delta)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1783,7 +1783,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "356"
             endingLineNumber = "356"
-            landmarkName = "PlayerObject::playerShoot(float delta)"
+            landmarkName = "PlayerObject::playerDashUpdate(float delta)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1989,7 +1989,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "388"
             endingLineNumber = "388"
-            landmarkName = "PlayerObject::playerShoot(float delta)"
+            landmarkName = "PlayerObject::playerDashUpdate(float delta)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2005,7 +2005,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "41"
             endingLineNumber = "41"
-            landmarkName = "CoinObject::ColideWith(GameObject* otherGo,const uint32_t otherType)"
+            landmarkName = "CoinObject::colideWith(GameObject* otherGo,const uint32_t otherType)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

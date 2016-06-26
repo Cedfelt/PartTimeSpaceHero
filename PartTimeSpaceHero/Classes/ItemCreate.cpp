@@ -22,7 +22,7 @@ bool ItemCreate::init() {
   addGravityToObject(false);
   // SETUP ANIMATIONS
   pling = SoundFx::create();
-  pling->loadEffect("pling.aif", 0, 1, false);
+  pling->loadEffect("pickup.aif", 0, 1, false);
   addChild(pling);
   objectSprite = cocos2d::Sprite::create("item_create.png");
   objectSprite->getTexture()->setAliasTexParameters();
@@ -37,7 +37,7 @@ bool ItemCreate::init() {
 void ItemCreate::colideWith(GameObject* otherGo,const uint32_t otherType){
   if(otherType&(uint32_t)PhysicsCategory::Player){
     remove_object = true;
-    pling->play(0.5f);
+    pling->play(0.18f);
     const uint32_t itemId = cocos2d::random(1, (int)(E_ITEM_CNT)-1);
     otherGo->setItem((PlayerItem_ID)itemId);
   }

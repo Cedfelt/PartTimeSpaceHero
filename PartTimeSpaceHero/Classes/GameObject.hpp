@@ -43,9 +43,9 @@ public:
   virtual bool isImune();
 
   void addCoins(uint32_t coinsToAdd);
-  uint32_t GameObject::getCoins();
+  uint32_t getCoins();
   uint32_t coins;
-  void GameObject::setCoins(uint32_t coinsSet);
+  void setCoins(uint32_t coinsSet);
 
   float getElastic(void);
   void setElastic(const float bGrav);
@@ -109,7 +109,7 @@ public:
     E_DASH_ITEM,
     E_ITEM_CNT
   };
-  virtual void GameObject::setItem(PlayerItem_ID id);
+  virtual void setItem(PlayerItem_ID id);
 protected:
   int32_t goMovementStatus;
   std::string prevAnimation;
