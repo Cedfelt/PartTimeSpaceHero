@@ -16,7 +16,7 @@ bool ItemCreate::init() {
   {
     return false;
   }
-  
+  landed = false;
   this->schedule(schedule_selector(ItemCreate::update));
   //addGravityToObject(false);
   setElastic(0.f);
@@ -25,13 +25,23 @@ bool ItemCreate::init() {
   pling = SoundFx::create();
   pling->loadEffect("small_explosion.aif", 0, 1, false);
   addChild(pling);
-  objectSprite = cocos2d::Sprite::create("item_create.png");
-  objectSprite->getTexture()->setAliasTexParameters();
-  objectSprite->setPosition(32/2, 32/2 + 32);// Aling sprite in Hitbox
-  addChild(objectSprite);
+  
+  //objectSprite->getTexture()->setAliasTexParameters();
+  
   const float xVel = cocos2d::random(-50, 50);
   setVelocityX(0);
   setVelocityY(-25);
+  
+  // Animation
+  objectSprite = cocos2d::Sprite::create();
+  spriteFrameCache = spriteFrameCache->getInstance();
+  animationCache = animationCache->getInstance();
+  spriteFrameCache->addSpriteFramesWithFile("crate.plist");
+  addAnimation("crate", "crate_fall", 1, 1, 5.0f);
+  addAnimation("crate", "crate_land", 1, 5, 0.2f);
+  setAnimation("crate_fall");
+  objectSprite->setPosition(32/2, 32/2 + 32);// Aling sprite in Hitbox
+  addChild(objectSprite);
   return true;
 }
 
@@ -76,6 +86,10 @@ void ItemCreate::update(const float delta) {
 //  else{
 //    target->addGravityToObject(true);
 //  }
+  if(getVelocityY() == 0 && !landed){
+    setAnimationOnce("crate_land");
+    landed = true;
+  }
 }
 
 
