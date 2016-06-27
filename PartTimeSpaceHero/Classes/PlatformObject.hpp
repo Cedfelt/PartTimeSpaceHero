@@ -26,6 +26,10 @@ public:
   CREATE_FUNC(PlatformObject);
   bool isBlocked(Rect* playerRect);
   SoundFx* pling;
+  bool bObs;
+  void setOnBoardStart(bool started);
+  bool bStarted;
+  void start(bool start);
   
   
   void update(const float delta);

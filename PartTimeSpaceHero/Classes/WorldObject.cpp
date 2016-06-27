@@ -81,14 +81,17 @@ float new_delta = 1.0 / 60.0;
 float lastX;
 float lastY;
 bool createSpawned = false;
+bool giveObject = false;
 int playerSafe = 0;
 
 void WorldObject::updateWorld(float delta) {
   
   // Spawn
-  if ((player->getCoins() % 10 == 0) && (player->getCoins()>0)) {
+  if (((player->getCoins() % 7 == 0) && (player->getCoins()>0) )|| (giveObject &&!createSpawned) ) {
     playerSafe += player->isSafe();
+    giveObject = true;
     if (!createSpawned&&playerSafe>5) {
+      giveObject = false;
       createSpawned = true;
       auto coin = ItemCreate::create();
       coin->setupHitbox(0.1f, 1.0f, 32, 32, 32, 32, false);
@@ -104,6 +107,7 @@ void WorldObject::updateWorld(float delta) {
     }
   }
   else {
+    giveObject = false;
     playerSafe = 0;
     createSpawned = false;
   }
@@ -161,7 +165,9 @@ void WorldObject::updateWorld(float delta) {
     // Remove Objects
     if (gameObjects.at(i)->remove_object) {
       GameObject *removeObj = gameObjects.at(i);
-      /*removeObj->release();*/
+#ifndef WIN32
+      removeObj->release();
+#endif
       this->removeChild(gameObjects.at(i));
       gameObjects.eraseObject(removeObj);
       
@@ -374,6 +380,8 @@ void WorldObject::spawnObjects(cocos2d::Vector<GameObject*>* gameObjects) {
       botty->getPhysicsBody()->setCollisionBitmask((int)PhysicsCategory::None);
       botty->getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::None);
       botty->dmg = vm["dmg"].asInt();
+      botty->setOnBoardStart(vm["onboard_start"].asBool());
+      botty->start(!vm["onboard_start"].asBool());
       botty->target = player;
       plattis.pushBack(botty);
       addChild(botty,3);

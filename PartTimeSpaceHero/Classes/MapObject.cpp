@@ -54,7 +54,7 @@ void MapObject::setupBackgroundLayers(){
   int cnt = 0;// Make the scala an atribute of the layer!!!
   while (bg != NULL) {
     if(cnt == 0){
-      bg->setScale(2);
+      bg->setScale(1);
     }
     cnt++;
     background_layers.pushBack(bg);
