@@ -41,6 +41,7 @@ public:
   virtual void imuneUpdate(const float delta);
   virtual void setImune();
   virtual bool isImune();
+  virtual bool isSafe();
 
   void addCoins(uint32_t coinsToAdd);
   uint32_t getCoins();

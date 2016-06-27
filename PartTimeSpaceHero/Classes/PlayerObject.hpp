@@ -21,6 +21,7 @@ public:
   float getFuel(void);
   float playerLookAhead;
   virtual void setItem(PlayerItem_ID id);
+  virtual bool isSafe();
 
 private:
   void playerWalkUpdate(float delta);
@@ -62,6 +63,7 @@ private:
   bool rifle_item(float);
   bool playerDashUpdate(float delta);
   bool no_item(float delta);
+  
   
   bool (PlayerObject::*pItem)(float);
 

@@ -81,7 +81,34 @@ float new_delta = 1.0 / 60.0;
 float lastX;
 float lastY;
 bool createSpawned = false;
+int playerSafe = 0;
+
 void WorldObject::updateWorld(float delta) {
+  
+  // Spawn
+  if ((player->getCoins() % 10 == 0) && (player->getCoins()>0)) {
+    playerSafe += player->isSafe();
+    if (!createSpawned&&playerSafe>5) {
+      createSpawned = true;
+      auto coin = ItemCreate::create();
+      coin->setupHitbox(0.1f, 1.0f, 32, 32, 32, 32, false);
+      coin->target = player;
+      gameObjects.pushBack(coin);
+      coin->setObjectPositionX(player->getObjectPositionX());
+      coin->setObjectPositionY(player->getObjectPositionY() + 128);
+      coin->getPhysicsBody()->setCategoryBitmask((int)PhysicsCategory::PlayerPickups);
+      coin->getPhysicsBody()->setCollisionBitmask((int)PhysicsCategory::None);
+      coin->getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::Player | (int)PhysicsCategory::PlayerProjectile | (int)PhysicsCategory::Hazard);
+      addChild(coin);
+
+    }
+  }
+  else {
+    playerSafe = 0;
+    createSpawned = false;
+  }
+  
+  
   if(delta_cnt ==delta_max){
     delta_cnt = 0;
     //new_delta = int_delta / (delta_max-1);
@@ -143,26 +170,7 @@ void WorldObject::updateWorld(float delta) {
     
   }
 
-  // Spawn
-  if ((player->getCoins() % 2 == 0) && (player->getCoins()>0)) {
-    if (!createSpawned) {
-      createSpawned = true;
-      auto coin = ItemCreate::create();
-      coin->setupHitbox(0.1f, 1.0f, 32, 32, 32, 32, false);
-      coin->target = player;
-      gameObjects.pushBack(coin);
-      coin->setObjectPositionX(player->getObjectPositionX());
-      coin->setObjectPositionY(player->getObjectPositionY()+128);
-      coin->getPhysicsBody()->setCategoryBitmask((int)PhysicsCategory::PlayerPickups);
-      coin->getPhysicsBody()->setCollisionBitmask((int)PhysicsCategory::None);
-      coin->getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::Player | (int)PhysicsCategory::PlayerProjectile | (int)PhysicsCategory::Hazard);
-      addChild(coin);
-
-    }
-  }
-  else {
-    createSpawned = false;
-  }
+  
 
   delta_cnt += 1;
 }

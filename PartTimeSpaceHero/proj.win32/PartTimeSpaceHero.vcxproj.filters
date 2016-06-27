@@ -108,6 +108,9 @@
     <ClCompile Include="..\Classes\ItemCreate.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\ItemObject.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -204,6 +207,9 @@
       <Filter>src</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\ItemCreate.hpp">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ItemObject.hpp">
       <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>

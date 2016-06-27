@@ -188,6 +188,16 @@ void PlayerObject::setItem(PlayerItem_ID id) {
   }
 }
 
+bool PlayerObject::isSafe() {
+  if (getVelocityY() != 0) {
+    return false;
+  }
+  if (platform) {
+    return false;
+  }
+  return true;
+}
+
 void PlayerObject::playerWalkUpdate(float delta) {
   if (getMovementStatus() != GO_ON_GROUND) {
     return; // Flying

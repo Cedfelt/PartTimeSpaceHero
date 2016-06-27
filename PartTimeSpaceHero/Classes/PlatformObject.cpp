@@ -60,11 +60,12 @@ void PlatformObject::update(const float delta) {
   cnt+=delta;
   auto h = getHitbox();
   Rect extRect;
-  extRect.setRect(h->getMinX(),h->getMinY(),h->getMaxX()-h->getMinX(), h->getMaxY() - h->getMinY()+10);
+  extRect.setRect(h->getMinX(),h->getMinY(),h->getMaxX()-h->getMinX(), h->getMaxY() - h->getMinY()+2);
   if (target->getHitbox()->intersectsRect(extRect)) {
     target->moveX = (deltaX);
     target->moveY = (deltaY);
-    target->addGravityToObject(false);
+    /*target->addGravityToObject(false);*/
+    target->platform = true;
   }
   else{
     target->addGravityToObject(true);

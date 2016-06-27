@@ -209,6 +209,10 @@ void GameObject::setObjectPositionY(const float y){
   setPositionY(y);
 }
 
+bool GameObject::isSafe() {
+  return true;
+}
+
 float GameObject::getObjectPositionY(){
   return modelPositionY;
 }
