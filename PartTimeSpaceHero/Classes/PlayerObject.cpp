@@ -36,8 +36,27 @@ bool PlayerObject::init() {
 
   //Animations
   //-
+
+  spriteFrameCache->addSpriteFramesWithFile("mech.plist");
+  const float animSpeed = 0.180;
+  addAnimation("mech", "IdleR", 2, 2, animSpeed);
+  addAnimation("mech", "IdleL", 2, 2, animSpeed);
+  addAnimation("mech", "WalkR", 1, 4, animSpeed);
+  addAnimation("mech", "WalkL", 1, 4, animSpeed);
+  addAnimation("mech", "FlyR", 1, 1, animSpeed);
+  addAnimation("mech", "FlyL", 3, 3, animSpeed);
+  addAnimation("mech", "AscendR", 1, 1, animSpeed);
+  addAnimation("mech", "AscendL", 3, 3, animSpeed);
+  addAnimation("mech", "FallR", 1, 1, animSpeed);
+  addAnimation("mech", "FallL", 3, 3, animSpeed);
+  addAnimation("mech", "DashChargeR", 1, 4, animSpeed);
+  addAnimation("mech", "DashChargeL", 1, 4, animSpeed);
+  addAnimation("mech", "DashR", 1, 4, animSpeed);
+  addAnimation("mech", "DashL", 1, 4, animSpeed);
+
+
   spriteFrameCache->addSpriteFramesWithFile("ptsh.plist");
-  addAnimation("PTSH", "IdleR", 1, 4, 0.2f);
+  /*addAnimation("PTSH", "IdleR", 1, 4, 0.2f);
   addAnimation("PTSH", "IdleL", 1, 4, 0.2f);
   addAnimation("PTSH", "WalkR", 5, 8, 0.15f);
   addAnimation("PTSH", "WalkL", 5, 8, 0.15f);
@@ -50,7 +69,7 @@ bool PlayerObject::init() {
   addAnimation("PTSH", "DashChargeR", 18, 21, 0.15f);
   addAnimation("PTSH", "DashChargeL", 18, 21, 0.15f);
   addAnimation("PTSH", "DashR", 22, 25, 0.15f);
-  addAnimation("PTSH", "DashL", 22, 25, 0.15f);
+  addAnimation("PTSH", "DashL", 22, 25, 0.15f);*/
   
 
   // Strings
@@ -95,7 +114,7 @@ bool PlayerObject::init() {
 
   objectSprite = cocos2d::Sprite::create();
   objectSprite->setAnchorPoint(cocos2d::Point(0.5, 0.25));
-  objectSprite->setPosition(8, -64);// Aling sprite in Hitbox
+  objectSprite->setPosition(8, -128);// Aling sprite in Hitbox
   setAnimation(animationStrings.at((WalkR)));
   //addChild(objectSprite);
 
@@ -489,7 +508,7 @@ bool PlayerObject::no_item(float delta) {
 
 void PlayerObject::playerUpdate(const float delta) {
   solid = true;
-  objectSprite->setPosition(cocos2d::Point((modelPositionX)+4, (modelPositionY)));
+  objectSprite->setPosition(cocos2d::Point((modelPositionX)+4, (modelPositionY + 24)));
   // Update priority
 
   if ((*this.*pItem)(delta)) {
