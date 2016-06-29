@@ -187,12 +187,16 @@ void PlayerObject::setItem(PlayerItem_ID id) {
     assert(false); // The Requested item dont exsist
   }
 }
-
+bool dashingRight = false;
+bool dashingLeft = false;
 bool PlayerObject::isSafe() {
   if (getVelocityY() != 0) {
     return false;
   }
   if (platform) {
+    return false;
+  }
+  if (dashingLeft||dashingRight) {
     return false;
   }
   return true;
@@ -336,8 +340,7 @@ bool PlayerObject::playerFlyUpdate(float delta) {
   }
   return module_active;
 }
-bool dashingRight = false;
-bool dashingLeft = false;
+
 float dashLeftCnt = 0;
 float dashRightCnt = 0;
 float dashSpeed = 300;
@@ -550,7 +553,7 @@ void PlayerObject::colideWith(GameObject* otherObj, const uint32_t otherType) {
   if (otherType&(uint32_t)PhysicsCategory::Enemy) {
     auto p = getHitbox();
     auto r = otherObj->getHitbox();
-    if (p->getMinY() + 20 > r->getMaxY()) {
+    if (getVelocityY()<0) {
       // Above Enemy
       setVelocityY(getVelocityY()*-0.9f);
       otherObj->hurt(1, Vec2(0, 0));

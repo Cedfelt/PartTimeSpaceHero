@@ -94,6 +94,7 @@ void WorldObject::updateWorld(float delta) {
       giveObject = false;
       createSpawned = true;
       auto coin = ItemCreate::create();
+      coin->goalY = player->getObjectPositionY();
       coin->setupHitbox(0.1f, 1.0f, 32, 32, 32, 32, false);
       coin->target = player;
       gameObjects.pushBack(coin);
@@ -408,8 +409,8 @@ void WorldObject::spawnObjects(cocos2d::Vector<GameObject*>* gameObjects) {
       
       addChild(label,-1);
     }
-    
-    gameObjects->at(gameObjects->size() -1)->mapData = mapObject->mapData;
+    if(gameObjects->size()>0)
+      gameObjects->at(gameObjects->size() -1)->mapData = mapObject->mapData;
     
   }
   for (int i = 0;i < gameObjects->size();i++) {

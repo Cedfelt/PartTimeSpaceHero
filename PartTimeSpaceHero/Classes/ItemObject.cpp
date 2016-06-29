@@ -16,6 +16,7 @@ bool ItemObject::init() {
     return false;
   }
   
+  
   this->schedule(schedule_selector(ItemObject::update));
   //addGravityToObject(false);
   setElastic(0.f);

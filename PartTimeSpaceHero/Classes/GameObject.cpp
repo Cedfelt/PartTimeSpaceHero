@@ -26,6 +26,7 @@ bool GameObject::init() {
   platform = false;
   solid  = 1;
   staticBoody = false;
+  bWallCollisions = true;
   return true;
 }
 
@@ -98,6 +99,10 @@ bool GameObject::setAnimationOnce(std::string anim){
   }
   prevAnimation = anim;
   return objectSprite->getNumberOfRunningActions()==0;
+}
+
+bool GameObject::checkForWallCollisions(){
+  return bWallCollisions;
 }
 
 uint32_t GameObject::getCurrentAnimationFrameIndex() {

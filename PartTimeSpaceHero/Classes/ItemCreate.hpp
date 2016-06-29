@@ -20,5 +20,6 @@ public:
   bool isBlocked(Rect* playerRect);
   void update(const float delta);
   bool landed;
+  float goalY;
 private:
 };

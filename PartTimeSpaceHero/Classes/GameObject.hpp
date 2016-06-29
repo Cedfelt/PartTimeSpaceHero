@@ -97,6 +97,7 @@ public:
     GO_IN_AIR_UP,
     GO_IN_AIR_DOWN
   };
+  
   uint32_t isBlocked(uint32_t x,uint32_t y);
   float maxSpeedX;
   float maxSpeedYUpp;
@@ -110,7 +111,9 @@ public:
     E_DASH_ITEM,
     E_ITEM_CNT
   };
+  bool checkForWallCollisions();
   virtual void setItem(PlayerItem_ID id);
+  bool bWallCollisions;
 protected:
   int32_t goMovementStatus;
   std::string prevAnimation;
@@ -119,6 +122,8 @@ protected:
   float velocityY;
   float resolution_scale;
   int32_t prevDirection;
+  
+  
   
   bool affectedByGravity;
   float elastic;

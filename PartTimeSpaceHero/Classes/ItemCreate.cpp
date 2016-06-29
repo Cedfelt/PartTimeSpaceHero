@@ -16,6 +16,7 @@ bool ItemCreate::init() {
   {
     return false;
   }
+  bWallCollisions = false;
   landed = false;
   this->schedule(schedule_selector(ItemCreate::update));
   //addGravityToObject(false);
@@ -74,18 +75,14 @@ void ItemCreate::colideWith(GameObject* otherGo,const uint32_t otherType){
 }
 
 void ItemCreate::update(const float delta) {
-//  deltaX = getObjectPositionX() - lastX;
-//  deltaY = getObjectPositionY() - lastY;
-//  auto h = getHitbox();
-//  Rect extRect;
-//  extRect.setRect(h->getMinX(),h->getMinY(),h->getMaxX()-h->getMinX(), h->getMaxY() - h->getMinY());
-//  if (target->getHitbox()->intersectsRect(extRect)) {
-//    target->moveX = (deltaX);
-//    target->moveY = (deltaY);
-//  }
-//  else{
-//    target->addGravityToObject(true);
-//  }
+  if(getObjectPositionY()<goalY + 16.f){
+    bWallCollisions = true;
+  }
+  else{
+    bWallCollisions = false;
+    return;
+  }
+  
   if(getVelocityY() == 0 && !landed){
     setAnimationOnce("crate_land");
     landed = true;
