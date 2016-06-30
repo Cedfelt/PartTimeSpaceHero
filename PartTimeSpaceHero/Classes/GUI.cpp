@@ -36,19 +36,19 @@ bool GUI::init() {
   barBack->setAnchorPoint(Point(0.0f, 1.f));
   barBack->getTexture()->setAliasTexParameters();
   barBack->setColor(Color3B(0, 0, 0));
-  addChild(barBack, 1);
+  addChild(barBack, 101);
 
   objectSprite = cocos2d::Sprite::create("fule_bar.png");
   objectSprite->setScaleX(bar_length);
   objectSprite->setAnchorPoint(Point(0.0f, 1.f));
   objectSprite->getTexture()->setAliasTexParameters();
-  addChild(objectSprite, 2);
+  addChild(objectSprite, 102);
 
   Label* fuelLabel = Label::createWithTTF("POWER", "fonts/PressStart2P.ttf", 20);
   fuelLabel->setAnchorPoint(Point(0.0f, 1.f));
   fuelLabel->setPositionX(9 * bar_length / 2.0f);
   fuelLabel->setPositionY(-8);
-  addChild(fuelLabel, 3);
+  addChild(fuelLabel, 103);
 
   // Hearts
   for (int i = 0;i < 3;i++) {
@@ -59,7 +59,7 @@ bool GUI::init() {
     heartSprite[i]->getTexture()->setAliasTexParameters();
     heartSprite[i]->setScale(getScale() * 2);
     //heartSprite->setColor(Color3B(0, 0, 0));
-    addChild(heartSprite[i], 1);
+    addChild(heartSprite[i], 101);
   }
 
   // Money
@@ -68,13 +68,13 @@ bool GUI::init() {
   coin->setScale(2);
   coin->setAnchorPoint(Point(0.0f, 1.f));
   coin->setPositionY((-128));
-  addChild(coin, 2);
+  addChild(coin, 102);
 
   moneyLabel = Label::createWithTTF("0", "fonts/PressStart2P.ttf", 28);
   moneyLabel->setAnchorPoint(Point(0.0f, 1.f));
   moneyLabel->setPositionX(48);
   moneyLabel->setPositionY(-134);
-  addChild(moneyLabel, 3);
+  addChild(moneyLabel, 103);
 
 
   

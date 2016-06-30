@@ -30,7 +30,6 @@ public:
   // implement the "static create()" method manually
   CREATE_FUNC(MapObject);
   TMXTiledMap* map;
-  void setupForegroundLayers();
   void setupLiquidLayers();
   void updateLiquids(const float delta);
 private:

@@ -79,8 +79,9 @@ bool GameScene::init()
   ////////////////////////////////////
   // GUI
   gui = GUI::create();
-  addChild(gui);
+  addChild(gui,100);
   gui->player = worldObject->player; // Create interface
+  gui->setGlobalZOrder(100);
 
   return true;
 }

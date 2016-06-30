@@ -37,26 +37,26 @@ bool PlayerObject::init() {
   //Animations
   //-
 
-  spriteFrameCache->addSpriteFramesWithFile("mech.plist");
-  const float animSpeed = 0.180;
-  addAnimation("mech", "IdleR", 2, 2, animSpeed);
-  addAnimation("mech", "IdleL", 2, 2, animSpeed);
-  addAnimation("mech", "WalkR", 1, 4, animSpeed);
-  addAnimation("mech", "WalkL", 1, 4, animSpeed);
-  addAnimation("mech", "FlyR", 1, 1, animSpeed);
-  addAnimation("mech", "FlyL", 3, 3, animSpeed);
-  addAnimation("mech", "AscendR", 1, 1, animSpeed);
-  addAnimation("mech", "AscendL", 3, 3, animSpeed);
-  addAnimation("mech", "FallR", 1, 1, animSpeed);
-  addAnimation("mech", "FallL", 3, 3, animSpeed);
-  addAnimation("mech", "DashChargeR", 1, 4, animSpeed);
-  addAnimation("mech", "DashChargeL", 1, 4, animSpeed);
-  addAnimation("mech", "DashR", 1, 4, animSpeed);
-  addAnimation("mech", "DashL", 1, 4, animSpeed);
+//  spriteFrameCache->addSpriteFramesWithFile("mech.plist");
+//  const float animSpeed = 0.180;
+//  addAnimation("mech", "IdleR", 2, 2, animSpeed);
+//  addAnimation("mech", "IdleL", 2, 2, animSpeed);
+//  addAnimation("mech", "WalkR", 1, 4, animSpeed);
+//  addAnimation("mech", "WalkL", 1, 4, animSpeed);
+//  addAnimation("mech", "FlyR", 1, 1, animSpeed);
+//  addAnimation("mech", "FlyL", 3, 3, animSpeed);
+//  addAnimation("mech", "AscendR", 1, 1, animSpeed);
+//  addAnimation("mech", "AscendL", 3, 3, animSpeed);
+//  addAnimation("mech", "FallR", 1, 1, animSpeed);
+//  addAnimation("mech", "FallL", 3, 3, animSpeed);
+//  addAnimation("mech", "DashChargeR", 1, 4, animSpeed);
+//  addAnimation("mech", "DashChargeL", 1, 4, animSpeed);
+//  addAnimation("mech", "DashR", 1, 4, animSpeed);
+//  addAnimation("mech", "DashL", 1, 4, animSpeed);
 
 
   spriteFrameCache->addSpriteFramesWithFile("ptsh.plist");
-  /*addAnimation("PTSH", "IdleR", 1, 4, 0.2f);
+  addAnimation("PTSH", "IdleR", 1, 4, 0.2f);
   addAnimation("PTSH", "IdleL", 1, 4, 0.2f);
   addAnimation("PTSH", "WalkR", 5, 8, 0.15f);
   addAnimation("PTSH", "WalkL", 5, 8, 0.15f);
@@ -69,7 +69,7 @@ bool PlayerObject::init() {
   addAnimation("PTSH", "DashChargeR", 18, 21, 0.15f);
   addAnimation("PTSH", "DashChargeL", 18, 21, 0.15f);
   addAnimation("PTSH", "DashR", 22, 25, 0.15f);
-  addAnimation("PTSH", "DashL", 22, 25, 0.15f);*/
+  addAnimation("PTSH", "DashL", 22, 25, 0.15f);
   
 
   // Strings
@@ -145,8 +145,8 @@ bool PlayerObject::init() {
   return true;
 }
 
-const float ground_deacceleration = 0.85;
-const float ground_acceleration = 5;
+const float ground_deacceleration = 0.87;
+const float ground_acceleration = 10;
 
 void PlayerObject::walkAtDir(MovementDirectionX dir, std::string animName) {
   setAnimation(animName);
@@ -295,10 +295,17 @@ bool PlayerObject::playerFlyUpdate(float delta) {
       consumeRate = -currentConsumeRate;
       throtling++;
       module_active = true;
-      if (movement_status == GO_ON_GROUND || platform) {
-        setVelocityY(jumpStength);
-        flying = true;
-        return true;
+      if (movement_status == GO_ON_GROUND ) {
+        if(!flying ){
+          setVelocityY(jumpStength);
+          flying = true;
+          return true;
+        }
+        else{
+          playerInput->resetAnalog();
+          flying = false;
+          return false;
+        }
       }
       if (getVelocityY() < maxRiseSpeed)
         addToVelocityY(playerInput->getSwipeR()*uppSpeed);
@@ -309,21 +316,26 @@ bool PlayerObject::playerFlyUpdate(float delta) {
       module_active = true;
     }
     else {
-      if (movement_status == GO_ON_GROUND) {
-        flying = false;
-        consumeRate = currentConsumeRate;
-      }
+      
 
     }
   }
+  
   if (playerInput->isLeft()) {
     if (playerInput->getSwipeL() > upp_threshold &&fuel > 0) {
       throtling++;
       consumeRate = -currentConsumeRate;
-      if (movement_status == GO_ON_GROUND && !flying) {
-        addToVelocityY(jumpStength);
-        flying = true;
-        return true;
+      if (movement_status == GO_ON_GROUND ) {
+        if(!flying){
+          setVelocityY(jumpStength);
+          flying = true;
+          return true;
+        }
+        else{
+          flying = false;
+          playerInput->resetAnalog();
+          return false;
+        }
       }
       if (getVelocityY() < maxRiseSpeed)
         addToVelocityY(playerInput->getSwipeL()*uppSpeed);
@@ -337,8 +349,8 @@ bool PlayerObject::playerFlyUpdate(float delta) {
 
     }
   }
+  
   if (movement_status == GO_ON_GROUND) {
-    flying = false;
     consumeRate = currentConsumeRate;
   }
   if (throtling) {
@@ -357,6 +369,7 @@ bool PlayerObject::playerFlyUpdate(float delta) {
   if (fuel < 0) {
     fuel = 0;
   }
+  
   return module_active;
 }
 
@@ -508,7 +521,7 @@ bool PlayerObject::no_item(float delta) {
 
 void PlayerObject::playerUpdate(const float delta) {
   solid = true;
-  objectSprite->setPosition(cocos2d::Point((modelPositionX)+4, (modelPositionY + 24)));
+  objectSprite->setPosition(cocos2d::Point((modelPositionX)+4, (modelPositionY)));
   // Update priority
 
   if ((*this.*pItem)(delta)) {

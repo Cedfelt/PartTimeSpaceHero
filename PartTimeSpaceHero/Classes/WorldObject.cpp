@@ -32,6 +32,15 @@ bool WorldObject::init() {
   mapObject = MapObject::create();
   mapObject->setAnchorPoint(Point(0, 0));
   addChild(mapObject);
+  std::string bgs = "foreground";
+  int bg_cnt = 1;
+  TMXLayer *fgr = mapObject->map->getLayer((bgs + std::to_string(bg_cnt)));
+  while (fgr != NULL) {
+    bg_cnt++;
+    addChild(fgr,20);
+    fgr = mapObject->map->getLayer((bgs + std::to_string(bg_cnt)));
+  }
+  
   physic = Physic::create();
   addChild(physic);
   spawnObjects(&gameObjects);
@@ -61,13 +70,6 @@ bool WorldObject::init() {
   cocos2d::Director::getInstance()->getTextureCache()->removeAllTextures();
   physic->platforms = &plattis;
   
-  
-  // Water Test
-  cocos2d::TMXTilesetInfo *tilesetInfo;
-  cocos2d::TMXLayerInfo *layerInfo;
-  cocos2d::TMXMapInfo *mapInfo;
-  //TMXLayer* water = TMXLayer::create(tilesetInfo, layerInfo, mapInfo);
-  TMXLayer* water = mapObject->map->getLayer("water");
   return true;
 }
 

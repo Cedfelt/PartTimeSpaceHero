@@ -30,8 +30,6 @@ bool MapObject::init() {
   
   setupBackgroundLayers();
   setupLiquidLayers();
-  setupForegroundLayers();
-  
   return true;
 }
 
@@ -85,16 +83,7 @@ void MapObject::setupLiquidLayers(){
   }
 }
 
-void MapObject::setupForegroundLayers(){
-  std::string bgs = "foreground";
-  int bg_cnt = 1;
-  TMXLayer *fgr = map->getLayer((bgs + std::to_string(bg_cnt)));
-  while (fgr != NULL) {
-    fgr->setGlobalZOrder(5);
-    bg_cnt++;
-    fgr = map->getLayer((bgs + std::to_string(bg_cnt)));
-  }
-}
+
 
 void MapObject::moveBackgroundLayers(){
   for (int i = 0; i < background_layers.size();i++) {

@@ -86,6 +86,7 @@ bool PlayerInput::isDoubleLeft(){
 
 void PlayerInput::onTouchEnded(const std::vector<Touch*>& touches, Event*)
 {
+  bResetAnalog = false;
   CCSize winSize = CCDirector::sharedDirector()->getWinSize();
   for (int i = 0;i<touches.size();i++) {
     if ((touches.at(i)->getStartLocation().x) < winSize.width / 2) {
@@ -108,11 +109,9 @@ void PlayerInput::onTouchMoved(const std::vector<Touch*>& touch, Event* event)
     for (int i = 0;i < touch.size();i++) {
       const float current_touch = touch.at(0)->getLocation().y;
       const float swipe_distance = current_touch - touch.at(0)->getStartLocation().y;
-      const float swipeThreshold = 40;
+      float swipeThreshold = 40;
       if(bResetAnalog){
-        touch.at(i)->setTouchInfo(touch.at(i)->getID(), touch.at(i)->getLocation().x, current_touch);
-        swipeAmountL = 0;
-        swipeAmountR = 0;
+        
       }
       if (swipe_distance > swipeThreshold) {
         if ((touch.at(i)->getStartLocation().x) < winSize.width / 2) {
@@ -127,6 +126,7 @@ void PlayerInput::onTouchMoved(const std::vector<Touch*>& touch, Event* event)
         
       }
     }
+  
 }
 
 void PlayerInput::onTouchCancelled(const std::vector<Touch*>&, Event*)
@@ -151,6 +151,8 @@ float PlayerInput::getSwipeL(){
 }
 
 void PlayerInput::resetAnalog(){
+  swipeAmountL = 0;
+  swipeAmountR = 0;
   bResetAnalog = true;
 }
 
