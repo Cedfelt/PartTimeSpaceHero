@@ -50,30 +50,10 @@ void BottyObject::colideWith(GameObject* oterhObj, const uint32_t otherType) {
   if (otherType&(uint32_t)PhysicsCategory::Player) {
     auto player = oterhObj->getHitbox();
     auto rThis = getHitbox();
-    if (rThis->getMinY() + (player->getMaxY()- player->getMinY()) > player->getMinY()) {
+    if (rThis->getMidY() > player->getMinY()) {
       oterhObj->hurt(1, Vec2(getVelocityX(), forceY));
     }
-    /*if (getPrevDir() == GO_RIGHT) {
-      setVelocityX(50);
-
-      if (p->getMinY() + 20 > r->getMaxY()) {
-        oterhObj->hurt(0, Vec2(oterhObj->getVelocityX(), oterhObj->getVelocityY()));
-      }
-      else {
-        oterhObj->hurt(1, Vec2(forceX, forceY));
-      }
-
-    }
-    else {
-      if (p->getMinY() + 20 > r->getMaxY()) {
-        oterhObj->hurt(0, Vec2(oterhObj->getVelocityX(), oterhObj->getVelocityY()));
-      }
-      else {
-        oterhObj->hurt(1, Vec2(-forceX, forceY));
-      }
-    }*/
   }
-
 }
 
 //const float xAttackDistance = 300;

@@ -585,7 +585,7 @@ void PlayerObject::colideWith(GameObject* otherObj, const uint32_t otherType) {
   if (otherType&(uint32_t)PhysicsCategory::Enemy) {
     auto p = getHitbox();
     auto r = otherObj->getHitbox();
-    if (getVelocityY()<0 || (p->getMinX() > r->getMidX())) {
+    if ((p->getMinY() > r->getMidY())) {
       // Above Enemy
       setVelocityY(getVelocityY()*-0.9f);
       otherObj->hurt(1, Vec2(0, 0));
