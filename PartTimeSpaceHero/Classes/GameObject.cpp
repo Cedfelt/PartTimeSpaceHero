@@ -180,7 +180,7 @@ void GameObject::deadState(){
 
 uint32_t GameObject::isBlocked(uint32_t x,uint32_t y){
   if (x < TILES_COUNT_X&&y < TILES_COUNT_Y) {
-    return mapData->attributes[x][y] >MapData::CLEAR;
+    return mapData->attributes[x][y] !=MapData::CLEAR;
   }
   return true;
 }

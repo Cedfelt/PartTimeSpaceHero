@@ -209,7 +209,7 @@ bool WorldObject::onContactBegan(PhysicsContact &contact) {
   const uint32_t bType = nodeB->getObjectType();
   
   if(nodeA->platform||nodeB->platform){
-    return true;
+    //return true;
   }
   //  Player = (1 << 0),    // 1
   //  PlayerPickups = (1 << 1), // 2
