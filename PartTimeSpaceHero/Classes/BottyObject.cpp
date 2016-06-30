@@ -14,7 +14,7 @@
 bool BottyObject::init() {
   //////////////////////////////
   // 1. super init first
-  if (!GameObject::init())
+  if (!EnemyObject::init())
   {
     return false;
   }
@@ -44,16 +44,8 @@ bool BottyObject::init() {
   return true;
 }
 
-const float forceX = 100;
-const float forceY = 170;
 void BottyObject::colideWith(GameObject* oterhObj, const uint32_t otherType) {
-  if (otherType&(uint32_t)PhysicsCategory::Player) {
-    auto player = oterhObj->getHitbox();
-    auto rThis = getHitbox();
-    if (rThis->getMidY() > player->getMinY()) {
-      oterhObj->hurt(1, Vec2(getVelocityX(), forceY));
-    }
-  }
+  simpleWalkerHurt(oterhObj,otherType);
 }
 
 //const float xAttackDistance = 300;
@@ -62,33 +54,9 @@ void BottyObject::colideWith(GameObject* oterhObj, const uint32_t otherType) {
 //const float throwSpeedX = 60.f;
 
 void BottyObject::AIUpdate(const float delta) {
-  if (getVelocityX() == 0) {
-    if (getPrevDir() == GO_LEFT) {
-      setVelocityX(50);
-      setPrevDir(GO_RIGHT);
-      objectSprite->setScaleX(1);
-    }
-    else {
-      setVelocityX(-50);
-      setPrevDir(GO_LEFT);
-      objectSprite->setScaleX(-1);
-    }
-  }
-  // Close To Gap
-
-  const float lookAhead = 0.4f*getVelocityX() / delta;
-  if (!isBlocked((uint32_t)((getPositionX() + lookAhead) / 16.0), (uint32_t)(getPositionY() - 48.0) / 16.0)) {
-    if (getPrevDir() == GO_LEFT) {
-      setVelocityX(50);
-      setPrevDir(GO_RIGHT);
-      objectSprite->setScaleX(1);
-    }
-    else {
-      setVelocityX(-50);
-      setPrevDir(GO_LEFT);
-      objectSprite->setScaleX(-1);
-    }
-  }
+  
+  stupidWalk(delta);
+  turnAtEdge(delta);
 }
 
 void BottyObject::deadState() {

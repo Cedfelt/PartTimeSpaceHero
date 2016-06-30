@@ -112,13 +112,9 @@ void MainMenu::onTouchEnded(const std::vector<Touch*>& touches, Event*)
     }
     else {
       setScaleFactor(2);
-      
     }
   }
   const bool unplayedLevels = gameSave->prepareNextLevel();
-  
-  
-
   if(unplayedLevels){
     LevelData* nextLevel = gameSave->getCurrentLevel();
     //setMapUrl(nextLevel->getMapName());
@@ -130,8 +126,6 @@ void MainMenu::onTouchEnded(const std::vector<Touch*>& touches, Event*)
   else{
     cocos2d::log("Game Cleared");
   }
-  
-    
 }
 
 void MainMenu::onTouchMoved(const std::vector<Touch*>& touch, Event* event)

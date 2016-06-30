@@ -151,6 +151,7 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClCompile Include="..\Classes\BottyObject.cpp" />
     <ClCompile Include="..\Classes\CoinObject.cpp" />
     <ClCompile Include="..\Classes\DamageZone.cpp" />
+    <ClCompile Include="..\Classes\EnemyObject.cpp" />
     <ClCompile Include="..\Classes\FlowerShootaObject.cpp" />
     <ClCompile Include="..\Classes\GameObject.cpp" />
     <ClCompile Include="..\Classes\GameScene.cpp" />
@@ -186,6 +187,7 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClInclude Include="..\Classes\BottyObject.hpp" />
     <ClInclude Include="..\Classes\CoinObject.hpp" />
     <ClInclude Include="..\Classes\DamageZone.hpp" />
+    <ClInclude Include="..\Classes\EnemyObject.hpp" />
     <ClInclude Include="..\Classes\FlowerShootaObject.hpp" />
     <ClInclude Include="..\Classes\GameObject.hpp" />
     <ClInclude Include="..\Classes\GameScene.hpp" />

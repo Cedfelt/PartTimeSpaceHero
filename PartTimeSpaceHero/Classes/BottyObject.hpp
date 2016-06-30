@@ -7,11 +7,11 @@
 //
 
 #pragma once
-#include "GameObject.hpp"
+#include "EnemyObject.hpp"
 #include "SoundFx.hpp"
 
 using namespace cocos2d;
-class BottyObject : public GameObject {
+class BottyObject : public EnemyObject {
 public:
   virtual bool init();
   virtual void colideWith(GameObject* oterhObj,const uint32_t otherType);
