@@ -29,7 +29,7 @@ bool SimpleBullet::init() {
 }
 
 void SimpleBullet::colideWith(GameObject* oterhObj,const uint32_t otherType){
-  oterhObj->hurt(dmg, Vec2(0,0));
+  oterhObj->hurt(dmg, Vec2(0.5f*getVelocityX(), 0.5f*getVelocityY()));
   remove_object = true;
 }
 

@@ -29,6 +29,7 @@ bool BottyObject::init() {
   animationCache = animationCache->getInstance();
   spriteFrameCache->addSpriteFramesWithFile("botty.plist");
   addAnimation("Botty", "botty_idle", 1, 2, 0.2f);
+  addAnimation("Botty", "botty_dead", 3, 3, 1.f);
   setAnimation("botty_idle");
   objectSprite->setPosition(12, 0);// Aling sprite in Hitbox
   objectSprite->setAnchorPoint(Point(0.5, 0));
@@ -48,11 +49,6 @@ void BottyObject::colideWith(GameObject* oterhObj, const uint32_t otherType) {
   simpleWalkerHurt(oterhObj,otherType);
 }
 
-//const float xAttackDistance = 300;
-//const float yAttackDistance = 500;
-//const float throwSpeedY = 180;
-//const float throwSpeedX = 60.f;
-
 void BottyObject::AIUpdate(const float delta) {
   
   stupidWalk(delta);
@@ -61,18 +57,12 @@ void BottyObject::AIUpdate(const float delta) {
 
 void BottyObject::deadState() {
   HP = 0;
-  this->remove_object = true;
-  auto coin = CoinObject::create();
-  coin->setupHitbox(0.1f, 1.0f, 16, 16, 16, 16, false);
-  coin->setObjectPositionX(getPositionX());
-  coin->setObjectPositionY(getPositionY() + 5);
-  coin->getPhysicsBody()->setCategoryBitmask((int)PhysicsCategory::PlayerPickups);
-  coin->getPhysicsBody()->setCollisionBitmask((int)PhysicsCategory::None);
-  coin->getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::Player | (int)PhysicsCategory::PlayerPickups | (int)PhysicsCategory::Hazard);
-  coin->setVelocityX(cocos2d::random(-25, 25));
-  coin->setVelocityY(cocos2d::random(10, 50));
-  coin->addGravityToObject(true);
-  coin->setElastic(1);
-  addToGameObjects.pushBack(coin);
+  setAnimation("botty_dead");
+  this->bWallCollisions = false;
+  setVelocityY(70);
+  this->unschedule(schedule_selector(BottyObject::AIUpdate));
+  this->unschedule(schedule_selector(BottyObject::update));
+  removeWhenBelowZero();
+  dropCoin(3);
 }
 

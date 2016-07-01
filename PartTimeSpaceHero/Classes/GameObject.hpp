@@ -42,6 +42,7 @@ public:
   virtual void setImune();
   virtual bool isImune();
   virtual bool isSafe();
+  virtual void removeWhenBelowZero();
 
   void addCoins(uint32_t coinsToAdd);
   uint32_t getCoins();
@@ -115,6 +116,8 @@ public:
   virtual void setItem(PlayerItem_ID id);
   bool bWallCollisions;
 protected:
+  virtual void removeWhenBelowZeroUpdate(const float delta);
+  void dropCoin(int nrOfCoins);
   int32_t goMovementStatus;
   std::string prevAnimation;
   float speed;

@@ -140,7 +140,7 @@ bool PlayerObject::init() {
   objectSprite->retain();
 
   // ITEM POINTERS
-  setItem(E_NO_ITEM);
+  setItem(E_RIFLE_ITEM);
   /*setItem(E_DASH_ITEM);*/
   return true;
 }

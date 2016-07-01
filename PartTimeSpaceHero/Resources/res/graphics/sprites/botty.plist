@@ -30,6 +30,21 @@
                 <key>spriteSourceSize</key>
                 <string>{48,48}</string>
                 <key>textureRect</key>
+                <string>{{48,0},{48,48}}</string>
+                <key>textureRotated</key>
+                <false/>
+            </dict>
+            <key>Botty3.png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{48,48}</string>
+                <key>spriteSourceSize</key>
+                <string>{48,48}</string>
+                <key>textureRect</key>
                 <string>{{0,48},{48,48}}</string>
                 <key>textureRotated</key>
                 <false/>
@@ -39,16 +54,12 @@
         <dict>
             <key>format</key>
             <integer>3</integer>
-            <key>pixelFormat</key>
-            <string>RGBA8888</string>
-            <key>premultiplyAlpha</key>
-            <false/>
             <key>realTextureFileName</key>
             <string>botty.png</string>
             <key>size</key>
-            <string>{64,128}</string>
+            <string>{128,128}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:8edf01182e38c1ceccfd98578d808957:222c397a745021990746c5be920f80a1:ee2b8ea2d67e9cee317182d36374559a$</string>
+            <string>$TexturePacker:SmartUpdate:35511ece8ee862c71df4ae44928b7358:326ae6004894dad38db8db69660b5474:ee54a6955ab65fc0068c5eeadcd3bd86$</string>
             <key>textureFileName</key>
             <string>botty.png</string>
         </dict>
