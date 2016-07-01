@@ -229,14 +229,11 @@ void WorldObject::spawnObjects(cocos2d::Vector<GameObject*>* gameObjects) {
   ValueVector obj = objectGroup->getObjects();
   for (int i = 0;i < obj.size();i++) {
     ValueMap vm = obj.at(i).asValueMap();
-    int x = vm["x"].asInt();
-    int y = vm["y"].asInt();
-    float w = vm["width"].asInt();
-    float h = vm["height"].asInt();
-    //x *= level->getScale();
-    //y *= level->getScale();;
-    //w *= level->getScale();;
-    //h *= level->getScale();;
+    const int x = vm["x"].asInt();
+    const int y = vm["y"].asInt();
+    const float w = vm["width"].asInt();
+    const float h = vm["height"].asInt();
+    const bool turnAtEdges = vm["turnAtEdge"].asBool();
     std::string name = vm["name"].asString();
     std::string type = vm["type"].asString();
     

@@ -16,8 +16,27 @@ bool EnemyObject::init() {
     return false;
   }
   fSimpleHurtForce = 170;
+  bStayInZone = false;
+  bStupidWalk = false;
+  bTurnAtEdges = false;
+
 }
 
+// AI - BEHAVIOURS
+
+void EnemyObject::genericAi(const float delta) {
+  if (bStupidWalk) {
+    stupidWalk(delta);
+  }
+  if (bStayInZone) {
+    //stayInZone(delta);
+  }
+  if (bTurnAtEdges) {
+    turnAtEdge(delta);
+  }
+}
+
+//A stupid Walk algorithm. Change Direction When The Objects X-velocity is == 0
 void EnemyObject::stupidWalk(const float delta) {
   if (getVelocityX() == 0) {
     if (getPrevDir() == GO_LEFT) {
@@ -33,10 +52,13 @@ void EnemyObject::stupidWalk(const float delta) {
   }
 }
 
+/*** Add this function to the objects update function to make it turn at edges. This Algorithm was not designed For slopes.
+If the objects path includes slopes use a predefined zone instead***/
 void EnemyObject::turnAtEdge(const float delta) {
 
   const float lookAhead = 0.5f*getVelocityX() / delta;
-  if (!isBlocked((uint32_t)((getPositionX() + lookAhead - 24) / 16.0), (uint32_t)(getPositionY() - 64.0) / 16.0)) {
+  auto const hitbox = getHitbox();
+  if (!isBlocked((uint32_t)((hitbox->getMidX() + lookAhead - 24) / 16.0), (uint32_t)(hitbox->getMinY() - 1) / 16.0)) {
     if (getPrevDir() == GO_LEFT) {
       setVelocityX(50);
       setPrevDir(GO_RIGHT);
@@ -50,12 +72,12 @@ void EnemyObject::turnAtEdge(const float delta) {
   }
 }
 
+/*** This should be called when Objects colided. If 1/2 of the object height is > the other objects minY
+it will hurt the other object with damage dmg.***/
 void EnemyObject::simpleWalkerHurt(GameObject* pPlayer, const uint32_t otherType) {
-  if (otherType&(uint32_t)PhysicsCategory::Player) {
     auto player = pPlayer->getHitbox();
     auto rThis = getHitbox();
     if (rThis->getMidY() > player->getMinY()) {
-      pPlayer->hurt(1, Vec2(getVelocityX(), fSimpleHurtForce));
+      pPlayer->hurt(dmg, Vec2(getVelocityX(), fSimpleHurtForce));
     }
-  }
 }

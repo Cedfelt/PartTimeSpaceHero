@@ -256,6 +256,16 @@ void GameObject::setElastic(const float fElastic) {
   elastic = fElastic;
 }
 
+void GameObject::setTurnAtEdges(const bool bState) {
+  bTurnAtEdges = bState;
+}
+void GameObject::setStupidWalk(const bool bState) {
+  bStupidWalk = bState;
+}
+void GameObject::setStayInZone(const bool bState) {
+  bStayInZone = bState;
+}
+
 void GameObject::dropCoin(int nrOfCoins) {
   for (int i = 0;i < nrOfCoins;i++) {
     auto coin = CoinObject::create();

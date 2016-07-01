@@ -20,8 +20,8 @@ protected:
   // Walk functions
   virtual void stupidWalk(const float delta);
   virtual void turnAtEdge(const float delta);
-
   virtual void simpleWalkerHurt(GameObject* player, const uint32_t otherType);
+  void genericAi(const float delta);
   float fSimpleHurtForce;
   int fDMG;
 };

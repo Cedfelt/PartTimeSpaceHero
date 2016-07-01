@@ -115,6 +115,11 @@ public:
   bool checkForWallCollisions();
   virtual void setItem(PlayerItem_ID id);
   bool bWallCollisions;
+
+  void setTurnAtEdges(bool bState);
+  void setStupidWalk(bool bState);
+  void setStayInZone(bool bState);
+
 protected:
   virtual void removeWhenBelowZeroUpdate(const float delta);
   void dropCoin(int nrOfCoins);
@@ -126,7 +131,9 @@ protected:
   float resolution_scale;
   int32_t prevDirection;
   
-  
+  bool bTurnAtEdges;
+  bool bStayInZone;
+  bool bStupidWalk;
   
   bool affectedByGravity;
   float elastic;
