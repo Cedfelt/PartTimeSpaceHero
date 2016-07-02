@@ -66,9 +66,4 @@ void UfoObject::AIUpdate(const float delta) {
       addToGameObjects.pushBack(babyTurf);
     }
   }
-  if(getPositionX() >softXMax){
-    setVelocityX(-50);
-  }else if(getPositionX() < softXMin){
-    setVelocityX(50);
-  }
 }

@@ -460,7 +460,8 @@ bool PlayerObject::playerDashUpdate(float delta) {
 
 bool bPlayerShoot = false;
 bool PlayerObject::rifle_item(float delta) {
-  if (playerInput->isDoubleRight() && !bPlayerShoot) {
+  
+  if (playerInput->isDoubleRight()) {
     objectSprite->setScaleX(1);
     setAnimationOnce(animationStrings.at(ItemR));
     //setVelocityX(0);
@@ -471,13 +472,13 @@ bool PlayerObject::rifle_item(float delta) {
     babyTurf->setObjectPositionY(getPositionY() + 2);
     babyTurf->getPhysicsBody()->setCategoryBitmask((int)PhysicsCategory::PlayerProjectile);
     babyTurf->getPhysicsBody()->setCollisionBitmask((int)PhysicsCategory::None);
-    babyTurf->getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::Enemy | (int)PhysicsCategory::PlayerPickups);
+    babyTurf->getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::Enemy | (int)PhysicsCategory::PlayerPickups|(int)PhysicsCategory::Hazard);
     addToGameObjects.pushBack(babyTurf);
     bPlayerShoot = true;
     babyTurf->setVelocityX(200);
     weaponSFX->play(0.4f);
   }
-  if (playerInput->isDoubleLeft() && !bPlayerShoot) {
+  if (playerInput->isDoubleLeft()) {
     objectSprite->setScaleX(-1);
     setAnimationOnce(animationStrings.at(ItemR));
     //setVelocityX(0);
@@ -488,7 +489,7 @@ bool PlayerObject::rifle_item(float delta) {
     babyTurf->setObjectPositionY(getPositionY() + 2);
     babyTurf->getPhysicsBody()->setCategoryBitmask((int)PhysicsCategory::PlayerProjectile);
     babyTurf->getPhysicsBody()->setCollisionBitmask((int)PhysicsCategory::None);
-    babyTurf->getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::Enemy | (int)PhysicsCategory::PlayerPickups);
+    babyTurf->getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::Enemy | (int)PhysicsCategory::PlayerPickups|(int)PhysicsCategory::Hazard);
     addToGameObjects.pushBack(babyTurf);
     bPlayerShoot = true;
     babyTurf->setVelocityX(-200);

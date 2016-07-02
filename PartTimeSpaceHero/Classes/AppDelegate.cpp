@@ -37,15 +37,16 @@ bool AppDelegate::applicationDidFinishLaunching() {
   
 
 
+
+  
+    auto director = Director::getInstance();
 #ifdef IPAD_RETINA
   uint32_t res_x = 2048;
   uint32_t res_y = 1536;
 #else //if IPHONE5
-  uint32_t res_x = 1136;
-  uint32_t res_y = 640;
+  uint32_t res_x = director->getWinSizeInPixels().width;
+  uint32_t res_y = director->getWinSizeInPixels().height;
 #endif
-  
-    auto director = Director::getInstance();
     auto glview = director->getOpenGLView();
     if (!glview) {
         glview = GLViewImpl::createWithRect("SpaceGame", Rect(0, 0, res_x , res_y ));

@@ -28,6 +28,7 @@ bool GameObject::init() {
   solid = 1;
   staticBoody = false;
   bWallCollisions = true;
+  speed = 50.0f;
   return true;
 }
 

@@ -76,7 +76,7 @@ bool MainMenu::init()
   
   const float xPosLogo = director->getWinSize().width / 2;
   const float yPosLogo = director->getWinSize().height*0.5;
-  Sprite* logo = Sprite::create("logo3.png");
+  Sprite* logo = Sprite::create("logo.png");
   logo->getTexture()->setAliasTexParameters();
   logo->setScale(2);
   logo->setPositionX(xPosLogo);
@@ -106,12 +106,8 @@ void MainMenu::onTouchEnded(const std::vector<Touch*>& touches, Event*)
     
     if ((touches.at(i)->getStartLocation().x) < winSize.width / 2) {
       // LEFT
-      setScaleFactor(2);
       setDebuggDraw(false);
       gameSave->eraseMemorey();
-    }
-    else {
-      setScaleFactor(2);
     }
   }
   const bool unplayedLevels = gameSave->prepareNextLevel();

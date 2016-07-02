@@ -229,11 +229,13 @@ void WorldObject::spawnObjects(cocos2d::Vector<GameObject*>* gameObjects) {
   ValueVector obj = objectGroup->getObjects();
   for (int i = 0;i < obj.size();i++) {
     ValueMap vm = obj.at(i).asValueMap();
-    const int x = vm["x"].asInt();
-    const int y = vm["y"].asInt();
+    const float x = vm["x"].asFloat();
+    const float y = vm["y"].asFloat();
     const float w = vm["width"].asInt();
     const float h = vm["height"].asInt();
     const bool turnAtEdges = vm["turnAtEdge"].asBool();
+    const bool stupidWalk = vm["stupidWalk"].asBool();
+    const bool stayInZone = vm["stayInZone"].asBool();
     std::string name = vm["name"].asString();
     std::string type = vm["type"].asString();
     
@@ -298,22 +300,17 @@ void WorldObject::spawnObjects(cocos2d::Vector<GameObject*>* gameObjects) {
       float duration = vm["duration"].asFloat();
       float off_time = vm["off_time"].asFloat();
       auto obj = LaserObject::create();
-      
-      //obj->setupHitbox(1, 1, 64, 64, 64, 64, false);
-      obj->setup(duration,off_time,direction, range, delay);
-      gameObjects->pushBack(this->obj);
+      gameObjects->pushBack(obj);
       obj->setObjectPositionX(x);
       obj->setObjectPositionY(y);
-      //obj->getPhysicsBody()->setCategoryBitmask((int)PhysicsCategory::Bouncer);
-      //obj->getPhysicsBody()->setCollisionBitmask((int)PhysicsCategory::None);
-      //obj->getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::Player);
+      obj->mapData = mapObject->mapData;
+      obj->setup(duration,off_time,direction, range, delay);
       addChild(obj);
     }
     
     else if(name == "TurfelObject"){
       // COIN
       auto turfel = TurfelObject::create();
-      const float turfelScale = 2;
       turfel->setupHitbox(0.1f, 1.0f, 32, 32, 32, 32, false);
       gameObjects->pushBack(turfel);
       turfel->setObjectPositionX(x);
@@ -408,8 +405,15 @@ void WorldObject::spawnObjects(cocos2d::Vector<GameObject*>* gameObjects) {
       
       addChild(label,-1);
     }
-    if(gameObjects->size()>0)
-      gameObjects->at(gameObjects->size() -1)->mapData = mapObject->mapData;
+    if(gameObjects->size()>0){
+      const long latestAdded = (gameObjects->size() -1);
+      gameObjects->at(latestAdded)->mapData = mapObject->mapData;
+      gameObjects->at(latestAdded)->setTurnAtEdges(turnAtEdges);
+      gameObjects->at(latestAdded)->setStupidWalk(stupidWalk);
+      gameObjects->at(latestAdded)->setStayInZone(stayInZone);
+      gameObjects->at(latestAdded)->softXMax = x+w;
+      gameObjects->at(latestAdded)->softXMin = x;
+    }
     
   }
   for (int i = 0;i < gameObjects->size();i++) {

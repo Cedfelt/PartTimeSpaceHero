@@ -17,6 +17,9 @@ enum LASER_DIR {
 };
 
 void LaserObject::setup(float output_time, float input_time, uint32_t direction, uint32_t range, float delay) {
+  if(range == 0){
+    range = autoRange(direction);
+  }
   CCASSERT(range < MAX_CAPACITY, "LASER BUGG TO SMALL");
   objectSprite = cocos2d::Sprite::create();
   setAnchorPoint(Point(0.5, 0));
@@ -32,17 +35,14 @@ void LaserObject::setup(float output_time, float input_time, uint32_t direction,
   addAnimation("laser_trap", "laser_trap_base", 5, 5, 2.f);
   addAnimation("laser_trap", "laser_mid", 3, 4, 6.0 / 60.0);
   addAnimation("laser_trap", "laser_top_down", 1, 2, 6.0 / 60.0);
+  bWallCollisions = false;
   setAnimation("laser_trap_base");
   o_time = output_time;
   i_time = input_time;
   ot_counter = o_time;
   setScale(2);
   setAnchorPoint(Point(0.5, 0));
-  //moveWhenOutsideOfScreen = true;
-  laser_delay = delay;
-  bool b = true;
   this->range = range;
-  //updateHitBox(1);
   for (int i = 1;i <= range;i++) {
     laser_sprites[i - 1] = Sprite::create("laser_trap.png");
     laser_sprites[i - 1]->setAnchorPoint(Point(0.5, 0));
@@ -57,8 +57,8 @@ void LaserObject::setup(float output_time, float input_time, uint32_t direction,
   current = 0;
   
   
-  output = true;
-  ot_counter = o_time;
+  output = false;
+  ot_counter = i_time;
   ot_counter = 0;
   laser_dir = direction;
   addPhysicBody(laser_dir);
@@ -66,11 +66,9 @@ void LaserObject::setup(float output_time, float input_time, uint32_t direction,
   
 }
 
-void LaserObject::colideWith(GameObject *otherGo) {
-  const float currentRange = (float)(current) / (float)(range);
-  const float ra = (abs(getPositionY() - otherGo->getPositionY()));
+void LaserObject::colideWith(GameObject* otherGo,const uint32_t otherType) {
+  const float ra = (fabs(getPositionY() - otherGo->getPositionY()));
   bool inRange = (maxLaserRange > ra);
-  
   if (!output && inRange) {
     otherGo->hurt(1, Vec2(0,0));
   }
@@ -88,7 +86,7 @@ void LaserObject::updateGameObject(float delta) {
   if (output) {
     laser_sprites[current]->setOpacity(0xFF);
     laser_sprites[current]->setScaleX(0.1f);
-    laser_sprites[current]->setColor(Color3B::BLUE);
+    laser_sprites[current]->setColor(Color3B::RED);
     current++;
     if(pause_time < 1.0){
       if(current>=range)
@@ -123,25 +121,88 @@ void LaserObject::updateGameObject(float delta) {
 }
 
 void LaserObject::addPhysicBody(uint32_t direction){
-  auto physicsBody = PhysicsBody::createBox(Size(8, 8*range), PhysicsMaterial(0.1, 1, 0.0f));
-  physicsBody->setDynamic(true);
-  if(direction == GO_UP){
+  
+  if(direction == LASER_UP){
+    auto physicsBody = PhysicsBody::createBox(Size(8, 8*range), PhysicsMaterial(0.1, 1, 0.0f));
+    physicsBody->setDynamic(true);
     physicsBody->setPositionOffset(Vec2(0, 8 * 2 * range + 8 * 4));
+    setObjectPositionX(getObjectPositionX() + 8);
     setRotation(0);
+    setPhysicsBody(physicsBody);
   }
-  if(direction == GO_DOWN){
+  if(direction == LASER_DOWN){
+    auto physicsBody = PhysicsBody::createBox(Size(8, 8*range), PhysicsMaterial(0.1, 1, 0.0f));
+    physicsBody->setDynamic(true);
+    setObjectPositionX(getObjectPositionX() + 8);
     physicsBody->setPositionOffset(Vec2(0, (-(int)range*8*2- 8 * 4)));
     setRotation(180);
+    
+    setPhysicsBody(physicsBody);
   }
   
-  physicsBody->setCategoryBitmask((int)PhysicsCategory::Hazard);
-  physicsBody->setCollisionBitmask((int)PhysicsCategory::None);
-  physicsBody->setContactTestBitmask((int)PhysicsCategory::All);
-  physicsBody->setEnabled(false);
-  setPhysicsBody(physicsBody);
+  if(direction == LASER_LEFT){
+    auto physicsBody = PhysicsBody::createBox(Size(8 * range, 8), PhysicsMaterial(0.1, 1, 0.0f));
+    physicsBody->setDynamic(true);
+    physicsBody->setPositionOffset(Vec2(((-range*(8*2)-8*4)),0 ));
+    setRotation(270);
+    setPhysicsBody(physicsBody);
+  }
+  
+  else if(direction == LASER_RIGHT){
+    auto physicsBody = PhysicsBody::createBox(Size(8 * range, 8), PhysicsMaterial(0.1, 1, 0.0f));
+    physicsBody->setDynamic(true);
+    physicsBody->setPositionOffset(Vec2(((range*(8*2)+8*4)),0 ));
+    setRotation(90);
+    setPhysicsBody(physicsBody);
+  }
+  
+  getPhysicsBody()->setCategoryBitmask((int)PhysicsCategory::Hazard);
+  getPhysicsBody()->setCollisionBitmask((int)PhysicsCategory::None);
+  getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::All &~(int)(PhysicsCategory::Hazard));
+  getPhysicsBody()->setEnabled(false);
+  
 }
 
+uint32_t LaserObject::autoRange(uint32_t direction){
+  bool bVal = true;
+  const uint32_t TS = 16;
+  uint32_t range = 0;
+  if(direction == LASER_UP){
+    while(bVal){
+      range+=1;
+      bVal = !(isBlocked(getObjectPositionX() / TS, getObjectPositionY()/TS +range));
+    }
+    range -=1;
+  }
+  else if(direction == LASER_DOWN){
+    while(bVal){
+      range+=1;
+      bVal = !(isBlocked(getObjectPositionX() / TS, getObjectPositionY()/TS -range));
+    }
+    range -=2;
+  }
+  else if(direction == LASER_LEFT){
+    range = 1;
+    while(bVal){
+      range+=1;
+      bVal = !(isBlocked(getObjectPositionX()/TS - range, getObjectPositionY()/TS));
+    }
+    range-=2;
+  }
+  else if(direction == LASER_RIGHT){
+    range = 1;
+    while(bVal){
+      range+=1;
+      bVal = !(isBlocked(getObjectPositionX()/TS + range , getObjectPositionY()/TS));
+    }
+    range-=1;
+  }
+  return range;
+}
 
+bool LaserObject::hurt(const int dmg, const Vec2 force){
+  return false;
+}
 //void Laser_Trap::updateAI(float delta) {}
 
 

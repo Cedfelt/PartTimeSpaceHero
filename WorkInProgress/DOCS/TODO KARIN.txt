@@ -8,3 +8,31 @@ Intro to c++
 Practice Some simple game frome scratch
 Goat Iteme lol
 Come up with a new item ex granade 
+
+
+0x ffffffff 
+
+Seq
+
+2 sek pause
+L1 On
+2 sek
+
+L2 On
+2 sek
+
+L3 On
+2 sek
+
+L4 On
+2 sek
+
+All Of
+
+Repat
+
+L1 - 1sek pause - 4 On
+L2 - 2sek pause - 3 on
+L3 - 3sek pause - 2 on
+L4 - 4sek pause - 1 on
+

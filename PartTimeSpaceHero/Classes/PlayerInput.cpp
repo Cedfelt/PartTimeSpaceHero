@@ -61,10 +61,7 @@ void PlayerInput::tapCounter(float delta) {
     tapChecks = taps;
     doubleLeft = true;
   }
-  else{
-    doubleRight = false;
-    doubleLeft = false;
-  }
+
   if (tapChecks == taps) {
     leftCounter = 0;
     rightCounter = 0;

@@ -21,7 +21,8 @@ public:
   CREATE_FUNC(LaserObject);
   void updateGameObject(float delta);
   void add_updateFunction(float delta);
-  void colideWith(GameObject *otherGo);
+  virtual void colideWith(GameObject* oterhObj,const uint32_t otherType);
+  bool hurt(const int dmg, const Vec2 force);
   void addPhysicBody(uint32_t direction);
   Sprite *laser_sprites[MAX_CAPACITY];
   int current;
@@ -33,4 +34,6 @@ public:
   float ot_counter;
   float maxLaserRange;
   float pause_time = 0;
+private:
+  uint32_t autoRange(uint32_t direction);
 };

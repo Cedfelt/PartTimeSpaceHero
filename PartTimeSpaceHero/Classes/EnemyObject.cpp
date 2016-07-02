@@ -19,17 +19,19 @@ bool EnemyObject::init() {
   bStayInZone = false;
   bStupidWalk = false;
   bTurnAtEdges = false;
+  
+  return true;
 
 }
 
 // AI - BEHAVIOURS
 
-void EnemyObject::genericAi(const float delta) {
+void EnemyObject::genericWalkAi(const float delta) {
   if (bStupidWalk) {
     stupidWalk(delta);
   }
   if (bStayInZone) {
-    //stayInZone(delta);
+    walkInZone(delta);
   }
   if (bTurnAtEdges) {
     turnAtEdge(delta);
@@ -40,12 +42,12 @@ void EnemyObject::genericAi(const float delta) {
 void EnemyObject::stupidWalk(const float delta) {
   if (getVelocityX() == 0) {
     if (getPrevDir() == GO_LEFT) {
-      setVelocityX(50);
+      setVelocityX(speed);
       setPrevDir(GO_RIGHT);
       objectSprite->setScaleX(1);
     }
     else {
-      setVelocityX(-50);
+      setVelocityX(-speed);
       setPrevDir(GO_LEFT);
       objectSprite->setScaleX(-1);
     }
@@ -55,20 +57,34 @@ void EnemyObject::stupidWalk(const float delta) {
 /*** Add this function to the objects update function to make it turn at edges. This Algorithm was not designed For slopes.
 If the objects path includes slopes use a predefined zone instead***/
 void EnemyObject::turnAtEdge(const float delta) {
-
   const float lookAhead = 0.5f*getVelocityX() / delta;
   auto const hitbox = getHitbox();
-  if (!isBlocked((uint32_t)((hitbox->getMidX() + lookAhead - 24) / 16.0), (uint32_t)(hitbox->getMinY() - 1) / 16.0)) {
+  if (!isBlocked((uint32_t)((hitbox->getMidX() + lookAhead) / 16.0), (uint32_t)(hitbox->getMinY() - 1) / 16.0)) {
     if (getPrevDir() == GO_LEFT) {
-      setVelocityX(50);
+      setVelocityX(speed);
       setPrevDir(GO_RIGHT);
       objectSprite->setScaleX(1);
     }
     else {
-      setVelocityX(-50);
+      setVelocityX(-speed);
       setPrevDir(GO_LEFT);
       objectSprite->setScaleX(-1);
     }
+  }
+}
+
+void EnemyObject::walkInZone(const float delta){
+  auto const rect = getHitbox();
+  const float minX = rect->getMidX();
+  const float maxX = rect->getMaxX();
+  if(maxX >softXMax){
+    setVelocityX(-speed);
+    setPrevDir(GO_LEFT);
+    objectSprite->setScaleX(-1);
+  }else if(minX < softXMin){
+    setVelocityX(speed);
+    setPrevDir(GO_RIGHT);
+    objectSprite->setScaleX(1);
   }
 }
 
@@ -81,3 +97,4 @@ void EnemyObject::simpleWalkerHurt(GameObject* pPlayer, const uint32_t otherType
       pPlayer->hurt(dmg, Vec2(getVelocityX(), fSimpleHurtForce));
     }
 }
+

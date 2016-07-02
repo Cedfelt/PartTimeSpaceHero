@@ -35,11 +35,10 @@ bool BottyObject::init() {
   objectSprite->setAnchorPoint(Point(0.5, 0));
   objectSprite->setScale(1);
   addChild(objectSprite);
-
+  dmg = 1;
 
   // Start Speed
-  const float xVel = -50;
-  setVelocityX(xVel);
+  setVelocityX(-speed);
   setPrevDir(GO_LEFT);
   objectSprite->setScaleX(-1);
   return true;
@@ -50,9 +49,7 @@ void BottyObject::colideWith(GameObject* oterhObj, const uint32_t otherType) {
 }
 
 void BottyObject::AIUpdate(const float delta) {
-  
-  stupidWalk(delta);
-  turnAtEdge(delta);
+  genericWalkAi(delta);
 }
 
 void BottyObject::deadState() {
