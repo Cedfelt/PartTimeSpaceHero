@@ -30,8 +30,8 @@ bool BabyTurfelObject::init() {
   return true;
 }
 
-void BabyTurfelObject::interActWithPlayer(GameObject* player){
-  player->hurt(1, Vec2(0,0));
+void BabyTurfelObject::colideWith(GameObject* otherObj,const uint32_t otherType){
+  otherObj->hurt(1, Vec2(0,0));
 }
 
 void BabyTurfelObject::update(const float delta) {

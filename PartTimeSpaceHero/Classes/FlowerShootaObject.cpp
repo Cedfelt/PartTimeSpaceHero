@@ -12,7 +12,7 @@
 bool FlowerShootaObject::init() {
   //////////////////////////////
   // 1. super init first
-  if (!GameObject::init())
+  if (!EnemyObject::init())
   {
     return false;
   }
@@ -35,6 +35,10 @@ bool FlowerShootaObject::init() {
   setVelocityX(0);
   shoot_timer = 0.2 * 6;
   return true;
+}
+
+void FlowerShootaObject::colideWith(GameObject* oterhObj, const uint32_t otherType) {
+  simpleWalkerHurt(oterhObj,otherType);
 }
 
 const float yForce = 250;

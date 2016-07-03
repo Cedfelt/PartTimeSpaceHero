@@ -153,7 +153,7 @@ void WorldObject::updateWorld(float delta) {
   }
   
   // Check if player dead
-  if(player->HP==0){
+  if(player->HP<=0){
     auto audio = CocosDenshion::SimpleAudioEngine::getInstance();
     audio->stopBackgroundMusic();
     audio->stopAllEffects();
@@ -401,7 +401,7 @@ void WorldObject::spawnObjects(cocos2d::Vector<GameObject*>* gameObjects) {
       patrolUfo->setObjectPositionY(y);
       patrolUfo->getPhysicsBody()->setCategoryBitmask((int)PhysicsCategory::Enemy);
       patrolUfo->getPhysicsBody()->setCollisionBitmask((int)PhysicsCategory::None);
-      patrolUfo->getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::Player | (int)PhysicsCategory::PlayerPickups | (int)PhysicsCategory::Hazard);
+      patrolUfo->getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::Player | (int)PhysicsCategory::PlayerProjectile | (int)PhysicsCategory::Hazard);
       patrolUfo->target = player;
       addChild(patrolUfo);
     }

@@ -93,8 +93,8 @@ void MapObject::moveBackgroundLayers(){
       bg_speed = 1;
     }
     auto v = bg_speed*map->convertToNodeSpace(Point(0.0, 0.0));
-    v.x = (v.x);
-    v.y = (v.y);
+    v.x = int(v.x);
+    v.y = int(v.y);
     background_layers.at(i)->setPosition(v);
   }
 }

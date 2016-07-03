@@ -64,7 +64,7 @@ void UfoObject::AIUpdate(const float delta) {
       babyTurf->setObjectPositionY(getPositionY() + objectSprite->getTexture()->getPixelsWide());
       babyTurf->getPhysicsBody()->setCategoryBitmask((int)PhysicsCategory::Enemy);
       babyTurf->getPhysicsBody()->setCollisionBitmask((int)PhysicsCategory::None);
-      babyTurf->getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::Player|(int)PhysicsCategory::PlayerPickups|(int)PhysicsCategory::Hazard);
+      babyTurf->getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::Player|(int)PhysicsCategory::Hazard);
       const float xPow = (float)100.0f/cocos2d::random(1000, 2000) + (target->getPositionX() - getPositionX())/xAttackDistance;
       babyTurf->setVelocityX(xPow * throwSpeedX);
       babyTurf->setVelocityY(throwSpeedY);

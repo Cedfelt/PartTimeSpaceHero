@@ -1879,7 +1879,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "199"
             endingLineNumber = "199"
-            landmarkName = "Physic::leftRamp(GameObject* obj,const uint32_t xPre,const uint32_t yPre, MapObject* mapObject,const uint32_t collision_mask)"
+            landmarkName = "Physic::leftRamp(GameObject* obj, const uint32_t xPre, const uint32_t yPre, MapObject* mapObject, const uint32_t collision_mask)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1973,7 +1973,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "171"
             endingLineNumber = "171"
-            landmarkName = "Physic::rightRamp(GameObject* obj,const uint32_t xPre,const uint32_t yPre, MapObject* mapObject,const uint32_t collision_mask)"
+            landmarkName = "Physic::rightRamp(GameObject* obj, const uint32_t xPre, const uint32_t yPre, MapObject* mapObject, const uint32_t collision_mask)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1989,7 +1989,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "151"
             endingLineNumber = "151"
-            landmarkName = "Physic::rightRamp(GameObject* obj,const uint32_t xPre,const uint32_t yPre, MapObject* mapObject,const uint32_t collision_mask)"
+            landmarkName = "Physic::rightRamp(GameObject* obj, const uint32_t xPre, const uint32_t yPre, MapObject* mapObject, const uint32_t collision_mask)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2005,7 +2005,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "135"
             endingLineNumber = "135"
-            landmarkName = "Physic::rightRamp(GameObject* obj,const uint32_t xPre,const uint32_t yPre, MapObject* mapObject,const uint32_t collision_mask)"
+            landmarkName = "Physic::rightRamp(GameObject* obj, const uint32_t xPre, const uint32_t yPre, MapObject* mapObject, const uint32_t collision_mask)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2406,6 +2406,22 @@
             startingLineNumber = "47"
             endingLineNumber = "47"
             landmarkName = "UfoObject::colideWith(GameObject* oterhObj,const uint32_t otherType)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Classes/PlayerObject.cpp"
+            timestampString = "489276247.128717"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "568"
+            endingLineNumber = "568"
+            landmarkName = "PlayerObject::hurt(const int dmg, const Vec2 force)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
