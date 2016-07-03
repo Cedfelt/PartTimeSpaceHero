@@ -151,6 +151,7 @@ void WorldObject::updateWorld(float delta) {
   if(player->HP==0){
     auto audio = CocosDenshion::SimpleAudioEngine::getInstance();
     audio->stopBackgroundMusic();
+    audio->stopAllEffects();
     stopAllActions();
     cocos2d::Director::getInstance()->popScene();
   }
@@ -359,10 +360,12 @@ void WorldObject::spawnObjects(cocos2d::Vector<GameObject*>* gameObjects) {
       gameObjects->pushBack(botty);
       botty->setObjectPositionX(x);
       botty->setObjectPositionY(y);
-      botty->getPhysicsBody()->setCategoryBitmask((int)PhysicsCategory::Enemy);
+      botty->getPhysicsBody()->setCategoryBitmask((int)PhysicsCategory::Hazard);
       botty->getPhysicsBody()->setCollisionBitmask((int)PhysicsCategory::None);
       botty->getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::All);
       botty->dmg = vm["dmg"].asInt();
+      botty->xForce = vm["xForce"].asFloat();
+      botty->yForce = vm["yForce"].asFloat();
       botty->target = player;
       addChild(botty);
     }

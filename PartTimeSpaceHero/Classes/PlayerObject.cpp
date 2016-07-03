@@ -140,7 +140,7 @@ bool PlayerObject::init() {
   objectSprite->retain();
 
   // ITEM POINTERS
-  setItem(E_RIFLE_ITEM);
+  setItem(E_NO_ITEM);
   /*setItem(E_DASH_ITEM);*/
   return true;
 }
@@ -566,20 +566,20 @@ bool PlayerObject::hurt(const int dmg, const Vec2 force) {
       HP -= dmg;
       playerCrySFX->play(0.3f);
     }
+  }
 
 
-
-    setVelocityX(force.x);
-    setVelocityY(force.y);
+    if(force.x!=0.0f)
+      setVelocityX(force.x);
+    if(force.y!=0.0f)
+      setVelocityY(force.y);
+    
     this->unschedule(CC_SCHEDULE_SELECTOR(GameObject::imuneUpdate));
     this->schedule(CC_SCHEDULE_SELECTOR(GameObject::imuneUpdate));
     if (HP <= 0) {
       HP = 0;
     }
-    return true;
-  }
-
-  return false;
+  return true;
 }
 
 void PlayerObject::colideWith(GameObject* otherObj, const uint32_t otherType) {
