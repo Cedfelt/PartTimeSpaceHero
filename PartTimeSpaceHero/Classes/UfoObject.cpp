@@ -35,11 +35,16 @@ bool UfoObject::init() {
   // Start Speed
   const float xVel = -50;
   setVelocityX(xVel);
+  
+  plingSFX = SoundFx::create();
+  plingSFX->loadEffect("small_explosion.aif", 0, 1, false);
+  addChild(plingSFX);
+  
   return true;
 }
 
-void UfoObject::interActWithPlayer(GameObject* player){
-  player->hurt(1, Vec2(0,0));
+void UfoObject::colideWith(GameObject* oterhObj,const uint32_t otherType){
+  oterhObj->hurt(1, Vec2(getVelocityX(),getVelocityY()));
 }
 
 const float xAttackDistance = 300;
@@ -66,4 +71,19 @@ void UfoObject::AIUpdate(const float delta) {
       addToGameObjects.pushBack(babyTurf);
     }
   }
+}
+
+void UfoObject::deadState(){
+  HP = 0;
+  plingSFX->play(0.3f);
+  addGravityToObject(true);
+  this->bWallCollisions = false;
+  setVelocityY(70);
+  this->unschedule(schedule_selector(UfoObject::AIUpdate));
+  this->unschedule(schedule_selector(UfoObject::update));
+  removeWhenBelowZero();
+  setVelocityX(getVelocityX()*0.1);
+  setVelocityY(getVelocityY()*0.1);
+  objectSprite->setRotation(25);
+  dropCoin(3);
 }

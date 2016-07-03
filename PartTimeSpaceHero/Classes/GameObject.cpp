@@ -284,6 +284,20 @@ void GameObject::dropCoin(int nrOfCoins) {
   }
 }
 
+void GameObject::flash(int times, float interval){
+  this->schedule(CC_SCHEDULE_SELECTOR(GameObject::flash_sprite),interval,times,0);
+}
+
+void GameObject::flash_sprite(float delta){
+  cocos2d::Color3B c = objectSprite->getColor();
+  if(c !=c.RED){
+    objectSprite->setColor(c.RED);
+  }
+  else{
+    objectSprite->setColor(c.WHITE);
+  }
+}
+
 void GameObject::setItem(PlayerItem_ID id) {
 
 }

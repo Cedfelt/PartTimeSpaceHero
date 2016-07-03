@@ -22,6 +22,7 @@ public:
   float playerLookAhead;
   virtual void setItem(PlayerItem_ID id);
   virtual bool isSafe();
+  void resetItems();
 
 private:
   void playerWalkUpdate(float delta);

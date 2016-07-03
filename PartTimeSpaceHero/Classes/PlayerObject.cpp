@@ -157,6 +157,7 @@ void PlayerObject::walkAtDir(MovementDirectionX dir, std::string animName) {
 }
 
 void PlayerObject::setItem(PlayerItem_ID id) {
+  resetItems();
   if (id == E_RIFLE_ITEM) {
     pItem = &PlayerObject::rifle_item; // note: <pt2Member> may also legally point to &DoMore
     animationStrings.at(IdleR) = ("IdleRWep");
@@ -206,16 +207,12 @@ void PlayerObject::setItem(PlayerItem_ID id) {
     assert(false); // The Requested item dont exsist
   }
 }
-bool dashingRight = false;
-bool dashingLeft = false;
+
 bool PlayerObject::isSafe() {
   if (getVelocityY() != 0) {
     return false;
   }
   if (platform) {
-    return false;
-  }
-  if (dashingLeft||dashingRight) {
     return false;
   }
   return true;
@@ -276,8 +273,8 @@ bool PlayerObject::flyAtDir(MovementDirectionX dir, std::string animName) {
 bool PlayerObject::playerFlyUpdate(float delta) {
   const float jetPackFlySpeed = 1.7f;
   const float maxSpeed = getSpeed();
-  const float uppSpeed = 2.2f;
-  const float maxRiseSpeed = 100;
+  const float uppSpeed = 2.9f;
+  const float maxRiseSpeed = 150;
   float upp_threshold;
   int throtling = 0;
   bool module_active = false;
@@ -286,7 +283,7 @@ bool PlayerObject::playerFlyUpdate(float delta) {
     consumeRate = 0.0f;
   }
   else {
-    upp_threshold = 2.1f;
+    upp_threshold = 1.1f;
     consumeRate = 0.00f;;
   }
   const float movement_status = getMovementStatus();
@@ -379,26 +376,26 @@ float dashSpeed = 300;
 const float dashTime = 0.6f;
 const float chargePart = 0.75f;
 int dash_stage = 0;
+bool dashing = false;
 
 bool PlayerObject::playerDashUpdate(float delta) {
-  consumeRate = -currentConsumeRate*0.5f;
+  consumeRate = -1.7*currentConsumeRate;
+  dashing = false;
   if (fuel <= 0) {
     jetpack1->stop();
     dashRightCnt = 0;
     dashLeftCnt = 0;
-    dashingLeft = false;
-    dashingRight = false;
     addGravityToObject(true);
     return false;
   }
-  if (playerInput->isDoubleRight() && !dashingRight) {
+  if (playerInput->isDoubleRight()) {
     addGravityToObject(false);
     objectSprite->setScaleX(1);
     dashRightCnt = dashTime;
     dashLeftCnt = 0;
     jetpack1->play(0.2, 1.7f);
   }
-  if (playerInput->isDoubleLeft() && !dashingLeft) {
+  if (playerInput->isDoubleLeft()) {
     objectSprite->setScaleX(-1);
     addGravityToObject(false);
     dashLeftCnt = dashTime;
@@ -417,6 +414,7 @@ bool PlayerObject::playerDashUpdate(float delta) {
       jetpack1->play(0.4, 0.7f);
       setVelocityX(dashSpeed);
       fuel += consumeRate;
+      dashing = true;
       if (fuel < 0) {
         fuel = 0;
       }
@@ -437,6 +435,7 @@ bool PlayerObject::playerDashUpdate(float delta) {
     else {
       dash_stage++;
       setVelocityX(-dashSpeed);
+      dashing = true;
       fuel += consumeRate;
       if (fuel < 0) {
         fuel = 0;
@@ -477,6 +476,9 @@ bool PlayerObject::rifle_item(float delta) {
     bPlayerShoot = true;
     babyTurf->setVelocityX(200);
     weaponSFX->play(0.4f);
+    if(getMovementStatus()==GO_ON_GROUND){
+      setVelocityX(0);
+    }
   }
   if (playerInput->isDoubleLeft()) {
     objectSprite->setScaleX(-1);
@@ -494,6 +496,9 @@ bool PlayerObject::rifle_item(float delta) {
     bPlayerShoot = true;
     babyTurf->setVelocityX(-200);
     weaponSFX->play(0.4f);
+    if(getMovementStatus()==GO_ON_GROUND){
+      setVelocityX(0);
+    }
   }
   if (bPlayerShoot) {
     if (getPrevDir() == GO_RIGHT) {
@@ -560,25 +565,30 @@ void PlayerObject::playerUpdate(const float delta) {
 }
 
 bool PlayerObject::hurt(const int dmg, const Vec2 force) {
-  if (!isImune()) {
+  if (!isImune() && (!dashing)) {
     if (dmg > 0) {
       setImune();
+      this->unschedule(CC_SCHEDULE_SELECTOR(GameObject::imuneUpdate));
+      this->schedule(CC_SCHEDULE_SELECTOR(GameObject::imuneUpdate));
+      if (HP <= 0) {
+        HP = 0;
+      }
+      else{
+        flash(5,imuneTime/5.0f);
+      }
       HP -= dmg;
       playerCrySFX->play(0.3f);
     }
   }
-
-
+  
+  if(!dashing){
     if(force.x!=0.0f)
       setVelocityX(force.x);
     if(force.y!=0.0f)
       setVelocityY(force.y);
-    
-    this->unschedule(CC_SCHEDULE_SELECTOR(GameObject::imuneUpdate));
-    this->schedule(CC_SCHEDULE_SELECTOR(GameObject::imuneUpdate));
-    if (HP <= 0) {
-      HP = 0;
-    }
+  }
+  
+  
   return true;
 }
 
@@ -586,12 +596,27 @@ void PlayerObject::colideWith(GameObject* otherObj, const uint32_t otherType) {
   if (otherType&(uint32_t)PhysicsCategory::Enemy) {
     auto p = getHitbox();
     auto r = otherObj->getHitbox();
-    if ((p->getMinY() > r->getMidY())) {
+    if(dashing){
+      otherObj->hurt(1, Vec2(getVelocityX()* 0.66f, 0));
+      setVelocityY(125);
+      setVelocityX(getVelocityX()* (-0.66f));
+      dashLeftCnt = 0;
+      dashRightCnt = 0;
+      
+    }
+    else if ((p->getMinY() > r->getMidY())) {
       // Above Enemy
-      setVelocityY(getVelocityY()*-0.9f);
+      setVelocityY(150);
       otherObj->hurt(1, Vec2(0, 0));
     }
   }
+}
+
+void PlayerObject::resetItems(){
+  dashing = false;
+  bPlayerShoot = false;
+  dashRightCnt = 0;
+  dashLeftCnt = 0;
 }
 
 void PlayerObject::setupPlayer(const float x, const float y) {

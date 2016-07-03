@@ -119,7 +119,9 @@ public:
   void setTurnAtEdges(bool bState);
   void setStupidWalk(bool bState);
   void setStayInZone(bool bState);
-
+  void flash(int times, float interval);
+  
+  void flash_sprite(float delta);
 protected:
   virtual void removeWhenBelowZeroUpdate(const float delta);
   void dropCoin(int nrOfCoins);

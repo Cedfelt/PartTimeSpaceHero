@@ -35,6 +35,9 @@ bool BottyObject::init() {
   objectSprite->setAnchorPoint(Point(0.5, 0));
   objectSprite->setScale(1);
   addChild(objectSprite);
+  plingSFX = SoundFx::create();
+  plingSFX->loadEffect("small_explosion.aif", 0, 1, false);
+  addChild(plingSFX);
   dmg = 1;
 
   // Start Speed
@@ -54,6 +57,7 @@ void BottyObject::AIUpdate(const float delta) {
 
 void BottyObject::deadState() {
   HP = 0;
+  plingSFX->play(0.3f);
   setAnimation("botty_dead");
   this->bWallCollisions = false;
   setVelocityY(70);
