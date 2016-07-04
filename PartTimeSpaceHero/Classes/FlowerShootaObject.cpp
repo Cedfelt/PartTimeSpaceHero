@@ -71,3 +71,7 @@ void FlowerShootaObject::update(const float delta) {
   }
 
 }
+
+bool FlowerShootaObject::setupAnimation() {
+  return true;
+}

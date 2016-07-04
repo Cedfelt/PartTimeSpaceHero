@@ -39,3 +39,7 @@ void BabyTurfelObject::update(const float delta) {
     remove_object = true;
   }
 }
+
+bool BabyTurfelObject::setupAnimation() {
+  return true;
+}

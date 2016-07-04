@@ -82,3 +82,4 @@ uint32_t LevelData::getHighScore() { return highScore; }
 uint32_t LevelData::getBestTime() { return bestTime; }
 
 bool LevelData::getCompleted() { return completed; }
+

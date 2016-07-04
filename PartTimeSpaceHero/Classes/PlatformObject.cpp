@@ -103,3 +103,7 @@ bool PlatformObject::isBlocked(Rect* playerRect){
   auto platformRect = getHitbox();
   return playerRect->intersectsRect(*platformRect);
 }
+
+bool PlatformObject::setupAnimation() {
+  return true;
+}

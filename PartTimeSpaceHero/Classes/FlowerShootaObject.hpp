@@ -16,6 +16,7 @@
 using namespace cocos2d;
 class FlowerShootaObject : public EnemyObject {
 public:
+  bool setupAnimation();
   virtual bool init();
   CREATE_FUNC(FlowerShootaObject);
   SoundFx* pling;

@@ -38,3 +38,7 @@ void SimpleBullet::update(const float delta) {
     remove_object = true;
   }
 }
+
+bool SimpleBullet::setupAnimation() {
+  return true;
+}

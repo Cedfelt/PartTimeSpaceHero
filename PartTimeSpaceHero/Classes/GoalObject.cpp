@@ -37,3 +37,7 @@ void GoalObject::update(const float delta) {
 void GoalObject::colideWith(GameObject* oterhObj){
   colided = true;
 }
+
+bool GoalObject::setupAnimation() {
+  return true;
+}

@@ -13,6 +13,7 @@
 using namespace cocos2d;
 class GoalObject : public GameObject {
 public:
+  bool setupAnimation();
   virtual bool init();
   virtual void colideWith(GameObject* oterhObj);
   CREATE_FUNC(GoalObject);

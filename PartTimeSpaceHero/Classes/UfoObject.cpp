@@ -87,3 +87,7 @@ void UfoObject::deadState(){
   objectSprite->setRotation(25);
   dropCoin(3);
 }
+
+bool UfoObject::setupAnimation() {
+  return true;
+}

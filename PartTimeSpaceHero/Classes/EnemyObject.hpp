@@ -16,6 +16,7 @@ class EnemyObject : public GameObject {
 public:
   virtual bool init();
   CREATE_FUNC(EnemyObject);
+  bool setupAnimation();
 protected:
   // Walk functions
   virtual void stupidWalk(const float delta);

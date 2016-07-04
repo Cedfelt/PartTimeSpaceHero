@@ -28,3 +28,6 @@ bool DamageZone::hurt(const int dmg, const Vec2 force){
   return false;
 }
 
+bool DamageZone::setupAnimation() {
+  return true;
+}

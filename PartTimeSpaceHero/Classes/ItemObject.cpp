@@ -46,3 +46,7 @@ void ItemObject::colideWith(GameObject* otherGo,const uint32_t otherType){
 void ItemObject::update(const float delta) {
   
 }
+
+bool ItemObject::setupAnimation() {
+  return true;
+}

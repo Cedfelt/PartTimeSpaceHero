@@ -95,3 +95,7 @@ bool ItemCreate::isBlocked(Rect* playerRect){
   auto platformRect = getHitbox();
   return playerRect->intersectsRect(*platformRect);
 }
+
+bool ItemCreate::setupAnimation() {
+  return true;
+}

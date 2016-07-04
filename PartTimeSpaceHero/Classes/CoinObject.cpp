@@ -47,3 +47,7 @@ void CoinObject::colideWith(GameObject* otherGo,const uint32_t otherType){
 void CoinObject::update(const float delta) {
 
 }
+
+bool CoinObject::setupAnimation() {
+  return true;
+}

@@ -16,6 +16,7 @@ USING_NS_CC;
 #define MAX_CAPACITY 25
 class LaserObject : public GameObject{
 public:
+  bool setupAnimation();
   void setup(float output_time, float input_time, uint32_t direction, uint32_t range, float delay);
   int range;
   CREATE_FUNC(LaserObject);

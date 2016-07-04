@@ -21,6 +21,7 @@
 using namespace cocos2d;
 class PlatformObject : public GameObject {
 public:
+  bool setupAnimation();
   virtual bool init();
   virtual void interActWithPlayer(GameObject* player);
   CREATE_FUNC(PlatformObject);

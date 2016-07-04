@@ -24,98 +24,7 @@ bool PlayerObject::init() {
 
   HP = 3;
   playerLookAhead = 0;
-  // SETUP ANIMATIONS
-  spriteFrameCache = spriteFrameCache->getInstance();
-  animationCache = animationCache->getInstance();
-
-
-  ///////////////////////////
-  // Normal
-
-  /////////////////////////
-
-  //Animations
-  //-
-
-//  spriteFrameCache->addSpriteFramesWithFile("mech.plist");
-//  const float animSpeed = 0.180;
-//  addAnimation("mech", "IdleR", 2, 2, animSpeed);
-//  addAnimation("mech", "IdleL", 2, 2, animSpeed);
-//  addAnimation("mech", "WalkR", 1, 4, animSpeed);
-//  addAnimation("mech", "WalkL", 1, 4, animSpeed);
-//  addAnimation("mech", "FlyR", 1, 1, animSpeed);
-//  addAnimation("mech", "FlyL", 3, 3, animSpeed);
-//  addAnimation("mech", "AscendR", 1, 1, animSpeed);
-//  addAnimation("mech", "AscendL", 3, 3, animSpeed);
-//  addAnimation("mech", "FallR", 1, 1, animSpeed);
-//  addAnimation("mech", "FallL", 3, 3, animSpeed);
-//  addAnimation("mech", "DashChargeR", 1, 4, animSpeed);
-//  addAnimation("mech", "DashChargeL", 1, 4, animSpeed);
-//  addAnimation("mech", "DashR", 1, 4, animSpeed);
-//  addAnimation("mech", "DashL", 1, 4, animSpeed);
-
-
-  spriteFrameCache->addSpriteFramesWithFile("ptsh.plist");
-  addAnimation("PTSH", "IdleR", 1, 4, 0.2f);
-  addAnimation("PTSH", "IdleL", 1, 4, 0.2f);
-  addAnimation("PTSH", "WalkR", 5, 8, 0.15f);
-  addAnimation("PTSH", "WalkL", 5, 8, 0.15f);
-  addAnimation("PTSH", "FlyR", 9, 12, 0.2f);
-  addAnimation("PTSH", "FlyL", 9, 12, 0.2f);
-  addAnimation("PTSH", "AscendR", 13, 13, 0.2f);
-  addAnimation("PTSH", "AscendL", 13, 13, 0.2f);
-  addAnimation("PTSH", "FallR", 14, 17, 0.2f);
-  addAnimation("PTSH", "FallL", 14, 17, 0.2f);
-  addAnimation("PTSH", "DashChargeR", 18, 21, 0.15f);
-  addAnimation("PTSH", "DashChargeL", 18, 21, 0.15f);
-  addAnimation("PTSH", "DashR", 22, 25, 0.15f);
-  addAnimation("PTSH", "DashL", 22, 25, 0.15f);
   
-
-  // Strings
-  //-
-
-
-  //////////////////////////
-  // Weapon
-  /////////////////////////
-
-  //Animations
-  spriteFrameCache->addSpriteFramesWithFile("ptshwep.plist");
-  addAnimation("PTSH_WEP", "IdleRWep", 1, 4, 0.2f);
-  addAnimation("PTSH_WEP", "IdleLWep", 1, 4, 0.2f);
-  addAnimation("PTSH_WEP", "WalkRWep", 5, 8, 0.15f);
-  addAnimation("PTSH_WEP", "WalkLWep", 5, 8, 0.15f);
-  addAnimation("PTSH_WEP", "FlyRWep", 9, 12, 0.2f);
-  addAnimation("PTSH_WEP", "FlyLWep", 9, 12, 0.2f);
-  addAnimation("PTSH_WEP", "AscendRWep", 13, 13, 0.2f);
-  addAnimation("PTSH_WEP", "AscendLWep", 13, 13, 0.2f);
-  addAnimation("PTSH_WEP", "FallRWep", 14, 17, 0.2f);
-  addAnimation("PTSH_WEP", "FallLWep", 14, 17, 0.2f);
-  addAnimation("PTSH_WEP", "PlayerShootRWep", 26, 29, 0.06f);
-  addAnimation("PTSH_WEP", "PlayerShootLWep", 26, 29, 0.06f);
-
-
-  // Strings
-  animationStrings.push_back("IdleR");
-  animationStrings.push_back("IdleL");
-  animationStrings.push_back("WalkR");
-  animationStrings.push_back("WalkL");
-  animationStrings.push_back("FlyR");
-  animationStrings.push_back("FlyL");
-  animationStrings.push_back("AscendR");
-  animationStrings.push_back("AscendL");
-  animationStrings.push_back("FallR");
-  animationStrings.push_back("FallL");
-  animationStrings.push_back("ItemR");
-  animationStrings.push_back("ItemL");
-  animationStrings.push_back("Item2R");
-  animationStrings.push_back("Item2L");
-
-  objectSprite = cocos2d::Sprite::create();
-  objectSprite->setAnchorPoint(cocos2d::Point(0.5, 0.25));
-  objectSprite->setPosition(8, -128);// Aling sprite in Hitbox
-  setAnimation(animationStrings.at((WalkR)));
   //addChild(objectSprite);
 
 
@@ -137,11 +46,7 @@ bool PlayerObject::init() {
   fuel = 1.0f;
   consumeRate = currentConsumeRate;
   currentConsumeRate = 0.0075f;
-  objectSprite->retain();
 
-  // ITEM POINTERS
-  setItem(E_NO_ITEM);
-  /*setItem(E_DASH_ITEM);*/
   return true;
 }
 
@@ -622,4 +527,96 @@ void PlayerObject::resetItems(){
 void PlayerObject::setupPlayer(const float x, const float y) {
   setObjectPositionX(x);
   setObjectPositionY(y);
+}
+
+bool PlayerObject::setupAnimation() {
+  spriteFrameCache = spriteFrameCache->getInstance();
+  animationCache = animationCache->getInstance();
+
+
+  
+  ///////////////////////////
+  //Animations
+  
+  // Mech
+
+  //  spriteFrameCache->addSpriteFramesWithFile("mech.plist");
+  //  const float animSpeed = 0.180;
+  //  addAnimation("mech", "IdleR", 2, 2, animSpeed);
+  //  addAnimation("mech", "IdleL", 2, 2, animSpeed);
+  //  addAnimation("mech", "WalkR", 1, 4, animSpeed);
+  //  addAnimation("mech", "WalkL", 1, 4, animSpeed);
+  //  addAnimation("mech", "FlyR", 1, 1, animSpeed);
+  //  addAnimation("mech", "FlyL", 3, 3, animSpeed);
+  //  addAnimation("mech", "AscendR", 1, 1, animSpeed);
+  //  addAnimation("mech", "AscendL", 3, 3, animSpeed);
+  //  addAnimation("mech", "FallR", 1, 1, animSpeed);
+  //  addAnimation("mech", "FallL", 3, 3, animSpeed);
+  //  addAnimation("mech", "DashChargeR", 1, 4, animSpeed);
+  //  addAnimation("mech", "DashChargeL", 1, 4, animSpeed);
+  //  addAnimation("mech", "DashR", 1, 4, animSpeed);
+  //  addAnimation("mech", "DashL", 1, 4, animSpeed);
+
+
+  // Normal
+  spriteFrameCache->addSpriteFramesWithFile("ptsh.plist");
+  addAnimation("PTSH", "IdleR", 1, 4, 0.2f);
+  addAnimation("PTSH", "IdleL", 1, 4, 0.2f);
+  addAnimation("PTSH", "WalkR", 5, 8, 0.15f);
+  addAnimation("PTSH", "WalkL", 5, 8, 0.15f);
+  addAnimation("PTSH", "FlyR", 9, 12, 0.2f);
+  addAnimation("PTSH", "FlyL", 9, 12, 0.2f);
+  addAnimation("PTSH", "AscendR", 13, 13, 0.2f);
+  addAnimation("PTSH", "AscendL", 13, 13, 0.2f);
+  addAnimation("PTSH", "FallR", 14, 17, 0.2f);
+  addAnimation("PTSH", "FallL", 14, 17, 0.2f);
+  addAnimation("PTSH", "DashChargeR", 18, 21, 0.15f);
+  addAnimation("PTSH", "DashChargeL", 18, 21, 0.15f);
+  addAnimation("PTSH", "DashR", 22, 25, 0.15f);
+  addAnimation("PTSH", "DashL", 22, 25, 0.15f);
+
+  // Weapon Anim 
+  auto spriteFrameCache = cocos2d::SpriteFrameCache::getInstance();
+  spriteFrameCache->addSpriteFramesWithFile("ptshwep.plist");
+  addAnimation("PTSH_WEP", "IdleRWep", 1, 4, 0.2f);
+  addAnimation("PTSH_WEP", "IdleLWep", 1, 4, 0.2f);
+  addAnimation("PTSH_WEP", "WalkRWep", 5, 8, 0.15f);
+  addAnimation("PTSH_WEP", "WalkLWep", 5, 8, 0.15f);
+  addAnimation("PTSH_WEP", "FlyRWep", 9, 12, 0.2f);
+  addAnimation("PTSH_WEP", "FlyLWep", 9, 12, 0.2f);
+  addAnimation("PTSH_WEP", "AscendRWep", 13, 13, 0.2f);
+  addAnimation("PTSH_WEP", "AscendLWep", 13, 13, 0.2f);
+  addAnimation("PTSH_WEP", "FallRWep", 14, 17, 0.2f);
+  addAnimation("PTSH_WEP", "FallLWep", 14, 17, 0.2f);
+  addAnimation("PTSH_WEP", "PlayerShootRWep", 26, 29, 0.06f);
+  addAnimation("PTSH_WEP", "PlayerShootLWep", 26, 29, 0.06f);
+
+  // Items 
+
+
+
+  // Strings
+  animationStrings.push_back("IdleR");
+  animationStrings.push_back("IdleL");
+  animationStrings.push_back("WalkR");
+  animationStrings.push_back("WalkL");
+  animationStrings.push_back("FlyR");
+  animationStrings.push_back("FlyL");
+  animationStrings.push_back("AscendR");
+  animationStrings.push_back("AscendL");
+  animationStrings.push_back("FallR");
+  animationStrings.push_back("FallL");
+  animationStrings.push_back("ItemR");
+  animationStrings.push_back("ItemL");
+  animationStrings.push_back("Item2R");
+  animationStrings.push_back("Item2L");
+
+  objectSprite = cocos2d::Sprite::create();
+  objectSprite->retain();
+  objectSprite->setAnchorPoint(cocos2d::Point(0.5, 0.25));
+  objectSprite->setPosition(8, -128);// Aling sprite in Hitbox
+  setAnimation(animationStrings.at((WalkR)));
+  // ITEM POINTERS
+  setItem(E_NO_ITEM);
+return true;
 }

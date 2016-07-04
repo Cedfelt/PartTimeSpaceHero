@@ -14,6 +14,7 @@ using namespace cocos2d;
 class PlayerObject : public GameObject {
 public:
   virtual bool init();
+  bool setupAnimation();
   CREATE_FUNC(PlayerObject);
   void setupPlayer(const float x,const float y);
   void playerUpdate(const float delta);

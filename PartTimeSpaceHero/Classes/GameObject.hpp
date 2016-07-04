@@ -14,6 +14,7 @@
 using namespace cocos2d;
 class GameObject : public cocos2d::DrawNode {
 public:
+  virtual bool setupAnimation();
   uint32_t getObjectType();
   void setPrevDir(int32_t prevDir);
   int32_t getPrevDir();

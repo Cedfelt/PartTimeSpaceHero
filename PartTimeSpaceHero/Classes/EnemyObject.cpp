@@ -98,3 +98,6 @@ void EnemyObject::simpleWalkerHurt(GameObject* pPlayer, const uint32_t otherType
     }
 }
 
+bool EnemyObject::setupAnimation() {
+  return true;
+}

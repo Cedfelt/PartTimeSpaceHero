@@ -205,6 +205,9 @@ bool LaserObject::hurt(const int dmg, const Vec2 force){
 }
 //void Laser_Trap::updateAI(float delta) {}
 
+bool LaserObject::setupAnimation() {
+  return true;
+}
 
 
 

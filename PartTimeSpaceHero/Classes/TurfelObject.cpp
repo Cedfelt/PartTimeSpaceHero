@@ -55,3 +55,7 @@ void TurfelObject::AIUpdate(const float delta) {
     }
   }
 }
+
+bool TurfelObject::setupAnimation() {
+  return true;
+}

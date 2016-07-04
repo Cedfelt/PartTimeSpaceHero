@@ -233,6 +233,7 @@ void WorldObject::spawnObjects(cocos2d::Vector<GameObject*>* gameObjects) {
   const std::string objectName = "GameObjects";
   auto objectGroup = mapObject->map->getObjectGroup(objectName);
   ValueVector obj = objectGroup->getObjects();
+  bool bottyFirst = true;
   for (int i = 0;i < obj.size();i++) {
     ValueMap vm = obj.at(i).asValueMap();
     const float x = vm["x"].asFloat();
@@ -247,6 +248,7 @@ void WorldObject::spawnObjects(cocos2d::Vector<GameObject*>* gameObjects) {
     
     if (name == "PlayerObject") {
       player = PlayerObject::create();
+      player->setupAnimation();
       player->setupHitbox(0.1, 1, 10, 25, 10, 25, false);
       //setAnchorPoint(Point(0,0));
       player->setupPlayer(x, y);
@@ -348,6 +350,10 @@ void WorldObject::spawnObjects(cocos2d::Vector<GameObject*>* gameObjects) {
     else if(name == "BottyObject"){
       // COIN
       auto botty = BottyObject::create();
+      if (bottyFirst) {
+        botty->setupAnimation();
+        bottyFirst = false;
+      }
       botty->setupHitbox(0.1, 1, 24, 48, 24, 44, false);
       gameObjects->pushBack(botty);
       botty->setObjectPositionX(x);

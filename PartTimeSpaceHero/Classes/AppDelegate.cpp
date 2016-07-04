@@ -40,12 +40,12 @@ bool AppDelegate::applicationDidFinishLaunching() {
 
   
     auto director = Director::getInstance();
-#ifdef IPAD_RETINA
-  uint32_t res_x = 2048;
-  uint32_t res_y = 1536;
+#ifdef WIN32
+  const uint32_t res_x = 1136;
+  const uint32_t res_y = 640;
 #else //if IPHONE5
-  uint32_t res_x = director->getWinSizeInPixels().width;
-  uint32_t res_y = director->getWinSizeInPixels().height;
+  const uint32_t res_x = director->getWinSizeInPixels().width;
+  const uint32_t res_y = director->getWinSizeInPixels().height;
 #endif
     auto glview = director->getOpenGLView();
     if (!glview) {

@@ -22,6 +22,7 @@ using namespace cocos2d;
 class TurfelObject : public GameObject {
 public:
   virtual bool init();
+  bool setupAnimation();
   virtual void interActWithPlayer(GameObject* player);
   CREATE_FUNC(TurfelObject);
   SoundFx* turtleCrySFX;

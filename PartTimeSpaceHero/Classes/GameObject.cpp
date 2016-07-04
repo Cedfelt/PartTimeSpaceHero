@@ -301,3 +301,7 @@ void GameObject::flash_sprite(float delta){
 void GameObject::setItem(PlayerItem_ID id) {
 
 }
+
+bool GameObject::setupAnimation() {
+  return false;
+}
