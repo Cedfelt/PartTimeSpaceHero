@@ -117,7 +117,7 @@ void MainMenu::onTouchEnded(const std::vector<Touch*>& touches, Event*)
     setMapUrl("ptsh_template.tmx");
     cocos2d::log(nextLevel->getMapName().c_str());
     auto scene = GameScene::createScene();
-    Director::getInstance()->pushScene(scene);
+    Director::getInstance()->replaceScene(scene);
   }
   else{
     cocos2d::log("Game Cleared");

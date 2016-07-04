@@ -19,12 +19,10 @@ bool BottyObject::init() {
     return false;
   }
 
-
+  
   this->schedule(schedule_selector(BottyObject::AIUpdate), 0.8);
   addGravityToObject(true);
   setElastic(0.f);
-  objectSprite = Sprite::create();
-  addChild(objectSprite);
   plingSFX = SoundFx::create();
   plingSFX->loadEffect("small_explosion.aif", 0, 1, false);
   addChild(plingSFX);
@@ -33,6 +31,10 @@ bool BottyObject::init() {
   // Start Speed
   setVelocityX(-speed);
   setPrevDir(GO_LEFT);
+  objectSprite = cocos2d::Sprite::create();
+  objectSprite->setPosition(12, 0);// Aling sprite in Hitbox
+  objectSprite->setAnchorPoint(Point(0.5, 0));
+  addChild(objectSprite);
   objectSprite->setScaleX(-1);
   return true;
 }
@@ -59,15 +61,11 @@ void BottyObject::deadState() {
 
 bool BottyObject::setupAnimation() {
   // SETUP ANIMATIONS
-  objectSprite = cocos2d::Sprite::create();
+  
   spriteFrameCache = spriteFrameCache->getInstance();
   animationCache = animationCache->getInstance();
   spriteFrameCache->addSpriteFramesWithFile("botty.plist");
   addAnimation("Botty", "botty_idle", 1, 2, 0.2f);
   addAnimation("Botty", "botty_dead", 3, 3, 1.f);
-  setAnimation("botty_idle");
-  objectSprite->setPosition(12, 0);// Aling sprite in Hitbox
-  objectSprite->setAnchorPoint(Point(0.5, 0));
-  objectSprite->setScale(1);
   return true;
 }

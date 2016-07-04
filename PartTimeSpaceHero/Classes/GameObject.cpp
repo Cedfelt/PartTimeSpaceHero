@@ -88,7 +88,8 @@ void GameObject::colideWith(GameObject *otherGo, const uint32_t otherType) {
 void GameObject::setAnimation(std::string anim) {
   if (prevAnimation != anim) {
     objectSprite->stopAllActions();
-    objectSprite->runAction(cocos2d::RepeatForever::create(cocos2d::Animate::create(animationCache->getAnimation(anim))));
+    auto cache = cocos2d::AnimationCache::getInstance();
+    objectSprite->runAction(cocos2d::RepeatForever::create(cocos2d::Animate::create(cache->getAnimation(anim))));
   }
   prevAnimation = anim;
 }
