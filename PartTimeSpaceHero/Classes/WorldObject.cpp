@@ -79,6 +79,16 @@ bool WorldObject::init() {
   auto cache = cocos2d::SpriteFrameCache::getInstance();
   cache->removeUnusedSpriteFrames();
   
+  /*screen_draw = cocos2d::DrawNode::create();
+  cocos2d::Vec2 rectangle[4];
+  rectangle[0] = cocos2d::Vec2(screen.getMinX(), screen.getMinY());
+  rectangle[1] = cocos2d::Vec2(screen.getMaxX(), screen.getMinY());
+  rectangle[2] = cocos2d::Vec2(screen.getMaxX(), screen.getMaxY());
+  rectangle[3] = cocos2d::Vec2(screen.getMinX(), screen.getMaxY());
+  screen_draw->drawPolygon(rectangle, 4, cocos2d::Color4F::RED, 1, cocos2d::Color4F::BLUE);
+  screen_draw->setAnchorPoint(getAnchorPoint());
+  addChild(screen_draw, 8);*/
+
   return true;
 }
 
@@ -450,10 +460,11 @@ bool WorldObject::goOnScreen(GameObject *obj) {
 }
 
 void WorldObject::updateOffScreenRect() {
-  float screnWidh = cocos2d::Director::getInstance()->getWinSize().width*outside_screen;
-  float screnHeight = cocos2d::Director::getInstance()->getWinSize().height*outside_screen;
-  float distanceX = (screnWidh - screnWidh / outside_screen) / 2;
-  float distanceY = (screnHeight - screnHeight / outside_screen) / 2;
+  outside_screen = 1;
+  const float screnWidh = cocos2d::Director::getInstance()->getWinSize().width*outside_screen;
+  const float screnHeight = cocos2d::Director::getInstance()->getWinSize().height*outside_screen;
+  const float distanceX = (screnWidh - screnWidh / outside_screen) / 2;
+  const float distanceY = (screnHeight - screnHeight / outside_screen) / 2;
   float sx = convertToNodeSpace(cocos2d::Point(0, 0.)).x;
   float sy = convertToNodeSpace(cocos2d::Point(0, 0.)).y;
   // Limit Screen to Go Outside of Map
@@ -464,8 +475,6 @@ void WorldObject::updateOffScreenRect() {
     sy = 0;
   }
   screen.setRect(sx - distanceX, sy - distanceY, screnWidh, screnHeight);
-  if (view_of_screen_rect) {
-    screen_draw->setPosition(sx, sy);
-  }
+  /*screen_draw->setPosition(sx, sy);*/
 }
 
