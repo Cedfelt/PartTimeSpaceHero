@@ -341,7 +341,7 @@ void WorldObject::spawnObjects(cocos2d::Vector<GameObject*>* gameObjects) {
       turfel->setObjectPositionY(y);
       turfel->getPhysicsBody()->setCategoryBitmask((int)PhysicsCategory::Enemy);
       turfel->getPhysicsBody()->setCollisionBitmask((int)PhysicsCategory::None);
-      turfel->getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::Player|(int)PhysicsCategory::PlayerPickups|(int)PhysicsCategory::Hazard);
+      turfel->getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::Player|(int)PhysicsCategory::PlayerProjectile|(int)PhysicsCategory::Hazard);
       turfel->target = player;
       addChild(turfel);
     }

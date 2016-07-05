@@ -79,7 +79,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "344"
             endingLineNumber = "344"
-            landmarkName = "PlayerObject::playerFlyUpdate(float delta)"
+            landmarkName = "PlayerObject::playerDashUpdate(float delta)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -127,7 +127,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "157"
             endingLineNumber = "157"
-            landmarkName = "PlayerObject::walkAtDir(MovementDirectionX dir, std::string animName)"
+            landmarkName = "PlayerObject::playerFallUpdate(float delta)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -189,7 +189,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "114"
             endingLineNumber = "114"
-            landmarkName = "PlayerObject::init()"
+            landmarkName = "PlayerObject::setItem(PlayerItem_ID id)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -221,7 +221,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "113"
             endingLineNumber = "113"
-            landmarkName = "PlayerObject::init()"
+            landmarkName = "PlayerObject::setItem(PlayerItem_ID id)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -237,7 +237,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "194"
             endingLineNumber = "194"
-            landmarkName = "PlayerObject::setItem(PlayerItem_ID id)"
+            landmarkName = "PlayerObject::playerFlyUpdate(float delta)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -349,7 +349,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "211"
             endingLineNumber = "211"
-            landmarkName = "PlayerObject::isSafe()"
+            landmarkName = "PlayerObject::playerFlyUpdate(float delta)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -365,7 +365,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "191"
             endingLineNumber = "191"
-            landmarkName = "PlayerObject::setItem(PlayerItem_ID id)"
+            landmarkName = "PlayerObject::playerFlyUpdate(float delta)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -381,7 +381,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "217"
             endingLineNumber = "217"
-            landmarkName = "PlayerObject::isSafe()"
+            landmarkName = "PlayerObject::playerFlyUpdate(float delta)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -397,7 +397,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "341"
             endingLineNumber = "341"
-            landmarkName = "PlayerObject::playerFlyUpdate(float delta)"
+            landmarkName = "PlayerObject::playerDashUpdate(float delta)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -413,7 +413,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "257"
             endingLineNumber = "257"
-            landmarkName = "PlayerObject::playerFallUpdate(float delta)"
+            landmarkName = "PlayerObject::playerFlyUpdate(float delta)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -429,7 +429,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "256"
             endingLineNumber = "256"
-            landmarkName = "PlayerObject::playerFallUpdate(float delta)"
+            landmarkName = "PlayerObject::playerFlyUpdate(float delta)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -445,7 +445,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "258"
             endingLineNumber = "258"
-            landmarkName = "PlayerObject::playerFallUpdate(float delta)"
+            landmarkName = "PlayerObject::playerFlyUpdate(float delta)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -461,7 +461,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "264"
             endingLineNumber = "264"
-            landmarkName = "PlayerObject::getFuel()"
+            landmarkName = "PlayerObject::playerFlyUpdate(float delta)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -477,7 +477,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "182"
             endingLineNumber = "182"
-            landmarkName = "PlayerObject::setItem(PlayerItem_ID id)"
+            landmarkName = "PlayerObject::playerFlyUpdate(float delta)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -493,7 +493,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "185"
             endingLineNumber = "185"
-            landmarkName = "PlayerObject::setItem(PlayerItem_ID id)"
+            landmarkName = "PlayerObject::playerFlyUpdate(float delta)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -509,7 +509,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "181"
             endingLineNumber = "181"
-            landmarkName = "PlayerObject::setItem(PlayerItem_ID id)"
+            landmarkName = "PlayerObject::playerFlyUpdate(float delta)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -524,9 +524,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "277"
-            endingLineNumber = "277"
-            landmarkName = "PlayerObject::playerFlyUpdate(float delta)"
-            landmarkType = "5">
+            endingLineNumber = "277">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -541,7 +539,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "295"
             endingLineNumber = "295"
-            landmarkName = "PlayerObject::playerFlyUpdate(float delta)"
+            landmarkName = "PlayerObject::playerDashUpdate(float delta)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -557,7 +555,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "175"
             endingLineNumber = "175"
-            landmarkName = "PlayerObject::setItem(PlayerItem_ID id)"
+            landmarkName = "PlayerObject::flyAtDir(MovementDirectionX dir, std::string animName)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -637,7 +635,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "94"
             endingLineNumber = "94"
-            landmarkName = "PlayerObject::init()"
+            landmarkName = "PlayerObject::setItem(PlayerItem_ID id)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -685,7 +683,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "238"
             endingLineNumber = "238"
-            landmarkName = "PlayerObject::playerWalkUpdate(float delta)"
+            landmarkName = "PlayerObject::playerFlyUpdate(float delta)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -701,7 +699,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "239"
             endingLineNumber = "239"
-            landmarkName = "PlayerObject::playerWalkUpdate(float delta)"
+            landmarkName = "PlayerObject::playerFlyUpdate(float delta)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -733,7 +731,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "208"
             endingLineNumber = "208"
-            landmarkName = "PlayerObject::setItem(PlayerItem_ID id)"
+            landmarkName = "PlayerObject::playerFlyUpdate(float delta)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -749,7 +747,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "230"
             endingLineNumber = "230"
-            landmarkName = "PlayerObject::playerWalkUpdate(float delta)"
+            landmarkName = "PlayerObject::playerFlyUpdate(float delta)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -766,22 +764,6 @@
             startingLineNumber = "37"
             endingLineNumber = "37"
             landmarkName = "GameObject::imuneUpdate(const float delta)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../Classes/TurfelObject.cpp"
-            timestampString = "486220007.125011"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "TurfelObject::interActWithPlayer(GameObject* player)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -886,12 +868,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/PlayerObject.cpp"
-            timestampString = "489269603.854652"
+            timestampString = "489438854.44242"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "468"
-            endingLineNumber = "468"
-            landmarkName = "PlayerObject::rifle_item(float delta)"
+            startingLineNumber = "471"
+            endingLineNumber = "471"
+            landmarkName = "PlayerObject::playerUpdate(const float delta)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -955,7 +937,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "183"
             endingLineNumber = "183"
-            landmarkName = "PlayerObject::setItem(PlayerItem_ID id)"
+            landmarkName = "PlayerObject::playerFlyUpdate(float delta)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -971,7 +953,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "187"
             endingLineNumber = "187"
-            landmarkName = "PlayerObject::setItem(PlayerItem_ID id)"
+            landmarkName = "PlayerObject::playerFlyUpdate(float delta)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -987,7 +969,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "186"
             endingLineNumber = "186"
-            landmarkName = "PlayerObject::setItem(PlayerItem_ID id)"
+            landmarkName = "PlayerObject::playerFlyUpdate(float delta)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -998,43 +980,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/TurfelObject.cpp"
-            timestampString = "486220146.74085"
+            timestampString = "489448819.587787"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
-            landmarkName = "TurfelObject::AIUpdate(const float delta)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../Classes/TurfelObject.cpp"
-            timestampString = "486221428.332565"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
-            landmarkName = "TurfelObject::AIUpdate(const float delta)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../Classes/TurfelObject.cpp"
-            timestampString = "486220146.74085"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
             landmarkName = "TurfelObject::AIUpdate(const float delta)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1321,7 +1271,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "204"
             endingLineNumber = "204"
-            landmarkName = "WorldObject::setViewPointCenter(const cocos2d::Point position)"
+            landmarkName = "WorldObject::updateWorld(float delta)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1385,7 +1335,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "205"
             endingLineNumber = "205"
-            landmarkName = "WorldObject::setViewPointCenter(const cocos2d::Point position)"
+            landmarkName = "WorldObject::updateWorld(float delta)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1401,7 +1351,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "203"
             endingLineNumber = "203"
-            landmarkName = "WorldObject::setViewPointCenter(const cocos2d::Point position)"
+            landmarkName = "WorldObject::updateWorld(float delta)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1432,7 +1382,9 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "96"
-            endingLineNumber = "96">
+            endingLineNumber = "96"
+            landmarkName = "WorldObject::getGameObjects()"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1687,7 +1639,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "408"
             endingLineNumber = "408"
-            landmarkName = "PlayerObject::playerDashUpdate(float delta)"
+            landmarkName = "PlayerObject::rifle_item(float delta)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1703,7 +1655,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "370"
             endingLineNumber = "370"
-            landmarkName = "PlayerObject::playerFlyUpdate(float delta)"
+            landmarkName = "PlayerObject::rifle_item(float delta)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1909,7 +1861,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "402"
             endingLineNumber = "402"
-            landmarkName = "PlayerObject::playerDashUpdate(float delta)"
+            landmarkName = "PlayerObject::rifle_item(float delta)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2100,9 +2052,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "101"
-            endingLineNumber = "101"
-            landmarkName = "WorldObject::updateWorld(float delta)"
-            landmarkType = "5">
+            endingLineNumber = "101">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -2132,9 +2082,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "280"
-            endingLineNumber = "280"
-            landmarkName = "PlayerObject::playerFlyUpdate(float delta)"
-            landmarkType = "5">
+            endingLineNumber = "280">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -2149,7 +2097,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "302"
             endingLineNumber = "302"
-            landmarkName = "PlayerObject::playerFlyUpdate(float delta)"
+            landmarkName = "PlayerObject::playerDashUpdate(float delta)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2181,7 +2129,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "301"
             endingLineNumber = "301"
-            landmarkName = "PlayerObject::playerFlyUpdate(float delta)"
+            landmarkName = "PlayerObject::playerDashUpdate(float delta)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2192,12 +2140,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/PlayerObject.cpp"
-            timestampString = "489274709.58567"
+            timestampString = "489438854.44242"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "596"
-            endingLineNumber = "596"
-            landmarkName = "PlayerObject::colideWith(GameObject* otherObj, const uint32_t otherType)"
+            startingLineNumber = "602"
+            endingLineNumber = "602"
+            landmarkName = "PlayerObject::setupAnimation()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2213,7 +2161,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "221"
             endingLineNumber = "221"
-            landmarkName = "WorldObject::onContactBegan(PhysicsContact &amp;contact)"
+            landmarkName = "WorldObject::setViewPointCenter(const cocos2d::Point position)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2304,12 +2252,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/PlayerObject.cpp"
-            timestampString = "489274709.58567"
+            timestampString = "489438854.44242"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "584"
-            endingLineNumber = "584"
-            landmarkName = "PlayerObject::hurt(const int dmg, const Vec2 force)"
+            startingLineNumber = "590"
+            endingLineNumber = "590"
+            landmarkName = "PlayerObject::setupAnimation()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2352,12 +2300,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/PlayerObject.cpp"
-            timestampString = "489274709.58567"
+            timestampString = "489438854.44242"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "569"
-            endingLineNumber = "569"
-            landmarkName = "PlayerObject::hurt(const int dmg, const Vec2 force)"
+            startingLineNumber = "575"
+            endingLineNumber = "575"
+            landmarkName = "PlayerObject::setupAnimation()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2368,7 +2316,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/UfoObject.cpp"
-            timestampString = "489274106.60478"
+            timestampString = "489438854.44242"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "47"
@@ -2384,12 +2332,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/PlayerObject.cpp"
-            timestampString = "489276247.128717"
+            timestampString = "489438854.44242"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "568"
-            endingLineNumber = "568"
-            landmarkName = "PlayerObject::hurt(const int dmg, const Vec2 force)"
+            startingLineNumber = "574"
+            endingLineNumber = "574"
+            landmarkName = "PlayerObject::setupAnimation()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2406,6 +2354,22 @@
             startingLineNumber = "64"
             endingLineNumber = "64"
             landmarkName = "BottyObject::setupAnimation()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Classes/PlayerObject.cpp"
+            timestampString = "489439629.624593"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "476"
+            endingLineNumber = "476"
+            landmarkName = "PlayerObject::hurt(const int dmg, const Vec2 force)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

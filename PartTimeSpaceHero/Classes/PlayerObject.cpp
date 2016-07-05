@@ -18,7 +18,7 @@ bool PlayerObject::init() {
     return false;
   }
   playerInput = PlayerInput::create();
-  setSpeed(100.f);
+  setSpeed(108.f);
   addChild(playerInput);
   this->schedule(schedule_selector(PlayerObject::playerUpdate));
 
@@ -50,8 +50,8 @@ bool PlayerObject::init() {
   return true;
 }
 
-const float ground_deacceleration = 0.87;
-const float ground_acceleration = 10;
+const float ground_deacceleration = 0.8f;
+const float ground_acceleration = 15;
 
 void PlayerObject::walkAtDir(MovementDirectionX dir, std::string animName) {
   setAnimation(animName);
@@ -440,6 +440,9 @@ void PlayerObject::playerUpdate(const float delta) {
   }
   solid = false;// Not Dashing
 
+  if(!isImune()){
+    
+  
   if (playerInput->isLeft()) {
     objectSprite->setScaleX(-1);
     if (playerLookAhead > -71)
@@ -456,7 +459,7 @@ void PlayerObject::playerUpdate(const float delta) {
     playerFallUpdate(delta);
     playerWalkUpdate(delta);
   }
-
+    }
   if (std::abs(this->getVelocityX()) > getSpeed()) {
     setVelocityX(getVelocityX()*0.99f);
   }
@@ -498,6 +501,9 @@ bool PlayerObject::hurt(const int dmg, const Vec2 force) {
 }
 
 void PlayerObject::colideWith(GameObject* otherObj, const uint32_t otherType) {
+  if(isImune()){
+    return;
+  }
   if (otherType&(uint32_t)PhysicsCategory::Enemy) {
     auto p = getHitbox();
     auto r = otherObj->getHitbox();

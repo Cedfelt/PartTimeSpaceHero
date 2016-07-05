@@ -7,11 +7,11 @@
 //
 
 #pragma once
-#include "GameObject.hpp"
+#include "EnemyObject.hpp"
 #include "SoundFx.hpp"
 
 using namespace cocos2d;
-class UfoObject : public GameObject {
+class UfoObject : public EnemyObject {
 public:
   virtual bool init();
   bool setupAnimation();

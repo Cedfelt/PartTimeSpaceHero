@@ -32,28 +32,14 @@ bool TurfelObject::init() {
   return true;
 }
 
-void TurfelObject::interActWithPlayer(GameObject* player){
-  player->hurt(1, Vec2(0,0));
+void TurfelObject::colideWith(GameObject* oterhObj,const uint32_t otherType){
+  if(otherType & (int)PhysicsCategory::Player){
+    oterhObj->hurt(1,Vec2(getVelocityX(), 150));
+  }
 }
 
-const float xAttackDistance = 100;
-const float yAttackDistance = 500;
 void TurfelObject::AIUpdate(const float delta) {
-  
-  
-  if((std::abs(target->getPositionX() - getPositionX() )< xAttackDistance)){
-    const float yDist = getPositionY() - target->getPositionY();
-    if(yDist<yAttackDistance && yDist > 0){
-      auto babyTurf = BabyTurfelObject::create();
-      babyTurf->setupHitbox(0.1f, 1.0f, 16, 16, 16, 16, false);
-      babyTurf->setObjectPositionX(getPositionX() + objectSprite->getTexture()->getPixelsWide()/2);
-      babyTurf->setObjectPositionY(getPositionY());
-      babyTurf->getPhysicsBody()->setCategoryBitmask((int)PhysicsCategory::Enemy);
-      babyTurf->getPhysicsBody()->setCollisionBitmask((int)PhysicsCategory::None);
-      babyTurf->getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::Player|(int)PhysicsCategory::PlayerPickups|(int)PhysicsCategory::Hazard);
-      addToGameObjects.pushBack(babyTurf);
-    }
-  }
+  stupidWalk(delta);
 }
 
 bool TurfelObject::setupAnimation() {

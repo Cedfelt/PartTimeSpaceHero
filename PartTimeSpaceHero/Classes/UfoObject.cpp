@@ -44,7 +44,7 @@ bool UfoObject::init() {
 }
 
 void UfoObject::colideWith(GameObject* oterhObj,const uint32_t otherType){
-  oterhObj->hurt(1, Vec2(getVelocityX(),getVelocityY()));
+  simpleWalkerHurt(oterhObj, otherType);
 }
 
 const float xAttackDistance = 300;
