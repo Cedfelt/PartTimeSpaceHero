@@ -10,6 +10,7 @@
 #include "cocostudio/CocoStudio.h"
 #include "ui/CocosGUI.h"
 #include "GlobalPList.hpp"
+#include "MainMenu.hpp"
 
 USING_NS_CC;
 
@@ -45,7 +46,7 @@ bool GameScene::init()
 
   //////////////////////////////
   // 1. super init first
-  if (!LayerColor::initWithColor(Color4B(238, 195, 154, 255)))
+  if (!LayerColor::initWithColor(Color4B(217, 160, 102, 255)))
   {
     return false;
   }
@@ -94,7 +95,8 @@ void GameScene::mainGameLoop(float delta) {
   director->setProjection(Director::Projection::_2D);
   counter += delta;
   if (counter > 25) {
-    Director::getInstance()->popScene();
+    auto scene = MainMenu::createScene();
+    Director::getInstance()->replaceScene(scene);
   }
 }
 

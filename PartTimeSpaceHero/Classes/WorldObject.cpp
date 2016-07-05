@@ -21,6 +21,7 @@
 #include "PlatformObject.hpp"
 #include "FlowerShootaObject.hpp"
 #include "ItemCreate.hpp"
+#include "MainMenu.hpp"
 
 
 
@@ -74,6 +75,9 @@ bool WorldObject::init() {
   
   cocos2d::Director::getInstance()->getTextureCache()->removeAllTextures();
   physic->platforms = &plattis;
+  
+  auto cache = cocos2d::SpriteFrameCache::getInstance();
+  cache->removeUnusedSpriteFrames();
   
   return true;
 }
@@ -133,7 +137,7 @@ void WorldObject::updateWorld(float delta) {
   const float offset = player->playerLookAhead;
   playerPos.x = playerPos.x + offset;
   mapObject->moveBackgroundLayers();
-  setViewPointCenter(Vec2((playerPos.x + lastX)/2,(playerPos.y + lastY)/2));
+  setViewPointCenter(Vec2((playerPos.x + lastX)/2.0,(playerPos.y + lastY)/2.0));
   mapObject->updateLiquids(new_delta);
   lastX = playerPos.x;
   lastY = playerPos.y;
@@ -148,7 +152,8 @@ void WorldObject::updateWorld(float delta) {
       audio->stopBackgroundMusic();
       audio->pauseAllEffects();
       stopAllActions();
-      cocos2d::Director::getInstance()->popScene();
+      auto scene = MainMenu::createScene();
+      Director::getInstance()->replaceScene(scene);
     }
   }
   
@@ -158,7 +163,8 @@ void WorldObject::updateWorld(float delta) {
     audio->stopBackgroundMusic();
     audio->stopAllEffects();
     stopAllActions();
-    cocos2d::Director::getInstance()->popScene();
+    auto scene = MainMenu::createScene();
+    Director::getInstance()->replaceScene(scene);
   }
   
   // Iterate objects
@@ -354,6 +360,7 @@ void WorldObject::spawnObjects(cocos2d::Vector<GameObject*>* gameObjects) {
         botty->setupAnimation();
         bottyFirst = false;
       }
+      botty-> setAnimation("botty_idle");
       botty->setupHitbox(0.1, 1, 24, 48, 24, 44, false);
       gameObjects->pushBack(botty);
       botty->setObjectPositionX(x);
