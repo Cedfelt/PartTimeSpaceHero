@@ -29,6 +29,13 @@ public:
   // implement the "static create()" method manually
   PlayerObject* player;
 private:
+  bool goOnScreen(GameObject *obj);
+  void updateOffScreenRect();
+  cocos2d::Rect screen;
+  float outside_screen;
+  cocos2d::DrawNode *screen_draw;
+  bool view_of_screen_rect = false;
+  
   MapObject* mapObject;
   cocos2d::Vector<GameObject*> gameObjects;
   cocos2d::Vector<GameObject*> plattis;

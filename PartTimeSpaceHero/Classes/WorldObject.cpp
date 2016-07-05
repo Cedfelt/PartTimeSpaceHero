@@ -92,7 +92,7 @@ bool giveObject = false;
 int playerSafe = 0;
 
 void WorldObject::updateWorld(float delta) {
-  
+  updateOffScreenRect();
   // Spawn
   if (((player->getCoins() % 7 == 0) && (player->getCoins()>0) )|| (giveObject &&!createSpawned) ) {
     playerSafe += player->isSafe();
@@ -182,7 +182,7 @@ void WorldObject::updateWorld(float delta) {
       
       continue;
     }
-    
+    gameObjects.at(i)->setVisible(goOnScreen(gameObjects.at(i)));
   }
 
   
@@ -437,3 +437,28 @@ void WorldObject::spawnObjects(cocos2d::Vector<GameObject*>* gameObjects) {
     plattis.at(i)->target = player;
   }
 }
+
+bool WorldObject::goOnScreen(GameObject *obj) {
+  return screen.intersectsRect(*obj->getHitbox());
+}
+
+void WorldObject::updateOffScreenRect() {
+  float screnWidh = cocos2d::Director::getInstance()->getWinSize().width*outside_screen;
+  float screnHeight = cocos2d::Director::getInstance()->getWinSize().height*outside_screen;
+  float distanceX = (screnWidh - screnWidh / outside_screen) / 2;
+  float distanceY = (screnHeight - screnHeight / outside_screen) / 2;
+  float sx = convertToNodeSpace(cocos2d::Point(0, 0.)).x;
+  float sy = convertToNodeSpace(cocos2d::Point(0, 0.)).y;
+  // Limit Screen to Go Outside of Map
+  if (sx < 0) {
+    sx = 0;
+  }
+  if (sy < 0) {
+    sy = 0;
+  }
+  screen.setRect(sx - distanceX, sy - distanceY, screnWidh, screnHeight);
+  if (view_of_screen_rect) {
+    screen_draw->setPosition(sx, sy);
+  }
+}
+
