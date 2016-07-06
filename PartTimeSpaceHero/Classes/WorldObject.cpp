@@ -22,6 +22,7 @@
 #include "FlowerShootaObject.hpp"
 #include "ItemCreate.hpp"
 #include "MainMenu.hpp"
+#include "MechObject.hpp"
 
 
 
@@ -147,7 +148,7 @@ void WorldObject::updateWorld(float delta) {
   const float offset = player->playerLookAhead;
   playerPos.x = playerPos.x + offset;
   mapObject->moveBackgroundLayers();
-  setViewPointCenter(Vec2((playerPos.x + lastX)/2.0,(playerPos.y + lastY)/2.0));
+  setViewPointCenter(Vec2((playerPos.x + lastX)/2.0,(playerPos.y + lastY +48)/2.0));
   mapObject->updateLiquids(new_delta);
   lastX = playerPos.x;
   lastY = playerPos.y;
@@ -381,6 +382,25 @@ void WorldObject::spawnObjects(cocos2d::Vector<GameObject*>* gameObjects) {
       botty->target = player;
       addChild(botty);
     }
+    
+    else if(name == "MechObject"){
+      // COIN
+      auto botty = MechObject::create();
+        botty->setupAnimation();
+        bottyFirst = false;
+      botty-> setAnimation("mech_idle");
+      int ms = 1;
+      botty->setupHitbox(0.1, 1, 48*ms, 88*ms, 48*ms, 88*ms, false);
+      gameObjects->pushBack(botty);
+      botty->setObjectPositionX(x);
+      botty->setObjectPositionY(y);
+      botty->getPhysicsBody()->setCategoryBitmask((int)PhysicsCategory::Enemy);
+      botty->getPhysicsBody()->setCollisionBitmask((int)PhysicsCategory::None);
+      botty->getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::Player|(int)PhysicsCategory::PlayerProjectile|(int)PhysicsCategory::Hazard);
+      botty->target = player;
+      addChild(botty);
+    }
+    
     else if(name == "DamageZone"){
       // COIN
       auto botty = DamageZone::create();

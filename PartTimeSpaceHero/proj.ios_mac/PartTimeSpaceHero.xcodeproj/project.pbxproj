@@ -105,6 +105,8 @@
 		A8805F341CF0F5B100B2AE7A /* GoalObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8805F321CF0F5B100B2AE7A /* GoalObject.cpp */; };
 		A8805F351CF0F5B100B2AE7A /* GoalObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8805F321CF0F5B100B2AE7A /* GoalObject.cpp */; };
 		A8B094CF1D0F580E00D32FBE /* FlowerShootaObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8B094CD1D0F580E00D32FBE /* FlowerShootaObject.cpp */; };
+		A8EB2DCB1D2D9D9A00F92139 /* MechObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8EB2DC91D2D9D9A00F92139 /* MechObject.cpp */; };
+		A8EB2DCC1D2D9D9A00F92139 /* MechObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8EB2DC91D2D9D9A00F92139 /* MechObject.cpp */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
 		BF1C47F01293687400B63C5D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1C47EA1293683800B63C5D /* QuartzCore.framework */; };
@@ -227,6 +229,8 @@
 		A8805F331CF0F5B100B2AE7A /* GoalObject.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GoalObject.hpp; sourceTree = "<group>"; };
 		A8B094CD1D0F580E00D32FBE /* FlowerShootaObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FlowerShootaObject.cpp; sourceTree = "<group>"; };
 		A8B094CE1D0F580E00D32FBE /* FlowerShootaObject.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = FlowerShootaObject.hpp; sourceTree = "<group>"; };
+		A8EB2DC91D2D9D9A00F92139 /* MechObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MechObject.cpp; sourceTree = "<group>"; };
+		A8EB2DCA1D2D9D9A00F92139 /* MechObject.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = MechObject.hpp; sourceTree = "<group>"; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		BF1C47EA1293683800B63C5D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -424,6 +428,8 @@
 				A87396AC1D0CA6BC00ADE298 /* WaterTiles.hpp */,
 				A81BE1451CBA40CB00C09359 /* WorldObject.cpp */,
 				A81BE1461CBA40CB00C09359 /* WorldObject.hpp */,
+				A8EB2DC91D2D9D9A00F92139 /* MechObject.cpp */,
+				A8EB2DCA1D2D9D9A00F92139 /* MechObject.hpp */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -641,6 +647,7 @@
 				A81BE1471CBA40CB00C09359 /* WorldObject.cpp in Sources */,
 				A81BE14B1CBA415400C09359 /* GameObject.cpp in Sources */,
 				A828EC191D060C680006AA25 /* PlatformObject.cpp in Sources */,
+				A8EB2DCB1D2D9D9A00F92139 /* MechObject.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -653,6 +660,7 @@
 				A81BE1541CBA420D00C09359 /* PlayerObject.cpp in Sources */,
 				A825610A1CFB635F00FC1DD3 /* UfoObject.cpp in Sources */,
 				503AE10517EB98FF00D1A890 /* main.cpp in Sources */,
+				A8EB2DCC1D2D9D9A00F92139 /* MechObject.cpp in Sources */,
 				A82561061CFB167400FC1DD3 /* BabyTurfelObject.cpp in Sources */,
 				A8805F311CF04C6D00B2AE7A /* SoundFx.cpp in Sources */,
 				A81BE1501CBA41D500C09359 /* MapObject.cpp in Sources */,
