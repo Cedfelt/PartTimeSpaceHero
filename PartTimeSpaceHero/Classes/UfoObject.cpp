@@ -57,7 +57,7 @@ void UfoObject::AIUpdate(const float delta) {
   
   if((std::abs(target->getPositionX() - getPositionX() )< xAttackDistance)){
     const float yDist = getPositionY() - target->getPositionY();
-    if(yDist<yAttackDistance && yDist > -100){
+    if(yDist<yAttackDistance && yDist > -100 && HP>0){
       auto babyTurf = BabyTurfelObject::create();
       babyTurf->setupHitbox(0.1f, 1.0f, 16, 16, 16, 16, false);
       babyTurf->setObjectPositionX(getPositionX() + objectSprite->getTexture()->getPixelsWide()/2);
