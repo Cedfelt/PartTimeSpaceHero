@@ -20,6 +20,7 @@ public:
   SoundFx* plingSFX;
   void AIUpdate(const float delta);
   virtual void deadState();
+  bool test;
 private:
 };
 

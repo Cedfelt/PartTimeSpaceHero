@@ -19,7 +19,7 @@ bool MechObject::init() {
   }
   
   
-  this->schedule(schedule_selector(MechObject::AIUpdate), 0.8);
+  this->schedule(schedule_selector(MechObject::AIUpdate), 0.350);
   addGravityToObject(true);
   setElastic(0.f);
   plingSFX = SoundFx::create();
@@ -43,8 +43,25 @@ void MechObject::colideWith(GameObject* oterhObj, const uint32_t otherType) {
   simpleWalkerHurt(oterhObj,otherType);
 }
 
+
 void MechObject::AIUpdate(const float delta) {
-  genericWalkAi(delta);
+  if(test){
+    setSpeed(45);
+    test = false;
+    
+  }
+  else{
+    setSpeed(0.001);
+    test = true;
+  }
+  if(getMovementStatus() == GO_RIGHT){
+    goMovementStatus = GO_RIGHT;
+    setVelocityX(speed);
+  }
+  else{
+    goMovementStatus = GO_RIGHT;
+    setVelocityX(-speed);
+  }
 }
 
 void MechObject::deadState() {
