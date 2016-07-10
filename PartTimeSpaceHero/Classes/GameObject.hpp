@@ -14,6 +14,11 @@
 using namespace cocos2d;
 class GameObject : public cocos2d::DrawNode {
 public:
+  enum{
+    GO_ON_GROUND,
+    GO_IN_AIR_UP,
+    GO_IN_AIR_DOWN
+  };
   virtual bool setupAnimation();
   uint32_t getObjectType();
   void setPrevDir(int32_t prevDir);
@@ -94,11 +99,7 @@ public:
     GO_STILL
   };
   
-  enum{
-    GO_ON_GROUND,
-    GO_IN_AIR_UP,
-    GO_IN_AIR_DOWN
-  };
+ 
   
   uint32_t isBlocked(uint32_t x,uint32_t y);
   float maxSpeedX;

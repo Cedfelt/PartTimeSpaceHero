@@ -46,7 +46,7 @@ bool GameScene::init()
 
   //////////////////////////////
   // 1. super init first
-  if (!LayerColor::initWithColor(Color4B(63, 63, 116, 255)))
+  if (!LayerColor::initWithColor(Color4B(81, 130, 255, 255)))
   {
     return false;
   }

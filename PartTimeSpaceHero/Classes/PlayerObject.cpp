@@ -584,18 +584,18 @@ bool PlayerObject::setupAnimation() {
   // Weapon Anim 
   auto spriteFrameCache = cocos2d::SpriteFrameCache::getInstance();
   spriteFrameCache->addSpriteFramesWithFile("ptshwep.plist");
-  addAnimation("PTSH_WEP", "IdleRWep", 1, 4, 0.2f);
-  addAnimation("PTSH_WEP", "IdleLWep", 1, 4, 0.2f);
-  addAnimation("PTSH_WEP", "WalkRWep", 5, 8, 0.15f);
-  addAnimation("PTSH_WEP", "WalkLWep", 5, 8, 0.15f);
-  addAnimation("PTSH_WEP", "FlyRWep", 9, 12, 0.2f);
-  addAnimation("PTSH_WEP", "FlyLWep", 9, 12, 0.2f);
-  addAnimation("PTSH_WEP", "AscendRWep", 13, 13, 0.2f);
-  addAnimation("PTSH_WEP", "AscendLWep", 13, 13, 0.2f);
-  addAnimation("PTSH_WEP", "FallRWep", 14, 17, 0.2f);
-  addAnimation("PTSH_WEP", "FallLWep", 14, 17, 0.2f);
-  addAnimation("PTSH_WEP", "PlayerShootRWep", 26, 29, 0.06f);
-  addAnimation("PTSH_WEP", "PlayerShootLWep", 26, 29, 0.06f);
+  addAnimation("PTSH", "IdleRWep", 1, 4, 0.2f);
+  addAnimation("PTSH", "IdleLWep", 1, 4, 0.2f);
+  addAnimation("PTSH", "WalkRWep", 5, 8, 0.15f);
+  addAnimation("PTSH", "WalkLWep", 5, 8, 0.15f);
+  addAnimation("PTSH", "FlyRWep", 9, 12, 0.2f);
+  addAnimation("PTSH", "FlyLWep", 9, 12, 0.2f);
+  addAnimation("PTSH", "AscendRWep", 13, 13, 0.2f);
+  addAnimation("PTSH", "AscendLWep", 13, 13, 0.2f);
+  addAnimation("PTSH", "FallRWep", 14, 17, 0.2f);
+  addAnimation("PTSH", "FallLWep", 14, 17, 0.2f);
+  addAnimation("PTSH", "PlayerShootRWep", 26, 29, 0.06f);
+  addAnimation("PTSH", "PlayerShootLWep", 26, 29, 0.06f);
 
   // Items 
 
@@ -623,6 +623,6 @@ bool PlayerObject::setupAnimation() {
   objectSprite->setPosition(8, -128);// Aling sprite in Hitbox
   setAnimation(animationStrings.at((WalkR)));
   // ITEM POINTERS
-  setItem(E_NO_ITEM);
+  setItem(E_RIFLE_ITEM);
 return true;
 }

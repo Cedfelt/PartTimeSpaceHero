@@ -93,6 +93,14 @@ bool WorldObject::init() {
   return true;
 }
 
+
+int issign(const float num) {
+  if (num < 0) {
+    return 1;
+  }
+  return -1;
+}
+
 cocos2d::Vector<GameObject*>* WorldObject::getGameObjects() {
   return &gameObjects;
 }
@@ -105,6 +113,7 @@ float lastY;
 bool createSpawned = false;
 bool giveObject = false;
 int playerSafe = 0;
+int flyCnt = 0;
 
 void WorldObject::updateWorld(float delta) {
   updateOffScreenRect();
@@ -144,14 +153,55 @@ void WorldObject::updateWorld(float delta) {
   int_delta += delta;
   physic->moveGameObjects(getGameObjects(), mapObject, new_delta);
   physic->movePlatform(physic->platforms, mapObject, new_delta);
+  
+  mapObject->moveBackgroundLayers();
+  #ifdef SMART_CAMERA
+  // SMART CLIMB CAMERA
   Vec2 playerPos = Vec2(player->getObjectPositionX(),player->getObjectPositionY());
   const float offset = player->playerLookAhead;
   playerPos.x = playerPos.x + offset;
-  mapObject->moveBackgroundLayers();
+
+  if(!player->getMovementStatus() == GameObject::GO_ON_GROUND ){
+    flyCnt ++;
+  }
+  else{
+    flyCnt = 0;
+  }
+  if(flyCnt<4){
+    int sign = issign(lastY-playerPos.y);
+    if(std::abs(((lastY))-playerPos.y)>3){
+      
+      playerPos.y = lastY+42.0f*sign*delta;
+      if(playerPos.y > (player->getObjectPositionY()+42.0)){
+        //playerPos.y = player->getObjectPositionY()+42.0;
+      }
+    }
+    
+    setViewPointCenter(Vec2((playerPos.x),(playerPos.y + 42.0)));
+    lastX = playerPos.x;
+    lastY = playerPos.y;
+  }
+  else{
+    if(player->getVelocityY()>=0){
+      setViewPointCenter(Vec2((playerPos.x),(lastY+ 42.0)));
+    }
+    else{
+      if(player->getObjectPositionY()<lastY)
+        lastY +=player->getVelocityY() *delta;
+      setViewPointCenter(Vec2((playerPos.x),(lastY+ 42.0)));
+    }
+  }
+#else
+  Vec2 playerPos = Vec2(player->getObjectPositionX(),player->getObjectPositionY());
+  const float offset = player->playerLookAhead;
   setViewPointCenter(Vec2((playerPos.x + lastX)/2.0,(playerPos.y + lastY +48)/2.0));
-  mapObject->updateLiquids(new_delta);
   lastX = playerPos.x;
   lastY = playerPos.y;
+#endif
+  
+  
+  mapObject->updateLiquids(new_delta);
+  
 
   // Check Goal
   if(obj!=NULL){
@@ -177,6 +227,8 @@ void WorldObject::updateWorld(float delta) {
     auto scene = MainMenu::createScene();
     Director::getInstance()->replaceScene(scene);
   }
+  
+  
   
   // Iterate objects
   for (int i = 0; i < gameObjects.size();i++) {
