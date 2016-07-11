@@ -114,6 +114,9 @@
     <ClCompile Include="..\Classes\EnemyObject.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\MechObject.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -216,6 +219,9 @@
       <Filter>src</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\EnemyObject.hpp">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\MechObject.hpp">
       <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>

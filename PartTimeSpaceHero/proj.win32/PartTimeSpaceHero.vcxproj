@@ -167,6 +167,7 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClCompile Include="..\Classes\MainMenu.cpp" />
     <ClCompile Include="..\Classes\MapData.cpp" />
     <ClCompile Include="..\Classes\MapObject.cpp" />
+    <ClCompile Include="..\Classes\MechObject.cpp" />
     <ClCompile Include="..\Classes\Physic.cpp" />
     <ClCompile Include="..\Classes\PlatformObject.cpp" />
     <ClCompile Include="..\Classes\PlayerControl.cpp" />
@@ -203,6 +204,7 @@ xcopy /Y /Q "$(COCOS_X_ROOT)\cocos2d-x-3.10\prebuilt\win32\*.*" "$(OutDir)"
     <ClInclude Include="..\Classes\MainMenu.hpp" />
     <ClInclude Include="..\Classes\MapData.hpp" />
     <ClInclude Include="..\Classes\MapObject.hpp" />
+    <ClInclude Include="..\Classes\MechObject.hpp" />
     <ClInclude Include="..\Classes\Physic.hpp" />
     <ClInclude Include="..\Classes\PlatformObject.hpp" />
     <ClInclude Include="..\Classes\PlayerControl.hpp" />

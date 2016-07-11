@@ -18,7 +18,7 @@ bool PlayerObject::init() {
     return false;
   }
   playerInput = PlayerInput::create();
-  setSpeed(108.f);
+  setSpeed(75.f);
   addChild(playerInput);
   this->schedule(schedule_selector(PlayerObject::playerUpdate));
 
@@ -584,10 +584,11 @@ bool PlayerObject::setupAnimation() {
   // Weapon Anim 
   auto spriteFrameCache = cocos2d::SpriteFrameCache::getInstance();
   spriteFrameCache->addSpriteFramesWithFile("ptshwep.plist");
-  addAnimation("PTSH", "IdleRWep", 1, 4, 0.2f);
-  addAnimation("PTSH", "IdleLWep", 1, 4, 0.2f);
-  addAnimation("PTSH", "WalkRWep", 5, 8, 0.15f);
-  addAnimation("PTSH", "WalkLWep", 5, 8, 0.15f);
+  spriteFrameCache->addSpriteFramesWithFile("PTSH_CLN.plist");
+  addAnimation("PTSH_CLN", "IdleRWep", 2, 2, 0.2f);
+  addAnimation("PTSH_CLN", "IdleLWep", 2, 2, 0.2f);
+  addAnimation("PTSH_CLN", "WalkRWep", 1, 4, 0.15f);
+  addAnimation("PTSH_CLN", "WalkLWep", 1, 4, 0.15f);
   addAnimation("PTSH", "FlyRWep", 9, 12, 0.2f);
   addAnimation("PTSH", "FlyLWep", 9, 12, 0.2f);
   addAnimation("PTSH", "AscendRWep", 13, 13, 0.2f);
