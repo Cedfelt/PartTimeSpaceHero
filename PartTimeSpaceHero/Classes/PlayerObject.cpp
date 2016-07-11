@@ -18,7 +18,7 @@ bool PlayerObject::init() {
     return false;
   }
   playerInput = PlayerInput::create();
-  setSpeed(75.f);
+  setSpeed(95.f);
   addChild(playerInput);
   this->schedule(schedule_selector(PlayerObject::playerUpdate));
 
@@ -45,7 +45,7 @@ bool PlayerObject::init() {
 
   fuel = 1.0f;
   consumeRate = currentConsumeRate;
-  currentConsumeRate = 0.0075f;
+  currentConsumeRate = 0.0050f;
 
   return true;
 }
@@ -177,9 +177,9 @@ bool PlayerObject::flyAtDir(MovementDirectionX dir, std::string animName) {
 
 bool PlayerObject::playerFlyUpdate(float delta) {
   const float jetPackFlySpeed = 1.7f;
-  const float maxSpeed = getSpeed();
-  const float uppSpeed = 2.9f;
-  const float maxRiseSpeed = 150;
+  const float maxSpeed = getSpeed()*1.3f;
+  const float uppSpeed = 2.2f;
+  const float maxRiseSpeed = 100;
   float upp_threshold;
   int throtling = 0;
   bool module_active = false;
@@ -587,16 +587,16 @@ bool PlayerObject::setupAnimation() {
   spriteFrameCache->addSpriteFramesWithFile("PTSH_CLN.plist");
   addAnimation("PTSH_CLN", "IdleRWep", 2, 2, 0.2f);
   addAnimation("PTSH_CLN", "IdleLWep", 2, 2, 0.2f);
-  addAnimation("PTSH_CLN", "WalkRWep", 1, 4, 0.15f);
-  addAnimation("PTSH_CLN", "WalkLWep", 1, 4, 0.15f);
-  addAnimation("PTSH", "FlyRWep", 9, 12, 0.2f);
-  addAnimation("PTSH", "FlyLWep", 9, 12, 0.2f);
-  addAnimation("PTSH", "AscendRWep", 13, 13, 0.2f);
-  addAnimation("PTSH", "AscendLWep", 13, 13, 0.2f);
-  addAnimation("PTSH", "FallRWep", 14, 17, 0.2f);
-  addAnimation("PTSH", "FallLWep", 14, 17, 0.2f);
-  addAnimation("PTSH", "PlayerShootRWep", 26, 29, 0.06f);
-  addAnimation("PTSH", "PlayerShootLWep", 26, 29, 0.06f);
+  addAnimation("PTSH_CLN", "WalkRWep", 1, 4, 0.185f);
+  addAnimation("PTSH_CLN", "WalkLWep", 1, 4, 0.185f);
+  addAnimation("PTSH_CLN", "FlyRWep", 5, 8, 0.18f);
+  addAnimation("PTSH_CLN", "FlyLWep", 5, 8, 0.18f);
+  addAnimation("PTSH_CLN", "AscendRWep", 5, 8, 0.2f);
+  addAnimation("PTSH_CLN", "AscendLWep", 5, 8, 0.2f);
+  addAnimation("PTSH_CLN", "FallRWep", 9, 9, 0.2f);
+  addAnimation("PTSH_CLN", "FallLWep", 9, 9, 0.2f);
+  addAnimation("PTSH_CLN", "PlayerShootRWep", 2, 2, 0.06f);
+  addAnimation("PTSH_CLN", "PlayerShootLWep", 2, 2, 0.06f);
 
   // Items 
 

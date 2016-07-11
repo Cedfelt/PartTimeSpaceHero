@@ -43,10 +43,12 @@ Scene* GameScene::createScene()
 bool GameScene::init()
 {
 
-
+  //int temp_col [3] = {75, 105, 47};
+//  int temp_col [3] = {63, 63, 116};
+  int temp_col [3] = {118, 66, 138};
   //////////////////////////////
   // 1. super init first
-  if (!LayerColor::initWithColor(Color4B(75, 105, 47, 255)))
+  if (!LayerColor::initWithColor(Color4B(temp_col[0], temp_col[1], temp_col[2], 255)))
   {
     return false;
   }
