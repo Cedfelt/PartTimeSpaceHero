@@ -432,7 +432,7 @@ bool PlayerObject::no_item(float delta) {
 
 void PlayerObject::playerUpdate(const float delta) {
   solid = true;
-  objectSprite->setPosition(cocos2d::Point((modelPositionX)+4, (modelPositionY)));
+  objectSprite->setPosition(cocos2d::Point((modelPositionX)+4, (modelPositionY-1)));
   // Update priority
 
   if ((*this.*pItem)(delta)) {
