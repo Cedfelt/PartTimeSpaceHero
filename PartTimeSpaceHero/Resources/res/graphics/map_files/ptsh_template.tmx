@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="400" height="60" tilewidth="16" tileheight="16" nextobjectid="138">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="400" height="60" tilewidth="16" tileheight="16" nextobjectid="139">
  <properties>
   <property name="music_track" value="adventure.mp3"/>
  </properties>
@@ -101,7 +101,7 @@
  <objectgroup name="GameObjects" offsetx="-1.66667" offsety="0.909091">
   <object id="121" name="PlayerObject" x="42.6672" y="713.499" width="12" height="25"/>
   <object id="126" name="CoinObject" x="975.865" y="594.581" width="12" height="25"/>
-  <object id="129" name="UfoObject" x="967.451" y="549.469" width="12" height="25">
+  <object id="129" name="UfoObject" x="933.989" y="593.115" width="12" height="25">
    <properties>
     <property name="stayInZone" value="false"/>
     <property name="stupidWalk" value="true"/>
@@ -144,7 +144,7 @@
    <properties>
     <property name="stayInZone" value="false"/>
     <property name="stupidWalk" value="true"/>
-    <property name="turnAtEdge" value="false"/>
+    <property name="turnAtEdge" value="true"/>
    </properties>
   </object>
   <object id="136" name="CoinObject" x="1253.8" y="502.294" width="12" height="25"/>
@@ -153,6 +153,13 @@
     <property name="stayInZone" value="false"/>
     <property name="stupidWalk" value="true"/>
     <property name="turnAtEdge" value="false"/>
+   </properties>
+  </object>
+  <object id="138" name="BottyObject" x="3403.97" y="556.632" width="12" height="25">
+   <properties>
+    <property name="stayInZone" value="false"/>
+    <property name="stupidWalk" value="true"/>
+    <property name="turnAtEdge" value="true"/>
    </properties>
   </object>
  </objectgroup>
