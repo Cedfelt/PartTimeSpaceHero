@@ -106,7 +106,7 @@ void RifleBoos::shootAtPlayer(){
     babyTurf->setObjectPositionY(getPositionY() + 8);
     babyTurf->getPhysicsBody()->setCategoryBitmask((int)PhysicsCategory::Enemy);
     babyTurf->getPhysicsBody()->setCollisionBitmask((int)PhysicsCategory::None);
-    babyTurf->getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::Player|(int)PhysicsCategory::Hazard);
+    babyTurf->getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::Player|(int)PhysicsCategory::Hazard|(int)PhysicsCategory::PlayerProjectile);
     addToGameObjects.pushBack(babyTurf);
     if(dir == GO_RIGHT){
       babyTurf->setVelocityX(200);
