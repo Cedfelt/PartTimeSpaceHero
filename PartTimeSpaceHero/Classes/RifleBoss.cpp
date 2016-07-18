@@ -21,7 +21,7 @@ bool RifleBoos::init() {
   }
   
   
-  this->schedule(schedule_selector(RifleBoos::AIUpdate), 1.4);
+  this->schedule(schedule_selector(RifleBoos::AIUpdate), 0.8);
   addGravityToObject(true);
   setElastic(0.f);
   plingSFX = SoundFx::create();
@@ -29,7 +29,8 @@ bool RifleBoos::init() {
   addChild(plingSFX);
   dmg = 1;
   HP = 5;
-  
+  lastHP = HP;
+  shotFired = false;
   // Start Speed
   setVelocityX(0);
   setPrevDir(GO_LEFT);
@@ -118,29 +119,53 @@ void RifleBoos::shootAtPlayer(){
 }
 
 void RifleBoos::AIUpdate(const float delta) {
+  
   if(isPlayerInBossArea()){
+    if(getVelocityX() == 0.0f){
+      speed = 85;
+      approachPlayer(delta);
+      if(cocos2d::random()%2){
+        setVelocityY(185);
+      }
+      shotFired = false;
+      shootCnt = 0;
+      return;
+    }
     //objectSprite->setColor(Color3B::RED);
     const int rng = cocos2d::random()%2;
     speed = 50;
-    
-    if(getVelocityX()==0){
-      approachPlayer(delta);
-    }
-    else if(rng==0){
-      approachPlayer(delta);
-      shootAtPlayer();
-    }
-    else if(rng==1){
+    if(target->HP!=playerHp || HP!=lastHP){
       speed = 85;
       escapeFromPlayer(delta);
     }
+    else{
     
-    
-  }else{
+      if((rng==0 && shotFired )&&shootCnt>=3){
+        speed = 85;
+        escapeFromPlayer(delta);
+        if(cocos2d::random()%2){
+          setVelocityY(170);
+        }
+        shotFired = false;
+        shootCnt = 0;
+      }
+      else if(shootCnt<3){
+        if(cocos2d::random()%2 && getVelocityY()==0){
+          setVelocityY(170);
+        }
+        approachPlayer(delta);
+        shootAtPlayer();
+        shotFired = true;
+        shootCnt++;
+      }
+    }
+  }
+  else{
     objectSprite->setColor(Color3B::WHITE);
     setVelocityX(0);
   }
-  
+  playerHp = target->HP;
+  lastHP = HP;
 }
 
 void RifleBoos::deadState() {

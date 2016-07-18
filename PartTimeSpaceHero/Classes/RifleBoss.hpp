@@ -19,7 +19,10 @@ public:
   CREATE_FUNC(RifleBoos);
   SoundFx* plingSFX;
   Rect bossArea;
-  
+  int playerHp;
+  int lastHP;
+  int shootCnt =0;
+  bool shotFired;
   void AIUpdate(const float delta);
   virtual void deadState();
   bool isPlayerInBossArea();
