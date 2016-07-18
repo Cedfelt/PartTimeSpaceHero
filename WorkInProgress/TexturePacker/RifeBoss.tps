@@ -6,7 +6,7 @@
         <key>texturePackerVersion</key>
         <string>4.1.0</string>
         <key>fileName</key>
-        <string>/Users/anderssvensson/git_repos/PartTimeSpaceHero/WorkInProgress/TexturePacker/PlayerSprite.tps</string>
+        <string>/Users/anderssvensson/git_repos/PartTimeSpaceHero/WorkInProgress/TexturePacker/RifeBoss.tps</string>
         <key>autoSDSettings</key>
         <array>
             <struct type="AutoSDSettings">
@@ -147,7 +147,7 @@
             <key>data</key>
             <struct type="DataFile">
                 <key>name</key>
-                <filename>../../PartTimeSpaceHero/Resources/res/graphics/sprites/PTSH_CLN.plist</filename>
+                <filename>../../PartTimeSpaceHero/Resources/res/graphics/sprites/RifeBoss.plist</filename>
             </struct>
             <key>header</key>
             <key>source</key>
@@ -200,35 +200,10 @@
         </struct>
         <key>individualSpriteSettings</key>
         <map type="IndividualSpriteSettingsMap">
-            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/pths_builds/PTSH_WEP1.png</key>
-            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/pths_builds/PTSH_WEP10.png</key>
-            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/pths_builds/PTSH_WEP11.png</key>
-            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/pths_builds/PTSH_WEP12.png</key>
-            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/pths_builds/PTSH_WEP13.png</key>
-            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/pths_builds/PTSH_WEP14.png</key>
-            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/pths_builds/PTSH_WEP15.png</key>
-            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/pths_builds/PTSH_WEP16.png</key>
-            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/pths_builds/PTSH_WEP17.png</key>
-            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/pths_builds/PTSH_WEP18.png</key>
-            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/pths_builds/PTSH_WEP19.png</key>
-            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/pths_builds/PTSH_WEP2.png</key>
-            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/pths_builds/PTSH_WEP20.png</key>
-            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/pths_builds/PTSH_WEP21.png</key>
-            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/pths_builds/PTSH_WEP22.png</key>
-            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/pths_builds/PTSH_WEP23.png</key>
-            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/pths_builds/PTSH_WEP24.png</key>
-            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/pths_builds/PTSH_WEP25.png</key>
-            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/pths_builds/PTSH_WEP26.png</key>
-            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/pths_builds/PTSH_WEP27.png</key>
-            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/pths_builds/PTSH_WEP28.png</key>
-            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/pths_builds/PTSH_WEP29.png</key>
-            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/pths_builds/PTSH_WEP3.png</key>
-            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/pths_builds/PTSH_WEP4.png</key>
-            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/pths_builds/PTSH_WEP5.png</key>
-            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/pths_builds/PTSH_WEP6.png</key>
-            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/pths_builds/PTSH_WEP7.png</key>
-            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/pths_builds/PTSH_WEP8.png</key>
-            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/pths_builds/PTSH_WEP9.png</key>
+            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/SniperBoss/GunMan1.png</key>
+            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/SniperBoss/GunMan2.png</key>
+            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/SniperBoss/GunMan3.png</key>
+            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/SniperBoss/GunMan4.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -236,35 +211,10 @@
         </map>
         <key>fileList</key>
         <array>
-            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/pths_builds/PTSH_WEP1.png</filename>
-            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/pths_builds/PTSH_WEP2.png</filename>
-            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/pths_builds/PTSH_WEP3.png</filename>
-            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/pths_builds/PTSH_WEP4.png</filename>
-            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/pths_builds/PTSH_WEP5.png</filename>
-            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/pths_builds/PTSH_WEP6.png</filename>
-            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/pths_builds/PTSH_WEP7.png</filename>
-            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/pths_builds/PTSH_WEP8.png</filename>
-            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/pths_builds/PTSH_WEP9.png</filename>
-            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/pths_builds/PTSH_WEP10.png</filename>
-            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/pths_builds/PTSH_WEP11.png</filename>
-            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/pths_builds/PTSH_WEP12.png</filename>
-            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/pths_builds/PTSH_WEP13.png</filename>
-            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/pths_builds/PTSH_WEP14.png</filename>
-            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/pths_builds/PTSH_WEP15.png</filename>
-            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/pths_builds/PTSH_WEP16.png</filename>
-            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/pths_builds/PTSH_WEP17.png</filename>
-            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/pths_builds/PTSH_WEP18.png</filename>
-            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/pths_builds/PTSH_WEP19.png</filename>
-            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/pths_builds/PTSH_WEP20.png</filename>
-            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/pths_builds/PTSH_WEP21.png</filename>
-            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/pths_builds/PTSH_WEP22.png</filename>
-            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/pths_builds/PTSH_WEP23.png</filename>
-            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/pths_builds/PTSH_WEP24.png</filename>
-            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/pths_builds/PTSH_WEP25.png</filename>
-            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/pths_builds/PTSH_WEP26.png</filename>
-            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/pths_builds/PTSH_WEP27.png</filename>
-            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/pths_builds/PTSH_WEP28.png</filename>
-            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/pths_builds/PTSH_WEP29.png</filename>
+            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/SniperBoss/GunMan1.png</filename>
+            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/SniperBoss/GunMan2.png</filename>
+            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/SniperBoss/GunMan3.png</filename>
+            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/SniperBoss/GunMan4.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

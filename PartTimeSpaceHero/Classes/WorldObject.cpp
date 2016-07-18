@@ -12,6 +12,7 @@
 #include "CoinObject.hpp"
 #include "TurfelObject.hpp"
 #include "BottyObject.hpp"
+#include "RifleBoss.hpp"
 #include "GoalObject.hpp"
 #include "LaserObject.hpp"
 #include "UfoObject.hpp"
@@ -432,6 +433,23 @@ void WorldObject::spawnObjects(cocos2d::Vector<GameObject*>* gameObjects) {
       botty->getPhysicsBody()->setCollisionBitmask((int)PhysicsCategory::None);
       botty->getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::Player|(int)PhysicsCategory::PlayerProjectile|(int)PhysicsCategory::Hazard);
       botty->target = player;
+      addChild(botty);
+    }
+    
+    else if(name == "RifleBoss"){
+      // COIN
+      auto botty = RifleBoos::create();
+      botty->setupAnimation();
+      botty-> setAnimation("rifle_walk");
+      botty->setupHitbox(0.1, 1, 24, 48, 24, 44, false);
+      gameObjects->pushBack(botty);
+      botty->setObjectPositionX(x + 0.5f*(w));
+      botty->setObjectPositionY(y + 0.5f*(h));
+      botty->getPhysicsBody()->setCategoryBitmask((int)PhysicsCategory::Enemy);
+      botty->getPhysicsBody()->setCollisionBitmask((int)PhysicsCategory::None);
+      botty->getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::Player|(int)PhysicsCategory::PlayerProjectile|(int)PhysicsCategory::Hazard);
+      botty->target = player;
+      botty->bossArea.setRect(x, y, w, h);
       addChild(botty);
     }
     
