@@ -98,8 +98,10 @@ public:
     GO_DOWN,
     GO_STILL
   };
-  
- 
+  Rect objectZone;
+  bool isPlayerInZone();
+  void walkAtDir(float speed, int dir);
+  void approachPlayer(const float delta);
   
   uint32_t isBlocked(uint32_t x,uint32_t y);
   float maxSpeedX;

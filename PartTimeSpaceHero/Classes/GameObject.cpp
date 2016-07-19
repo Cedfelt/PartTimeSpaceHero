@@ -285,6 +285,35 @@ void GameObject::dropCoin(int nrOfCoins) {
   }
 }
 
+bool GameObject::isPlayerInZone(){
+  const auto playRect = target->getHitbox();
+  return playRect->intersectsRect(objectZone);
+}
+
+void GameObject::walkAtDir(float speed, int dir){
+  if(dir == GO_LEFT){
+    objectSprite->setScaleX(-1);
+    setPrevDir(GO_LEFT);
+    setVelocityX(-speed);
+  }
+  else if(dir == GO_RIGHT){
+    objectSprite->setScaleX(1);
+    setPrevDir(GO_RIGHT);
+    setVelocityX(speed);
+  }
+  
+}
+
+void GameObject::approachPlayer(const float delta){
+  const float distX = getObjectPositionX() - target->getObjectPositionX();
+  if(distX>0){
+    walkAtDir(speed, GO_LEFT);
+  }
+  else{
+    walkAtDir(speed, GO_RIGHT);
+  }
+}
+
 void GameObject::flash(int times, float interval){
   this->schedule(CC_SCHEDULE_SELECTOR(GameObject::flash_sprite),interval,times,0);
 }

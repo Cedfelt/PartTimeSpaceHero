@@ -55,6 +55,8 @@
 		A800448E1D1FD5B2003A11A1 /* ItemCreate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A800448C1D1FD5B2003A11A1 /* ItemCreate.cpp */; };
 		A803C10A1D3D575800E918EA /* RifleBoss.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A803C1081D3D575800E918EA /* RifleBoss.cpp */; };
 		A803C10B1D3D575800E918EA /* RifleBoss.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A803C1081D3D575800E918EA /* RifleBoss.cpp */; };
+		A803C10E1D3EC9C700E918EA /* SnailObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A803C10C1D3EC9C700E918EA /* SnailObject.cpp */; };
+		A803C10F1D3EC9C700E918EA /* SnailObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A803C10C1D3EC9C700E918EA /* SnailObject.cpp */; };
 		A81BE13F1CBA408300C09359 /* MainMenu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A81BE13D1CBA408300C09359 /* MainMenu.cpp */; };
 		A81BE1401CBA408300C09359 /* MainMenu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A81BE13D1CBA408300C09359 /* MainMenu.cpp */; };
 		A81BE1431CBA40AE00C09359 /* GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A81BE1411CBA40AE00C09359 /* GameScene.cpp */; };
@@ -109,6 +111,8 @@
 		A8B094CF1D0F580E00D32FBE /* FlowerShootaObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8B094CD1D0F580E00D32FBE /* FlowerShootaObject.cpp */; };
 		A8EB2DCB1D2D9D9A00F92139 /* MechObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8EB2DC91D2D9D9A00F92139 /* MechObject.cpp */; };
 		A8EB2DCC1D2D9D9A00F92139 /* MechObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8EB2DC91D2D9D9A00F92139 /* MechObject.cpp */; };
+		A8FA61781D3ED4F6007178A2 /* ZombieObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8FA61761D3ED4F6007178A2 /* ZombieObject.cpp */; };
+		A8FA61791D3ED4F6007178A2 /* ZombieObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8FA61761D3ED4F6007178A2 /* ZombieObject.cpp */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
 		BF1C47F01293687400B63C5D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1C47EA1293683800B63C5D /* QuartzCore.framework */; };
@@ -173,6 +177,8 @@
 		A800448D1D1FD5B2003A11A1 /* ItemCreate.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ItemCreate.hpp; sourceTree = "<group>"; };
 		A803C1081D3D575800E918EA /* RifleBoss.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RifleBoss.cpp; sourceTree = "<group>"; };
 		A803C1091D3D575800E918EA /* RifleBoss.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = RifleBoss.hpp; sourceTree = "<group>"; };
+		A803C10C1D3EC9C700E918EA /* SnailObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SnailObject.cpp; sourceTree = "<group>"; };
+		A803C10D1D3EC9C700E918EA /* SnailObject.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SnailObject.hpp; sourceTree = "<group>"; };
 		A81BE13D1CBA408300C09359 /* MainMenu.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MainMenu.cpp; sourceTree = "<group>"; };
 		A81BE13E1CBA408300C09359 /* MainMenu.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = MainMenu.hpp; sourceTree = "<group>"; };
 		A81BE1411CBA40AE00C09359 /* GameScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameScene.cpp; sourceTree = "<group>"; };
@@ -235,6 +241,8 @@
 		A8B094CE1D0F580E00D32FBE /* FlowerShootaObject.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = FlowerShootaObject.hpp; sourceTree = "<group>"; };
 		A8EB2DC91D2D9D9A00F92139 /* MechObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MechObject.cpp; sourceTree = "<group>"; };
 		A8EB2DCA1D2D9D9A00F92139 /* MechObject.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = MechObject.hpp; sourceTree = "<group>"; };
+		A8FA61761D3ED4F6007178A2 /* ZombieObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ZombieObject.cpp; sourceTree = "<group>"; };
+		A8FA61771D3ED4F6007178A2 /* ZombieObject.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ZombieObject.hpp; sourceTree = "<group>"; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		BF1C47EA1293683800B63C5D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -436,6 +444,10 @@
 				A87396AC1D0CA6BC00ADE298 /* WaterTiles.hpp */,
 				A81BE1451CBA40CB00C09359 /* WorldObject.cpp */,
 				A81BE1461CBA40CB00C09359 /* WorldObject.hpp */,
+				A803C10C1D3EC9C700E918EA /* SnailObject.cpp */,
+				A8FA61761D3ED4F6007178A2 /* ZombieObject.cpp */,
+				A8FA61771D3ED4F6007178A2 /* ZombieObject.hpp */,
+				A803C10D1D3EC9C700E918EA /* SnailObject.hpp */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -639,6 +651,7 @@
 				A82561051CFB167400FC1DD3 /* BabyTurfelObject.cpp in Sources */,
 				A8229BC81D202960006DDAD7 /* ItemObject.cpp in Sources */,
 				A81BE1531CBA420D00C09359 /* PlayerObject.cpp in Sources */,
+				A803C10E1D3EC9C700E918EA /* SnailObject.cpp in Sources */,
 				A81BE1431CBA40AE00C09359 /* GameScene.cpp in Sources */,
 				A82561091CFB635F00FC1DD3 /* UfoObject.cpp in Sources */,
 				A81BE15B1CBA424600C09359 /* LaserObject.cpp in Sources */,
@@ -654,6 +667,7 @@
 				A81BE1471CBA40CB00C09359 /* WorldObject.cpp in Sources */,
 				A81BE14B1CBA415400C09359 /* GameObject.cpp in Sources */,
 				A828EC191D060C680006AA25 /* PlatformObject.cpp in Sources */,
+				A8FA61781D3ED4F6007178A2 /* ZombieObject.cpp in Sources */,
 				A8EB2DCB1D2D9D9A00F92139 /* MechObject.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -676,6 +690,7 @@
 				46880B8B19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */,
 				A81BE1681CBA499F00C09359 /* GlobalPList.cpp in Sources */,
 				A8805F351CF0F5B100B2AE7A /* GoalObject.cpp in Sources */,
+				A803C10F1D3EC9C700E918EA /* SnailObject.cpp in Sources */,
 				A828EC161D02C6080006AA25 /* DamageZone.cpp in Sources */,
 				A81BE1401CBA408300C09359 /* MainMenu.cpp in Sources */,
 				A81BE1581CBA422200C09359 /* GuardObject.cpp in Sources */,
@@ -683,6 +698,7 @@
 				A82561021CF8F01C00FC1DD3 /* TurfelObject.cpp in Sources */,
 				A82561121CFCD65200FC1DD3 /* LevelData.cpp in Sources */,
 				A825610E1CFCD64100FC1DD3 /* SaveData.cpp in Sources */,
+				A8FA61791D3ED4F6007178A2 /* ZombieObject.cpp in Sources */,
 				A87396B11D0DF44800ADE298 /* Simple_Bullet.cpp in Sources */,
 				A828EC121D020A3D0006AA25 /* MapData.cpp in Sources */,
 				A81BE1481CBA40CB00C09359 /* WorldObject.cpp in Sources */,

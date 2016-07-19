@@ -24,8 +24,8 @@
 #include "ItemCreate.hpp"
 #include "MainMenu.hpp"
 #include "MechObject.hpp"
-
-
+#include "SnailObject.hpp"
+#include "ZombieObject.hpp"
 
 bool WorldObject::init() {
   //////////////////////////////
@@ -429,6 +429,42 @@ void WorldObject::spawnObjects(cocos2d::Vector<GameObject*>* gameObjects) {
       gameObjects->pushBack(botty);
       botty->setObjectPositionX(x);
       botty->setObjectPositionY(y);
+      botty->getPhysicsBody()->setCategoryBitmask((int)PhysicsCategory::Enemy);
+      botty->getPhysicsBody()->setCollisionBitmask((int)PhysicsCategory::None);
+      botty->getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::Player|(int)PhysicsCategory::PlayerProjectile|(int)PhysicsCategory::Hazard);
+      botty->target = player;
+      addChild(botty);
+    }
+    
+    else if(name == "SnailObject"){
+      // COIN
+      auto botty = SnailObject::create();
+        botty->setupAnimation();
+        bottyFirst = false;
+      botty-> setAnimation("snail_crawl");
+      botty->setupHitbox(0.1, 1, 32, 32, 32, 32, false);
+      gameObjects->pushBack(botty);
+      botty->setObjectPositionX(x + 0.5f*(w));
+      botty->setObjectPositionY(y + 0.5f*(h));
+      botty->objectZone.setRect(x, y, w, h);
+      botty->getPhysicsBody()->setCategoryBitmask((int)PhysicsCategory::Enemy);
+      botty->getPhysicsBody()->setCollisionBitmask((int)PhysicsCategory::None);
+      botty->getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::Player|(int)PhysicsCategory::PlayerProjectile|(int)PhysicsCategory::Hazard);
+      botty->target = player;
+      addChild(botty);
+    }
+    
+    else if(name == "ZombieObject"){
+      // COIN
+      auto botty = ZombieObject::create();
+        botty->setupAnimation();
+        bottyFirst = false;
+      botty-> setAnimation("zombie_walk");
+      botty->setupHitbox(0.1, 1, 32, 32, 32, 32, false);
+      gameObjects->pushBack(botty);
+      botty->setObjectPositionX(x + 0.5f*(w));
+      botty->setObjectPositionY(y + 0.5f*(h));
+      botty->objectZone.setRect(x, y, w, h);
       botty->getPhysicsBody()->setCategoryBitmask((int)PhysicsCategory::Enemy);
       botty->getPhysicsBody()->setCollisionBitmask((int)PhysicsCategory::None);
       botty->getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::Player|(int)PhysicsCategory::PlayerProjectile|(int)PhysicsCategory::Hazard);

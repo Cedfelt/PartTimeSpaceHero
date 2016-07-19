@@ -93,7 +93,7 @@ it will hurt the other object with damage dmg.***/
 void EnemyObject::simpleWalkerHurt(GameObject* pPlayer, const uint32_t otherType) {
     auto player = pPlayer->getHitbox();
     auto rThis = getHitbox();
-    if (rThis->getMidY() > player->getMinY()) {
+    if (rThis->getMidY() * getScale() > player->getMinY()) {
       pPlayer->hurt(dmg, Vec2(getVelocityX(), fSimpleHurtForce));
     }
 }
