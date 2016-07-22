@@ -10,6 +10,7 @@
 #pragma once
 #include "GameObject.hpp"
 #include "PlayerObject.hpp"
+#include "DialogObject.hpp"
 
 using namespace cocos2d;
 class GUI : public GameObject {
@@ -21,5 +22,6 @@ public:
   void update(const float delta);
   Label* moneyLabel;
   Sprite* heartSprite[3];
+  DialogObject* dialog;
 private:
 };

@@ -10,6 +10,7 @@
 #include "Simple_Bullet.hpp"
 
 
+
 bool PlayerObject::init() {
   //////////////////////////////
   // 1. super init first
@@ -34,19 +35,32 @@ bool PlayerObject::init() {
   addChild(jetpack1);
 
   weaponSFX = SoundFx::create();
-  weaponSFX->loadEffect("weapon.aif", 0, 1, false);
+  weaponSFX->loadEffect("weapon2.aif", 0, 1, false);
   addChild(weaponSFX);
 
   playerCrySFX = SoundFx::create();
   playerCrySFX->loadEffect("Cry.aif", 0, 1, false);
   addChild(playerCrySFX);
+  
+  rechargedSFX = SoundFx::create();
+  rechargedSFX->loadEffect("recharged.aif", 0, 1, false);
+  addChild(rechargedSFX);
 
 
 
   fuel = 1.0f;
+  lastFuel = 1.0f;
   consumeRate = currentConsumeRate;
   currentConsumeRate = 0.0050f;
-
+  
+  dialog = DialogObject::create();
+  dialog->addLine("A long time ago", 4);
+  dialog->addLine("There Was A Myth", 4);
+  dialog->addLine("The Bravest Heros of All Time", 4);
+  dialog->addLine("(and the cheapest)", 1);
+  dialog->addLine("THE PART TIME SPACE HEROS", 4);
+  dialog->retain();
+  
   return true;
 }
 
@@ -264,12 +278,20 @@ bool PlayerObject::playerFlyUpdate(float delta) {
       setAnimation(animationStrings.at(AscendR));
 
   }
-  fuel += consumeRate;
+  
+  lastFuel = fuel;
+  if(consumeRate>0) // We want a fast recharge
+    fuel += 1.75f * consumeRate;
+  else
+    fuel += consumeRate;
   if (fuel > 1) {
     fuel = 1;
   }
   if (fuel < 0) {
     fuel = 0;
+  }
+  if(fuel>=1&&lastFuel<1){
+    rechargedSFX->play(0.25f);
   }
   
   return module_active;
@@ -365,7 +387,7 @@ bool PlayerObject::playerDashUpdate(float delta) {
 bool bPlayerShoot = false;
 bool PlayerObject::rifle_item(float delta) {
   
-  if (playerInput->isDoubleRight()) {
+  if (playerInput->isDoubleRight()&&fuel>=0.33) {
     objectSprite->setScaleX(1);
     setAnimationOnce(animationStrings.at(ItemR));
     //setVelocityX(0);
@@ -384,8 +406,12 @@ bool PlayerObject::rifle_item(float delta) {
     if(getMovementStatus()==GO_ON_GROUND){
       setVelocityX(0);
     }
+    fuel -= 0.33f;
+    if(fuel<0){
+      fuel = 0;
+    }
   }
-  if (playerInput->isDoubleLeft()) {
+  if (playerInput->isDoubleLeft()&&fuel>=0.33f) {
     objectSprite->setScaleX(-1);
     setAnimationOnce(animationStrings.at(ItemR));
     //setVelocityX(0);
@@ -403,6 +429,10 @@ bool PlayerObject::rifle_item(float delta) {
     weaponSFX->play(0.4f);
     if(getMovementStatus()==GO_ON_GROUND){
       setVelocityX(0);
+    }
+    fuel -= 0.33f;
+    if(fuel<0){
+      fuel = 0;
     }
   }
   if (bPlayerShoot) {
@@ -624,6 +654,6 @@ bool PlayerObject::setupAnimation() {
   objectSprite->setPosition(8, -128);// Aling sprite in Hitbox
   setAnimation(animationStrings.at((WalkR)));
   // ITEM POINTERS
-  setItem(E_NO_ITEM);
+  setItem(E_RIFLE_ITEM);
 return true;
 }

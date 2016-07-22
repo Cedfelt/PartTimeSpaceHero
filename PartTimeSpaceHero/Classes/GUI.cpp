@@ -19,7 +19,9 @@ bool GUI::init() {
 
   this->schedule(schedule_selector(GUI::update));
   setAnchorPoint(Point(0, 5.1f));
-
+  
+  
+  
   //addGravityToObject(false);
   setElastic(0);
   // SETUP ANIMATIONS
@@ -31,6 +33,7 @@ bool GUI::init() {
   setPosition(getPositionX() - 32 * bar_length / 2, getPositionY());
   addGravityToObject(false);
 
+  
   Sprite* barBack = Sprite::create("fule_bar.png");
   barBack->setScaleX(bar_length);
   barBack->setAnchorPoint(Point(0.0f, 1.f));
@@ -83,7 +86,23 @@ bool GUI::init() {
 }
 
 // Updating Player GUI
+bool first = true;
 void GUI::update(const float delta) {
+  if(dialog){
+    if(first){
+      first = false;
+      dialog->setPositionY(-cocos2d::Director::getInstance()->getWinSize().height);
+      addChild(dialog,3003);
+    }
+    dialog->playDialog(DialogObject::E_CHAR_BY_CHAR);
+    if(dialog->dialogShowed){
+      this->removeChild(dialog);
+      dialog = nullptr;
+      first = true;
+    }
+    
+  }
+  
   const float fule = player->getFuel();
   objectSprite->setScaleX(bar_length*player->getFuel());
   objectSprite->setColor(Color3B::GREEN);
@@ -106,6 +125,7 @@ void GUI::update(const float delta) {
     }
   }
 }
+
 
 void GUI::colideWith(GameObject* oterhObj) {
   colided = true;

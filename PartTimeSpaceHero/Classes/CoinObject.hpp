@@ -18,7 +18,6 @@ public:
   CREATE_FUNC(CoinObject);
   bool setupAnimation();
   SoundFx* pling;
-  
   void update(const float delta);
 private:
 };

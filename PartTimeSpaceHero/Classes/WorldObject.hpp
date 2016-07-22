@@ -17,6 +17,7 @@
 #include "GoalObject.hpp"
 #include "SaveData.hpp"
 #include "WaterTiles.hpp"
+#include "DialogObject.hpp"
 
 
 class WorldObject : public cocos2d::Node
@@ -28,6 +29,7 @@ public:
   CREATE_FUNC(WorldObject);
   // implement the "static create()" method manually
   PlayerObject* player;
+  DialogObject* dialog;
 private:
   bool goOnScreen(GameObject *obj);
   void updateOffScreenRect();
@@ -45,6 +47,7 @@ private:
   bool onContactBegan(PhysicsContact &contact);
   GoalObject* obj;
   Physic* physic;
+  
   WaterTiles* water;
 };
 

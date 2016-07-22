@@ -55,11 +55,14 @@ bool MainMenu::init()
     touchListener->onTouchesCancelled = CC_CALLBACK_2(MainMenu::onTouchCancelled, this);
     _eventDispatcher->addEventListenerWithSceneGraphPriority(touchListener, this);
     
-    // Debug Label -
-    auto label = Label::createWithTTF("PartTime Space Hero", "fonts/Marker Felt.ttf", 25*scale);
-    label->setPosition(Vec2(origin.x + visibleSize.width/2,origin.y + visibleSize.height - label->getContentSize().height));
-    //addChild(label);
+    // New Game Label -
+    auto label = Label::createWithTTF("Start New Game", "fonts/PressStart2P.ttf", 15*scale);
+    label->setPosition(Vec2(0 + label->getContentSize().width * 0.6f, 0 + label->getContentSize().height));
+    addChild(label);
   
+  auto label_continue = Label::createWithTTF("Continue", "fonts/PressStart2P.ttf", 15*scale);
+  label_continue->setPosition(Vec2(visibleSize.width - label_continue->getContentSize().width * 1.f, 0 + label_continue->getContentSize().height));
+  addChild(label_continue);
   
   // Sprite
   auto director = Director::getInstance();

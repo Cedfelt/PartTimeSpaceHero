@@ -11,6 +11,8 @@
 #include <stdio.h>
 #include "SoundFx.hpp"
 #include "MapData.hpp"
+#include "DialogObject.hpp"
+
 using namespace cocos2d;
 class GameObject : public cocos2d::DrawNode {
 public:
@@ -49,7 +51,8 @@ public:
   virtual bool isImune();
   virtual bool isSafe();
   virtual void removeWhenBelowZero();
-
+  DialogObject* dialog;
+  
   void addCoins(uint32_t coinsToAdd);
   uint32_t getCoins();
   uint32_t coins;

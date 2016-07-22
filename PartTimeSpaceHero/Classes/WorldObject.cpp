@@ -233,6 +233,9 @@ void WorldObject::updateWorld(float delta) {
   
   // Iterate objects
   for (int i = 0; i < gameObjects.size();i++) {
+    if(gameObjects.at(i)->dialog){
+      this->dialog = gameObjects.at(i)->dialog;
+    }
     // add new objects from other objects
     if(gameObjects.at(i)->addToGameObjects.size()>0){
       for(int j = 0;j < gameObjects.at(i)->addToGameObjects.size();j++){

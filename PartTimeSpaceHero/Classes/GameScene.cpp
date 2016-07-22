@@ -95,6 +95,10 @@ int temp_col [3] = {34, 32, 52};
 
 
 void GameScene::mainGameLoop(float delta) {
+  if(worldObject->dialog){
+    gui->dialog = worldObject->dialog;
+  }
+  
   return;
   auto director = Director::getInstance();
   director->setProjection(Director::Projection::_2D);
@@ -103,6 +107,7 @@ void GameScene::mainGameLoop(float delta) {
     auto scene = MainMenu::createScene();
     Director::getInstance()->replaceScene(scene);
   }
+  
 }
 
 

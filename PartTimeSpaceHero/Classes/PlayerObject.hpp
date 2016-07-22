@@ -10,6 +10,7 @@
 #include "GameObject.hpp"
 #include "PlayerInput.hpp"
 
+
 using namespace cocos2d;
 class PlayerObject : public GameObject {
 public:
@@ -39,9 +40,12 @@ private:
   SoundFx* jetpack1;
   SoundFx* playerCrySFX;
   SoundFx* weaponSFX;
+  SoundFx* rechargedSFX;
   float fuel;
   float consumeRate;
   float currentConsumeRate;
+  
+  float lastFuel;
   
   std::vector<std::string> animationStrings;
   enum {
