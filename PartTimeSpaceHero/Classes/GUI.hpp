@@ -23,5 +23,6 @@ public:
   Label* moneyLabel;
   Sprite* heartSprite[3];
   DialogObject* dialog;
+  bool finishLevel;
 private:
 };

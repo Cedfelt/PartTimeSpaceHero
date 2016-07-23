@@ -53,13 +53,7 @@ bool PlayerObject::init() {
   consumeRate = currentConsumeRate;
   currentConsumeRate = 0.0050f;
   
-  dialog = DialogObject::create();
-  dialog->addLine("A long time ago", 4);
-  dialog->addLine("There Was A Myth", 4);
-  dialog->addLine("The Bravest Heros of All Time", 4);
-  dialog->addLine("(and the cheapest)", 1);
-  dialog->addLine("THE PART TIME SPACE HEROS", 4);
-  dialog->retain();
+  
   
   return true;
 }

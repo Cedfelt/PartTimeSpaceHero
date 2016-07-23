@@ -29,6 +29,7 @@ bool DialogObject::init() {
   addChild(dialogLabel);
   setAnchorPoint(Vec2(0.5f,0.0));
   dialogLabel->setAnchorPoint(Vec2(0.5, 0));
+  endLevelWhenDone = false;
   return true;
   
 }
@@ -42,6 +43,9 @@ void DialogObject::update(const float delta) {
   
   if(dialogText.size()<=0&&lineShowed){
     dialogShowed = true;
+    if(endLevelWhenDone){
+      
+    }
   }
   else if(lineShowed){
     lineShowed = false;

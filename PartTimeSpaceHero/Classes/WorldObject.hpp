@@ -30,6 +30,7 @@ public:
   // implement the "static create()" method manually
   PlayerObject* player;
   DialogObject* dialog;
+   void finishLevel();
 private:
   bool goOnScreen(GameObject *obj);
   void updateOffScreenRect();
@@ -47,7 +48,7 @@ private:
   bool onContactBegan(PhysicsContact &contact);
   GoalObject* obj;
   Physic* physic;
-  
+ 
   WaterTiles* water;
 };
 

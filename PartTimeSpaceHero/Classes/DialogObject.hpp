@@ -33,6 +33,7 @@ public:
   int inx = 0;
   float holdCnt = 0;
   float holdTime = 3;
+  bool endLevelWhenDone;
   
   typedef enum tDialogType{
     E_CHAR_BY_CHAR,

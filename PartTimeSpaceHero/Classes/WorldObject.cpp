@@ -58,7 +58,8 @@ bool WorldObject::init() {
   const size_t scale = getScaleFactor();
   setScale(scale);
   this->schedule(schedule_selector(WorldObject::updateWorld));
-  setViewPointCenter(Point((player->getObjectPositionX()),(player->getObjectPositionY())));
+  if(player)
+    setViewPointCenter(Point((player->getObjectPositionX()),(player->getObjectPositionY())));
   
   ////////////////////////////////////
   // MUSIC SETUP - SPECIFIC
@@ -119,6 +120,7 @@ int flyCnt = 0;
 void WorldObject::updateWorld(float delta) {
   updateOffScreenRect();
   // Spawn
+  if(player){
   if (((player->getCoins() % 7 == 0) && (player->getCoins()>0) )|| (giveObject &&!createSpawned) ) {
     playerSafe += player->isSafe();
     giveObject = true;
@@ -144,6 +146,7 @@ void WorldObject::updateWorld(float delta) {
     playerSafe = 0;
     createSpawned = false;
   }
+    }
   
   
   if(delta_cnt ==delta_max){
@@ -193,11 +196,13 @@ void WorldObject::updateWorld(float delta) {
     }
   }
 #else
-  Vec2 playerPos = Vec2(player->getObjectPositionX(),player->getObjectPositionY());
-  const float offset = player->playerLookAhead;
-  setViewPointCenter(Vec2((playerPos.x + lastX)/2.0,(playerPos.y + lastY +48)/2.0));
-  lastX = playerPos.x;
-  lastY = playerPos.y;
+  if(player){
+    Vec2 playerPos = Vec2(player->getObjectPositionX(),player->getObjectPositionY());
+    const float offset = player->playerLookAhead;
+    setViewPointCenter(Vec2((playerPos.x + lastX)/2.0,(playerPos.y + lastY +48)/2.0));
+    lastX = playerPos.x;
+    lastY = playerPos.y;
+    }
 #endif
   
   
@@ -207,19 +212,12 @@ void WorldObject::updateWorld(float delta) {
   // Check Goal
   if(obj!=NULL){
     if(obj->colided){
-      // setCurrentCompleted
-      auto sd = SaveData::create();
-      sd->setCurrentLevelStatus(true,30,100);
-      auto audio = CocosDenshion::SimpleAudioEngine::getInstance();
-      audio->stopBackgroundMusic();
-      audio->pauseAllEffects();
-      stopAllActions();
-      auto scene = MainMenu::createScene();
-      Director::getInstance()->replaceScene(scene);
+      finishLevel();
     }
   }
   
   // Check if player dead
+  if(player){
   if(player->HP<=0){
     auto audio = CocosDenshion::SimpleAudioEngine::getInstance();
     audio->stopBackgroundMusic();
@@ -228,6 +226,7 @@ void WorldObject::updateWorld(float delta) {
     auto scene = MainMenu::createScene();
     Director::getInstance()->replaceScene(scene);
   }
+    }
   
   
   
@@ -439,6 +438,23 @@ void WorldObject::spawnObjects(cocos2d::Vector<GameObject*>* gameObjects) {
       addChild(botty);
     }
     
+    else if(name == "DialogObject"){
+      dialog = DialogObject::create();
+      std::string line = "line";
+      int lineCnt = 1;
+      line = line + std::to_string(lineCnt);
+      float showTime = 4;
+      while(vm[line].asString().size()>0){
+        dialog->addLine(vm[line].asString(),showTime);
+        lineCnt++;
+        line = "line" + std::to_string(lineCnt);
+      }
+      
+      
+      dialog->retain();
+      dialog->endLevelWhenDone = vm["endLevel"].asBool();
+    }
+    
     else if(name == "SnailObject"){
       // COIN
       auto botty = SnailObject::create();
@@ -605,5 +621,17 @@ void WorldObject::updateOffScreenRect() {
   }
   screen.setRect(sx - distanceX, sy - distanceY, screnWidh, screnHeight);
   /*screen_draw->setPosition(sx, sy);*/
+}
+
+void WorldObject::finishLevel(){
+  // setCurrentCompleted
+  auto sd = SaveData::create();
+  sd->setCurrentLevelStatus(true,30,100);
+  auto audio = CocosDenshion::SimpleAudioEngine::getInstance();
+  audio->stopBackgroundMusic();
+  audio->pauseAllEffects();
+  stopAllActions();
+  auto scene = MainMenu::createScene();
+  Director::getInstance()->replaceScene(scene);
 }
 

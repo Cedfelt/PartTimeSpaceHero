@@ -20,6 +20,7 @@ bool GUI::init() {
   this->schedule(schedule_selector(GUI::update));
   setAnchorPoint(Point(0, 5.1f));
   
+  finishLevel = false;
   
   
   //addGravityToObject(false);
@@ -96,12 +97,17 @@ void GUI::update(const float delta) {
     }
     dialog->playDialog(DialogObject::E_CHAR_BY_CHAR);
     if(dialog->dialogShowed){
+      if(dialog->endLevelWhenDone){
+        finishLevel = true;
+      }
       this->removeChild(dialog);
       dialog = nullptr;
       first = true;
+      
     }
     
   }
+  
   
   const float fule = player->getFuel();
   objectSprite->setScaleX(bar_length*player->getFuel());

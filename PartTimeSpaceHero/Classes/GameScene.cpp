@@ -98,6 +98,9 @@ void GameScene::mainGameLoop(float delta) {
   if(worldObject->dialog){
     gui->dialog = worldObject->dialog;
   }
+  if(gui->finishLevel){
+    worldObject->finishLevel();
+  }
   
   return;
   auto director = Director::getInstance();

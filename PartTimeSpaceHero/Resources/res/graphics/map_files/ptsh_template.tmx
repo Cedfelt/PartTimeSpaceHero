@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="400" height="60" tilewidth="16" tileheight="16" nextobjectid="172">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="400" height="60" tilewidth="16" tileheight="16" nextobjectid="176">
  <properties>
   <property name="music_track" value="adventure.mp3"/>
  </properties>
@@ -110,6 +110,12 @@
   <object id="169" name="CoinObject" x="1109.61" y="452.202" width="12" height="25"/>
   <object id="170" name="CoinObject" x="1158.18" y="452.202" width="12" height="25"/>
   <object id="171" name="CoinObject" x="1019.94" y="380.959" width="12" height="25"/>
+  <object id="175" name="DialogObject" x="393.555" y="429.113" width="12" height="25">
+   <properties>
+    <property name="endLevel" type="bool" value="false"/>
+    <property name="line1" value="Welcome to template island !"/>
+   </properties>
+  </object>
  </objectgroup>
  <objectgroup name="template_objects" offsetx="6" offsety="30">
   <object id="19" name="FlowerShootaObject" x="307.489" y="495.335" width="12" height="25"/>
@@ -170,6 +176,11 @@
    </properties>
   </object>
   <object id="161" name="ZombieObject" x="552.137" y="58.9714" width="372.409" height="92.5495"/>
+  <object id="174" name="LabelObject" x="392.013" y="324.709" width="17.5567" height="16.0936">
+   <properties>
+    <property name="msg" value="Hello World!"/>
+   </properties>
+  </object>
  </objectgroup>
  <layer name="walls" width="400" height="60" offsetx="0" offsety="0.895496">
   <data encoding="base64">
