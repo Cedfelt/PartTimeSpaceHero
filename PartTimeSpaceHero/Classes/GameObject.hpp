@@ -119,6 +119,14 @@ public:
     E_DASH_ITEM,
     E_ITEM_CNT
   };
+  
+  std::string item_descriptions[10] ={
+    "NO_ITEM",
+    "Plasma Rifle",
+    "Dash"
+  
+  };
+  
   bool checkForWallCollisions();
   virtual void setItem(PlayerItem_ID id);
   bool bWallCollisions;

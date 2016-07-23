@@ -95,7 +95,7 @@ void GUI::update(const float delta) {
       dialog->setPositionY(-cocos2d::Director::getInstance()->getWinSize().height);
       addChild(dialog,3003);
     }
-    dialog->playDialog(DialogObject::E_CHAR_BY_CHAR);
+    dialog->playDialog();
     if(dialog->dialogShowed){
       if(dialog->endLevelWhenDone){
         finishLevel = true;

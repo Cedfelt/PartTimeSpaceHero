@@ -17,7 +17,7 @@ public:
   CREATE_FUNC(DialogObject);
   SoundFx* pling;
   Label* dialogLabel;
-  void playDialog(int type);
+  void playDialog();
   void update(const float delta);
   void updateLineByLine(const float delta);
   std::vector<std::string> dialogText;
@@ -34,6 +34,7 @@ public:
   float holdCnt = 0;
   float holdTime = 3;
   bool endLevelWhenDone;
+  int presentation;
   
   typedef enum tDialogType{
     E_CHAR_BY_CHAR,

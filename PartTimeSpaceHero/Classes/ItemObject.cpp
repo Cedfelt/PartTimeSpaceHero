@@ -39,6 +39,11 @@ void ItemObject::colideWith(GameObject* otherGo,const uint32_t otherType){
     pling->play(0.18f);
     const uint32_t itemId = cocos2d::random(1, (int)(E_ITEM_CNT)-1);
     otherGo->setItem((PlayerItem_ID)itemId);
+    DialogObject* dia = DialogObject::create();
+    dia->addLine(item_descriptions[itemId],2);
+    dia->presentation = DialogObject::E_LINE_BY_LINE;
+    dia->retain();
+    otherGo->dialog = dia;
   }
   
 }

@@ -23,13 +23,14 @@ bool DialogObject::init() {
   Size visibleSize = Director::getInstance()->getVisibleSize();
   Vec2 origin = Director::getInstance()->getVisibleOrigin();
   const size_t scale = getScaleFactor();
-  dialogLabel = Label::createWithTTF("A long Time Ago", "fonts/PressStart2P.ttf", 15*scale);
-  dialogLabel->setPosition(Vec2(visibleSize.width / 2,1.5f * dialogLabel->getContentSize().height));
+  dialogLabel = Label::createWithTTF("", "fonts/PressStart2P.ttf", 15*scale);
+  dialogLabel->setPosition(Vec2(visibleSize.width / 2,1.5f * 15*scale));
   cnt = 0;
   addChild(dialogLabel);
   setAnchorPoint(Vec2(0.5f,0.0));
   dialogLabel->setAnchorPoint(Vec2(0.5, 0));
   endLevelWhenDone = false;
+  presentation = E_CHAR_BY_CHAR;
   return true;
   
 }
@@ -99,13 +100,13 @@ void DialogObject::addLine(const std::string line,const float time){
   dialogTime.push_back(time);
 }
 
-void DialogObject::playDialog(int type){
+void DialogObject::playDialog(){
   if(!started){
     started = true;
-    if(type == E_CHAR_BY_CHAR){
+    if(presentation == E_CHAR_BY_CHAR){
       this->schedule(schedule_selector(DialogObject::update));
     }
-    if(type == E_LINE_BY_LINE){
+    if(presentation == E_LINE_BY_LINE){
       this->schedule(schedule_selector(DialogObject::updateLineByLine));
     }
   }
