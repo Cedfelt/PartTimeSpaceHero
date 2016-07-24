@@ -91,7 +91,9 @@ bool WorldObject::init() {
   screen_draw->drawPolygon(rectangle, 4, cocos2d::Color4F::RED, 1, cocos2d::Color4F::BLUE);
   screen_draw->setAnchorPoint(getAnchorPoint());
   addChild(screen_draw, 8);*/
-
+  
+  setViewPointCenter(Vec2((player->getObjectPositionX()),(player->getObjectPositionY() + 42)));
+  
   return true;
 }
 

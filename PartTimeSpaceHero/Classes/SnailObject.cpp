@@ -18,7 +18,7 @@ bool SnailObject::init() {
   {
     return false;
   }
-  
+  setScale(2);
   
   this->schedule(schedule_selector(SnailObject::AIUpdate), 0.8);
   addGravityToObject(true);

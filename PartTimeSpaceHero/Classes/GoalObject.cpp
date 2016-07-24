@@ -34,7 +34,7 @@ void GoalObject::update(const float delta) {
   
 }
 
-void GoalObject::colideWith(GameObject* oterhObj){
+void GoalObject::colideWith(GameObject* oterhObj, const uint32_t otherType){
   colided = true;
 }
 

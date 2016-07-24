@@ -648,6 +648,6 @@ bool PlayerObject::setupAnimation() {
   objectSprite->setPosition(8, -128);// Aling sprite in Hitbox
   setAnimation(animationStrings.at((WalkR)));
   // ITEM POINTERS
-  setItem(E_RIFLE_ITEM);
+  setItem(E_NO_ITEM);
 return true;
 }
