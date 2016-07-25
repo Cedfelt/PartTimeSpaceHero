@@ -26,6 +26,7 @@
 #include "MechObject.hpp"
 #include "SnailObject.hpp"
 #include "ZombieObject.hpp"
+#include "FishObject.hpp"
 
 bool WorldObject::init() {
   //////////////////////////////
@@ -430,6 +431,22 @@ void WorldObject::spawnObjects(cocos2d::Vector<GameObject*>* gameObjects) {
       }
       botty-> setAnimation("botty_idle");
       botty->setupHitbox(0.1, 1, 24, 48, 24, 44, false);
+      gameObjects->pushBack(botty);
+      botty->setObjectPositionX(x);
+      botty->setObjectPositionY(y);
+      botty->getPhysicsBody()->setCategoryBitmask((int)PhysicsCategory::Enemy);
+      botty->getPhysicsBody()->setCollisionBitmask((int)PhysicsCategory::None);
+      botty->getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::Player|(int)PhysicsCategory::PlayerProjectile|(int)PhysicsCategory::Hazard);
+      botty->target = player;
+      addChild(botty);
+    }
+    
+    else if(name == "FishObject"){
+      // COIN
+      auto botty = FishObject::create();
+      botty->setupAnimation();
+      botty-> setAnimation("fish_idle");
+      botty->setupHitbox(0.1, 1, 64, 80, 64, 80, false);
       gameObjects->pushBack(botty);
       botty->setObjectPositionX(x);
       botty->setObjectPositionY(y);

@@ -95,12 +95,13 @@ public:
   Sprite* objectSprite;
   Rect hitBox;
   enum{
-    GO_LEFT,
-    GO_RIGHT,
-    GO_UP,
-    GO_DOWN,
-    GO_STILL
+    GO_LEFT = 0x1,
+    GO_RIGHT = 0x2,
+    GO_UP = 0x4,
+    GO_DOWN = 0x8,
+    GO_STILL = 10,
   };
+  int obstacle_mask;
   Rect objectZone;
   bool isPlayerInZone();
   void walkAtDir(float speed, int dir);

@@ -21,6 +21,11 @@ bool PlayerInput::init() {
   swipeAmountR = 0;
   tapChecks = 0;
   taps = 15;
+  
+  softWareResetR = false;
+  fSWDistR = 0;
+  softWareResetL = false;
+  fSWDistL = 0;
   return true;
 }
 
@@ -90,11 +95,15 @@ void PlayerInput::onTouchEnded(const std::vector<Touch*>& touches, Event*)
       // LEFT
       left = false;
       swipeAmountL = 0;
+      softWareResetL = false;
+      fSWDistL = 0;
     }
     else {
       // RIGHT
       right = false;
       swipeAmountR = 0;
+      softWareResetR = false;
+      fSWDistR = 0;
     }
   }
 }
@@ -102,6 +111,7 @@ void PlayerInput::onTouchEnded(const std::vector<Touch*>& touches, Event*)
 void PlayerInput::onTouchMoved(const std::vector<Touch*>& touch, Event* event)
 {
   CCSize winSize = CCDirector::sharedDirector()->getWinSize();
+  
   
     for (int i = 0;i < touch.size();i++) {
       const float current_touch = touch.at(0)->getLocation().y;
@@ -113,17 +123,31 @@ void PlayerInput::onTouchMoved(const std::vector<Touch*>& touch, Event* event)
       if (swipe_distance > swipeThreshold) {
         if ((touch.at(i)->getStartLocation().x) < winSize.width / 2) {
           // LEFT
-          swipeAmountL = swipe_distance / swipeThreshold;
+          if(softWareResetL){
+            softWareResetL = false;
+            fSWDistL = swipe_distance;
+          }
+          swipeAmountL = (swipe_distance - fSWDistL)/ swipeThreshold;
         }
         else {
           // RIGHT
-          swipeAmountR = swipe_distance / swipeThreshold;
+          if(softWareResetR){
+            softWareResetR = false;
+            fSWDistR = swipe_distance;
+          }
+          swipeAmountR = (swipe_distance - fSWDistR) / swipeThreshold;
     
         }
         
       }
     }
   
+  if(softWareResetL){
+    softWareResetL = false;
+  }
+  if(softWareResetR){
+    softWareResetR = false;
+  }
 }
 
 void PlayerInput::onTouchCancelled(const std::vector<Touch*>&, Event*)
@@ -151,5 +175,10 @@ void PlayerInput::resetAnalog(){
   swipeAmountL = 0;
   swipeAmountR = 0;
   bResetAnalog = true;
+}
+
+void PlayerInput::setSWR(){
+  softWareResetR = true;
+  softWareResetL = true;
 }
 

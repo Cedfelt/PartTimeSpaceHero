@@ -42,9 +42,13 @@ enum collision_bits {
 void Physic::moveGameObjects(cocos2d::Vector<GameObject*>* gameObjects, MapObject* mapObject, const float delta) {
   const size_t obj_cnt = gameObjects->size();
   const size_t ts = mapObject->getMapTileSize();
+  
   for (int i = 0;i < obj_cnt;i++) {
 
     GameObject* obj = gameObjects->at(i);
+    obj->obstacle_mask = 0;
+    const float velX =  obj->getVelocityX();
+     const float velY =  obj->getVelocityY();
     obj->lastX = obj->getObjectPositionX();
     obj->lastY = obj->getObjectPositionY();
     const bool checkCollision = obj->checkForWallCollisions();
@@ -90,6 +94,12 @@ void Physic::moveGameObjects(cocos2d::Vector<GameObject*>* gameObjects, MapObjec
           obj->setObjectPositionX(int(obj->getObjectPositionX() + sign));
         }
         // BLOCKED X
+        if(velX>0){
+          obj->obstacle_mask |= GameObject::GO_RIGHT;
+        }
+        else{
+          obj->obstacle_mask |= GameObject::GO_LEFT;
+        }
         const float newVel = obj->getVelocityX() * obj->getElastic();
         obj->setVelocityX(newVel * -1);
       }
@@ -107,6 +117,12 @@ void Physic::moveGameObjects(cocos2d::Vector<GameObject*>* gameObjects, MapObjec
           obj->setObjectPositionY((int)(obj->getObjectPositionY() + sign));
         }
         // BLOCKED Y
+        if(velY>0){
+          obj->obstacle_mask |= GameObject::GO_UP;
+        }
+        else{
+          obj->obstacle_mask |= GameObject::GO_DOWN;
+        }
         const float newVel = obj->getVelocityY() * obj->getElastic();
         obj->setVelocityY(newVel* -1);
       }

@@ -43,6 +43,8 @@ void SaveData::loadWorldData() {
 }
 
 void SaveData::eraseMemorey(){
+  auto user = cocos2d::UserDefault::getInstance();
+  user->destroyInstance();
   for(int i = 0;i<levelDataList.size();i++){
     levelDataList.at(i)->eraseDataFromMemory();
   }

@@ -25,6 +25,7 @@ public:
   // implement the "static create()" method manually
   CREATE_FUNC(PlayerInput);
   void resetAnalog();
+   void setSWR();
 private:
   bool bResetAnalog = false;
   bool left;
@@ -42,6 +43,11 @@ private:
   virtual void onTouchMoved(const std::vector<Touch*>&, Event*);
   virtual void onTouchCancelled(const std::vector<Touch*>&, Event*);
   void tapCounter(float delta);
+  bool softWareResetR;
+  bool softWareResetL;
+  float fSWDistR;
+  float fSWDistL;
+ 
   
 };
 

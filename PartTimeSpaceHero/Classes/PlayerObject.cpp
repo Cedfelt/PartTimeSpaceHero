@@ -212,9 +212,12 @@ bool PlayerObject::playerFlyUpdate(float delta) {
           return true;
         }
         else{
-          playerInput->resetAnalog();
-          flying = false;
-          return false;
+          if(obstacle_mask & GO_DOWN){
+            playerInput->setSWR();
+            playerInput->resetAnalog();
+            flying = false;
+            return false;
+          }
         }
       }
       if (getVelocityY() < maxRiseSpeed)
@@ -242,9 +245,12 @@ bool PlayerObject::playerFlyUpdate(float delta) {
           return true;
         }
         else{
-          flying = false;
-          playerInput->resetAnalog();
-          return false;
+          if(obstacle_mask & GO_DOWN){
+            flying = false;
+            playerInput->setSWR();
+            playerInput->resetAnalog();
+            return false;
+          }
         }
       }
       if (getVelocityY() < maxRiseSpeed)
@@ -548,6 +554,8 @@ void PlayerObject::colideWith(GameObject* otherObj, const uint32_t otherType) {
 }
 
 void PlayerObject::resetItems(){
+  playerInput->isDoubleLeft(); // Dummy Read to avoid storing an unread double tap.
+  playerInput->isDoubleRight();
   dashing = false;
   bPlayerShoot = false;
   dashRightCnt = 0;

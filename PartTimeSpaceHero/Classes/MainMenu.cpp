@@ -118,7 +118,7 @@ void MainMenu::onTouchEnded(const std::vector<Touch*>& touches, Event*)
     LevelData* nextLevel = gameSave->getCurrentLevel();
     setMapUrl(nextLevel->getMapName());
     //setMapUrl("ptsh_template.tmx");
-    //setMapUrl("level2.tmx");
+    setMapUrl("level2.tmx");
     cocos2d::log(nextLevel->getMapName().c_str());
     auto scene = GameScene::createScene();
     Director::getInstance()->replaceScene(scene);
