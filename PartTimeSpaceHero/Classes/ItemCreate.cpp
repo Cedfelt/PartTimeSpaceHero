@@ -47,7 +47,7 @@ bool ItemCreate::init() {
 }
 
 void ItemCreate::colideWith(GameObject* otherGo,const uint32_t otherType){
-  if(otherType&(uint32_t)PhysicsCategory::Player || otherType&(uint32_t)PhysicsCategory::PlayerProjectile){
+  if(otherType&(uint32_t)PhysicsCategory::Player || otherType&(uint32_t)PhysicsCategory::PlayerProjectile|| otherType&(uint32_t)PhysicsCategory::Enemy){
     otherGo->setVelocityY(otherGo->getVelocityY()*-1.0);
     otherGo->setVelocityX(otherGo->getVelocityX()*-1.0f);
     if(otherGo->getVelocityY()== 0.0f){
