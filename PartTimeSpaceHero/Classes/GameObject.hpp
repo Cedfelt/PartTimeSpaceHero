@@ -16,6 +16,8 @@
 using namespace cocos2d;
 class GameObject : public cocos2d::DrawNode {
 public:
+  
+  cocos2d::Vector<DialogObject*>* dialogObjects;
   enum{
     GO_ON_GROUND,
     GO_IN_AIR_UP,
@@ -51,7 +53,6 @@ public:
   virtual bool isImune();
   virtual bool isSafe();
   virtual void removeWhenBelowZero();
-  DialogObject* dialog;
   
   void addCoins(uint32_t coinsToAdd);
   uint32_t getCoins();

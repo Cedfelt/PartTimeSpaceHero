@@ -82,22 +82,26 @@ int temp_col [3] = {34, 32, 52};
   worldObject->setAnchorPoint(Point(0, 0));
   addChild(worldObject);
   
+ 
+  
   ////////////////////////////////////
-  // GUI
+  // GUI and Dialog
   gui = GUI::create();
+  dialogObjects = &gui->dialogObjects;
+  worldObject->dialogObjects = dialogObjects;
+  worldObject->setupWorld();
+  
+ 
   addChild(gui,100);
   gui->player = worldObject->player; // Create interface
   gui->setGlobalZOrder(100);
-
+  
   return true;
 }
 
 
 
 void GameScene::mainGameLoop(float delta) {
-  if(worldObject->dialog){
-    gui->dialog = worldObject->dialog;
-  }
   if(gui->finishLevel){
     worldObject->finishLevel();
   }

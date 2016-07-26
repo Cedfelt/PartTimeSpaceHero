@@ -68,6 +68,7 @@ void ItemCreate::colideWith(GameObject* otherGo,const uint32_t otherType){
     coin->getPhysicsBody()->setCategoryBitmask((int)PhysicsCategory::PlayerPickups);
     coin->getPhysicsBody()->setCollisionBitmask((int)PhysicsCategory::None);
     coin->getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::Player | (int)PhysicsCategory::Hazard);
+    coin->dialogObjects = dialogObjects;
     
     
   }

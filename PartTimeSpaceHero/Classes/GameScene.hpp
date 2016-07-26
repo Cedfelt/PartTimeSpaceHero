@@ -29,9 +29,11 @@ public:
   CREATE_FUNC(GameScene);
   void mainGameLoop(float delta);
   GUI* gui;
+  cocos2d::Vector<DialogObject*>* dialogObjects;
 private:
   float counter;
   WorldObject* worldObject;
+  
 };
 
 

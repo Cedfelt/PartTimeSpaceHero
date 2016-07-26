@@ -29,8 +29,11 @@ public:
   CREATE_FUNC(WorldObject);
   // implement the "static create()" method manually
   PlayerObject* player;
-  DialogObject* dialog;
    void finishLevel();
+  cocos2d::Vector<DialogObject*>* dialogObjects;
+  
+  void setupWorld();
+  
 private:
   bool goOnScreen(GameObject *obj);
   void updateOffScreenRect();

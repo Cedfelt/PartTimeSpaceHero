@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="400" height="60" tilewidth="16" tileheight="16" nextobjectid="176">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="400" height="60" tilewidth="16" tileheight="16" nextobjectid="178">
  <properties>
   <property name="music_track" value="adventure.mp3"/>
  </properties>
@@ -179,6 +179,18 @@
   <object id="174" name="LabelObject" x="392.013" y="324.709" width="17.5567" height="16.0936">
    <properties>
     <property name="msg" value="Hello World!"/>
+   </properties>
+  </object>
+  <object id="176" name="SignObject" x="77.2249" y="657.942" width="61.1147" height="25">
+   <properties>
+    <property name="text1" value="This is a pop-up text"/>
+   </properties>
+  </object>
+  <object id="177" name="FishObject" x="289.342" y="654.673" width="12" height="1">
+   <properties>
+    <property name="stayInZone" value="false"/>
+    <property name="stupidWalk" value="true"/>
+    <property name="turnAtEdge" value="false"/>
    </properties>
   </object>
  </objectgroup>

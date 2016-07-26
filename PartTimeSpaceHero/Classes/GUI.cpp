@@ -89,23 +89,28 @@ bool GUI::init() {
 // Updating Player GUI
 bool first = true;
 void GUI::update(const float delta) {
-  if(dialog){
-    if(first){
-      first = false;
-      dialog->setPositionY(-cocos2d::Director::getInstance()->getWinSize().height);
-      addChild(dialog,3003);
-    }
-    dialog->playDialog();
-    if(dialog->dialogShowed){
-      if(dialog->endLevelWhenDone){
-        finishLevel = true;
+  if(dialogObjects.size()>0){
+    dialog = dialogObjects.at(0);
+    if(!dialog->dialogShowed){
+      if(first){
+        first = false;
+        dialog->setPositionY(-cocos2d::Director::getInstance()->getWinSize().height);
+        addChild(dialog,3003);
       }
-      this->removeChild(dialog);
-      dialog = nullptr;
-      first = true;
-      
+      dialog->playDialog();
     }
-    
+    else{
+      if(dialog->dialogShowed){
+        if(dialog->endLevelWhenDone){
+          finishLevel = true;
+        }
+        
+        this->removeChild(dialog);
+        first = true;
+        dialogObjects.erase(0);
+      
+      }
+    }
   }
   
   
@@ -135,4 +140,8 @@ void GUI::update(const float delta) {
 
 void GUI::colideWith(GameObject* oterhObj) {
   colided = true;
+}
+
+void GUI::addDialog(DialogObject* addDialog){
+  dialogObjects.pushBack(addDialog);
 }

@@ -31,6 +31,7 @@ bool DialogObject::init() {
   dialogLabel->setAnchorPoint(Vec2(0.5, 0));
   endLevelWhenDone = false;
   presentation = E_CHAR_BY_CHAR;
+  holdCnt = -1;
   return true;
   
 }

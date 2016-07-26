@@ -27,12 +27,19 @@
 #include "SnailObject.hpp"
 #include "ZombieObject.hpp"
 #include "FishObject.hpp"
+#include "SignObject.hpp"
 
 bool WorldObject::init() {
   //////////////////////////////
   // 1. super init first
   if (!Node::init()) { return false; }
 
+  
+  
+  return true;
+}
+
+void WorldObject::setupWorld(){
   mapObject = MapObject::create();
   mapObject->setAnchorPoint(Point(0, 0));
   addChild(mapObject);
@@ -48,13 +55,13 @@ bool WorldObject::init() {
   physic = Physic::create();
   addChild(physic);
   spawnObjects(&gameObjects);
-
+  
   auto contactListener = EventListenerPhysicsContact::create();
   contactListener->onContactBegin = CC_CALLBACK_1(WorldObject::onContactBegan, this);
   this->getEventDispatcher()->addEventListenerWithSceneGraphPriority(contactListener, this);
-
   
-
+  
+  
   // This Sets the scale for all World Objects
   const size_t scale = getScaleFactor();
   setScale(scale);
@@ -72,10 +79,10 @@ bool WorldObject::init() {
   
   
   auto audio = CocosDenshion::SimpleAudioEngine::getInstance();
-    audio->stopBackgroundMusic();
-    audio->playBackgroundMusic(track_name.c_str(), true);
-
-   
+  audio->stopBackgroundMusic();
+  audio->playBackgroundMusic(track_name.c_str(), true);
+  
+  
   
   cocos2d::Director::getInstance()->getTextureCache()->removeAllTextures();
   physic->platforms = &plattis;
@@ -84,20 +91,18 @@ bool WorldObject::init() {
   cache->removeUnusedSpriteFrames();
   
   /*screen_draw = cocos2d::DrawNode::create();
-  cocos2d::Vec2 rectangle[4];
-  rectangle[0] = cocos2d::Vec2(screen.getMinX(), screen.getMinY());
-  rectangle[1] = cocos2d::Vec2(screen.getMaxX(), screen.getMinY());
-  rectangle[2] = cocos2d::Vec2(screen.getMaxX(), screen.getMaxY());
-  rectangle[3] = cocos2d::Vec2(screen.getMinX(), screen.getMaxY());
-  screen_draw->drawPolygon(rectangle, 4, cocos2d::Color4F::RED, 1, cocos2d::Color4F::BLUE);
-  screen_draw->setAnchorPoint(getAnchorPoint());
-  addChild(screen_draw, 8);*/
+   cocos2d::Vec2 rectangle[4];
+   rectangle[0] = cocos2d::Vec2(screen.getMinX(), screen.getMinY());
+   rectangle[1] = cocos2d::Vec2(screen.getMaxX(), screen.getMinY());
+   rectangle[2] = cocos2d::Vec2(screen.getMaxX(), screen.getMaxY());
+   rectangle[3] = cocos2d::Vec2(screen.getMinX(), screen.getMaxY());
+   screen_draw->drawPolygon(rectangle, 4, cocos2d::Color4F::RED, 1, cocos2d::Color4F::BLUE);
+   screen_draw->setAnchorPoint(getAnchorPoint());
+   addChild(screen_draw, 8);*/
   
   setViewPointCenter(Vec2((player->getObjectPositionX()),(player->getObjectPositionY() + 42)));
-  
-  return true;
-}
 
+}
 
 int issign(const float num) {
   if (num < 0) {
@@ -131,6 +136,7 @@ void WorldObject::updateWorld(float delta) {
       giveObject = false;
       createSpawned = true;
       auto coin = ItemCreate::create();
+      coin->dialogObjects = dialogObjects;
       coin->goalY = player->getObjectPositionY();
       coin->setupHitbox(0.1f, 1.0f, 32, 32, 32, 32, false);
       coin->target = player;
@@ -235,14 +241,12 @@ void WorldObject::updateWorld(float delta) {
   
   // Iterate objects
   for (int i = 0; i < gameObjects.size();i++) {
-    if(gameObjects.at(i)->dialog){
-      this->dialog = gameObjects.at(i)->dialog;
-    }
     // add new objects from other objects
     if(gameObjects.at(i)->addToGameObjects.size()>0){
       for(int j = 0;j < gameObjects.at(i)->addToGameObjects.size();j++){
         gameObjects.pushBack(gameObjects.at(i)->addToGameObjects.at(j));
         addChild(gameObjects.at(i)->addToGameObjects.at(j));
+        gameObjects.at(i)->dialogObjects = dialogObjects;
       }
       gameObjects.at(i)->addToGameObjects.clear();
     }
@@ -458,7 +462,7 @@ void WorldObject::spawnObjects(cocos2d::Vector<GameObject*>* gameObjects) {
     }
     
     else if(name == "DialogObject"){
-      dialog = DialogObject::create();
+      auto dialog = DialogObject::create();
       std::string line = "line";
       int lineCnt = 1;
       line = line + std::to_string(lineCnt);
@@ -468,10 +472,8 @@ void WorldObject::spawnObjects(cocos2d::Vector<GameObject*>* gameObjects) {
         lineCnt++;
         line = "line" + std::to_string(lineCnt);
       }
-      
-      
-      dialog->retain();
       dialog->endLevelWhenDone = vm["endLevel"].asBool();
+      dialogObjects->pushBack(dialog);
     }
     
     else if(name == "SnailObject"){
@@ -561,6 +563,31 @@ void WorldObject::spawnObjects(cocos2d::Vector<GameObject*>* gameObjects) {
       botty->target = player;
       addChild(botty);
     }
+    
+    else if(name == "SignObject"){
+      // COIN
+      auto botty = SignObject::create();
+      botty->setupHitbox(0.1, 1, w, h, w, h, false);
+      gameObjects->pushBack(botty);
+      botty->setObjectPositionX(x);
+      botty->setObjectPositionY(y);
+      botty->getPhysicsBody()->setCategoryBitmask((int)PhysicsCategory::Hazard);
+      botty->getPhysicsBody()->setCollisionBitmask((int)PhysicsCategory::None);
+      botty->getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::Player);
+      
+      std::string line = "text";
+      int lineCnt = 1;
+      line = line + std::to_string(lineCnt);
+      float showTime = 4;
+      while(vm[line].asString().size()>0){
+        botty->addTextToSign(vm[line].asString());
+        lineCnt++;
+        line = "text" + std::to_string(lineCnt);
+      }
+      botty->target = player;
+      addChild(botty);
+    }
+    
     else if(name == "PlatformObject"){
       // COIN
       auto botty = PlatformObject::create();
@@ -613,6 +640,7 @@ void WorldObject::spawnObjects(cocos2d::Vector<GameObject*>* gameObjects) {
   }
   for (int i = 0;i < gameObjects->size();i++) {
     gameObjects->at(i)->target = player;
+    gameObjects->at(i)->dialogObjects = dialogObjects;
   }
   for (int i = 0;i < plattis.size();i++) {
     plattis.at(i)->target = player;

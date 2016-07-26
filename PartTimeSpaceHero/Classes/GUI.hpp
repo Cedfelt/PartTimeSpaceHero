@@ -24,5 +24,7 @@ public:
   Sprite* heartSprite[3];
   DialogObject* dialog;
   bool finishLevel;
+  void addDialog(DialogObject* addDialog);
+  cocos2d::Vector<DialogObject*> dialogObjects;
 private:
 };

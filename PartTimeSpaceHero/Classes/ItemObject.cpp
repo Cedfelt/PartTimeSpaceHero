@@ -42,8 +42,8 @@ void ItemObject::colideWith(GameObject* otherGo,const uint32_t otherType){
     DialogObject* dia = DialogObject::create();
     dia->addLine(item_descriptions[itemId],2);
     dia->presentation = DialogObject::E_LINE_BY_LINE;
-    dia->retain();
-    otherGo->dialog = dia;
+    dialogObjects->pushBack(dia);
+    
   }
   
 }

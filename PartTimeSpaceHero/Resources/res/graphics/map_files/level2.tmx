@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="400" height="60" tilewidth="16" tileheight="16" nextobjectid="217">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="400" height="60" tilewidth="16" tileheight="16" nextobjectid="219">
  <properties>
   <property name="music_track" value="adventure.mp3"/>
  </properties>
@@ -89,12 +89,6 @@
  </layer>
  <objectgroup name="GameObjects" offsetx="-1.66667" offsety="0.909091">
   <object id="141" name="PlayerObject" x="63.6844" y="494.903" width="12" height="25"/>
-  <object id="175" name="DialogObject" x="393.555" y="429.113" width="12" height="25">
-   <properties>
-    <property name="endLevel" type="bool" value="false"/>
-    <property name="line1" value="Watch out for snails !"/>
-   </properties>
-  </object>
   <object id="180" name="TurfelObject" x="566.378" y="638.053" width="12" height="25">
    <properties>
     <property name="stayInZone" value="false"/>
@@ -203,6 +197,16 @@
     <property name="stayInZone" value="false"/>
     <property name="stupidWalk" value="true"/>
     <property name="turnAtEdge" value="false"/>
+   </properties>
+  </object>
+  <object id="217" name="SignObject" x="140.315" y="497.397" width="61.1147" height="25">
+   <properties>
+    <property name="text1" value="dont feed the fish !"/>
+   </properties>
+  </object>
+  <object id="218" name="SignObject" x="1894.4" y="143.212" width="311.046" height="38.0374">
+   <properties>
+    <property name="text1" value="A hidden passage"/>
    </properties>
   </object>
  </objectgroup>
