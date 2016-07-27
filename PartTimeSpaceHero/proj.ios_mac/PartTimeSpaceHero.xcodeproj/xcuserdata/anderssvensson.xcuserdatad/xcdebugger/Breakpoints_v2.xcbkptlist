@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/PlayerObject.cpp"
-            timestampString = "491166246.470518"
+            timestampString = "491346380.763164"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "366"
-            endingLineNumber = "366"
+            startingLineNumber = "372"
+            endingLineNumber = "372"
             landmarkName = "PlayerObject::playerDashUpdate(float delta)"
             landmarkType = "5">
          </BreakpointContent>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/PlayerObject.cpp"
-            timestampString = "491166246.470518"
+            timestampString = "491346380.763164"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "165"
-            endingLineNumber = "165"
+            startingLineNumber = "171"
+            endingLineNumber = "171"
             landmarkName = "PlayerObject::playerFallUpdate(float delta)"
             landmarkType = "5">
          </BreakpointContent>
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/PlayerObject.cpp"
-            timestampString = "491166246.470518"
+            timestampString = "491346380.763164"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "157"
-            endingLineNumber = "157">
+            startingLineNumber = "163"
+            endingLineNumber = "163">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -120,11 +120,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/PlayerObject.cpp"
-            timestampString = "491166246.470518"
+            timestampString = "491346380.763164"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "122"
-            endingLineNumber = "122"
+            startingLineNumber = "128"
+            endingLineNumber = "128"
             landmarkName = "PlayerObject::setItem(PlayerItem_ID id)"
             landmarkType = "5">
          </BreakpointContent>
@@ -152,11 +152,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/PlayerObject.cpp"
-            timestampString = "491166246.470518"
+            timestampString = "491346380.763164"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "121"
-            endingLineNumber = "121"
+            startingLineNumber = "127"
+            endingLineNumber = "127"
             landmarkName = "PlayerObject::setItem(PlayerItem_ID id)"
             landmarkType = "5">
          </BreakpointContent>
@@ -168,11 +168,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/PlayerObject.cpp"
-            timestampString = "491166246.470518"
+            timestampString = "491346380.763164"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "202"
-            endingLineNumber = "202"
+            startingLineNumber = "208"
+            endingLineNumber = "208"
             landmarkName = "PlayerObject::playerFlyUpdate(float delta)"
             landmarkType = "5">
          </BreakpointContent>
@@ -280,39 +280,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/PlayerObject.cpp"
-            timestampString = "491166246.470518"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "222"
-            endingLineNumber = "222"
-            landmarkName = "PlayerObject::playerFlyUpdate(float delta)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../Classes/PlayerObject.cpp"
-            timestampString = "491166246.470518"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "199"
-            endingLineNumber = "199"
-            landmarkName = "PlayerObject::playerFlyUpdate(float delta)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../Classes/PlayerObject.cpp"
-            timestampString = "491166246.470518"
+            timestampString = "491346380.763164"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "228"
@@ -328,11 +296,43 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/PlayerObject.cpp"
-            timestampString = "491166246.470518"
+            timestampString = "491346380.763164"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "363"
-            endingLineNumber = "363"
+            startingLineNumber = "205"
+            endingLineNumber = "205"
+            landmarkName = "PlayerObject::playerFlyUpdate(float delta)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Classes/PlayerObject.cpp"
+            timestampString = "491346380.763164"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "234"
+            endingLineNumber = "234"
+            landmarkName = "PlayerObject::playerFlyUpdate(float delta)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Classes/PlayerObject.cpp"
+            timestampString = "491346380.763164"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "369"
+            endingLineNumber = "369"
             landmarkName = "PlayerObject::playerDashUpdate(float delta)"
             landmarkType = "5">
          </BreakpointContent>
@@ -344,11 +344,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/PlayerObject.cpp"
-            timestampString = "491166246.470518"
+            timestampString = "491346380.763164"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "271"
-            endingLineNumber = "271"
+            startingLineNumber = "277"
+            endingLineNumber = "277"
             landmarkName = "PlayerObject::playerFlyUpdate(float delta)"
             landmarkType = "5">
          </BreakpointContent>
@@ -360,11 +360,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/PlayerObject.cpp"
-            timestampString = "491166246.470518"
+            timestampString = "491346380.763164"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "270"
-            endingLineNumber = "270"
+            startingLineNumber = "276"
+            endingLineNumber = "276"
             landmarkName = "PlayerObject::playerFlyUpdate(float delta)"
             landmarkType = "5">
          </BreakpointContent>
@@ -376,23 +376,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/PlayerObject.cpp"
-            timestampString = "491166246.470518"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "272"
-            endingLineNumber = "272"
-            landmarkName = "PlayerObject::playerFlyUpdate(float delta)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../Classes/PlayerObject.cpp"
-            timestampString = "491166246.470518"
+            timestampString = "491346380.763164"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "278"
@@ -408,11 +392,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/PlayerObject.cpp"
-            timestampString = "491166246.470518"
+            timestampString = "491346380.763164"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "190"
-            endingLineNumber = "190"
+            startingLineNumber = "284"
+            endingLineNumber = "284"
             landmarkName = "PlayerObject::playerFlyUpdate(float delta)"
             landmarkType = "5">
          </BreakpointContent>
@@ -424,11 +408,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/PlayerObject.cpp"
-            timestampString = "491166246.470518"
+            timestampString = "491346380.763164"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "193"
-            endingLineNumber = "193"
+            startingLineNumber = "196"
+            endingLineNumber = "196"
             landmarkName = "PlayerObject::playerFlyUpdate(float delta)"
             landmarkType = "5">
          </BreakpointContent>
@@ -440,11 +424,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/PlayerObject.cpp"
-            timestampString = "491166246.470518"
+            timestampString = "491346380.763164"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "189"
-            endingLineNumber = "189"
+            startingLineNumber = "199"
+            endingLineNumber = "199"
             landmarkName = "PlayerObject::playerFlyUpdate(float delta)"
             landmarkType = "5">
          </BreakpointContent>
@@ -456,11 +440,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/PlayerObject.cpp"
-            timestampString = "491166246.470518"
+            timestampString = "491346380.763164"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "299"
-            endingLineNumber = "299">
+            startingLineNumber = "195"
+            endingLineNumber = "195"
+            landmarkName = "PlayerObject::playerFlyUpdate(float delta)"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -470,11 +456,25 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/PlayerObject.cpp"
-            timestampString = "491166246.470518"
+            timestampString = "491346380.763164"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "317"
-            endingLineNumber = "317"
+            startingLineNumber = "305"
+            endingLineNumber = "305">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Classes/PlayerObject.cpp"
+            timestampString = "491346380.763164"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "323"
+            endingLineNumber = "323"
             landmarkName = "PlayerObject::playerDashUpdate(float delta)"
             landmarkType = "5">
          </BreakpointContent>
@@ -486,11 +486,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/PlayerObject.cpp"
-            timestampString = "491166246.470518"
+            timestampString = "491346380.763164"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "183"
-            endingLineNumber = "183"
+            startingLineNumber = "189"
+            endingLineNumber = "189"
             landmarkName = "PlayerObject::flyAtDir(MovementDirectionX dir, std::string animName)"
             landmarkType = "5">
          </BreakpointContent>
@@ -550,11 +550,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/WorldObject.cpp"
-            timestampString = "491264151.912213"
+            timestampString = "491346380.763164"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "318"
-            endingLineNumber = "318"
+            startingLineNumber = "319"
+            endingLineNumber = "319"
             landmarkName = "WorldObject::spawnObjects(cocos2d::Vector&lt;GameObject*&gt;* gameObjects)"
             landmarkType = "5">
          </BreakpointContent>
@@ -566,11 +566,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/PlayerObject.cpp"
-            timestampString = "490923357.602164"
+            timestampString = "491346380.763164"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "102"
-            endingLineNumber = "102"
+            startingLineNumber = "108"
+            endingLineNumber = "108"
             landmarkName = "PlayerObject::setItem(PlayerItem_ID id)"
             landmarkType = "5">
          </BreakpointContent>
@@ -614,11 +614,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/PlayerObject.cpp"
-            timestampString = "491166246.470518"
+            timestampString = "491346380.763164"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "250"
-            endingLineNumber = "250"
+            startingLineNumber = "256"
+            endingLineNumber = "256"
             landmarkName = "PlayerObject::playerFlyUpdate(float delta)"
             landmarkType = "5">
          </BreakpointContent>
@@ -630,11 +630,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/PlayerObject.cpp"
-            timestampString = "491166246.470518"
+            timestampString = "491346380.763164"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "252"
-            endingLineNumber = "252"
+            startingLineNumber = "258"
+            endingLineNumber = "258"
             landmarkName = "PlayerObject::playerFlyUpdate(float delta)"
             landmarkType = "5">
          </BreakpointContent>
@@ -662,11 +662,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/PlayerObject.cpp"
-            timestampString = "491166246.470518"
+            timestampString = "491346380.763164"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "215"
-            endingLineNumber = "215"
+            startingLineNumber = "221"
+            endingLineNumber = "221"
             landmarkName = "PlayerObject::playerFlyUpdate(float delta)"
             landmarkType = "5">
          </BreakpointContent>
@@ -678,11 +678,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/PlayerObject.cpp"
-            timestampString = "491166246.470518"
+            timestampString = "491346380.763164"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "241"
-            endingLineNumber = "241"
+            startingLineNumber = "247"
+            endingLineNumber = "247"
             landmarkName = "PlayerObject::playerFlyUpdate(float delta)"
             landmarkType = "5">
          </BreakpointContent>
@@ -804,11 +804,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/PlayerObject.cpp"
-            timestampString = "491166246.470518"
+            timestampString = "491346380.763164"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "501"
-            endingLineNumber = "501"
+            startingLineNumber = "507"
+            endingLineNumber = "507"
             landmarkName = "PlayerObject::playerUpdate(const float delta)"
             landmarkType = "5">
          </BreakpointContent>
@@ -868,11 +868,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/PlayerObject.cpp"
-            timestampString = "491166246.470518"
+            timestampString = "491346380.763164"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "191"
-            endingLineNumber = "191"
+            startingLineNumber = "197"
+            endingLineNumber = "197"
             landmarkName = "PlayerObject::playerFlyUpdate(float delta)"
             landmarkType = "5">
          </BreakpointContent>
@@ -884,11 +884,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/PlayerObject.cpp"
-            timestampString = "491166246.470518"
+            timestampString = "491346380.763164"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "195"
-            endingLineNumber = "195"
+            startingLineNumber = "201"
+            endingLineNumber = "201"
             landmarkName = "PlayerObject::playerFlyUpdate(float delta)"
             landmarkType = "5">
          </BreakpointContent>
@@ -900,11 +900,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/PlayerObject.cpp"
-            timestampString = "491166246.470518"
+            timestampString = "491346380.763164"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "194"
-            endingLineNumber = "194"
+            startingLineNumber = "200"
+            endingLineNumber = "200"
             landmarkName = "PlayerObject::playerFlyUpdate(float delta)"
             landmarkType = "5">
          </BreakpointContent>
@@ -948,11 +948,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/WorldObject.cpp"
-            timestampString = "491264151.912213"
+            timestampString = "491346380.763164"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "159"
-            endingLineNumber = "159"
+            startingLineNumber = "160"
+            endingLineNumber = "160"
             landmarkName = "WorldObject::updateWorld(float delta)"
             landmarkType = "5">
          </BreakpointContent>
@@ -964,11 +964,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/WorldObject.cpp"
-            timestampString = "491264151.912213"
+            timestampString = "491346380.763164"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "157"
-            endingLineNumber = "157"
+            startingLineNumber = "158"
+            endingLineNumber = "158"
             landmarkName = "WorldObject::updateWorld(float delta)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1076,11 +1076,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/WorldObject.cpp"
-            timestampString = "491264151.912213"
+            timestampString = "491347309.262847"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "390"
-            endingLineNumber = "390"
+            startingLineNumber = "394"
+            endingLineNumber = "394"
             landmarkName = "WorldObject::spawnObjects(cocos2d::Vector&lt;GameObject*&gt;* gameObjects)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1154,11 +1154,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/WorldObject.cpp"
-            timestampString = "491264151.912213"
+            timestampString = "491347309.262847"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "411"
-            endingLineNumber = "411"
+            startingLineNumber = "415"
+            endingLineNumber = "415"
             landmarkName = "WorldObject::spawnObjects(cocos2d::Vector&lt;GameObject*&gt;* gameObjects)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1186,11 +1186,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/WorldObject.cpp"
-            timestampString = "491264151.912213"
+            timestampString = "491346380.763164"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "267"
-            endingLineNumber = "267"
+            startingLineNumber = "268"
+            endingLineNumber = "268"
             landmarkName = "WorldObject::updateWorld(float delta)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1250,11 +1250,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/WorldObject.cpp"
-            timestampString = "491264151.912213"
+            timestampString = "491346380.763164"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "268"
-            endingLineNumber = "268"
+            startingLineNumber = "269"
+            endingLineNumber = "269"
             landmarkName = "WorldObject::updateWorld(float delta)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1266,11 +1266,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/WorldObject.cpp"
-            timestampString = "491264151.912213"
+            timestampString = "491346380.763164"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "266"
-            endingLineNumber = "266"
+            startingLineNumber = "267"
+            endingLineNumber = "267"
             landmarkName = "WorldObject::updateWorld(float delta)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1282,11 +1282,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/WorldObject.cpp"
-            timestampString = "491264151.912213"
+            timestampString = "491346380.763164"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "242"
-            endingLineNumber = "242"
+            startingLineNumber = "243"
+            endingLineNumber = "243"
             landmarkName = "WorldObject::updateWorld(float delta)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1298,11 +1298,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/WorldObject.cpp"
-            timestampString = "491262597.721054"
+            timestampString = "491346380.763164"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "115"
-            endingLineNumber = "115"
+            startingLineNumber = "116"
+            endingLineNumber = "116"
             landmarkName = "WorldObject::getGameObjects()"
             landmarkType = "5">
          </BreakpointContent>
@@ -1538,11 +1538,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/WorldObject.cpp"
-            timestampString = "491264151.912213"
+            timestampString = "491347309.262847"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "401"
-            endingLineNumber = "401"
+            startingLineNumber = "405"
+            endingLineNumber = "405"
             landmarkName = "WorldObject::spawnObjects(cocos2d::Vector&lt;GameObject*&gt;* gameObjects)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1554,11 +1554,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/PlayerObject.cpp"
-            timestampString = "491166246.470518"
+            timestampString = "491346380.763164"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "438"
-            endingLineNumber = "438"
+            startingLineNumber = "444"
+            endingLineNumber = "444"
             landmarkName = "PlayerObject::rifle_item(float delta)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1570,11 +1570,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/PlayerObject.cpp"
-            timestampString = "491166246.470518"
+            timestampString = "491346380.763164"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "392"
-            endingLineNumber = "392"
+            startingLineNumber = "398"
+            endingLineNumber = "398"
             landmarkName = "PlayerObject::rifle_item(float delta)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1776,11 +1776,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/PlayerObject.cpp"
-            timestampString = "491166246.470518"
+            timestampString = "491346380.763164"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "428"
-            endingLineNumber = "428"
+            startingLineNumber = "434"
+            endingLineNumber = "434"
             landmarkName = "PlayerObject::rifle_item(float delta)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1904,11 +1904,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/WorldObject.cpp"
-            timestampString = "491264151.912213"
+            timestampString = "491347309.262847"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "555"
-            endingLineNumber = "555"
+            startingLineNumber = "559"
+            endingLineNumber = "559"
             landmarkName = "WorldObject::spawnObjects(cocos2d::Vector&lt;GameObject*&gt;* gameObjects)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1968,11 +1968,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/WorldObject.cpp"
-            timestampString = "491262597.721054"
+            timestampString = "491346380.763164"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "120"
-            endingLineNumber = "120">
+            startingLineNumber = "121"
+            endingLineNumber = "121">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1982,11 +1982,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/PlayerObject.cpp"
-            timestampString = "491166246.470518"
+            timestampString = "491346380.763164"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "302"
-            endingLineNumber = "302">
+            startingLineNumber = "308"
+            endingLineNumber = "308">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1996,11 +1996,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/PlayerObject.cpp"
-            timestampString = "491166246.470518"
+            timestampString = "491346380.763164"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "324"
-            endingLineNumber = "324"
+            startingLineNumber = "330"
+            endingLineNumber = "330"
             landmarkName = "PlayerObject::playerDashUpdate(float delta)"
             landmarkType = "5">
          </BreakpointContent>
@@ -2028,11 +2028,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/PlayerObject.cpp"
-            timestampString = "491166246.470518"
+            timestampString = "491346380.763164"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "323"
-            endingLineNumber = "323"
+            startingLineNumber = "329"
+            endingLineNumber = "329"
             landmarkName = "PlayerObject::playerDashUpdate(float delta)"
             landmarkType = "5">
          </BreakpointContent>
@@ -2044,11 +2044,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/PlayerObject.cpp"
-            timestampString = "491165709.986855"
+            timestampString = "491346380.763164"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "634"
-            endingLineNumber = "634"
+            startingLineNumber = "640"
+            endingLineNumber = "640"
             landmarkName = "PlayerObject::setupAnimation()"
             landmarkType = "5">
          </BreakpointContent>
@@ -2060,11 +2060,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/WorldObject.cpp"
-            timestampString = "491264151.912213"
+            timestampString = "491346380.763164"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "284"
-            endingLineNumber = "284"
+            startingLineNumber = "285"
+            endingLineNumber = "285"
             landmarkName = "WorldObject::setViewPointCenter(const cocos2d::Point position)"
             landmarkType = "5">
          </BreakpointContent>
@@ -2156,11 +2156,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/PlayerObject.cpp"
-            timestampString = "491165709.986855"
+            timestampString = "491346380.763164"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "622"
-            endingLineNumber = "622"
+            startingLineNumber = "628"
+            endingLineNumber = "628"
             landmarkName = "PlayerObject::setupAnimation()"
             landmarkType = "5">
          </BreakpointContent>
@@ -2172,11 +2172,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/WorldObject.cpp"
-            timestampString = "491264151.912213"
+            timestampString = "491346380.763164"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "294"
-            endingLineNumber = "294"
+            startingLineNumber = "295"
+            endingLineNumber = "295"
             landmarkName = "WorldObject::onContactBegan(PhysicsContact &amp;contact)"
             landmarkType = "5">
          </BreakpointContent>
@@ -2188,11 +2188,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/WorldObject.cpp"
-            timestampString = "491264151.912213"
+            timestampString = "491346380.763164"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "295"
-            endingLineNumber = "295"
+            startingLineNumber = "296"
+            endingLineNumber = "296"
             landmarkName = "WorldObject::onContactBegan(PhysicsContact &amp;contact)"
             landmarkType = "5">
          </BreakpointContent>
@@ -2236,11 +2236,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/PlayerObject.cpp"
-            timestampString = "491166246.470518"
+            timestampString = "491346380.763164"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "506"
-            endingLineNumber = "506"
+            startingLineNumber = "512"
+            endingLineNumber = "512"
             landmarkName = "PlayerObject::hurt(const int dmg, const Vec2 force)"
             landmarkType = "5">
          </BreakpointContent>
@@ -2300,11 +2300,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/WorldObject.cpp"
-            timestampString = "491264151.912213"
+            timestampString = "491346380.763164"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "183"
-            endingLineNumber = "183"
+            startingLineNumber = "184"
+            endingLineNumber = "184"
             landmarkName = "WorldObject::updateWorld(float delta)"
             landmarkType = "5">
          </BreakpointContent>
@@ -2316,11 +2316,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/WorldObject.cpp"
-            timestampString = "491264151.912213"
+            timestampString = "491346380.763164"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "197"
-            endingLineNumber = "197"
+            startingLineNumber = "198"
+            endingLineNumber = "198"
             landmarkName = "WorldObject::updateWorld(float delta)"
             landmarkType = "5">
          </BreakpointContent>
@@ -2332,11 +2332,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/WorldObject.cpp"
-            timestampString = "491264151.912213"
+            timestampString = "491346380.763164"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "176"
-            endingLineNumber = "176"
+            startingLineNumber = "177"
+            endingLineNumber = "177"
             landmarkName = "WorldObject::updateWorld(float delta)"
             landmarkType = "5">
          </BreakpointContent>
@@ -2348,11 +2348,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/WorldObject.cpp"
-            timestampString = "491264151.912213"
+            timestampString = "491346380.763164"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "178"
-            endingLineNumber = "178"
+            startingLineNumber = "179"
+            endingLineNumber = "179"
             landmarkName = "WorldObject::updateWorld(float delta)"
             landmarkType = "5">
          </BreakpointContent>
@@ -2396,11 +2396,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/WorldObject.cpp"
-            timestampString = "491262597.721054"
+            timestampString = "491346380.763164"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "133"
-            endingLineNumber = "133"
+            startingLineNumber = "134"
+            endingLineNumber = "134"
             landmarkName = "WorldObject::updateWorld(float delta)"
             landmarkType = "5">
          </BreakpointContent>
@@ -2412,11 +2412,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/PlayerObject.cpp"
-            timestampString = "491166246.470518"
+            timestampString = "491346380.763164"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "284"
-            endingLineNumber = "284"
+            startingLineNumber = "290"
+            endingLineNumber = "290"
             landmarkName = "PlayerObject::playerFlyUpdate(float delta)"
             landmarkType = "5">
          </BreakpointContent>
@@ -2474,11 +2474,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/WorldObject.cpp"
-            timestampString = "491264151.912213"
+            timestampString = "491346380.763164"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "243"
-            endingLineNumber = "243"
+            startingLineNumber = "244"
+            endingLineNumber = "244"
             landmarkName = "WorldObject::updateWorld(float delta)"
             landmarkType = "5">
          </BreakpointContent>
@@ -2554,11 +2554,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/WorldObject.cpp"
-            timestampString = "491264151.912213"
+            timestampString = "491346380.763164"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "304"
-            endingLineNumber = "304"
+            startingLineNumber = "305"
+            endingLineNumber = "305"
             landmarkName = "WorldObject::onContactBegan(PhysicsContact &amp;contact)"
             landmarkType = "5">
          </BreakpointContent>
@@ -2570,11 +2570,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/WorldObject.cpp"
-            timestampString = "491258273.101682"
+            timestampString = "491346380.763164"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
             landmarkName = "WorldObject::init()"
             landmarkType = "5">
          </BreakpointContent>
@@ -2586,11 +2586,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/WorldObject.cpp"
-            timestampString = "491262597.721054"
+            timestampString = "491346380.763164"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "129"
-            endingLineNumber = "129"
+            startingLineNumber = "130"
+            endingLineNumber = "130"
             landmarkName = "WorldObject::updateWorld(float delta)"
             landmarkType = "5">
          </BreakpointContent>
@@ -2602,11 +2602,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/WorldObject.cpp"
-            timestampString = "491264151.912213"
+            timestampString = "491346380.763164"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "224"
-            endingLineNumber = "224"
+            startingLineNumber = "225"
+            endingLineNumber = "225"
             landmarkName = "WorldObject::updateWorld(float delta)"
             landmarkType = "5">
          </BreakpointContent>
@@ -2646,7 +2646,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/MainMenu.cpp"
@@ -2714,11 +2714,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/WorldObject.cpp"
-            timestampString = "491264151.912213"
+            timestampString = "491346380.763164"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "249"
-            endingLineNumber = "249"
+            startingLineNumber = "250"
+            endingLineNumber = "250"
             landmarkName = "WorldObject::updateWorld(float delta)"
             landmarkType = "5">
          </BreakpointContent>
@@ -2726,7 +2726,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/ItemCreate.cpp"
@@ -2736,6 +2736,38 @@
             startingLineNumber = "71"
             endingLineNumber = "71"
             landmarkName = "ItemCreate::colideWith(GameObject* otherGo,const uint32_t otherType)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Classes/SuporterObject.cpp"
+            timestampString = "491350187.995096"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "SuporterObject::update(const float delta)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Classes/SuporterObject.cpp"
+            timestampString = "491350187.995096"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "SuporterObject::update(const float delta)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

@@ -28,6 +28,7 @@
 #include "ZombieObject.hpp"
 #include "FishObject.hpp"
 #include "SignObject.hpp"
+#include "SuporterObject.hpp"
 
 bool WorldObject::init() {
   //////////////////////////////
@@ -338,6 +339,9 @@ void WorldObject::spawnObjects(cocos2d::Vector<GameObject*>* gameObjects) {
       addChild(player);
       addChild(player->objectSprite);
       player->objectSprite->autorelease();
+      
+      
+      
     }
     
     else if(name == "CoinObject"){
@@ -645,6 +649,18 @@ void WorldObject::spawnObjects(cocos2d::Vector<GameObject*>* gameObjects) {
   for (int i = 0;i < plattis.size();i++) {
     plattis.at(i)->target = player;
   }
+  // Test Suport
+  auto babyTurf = SuporterObject::create();
+  babyTurf->target = player;
+  babyTurf->setupHitbox(0.1f, 1.0f, 24, 24, 24, 24, false);
+  babyTurf->setObjectPositionX(player->getObjectPositionX() - 10);
+  babyTurf->setObjectPositionY(player->getObjectPositionY() + 32);
+  babyTurf->getPhysicsBody()->setCategoryBitmask((int)PhysicsCategory::PlayerProjectile);
+  babyTurf->getPhysicsBody()->setCollisionBitmask((int)PhysicsCategory::None);
+  babyTurf->getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::None);
+  gameObjects->pushBack(babyTurf);
+  babyTurf->setVelocityX(200);
+  addChild(babyTurf);
 }
 
 bool WorldObject::goOnScreen(GameObject *obj) {

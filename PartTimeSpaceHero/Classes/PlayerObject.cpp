@@ -8,6 +8,7 @@
 
 #include "PlayerObject.hpp"
 #include "Simple_Bullet.hpp"
+#include "SuporterObject.hpp"
 
 
 
@@ -22,7 +23,9 @@ bool PlayerObject::init() {
   setSpeed(115.f);
   addChild(playerInput);
   this->schedule(schedule_selector(PlayerObject::playerUpdate));
-
+  
+  
+  
   HP = 3;
   playerLookAhead = 0;
   
@@ -53,6 +56,9 @@ bool PlayerObject::init() {
   consumeRate = currentConsumeRate;
   currentConsumeRate = 0.0050f;
   
+  
+  
+
   
   
   return true;
