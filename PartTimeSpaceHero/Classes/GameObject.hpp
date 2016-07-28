@@ -119,13 +119,16 @@ public:
     E_NO_ITEM,
     E_RIFLE_ITEM,
     E_DASH_ITEM,
+    E_SUPORT_ITEM,
     E_ITEM_CNT
   };
   
   std::string item_descriptions[10] ={
     "NO_ITEM",
     "Plasma Rifle",
-    "Dash"
+    "Dash",
+    "Suportive Droid",
+    
   
   };
   

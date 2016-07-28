@@ -30,6 +30,9 @@
 #include "SignObject.hpp"
 #include "SuporterObject.hpp"
 
+float lastX;
+float lastY;
+
 bool WorldObject::init() {
   //////////////////////////////
   // 1. super init first
@@ -68,13 +71,13 @@ void WorldObject::setupWorld(){
   setScale(scale);
   this->schedule(schedule_selector(WorldObject::updateWorld));
   if(player)
-    setViewPointCenter(Point((player->getObjectPositionX()),(player->getObjectPositionY())));
+    setViewPointCenter(Point((player->getObjectPositionX()),(player->getObjectPositionY()+ 21.0)));
   
   ////////////////////////////////////
   // MUSIC SETUP - SPECIFIC
   auto mapGroup = mapObject->map->getProperties();
   std::string track_name = mapGroup["music_track"].asString();
-  std::string tracks[9] = {"78.mp3","adventure.mp3","Corp_Waltz.mp3","Dawn.aif","echo.mp3","Hope.mp3","on_a_mission.mp3","Space_Adventure.mp3","too_quiet_in_here.aif"};
+  std::string tracks[10] = {"78.mp3","theme.mp3","adventure.mp3","Corp_Waltz.mp3","Dawn.aif","echo.mp3","Hope.mp3","on_a_mission.mp3","Space_Adventure.mp3","too_quiet_in_here.aif"};
   
   track_name = tracks[cocos2d::random(0, 9)];
   
@@ -100,7 +103,8 @@ void WorldObject::setupWorld(){
    screen_draw->drawPolygon(rectangle, 4, cocos2d::Color4F::RED, 1, cocos2d::Color4F::BLUE);
    screen_draw->setAnchorPoint(getAnchorPoint());
    addChild(screen_draw, 8);*/
-  
+  lastX = player->getObjectPositionX();
+  lastY = player->getObjectPositionY();
   setViewPointCenter(Vec2((player->getObjectPositionX()),(player->getObjectPositionY() + 42)));
 
 }
@@ -119,8 +123,7 @@ float int_delta = 0;
 uint32_t delta_cnt = 0;
 const float delta_max = 120;
 float new_delta = 1.0 / 60.0;
-float lastX;
-float lastY;
+
 bool createSpawned = false;
 bool giveObject = false;
 int playerSafe = 0;
@@ -649,18 +652,7 @@ void WorldObject::spawnObjects(cocos2d::Vector<GameObject*>* gameObjects) {
   for (int i = 0;i < plattis.size();i++) {
     plattis.at(i)->target = player;
   }
-  // Test Suport
-  auto babyTurf = SuporterObject::create();
-  babyTurf->target = player;
-  babyTurf->setupHitbox(0.1f, 1.0f, 24, 24, 24, 24, false);
-  babyTurf->setObjectPositionX(player->getObjectPositionX() - 10);
-  babyTurf->setObjectPositionY(player->getObjectPositionY() + 32);
-  babyTurf->getPhysicsBody()->setCategoryBitmask((int)PhysicsCategory::PlayerProjectile);
-  babyTurf->getPhysicsBody()->setCollisionBitmask((int)PhysicsCategory::None);
-  babyTurf->getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::None);
-  gameObjects->pushBack(babyTurf);
-  babyTurf->setVelocityX(200);
-  addChild(babyTurf);
+  
 }
 
 bool WorldObject::goOnScreen(GameObject *obj) {

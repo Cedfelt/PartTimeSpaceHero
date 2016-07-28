@@ -109,6 +109,18 @@ void PlayerObject::setItem(PlayerItem_ID id) {
     animationStrings.at(Item2R) = ("DashR");
     animationStrings.at(Item2L) = ("DashL");
   }
+  else if(id == E_SUPORT_ITEM){
+    // Test Suport
+    auto babyTurf = SuporterObject::create();
+    babyTurf->target = this;
+    babyTurf->setupHitbox(0.1f, 1.0f, 24, 24, 24, 24, false);
+    babyTurf->setObjectPositionX(getObjectPositionX() - 10);
+    babyTurf->setObjectPositionY(getObjectPositionY() + 32);
+    babyTurf->getPhysicsBody()->setCategoryBitmask((int)PhysicsCategory::PlayerProjectile);
+    babyTurf->getPhysicsBody()->setCollisionBitmask((int)PhysicsCategory::None);
+    babyTurf->getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::None);
+    addToGameObjects.pushBack(babyTurf);
+  }
   else if (id == E_NO_ITEM) {
     pItem = &PlayerObject::no_item;
     animationStrings.at(IdleR) = ("IdleR");

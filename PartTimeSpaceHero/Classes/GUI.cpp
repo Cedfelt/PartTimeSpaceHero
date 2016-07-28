@@ -46,6 +46,7 @@ bool GUI::init() {
   objectSprite->setScaleX(bar_length);
   objectSprite->setAnchorPoint(Point(0.0f, 1.f));
   objectSprite->getTexture()->setAliasTexParameters();
+  objectSprite->setColor(Color3B::GREEN);
   addChild(objectSprite, 102);
 
   Label* fuelLabel = Label::createWithTTF("POWER", "fonts/PressStart2P.ttf", 20);
