@@ -9,7 +9,8 @@
 #include "SaveData.hpp"
 #include "LevelData.hpp"
 
-static LevelData* currentLevelData;
+LevelData* currentLevelData;
+cocos2d::Vector<LevelData*> levelDataList;
 
 bool SaveData::init(){
   //////////////////////////////
@@ -40,6 +41,12 @@ void SaveData::loadWorldData() {
   level3->loadDataFromMemory();
   levelDataList.pushBack(level3);
   addChild(level3);
+  
+  LevelData* level4 = LevelData::create();
+  level4->setupLevel("level4.tmx");
+  level4->loadDataFromMemory();
+  levelDataList.pushBack(level4);
+  addChild(level4);
 }
 
 void SaveData::eraseMemorey(){

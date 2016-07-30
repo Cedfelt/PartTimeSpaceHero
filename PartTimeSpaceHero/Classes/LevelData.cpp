@@ -20,13 +20,14 @@ bool LevelData::init() {
 }
 
 void LevelData::setupLevel(std::string mapName){
+  cocos2d::log("Setup Map name For %s\n",mapName.c_str());
   this->mapName = mapName;
   description = "Into the Yonder";
 }
 
 bool LevelData::loadDataFromMemory(){
   auto userDef = cocos2d::UserDefault::getInstance();//->setIntegerForKey("scale_factor", (int)scale);
-  
+  cocos2d::log("Load Data For %s\n",mapName.c_str());
   std::string hsString = mapName + "_highScore";
   highScore = userDef->getIntegerForKey(hsString.c_str());
   
@@ -42,7 +43,7 @@ bool LevelData::loadDataFromMemory(){
 
 void LevelData::saveDataToMemory(){
   auto userDef = cocos2d::UserDefault::getInstance();//->setIntegerForKey("scale_factor", (int)scale);
-  
+  cocos2d::log("Save Data For %s\n",mapName.c_str());
   std::string hsString =   mapName + "_highScore";
   userDef->setIntegerForKey(hsString.c_str(), highScore);
   
@@ -62,7 +63,7 @@ enum E_DEFAULT_LEVEL_DATA{
 
 void LevelData::eraseDataFromMemory(){
   auto userDef = cocos2d::UserDefault::getInstance();//->setIntegerForKey("scale_factor", (int)scale);
-  
+  cocos2d::log("Erase Data For %s\n",mapName.c_str());
   std::string hsString =   mapName + "_highScore";
   userDef->setIntegerForKey(hsString.c_str(), DEFUALT_HIGH_SCORE);
   
@@ -72,6 +73,8 @@ void LevelData::eraseDataFromMemory(){
   std::string compString = mapName + "_completed";
   userDef->setBoolForKey(compString.c_str(),DEFAULT_COMPLETED);
   userDef->flush();
+  
+  
   
 }
 
