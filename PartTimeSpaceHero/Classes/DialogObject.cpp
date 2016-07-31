@@ -24,7 +24,7 @@ bool DialogObject::init() {
   Vec2 origin = Director::getInstance()->getVisibleOrigin();
   const size_t scale = getScaleFactor();
   dialogLabel = Label::createWithTTF("", "fonts/PressStart2P.ttf", 15*scale);
-  dialogLabel->setPosition(Vec2(visibleSize.width / 2,1.5f * 15*scale));
+  dialogLabel->setPosition(Vec2(visibleSize.width / 2 - scale * 20,1.5f * 15*scale));
   cnt = 0;
   addChild(dialogLabel);
   setAnchorPoint(Vec2(0.5f,0.0));

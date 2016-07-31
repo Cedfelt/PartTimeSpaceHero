@@ -150,17 +150,21 @@ bool PlayerObject::isSafe() {
 }
 
 void PlayerObject::playerWalkUpdate(float delta) {
+  
   if (getMovementStatus() != GO_ON_GROUND) {
     return; // Flying
   }
+  int walkStatus = 0;
   if (playerInput->isLeft()) {
     walkAtDir(LEFT, animationStrings.at(WalkL));
+    walkStatus++;
 
   }
-  else if (playerInput->isRight()) {
+  if (playerInput->isRight()) {
     walkAtDir(RIGHT, animationStrings.at(WalkR));
+    walkStatus++;
   }
-  else {
+  if(walkStatus == 0 || walkStatus>1){
     setVelocityX(getVelocityX()*ground_deacceleration);
 
     if (getPrevDir() == GO_RIGHT) {
@@ -200,12 +204,13 @@ bool PlayerObject::flyAtDir(MovementDirectionX dir, std::string animName) {
   addToVelocityX(dir*playerFallSpeed);
   return true;
 }
-
+float uppSpeed = 2.2f;
+float maxRiseSpeed = 100;
 bool PlayerObject::playerFlyUpdate(float delta) {
+  
   const float jetPackFlySpeed = 1.7f;
   const float maxSpeed = getSpeed()*1.3f;
-  const float uppSpeed = 2.2f;
-  const float maxRiseSpeed = 100;
+  int leftAndRightFly = 0;
   float upp_threshold;
   int throtling = 0;
   bool module_active = false;
@@ -227,7 +232,7 @@ bool PlayerObject::playerFlyUpdate(float delta) {
         if(!flying ){
           setVelocityY(jumpStength);
           flying = true;
-          return true;
+          module_active = true;
         }
         else{
           if(obstacle_mask & GO_DOWN){
@@ -241,8 +246,10 @@ bool PlayerObject::playerFlyUpdate(float delta) {
       if (getVelocityY() < maxRiseSpeed)
         addToVelocityY(playerInput->getSwipeR()*uppSpeed);
       setAnimation(animationStrings.at(FlyR));
+      leftAndRightFly++;
       if (getVelocityX() < maxSpeed) {
         addToVelocityX(jetPackFlySpeed);
+        
       }
       module_active = true;
     }
@@ -260,7 +267,7 @@ bool PlayerObject::playerFlyUpdate(float delta) {
         if(!flying){
           setVelocityY(jumpStength);
           flying = true;
-          return true;
+          module_active = true;
         }
         else{
           if(obstacle_mask & GO_DOWN){
@@ -274,6 +281,7 @@ bool PlayerObject::playerFlyUpdate(float delta) {
       if (getVelocityY() < maxRiseSpeed)
         addToVelocityY(playerInput->getSwipeL()*uppSpeed);
       setAnimation(animationStrings.at(FlyL));
+      leftAndRightFly++;
       if (getVelocityX() > -maxSpeed) {
         addToVelocityX(-jetPackFlySpeed);
       }
@@ -312,6 +320,16 @@ bool PlayerObject::playerFlyUpdate(float delta) {
     rechargedSFX->play(0.25f);
   }
   
+  if(leftAndRightFly>=2){
+    // CODE FOR DOUBLE SIDE UP BOOST, NOT USED RIGHT NOW
+    setVelocityX(getVelocityX() * 1.0);
+    uppSpeed = 2.2f *1.0f;
+    maxRiseSpeed = 100 * 1.0f;
+  }
+  else{
+    uppSpeed = 2.2f;
+    maxRiseSpeed = 100;
+  }
   return module_active;
 }
 
@@ -491,23 +509,30 @@ void PlayerObject::playerUpdate(const float delta) {
   if(!isImune()){
     
   
-  if (playerInput->isLeft()) {
-    objectSprite->setScaleX(-1);
-    if (playerLookAhead > -71)
-      playerLookAhead -= 0.2;
+    if (playerInput->isLeft()) {
+      objectSprite->setScaleX(-1);
+      if (playerLookAhead > -71)
+        playerLookAhead -= 0.2;
 
-  }
-  if (playerInput->isRight()) {
-    objectSprite->setScaleX(1);
-    if (playerLookAhead<71)
-      playerLookAhead += 0.2;
-  }
-
-  if (!playerFlyUpdate(delta)) {
-    playerFallUpdate(delta);
-    playerWalkUpdate(delta);
-  }
     }
+    if (playerInput->isRight()) {
+      objectSprite->setScaleX(1);
+      if (playerLookAhead<71)
+        playerLookAhead += 0.2;
+    }
+
+    if (!playerFlyUpdate(delta)) {
+      playerFallUpdate(delta);
+      playerWalkUpdate(delta);
+    }
+  }
+  else{
+    fuel += 0.0050;
+    if (fuel > 1) {
+      fuel = 1;
+    }
+
+  }
   if (std::abs(this->getVelocityX()) > getSpeed()) {
     setVelocityX(getVelocityX()*0.99f);
   }

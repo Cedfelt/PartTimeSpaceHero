@@ -22,32 +22,28 @@ bool SaveData::init(){
   return true;
 }
 
-void SaveData::loadWorldData() {
-  // World 1
-  LevelData* level1 = LevelData::create();
-  level1->setupLevel("level1.tmx");
-  level1->loadDataFromMemory();
-  levelDataList.pushBack(level1);
-  addChild(level1);
-
-  LevelData* level2 = LevelData::create();
-  level2->setupLevel("level2.tmx");
-  level2->loadDataFromMemory();
-  levelDataList.pushBack(level2);
-  addChild(level2);
-
-  LevelData* level3 = LevelData::create();
-  level3->setupLevel("level3.tmx");
-  level3->loadDataFromMemory();
-  levelDataList.pushBack(level3);
-  addChild(level3);
-  
-  LevelData* level4 = LevelData::create();
-  level4->setupLevel("level4.tmx");
-  level4->loadDataFromMemory();
-  levelDataList.pushBack(level4);
-  addChild(level4);
+void SaveData::addLevelToGame(std::string levelName){
+  LevelData* newLevel = LevelData::create();
+  newLevel->setupLevel(levelName);
+  newLevel->loadDataFromMemory();
+  levelDataList.pushBack(newLevel);
+  addChild(newLevel);
 }
+
+void SaveData::loadWorldData() {
+  // Tutorial
+  addLevelToGame("tutorial.tmx");
+  
+  // Intro
+  addLevelToGame("level1.tmx");
+  
+  // Beta Levels
+  addLevelToGame("level2.tmx");
+  addLevelToGame("level3.tmx");
+  addLevelToGame("level4.tmx");
+  
+  
+  }
 
 void SaveData::eraseMemorey(){
   auto user = cocos2d::UserDefault::getInstance();
