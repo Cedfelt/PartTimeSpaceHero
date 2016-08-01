@@ -77,9 +77,13 @@ void WorldObject::setupWorld(){
   // MUSIC SETUP - SPECIFIC
   auto mapGroup = mapObject->map->getProperties();
   std::string track_name = mapGroup["music_track"].asString();
-  std::string tracks[10] = {"78.mp3","theme.mp3","adventure.mp3","Corp_Waltz.mp3","Dawn.aif","echo.mp3","Hope.mp3","on_a_mission.mp3","Space_Adventure.mp3","too_quiet_in_here.aif"};
   
-  track_name = tracks[cocos2d::random(0, 9)];
+  if(track_name == ""){
+    std::string tracks[10] = {"78.mp3","theme.mp3","adventure.mp3","Corp_Waltz.mp3","Dawn.aif","echo.mp3","Hope.mp3","on_a_mission.mp3","Space_Adventure.mp3","too_quiet_in_here.aif"};
+    track_name = tracks[cocos2d::random(0, 9)];
+  }
+  
+  
   
   
   auto audio = CocosDenshion::SimpleAudioEngine::getInstance();

@@ -23,6 +23,8 @@ public:
   Label* moneyLabel;
   Sprite* heartSprite[3];
   DialogObject* dialog;
+  // Updating Player GUI
+  bool first = true;
   bool finishLevel;
   void addDialog(DialogObject* addDialog);
   cocos2d::Vector<DialogObject*> dialogObjects;

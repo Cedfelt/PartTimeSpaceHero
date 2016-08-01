@@ -88,7 +88,6 @@ bool GUI::init() {
 }
 
 // Updating Player GUI
-bool first = true;
 void GUI::update(const float delta) {
   if(dialogObjects.size()>0){
     dialog = dialogObjects.at(0);

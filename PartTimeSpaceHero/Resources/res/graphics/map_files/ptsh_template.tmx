@@ -117,7 +117,7 @@
    </properties>
   </object>
  </objectgroup>
- <objectgroup name="template_objects" visible="0" offsetx="6" offsety="30">
+ <objectgroup name="template_objects" offsetx="6" offsety="30">
   <object id="19" name="FlowerShootaObject" x="307.489" y="495.335" width="12" height="25"/>
   <object id="21" name="CoinObject" x="99.6317" y="497.538" width="12" height="25"/>
   <object id="44" name="LaserObject" x="264.944" y="416.554" width="12" height="16">
