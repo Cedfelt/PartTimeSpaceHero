@@ -25,4 +25,10 @@ bool getDebuggDraw();
 void setNewGame(bool first);
 bool getNewGame();
 
+void setPlayerGear(uint32_t gear_mask);
+uint32_t getPayerGear();
+
+void setPlayerMoney(uint32_t money);
+uint32_t getPayerMoney();
+
 #endif /* GlobalPList_hpp */

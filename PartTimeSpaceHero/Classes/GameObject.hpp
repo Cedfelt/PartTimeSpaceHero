@@ -117,11 +117,12 @@ public:
 
   enum PlayerItem_ID {
     E_NO_ITEM,
-    E_RIFLE_ITEM,
-    E_DASH_ITEM,
-    E_SUPORT_ITEM,
-    E_ITEM_CNT
+    E_RIFLE_ITEM = 1,
+    E_DASH_ITEM = 2,
+    E_SUPORT_ITEM = 4,
   };
+  
+#define NUMBER_OF_ITEMS 3
   
   std::string item_descriptions[10] ={
     "NO_ITEM",

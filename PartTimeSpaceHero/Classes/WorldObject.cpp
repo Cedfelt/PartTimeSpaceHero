@@ -79,7 +79,7 @@ void WorldObject::setupWorld(){
   std::string track_name = mapGroup["music_track"].asString();
   
   if(track_name == ""){
-    std::string tracks[10] = {"78.mp3","theme.mp3","adventure.mp3","Corp_Waltz.mp3","Dawn.aif","echo.mp3","Hope.mp3","on_a_mission.mp3","Space_Adventure.mp3","too_quiet_in_here.aif"};
+    std::string tracks[11] = {"78.mp3","theme.mp3","adventure.mp3","alone in space.mp3","Corp_Waltz.mp3","Dawn.aif","echo.mp3","Hope.mp3","on_a_mission.mp3","Space_Adventure.mp3","too_quiet_in_here.aif"};
     track_name = tracks[cocos2d::random(0, 9)];
   }
   
@@ -128,10 +128,7 @@ uint32_t delta_cnt = 0;
 const float delta_max = 120;
 float new_delta = 1.0 / 60.0;
 
-bool createSpawned = false;
-bool giveObject = false;
-int playerSafe = 0;
-int flyCnt = 0;
+
 
 void WorldObject::updateWorld(float delta) {
   updateOffScreenRect();
@@ -242,6 +239,7 @@ void WorldObject::updateWorld(float delta) {
     stopAllActions();
     auto scene = MainMenu::createScene();
     Director::getInstance()->replaceScene(scene);
+    player->resetPlayerSaveData();
   }
     }
   
@@ -684,6 +682,8 @@ void WorldObject::updateOffScreenRect() {
 
 void WorldObject::finishLevel(){
   // setCurrentCompleted
+  setPlayerGear(player->gear_mask_exclusive | player->gear_mask_unlimited);
+  setPlayerMoney(player->coins);
   auto sd = SaveData::create();
   sd->setCurrentLevelStatus(true,30,100);
   auto audio = CocosDenshion::SimpleAudioEngine::getInstance();

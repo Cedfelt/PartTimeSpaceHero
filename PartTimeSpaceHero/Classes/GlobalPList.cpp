@@ -51,3 +51,23 @@ bool getNewGame() {
   cocos2d::UserDefault::getInstance()->flush();
   return newGame;
 }
+
+void setPlayerGear(uint32_t gear_mask) {
+  cocos2d::UserDefault::getInstance()->setIntegerForKey("PLAYER_GEAR", gear_mask);
+  cocos2d::UserDefault::getInstance()->flush();
+}
+uint32_t getPayerGear() {
+  uint32_t gear_mask = cocos2d::UserDefault::getInstance()->getIntegerForKey("PLAYER_GEAR");
+  cocos2d::UserDefault::getInstance()->flush();
+  return gear_mask;
+}
+
+void setPlayerMoney(uint32_t money) {
+  cocos2d::UserDefault::getInstance()->setIntegerForKey("PLAYER_MONEY", money);
+  cocos2d::UserDefault::getInstance()->flush();
+}
+uint32_t getPayerMoney() {
+  uint32_t money = cocos2d::UserDefault::getInstance()->getIntegerForKey("PLAYER_MONEY");
+  cocos2d::UserDefault::getInstance()->flush();
+  return money;
+}

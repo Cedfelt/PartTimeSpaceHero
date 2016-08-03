@@ -29,9 +29,9 @@ bool ItemCreate::init() {
   
   //objectSprite->getTexture()->setAliasTexParameters();
   
-  const float xVel = cocos2d::random(-50, 50);
+  
   setVelocityX(0);
-  setVelocityY(-25);
+  setVelocityY(-40);
   
   // Animation
   objectSprite = cocos2d::Sprite::create();

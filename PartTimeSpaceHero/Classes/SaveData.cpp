@@ -51,6 +51,8 @@ void SaveData::eraseMemorey(){
   for(int i = 0;i<levelDataList.size();i++){
     levelDataList.at(i)->eraseDataFromMemory();
   }
+  setPlayerGear(0);
+  setPlayerMoney(0);
 }
 
  LevelData* SaveData::getCurrentLevel() {

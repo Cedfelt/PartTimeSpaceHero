@@ -19,6 +19,8 @@ public:
   CREATE_FUNC(ItemObject);
   SoundFx* pling;
   
+  
   void update(const float delta);
 private:
+  uint32_t random;
 };

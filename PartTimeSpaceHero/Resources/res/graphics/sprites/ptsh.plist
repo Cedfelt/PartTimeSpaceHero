@@ -270,7 +270,7 @@
                 <key>spriteSourceSize</key>
                 <string>{64,64}</string>
                 <key>textureRect</key>
-                <string>{{0,256},{64,64}}</string>
+                <string>{{128,192},{64,64}}</string>
                 <key>textureRotated</key>
                 <false/>
             </dict>
@@ -285,7 +285,7 @@
                 <key>spriteSourceSize</key>
                 <string>{64,64}</string>
                 <key>textureRect</key>
-                <string>{{64,256},{64,64}}</string>
+                <string>{{0,256},{64,64}}</string>
                 <key>textureRotated</key>
                 <false/>
             </dict>
@@ -300,7 +300,7 @@
                 <key>spriteSourceSize</key>
                 <string>{64,64}</string>
                 <key>textureRect</key>
-                <string>{{128,256},{64,64}}</string>
+                <string>{{64,256},{64,64}}</string>
                 <key>textureRotated</key>
                 <false/>
             </dict>
@@ -315,7 +315,7 @@
                 <key>spriteSourceSize</key>
                 <string>{64,64}</string>
                 <key>textureRect</key>
-                <string>{{192,256},{64,64}}</string>
+                <string>{{128,256},{64,64}}</string>
                 <key>textureRotated</key>
                 <false/>
             </dict>
@@ -330,7 +330,7 @@
                 <key>spriteSourceSize</key>
                 <string>{64,64}</string>
                 <key>textureRect</key>
-                <string>{{0,320},{64,64}}</string>
+                <string>{{192,256},{64,64}}</string>
                 <key>textureRotated</key>
                 <false/>
             </dict>
@@ -345,11 +345,26 @@
                 <key>spriteSourceSize</key>
                 <string>{64,64}</string>
                 <key>textureRect</key>
+                <string>{{0,320},{64,64}}</string>
+                <key>textureRotated</key>
+                <false/>
+            </dict>
+            <key>PTSH30.png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{64,64}</string>
+                <key>spriteSourceSize</key>
+                <string>{64,64}</string>
+                <key>textureRect</key>
                 <string>{{64,320},{64,64}}</string>
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>PTSH4.png</key>
+            <key>PTSH31.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -364,7 +379,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>PTSH5.png</key>
+            <key>PTSH32.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -379,22 +394,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>PTSH6.png</key>
-            <dict>
-                <key>aliases</key>
-                <array/>
-                <key>spriteOffset</key>
-                <string>{0,0}</string>
-                <key>spriteSize</key>
-                <string>{64,64}</string>
-                <key>spriteSourceSize</key>
-                <string>{64,64}</string>
-                <key>textureRect</key>
-                <string>{{128,128},{64,64}}</string>
-                <key>textureRotated</key>
-                <false/>
-            </dict>
-            <key>PTSH7.png</key>
+            <key>PTSH33.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -409,7 +409,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>PTSH8.png</key>
+            <key>PTSH4.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -424,7 +424,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>PTSH9.png</key>
+            <key>PTSH5.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -436,6 +436,66 @@
                 <string>{64,64}</string>
                 <key>textureRect</key>
                 <string>{{128,384},{64,64}}</string>
+                <key>textureRotated</key>
+                <false/>
+            </dict>
+            <key>PTSH6.png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{64,64}</string>
+                <key>spriteSourceSize</key>
+                <string>{64,64}</string>
+                <key>textureRect</key>
+                <string>{{192,384},{64,64}}</string>
+                <key>textureRotated</key>
+                <false/>
+            </dict>
+            <key>PTSH7.png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{64,64}</string>
+                <key>spriteSourceSize</key>
+                <string>{64,64}</string>
+                <key>textureRect</key>
+                <string>{{0,448},{64,64}}</string>
+                <key>textureRotated</key>
+                <false/>
+            </dict>
+            <key>PTSH8.png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{64,64}</string>
+                <key>spriteSourceSize</key>
+                <string>{64,64}</string>
+                <key>textureRect</key>
+                <string>{{64,448},{64,64}}</string>
+                <key>textureRotated</key>
+                <false/>
+            </dict>
+            <key>PTSH9.png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{64,64}</string>
+                <key>spriteSourceSize</key>
+                <string>{64,64}</string>
+                <key>textureRect</key>
+                <string>{{128,448},{64,64}}</string>
                 <key>textureRotated</key>
                 <false/>
             </dict>
@@ -453,7 +513,7 @@
             <key>size</key>
             <string>{256,512}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:96edd37f300f2dd99cf2fea72ab09474:e148b801a6adede8fb6014aeae80525a:18cda6628a46cf048b93fae626983829$</string>
+            <string>$TexturePacker:SmartUpdate:f744530d8577934f244cb93b40b2c6ff:e376c80bb5e27fe0a1447e42ca8edb38:18cda6628a46cf048b93fae626983829$</string>
             <key>textureFileName</key>
             <string>ptsh.png</string>
         </dict>

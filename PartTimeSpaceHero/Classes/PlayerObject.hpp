@@ -14,6 +14,7 @@
 using namespace cocos2d;
 class PlayerObject : public GameObject {
 public:
+  void resetPlayerSaveData();
   virtual bool init();
   bool setupAnimation();
   CREATE_FUNC(PlayerObject);
@@ -25,8 +26,32 @@ public:
   virtual void setItem(PlayerItem_ID id);
   virtual bool isSafe();
   void resetItems();
-
+  uint32_t gear_mask_exclusive; // 0x ff ff ff ff
+  uint32_t gear_mask_unlimited; // 0x ff ff ff ff
 private:
+  
+  
+  enum GEAR_MASK{
+    E_GEAR_SLOT1 = 0xf,
+    E_GEAR_QUANTITY1 = 0xf0,
+    
+    E_GEAR_SLOT2 = 0xf00,
+    E_GEAR_QUANTITY2 = 0xf000,
+    
+    E_GEAR_SLOT3 = 0xf0000,
+    E_GEAR_QUANTITY3 = 0xf00000,
+    
+    E_GEAR_SLOT4 = 0xf000000,
+    E_GEAR_QUANTITY4 = 0xf0000000,
+  };
+  
+  enum SLOT_BITS{
+    E_SLOT_POS_1 = 0x1,
+    E_SLOT_POS_2 = 0x2,
+    E_SLOT_POS_3 = 0x4,
+    E_SLOT_POS_4 = 0x8,
+  };
+  
   void playerWalkUpdate(float delta);
   void walkAtDir(MovementDirectionX dir, std::string animName);
   void fallAtDir(MovementDirectionX dir, std::string animName);

@@ -51,6 +51,12 @@ private:
   bool onContactBegan(PhysicsContact &contact);
   GoalObject* obj;
   Physic* physic;
+  
+  // Crate
+  bool createSpawned = false;
+  bool giveObject = false;
+  int playerSafe = 0;
+  int flyCnt = 0;
  
   WaterTiles* water;
 };

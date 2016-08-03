@@ -9,6 +9,7 @@
 #include "PlayerObject.hpp"
 #include "Simple_Bullet.hpp"
 #include "SuporterObject.hpp"
+#include "GlobalPList.hpp"
 
 
 
@@ -57,7 +58,6 @@ bool PlayerObject::init() {
   currentConsumeRate = 0.0050f;
   
   
-  
 
   
   
@@ -77,7 +77,9 @@ void PlayerObject::walkAtDir(MovementDirectionX dir, std::string animName) {
 
 void PlayerObject::setItem(PlayerItem_ID id) {
   resetItems();
-  if (id == E_RIFLE_ITEM) {
+  if (id & E_RIFLE_ITEM) {
+    gear_mask_exclusive = 0;
+    gear_mask_exclusive |= E_RIFLE_ITEM;
     pItem = &PlayerObject::rifle_item; // note: <pt2Member> may also legally point to &DoMore
     animationStrings.at(IdleR) = ("IdleRWep");
     animationStrings.at(IdleL) = ("IdleLWep");
@@ -92,7 +94,9 @@ void PlayerObject::setItem(PlayerItem_ID id) {
     animationStrings.at(ItemR) = ("PlayerShootRWep");
     animationStrings.at(ItemL) = ("PlayerShootLWep");
   }
-  else if (id == E_DASH_ITEM) {
+  else if (id & E_DASH_ITEM) {
+    gear_mask_exclusive = 0;
+    gear_mask_exclusive |= E_DASH_ITEM;
     pItem = &PlayerObject::playerDashUpdate;
     animationStrings.at(IdleR) = ("IdleR");
     animationStrings.at(IdleL) = ("IdleL");
@@ -109,8 +113,9 @@ void PlayerObject::setItem(PlayerItem_ID id) {
     animationStrings.at(Item2R) = ("DashR");
     animationStrings.at(Item2L) = ("DashL");
   }
-  else if(id == E_SUPORT_ITEM){
+  else if(id & E_SUPORT_ITEM){
     // Test Suport
+    gear_mask_unlimited |= E_SUPORT_ITEM;
     auto babyTurf = SuporterObject::create();
     babyTurf->target = this;
     babyTurf->setupHitbox(0.1f, 1.0f, 24, 24, 24, 24, false);
@@ -122,6 +127,7 @@ void PlayerObject::setItem(PlayerItem_ID id) {
     addToGameObjects.pushBack(babyTurf);
   }
   else if (id == E_NO_ITEM) {
+    return;
     pItem = &PlayerObject::no_item;
     animationStrings.at(IdleR) = ("IdleR");
     animationStrings.at(IdleL) = ("IdleL");
@@ -602,6 +608,7 @@ void PlayerObject::resetItems(){
   dashing = false;
   bPlayerShoot = false;
   dashRightCnt = 0;
+  addGravityToObject(true);
   dashLeftCnt = 0;
 }
 
@@ -698,7 +705,27 @@ bool PlayerObject::setupAnimation() {
   objectSprite->setAnchorPoint(cocos2d::Point(0.5, 0.25));
   objectSprite->setPosition(8, -128);// Aling sprite in Hitbox
   setAnimation(animationStrings.at((WalkR)));
-  // ITEM POINTERS
-  setItem(E_NO_ITEM);
+  
+  
+  // ITEM SETUP
+  pItem = &PlayerObject::no_item;
+  //setItem(E_NO_ITEM);
+  const uint32_t gear = getPayerGear();
+  gear_mask_exclusive = 0;
+  setItem((PlayerItem_ID)(gear & E_RIFLE_ITEM));
+  setItem((PlayerItem_ID)(gear & E_DASH_ITEM));
+  setItem((PlayerItem_ID)(gear & E_SUPORT_ITEM));
+  // ... MORE ITEMS ADD HERE. TO A NICE LOOP
+  
+  coins = getPayerMoney();
+  
+  
+  
 return true;
+}
+
+
+void PlayerObject::resetPlayerSaveData(){
+  setPlayerGear(0); // REMOVE ALL GEAR WHEN PLAYER DIES
+  setPlayerMoney(0); // REMOVE ALL GEAR WHEN PLAYER DIES
 }
