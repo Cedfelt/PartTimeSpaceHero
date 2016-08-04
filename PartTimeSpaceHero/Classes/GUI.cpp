@@ -9,6 +9,10 @@
 #include "GUI.hpp"
 
 float bar_length = 4;
+Color3B green;
+Color3B yellow;
+Color3B red;
+
 bool GUI::init() {
   //////////////////////////////
   // 1. super init first
@@ -16,7 +20,9 @@ bool GUI::init() {
   {
     return false;
   }
-
+  green = Color3B(106, 190, 49);
+  yellow = Color3B(251, 242, 54);
+  red = Color3B(172, 50, 50);
   this->schedule(schedule_selector(GUI::update));
   setAnchorPoint(Point(0, 5.1f));
   
@@ -34,6 +40,19 @@ bool GUI::init() {
   setPosition(getPositionX() - 32 * bar_length / 2, getPositionY());
   addGravityToObject(false);
 
+  leftIcon = Sprite::create("leftIcon.png");
+  leftIcon->setAnchorPoint(Point(0.5f,0.5f));
+  const float xLeft = leftIcon->getContentSize().width / 2;
+  const float yLeft = director->getWinSize().height - leftIcon->getContentSize().height;
+  leftIcon->setPosition(xLeft,-yLeft);
+  addChild(leftIcon, 101);
+  
+  rightIcon = Sprite::create("rightIcon.png");
+  rightIcon->setAnchorPoint(Point(0.5f,0.5f));
+  const float xRight = director->getWinSize().width - 1.5*rightIcon->getContentSize().width;
+  const float yRight = director->getWinSize().height - rightIcon->getContentSize().height;
+  rightIcon->setPosition(xRight,-yRight);
+  addChild(rightIcon, 101);
   
   Sprite* barBack = Sprite::create("fule_bar.png");
   barBack->setScaleX(bar_length);
@@ -41,12 +60,14 @@ bool GUI::init() {
   barBack->getTexture()->setAliasTexParameters();
   barBack->setColor(Color3B(0, 0, 0));
   addChild(barBack, 101);
+  
+  
 
   objectSprite = cocos2d::Sprite::create("fule_bar.png");
   objectSprite->setScaleX(bar_length);
   objectSprite->setAnchorPoint(Point(0.0f, 1.f));
   objectSprite->getTexture()->setAliasTexParameters();
-  objectSprite->setColor(Color3B::GREEN);
+  objectSprite->setColor(green);
   addChild(objectSprite, 102);
 
   Label* fuelLabel = Label::createWithTTF("POWER", "fonts/PressStart2P.ttf", 20);
@@ -116,12 +137,12 @@ void GUI::update(const float delta) {
   
   const float fule = player->getFuel();
   objectSprite->setScaleX(bar_length*player->getFuel());
-  objectSprite->setColor(Color3B::GREEN);
+  objectSprite->setColor(green);
   if(fule<0.5f){
-    objectSprite->setColor(Color3B::YELLOW);
+    objectSprite->setColor(yellow);
   }
   if(fule<0.3f){
-    objectSprite->setColor(Color3B::RED);
+    objectSprite->setColor(red);
   }
   
   const std::string moneyString = std::to_string(player->getCoins());
@@ -135,6 +156,17 @@ void GUI::update(const float delta) {
       heartSprite[i]->setVisible(false);
     }
   }
+  
+  // BUTTONS
+  leftIcon->setColor(Color3B::WHITE);
+  rightIcon->setColor(Color3B::WHITE);
+  if(player->getVelocityX()>7){
+    rightIcon->setColor(green);
+  }
+  if(player->getVelocityX()<-7){
+    leftIcon->setColor(green);
+  }
+  
 }
 
 

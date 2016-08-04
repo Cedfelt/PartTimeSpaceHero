@@ -14,6 +14,9 @@
 
 
 bool PlayerObject::init() {
+  
+  
+  
   //////////////////////////////
   // 1. super init first
   if (!GameObject::init())

@@ -15,6 +15,8 @@
 using namespace cocos2d;
 class GUI : public GameObject {
 public:
+  Sprite* leftIcon;
+  Sprite* rightIcon;
   virtual bool init();
   virtual void colideWith(GameObject* oterhObj);
   CREATE_FUNC(GUI);
