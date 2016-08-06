@@ -133,6 +133,7 @@ public:
   
   };
   
+  uint32_t itemLevel;
   bool checkForWallCollisions();
   virtual void setItem(PlayerItem_ID id);
   bool bWallCollisions;

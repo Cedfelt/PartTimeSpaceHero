@@ -28,6 +28,7 @@ bool PlayerObject::init() {
   addChild(playerInput);
   this->schedule(schedule_selector(PlayerObject::playerUpdate));
   
+  itemLevel = NUMBER_OF_ITEMS;
   
   
   HP = 3;
@@ -118,16 +119,21 @@ void PlayerObject::setItem(PlayerItem_ID id) {
   }
   else if(id & E_SUPORT_ITEM){
     // Test Suport
-    gear_mask_unlimited |= E_SUPORT_ITEM;
-    auto babyTurf = SuporterObject::create();
-    babyTurf->target = this;
-    babyTurf->setupHitbox(0.1f, 1.0f, 24, 24, 24, 24, false);
-    babyTurf->setObjectPositionX(getObjectPositionX() - 10);
-    babyTurf->setObjectPositionY(getObjectPositionY() + 32);
-    babyTurf->getPhysicsBody()->setCategoryBitmask((int)PhysicsCategory::PlayerProjectile);
-    babyTurf->getPhysicsBody()->setCollisionBitmask((int)PhysicsCategory::None);
-    babyTurf->getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::None);
-    addToGameObjects.pushBack(babyTurf);
+    if(gear_mask_unlimited & E_SUPORT_ITEM){
+      coins+=3;
+    }
+    else{
+      gear_mask_unlimited |= E_SUPORT_ITEM;
+      auto babyTurf = SuporterObject::create();
+      babyTurf->target = this;
+      babyTurf->setupHitbox(0.1f, 1.0f, 24, 24, 24, 24, false);
+      babyTurf->setObjectPositionX(getObjectPositionX() - 10);
+      babyTurf->setObjectPositionY(getObjectPositionY() + 32);
+      babyTurf->getPhysicsBody()->setCategoryBitmask((int)PhysicsCategory::PlayerProjectile);
+      babyTurf->getPhysicsBody()->setCollisionBitmask((int)PhysicsCategory::None);
+      babyTurf->getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::None);
+      addToGameObjects.pushBack(babyTurf);
+    }
   }
   else if (id == E_NO_ITEM) {
     return;
@@ -217,6 +223,8 @@ float uppSpeed = 2.2f;
 float maxRiseSpeed = 100;
 bool PlayerObject::playerFlyUpdate(float delta) {
   
+  
+  float xMod = 1;
   const float jetPackFlySpeed = 1.7f;
   const float maxSpeed = getSpeed()*1.3f;
   int leftAndRightFly = 0;
@@ -234,6 +242,7 @@ bool PlayerObject::playerFlyUpdate(float delta) {
   const float movement_status = getMovementStatus();
   if (playerInput->isRight()) {
     if (playerInput->getSwipeR() > upp_threshold &&fuel > 0) {
+      xMod = 1;
       consumeRate = -currentConsumeRate;
       throtling++;
       module_active = true;
@@ -253,11 +262,12 @@ bool PlayerObject::playerFlyUpdate(float delta) {
         }
       }
       if (getVelocityY() < maxRiseSpeed)
-        addToVelocityY(playerInput->getSwipeR()*uppSpeed);
+        addToVelocityY(playerInput->getSwipeR()*uppSpeed*xMod);
       setAnimation(animationStrings.at(FlyR));
       leftAndRightFly++;
       if (getVelocityX() < maxSpeed) {
-        addToVelocityX(jetPackFlySpeed);
+        
+        addToVelocityX(jetPackFlySpeed/xMod);
         
       }
       module_active = true;
@@ -269,7 +279,9 @@ bool PlayerObject::playerFlyUpdate(float delta) {
   }
   
   if (playerInput->isLeft()) {
+    
     if (playerInput->getSwipeL() > upp_threshold &&fuel > 0) {
+      xMod = 1;
       throtling++;
       consumeRate = -currentConsumeRate;
       if (movement_status == GO_ON_GROUND ) {
@@ -288,11 +300,11 @@ bool PlayerObject::playerFlyUpdate(float delta) {
         }
       }
       if (getVelocityY() < maxRiseSpeed)
-        addToVelocityY(playerInput->getSwipeL()*uppSpeed);
+        addToVelocityY(playerInput->getSwipeL()*uppSpeed*xMod);
       setAnimation(animationStrings.at(FlyL));
       leftAndRightFly++;
       if (getVelocityX() > -maxSpeed) {
-        addToVelocityX(-jetPackFlySpeed);
+        addToVelocityX(-jetPackFlySpeed/xMod);
       }
       module_active = true;
     }

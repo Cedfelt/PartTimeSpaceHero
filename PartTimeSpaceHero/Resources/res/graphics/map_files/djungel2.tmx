@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="400" height="60" tilewidth="16" tileheight="16" nextobjectid="179">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="400" height="60" tilewidth="16" tileheight="16" nextobjectid="178">
  <properties>
   <property name="music_track" value="adventure.mp3"/>
  </properties>
@@ -93,6 +93,7 @@
   </data>
  </layer>
  <objectgroup name="GameObjects" offsetx="-1.66667" offsety="0.909091">
+  <object id="141" name="PlayerObject" x="34.0597" y="732.925" width="12" height="25"/>
   <object id="162" name="ZombieObject" x="293.262" y="685.619" width="464.51" height="73.0906"/>
   <object id="163" name="ZombieObject" x="376.575" y="678.211" width="477.531" height="92.5495"/>
   <object id="164" name="SnailObject" x="878.4" y="684.681" width="311.738" height="91.1293">
@@ -113,11 +114,6 @@
    <properties>
     <property name="endLevel" type="bool" value="false"/>
     <property name="line1" value="Welcome to template island !"/>
-   </properties>
-  </object>
-  <object id="178" name="PlayerObject" x="36" y="732.5" width="12" height="25">
-   <properties>
-    <property name="max_item_level" type="int" value="0"/>
    </properties>
   </object>
  </objectgroup>

@@ -20,6 +20,7 @@ public:
   SoundFx* pling;
   bool isBlocked(Rect* playerRect);
   void update(const float delta);
+  uint32_t random;
   bool landed;
   float goalY;
 private:

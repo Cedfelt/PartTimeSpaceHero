@@ -29,7 +29,7 @@ bool ItemCreate::init() {
   
   //objectSprite->getTexture()->setAliasTexParameters();
   
-  
+  random = 0;
   setVelocityX(0);
   setVelocityY(-40);
   
@@ -56,12 +56,16 @@ void ItemCreate::colideWith(GameObject* otherGo,const uint32_t otherType){
     if(otherType&(uint32_t)PhysicsCategory::PlayerProjectile){
       otherGo->remove_object = true;
     }
+    
+    
+    
     remove_object = true;
     pling->play(0.3f);
 //    const uint32_t itemId = cocos2d::random(1, (int)(E_ITEM_CNT)-1);
 //    otherGo->setItem((PlayerItem_ID)itemId);
     auto coin = ItemObject::create();
     coin->setupHitbox(0.1f, 1.0f, 16, 16, 16, 16, false);
+    coin->target = target;
     addToGameObjects.pushBack(coin);
     coin->setObjectPositionX(getObjectPositionX());
     coin->setObjectPositionY(getObjectPositionY()+4);
@@ -69,6 +73,13 @@ void ItemCreate::colideWith(GameObject* otherGo,const uint32_t otherType){
     coin->getPhysicsBody()->setCollisionBitmask((int)PhysicsCategory::None);
     coin->getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::Player | (int)PhysicsCategory::Hazard);
     coin->dialogObjects = dialogObjects;
+    const uint32_t itemType = std::rand() % (int)(target->itemLevel); // Generate item id
+    cocos2d::log("%u\n",otherGo->itemLevel);
+    coin->generateItem(1<<itemType);
+    coin->dia = DialogObject::create();
+    coin->dia->retain();
+    coin->dia->addLine(item_descriptions[itemType+1],2);
+    
     
     
   }
@@ -76,6 +87,7 @@ void ItemCreate::colideWith(GameObject* otherGo,const uint32_t otherType){
 }
 
 void ItemCreate::update(const float delta) {
+  random++;
   if(getObjectPositionY()<goalY + 16.f){
     bWallCollisions = true;
   }

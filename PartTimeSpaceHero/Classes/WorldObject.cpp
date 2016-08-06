@@ -29,6 +29,7 @@
 #include "FishObject.hpp"
 #include "SignObject.hpp"
 #include "SuporterObject.hpp"
+#include "EffectZone.hpp"
 
 float lastX;
 float lastY;
@@ -169,8 +170,17 @@ void WorldObject::updateWorld(float delta) {
     int_delta = 0;
   }
   int_delta += delta;
-  physic->moveGameObjects(getGameObjects(), mapObject, new_delta);
-  physic->movePlatform(physic->platforms, mapObject, new_delta);
+  if(false && std::abs(delta-new_delta)>0.04f * delta){
+    physic->moveGameObjects(getGameObjects(), mapObject, delta);
+    physic->movePlatform(physic->platforms, mapObject, delta);
+    mapObject->updateLiquids(delta);
+  }
+  else{
+    physic->moveGameObjects(getGameObjects(), mapObject, new_delta);
+    physic->movePlatform(physic->platforms, mapObject, new_delta);
+    mapObject->updateLiquids(new_delta);
+  }
+  
   
   mapObject->moveBackgroundLayers();
   #ifdef SMART_CAMERA
@@ -220,7 +230,7 @@ void WorldObject::updateWorld(float delta) {
 #endif
   
   
-  mapObject->updateLiquids(new_delta);
+  
   
 
   // Check Goal
@@ -344,9 +354,10 @@ void WorldObject::spawnObjects(cocos2d::Vector<GameObject*>* gameObjects) {
       addChild(player);
       addChild(player->objectSprite);
       player->objectSprite->autorelease();
-      
-      
-      
+      const int itemLevel = vm["max_item_level"].asInt();
+      if(itemLevel){
+        player->itemLevel = itemLevel;
+      }
     }
     
     else if(name == "CoinObject"){
@@ -594,6 +605,27 @@ void WorldObject::spawnObjects(cocos2d::Vector<GameObject*>* gameObjects) {
         line = "text" + std::to_string(lineCnt);
       }
       botty->target = player;
+      addChild(botty);
+    }
+    
+    else if(name == "EffectZone"){
+      // COIN
+      auto botty = EffectZone::create();
+      botty->setupHitbox(0.1, 1, w, h, w, h, false);
+      gameObjects->pushBack(botty);
+      botty->setObjectPositionX(x);
+      botty->setObjectPositionY(y);
+      botty->getPhysicsBody()->setCategoryBitmask((int)PhysicsCategory::Hazard);
+      botty->getPhysicsBody()->setCollisionBitmask((int)PhysicsCategory::None);
+      botty->getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::Player);
+      
+      std::string line = vm["type"].asString();
+      std::string layerName = vm["layerName"].asString();
+      botty->layerToHide = mapObject->map->getLayer(layerName);
+      botty->config(line);
+      botty->objectZone.setRect(x, y, w, h);
+      
+      
       addChild(botty);
     }
     

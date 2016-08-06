@@ -111,6 +111,8 @@
 		A8805F341CF0F5B100B2AE7A /* GoalObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8805F321CF0F5B100B2AE7A /* GoalObject.cpp */; };
 		A8805F351CF0F5B100B2AE7A /* GoalObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8805F321CF0F5B100B2AE7A /* GoalObject.cpp */; };
 		A8B094CF1D0F580E00D32FBE /* FlowerShootaObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8B094CD1D0F580E00D32FBE /* FlowerShootaObject.cpp */; };
+		A8C208671D5668D3004C8561 /* EffectZone.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8C208651D5668D3004C8561 /* EffectZone.cpp */; };
+		A8C208681D5668D3004C8561 /* EffectZone.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8C208651D5668D3004C8561 /* EffectZone.cpp */; };
 		A8E25E7A1D46CEAD002295C8 /* FishObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8E25E781D46CEAD002295C8 /* FishObject.cpp */; };
 		A8E25E7B1D46CEAD002295C8 /* FishObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8E25E781D46CEAD002295C8 /* FishObject.cpp */; };
 		A8E25E7E1D47FD3E002295C8 /* SignObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8E25E7C1D47FD3E002295C8 /* SignObject.cpp */; };
@@ -249,6 +251,8 @@
 		A8805F331CF0F5B100B2AE7A /* GoalObject.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GoalObject.hpp; sourceTree = "<group>"; };
 		A8B094CD1D0F580E00D32FBE /* FlowerShootaObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FlowerShootaObject.cpp; sourceTree = "<group>"; };
 		A8B094CE1D0F580E00D32FBE /* FlowerShootaObject.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = FlowerShootaObject.hpp; sourceTree = "<group>"; };
+		A8C208651D5668D3004C8561 /* EffectZone.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EffectZone.cpp; sourceTree = "<group>"; };
+		A8C208661D5668D3004C8561 /* EffectZone.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = EffectZone.hpp; sourceTree = "<group>"; };
 		A8E25E781D46CEAD002295C8 /* FishObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FishObject.cpp; sourceTree = "<group>"; };
 		A8E25E791D46CEAD002295C8 /* FishObject.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = FishObject.hpp; sourceTree = "<group>"; };
 		A8E25E7C1D47FD3E002295C8 /* SignObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SignObject.cpp; sourceTree = "<group>"; };
@@ -470,6 +474,8 @@
 				A8E25E7D1D47FD3E002295C8 /* SignObject.hpp */,
 				A8E25E801D4955A4002295C8 /* SuporterObject.cpp */,
 				A8E25E811D4955A4002295C8 /* SuporterObject.hpp */,
+				A8C208651D5668D3004C8561 /* EffectZone.cpp */,
+				A8C208661D5668D3004C8561 /* EffectZone.hpp */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -675,6 +681,7 @@
 				A8805F301CF04C6D00B2AE7A /* SoundFx.cpp in Sources */,
 				A803C10A1D3D575800E918EA /* RifleBoss.cpp in Sources */,
 				A828EC111D020A3D0006AA25 /* MapData.cpp in Sources */,
+				A8C208671D5668D3004C8561 /* EffectZone.cpp in Sources */,
 				A82561051CFB167400FC1DD3 /* BabyTurfelObject.cpp in Sources */,
 				A8229BC81D202960006DDAD7 /* ItemObject.cpp in Sources */,
 				A81BE1531CBA420D00C09359 /* PlayerObject.cpp in Sources */,
@@ -725,6 +732,7 @@
 				A828EC161D02C6080006AA25 /* DamageZone.cpp in Sources */,
 				A81BE1401CBA408300C09359 /* MainMenu.cpp in Sources */,
 				A81BE1581CBA422200C09359 /* GuardObject.cpp in Sources */,
+				A8C208681D5668D3004C8561 /* EffectZone.cpp in Sources */,
 				A81BE1601CBA465A00C09359 /* PlayerInput.cpp in Sources */,
 				A82561021CF8F01C00FC1DD3 /* TurfelObject.cpp in Sources */,
 				A87AD0A31D40166300CF5B03 /* DialogObject.cpp in Sources */,

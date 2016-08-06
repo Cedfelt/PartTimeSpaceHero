@@ -121,7 +121,7 @@ void GUI::update(const float delta) {
       dialog->playDialog();
     }
     else{
-      if(dialog->dialogShowed){
+      if(dialog->dialogShowed||dialogObjects.size()>1){// Remove if queeing dialogs
         if(dialog->endLevelWhenDone){
           finishLevel = true;
         }
