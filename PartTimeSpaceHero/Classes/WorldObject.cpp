@@ -352,7 +352,7 @@ void WorldObject::spawnObjects(cocos2d::Vector<GameObject*>* gameObjects) {
       player->getPhysicsBody()->setCollisionBitmask((int)PhysicsCategory::None);
       player->getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::All);
       addChild(player);
-      addChild(player->objectSprite);
+      //addChild(player->objectSprite);
       player->objectSprite->autorelease();
       const int itemLevel = vm["max_item_level"].asInt();
       if(itemLevel){
@@ -619,11 +619,23 @@ void WorldObject::spawnObjects(cocos2d::Vector<GameObject*>* gameObjects) {
       botty->getPhysicsBody()->setCollisionBitmask((int)PhysicsCategory::None);
       botty->getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::Player);
       
-      std::string line = vm["type"].asString();
-      std::string layerName = vm["layerName"].asString();
+      // Comon
+      const std::string line = vm["type"].asString();
+      
+      // Layer Hide/Show
+      const std::string layerName = vm["layerName"].asString();
+      
+      // Hurl
+      const int hurlDir = vm["direction"].asInt();
+      const int hurlDirRev = vm["direction_rev"].asInt();
+      const int hurlType = vm["hurl_type"].asInt();
+      botty->hurlDirection = hurlDir;
+      botty->hurlType = hurlType;
+      
       botty->layerToHide = mapObject->map->getLayer(layerName);
       botty->config(line);
       botty->objectZone.setRect(x, y, w, h);
+      botty->hurlDirectionReverse = hurlDirRev;
       
       
       addChild(botty);

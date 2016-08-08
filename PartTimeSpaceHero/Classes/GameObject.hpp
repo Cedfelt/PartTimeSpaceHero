@@ -108,6 +108,11 @@ public:
   void walkAtDir(float speed, int dir);
   void approachPlayer(const float delta);
   
+  virtual void dissconect();
+  virtual void reconect();
+  bool dissconeted;
+  uint32_t zoneEffectStatus;
+  
   uint32_t isBlocked(uint32_t x,uint32_t y);
   float maxSpeedX;
   float maxSpeedYUpp;

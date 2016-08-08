@@ -335,3 +335,10 @@ void GameObject::setItem(PlayerItem_ID id) {
 bool GameObject::setupAnimation() {
   return false;
 }
+
+void GameObject::dissconect(){
+  dissconeted = true;
+}
+void GameObject::reconect(){
+  dissconeted = false;
+}

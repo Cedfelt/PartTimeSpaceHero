@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="400" height="60" tilewidth="16" tileheight="16" nextobjectid="181">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="400" height="60" tilewidth="16" tileheight="16" nextobjectid="184">
  <properties>
   <property name="music_track" value="adventure.mp3"/>
  </properties>
@@ -200,6 +200,27 @@
   <object id="180" name="EffectZone" type="HideLayer" x="622.495" y="201.691" width="223.863" height="68.8388">
    <properties>
     <property name="layerName" value="foreground1"/>
+   </properties>
+  </object>
+  <object id="181" name="EffectZone" type="Hurl" x="992" y="224" width="8.74409" height="14.1994">
+   <properties>
+    <property name="direction" type="int" value="4"/>
+    <property name="direction_rev" type="int" value="2"/>
+    <property name="hurl_type" type="int" value="1"/>
+   </properties>
+  </object>
+  <object id="182" name="EffectZone" type="Hurl" x="1104" y="64" width="8.74409" height="14.1994">
+   <properties>
+    <property name="direction" type="int" value="2"/>
+    <property name="direction_rev" type="int" value="1"/>
+    <property name="hurl_type" type="int" value="2"/>
+   </properties>
+  </object>
+  <object id="183" name="EffectZone" type="Hurl" x="992" y="64" width="8.74409" height="16">
+   <properties>
+    <property name="direction" type="int" value="2"/>
+    <property name="direction_rev" type="int" value="8"/>
+    <property name="hurl_type" type="int" value="3"/>
    </properties>
   </object>
  </objectgroup>

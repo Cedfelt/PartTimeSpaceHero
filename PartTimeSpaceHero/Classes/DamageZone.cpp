@@ -18,6 +18,7 @@ bool DamageZone::init() {
   }
   addGravityToObject(false);
   bWallCollisions = false;
+  
   return true;
 }
 

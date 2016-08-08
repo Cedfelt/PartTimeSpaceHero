@@ -27,16 +27,13 @@ bool PlayerObject::init() {
   setSpeed(115.f);
   addChild(playerInput);
   this->schedule(schedule_selector(PlayerObject::playerUpdate));
-  
+  dissconeted = false;
   itemLevel = NUMBER_OF_ITEMS;
   
   
   HP = 3;
   playerLookAhead = 0;
   
-  //addChild(objectSprite);
-
-
   // soundfx
   jetpack1 = SoundFx::create();
   jetpack1->loadEffect("jet_pack_hum.aif", 0, 1, true);
@@ -518,8 +515,22 @@ bool PlayerObject::no_item(float delta) {
 
 
 void PlayerObject::playerUpdate(const float delta) {
+  if(dissconeted){
+    if(getVelocityX()>0){
+      objectSprite->setScaleX(1);
+      setPrevDir(GO_RIGHT);
+      setAnimation(animationStrings.at((WalkR)));
+    }
+    else if(getVelocityX()<0){
+      objectSprite->setScaleX(-1);
+      setPrevDir(GO_LEFT);
+      setAnimation(animationStrings.at((WalkL)));
+
+    }
+    return;
+  }
   solid = true;
-  objectSprite->setPosition(cocos2d::Point((modelPositionX)+4, (modelPositionY-1)));
+  //
   // Update priority
 
   if ((*this.*pItem)(delta)) {
@@ -718,8 +729,13 @@ bool PlayerObject::setupAnimation() {
   objectSprite = cocos2d::Sprite::create();
   objectSprite->retain();
   objectSprite->setAnchorPoint(cocos2d::Point(0.5, 0.25));
-  objectSprite->setPosition(8, -128);// Aling sprite in Hitbox
+  //objectSprite->setPosition(8, -128);// Aling sprite in Hitbox
   setAnimation(animationStrings.at((WalkR)));
+  setAnchorPoint(Point(0.0 , 0.5f));
+  //objectSprite->setPosition(cocos2d::Point((4, 0);
+  addChild(objectSprite);
+  
+
   
   
   // ITEM SETUP
