@@ -44,8 +44,8 @@ bool GameScene::init()
 {
 
 //  int temp_col [3] = {75, 105, 47};
-//int temp_col [3] = {63, 63, 116};
-int temp_col [3] = {34, 32, 52};
+int temp_col [3] = {63, 63, 116};
+//int temp_col [3] = {34, 32, 52};
  // int temp_col [3] = {91, 110, 225};
 // int temp_col [3] = {0, 0, 0};
   //  int temp_col [3] = {118, 66, 138};
