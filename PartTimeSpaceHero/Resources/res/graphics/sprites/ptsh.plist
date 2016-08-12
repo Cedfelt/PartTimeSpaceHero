@@ -513,7 +513,7 @@
             <key>size</key>
             <string>{256,512}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:2d0efb17c1d96a86b870a0393f428540:bc5574ccbe0d250712b50d6b5b854388:18cda6628a46cf048b93fae626983829$</string>
+            <string>$TexturePacker:SmartUpdate:76bed3437fb16c93a569f6f2101258d0:acb8d92e5f8ccce7ee18fa1c110c0345:18cda6628a46cf048b93fae626983829$</string>
             <key>textureFileName</key>
             <string>ptsh.png</string>
         </dict>

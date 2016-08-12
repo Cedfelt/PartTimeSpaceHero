@@ -441,7 +441,15 @@ bool PlayerObject::playerDashUpdate(float delta) {
 bool bPlayerShoot = false;
 bool PlayerObject::rifle_item(float delta) {
   
-  if (playerInput->isDoubleRight()&&fuel>=0.33) {
+  if (playerInput->isDoubleRight()) {
+    if(getMovementStatus()==GO_ON_GROUND){
+      setVelocityX(0);
+      if(fuel<0.33){
+        // TO LOW POWER - PLAY SOUND
+        return true;
+      }
+    }
+    if(fuel>=0.33){
     objectSprite->setScaleX(1);
     setAnimationOnce(animationStrings.at(ItemR));
     //setVelocityX(0);
@@ -457,15 +465,21 @@ bool PlayerObject::rifle_item(float delta) {
     bPlayerShoot = true;
     babyTurf->setVelocityX(200);
     weaponSFX->play(0.4f);
-    if(getMovementStatus()==GO_ON_GROUND){
-      setVelocityX(0);
-    }
     fuel -= 0.33f;
     if(fuel<0){
       fuel = 0;
     }
+    }
   }
   if (playerInput->isDoubleLeft()&&fuel>=0.33f) {
+    if(getMovementStatus()==GO_ON_GROUND){
+      setVelocityX(0);
+      if(fuel<0.33){
+        // TO LOW POWER - PLAY SOUND
+        return true;
+      }
+    }
+    if(fuel>=0.33){
     objectSprite->setScaleX(-1);
     setAnimationOnce(animationStrings.at(ItemR));
     //setVelocityX(0);
@@ -487,6 +501,8 @@ bool PlayerObject::rifle_item(float delta) {
     fuel -= 0.33f;
     if(fuel<0){
       fuel = 0;
+    }
+      
     }
   }
   if (bPlayerShoot) {
