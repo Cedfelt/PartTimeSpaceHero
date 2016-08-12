@@ -13,6 +13,9 @@
 #include "MapData.hpp"
 #include "DialogObject.hpp"
 
+#define SPEED_MOD 1
+
+
 using namespace cocos2d;
 class GameObject : public cocos2d::DrawNode {
 public:

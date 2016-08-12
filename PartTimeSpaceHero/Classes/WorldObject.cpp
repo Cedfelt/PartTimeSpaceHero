@@ -287,12 +287,12 @@ void WorldObject::updateWorld(float delta) {
 
 void WorldObject::setViewPointCenter(const cocos2d::Point position) {
   // NO PROBS HERE
-  Size winSize = Director::getInstance()->getWinSize() / 2.0;//Scene Scale Factor
-  const float tileSize = mapObject->getMapTileSize();
   const float scale = getScale();
+  Size winSize = Director::getInstance()->getWinSize() / 2;
+  const float tileSize = mapObject->getMapTileSize();
   const float mapWidth = mapObject->getMapWidthInTiles()*scale;
   const float mapHeight = mapObject->getMapHeightInTiles()*scale;
-  const float tilesOutsideLow = 16;
+  const float tilesOutsideLow = 8 * scale;
   float x = fmaxf(scale*position.x, winSize.width);
   float y = fmaxf(scale*position.y, winSize.height + tileSize*tilesOutsideLow);
   x = fminf(x, (mapWidth * tileSize) - winSize.width);

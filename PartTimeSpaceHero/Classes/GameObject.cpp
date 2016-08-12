@@ -52,6 +52,7 @@ void GameObject::setImune() {
 
 void GameObject::setupHitbox(float aDensity, float aRestitution, const float w, const float h, const float box, const float boy, const bool draw) {
   hitBox.setRect(0, 0, w, h);
+  const float scale = getScaleFactor();
   if (getDebuggDraw()) {
     cocos2d::Vec2 rectangle[4];
     rectangle[0] = cocos2d::Vec2(0, 0);
@@ -62,7 +63,7 @@ void GameObject::setupHitbox(float aDensity, float aRestitution, const float w, 
   }
 
   auto physicsBody = PhysicsBody::createBox(Size(w, h), PhysicsMaterial(aDensity, aRestitution, 0.0f));
-  physicsBody->setPositionOffset(Vec2(box, boy));
+  physicsBody->setPositionOffset(Vec2(box*scale/2.0, boy*scale/2.0));
   physicsBody->setDynamic(true);
   setPhysicsBody(physicsBody);
 

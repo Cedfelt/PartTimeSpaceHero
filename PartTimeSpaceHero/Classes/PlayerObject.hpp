@@ -52,6 +52,8 @@ private:
     E_SLOT_POS_4 = 0x8,
   };
   
+  
+  
   void playerWalkUpdate(float delta);
   void walkAtDir(MovementDirectionX dir, std::string animName);
   void fallAtDir(MovementDirectionX dir, std::string animName);
@@ -61,7 +63,7 @@ private:
   bool hurt(const int dmg, const Vec2 force);
   bool flying = false;
   virtual void colideWith(GameObject* oterhObj,const uint32_t otherType);
-  const float jumpStength = 180;
+  const float jumpStength = 180 * SPEED_MOD;
   SoundFx* jetpack1;
   SoundFx* playerCrySFX;
   SoundFx* weaponSFX;

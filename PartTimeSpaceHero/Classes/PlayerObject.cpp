@@ -24,7 +24,7 @@ bool PlayerObject::init() {
     return false;
   }
   playerInput = PlayerInput::create();
-  setSpeed(115.f);
+  setSpeed(115.f*SPEED_MOD);
   addChild(playerInput);
   this->schedule(schedule_selector(PlayerObject::playerUpdate));
   dissconeted = false;
@@ -216,8 +216,8 @@ bool PlayerObject::flyAtDir(MovementDirectionX dir, std::string animName) {
   addToVelocityX(dir*playerFallSpeed);
   return true;
 }
-float uppSpeed = 2.2f;
-float maxRiseSpeed = 100;
+float uppSpeed = 2.2f * SPEED_MOD;
+float maxRiseSpeed = 100 * SPEED_MOD;
 bool PlayerObject::playerFlyUpdate(float delta) {
   
   
