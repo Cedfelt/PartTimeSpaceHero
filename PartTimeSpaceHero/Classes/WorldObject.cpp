@@ -449,10 +449,8 @@ void WorldObject::spawnObjects(cocos2d::Vector<GameObject*>* gameObjects) {
     else if(name == "BottyObject"){
       // COIN
       auto botty = BottyObject::create();
-      if (bottyFirst) {
         botty->setupAnimation();
         bottyFirst = false;
-      }
       botty-> setAnimation("botty_idle");
       botty->setupHitbox(0.1, 1, 24, 48, 24, 44, false);
       gameObjects->pushBack(botty);

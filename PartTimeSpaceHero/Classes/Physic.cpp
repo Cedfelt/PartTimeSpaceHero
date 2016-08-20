@@ -328,7 +328,7 @@ bool Physic::isBlocked(GameObject* obj, const Rect* hitBox, MapObject* map, cons
   const uint32_t xRange = x_min + x_max - x_min + 1;
   const uint32_t yRange = y_min + y_max - y_min + 1;
   const uint32_t mapWidth = map->getMapWidthInTiles();
-  const uint32_t mapHeight = map->getMapWidthInTiles();
+  const uint32_t mapHeight = map->getMapHeightInTiles();
   // Out of bounds
   if (x_min > mapWidth || x_max > mapWidth) {
     return true; // SHOULD DO COLLISION TEST FOR THESE CASES

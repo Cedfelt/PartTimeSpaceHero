@@ -39,6 +39,7 @@ void SaveData::loadWorldData() {
   
   // Beta Levels
   addLevelToGame("level2.tmx");
+  addLevelToGame("djungel2.tmx");
   addLevelToGame("level3.tmx");
   addLevelToGame("level4.tmx");
   

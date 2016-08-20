@@ -92,7 +92,8 @@ void MapObject::moveBackgroundLayers(){
     if (bg_speed == 0) {
       bg_speed = 1;
     }
-    auto v = bg_speed*map->convertToNodeSpace(Point(0.0, 0.0));
+    const float bg_offset = -16*16; // THE 8 BLOCKS NOT VISIBLE BELOW
+    auto v = bg_speed*map->convertToNodeSpace(Point(0.0, bg_offset));
     v.x = float(v.x);
     v.y = float(v.y);
     background_layers.at(i)->setPosition(v);
