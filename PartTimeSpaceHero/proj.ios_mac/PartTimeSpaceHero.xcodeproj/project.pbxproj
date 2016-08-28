@@ -113,6 +113,8 @@
 		A8B094CF1D0F580E00D32FBE /* FlowerShootaObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8B094CD1D0F580E00D32FBE /* FlowerShootaObject.cpp */; };
 		A8C208671D5668D3004C8561 /* EffectZone.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8C208651D5668D3004C8561 /* EffectZone.cpp */; };
 		A8C208681D5668D3004C8561 /* EffectZone.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8C208651D5668D3004C8561 /* EffectZone.cpp */; };
+		A8C6DF9E1D73416900153994 /* DB32.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8C6DF9C1D73416900153994 /* DB32.cpp */; };
+		A8C6DF9F1D73416900153994 /* DB32.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8C6DF9C1D73416900153994 /* DB32.cpp */; };
 		A8E25E7A1D46CEAD002295C8 /* FishObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8E25E781D46CEAD002295C8 /* FishObject.cpp */; };
 		A8E25E7B1D46CEAD002295C8 /* FishObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8E25E781D46CEAD002295C8 /* FishObject.cpp */; };
 		A8E25E7E1D47FD3E002295C8 /* SignObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8E25E7C1D47FD3E002295C8 /* SignObject.cpp */; };
@@ -253,6 +255,8 @@
 		A8B094CE1D0F580E00D32FBE /* FlowerShootaObject.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = FlowerShootaObject.hpp; sourceTree = "<group>"; };
 		A8C208651D5668D3004C8561 /* EffectZone.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EffectZone.cpp; sourceTree = "<group>"; };
 		A8C208661D5668D3004C8561 /* EffectZone.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = EffectZone.hpp; sourceTree = "<group>"; };
+		A8C6DF9C1D73416900153994 /* DB32.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DB32.cpp; sourceTree = "<group>"; };
+		A8C6DF9D1D73416900153994 /* DB32.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = DB32.hpp; sourceTree = "<group>"; };
 		A8E25E781D46CEAD002295C8 /* FishObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FishObject.cpp; sourceTree = "<group>"; };
 		A8E25E791D46CEAD002295C8 /* FishObject.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = FishObject.hpp; sourceTree = "<group>"; };
 		A8E25E7C1D47FD3E002295C8 /* SignObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SignObject.cpp; sourceTree = "<group>"; };
@@ -476,6 +480,8 @@
 				A8E25E811D4955A4002295C8 /* SuporterObject.hpp */,
 				A8C208651D5668D3004C8561 /* EffectZone.cpp */,
 				A8C208661D5668D3004C8561 /* EffectZone.hpp */,
+				A8C6DF9C1D73416900153994 /* DB32.cpp */,
+				A8C6DF9D1D73416900153994 /* DB32.hpp */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -670,6 +676,7 @@
 				A87AD0A21D40166300CF5B03 /* DialogObject.cpp in Sources */,
 				A81BE15F1CBA465A00C09359 /* PlayerInput.cpp in Sources */,
 				46880B8A19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */,
+				A8C6DF9E1D73416900153994 /* DB32.cpp in Sources */,
 				A800448E1D1FD5B2003A11A1 /* ItemCreate.cpp in Sources */,
 				A8E25E7A1D46CEAD002295C8 /* FishObject.cpp in Sources */,
 				A81BE14F1CBA41D500C09359 /* MapObject.cpp in Sources */,
@@ -716,6 +723,7 @@
 				46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				A81BE1541CBA420D00C09359 /* PlayerObject.cpp in Sources */,
 				A825610A1CFB635F00FC1DD3 /* UfoObject.cpp in Sources */,
+				A8C6DF9F1D73416900153994 /* DB32.cpp in Sources */,
 				503AE10517EB98FF00D1A890 /* main.cpp in Sources */,
 				A803C10B1D3D575800E918EA /* RifleBoss.cpp in Sources */,
 				A8E25E7B1D46CEAD002295C8 /* FishObject.cpp in Sources */,

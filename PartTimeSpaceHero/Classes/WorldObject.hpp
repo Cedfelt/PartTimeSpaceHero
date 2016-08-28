@@ -31,7 +31,7 @@ public:
   PlayerObject* player;
    void finishLevel();
   cocos2d::Vector<DialogObject*>* dialogObjects;
-  
+  int bg_color;
   void setupWorld();
   
 private:

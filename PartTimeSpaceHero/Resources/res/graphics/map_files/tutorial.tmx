@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="250" height="122" tilewidth="16" tileheight="16" backgroundcolor="#222034" nextobjectid="237">
  <properties>
+  <property name="BACKGROUND_COLOR" type="int" value="2"/>
   <property name="music_track" value=""/>
  </properties>
  <tileset firstgid="1" name="BaseTS16" tilewidth="16" tileheight="16" tilecount="5" columns="1">

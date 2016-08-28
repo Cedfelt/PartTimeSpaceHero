@@ -11,6 +11,7 @@
 #include "ui/CocosGUI.h"
 #include "GlobalPList.hpp"
 #include "MainMenu.hpp"
+#include  "DB32.hpp"
 
 USING_NS_CC;
 
@@ -46,8 +47,9 @@ bool GameScene::init()
 //  int temp_col [3] = {75, 105, 47};
 //int temp_col [3] = {63, 63, 116};
 //int temp_col [3] = {34, 32, 52};
- int temp_col [3] = {91, 110, 225};
-// int temp_col [3] = {0, 0, 0};
+ 
+  //int temp_col [3] = {91, 110, 225};
+  int temp_col [3] = {0, 0, 0};
   //  int temp_col [3] = {118, 66, 138};
 //int temp_col [3] = {95, 205, 220};
   //////////////////////////////
@@ -97,6 +99,10 @@ bool GameScene::init()
   gui->player = worldObject->player; // Create interface
   gui->setGlobalZOrder(100);
   
+  setup_colorcollection();
+  const int bg_color = worldObject->bg_color;
+  DB32Color col32  = getColorFromCollection(bg_color);
+  this->setColor(Color3B(col32.red,col32.green,col32.blue));
   return true;
 }
 
