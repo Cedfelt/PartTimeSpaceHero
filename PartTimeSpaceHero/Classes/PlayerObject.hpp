@@ -63,7 +63,7 @@ private:
   bool hurt(const int dmg, const Vec2 force);
   bool flying = false;
   virtual void colideWith(GameObject* oterhObj,const uint32_t otherType);
-  const float jumpStength = 180 * SPEED_MOD;
+  const float jumpStength = 200 * SPEED_MOD;
   SoundFx* jetpack1;
   SoundFx* playerCrySFX;
   SoundFx* weaponSFX;

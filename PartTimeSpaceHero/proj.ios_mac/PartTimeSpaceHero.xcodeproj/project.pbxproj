@@ -123,6 +123,8 @@
 		A8E25E831D4955A4002295C8 /* SuporterObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8E25E801D4955A4002295C8 /* SuporterObject.cpp */; };
 		A8EB2DCB1D2D9D9A00F92139 /* MechObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8EB2DC91D2D9D9A00F92139 /* MechObject.cpp */; };
 		A8EB2DCC1D2D9D9A00F92139 /* MechObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8EB2DC91D2D9D9A00F92139 /* MechObject.cpp */; };
+		A8ECBD611DAA91A100B7929E /* MudMonsterObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8ECBD5F1DAA91A100B7929E /* MudMonsterObject.cpp */; };
+		A8ECBD621DAA91A100B7929E /* MudMonsterObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8ECBD5F1DAA91A100B7929E /* MudMonsterObject.cpp */; };
 		A8FA61781D3ED4F6007178A2 /* ZombieObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8FA61761D3ED4F6007178A2 /* ZombieObject.cpp */; };
 		A8FA61791D3ED4F6007178A2 /* ZombieObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8FA61761D3ED4F6007178A2 /* ZombieObject.cpp */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
@@ -265,6 +267,8 @@
 		A8E25E811D4955A4002295C8 /* SuporterObject.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SuporterObject.hpp; sourceTree = "<group>"; };
 		A8EB2DC91D2D9D9A00F92139 /* MechObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MechObject.cpp; sourceTree = "<group>"; };
 		A8EB2DCA1D2D9D9A00F92139 /* MechObject.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = MechObject.hpp; sourceTree = "<group>"; };
+		A8ECBD5F1DAA91A100B7929E /* MudMonsterObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MudMonsterObject.cpp; sourceTree = "<group>"; };
+		A8ECBD601DAA91A100B7929E /* MudMonsterObject.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = MudMonsterObject.hpp; sourceTree = "<group>"; };
 		A8FA61761D3ED4F6007178A2 /* ZombieObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ZombieObject.cpp; sourceTree = "<group>"; };
 		A8FA61771D3ED4F6007178A2 /* ZombieObject.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ZombieObject.hpp; sourceTree = "<group>"; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -460,6 +464,8 @@
 				A87396AF1D0DF44800ADE298 /* Simple_Bullet.hpp */,
 				A803C10C1D3EC9C700E918EA /* SnailObject.cpp */,
 				A803C10D1D3EC9C700E918EA /* SnailObject.hpp */,
+				A8ECBD5F1DAA91A100B7929E /* MudMonsterObject.cpp */,
+				A8ECBD601DAA91A100B7929E /* MudMonsterObject.hpp */,
 				A8805F2E1CF04C6D00B2AE7A /* SoundFx.cpp */,
 				A8805F2F1CF04C6D00B2AE7A /* SoundFx.hpp */,
 				A82560FF1CF8F01C00FC1DD3 /* TurfelObject.cpp */,
@@ -693,6 +699,7 @@
 				A8229BC81D202960006DDAD7 /* ItemObject.cpp in Sources */,
 				A81BE1531CBA420D00C09359 /* PlayerObject.cpp in Sources */,
 				A803C10E1D3EC9C700E918EA /* SnailObject.cpp in Sources */,
+				A8ECBD611DAA91A100B7929E /* MudMonsterObject.cpp in Sources */,
 				A81BE1431CBA40AE00C09359 /* GameScene.cpp in Sources */,
 				A82561091CFB635F00FC1DD3 /* UfoObject.cpp in Sources */,
 				A81BE15B1CBA424600C09359 /* LaserObject.cpp in Sources */,
@@ -753,6 +760,7 @@
 				A81BE14C1CBA415400C09359 /* GameObject.cpp in Sources */,
 				A8E25E831D4955A4002295C8 /* SuporterObject.cpp in Sources */,
 				A828EC1A1D060C680006AA25 /* PlatformObject.cpp in Sources */,
+				A8ECBD621DAA91A100B7929E /* MudMonsterObject.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

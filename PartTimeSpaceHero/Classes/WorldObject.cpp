@@ -30,6 +30,7 @@
 #include "SignObject.hpp"
 #include "SuporterObject.hpp"
 #include "EffectZone.hpp"
+#include "MudMonsterObject.hpp"
 
 float lastX;
 float lastY;
@@ -82,8 +83,19 @@ void WorldObject::setupWorld(){
  bg_color = mapGroup["BACKGROUND_COLOR"].asInt();
   
   if(track_name == ""){
-    std::string tracks[11] = {"78.mp3","theme.mp3","adventure.mp3","alone in space.mp3","Corp_Waltz.mp3","Dawn.aif","echo.mp3","Hope.mp3","on_a_mission.mp3","Space_Adventure.mp3","too_quiet_in_here.aif"};
-    track_name = tracks[cocos2d::random(0, 9)];
+    std::string tracks[12] = {"78.mp3"
+      ,"theme.mp3"
+      ,"adventure.mp3"
+      ,"alone in space.mp3"
+      ,"alone in space2.mp3"
+      ,"Corp_Waltz.mp3"
+      ,"Dawn.aif"
+      ,"echo.mp3"
+      ,"Hope.mp3",
+      "on_a_mission.mp3",
+      "Space_Adventure.mp3",
+      "too_quiet_in_here.aif"};
+    track_name = tracks[cocos2d::random(0, 11)];
   }
   
   
@@ -503,6 +515,24 @@ void WorldObject::spawnObjects(cocos2d::Vector<GameObject*>* gameObjects) {
         bottyFirst = false;
       botty-> setAnimation("snail_crawl");
       botty->setupHitbox(0.1, 1, 32, 32, 32, 32, false);
+      gameObjects->pushBack(botty);
+      botty->setObjectPositionX(x + 0.5f*(w));
+      botty->setObjectPositionY(y + 0.5f*(h));
+      botty->objectZone.setRect(x, y, w, h);
+      botty->getPhysicsBody()->setCategoryBitmask((int)PhysicsCategory::Enemy);
+      botty->getPhysicsBody()->setCollisionBitmask((int)PhysicsCategory::None);
+      botty->getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::Player|(int)PhysicsCategory::PlayerProjectile|(int)PhysicsCategory::Hazard);
+      botty->target = player;
+      addChild(botty);
+    }
+    
+    else if(name == "MudMonsterObject"){
+      // COIN
+      auto botty = MudMonsterObject::create();
+      botty->setupAnimation();
+      bottyFirst = false;
+      botty-> setAnimation("mud_crawl");
+      botty->setupHitbox(0.1, 1, 16, 32, 16, 32, false);
       gameObjects->pushBack(botty);
       botty->setObjectPositionX(x + 0.5f*(w));
       botty->setObjectPositionY(y + 0.5f*(h));

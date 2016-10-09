@@ -233,7 +233,7 @@ bool PlayerObject::playerFlyUpdate(float delta) {
     consumeRate = 0.0f;
   }
   else {
-    upp_threshold = 1.1f;
+    upp_threshold = 0.0f;
     consumeRate = 0.00f;;
   }
   const float movement_status = getMovementStatus();
