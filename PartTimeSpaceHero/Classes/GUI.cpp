@@ -7,6 +7,8 @@
 //
 
 #include "GUI.hpp"
+#include "ui/CocosGUI.h"
+#include "PauseScene.hpp"
 
 float bar_length = 4;
 Color3B green;
@@ -95,6 +97,27 @@ bool GUI::init() {
   coin->setAnchorPoint(Point(0.0f, 1.f));
   coin->setPositionY((-128));
   addChild(coin, 102);
+  
+
+  
+  auto button = cocos2d::ui::Button::create("pause_button.png", "pause_button.png", "pause_button.png");
+  
+  button->setPosition(Point(director->getWinSize().width * 0.90f,0));
+  
+  button->addTouchEventListener([&](Ref* sender, cocos2d::ui::Widget::TouchEventType type){
+    switch (type)
+    {
+      case ui::Widget::TouchEventType::BEGAN:
+        break;
+      case ui::Widget::TouchEventType::ENDED:
+        auto scene = PauseScreen::createScene();
+        Director::getInstance()->pushScene(scene);
+        break;
+      
+    }
+  });
+  
+  this->addChild(button);
 
   moneyLabel = Label::createWithTTF("0", "fonts/PressStart2P.ttf", 28);
   moneyLabel->setAnchorPoint(Point(0.0f, 1.f));

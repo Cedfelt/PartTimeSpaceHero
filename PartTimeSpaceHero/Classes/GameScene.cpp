@@ -10,11 +10,13 @@
 #include "cocostudio/CocoStudio.h"
 #include "ui/CocosGUI.h"
 #include "GlobalPList.hpp"
-#include "MainMenu.hpp"
+#include "LoadScreenScene.hpp"
 #include  "DB32.hpp"
+#include "MainMenu.hpp"
+#include  "TitleScreen.hpp"
 
 USING_NS_CC;
-
+bool go_to_title = false;
 using namespace cocostudio::timeline;
 
 Scene* GameScene::createScene()
@@ -58,7 +60,7 @@ bool GameScene::init()
   {
     return false;
   }
-  
+  go_to_title = false;
   auto director = Director::getInstance();
   director->setProjection(Director::Projection::_2D);
   
@@ -107,18 +109,23 @@ bool GameScene::init()
 }
 
 
-
 void GameScene::mainGameLoop(float delta) {
   if(gui->finishLevel){
     worldObject->finishLevel();
   }
-  
+  if(go_to_title){
+    auto scene = TitleScreen::createScene();
+    // Transition Fade
+    auto col = getColorFromCollection(BLACK);
+    
+    Director::getInstance()->replaceScene(TransitionFade::create(2.5f, scene, Color3B(col.red,col.green,col.blue)));
+  }
   return;
   auto director = Director::getInstance();
   director->setProjection(Director::Projection::_2D);
   counter += delta;
   if (counter > 25) {
-    auto scene = MainMenu::createScene();
+    auto scene = LoadScreen::createScene();
     Director::getInstance()->replaceScene(scene);
   }
   

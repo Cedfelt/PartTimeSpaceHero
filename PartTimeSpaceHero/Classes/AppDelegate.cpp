@@ -1,5 +1,5 @@
 #include "AppDelegate.h"
-#include "MainMenu.hpp"
+#include "TitleScreen.hpp"
 #include "GlobalPList.hpp"
 #include "SimpleAudioEngine.h"
 
@@ -74,7 +74,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
   
 
     // create a scene. it's an autorelease object
-    auto scene = MainMenu::createScene();
+    auto scene = TitleScreen::createScene();
 
     // run
     director->runWithScene(scene);

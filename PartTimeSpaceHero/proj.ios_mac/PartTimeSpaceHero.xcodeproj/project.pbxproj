@@ -125,6 +125,12 @@
 		A8EB2DCC1D2D9D9A00F92139 /* MechObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8EB2DC91D2D9D9A00F92139 /* MechObject.cpp */; };
 		A8ECBD611DAA91A100B7929E /* MudMonsterObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8ECBD5F1DAA91A100B7929E /* MudMonsterObject.cpp */; };
 		A8ECBD621DAA91A100B7929E /* MudMonsterObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8ECBD5F1DAA91A100B7929E /* MudMonsterObject.cpp */; };
+		A8ECBD651DAB88AE00B7929E /* LoadScreenScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8ECBD631DAB88AE00B7929E /* LoadScreenScene.cpp */; };
+		A8ECBD661DAB88AE00B7929E /* LoadScreenScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8ECBD631DAB88AE00B7929E /* LoadScreenScene.cpp */; };
+		A8ECBD691DAC218200B7929E /* PauseScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8ECBD671DAC218200B7929E /* PauseScene.cpp */; };
+		A8ECBD6A1DAC218200B7929E /* PauseScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8ECBD671DAC218200B7929E /* PauseScene.cpp */; };
+		A8ECBD6D1DAC34A600B7929E /* TitleScreen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8ECBD6B1DAC34A600B7929E /* TitleScreen.cpp */; };
+		A8ECBD6E1DAC34A600B7929E /* TitleScreen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8ECBD6B1DAC34A600B7929E /* TitleScreen.cpp */; };
 		A8FA61781D3ED4F6007178A2 /* ZombieObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8FA61761D3ED4F6007178A2 /* ZombieObject.cpp */; };
 		A8FA61791D3ED4F6007178A2 /* ZombieObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8FA61761D3ED4F6007178A2 /* ZombieObject.cpp */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
@@ -269,6 +275,12 @@
 		A8EB2DCA1D2D9D9A00F92139 /* MechObject.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = MechObject.hpp; sourceTree = "<group>"; };
 		A8ECBD5F1DAA91A100B7929E /* MudMonsterObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MudMonsterObject.cpp; sourceTree = "<group>"; };
 		A8ECBD601DAA91A100B7929E /* MudMonsterObject.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = MudMonsterObject.hpp; sourceTree = "<group>"; };
+		A8ECBD631DAB88AE00B7929E /* LoadScreenScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LoadScreenScene.cpp; sourceTree = "<group>"; };
+		A8ECBD641DAB88AE00B7929E /* LoadScreenScene.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = LoadScreenScene.hpp; sourceTree = "<group>"; };
+		A8ECBD671DAC218200B7929E /* PauseScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PauseScene.cpp; sourceTree = "<group>"; };
+		A8ECBD681DAC218200B7929E /* PauseScene.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = PauseScene.hpp; sourceTree = "<group>"; };
+		A8ECBD6B1DAC34A600B7929E /* TitleScreen.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TitleScreen.cpp; sourceTree = "<group>"; };
+		A8ECBD6C1DAC34A600B7929E /* TitleScreen.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TitleScreen.hpp; sourceTree = "<group>"; };
 		A8FA61761D3ED4F6007178A2 /* ZombieObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ZombieObject.cpp; sourceTree = "<group>"; };
 		A8FA61771D3ED4F6007178A2 /* ZombieObject.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ZombieObject.hpp; sourceTree = "<group>"; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -412,10 +424,16 @@
 				A8805F2C1CEFB37400B2AE7A /* CoinObject.hpp */,
 				A828EC131D02C6080006AA25 /* DamageZone.cpp */,
 				A828EC141D02C6080006AA25 /* DamageZone.hpp */,
+				A8C6DF9C1D73416900153994 /* DB32.cpp */,
+				A8C6DF9D1D73416900153994 /* DB32.hpp */,
 				A87AD0A01D40166300CF5B03 /* DialogObject.cpp */,
 				A87AD0A11D40166300CF5B03 /* DialogObject.hpp */,
+				A8C208651D5668D3004C8561 /* EffectZone.cpp */,
+				A8C208661D5668D3004C8561 /* EffectZone.hpp */,
 				A82455A61D27154500D8E17E /* EnemyObject.cpp */,
 				A82455A71D27154500D8E17E /* EnemyObject.hpp */,
+				A8E25E781D46CEAD002295C8 /* FishObject.cpp */,
+				A8E25E791D46CEAD002295C8 /* FishObject.hpp */,
 				A8B094CD1D0F580E00D32FBE /* FlowerShootaObject.cpp */,
 				A8B094CE1D0F580E00D32FBE /* FlowerShootaObject.hpp */,
 				A81BE1491CBA415400C09359 /* GameObject.cpp */,
@@ -440,6 +458,8 @@
 				A81BE15A1CBA424600C09359 /* LaserObject.hpp */,
 				A825610F1CFCD65200FC1DD3 /* LevelData.cpp */,
 				A82561101CFCD65200FC1DD3 /* LevelData.hpp */,
+				A8ECBD631DAB88AE00B7929E /* LoadScreenScene.cpp */,
+				A8ECBD641DAB88AE00B7929E /* LoadScreenScene.hpp */,
 				A81BE13D1CBA408300C09359 /* MainMenu.cpp */,
 				A81BE13E1CBA408300C09359 /* MainMenu.hpp */,
 				A828EC0F1D020A3D0006AA25 /* MapData.cpp */,
@@ -448,6 +468,8 @@
 				A81BE14E1CBA41D500C09359 /* MapObject.hpp */,
 				A8EB2DC91D2D9D9A00F92139 /* MechObject.cpp */,
 				A8EB2DCA1D2D9D9A00F92139 /* MechObject.hpp */,
+				A8ECBD5F1DAA91A100B7929E /* MudMonsterObject.cpp */,
+				A8ECBD601DAA91A100B7929E /* MudMonsterObject.hpp */,
 				A87C27C51CC19F10004520EF /* Physic.cpp */,
 				A87C27C61CC19F10004520EF /* Physic.hpp */,
 				A828EC171D060C680006AA25 /* PlatformObject.cpp */,
@@ -460,14 +482,16 @@
 				A803C1091D3D575800E918EA /* RifleBoss.hpp */,
 				A825610B1CFCD64100FC1DD3 /* SaveData.cpp */,
 				A825610C1CFCD64100FC1DD3 /* SaveData.hpp */,
+				A8E25E7C1D47FD3E002295C8 /* SignObject.cpp */,
+				A8E25E7D1D47FD3E002295C8 /* SignObject.hpp */,
 				A87396AE1D0DF44800ADE298 /* Simple_Bullet.cpp */,
 				A87396AF1D0DF44800ADE298 /* Simple_Bullet.hpp */,
 				A803C10C1D3EC9C700E918EA /* SnailObject.cpp */,
 				A803C10D1D3EC9C700E918EA /* SnailObject.hpp */,
-				A8ECBD5F1DAA91A100B7929E /* MudMonsterObject.cpp */,
-				A8ECBD601DAA91A100B7929E /* MudMonsterObject.hpp */,
 				A8805F2E1CF04C6D00B2AE7A /* SoundFx.cpp */,
 				A8805F2F1CF04C6D00B2AE7A /* SoundFx.hpp */,
+				A8E25E801D4955A4002295C8 /* SuporterObject.cpp */,
+				A8E25E811D4955A4002295C8 /* SuporterObject.hpp */,
 				A82560FF1CF8F01C00FC1DD3 /* TurfelObject.cpp */,
 				A82561001CF8F01C00FC1DD3 /* TurfelObject.hpp */,
 				A82561071CFB635F00FC1DD3 /* UfoObject.cpp */,
@@ -478,16 +502,10 @@
 				A81BE1461CBA40CB00C09359 /* WorldObject.hpp */,
 				A8FA61761D3ED4F6007178A2 /* ZombieObject.cpp */,
 				A8FA61771D3ED4F6007178A2 /* ZombieObject.hpp */,
-				A8E25E781D46CEAD002295C8 /* FishObject.cpp */,
-				A8E25E791D46CEAD002295C8 /* FishObject.hpp */,
-				A8E25E7C1D47FD3E002295C8 /* SignObject.cpp */,
-				A8E25E7D1D47FD3E002295C8 /* SignObject.hpp */,
-				A8E25E801D4955A4002295C8 /* SuporterObject.cpp */,
-				A8E25E811D4955A4002295C8 /* SuporterObject.hpp */,
-				A8C208651D5668D3004C8561 /* EffectZone.cpp */,
-				A8C208661D5668D3004C8561 /* EffectZone.hpp */,
-				A8C6DF9C1D73416900153994 /* DB32.cpp */,
-				A8C6DF9D1D73416900153994 /* DB32.hpp */,
+				A8ECBD671DAC218200B7929E /* PauseScene.cpp */,
+				A8ECBD681DAC218200B7929E /* PauseScene.hpp */,
+				A8ECBD6B1DAC34A600B7929E /* TitleScreen.cpp */,
+				A8ECBD6C1DAC34A600B7929E /* TitleScreen.hpp */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -710,11 +728,14 @@
 				A828EC0E1D00D0D70006AA25 /* BottyObject.cpp in Sources */,
 				A82561111CFCD65200FC1DD3 /* LevelData.cpp in Sources */,
 				A87C27C71CC19F10004520EF /* Physic.cpp in Sources */,
+				A8ECBD651DAB88AE00B7929E /* LoadScreenScene.cpp in Sources */,
 				A825610D1CFCD64100FC1DD3 /* SaveData.cpp in Sources */,
 				A8805F341CF0F5B100B2AE7A /* GoalObject.cpp in Sources */,
 				A81BE1471CBA40CB00C09359 /* WorldObject.cpp in Sources */,
 				A8E25E7E1D47FD3E002295C8 /* SignObject.cpp in Sources */,
 				A81BE14B1CBA415400C09359 /* GameObject.cpp in Sources */,
+				A8ECBD691DAC218200B7929E /* PauseScene.cpp in Sources */,
+				A8ECBD6D1DAC34A600B7929E /* TitleScreen.cpp in Sources */,
 				A8E25E821D4955A4002295C8 /* SuporterObject.cpp in Sources */,
 				A828EC191D060C680006AA25 /* PlatformObject.cpp in Sources */,
 				A8FA61781D3ED4F6007178A2 /* ZombieObject.cpp in Sources */,
@@ -728,16 +749,19 @@
 			files = (
 				A81BE1441CBA40AE00C09359 /* GameScene.cpp in Sources */,
 				46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */,
+				A8ECBD661DAB88AE00B7929E /* LoadScreenScene.cpp in Sources */,
 				A81BE1541CBA420D00C09359 /* PlayerObject.cpp in Sources */,
 				A825610A1CFB635F00FC1DD3 /* UfoObject.cpp in Sources */,
 				A8C6DF9F1D73416900153994 /* DB32.cpp in Sources */,
 				503AE10517EB98FF00D1A890 /* main.cpp in Sources */,
+				A8ECBD6A1DAC218200B7929E /* PauseScene.cpp in Sources */,
 				A803C10B1D3D575800E918EA /* RifleBoss.cpp in Sources */,
 				A8E25E7B1D46CEAD002295C8 /* FishObject.cpp in Sources */,
 				A8EB2DCC1D2D9D9A00F92139 /* MechObject.cpp in Sources */,
 				A82561061CFB167400FC1DD3 /* BabyTurfelObject.cpp in Sources */,
 				A8805F311CF04C6D00B2AE7A /* SoundFx.cpp in Sources */,
 				A81BE1501CBA41D500C09359 /* MapObject.cpp in Sources */,
+				A8ECBD6E1DAC34A600B7929E /* TitleScreen.cpp in Sources */,
 				A81BE15C1CBA424600C09359 /* LaserObject.cpp in Sources */,
 				46880B8B19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */,
 				A81BE1681CBA499F00C09359 /* GlobalPList.cpp in Sources */,

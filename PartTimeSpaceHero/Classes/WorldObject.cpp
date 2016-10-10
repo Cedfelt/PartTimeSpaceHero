@@ -22,7 +22,7 @@
 #include "PlatformObject.hpp"
 #include "FlowerShootaObject.hpp"
 #include "ItemCreate.hpp"
-#include "MainMenu.hpp"
+#include "LoadScreenScene.hpp"
 #include "MechObject.hpp"
 #include "SnailObject.hpp"
 #include "ZombieObject.hpp"
@@ -261,7 +261,7 @@ void WorldObject::updateWorld(float delta) {
     audio->stopBackgroundMusic();
     audio->stopAllEffects();
     stopAllActions();
-    auto scene = MainMenu::createScene();
+    auto scene = LoadScreen::createScene();
     Director::getInstance()->replaceScene(scene);
     player->resetPlayerSaveData();
   }
@@ -764,7 +764,7 @@ void WorldObject::finishLevel(){
   audio->stopBackgroundMusic();
   audio->pauseAllEffects();
   stopAllActions();
-  auto scene = MainMenu::createScene();
+  auto scene = LoadScreen::createScene();
   Director::getInstance()->replaceScene(scene);
 }
 

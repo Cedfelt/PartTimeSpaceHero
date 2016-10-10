@@ -2,6 +2,10 @@
 #include "GlobalPList.hpp"
 #include "GameScene.hpp"
 #include "cocostudio/CocoStudio.h"
+#include "LoadScreenScene.hpp"
+#include "SimpleAudioEngine.h"
+
+
 
 USING_NS_CC;
 
@@ -37,8 +41,6 @@ bool MainMenu::init()
     {
         return false;
     }
-  
-  
   
   
     Size visibleSize = Director::getInstance()->getVisibleSize();
@@ -101,6 +103,8 @@ void MainMenu::onTouchBegan(const std::vector<Touch*>& touch, Event* event)
 
 void MainMenu::onTouchEnded(const std::vector<Touch*>& touches, Event*)
 {
+  auto audio = CocosDenshion::SimpleAudioEngine::getInstance();
+  audio->stopBackgroundMusic();
   if(!newGame)
     return;
   newGame = false;
@@ -120,7 +124,7 @@ void MainMenu::onTouchEnded(const std::vector<Touch*>& touches, Event*)
     //setMapUrl("ptsh_template.tmx");
     //setMapUrl("djungel2.tmx");
     cocos2d::log(nextLevel->getMapName().c_str());
-    auto scene = GameScene::createScene();
+    auto scene = LoadScreen::createScene();
     Director::getInstance()->replaceScene(scene);
   }
   else{
