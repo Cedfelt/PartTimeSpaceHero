@@ -91,11 +91,10 @@ void MudMonsterObject::deadState() {
 bool MudMonsterObject::setupAnimation() {
   // SETUP ANIMATIONS
   
-  spriteFrameCache = spriteFrameCache->getInstance();
-  animationCache = animationCache->getInstance();
-  spriteFrameCache->addSpriteFramesWithFile("mud_monster.plist");
+  SpriteFrameCache::getInstance()->addSpriteFramesWithFile("mud_monster.plist");
   addAnimation("mud_monster", "mud_idle", 1, 4, 0.3f);
   addAnimation("mud_monster", "mud_crawl", 6, 9, 0.3f);
   addAnimation("mud_monster", "mud_dead", 5, 5, 0.3f);
+  
   return true;
 }

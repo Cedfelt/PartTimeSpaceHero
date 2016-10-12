@@ -29,9 +29,7 @@ void LaserObject::setup(float output_time, float input_time, uint32_t direction,
   maxLaserRange = 8 * 2 * range + 8 * 4;
   //this->setRotation(180);
   addGravityToObject(false);
-  spriteFrameCache = spriteFrameCache->getInstance();
-  animationCache = animationCache->getInstance();
-  spriteFrameCache->addSpriteFramesWithFile("laser_trap.plist");
+  SpriteFrameCache::getInstance()->addSpriteFramesWithFile("laser_trap.plist");
   addAnimation("laser_trap", "laser_trap_base", 5, 5, 2.f);
   addAnimation("laser_trap", "laser_mid", 3, 4, 6.0 / 60.0);
   addAnimation("laser_trap", "laser_top_down", 1, 2, 6.0 / 60.0);
@@ -48,12 +46,12 @@ void LaserObject::setup(float output_time, float input_time, uint32_t direction,
     laser_sprites[i - 1]->setAnchorPoint(Point(0.5, 0));
     addChild(laser_sprites[i - 1]);
     laser_sprites[i - 1]->setPosition(0, i * 8);
-    laser_sprites[i - 1]->runAction(RepeatForever::create(Animate::create(animationCache->getAnimation("laser_mid"))));
+    laser_sprites[i - 1]->runAction(RepeatForever::create(Animate::create(AnimationCache::getInstance()->getAnimation("laser_mid"))));
     laser_sprites[i - 1]->setOpacity(0);
     addChild(laser_sprites[i - 1]);
   }
   laser_sprites[range - 1]->stopAllActions();
-  laser_sprites[range - 1]->runAction(RepeatForever::create(Animate::create(animationCache->getAnimation("laser_top_down"))));
+  laser_sprites[range - 1]->runAction(RepeatForever::create(Animate::create(AnimationCache::getInstance()->getAnimation("laser_top_down"))));
   current = 0;
   
   

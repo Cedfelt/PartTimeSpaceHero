@@ -82,9 +82,7 @@ void SnailObject::deadState() {
 bool SnailObject::setupAnimation() {
   // SETUP ANIMATIONS
   
-  spriteFrameCache = spriteFrameCache->getInstance();
-  animationCache = animationCache->getInstance();
-  spriteFrameCache->addSpriteFramesWithFile("zombie_and_snail.plist");
+  SpriteFrameCache::getInstance()->addSpriteFramesWithFile("zombie_and_snail.plist");
   addAnimation("snail", "snail_idle", 1, 1, 0.3f);
   addAnimation("snail", "snail_crawl", 2, 4, 0.3f);
   addAnimation("snail", "snail_dead", 3, 3, 0.3f);

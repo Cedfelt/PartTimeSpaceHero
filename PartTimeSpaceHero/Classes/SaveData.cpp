@@ -12,6 +12,9 @@
 LevelData* currentLevelData;
 cocos2d::Vector<LevelData*> levelDataList;
 
+
+
+
 bool SaveData::init(){
   //////////////////////////////
   // 1. super init first
@@ -59,6 +62,7 @@ void SaveData::eraseMemorey(){
  LevelData* SaveData::getCurrentLevel() {
   return currentLevelData;
 }
+
 
 void SaveData::setCurrentLevelStatus(const bool completed,const uint32_t score,const uint32_t bestTime) {
   LevelData* levelData = getCurrentLevel();

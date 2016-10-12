@@ -22,5 +22,4 @@ private:
     virtual void onTouchEnded(const std::vector<Touch*>&, Event*);
     virtual void onTouchMoved(const std::vector<Touch*>&, Event*);
     virtual void onTouchCancelled(const std::vector<Touch*>&, Event*);
-    SaveData* gameSave;
 };

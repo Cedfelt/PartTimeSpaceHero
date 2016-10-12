@@ -23,9 +23,7 @@ bool FlowerShootaObject::init() {
   addGravityToObject(true);
   // SETUP ANIMATIONS
   objectSprite = cocos2d::Sprite::create();
-  spriteFrameCache = spriteFrameCache->getInstance();
-  animationCache = animationCache->getInstance();
-  spriteFrameCache->addSpriteFramesWithFile("flower_shoota.plist");
+  SpriteFrameCache::getInstance()->addSpriteFramesWithFile("flower_shoota.plist");
   addAnimation("flowe_shoota", "flower_shoot", 1, 7, 0.2f);
   addAnimation("flowe_shoota", "flower_idle", 1, 2, 0.2f);
   setAnimation("flower_idle");

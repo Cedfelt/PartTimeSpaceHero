@@ -58,9 +58,8 @@ void FishObject::deadState() {
 bool FishObject::setupAnimation() {
   // SETUP ANIMATIONS
   
-  spriteFrameCache = spriteFrameCache->getInstance();
-  animationCache = animationCache->getInstance();
-  spriteFrameCache->addSpriteFramesWithFile("fish.plist");
+  
+  SpriteFrameCache::getInstance()->addSpriteFramesWithFile("fish.plist");
   addAnimation("fish", "fish_idle", 1, 4, 0.25f);
   addAnimation("fish", "fish_dead", 3, 3, 1.f);
   return true;

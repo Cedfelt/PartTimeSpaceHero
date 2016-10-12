@@ -49,8 +49,10 @@ public:
   LevelData* getCurrentLevel();
   void eraseMemorey();
   void setCurrentLevelStatus(const bool completed,const uint32_t score,const uint32_t bestTime);
+  
 private:
   void addLevelToGame(std::string levelName);
+  
 };
 
 #endif /* WorldData_hpp */

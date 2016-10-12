@@ -37,6 +37,7 @@ Scene* TitleScreen::createScene()
 
 
 // on "init" you need to initialize your instance
+
 bool TitleScreen::init()
 {
   
@@ -65,14 +66,31 @@ bool TitleScreen::init()
   touchListener->onTouchesCancelled = CC_CALLBACK_2(TitleScreen::onTouchCancelled, this);
   _eventDispatcher->addEventListenerWithSceneGraphPriority(touchListener, this);
   
+  const auto textCol = getColorFromCollection(SKYBLUE);
+  auto col3b = Color3B(textCol.red,textCol.green,textCol.blue);
+  
   
   // New Game Label -
-  auto label = Label::createWithTTF("P.T.S.H", "fonts/PressStart2P.ttf", 20*scale);
-  label->setPosition(Vec2(visibleSize.width/2 , visibleSize.height/2));
+  auto label = Label::createWithTTF("P.T.S.H", "fonts/PressStart2P.ttf", 40*scale);
+  label->setPosition(Vec2(visibleSize.width/2 , visibleSize.height*0.7));
+  label->setColor(col3b);
   addChild(label);
+  
+  // New Game Label -
+  auto label2 = Label::createWithTTF("Touch the Screen to Start", "fonts/PressStart2P.ttf", 12*scale);
+  label2->setColor(col3b);
+  label2->setPosition(Vec2(visibleSize.width*0.5 , visibleSize.height*0.55));
+  addChild(label2);
+  
+  // New Game Label -
+  auto label3 = Label::createWithTTF("© 2017 Seacow", "fonts/PressStart2P.ttf", 12*scale);
+  label3->setColor(col3b);
+  label3->setPosition(Vec2(visibleSize.width/2 , visibleSize.height*0.40));
+  addChild(label3);
+  
   auto audio = CocosDenshion::SimpleAudioEngine::getInstance();
   audio->stopBackgroundMusic();
-  audio->playBackgroundMusic("alone in space.mp3", true);
+  audio->playBackgroundMusic("title_theme.mp3", true);
   return true;
 }
 

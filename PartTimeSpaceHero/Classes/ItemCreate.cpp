@@ -35,9 +35,7 @@ bool ItemCreate::init() {
   
   // Animation
   objectSprite = cocos2d::Sprite::create();
-  spriteFrameCache = spriteFrameCache->getInstance();
-  animationCache = animationCache->getInstance();
-  spriteFrameCache->addSpriteFramesWithFile("crate.plist");
+  SpriteFrameCache::getInstance()->addSpriteFramesWithFile("crate.plist");
   addAnimation("crate", "crate_fall", 1, 1, 5.0f);
   addAnimation("crate", "crate_land", 1, 5, 0.2f);
   setAnimation("crate_fall");

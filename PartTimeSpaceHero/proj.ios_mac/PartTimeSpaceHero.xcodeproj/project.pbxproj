@@ -131,6 +131,8 @@
 		A8ECBD6A1DAC218200B7929E /* PauseScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8ECBD671DAC218200B7929E /* PauseScene.cpp */; };
 		A8ECBD6D1DAC34A600B7929E /* TitleScreen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8ECBD6B1DAC34A600B7929E /* TitleScreen.cpp */; };
 		A8ECBD6E1DAC34A600B7929E /* TitleScreen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8ECBD6B1DAC34A600B7929E /* TitleScreen.cpp */; };
+		A8F5BC3D1DAD6AB9004D8807 /* EraseGameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8F5BC3B1DAD6AB9004D8807 /* EraseGameScene.cpp */; };
+		A8F5BC3E1DAD6AB9004D8807 /* EraseGameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8F5BC3B1DAD6AB9004D8807 /* EraseGameScene.cpp */; };
 		A8FA61781D3ED4F6007178A2 /* ZombieObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8FA61761D3ED4F6007178A2 /* ZombieObject.cpp */; };
 		A8FA61791D3ED4F6007178A2 /* ZombieObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8FA61761D3ED4F6007178A2 /* ZombieObject.cpp */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
@@ -281,6 +283,8 @@
 		A8ECBD681DAC218200B7929E /* PauseScene.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = PauseScene.hpp; sourceTree = "<group>"; };
 		A8ECBD6B1DAC34A600B7929E /* TitleScreen.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TitleScreen.cpp; sourceTree = "<group>"; };
 		A8ECBD6C1DAC34A600B7929E /* TitleScreen.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TitleScreen.hpp; sourceTree = "<group>"; };
+		A8F5BC3B1DAD6AB9004D8807 /* EraseGameScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EraseGameScene.cpp; sourceTree = "<group>"; };
+		A8F5BC3C1DAD6AB9004D8807 /* EraseGameScene.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = EraseGameScene.hpp; sourceTree = "<group>"; };
 		A8FA61761D3ED4F6007178A2 /* ZombieObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ZombieObject.cpp; sourceTree = "<group>"; };
 		A8FA61771D3ED4F6007178A2 /* ZombieObject.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ZombieObject.hpp; sourceTree = "<group>"; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -506,6 +510,8 @@
 				A8ECBD681DAC218200B7929E /* PauseScene.hpp */,
 				A8ECBD6B1DAC34A600B7929E /* TitleScreen.cpp */,
 				A8ECBD6C1DAC34A600B7929E /* TitleScreen.hpp */,
+				A8F5BC3B1DAD6AB9004D8807 /* EraseGameScene.cpp */,
+				A8F5BC3C1DAD6AB9004D8807 /* EraseGameScene.hpp */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -706,6 +712,7 @@
 				A81BE14F1CBA41D500C09359 /* MapObject.cpp in Sources */,
 				A8805F2D1CEFB37400B2AE7A /* CoinObject.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
+				A8F5BC3D1DAD6AB9004D8807 /* EraseGameScene.cpp in Sources */,
 				A82560FE1CF6269600FC1DD3 /* GUI.cpp in Sources */,
 				A828EC151D02C6080006AA25 /* DamageZone.cpp in Sources */,
 				A82561011CF8F01C00FC1DD3 /* TurfelObject.cpp in Sources */,
@@ -760,6 +767,7 @@
 				A8EB2DCC1D2D9D9A00F92139 /* MechObject.cpp in Sources */,
 				A82561061CFB167400FC1DD3 /* BabyTurfelObject.cpp in Sources */,
 				A8805F311CF04C6D00B2AE7A /* SoundFx.cpp in Sources */,
+				A8F5BC3E1DAD6AB9004D8807 /* EraseGameScene.cpp in Sources */,
 				A81BE1501CBA41D500C09359 /* MapObject.cpp in Sources */,
 				A8ECBD6E1DAC34A600B7929E /* TitleScreen.cpp in Sources */,
 				A81BE15C1CBA424600C09359 /* LaserObject.cpp in Sources */,

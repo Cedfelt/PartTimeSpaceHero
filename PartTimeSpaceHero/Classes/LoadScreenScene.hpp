@@ -32,5 +32,6 @@ private:
   virtual void onTouchCancelled(const std::vector<Touch*>&, Event*);
   float start_cnt = 2.5f;
   SaveData* gameSave;
+  bool unplayedLevels;
 };
 

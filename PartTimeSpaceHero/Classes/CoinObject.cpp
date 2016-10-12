@@ -25,9 +25,7 @@ bool CoinObject::init() {
   pling->loadEffect("pling.aif", 0, 1, false);
   addChild(pling);
   objectSprite = cocos2d::Sprite::create();
-  spriteFrameCache = spriteFrameCache->getInstance();
-  animationCache = animationCache->getInstance();
-  spriteFrameCache->addSpriteFramesWithFile("coin_sheet.plist");
+  SpriteFrameCache::getInstance()->addSpriteFramesWithFile("coin_sheet.plist");
   addAnimation("coin", "Coin1", 1, 4, 0.2f);
   setAnimation("Coin1");
   objectSprite->setPosition(19/2, 17/2);// Aling sprite in Hitbox

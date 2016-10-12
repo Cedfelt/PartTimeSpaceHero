@@ -4,7 +4,7 @@
 #include "cocostudio/CocoStudio.h"
 #include "LoadScreenScene.hpp"
 #include "SimpleAudioEngine.h"
-
+#include "EraseGameScene.hpp"
 
 
 USING_NS_CC;
@@ -87,11 +87,6 @@ bool MainMenu::init()
   logo->setPositionX(xPosLogo);
   logo->setPositionY(yPosLogo);
   addChild(logo,1);
-  
-  gameSave = SaveData::create();
-  gameSave->loadWorldData();
-  addChild(gameSave);
-  
     return true;
 }
 bool newGame;
@@ -113,22 +108,15 @@ void MainMenu::onTouchEnded(const std::vector<Touch*>& touches, Event*)
     
     if ((touches.at(i)->getStartLocation().x) < winSize.width / 2) {
       // LEFT
-      setDebuggDraw(false);
-      gameSave->eraseMemorey();
+      auto scene = EraseGameScreen::createScene();
+      Director::getInstance()->replaceScene(scene);
+      return;
     }
-  }
-  const bool unplayedLevels = gameSave->prepareNextLevel();
-  if(unplayedLevels){
-    LevelData* nextLevel = gameSave->getCurrentLevel();
-    setMapUrl(nextLevel->getMapName());
-    //setMapUrl("ptsh_template.tmx");
-    //setMapUrl("djungel2.tmx");
-    cocos2d::log(nextLevel->getMapName().c_str());
-    auto scene = LoadScreen::createScene();
-    Director::getInstance()->replaceScene(scene);
-  }
-  else{
-    cocos2d::log("Game Cleared");
+    else{
+      auto scene = LoadScreen::createScene();
+      Director::getInstance()->replaceScene(scene);
+      return;
+    }
   }
 }
 

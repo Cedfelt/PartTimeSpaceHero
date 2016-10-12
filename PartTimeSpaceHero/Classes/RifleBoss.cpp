@@ -183,9 +183,7 @@ void RifleBoos::deadState() {
 bool RifleBoos::setupAnimation() {
   // SETUP ANIMATIONS
   
-  spriteFrameCache = spriteFrameCache->getInstance();
-  animationCache = animationCache->getInstance();
-  spriteFrameCache->addSpriteFramesWithFile("RifeBoss.plist");
+  SpriteFrameCache::getInstance()->addSpriteFramesWithFile("RifeBoss.plist");
   addAnimation("GunMan", "rifle_walk", 1, 4, 0.2f);
   addAnimation("GunMan", "rifle_dead", 1, 1, 3.f);
   return true;

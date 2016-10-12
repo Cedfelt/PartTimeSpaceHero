@@ -62,9 +62,7 @@ void BottyObject::deadState() {
 bool BottyObject::setupAnimation() {
   // SETUP ANIMATIONS
   
-  spriteFrameCache = spriteFrameCache->getInstance();
-  animationCache = animationCache->getInstance();
-  spriteFrameCache->addSpriteFramesWithFile("botty.plist");
+  SpriteFrameCache::getInstance()->addSpriteFramesWithFile("botty.plist");
   addAnimation("Botty", "botty_idle", 1, 2, 0.2f);
   addAnimation("Botty", "botty_dead", 3, 3, 1.f);
   return true;

@@ -9,6 +9,17 @@
 #include "GlobalPList.hpp"
 #include "CoinObject.hpp"
 
+GameObject::GameObject(){
+}
+
+GameObject::~GameObject(){
+  SpriteFrameCache::destroyInstance();
+  AnimationCache::destroyInstance();
+  if(objectSprite !=NULL){
+    objectSprite->stopAllActions();
+  }
+}
+
 bool GameObject::init() {
   //////////////////////////////
   // 1. super init first
@@ -76,11 +87,15 @@ void GameObject::addAnimation(std::string fileName, std::string animation_name, 
 
   for (int i = start;i <= end;i++) {
     auto name = cocos2d::String::createWithFormat(fileName_update.c_str(), i);
-    auto frame = spriteFrameCache->getSpriteFrameByName(name->getCString());
+    auto frame = SpriteFrameCache::getInstance()->getSpriteFrameByName(name->getCString());
+    
     frame->getTexture()->setAliasTexParameters();
     animFrames.pushBack(frame);
   }
-  animationCache->addAnimation(cocos2d::Animation::createWithSpriteFrames(animFrames, animSpeed), animation_name);
+  AnimationCache::getInstance()->addAnimation(cocos2d::Animation::createWithSpriteFrames(animFrames, animSpeed), animation_name);
+  for (int i = 0;i < animFrames.size();i++) {
+    //animFrames.at(i)->release();
+  }
 }
 
 void GameObject::colideWith(GameObject *otherGo, const uint32_t otherType) {
@@ -98,7 +113,7 @@ void GameObject::setAnimation(std::string anim) {
 bool GameObject::setAnimationOnce(std::string anim) {
   if (prevAnimation != anim) {
     objectSprite->stopAllActions();
-    r = cocos2d::Repeat::create(cocos2d::Animate::create(animationCache->getAnimation(anim)), 1);
+    r = cocos2d::Repeat::create(cocos2d::Animate::create(AnimationCache::getInstance()->getAnimation(anim)), 1);
     objectSprite->runAction(r);
   }
   prevAnimation = anim;

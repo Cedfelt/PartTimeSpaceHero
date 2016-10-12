@@ -19,7 +19,8 @@
 using namespace cocos2d;
 class GameObject : public cocos2d::DrawNode {
 public:
-  
+  GameObject();
+  ~ GameObject();
   cocos2d::Vector<DialogObject*>* dialogObjects;
   enum{
     GO_ON_GROUND,
@@ -94,8 +95,6 @@ public:
   float deltaY;
   
   Rect* getHitbox();
-  cocos2d::SpriteFrameCache *spriteFrameCache;
-  cocos2d::AnimationCache *animationCache;
   Sprite* objectSprite;
   Rect hitBox;
   enum{

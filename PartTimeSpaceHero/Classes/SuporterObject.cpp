@@ -79,9 +79,7 @@ void SuporterObject::deadState() {
 
 bool SuporterObject::setupAnimation() {
   // SETUP ANIMATIONS
-  spriteFrameCache = spriteFrameCache->getInstance();
-  animationCache = animationCache->getInstance();
-  spriteFrameCache->addSpriteFramesWithFile("suport.plist");
+  SpriteFrameCache::getInstance()->addSpriteFramesWithFile("suport.plist");
   addAnimation("suport", "suport_idle", 1, 4, 0.065f);
   addAnimation("suport", "suport_dead", 1, 4, 1.f);
   return true;

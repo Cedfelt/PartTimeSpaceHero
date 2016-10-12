@@ -2,6 +2,7 @@
 #include "TitleScreen.hpp"
 #include "GlobalPList.hpp"
 #include "SimpleAudioEngine.h"
+#include "DB32.hpp"
 
 
 USING_NS_CC;
@@ -34,7 +35,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
   
     // initialize director
     const uint32_t scale = 2;
-  
+    setup_colorcollection();
 
 
 
@@ -78,8 +79,6 @@ bool AppDelegate::applicationDidFinishLaunching() {
 
     // run
     director->runWithScene(scene);
-  
-  
   
     return true;
 }

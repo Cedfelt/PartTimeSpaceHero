@@ -21,6 +21,7 @@ public:
   uint32_t bestTime;
   bool completed;
   
+  
   CREATE_FUNC(LevelData);
   virtual bool init();
   void setupLevel(std::string levelName);

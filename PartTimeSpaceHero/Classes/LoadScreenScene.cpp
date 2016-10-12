@@ -49,7 +49,7 @@ bool LoadScreen::init()
   
   
   
-  
+  Director::getInstance()->getTextureCache()->removeUnusedTextures();
   Size visibleSize = Director::getInstance()->getVisibleSize();
   Vec2 origin = Director::getInstance()->getVisibleOrigin();
   
@@ -64,8 +64,13 @@ bool LoadScreen::init()
   touchListener->onTouchesCancelled = CC_CALLBACK_2(LoadScreen::onTouchCancelled, this);
   _eventDispatcher->addEventListenerWithSceneGraphPriority(touchListener, this);
   
+  gameSave = SaveData::create();
+  gameSave->loadWorldData();
+  unplayedLevels = gameSave->prepareNextLevel();
   LevelData* nextLevel = gameSave->getCurrentLevel();
   std::string description= "";
+  addChild(gameSave);
+  
   if(nextLevel!=nullptr){
     description = nextLevel->description;
   }
@@ -78,9 +83,7 @@ bool LoadScreen::init()
   
   
   
-  gameSave = SaveData::create();
-  gameSave->loadWorldData();
-  addChild(gameSave);
+  
   
   return true;
 }
@@ -97,7 +100,6 @@ void LoadScreen::onTouchEnded(const std::vector<Touch*>& touches, Event*)
     return;
   newGame2 = false;
   CCSize winSize = CCDirector::sharedDirector()->getWinSize();
-  const bool unplayedLevels = gameSave->prepareNextLevel();
   if(unplayedLevels){
     LevelData* nextLevel = gameSave->getCurrentLevel();
     setMapUrl(nextLevel->getMapName());

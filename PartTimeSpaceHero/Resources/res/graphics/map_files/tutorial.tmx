@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="250" height="122" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="240">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="250" height="122" tilewidth="16" tileheight="16" backgroundcolor="#000000" nextobjectid="262">
  <properties>
   <property name="BACKGROUND_COLOR" type="int" value="0"/>
   <property name="music_track" value="alone in space.mp3"/>
@@ -133,19 +133,11 @@
     <property name="text1" value="This could have been a snake pit"/>
    </properties>
   </object>
-  <object id="237" name="MudMonsterObject" x="1042.45" y="1291.64" width="204.454" height="73.0695">
-   <properties>
-    <property name="stayInZone" value="false"/>
-    <property name="stupidWalk" value="true"/>
-    <property name="turnAtEdge" value="false"/>
-   </properties>
-  </object>
   <object id="238" name="PlayerObject" x="52.2291" y="1669.29" width="12" height="25">
    <properties>
     <property name="max_item_level" type="int" value="0"/>
    </properties>
   </object>
-  <object id="239" name="GoalObject" x="1048.31" y="1659.02" width="13.3263" height="25"/>
  </objectgroup>
  <objectgroup name="template_objects" visible="0" offsetx="6" offsety="30">
   <object id="19" name="FlowerShootaObject" x="307.489" y="1455.34" width="12" height="25"/>

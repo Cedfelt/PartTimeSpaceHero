@@ -70,9 +70,7 @@ void ZombieObject::deadState() {
 bool ZombieObject::setupAnimation() {
   // SETUP ANIMATIONS
   
-  spriteFrameCache = spriteFrameCache->getInstance();
-  animationCache = animationCache->getInstance();
-  spriteFrameCache->addSpriteFramesWithFile("zombie_and_snail.plist");
+  SpriteFrameCache::getInstance()->addSpriteFramesWithFile("zombie_and_snail.plist");
   addAnimation("zombie", "zombie_idle", 1, 1, 0.3f);
   addAnimation("zombie", "zombie_walk", 1, 8, 0.2f);
   addAnimation("zombie", "zombie_dead", 3, 3, 0.3f);

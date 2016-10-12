@@ -79,9 +79,7 @@ void MechObject::deadState() {
 bool MechObject::setupAnimation() {
   // SETUP ANIMATIONS
   
-  spriteFrameCache = spriteFrameCache->getInstance();
-  animationCache = animationCache->getInstance();
-  spriteFrameCache->addSpriteFramesWithFile("e_mech.plist");
+  SpriteFrameCache::getInstance()->addSpriteFramesWithFile("e_mech.plist");
   addAnimation("mech", "mech_idle", 1, 4, 0.350f);
   addAnimation("mech", "mech_dead", 1, 1, 1.f);
   return true;

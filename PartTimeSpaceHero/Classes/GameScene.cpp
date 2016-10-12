@@ -40,6 +40,23 @@ Scene* GameScene::createScene()
   return scene;
 }
 
+void addAnimation(std::string fileName, std::string animation_name, int start, int end, float animSpeed) {
+  cocos2d::Vector<cocos2d::SpriteFrame*> animFrames(end - start);
+  std::string fileFormat = "%i.png";
+  std::string fileName_update = fileName + fileFormat;
+  
+  for (int i = start;i <= end;i++) {
+    auto name = cocos2d::String::createWithFormat(fileName_update.c_str(), i);
+    auto frame = SpriteFrameCache::getInstance()->getSpriteFrameByName(name->getCString());
+    
+    frame->getTexture()->setAliasTexParameters();
+    animFrames.pushBack(frame);
+  }
+  AnimationCache::getInstance()->addAnimation(cocos2d::Animation::createWithSpriteFrames(animFrames, animSpeed), animation_name);
+  for (int i = 0;i < animFrames.size();i++) {
+    //animFrames.at(i)->release();
+  }
+}
 
 
 // on "init" you need to initialize your instance
@@ -60,6 +77,42 @@ bool GameScene::init()
   {
     return false;
   }
+  
+  cocos2d::AnimationCache::getInstance()->destroyInstance();
+  cocos2d::SpriteFrameCache::getInstance()->removeSpriteFrames();
+  SpriteFrameCache::getInstance()->addSpriteFramesWithFile("ptsh.plist");
+  addAnimation("PTSH", "IdleR", 1, 4, 0.2f);
+  addAnimation("PTSH", "IdleL", 1, 4, 0.2f);
+  addAnimation("PTSH", "WalkR", 5, 8, 0.15f);
+  addAnimation("PTSH", "WalkL", 5, 8, 0.15f);
+  addAnimation("PTSH", "FlyR", 9, 12, 0.2f);
+  addAnimation("PTSH", "FlyL", 9, 12, 0.2f);
+  addAnimation("PTSH", "AscendR", 13, 13, 0.2f);
+  addAnimation("PTSH", "AscendL", 13, 13, 0.2f);
+  addAnimation("PTSH", "FallR", 14, 17, 0.2f);
+  addAnimation("PTSH", "FallL", 14, 17, 0.2f);
+  addAnimation("PTSH", "DashChargeR", 18, 21, 0.15f);
+  addAnimation("PTSH", "DashChargeL", 18, 21, 0.15f);
+  addAnimation("PTSH", "DashR", 22, 25, 0.15f);
+  addAnimation("PTSH", "DashL", 22, 25, 0.15f);
+  
+  // Weapon Anim
+  auto spriteFrameCache = cocos2d::SpriteFrameCache::getInstance();
+  //  spriteFrameCache->addSpriteFramesWithFile("ptshwep.plist");
+  spriteFrameCache->addSpriteFramesWithFile("PTSH_CLN.plist");
+  addAnimation("PTSH_WEP", "IdleRWep", 1, 4, 0.2f);
+  addAnimation("PTSH_WEP", "IdleLWep", 1, 4, 0.2f);
+  addAnimation("PTSH_WEP", "WalkRWep", 5, 8, 0.20f);
+  addAnimation("PTSH_WEP", "WalkLWep", 5, 8, 0.20f);
+  addAnimation("PTSH_WEP", "FlyRWep", 9, 12, 0.18f);
+  addAnimation("PTSH_WEP", "FlyLWep", 9, 12, 0.18f);
+  addAnimation("PTSH_WEP", "AscendRWep", 9, 12, 0.2f);
+  addAnimation("PTSH_WEP", "AscendLWep", 9, 12, 0.2f);
+  addAnimation("PTSH_WEP", "FallRWep", 14, 17, 0.2f);
+  addAnimation("PTSH_WEP", "FallLWep", 14, 17, 0.2f);
+  addAnimation("PTSH_WEP", "PlayerShootRWep", 26, 29, 0.06f);
+  addAnimation("PTSH_WEP", "PlayerShootLWep", 26, 29, 0.06f);
+  
   go_to_title = false;
   auto director = Director::getInstance();
   director->setProjection(Director::Projection::_2D);
@@ -101,10 +154,12 @@ bool GameScene::init()
   gui->player = worldObject->player; // Create interface
   gui->setGlobalZOrder(100);
   
-  setup_colorcollection();
   const int bg_color = worldObject->bg_color;
   DB32Color col32  = getColorFromCollection(bg_color);
   this->setColor(Color3B(col32.red,col32.green,col32.blue));
+  
+  
+  
   return true;
 }
 

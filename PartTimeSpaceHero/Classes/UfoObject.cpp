@@ -23,9 +23,7 @@ bool UfoObject::init() {
   setElastic(1.f);
   // SETUP ANIMATIONS
   objectSprite = cocos2d::Sprite::create();
-  spriteFrameCache = spriteFrameCache->getInstance();
-  animationCache = animationCache->getInstance();
-  spriteFrameCache->addSpriteFramesWithFile("patrol_ufo.plist");
+  SpriteFrameCache::getInstance()->addSpriteFramesWithFile("patrol_ufo.plist");
   addAnimation("patrol_ufo ", "ufo_idle", 1, 2, 0.2f);
   setAnimation("ufo_idle");
   objectSprite->setPosition(32, 32);// Aling sprite in Hitbox
