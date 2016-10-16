@@ -71,7 +71,7 @@ void ItemCreate::colideWith(GameObject* otherGo,const uint32_t otherType){
     coin->getPhysicsBody()->setCollisionBitmask((int)PhysicsCategory::None);
     coin->getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::Player | (int)PhysicsCategory::Hazard);
     coin->dialogObjects = dialogObjects;
-    const uint32_t itemType = std::rand() % (int)(target->itemLevel); // Generate item id
+    const uint32_t itemType = random % (int)(target->itemLevel); // Generate item id
     cocos2d::log("%u\n",otherGo->itemLevel);
     coin->generateItem(1<<itemType);
     coin->dia = DialogObject::create();

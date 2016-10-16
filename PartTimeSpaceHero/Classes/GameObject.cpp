@@ -8,13 +8,12 @@
 #include "GameObject.hpp"
 #include "GlobalPList.hpp"
 #include "CoinObject.hpp"
-
 GameObject::GameObject(){
 }
 
 GameObject::~GameObject(){
-  SpriteFrameCache::destroyInstance();
-  AnimationCache::destroyInstance();
+  //SpriteFrameCache::destroyInstance();
+  //AnimationCache::destroyInstance();
   if(objectSprite !=NULL){
     objectSprite->stopAllActions();
   }

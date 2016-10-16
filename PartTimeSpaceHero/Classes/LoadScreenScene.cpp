@@ -34,7 +34,7 @@ Scene* LoadScreen::createScene()
 }
 
 
-
+bool first_time = true;
 // on "init" you need to initialize your instance
 bool LoadScreen::init()
 {
@@ -65,7 +65,10 @@ bool LoadScreen::init()
   _eventDispatcher->addEventListenerWithSceneGraphPriority(touchListener, this);
   
   gameSave = SaveData::create();
-  gameSave->loadWorldData();
+  if(first_time){
+    first_time = false;
+    gameSave->loadWorldData();
+  }
   unplayedLevels = gameSave->prepareNextLevel();
   LevelData* nextLevel = gameSave->getCurrentLevel();
   std::string description= "";

@@ -1,9 +1,8 @@
 #include "AppDelegate.h"
 #include "TitleScreen.hpp"
 #include "GlobalPList.hpp"
-#include "SimpleAudioEngine.h"
 #include "DB32.hpp"
-
+#include "SimpleAudioEngine.h"
 
 USING_NS_CC;
 
@@ -73,6 +72,23 @@ bool AppDelegate::applicationDidFinishLaunching() {
   FileUtils::getInstance()->addSearchPath("res/graphics/gui");
   FileUtils::getInstance()->addSearchPath("Classes/gameobjects");
   
+  
+  //auto audio = CocosDenshion::SimpleAudioEngine::getInstance();
+  //audio->stopBackgroundMusic();
+  //audio->playBackgroundMusic("title_theme.mp3", true);
+  CocosDenshion::SimpleAudioEngine::getInstance()->preloadBackgroundMusic("title_theme.mp3");
+  CocosDenshion::SimpleAudioEngine::getInstance()->preloadBackgroundMusic("78.mp3");
+  CocosDenshion::SimpleAudioEngine::getInstance()->preloadBackgroundMusic("theme.mp3");
+  CocosDenshion::SimpleAudioEngine::getInstance()->preloadBackgroundMusic("adventure.mp3");
+  CocosDenshion::SimpleAudioEngine::getInstance()->preloadBackgroundMusic("alone in space2.mp3");
+  CocosDenshion::SimpleAudioEngine::getInstance()->preloadBackgroundMusic("Corp_Waltz.mp3");
+  CocosDenshion::SimpleAudioEngine::getInstance()->preloadBackgroundMusic("Dawn.aif");
+  CocosDenshion::SimpleAudioEngine::getInstance()->preloadBackgroundMusic("echo.mp3");
+  CocosDenshion::SimpleAudioEngine::getInstance()->preloadBackgroundMusic("Hope.mp3");
+  CocosDenshion::SimpleAudioEngine::getInstance()->preloadBackgroundMusic("on_a_mission.mp3");
+  CocosDenshion::SimpleAudioEngine::getInstance()->preloadBackgroundMusic("Space_Adventure.mp3");
+  //CocosDenshion::SimpleAudioEngine::getInstance()->preloadBackgroundMusic("too_quiet_in_here.aif");
+  
 
     // create a scene. it's an autorelease object
     auto scene = TitleScreen::createScene();
@@ -88,7 +104,7 @@ void AppDelegate::applicationDidEnterBackground() {
     Director::getInstance()->stopAnimation();
 
     // if you use SimpleAudioEngine, it must be pause
-    CocosDenshion::SimpleAudioEngine::getInstance()->pauseBackgroundMusic();
+    //CocosDenshion::SimpleAudioEngine::getInstance()->pauseBackgroundMusic();
 }
 
 // this function will be called when the app is active again
@@ -96,5 +112,5 @@ void AppDelegate::applicationWillEnterForeground() {
     Director::getInstance()->startAnimation();
 
     // if you use SimpleAudioEngine, it must resume here
-     CocosDenshion::SimpleAudioEngine::getInstance()->resumeBackgroundMusic();
+     //CocosDenshion::SimpleAudioEngine::getInstance()->resumeBackgroundMusic();
 }

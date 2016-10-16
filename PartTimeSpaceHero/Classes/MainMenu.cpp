@@ -3,7 +3,6 @@
 #include "GameScene.hpp"
 #include "cocostudio/CocoStudio.h"
 #include "LoadScreenScene.hpp"
-#include "SimpleAudioEngine.h"
 #include "EraseGameScene.hpp"
 
 
@@ -98,8 +97,6 @@ void MainMenu::onTouchBegan(const std::vector<Touch*>& touch, Event* event)
 
 void MainMenu::onTouchEnded(const std::vector<Touch*>& touches, Event*)
 {
-  auto audio = CocosDenshion::SimpleAudioEngine::getInstance();
-  audio->stopBackgroundMusic();
   if(!newGame)
     return;
   newGame = false;

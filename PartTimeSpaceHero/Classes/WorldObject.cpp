@@ -17,7 +17,6 @@
 #include "LaserObject.hpp"
 #include "UfoObject.hpp"
 #include <math.h>
-#include "SimpleAudioEngine.h"
 #include "DamageZone.hpp"
 #include "PlatformObject.hpp"
 #include "FlowerShootaObject.hpp"
@@ -31,6 +30,7 @@
 #include "SuporterObject.hpp"
 #include "EffectZone.hpp"
 #include "MudMonsterObject.hpp"
+#include "SimpleAudioEngine.h"
 
 float lastX;
 float lastY;
@@ -101,9 +101,8 @@ void WorldObject::setupWorld(){
   
   
   
-  auto audio = CocosDenshion::SimpleAudioEngine::getInstance();
-  audio->stopBackgroundMusic();
-  audio->playBackgroundMusic(track_name.c_str(), true);
+  CocosDenshion::SimpleAudioEngine::getInstance()->playBackgroundMusic(track_name.c_str(),true);
+  //audio->playBackgroundMusic(track_name.c_str(), true);
   
   
   
@@ -257,9 +256,6 @@ void WorldObject::updateWorld(float delta) {
   // Check if player dead
   if(player){
   if(player->HP<=0){
-    auto audio = CocosDenshion::SimpleAudioEngine::getInstance();
-    audio->stopBackgroundMusic();
-    audio->stopAllEffects();
     stopAllActions();
     auto scene = LoadScreen::createScene();
     Director::getInstance()->replaceScene(scene);
@@ -756,13 +752,11 @@ void WorldObject::updateOffScreenRect() {
 
 void WorldObject::finishLevel(){
   // setCurrentCompleted
+  CocosDenshion::SimpleAudioEngine::getInstance()->stopBackgroundMusic();
   setPlayerGear(player->gear_mask_exclusive | player->gear_mask_unlimited);
   setPlayerMoney(player->coins);
   auto sd = SaveData::create();
   sd->setCurrentLevelStatus(true,30,100);
-  auto audio = CocosDenshion::SimpleAudioEngine::getInstance();
-  audio->stopBackgroundMusic();
-  audio->pauseAllEffects();
   stopAllActions();
   auto scene = LoadScreen::createScene();
   Director::getInstance()->replaceScene(scene);

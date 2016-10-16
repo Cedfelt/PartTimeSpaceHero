@@ -88,9 +88,10 @@ bool TitleScreen::init()
   label3->setPosition(Vec2(visibleSize.width/2 , visibleSize.height*0.40));
   addChild(label3);
   
-  auto audio = CocosDenshion::SimpleAudioEngine::getInstance();
-  audio->stopBackgroundMusic();
-  audio->playBackgroundMusic("title_theme.mp3", true);
+  //auto audio = CocosDenshion::SimpleAudioEngine::getInstance();
+  //audio->stopBackgroundMusic();
+  //audio->playBackgroundMusic("title_theme.mp3", true);
+  CocosDenshion::SimpleAudioEngine::getInstance()->playBackgroundMusic("title_theme.mp3",true);
   return true;
 }
 
@@ -106,6 +107,9 @@ void TitleScreen::onTouchEnded(const std::vector<Touch*>& touches, Event*)
     auto col = getColorFromCollection(BLACK);
     
     Director::getInstance()->replaceScene(TransitionFade::create(0.2f, scene, Color3B(col.red,col.green,col.blue)));
+  auto audio = CocosDenshion::SimpleAudioEngine::getInstance();
+  audio->stopBackgroundMusic();
+  audio->end();
 }
 
 void TitleScreen::onTouchMoved(const std::vector<Touch*>& touch, Event* event)

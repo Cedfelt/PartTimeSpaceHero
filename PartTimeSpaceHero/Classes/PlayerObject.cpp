@@ -690,7 +690,38 @@ bool PlayerObject::setupAnimation() {
   
 
   // Items 
-
+  SpriteFrameCache::getInstance()->addSpriteFramesWithFile("ptsh.plist");
+  addAnimation("PTSH", "IdleR", 1, 4, 0.2f);
+  addAnimation("PTSH", "IdleL", 1, 4, 0.2f);
+  addAnimation("PTSH", "WalkR", 5, 8, 0.15f);
+  addAnimation("PTSH", "WalkL", 5, 8, 0.15f);
+  addAnimation("PTSH", "FlyR", 9, 12, 0.2f);
+  addAnimation("PTSH", "FlyL", 9, 12, 0.2f);
+  addAnimation("PTSH", "AscendR", 13, 13, 0.2f);
+  addAnimation("PTSH", "AscendL", 13, 13, 0.2f);
+  addAnimation("PTSH", "FallR", 14, 17, 0.2f);
+  addAnimation("PTSH", "FallL", 14, 17, 0.2f);
+  addAnimation("PTSH", "DashChargeR", 18, 21, 0.15f);
+  addAnimation("PTSH", "DashChargeL", 18, 21, 0.15f);
+  addAnimation("PTSH", "DashR", 22, 25, 0.15f);
+  addAnimation("PTSH", "DashL", 22, 25, 0.15f);
+  
+  // Weapon Anim
+  auto spriteFrameCache = cocos2d::SpriteFrameCache::getInstance();
+  //  spriteFrameCache->addSpriteFramesWithFile("ptshwep.plist");
+  spriteFrameCache->addSpriteFramesWithFile("PTSH_CLN.plist");
+  addAnimation("PTSH_WEP", "IdleRWep", 1, 4, 0.2f);
+  addAnimation("PTSH_WEP", "IdleLWep", 1, 4, 0.2f);
+  addAnimation("PTSH_WEP", "WalkRWep", 5, 8, 0.20f);
+  addAnimation("PTSH_WEP", "WalkLWep", 5, 8, 0.20f);
+  addAnimation("PTSH_WEP", "FlyRWep", 9, 12, 0.18f);
+  addAnimation("PTSH_WEP", "FlyLWep", 9, 12, 0.18f);
+  addAnimation("PTSH_WEP", "AscendRWep", 9, 12, 0.2f);
+  addAnimation("PTSH_WEP", "AscendLWep", 9, 12, 0.2f);
+  addAnimation("PTSH_WEP", "FallRWep", 14, 17, 0.2f);
+  addAnimation("PTSH_WEP", "FallLWep", 14, 17, 0.2f);
+  addAnimation("PTSH_WEP", "PlayerShootRWep", 26, 29, 0.06f);
+  addAnimation("PTSH_WEP", "PlayerShootLWep", 26, 29, 0.06f);
 
 
   // Strings

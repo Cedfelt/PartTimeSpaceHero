@@ -12,7 +12,7 @@
 void SoundFx::loadEffect(const char* fileName, const float pan, const float pitch,const bool loop){
   this->fileName = fileName;
   auto audio = CocosDenshion::SimpleAudioEngine::getInstance();
-  audio->preloadEffect(fileName);
+  //audio->preloadEffect(fileName);
   this->loop = loop;
   this->pitch = pitch;
   this->pan = pan;

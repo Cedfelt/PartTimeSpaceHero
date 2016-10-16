@@ -22,8 +22,14 @@ bool TurfelObject::init() {
   addGravityToObject(false);
   setElastic(1.f);
   // SETUP ANIMATIONS
-  objectSprite = cocos2d::Sprite::create("turfel.png");
-  objectSprite->getTexture()->setAliasTexParameters();
+  if(cocos2d::random(0, 100)>50){
+    objectSprite = cocos2d::Sprite::create("turfel.png");
+
+  }
+  else{
+    objectSprite = cocos2d::Sprite::create("turfel_b.png");
+  }
+    objectSprite->getTexture()->setAliasTexParameters();
   objectSprite->setPosition(16, 16);// Aling sprite in Hitbox
   objectSprite->setScale(2);
   addChild(objectSprite);
@@ -40,6 +46,8 @@ void TurfelObject::colideWith(GameObject* oterhObj,const uint32_t otherType){
 
 void TurfelObject::AIUpdate(const float delta) {
   stupidWalk(delta);
+  walkInZone(delta);
+  
 }
 
 bool TurfelObject::setupAnimation() {

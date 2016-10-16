@@ -177,7 +177,9 @@ void EffectZone::realHurl(float delta){
 
 // Hide Show Layer
 bool EffectZone::hideLayer(float delta){
-  layerToHide->setVisible(false);
+  if(layerToHide!=NULL){
+    layerToHide->setVisible(false);
+  }
   return true;
 }
 

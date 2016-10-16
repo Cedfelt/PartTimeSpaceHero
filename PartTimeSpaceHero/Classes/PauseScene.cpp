@@ -13,7 +13,6 @@
 #include "DB32.hpp"
 #include "ui/CocosGUI.h"
 #include "MainMenu.hpp"
-#include "SimpleAudioEngine.h"
 #include "TitleScreen.hpp"
 
 
@@ -96,8 +95,6 @@ bool PauseScreen::init()
       case ui::Widget::TouchEventType::BEGAN:
         break;
       case ui::Widget::TouchEventType::ENDED:
-        auto audio = CocosDenshion::SimpleAudioEngine::getInstance();
-        audio->stopBackgroundMusic();
         go_to_title = true;
         Director::getInstance()->popScene();
         //auto scene = PauseScreen::createScene();
@@ -122,8 +119,6 @@ bool PauseScreen::init()
       case ui::Widget::TouchEventType::BEGAN:
         break;
       case ui::Widget::TouchEventType::ENDED:
-        auto audio = CocosDenshion::SimpleAudioEngine::getInstance();
-        audio->resumeBackgroundMusic();
         Director::getInstance()->popScene();
         //auto scene = PauseScreen::createScene();
         //Director::getInstance()->pushScene(scene);
@@ -135,8 +130,6 @@ bool PauseScreen::init()
   button->addChild(resumeLabel,1);
   
   // Pause Menu Music
-  auto audio = CocosDenshion::SimpleAudioEngine::getInstance();
-  audio->pauseBackgroundMusic();
   //audio->playBackgroundMusic("Hope.mp3", true);
   
   return true;

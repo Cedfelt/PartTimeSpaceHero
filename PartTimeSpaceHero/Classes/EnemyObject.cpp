@@ -80,11 +80,11 @@ void EnemyObject::walkInZone(const float delta){
   if(maxX >softXMax){
     setVelocityX(-speed);
     setPrevDir(GO_LEFT);
-    objectSprite->setScaleX(-1);
+    objectSprite->setScaleX(-1 * abs(objectSprite->getScale()));
   }else if(minX < softXMin){
     setVelocityX(speed);
     setPrevDir(GO_RIGHT);
-    objectSprite->setScaleX(1);
+    objectSprite->setScaleX(1 * abs(objectSprite->getScale()));
   }
 }
 
