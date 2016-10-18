@@ -177,7 +177,7 @@ uint32_t GameObject::getObjectType() {
 }
 
 bool GameObject::hurt(const int dmg, const Vec2 force) {
-  if (!isImune()) {
+  if (!isImune()&&HP>0) {
     setImune();
     HP -= dmg;
     addToVelocityX(force.x);

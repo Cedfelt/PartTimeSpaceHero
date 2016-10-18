@@ -480,7 +480,7 @@
                 <key>spriteSourceSize</key>
                 <string>{64,64}</string>
                 <key>textureRect</key>
-                <string>{{128,448},{64,64}}</string>
+                <string>{{128,384},{64,64}}</string>
                 <key>textureRotated</key>
                 <false/>
             </dict>
@@ -495,7 +495,7 @@
                 <key>spriteSourceSize</key>
                 <string>{64,64}</string>
                 <key>textureRect</key>
-                <string>{{192,448},{64,64}}</string>
+                <string>{{128,448},{64,64}}</string>
                 <key>textureRotated</key>
                 <false/>
             </dict>
@@ -513,7 +513,7 @@
             <key>size</key>
             <string>{256,512}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:76bed3437fb16c93a569f6f2101258d0:acb8d92e5f8ccce7ee18fa1c110c0345:18cda6628a46cf048b93fae626983829$</string>
+            <string>$TexturePacker:SmartUpdate:4a83d35d565513f744458fd52effcaa6:dd5b92e1c2116b692b16cb7d9b48f98e:18cda6628a46cf048b93fae626983829$</string>
             <key>textureFileName</key>
             <string>ptsh.png</string>
         </dict>

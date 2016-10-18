@@ -22,7 +22,7 @@ bool GoalObject::init() {
   //addGravityToObject(false);
   setElastic(0);
   // SETUP ANIMATIONS
-  objectSprite = cocos2d::Sprite::create("SpaceshipA.png");
+  objectSprite = cocos2d::Sprite::create(/*"SpaceshipA.png"*/);
   objectSprite->setPosition(32, 32);// Aling sprite in Hitbox
   objectSprite->getTexture()->setAliasTexParameters();
   addChild(objectSprite);
