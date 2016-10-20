@@ -57,6 +57,8 @@
 		A803C10B1D3D575800E918EA /* RifleBoss.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A803C1081D3D575800E918EA /* RifleBoss.cpp */; };
 		A803C10E1D3EC9C700E918EA /* SnailObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A803C10C1D3EC9C700E918EA /* SnailObject.cpp */; };
 		A803C10F1D3EC9C700E918EA /* SnailObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A803C10C1D3EC9C700E918EA /* SnailObject.cpp */; };
+		A80B7A881DB963050023B986 /* SmallWildLife.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A80B7A861DB963050023B986 /* SmallWildLife.cpp */; };
+		A80B7A891DB963050023B986 /* SmallWildLife.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A80B7A861DB963050023B986 /* SmallWildLife.cpp */; };
 		A81BE13F1CBA408300C09359 /* MainMenu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A81BE13D1CBA408300C09359 /* MainMenu.cpp */; };
 		A81BE1401CBA408300C09359 /* MainMenu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A81BE13D1CBA408300C09359 /* MainMenu.cpp */; };
 		A81BE1431CBA40AE00C09359 /* GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A81BE1411CBA40AE00C09359 /* GameScene.cpp */; };
@@ -201,6 +203,8 @@
 		A803C1091D3D575800E918EA /* RifleBoss.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = RifleBoss.hpp; sourceTree = "<group>"; };
 		A803C10C1D3EC9C700E918EA /* SnailObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SnailObject.cpp; sourceTree = "<group>"; };
 		A803C10D1D3EC9C700E918EA /* SnailObject.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SnailObject.hpp; sourceTree = "<group>"; };
+		A80B7A861DB963050023B986 /* SmallWildLife.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SmallWildLife.cpp; sourceTree = "<group>"; };
+		A80B7A871DB963050023B986 /* SmallWildLife.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SmallWildLife.hpp; sourceTree = "<group>"; };
 		A81BE13D1CBA408300C09359 /* MainMenu.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MainMenu.cpp; sourceTree = "<group>"; };
 		A81BE13E1CBA408300C09359 /* MainMenu.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = MainMenu.hpp; sourceTree = "<group>"; };
 		A81BE1411CBA40AE00C09359 /* GameScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameScene.cpp; sourceTree = "<group>"; };
@@ -499,8 +503,8 @@
 				A82560FF1CF8F01C00FC1DD3 /* TurfelObject.cpp */,
 				A82561001CF8F01C00FC1DD3 /* TurfelObject.hpp */,
 				A82561071CFB635F00FC1DD3 /* UfoObject.cpp */,
-				A82561081CFB635F00FC1DD3 /* UfoObject.hpp */,
 				A87396AB1D0CA6BC00ADE298 /* WaterTiles.cpp */,
+				A82561081CFB635F00FC1DD3 /* UfoObject.hpp */,
 				A87396AC1D0CA6BC00ADE298 /* WaterTiles.hpp */,
 				A81BE1451CBA40CB00C09359 /* WorldObject.cpp */,
 				A81BE1461CBA40CB00C09359 /* WorldObject.hpp */,
@@ -512,6 +516,8 @@
 				A8ECBD6C1DAC34A600B7929E /* TitleScreen.hpp */,
 				A8F5BC3B1DAD6AB9004D8807 /* EraseGameScene.cpp */,
 				A8F5BC3C1DAD6AB9004D8807 /* EraseGameScene.hpp */,
+				A80B7A861DB963050023B986 /* SmallWildLife.cpp */,
+				A80B7A871DB963050023B986 /* SmallWildLife.hpp */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -726,6 +732,7 @@
 				A803C10E1D3EC9C700E918EA /* SnailObject.cpp in Sources */,
 				A8ECBD611DAA91A100B7929E /* MudMonsterObject.cpp in Sources */,
 				A81BE1431CBA40AE00C09359 /* GameScene.cpp in Sources */,
+				A80B7A881DB963050023B986 /* SmallWildLife.cpp in Sources */,
 				A82561091CFB635F00FC1DD3 /* UfoObject.cpp in Sources */,
 				A81BE15B1CBA424600C09359 /* LaserObject.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
@@ -789,6 +796,7 @@
 				A87396B11D0DF44800ADE298 /* Simple_Bullet.cpp in Sources */,
 				A828EC121D020A3D0006AA25 /* MapData.cpp in Sources */,
 				A81BE1481CBA40CB00C09359 /* WorldObject.cpp in Sources */,
+				A80B7A891DB963050023B986 /* SmallWildLife.cpp in Sources */,
 				A81BE14C1CBA415400C09359 /* GameObject.cpp in Sources */,
 				A8E25E831D4955A4002295C8 /* SuporterObject.cpp in Sources */,
 				A828EC1A1D060C680006AA25 /* PlatformObject.cpp in Sources */,

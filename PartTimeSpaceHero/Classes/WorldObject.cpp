@@ -31,6 +31,7 @@
 #include "EffectZone.hpp"
 #include "MudMonsterObject.hpp"
 #include "SimpleAudioEngine.h"
+#include "SmallWildLife.hpp"
 
 float lastX;
 float lastY;
@@ -438,6 +439,21 @@ void WorldObject::spawnObjects(cocos2d::Vector<GameObject*>* gameObjects) {
       turfel->target = player;
       addChild(turfel);
     }
+
+    else if(name == "SmallWildLife"){
+      // COIN
+      auto turfel = SmallWildLife::create();
+      turfel->setupHitbox(0.1f, 1.0f, 32, 32, 32, 32, false);
+      gameObjects->pushBack(turfel);
+      turfel->setObjectPositionX(x);
+      turfel->setObjectPositionY(y);
+      turfel->getPhysicsBody()->setCategoryBitmask((int)PhysicsCategory::None);
+      turfel->getPhysicsBody()->setCollisionBitmask((int)PhysicsCategory::None);
+      turfel->getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::None|(int)PhysicsCategory::PlayerProjectile|(int)PhysicsCategory::Hazard);
+      turfel->target = player;
+      addChild(turfel);
+    }
+
     
     else if(name == "UfoObject"){
       // COIN

@@ -44,12 +44,12 @@ void EnemyObject::stupidWalk(const float delta) {
     if (getPrevDir() == GO_LEFT) {
       setVelocityX(speed);
       setPrevDir(GO_RIGHT);
-      objectSprite->setScaleX(1);
+      objectSprite->setScaleX(1 * abs(objectSprite->getScale()));;
     }
     else {
       setVelocityX(-speed);
       setPrevDir(GO_LEFT);
-      objectSprite->setScaleX(-1);
+      objectSprite->setScaleX(-1 * abs(objectSprite->getScale()));;
     }
   }
 }
