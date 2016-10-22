@@ -36,6 +36,8 @@ void SaveData::addLevelToGame(std::string levelName){
 void SaveData::loadWorldData() {
   // Tutorial
   addLevelToGame("tutorial.tmx");
+  addLevelToGame("nes_test.tmx");
+  
   
   // Intro
   addLevelToGame("level1.tmx");

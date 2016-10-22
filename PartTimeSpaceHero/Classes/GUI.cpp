@@ -22,9 +22,9 @@ bool GUI::init() {
   {
     return false;
   }
-  green = Color3B(106, 190, 49);
-  yellow = Color3B(251, 242, 54);
-  red = Color3B(172, 50, 50);
+  green = Color3B(71, 200, 32);
+  yellow = Color3B(239, 232, 145);
+  red = Color3B(181, 58, 0);
   this->schedule(schedule_selector(GUI::update));
   setAnchorPoint(Point(0, 5.1f));
   
@@ -161,7 +161,7 @@ void GUI::update(const float delta) {
   const float fule = player->getFuel();
   objectSprite->setScaleX(bar_length*player->getFuel());
   objectSprite->setColor(green);
-  if(fule<0.5f){
+  if(fule<0.66f){
     objectSprite->setColor(yellow);
   }
   if(fule<0.3f){

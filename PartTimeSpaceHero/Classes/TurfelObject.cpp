@@ -23,11 +23,11 @@ bool TurfelObject::init() {
   setElastic(1.f);
   // SETUP ANIMATIONS
   if(cocos2d::random(0, 100)>50){
-    objectSprite = cocos2d::Sprite::create("turfel.png");
+    objectSprite = cocos2d::Sprite::create("turfel_nes.png");
 
   }
   else{
-    objectSprite = cocos2d::Sprite::create("turfel_b.png");
+    objectSprite = cocos2d::Sprite::create("turfel_nes.png");
   }
     objectSprite->getTexture()->setAliasTexParameters();
   objectSprite->setPosition(16, 16);// Aling sprite in Hitbox
