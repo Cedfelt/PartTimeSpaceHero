@@ -14,8 +14,8 @@
 
 DB32Color color_collection[32];
 DB32Color color1 = {0, 0, 0};
-DB32Color color2 = {34, 32, 52};
-DB32Color color3 = {69, 40, 60};
+DB32Color color2 = {48, 52, 109};
+DB32Color color3 = {109, 194, 204};
 DB32Color color4 = {102, 57, 49};
 DB32Color color5 = {143, 86, 59};
 DB32Color color6 = {223, 113, 38};
