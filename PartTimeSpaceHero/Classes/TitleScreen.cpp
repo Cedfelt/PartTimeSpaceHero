@@ -66,7 +66,7 @@ bool TitleScreen::init()
   touchListener->onTouchesCancelled = CC_CALLBACK_2(TitleScreen::onTouchCancelled, this);
   _eventDispatcher->addEventListenerWithSceneGraphPriority(touchListener, this);
   
-  const auto textCol = getColorFromCollection(SKYBLUE);
+  const auto textCol = getColorFromCollection(2);
   auto col3b = Color3B(textCol.red,textCol.green,textCol.blue);
   
   

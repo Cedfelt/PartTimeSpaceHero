@@ -14,7 +14,7 @@
 
 USING_NS_CC;
 
-# define GRAVITY -300.0
+# define GRAVITY -200.0
 # define MAX_FALLSPEED -750.0
 
 // on "init" you need to initialize your instance

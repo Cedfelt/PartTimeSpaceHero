@@ -354,8 +354,8 @@ bool PlayerObject::playerFlyUpdate(float delta) {
 float dashLeftCnt = 0;
 float dashRightCnt = 0;
 float dashSpeed = 300;
-const float dashTime = 0.6f;
-const float chargePart = 0.75f;
+const float dashTime = 0.8f;
+const float chargePart = 0.5f;
 int dash_stage = 0;
 bool dashing = false;
 
@@ -695,14 +695,14 @@ bool PlayerObject::setupAnimation() {
   addAnimation("PTSH", "IdleL", 1, 4, 0.2f);
   addAnimation("PTSH", "WalkR", 5, 8, 0.15f);
   addAnimation("PTSH", "WalkL", 5, 8, 0.15f);
-  addAnimation("PTSH", "FlyR", 9, 12, 0.2f);
-  addAnimation("PTSH", "FlyL", 9, 12, 0.2f);
+  addAnimation("PTSH", "FlyR", 9, 12, 0.13f);
+  addAnimation("PTSH", "FlyL", 9, 12, 0.13f);
   addAnimation("PTSH", "AscendR", 13, 13, 0.2f);
   addAnimation("PTSH", "AscendL", 13, 13, 0.2f);
-  addAnimation("PTSH", "FallR", 14, 17, 0.2f);
-  addAnimation("PTSH", "FallL", 14, 17, 0.2f);
-  addAnimation("PTSH", "DashChargeR", 18, 21, 0.15f);
-  addAnimation("PTSH", "DashChargeL", 18, 21, 0.15f);
+  addAnimation("PTSH", "FallR", 14, 17, 0.12f);
+  addAnimation("PTSH", "FallL", 14, 17, 0.12f);
+  addAnimation("PTSH", "DashChargeR", 18, 21, 0.1f);
+  addAnimation("PTSH", "DashChargeL", 18, 21, 0.1f);
   addAnimation("PTSH", "DashR", 22, 25, 0.15f);
   addAnimation("PTSH", "DashL", 22, 25, 0.15f);
   
