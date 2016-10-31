@@ -46,8 +46,8 @@
  <tileset firstgid="2003" name="db_scifi" tilewidth="16" tileheight="16" tilecount="2304" columns="48">
   <image source="db_scifi.png" width="768" height="768"/>
  </tileset>
- <tileset firstgid="4307" name="bg_blocks" tilewidth="16" tileheight="16" tilecount="9" columns="1">
-  <image source="bg_blocks.png" width="16" height="144"/>
+ <tileset firstgid="4307" name="bg_blocks" tilewidth="16" tileheight="16" tilecount="26" columns="1">
+  <image source="bg_blocks.png" width="16" height="416"/>
  </tileset>
  <layer name="background1" width="400" height="102">
   <properties>
