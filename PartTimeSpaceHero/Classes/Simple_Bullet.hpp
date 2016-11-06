@@ -18,7 +18,7 @@ public:
   CREATE_FUNC(SimpleBullet);
   SoundFx* babyTurfelCrySFX;
   virtual void colideWith(GameObject* oterhObj,const uint32_t otherType);
-  
+  bool start_animation;
   void update(const float delta);
 private:
 };

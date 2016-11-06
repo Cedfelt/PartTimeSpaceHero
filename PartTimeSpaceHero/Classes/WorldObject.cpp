@@ -32,6 +32,8 @@
 #include "MudMonsterObject.hpp"
 #include "SimpleAudioEngine.h"
 #include "SmallWildLife.hpp"
+#include "Tank.hpp"
+#include "VeggieObject.hpp"
 
 float lastX;
 float lastY;
@@ -479,6 +481,40 @@ void WorldObject::spawnObjects(cocos2d::Vector<GameObject*>* gameObjects) {
         bottyFirst = false;
       botty-> setAnimation("botty_idle");
       botty->setupHitbox(0.1, 1, 24, 48, 24, 44, false);
+      gameObjects->pushBack(botty);
+      botty->setObjectPositionX(x);
+      botty->setObjectPositionY(y);
+      botty->getPhysicsBody()->setCategoryBitmask((int)PhysicsCategory::Enemy);
+      botty->getPhysicsBody()->setCollisionBitmask((int)PhysicsCategory::None);
+      botty->getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::Player|(int)PhysicsCategory::PlayerProjectile|(int)PhysicsCategory::Hazard);
+      botty->target = player;
+      addChild(botty);
+    }
+    
+    else if(name == "TankObject"){
+      // COIN
+      auto botty = TankObject::create();
+      botty->setupAnimation();
+      bottyFirst = false;
+      botty-> setAnimation("tank_idle");
+      botty->setupHitbox(0.1, 1, 48, 32, 48, 32, false);
+      gameObjects->pushBack(botty);
+      botty->setObjectPositionX(x);
+      botty->setObjectPositionY(y);
+      botty->getPhysicsBody()->setCategoryBitmask((int)PhysicsCategory::Enemy);
+      botty->getPhysicsBody()->setCollisionBitmask((int)PhysicsCategory::None);
+      botty->getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::Player|(int)PhysicsCategory::PlayerProjectile|(int)PhysicsCategory::Hazard);
+      botty->target = player;
+      addChild(botty);
+    }
+    
+    else if(name == "VeggieObject"){
+      // COIN
+      auto botty = VeggieObject::create();
+      botty->setupAnimation();
+      bottyFirst = false;
+      botty-> setAnimation("veggie_idle");
+      botty->setupHitbox(0.1, 1, 12, 16,12, 16, false);
       gameObjects->pushBack(botty);
       botty->setObjectPositionX(x);
       botty->setObjectPositionY(y);

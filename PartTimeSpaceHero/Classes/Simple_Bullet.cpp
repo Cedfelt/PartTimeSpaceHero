@@ -25,18 +25,29 @@ bool SimpleBullet::init() {
   objectSprite->setScale(2);
   addChild(objectSprite);
   dmg = 1;
+  SpriteFrameCache::getInstance()->addSpriteFramesWithFile("explosion.plist");
+  addAnimation("explosion", "explosion", 1, 12, 0.1f);
+  start_animation = false;
   return true;
 }
 
 void SimpleBullet::colideWith(GameObject* oterhObj,const uint32_t otherType){
   oterhObj->hurt(dmg, Vec2(0.5f*getVelocityX(), 0.5f*getVelocityY()));
-  remove_object = true;
+  setVelocityX(0);
+  start_animation = true;
+  
 }
 
 void SimpleBullet::update(const float delta) {
-  if(!getVelocityX()){
-    remove_object = true;
+  if(!getVelocityX() &&(!start_animation)){
+    start_animation = true;
   }
+  if(start_animation){
+    if(setAnimationOnce("explosion")){
+      remove_object = true;
+    }
+  }
+  
 }
 
 bool SimpleBullet::setupAnimation() {

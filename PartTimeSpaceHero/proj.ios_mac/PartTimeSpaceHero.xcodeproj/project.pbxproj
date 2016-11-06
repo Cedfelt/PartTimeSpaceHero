@@ -107,6 +107,8 @@
 		A87AD0A21D40166300CF5B03 /* DialogObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A87AD0A01D40166300CF5B03 /* DialogObject.cpp */; };
 		A87AD0A31D40166300CF5B03 /* DialogObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A87AD0A01D40166300CF5B03 /* DialogObject.cpp */; };
 		A87C27C71CC19F10004520EF /* Physic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A87C27C51CC19F10004520EF /* Physic.cpp */; };
+		A87E885D1DC7EDB2005B1A56 /* Tank.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A87E885B1DC7EDB2005B1A56 /* Tank.cpp */; };
+		A87E885E1DC7EDB2005B1A56 /* Tank.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A87E885B1DC7EDB2005B1A56 /* Tank.cpp */; };
 		A8805F2D1CEFB37400B2AE7A /* CoinObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8805F2B1CEFB37400B2AE7A /* CoinObject.cpp */; };
 		A8805F301CF04C6D00B2AE7A /* SoundFx.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8805F2E1CF04C6D00B2AE7A /* SoundFx.cpp */; };
 		A8805F311CF04C6D00B2AE7A /* SoundFx.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8805F2E1CF04C6D00B2AE7A /* SoundFx.cpp */; };
@@ -115,6 +117,8 @@
 		A8B094CF1D0F580E00D32FBE /* FlowerShootaObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8B094CD1D0F580E00D32FBE /* FlowerShootaObject.cpp */; };
 		A8C208671D5668D3004C8561 /* EffectZone.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8C208651D5668D3004C8561 /* EffectZone.cpp */; };
 		A8C208681D5668D3004C8561 /* EffectZone.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8C208651D5668D3004C8561 /* EffectZone.cpp */; };
+		A8C2C8331DC911CD001AE82B /* VeggieObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8C2C8311DC911CD001AE82B /* VeggieObject.cpp */; };
+		A8C2C8341DC911CD001AE82B /* VeggieObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8C2C8311DC911CD001AE82B /* VeggieObject.cpp */; };
 		A8C6DF9E1D73416900153994 /* DB32.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8C6DF9C1D73416900153994 /* DB32.cpp */; };
 		A8C6DF9F1D73416900153994 /* DB32.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8C6DF9C1D73416900153994 /* DB32.cpp */; };
 		A8E25E7A1D46CEAD002295C8 /* FishObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8E25E781D46CEAD002295C8 /* FishObject.cpp */; };
@@ -259,6 +263,8 @@
 		A87AD0A11D40166300CF5B03 /* DialogObject.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = DialogObject.hpp; sourceTree = "<group>"; };
 		A87C27C51CC19F10004520EF /* Physic.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Physic.cpp; sourceTree = "<group>"; };
 		A87C27C61CC19F10004520EF /* Physic.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Physic.hpp; sourceTree = "<group>"; };
+		A87E885B1DC7EDB2005B1A56 /* Tank.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Tank.cpp; sourceTree = "<group>"; };
+		A87E885C1DC7EDB2005B1A56 /* Tank.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Tank.hpp; sourceTree = "<group>"; };
 		A8805F2B1CEFB37400B2AE7A /* CoinObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CoinObject.cpp; sourceTree = "<group>"; };
 		A8805F2C1CEFB37400B2AE7A /* CoinObject.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CoinObject.hpp; sourceTree = "<group>"; };
 		A8805F2E1CF04C6D00B2AE7A /* SoundFx.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SoundFx.cpp; sourceTree = "<group>"; };
@@ -269,6 +275,8 @@
 		A8B094CE1D0F580E00D32FBE /* FlowerShootaObject.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = FlowerShootaObject.hpp; sourceTree = "<group>"; };
 		A8C208651D5668D3004C8561 /* EffectZone.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EffectZone.cpp; sourceTree = "<group>"; };
 		A8C208661D5668D3004C8561 /* EffectZone.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = EffectZone.hpp; sourceTree = "<group>"; };
+		A8C2C8311DC911CD001AE82B /* VeggieObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = VeggieObject.cpp; sourceTree = "<group>"; };
+		A8C2C8321DC911CD001AE82B /* VeggieObject.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = VeggieObject.hpp; sourceTree = "<group>"; };
 		A8C6DF9C1D73416900153994 /* DB32.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DB32.cpp; sourceTree = "<group>"; };
 		A8C6DF9D1D73416900153994 /* DB32.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = DB32.hpp; sourceTree = "<group>"; };
 		A8E25E781D46CEAD002295C8 /* FishObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FishObject.cpp; sourceTree = "<group>"; };
@@ -518,6 +526,10 @@
 				A8F5BC3C1DAD6AB9004D8807 /* EraseGameScene.hpp */,
 				A80B7A861DB963050023B986 /* SmallWildLife.cpp */,
 				A80B7A871DB963050023B986 /* SmallWildLife.hpp */,
+				A87E885B1DC7EDB2005B1A56 /* Tank.cpp */,
+				A87E885C1DC7EDB2005B1A56 /* Tank.hpp */,
+				A8C2C8311DC911CD001AE82B /* VeggieObject.cpp */,
+				A8C2C8321DC911CD001AE82B /* VeggieObject.hpp */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -738,6 +750,7 @@
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				A87396B01D0DF44800ADE298 /* Simple_Bullet.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
+				A87E885D1DC7EDB2005B1A56 /* Tank.cpp in Sources */,
 				A81BE1671CBA499F00C09359 /* GlobalPList.cpp in Sources */,
 				A828EC0E1D00D0D70006AA25 /* BottyObject.cpp in Sources */,
 				A82561111CFCD65200FC1DD3 /* LevelData.cpp in Sources */,
@@ -749,6 +762,7 @@
 				A8E25E7E1D47FD3E002295C8 /* SignObject.cpp in Sources */,
 				A81BE14B1CBA415400C09359 /* GameObject.cpp in Sources */,
 				A8ECBD691DAC218200B7929E /* PauseScene.cpp in Sources */,
+				A8C2C8331DC911CD001AE82B /* VeggieObject.cpp in Sources */,
 				A8ECBD6D1DAC34A600B7929E /* TitleScreen.cpp in Sources */,
 				A8E25E821D4955A4002295C8 /* SuporterObject.cpp in Sources */,
 				A828EC191D060C680006AA25 /* PlatformObject.cpp in Sources */,
@@ -774,6 +788,7 @@
 				A8EB2DCC1D2D9D9A00F92139 /* MechObject.cpp in Sources */,
 				A82561061CFB167400FC1DD3 /* BabyTurfelObject.cpp in Sources */,
 				A8805F311CF04C6D00B2AE7A /* SoundFx.cpp in Sources */,
+				A8C2C8341DC911CD001AE82B /* VeggieObject.cpp in Sources */,
 				A8F5BC3E1DAD6AB9004D8807 /* EraseGameScene.cpp in Sources */,
 				A81BE1501CBA41D500C09359 /* MapObject.cpp in Sources */,
 				A8ECBD6E1DAC34A600B7929E /* TitleScreen.cpp in Sources */,
@@ -795,6 +810,7 @@
 				A8FA61791D3ED4F6007178A2 /* ZombieObject.cpp in Sources */,
 				A87396B11D0DF44800ADE298 /* Simple_Bullet.cpp in Sources */,
 				A828EC121D020A3D0006AA25 /* MapData.cpp in Sources */,
+				A87E885E1DC7EDB2005B1A56 /* Tank.cpp in Sources */,
 				A81BE1481CBA40CB00C09359 /* WorldObject.cpp in Sources */,
 				A80B7A891DB963050023B986 /* SmallWildLife.cpp in Sources */,
 				A81BE14C1CBA415400C09359 /* GameObject.cpp in Sources */,

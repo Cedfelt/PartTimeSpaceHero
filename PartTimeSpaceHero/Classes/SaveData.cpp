@@ -35,17 +35,17 @@ void SaveData::addLevelToGame(std::string levelName){
 
 void SaveData::loadWorldData() {
   // Tutorial
+  // Intro
+  addLevelToGame("forest_dungeon.tmx");
+  addLevelToGame("knock_knock.tmx");
+  addLevelToGame("level1.tmx");
+  // Beta Levels
+  addLevelToGame("level2.tmx");
+  addLevelToGame("level3.tmx");
+  addLevelToGame("djungel2.tmx");
   addLevelToGame("tutorial.tmx");
   addLevelToGame("nes_test.tmx");
   
-  
-  // Intro
-  addLevelToGame("level1.tmx");
-  
-  // Beta Levels
-  addLevelToGame("level2.tmx");
-  addLevelToGame("djungel2.tmx");
-  addLevelToGame("level3.tmx");
   addLevelToGame("level4.tmx");
   
   

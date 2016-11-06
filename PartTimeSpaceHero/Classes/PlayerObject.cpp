@@ -743,7 +743,7 @@ bool PlayerObject::setupAnimation() {
   objectSprite = cocos2d::Sprite::create();
   objectSprite->retain();
   objectSprite->setAnchorPoint(cocos2d::Point(0.5, 0.25));
-  //objectSprite->setPosition(8, -128);// Aling sprite in Hitbox
+  objectSprite->setPositionX(5);// Aling sprite in Hitbox
   setAnimation(animationStrings.at((WalkR)));
   setAnchorPoint(Point(0.0 , 0.5f));
   //objectSprite->setPosition(cocos2d::Point((4, 0);
@@ -753,7 +753,7 @@ bool PlayerObject::setupAnimation() {
   
   // ITEM SETUP
   pItem = &PlayerObject::no_item;
-  //setItem(E_NO_ITEM);
+  //setItem(E_RIFLE_ITEM);
   const uint32_t gear = getPayerGear();
   gear_mask_exclusive = 0;
   setItem((PlayerItem_ID)(gear & E_RIFLE_ITEM));
