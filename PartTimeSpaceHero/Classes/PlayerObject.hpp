@@ -9,6 +9,7 @@
 #pragma once
 #include "GameObject.hpp"
 #include "PlayerInput.hpp"
+#include "ProximityZone.hpp"
 
 
 using namespace cocos2d;
@@ -28,6 +29,7 @@ public:
   void resetItems();
   uint32_t gear_mask_exclusive; // 0x ff ff ff ff
   uint32_t gear_mask_unlimited; // 0x ff ff ff ff
+  ProximityZone* p_zone_test;
 private:
   
   

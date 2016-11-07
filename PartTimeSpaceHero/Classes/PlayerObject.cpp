@@ -10,6 +10,7 @@
 #include "Simple_Bullet.hpp"
 #include "SuporterObject.hpp"
 #include "GlobalPList.hpp"
+#include "ProximityZone.hpp"
 
 
 
@@ -58,7 +59,8 @@ bool PlayerObject::init() {
   consumeRate = currentConsumeRate;
   currentConsumeRate = 0.0050f;
   
-  
+  p_zone_test = ProximityZone::create();
+  addToGameObjects.pushBack(p_zone_test);
 
   
   
@@ -531,6 +533,8 @@ bool PlayerObject::no_item(float delta) {
 
 
 void PlayerObject::playerUpdate(const float delta) {
+  p_zone_test->setObjectPositionX(getPositionX());
+  p_zone_test->setObjectPositionY(getPositionY());
   if(dissconeted){
     if(getVelocityX()>0){
       objectSprite->setScaleX(1);

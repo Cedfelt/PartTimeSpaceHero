@@ -24,7 +24,7 @@ Scene* GameScene::createScene()
   // 'scene' is an autorelease object
   auto scene = Scene::createWithPhysics();
   scene->getPhysicsWorld()->setGravity(Vec2(0, 0));
-  if(getDebuggDraw()){
+  if(getDebuggDraw()||true){
     scene->getPhysicsWorld()->setDebugDrawMask(PhysicsWorld::DEBUGDRAW_ALL);
   }
   scene->setAnchorPoint(Point(0, 0));

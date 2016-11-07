@@ -28,11 +28,13 @@ bool SimpleBullet::init() {
   SpriteFrameCache::getInstance()->addSpriteFramesWithFile("explosion.plist");
   addAnimation("explosion", "explosion", 1, 12, 0.1f);
   start_animation = false;
+  HP = 3;
   return true;
 }
 
 void SimpleBullet::colideWith(GameObject* oterhObj,const uint32_t otherType){
   oterhObj->hurt(dmg, Vec2(0.5f*getVelocityX(), 0.5f*getVelocityY()));
+  oterhObj->setColor(Color3B::BLACK);
   setVelocityX(0);
   start_animation = true;
   
