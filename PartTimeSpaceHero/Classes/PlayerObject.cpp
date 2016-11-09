@@ -59,8 +59,8 @@ bool PlayerObject::init() {
   consumeRate = currentConsumeRate;
   currentConsumeRate = 0.0050f;
   
-  p_zone_test = ProximityZone::create();
-  addToGameObjects.pushBack(p_zone_test);
+  //p_zone_test = ProximityZone::create();
+  //addToGameObjects.pushBack(p_zone_test);
 
   
   
@@ -80,7 +80,9 @@ void PlayerObject::walkAtDir(MovementDirectionX dir, std::string animName) {
 
 void PlayerObject::setItem(PlayerItem_ID id) {
   resetItems();
-  if (id & E_RIFLE_ITEM) {
+  
+  if (id & E_RIFLE_ITEM)
+  {
     gear_mask_exclusive = 0;
     gear_mask_exclusive |= E_RIFLE_ITEM;
     pItem = &PlayerObject::rifle_item; // note: <pt2Member> may also legally point to &DoMore
@@ -97,7 +99,28 @@ void PlayerObject::setItem(PlayerItem_ID id) {
     animationStrings.at(ItemR) = ("PlayerShootRWep");
     animationStrings.at(ItemL) = ("PlayerShootLWep");
   }
-  else if (id & E_DASH_ITEM) {
+  
+  else if (id & E_BFG_ITEM)
+  {
+    gear_mask_exclusive = 0;
+    gear_mask_exclusive |= E_BFG_ITEM;
+    pItem = &PlayerObject::explosive_item; // note: <pt2Member> may also legally point to &DoMore
+    animationStrings.at(IdleR) = ("IdleRWep");
+    animationStrings.at(IdleL) = ("IdleLWep");
+    animationStrings.at(WalkR) = ("WalkRWep");
+    animationStrings.at(WalkL) = ("WalkLWep");
+    animationStrings.at(FlyR) = ("FlyRWep");
+    animationStrings.at(FlyL) = ("FlyLWep");
+    animationStrings.at(AscendR) = ("AscendRWep");
+    animationStrings.at(AscendL) = ("AscendLWep");
+    animationStrings.at(FallR) = ("FallRWep");
+    animationStrings.at(FallL) = ("FallLWep");
+    animationStrings.at(ItemR) = ("PlayerShootRWep");
+    animationStrings.at(ItemL) = ("PlayerShootLWep");
+  }
+  
+  else if (id & E_DASH_ITEM)
+  {
     gear_mask_exclusive = 0;
     gear_mask_exclusive |= E_DASH_ITEM;
     pItem = &PlayerObject::playerDashUpdate;
@@ -443,20 +466,40 @@ bool PlayerObject::playerDashUpdate(float delta) {
 bool bPlayerShoot = false;
 bool PlayerObject::rifle_item(float delta) {
   
+  if(item_charge_time>0.f){
+    playerInput->isDoubleRight();
+    playerInput->isDoubleLeft();
+    // Holding the item animation. 
+    if (bPlayerShoot) {
+      if (getPrevDir() == GO_RIGHT) {
+        if (setAnimationOnce(animationStrings.at(ItemR))) {
+          bPlayerShoot = false;
+          return false;
+        }
+      }
+      else if (getPrevDir() == GO_LEFT) {
+        if (setAnimationOnce(animationStrings.at(ItemL)))
+        {
+          bPlayerShoot = false;
+          return false;
+        }
+      }
+      return true;
+    }
+    
+    return false;
+  }
   if (playerInput->isDoubleRight()) {
     if(getMovementStatus()==GO_ON_GROUND){
       setVelocityX(0);
-      if(fuel<0.33){
-        // TO LOW POWER - PLAY SOUND
-        return true;
-      }
     }
-    if(fuel>=0.33){
+    item_charge_time = item_charge_time_max;
     objectSprite->setScaleX(1);
     setAnimationOnce(animationStrings.at(ItemR));
     //setVelocityX(0);
     setPrevDir(GO_RIGHT);
     auto babyTurf = SimpleBullet::create();
+    babyTurf->setup(E_SIMPLE_BULLET);
     babyTurf->setupHitbox(0.1f, 1.0f, 16, 16, 16, 16, false);
     babyTurf->setObjectPositionX(getPositionX() + 10);
     babyTurf->setObjectPositionY(getPositionY() + 2);
@@ -467,26 +510,18 @@ bool PlayerObject::rifle_item(float delta) {
     bPlayerShoot = true;
     babyTurf->setVelocityX(200);
     weaponSFX->play(0.4f);
-    fuel -= 0.33f;
-    if(fuel<0){
-      fuel = 0;
-    }
-    }
   }
-  if (playerInput->isDoubleLeft()&&fuel>=0.33f) {
+  if (playerInput->isDoubleLeft()) {
     if(getMovementStatus()==GO_ON_GROUND){
       setVelocityX(0);
-      if(fuel<0.33){
-        // TO LOW POWER - PLAY SOUND
-        return true;
-      }
     }
-    if(fuel>=0.33){
+    item_charge_time = item_charge_time_max;
     objectSprite->setScaleX(-1);
     setAnimationOnce(animationStrings.at(ItemR));
     //setVelocityX(0);
     setPrevDir(GO_RIGHT);
     auto babyTurf = SimpleBullet::create();
+    babyTurf->setup(E_SIMPLE_BULLET);
     babyTurf->setupHitbox(0.1f, 1.0f, 16, 16, 16, 16, false);
     babyTurf->setObjectPositionX(getPositionX() - 20);
     babyTurf->setObjectPositionY(getPositionY() + 2);
@@ -500,29 +535,81 @@ bool PlayerObject::rifle_item(float delta) {
     if(getMovementStatus()==GO_ON_GROUND){
       setVelocityX(0);
     }
-    fuel -= 0.33f;
-    if(fuel<0){
-      fuel = 0;
-    }
-      
-    }
   }
-  if (bPlayerShoot) {
-    if (getPrevDir() == GO_RIGHT) {
-      if (setAnimationOnce(animationStrings.at(ItemR))) {
-        bPlayerShoot = false;
-        return false;
-      }
-    }
-    else if (getPrevDir() == GO_LEFT) {
-      if (setAnimationOnce(animationStrings.at(ItemL)))
-      {
-        bPlayerShoot = false;
-        return false;
-      }
+  return false;
+}
 
+bool PlayerObject::explosive_item(float delta) {
+  
+  if(item_charge_time>0.f){
+    playerInput->isDoubleRight();
+    playerInput->isDoubleLeft();
+    // Holding the item animation.
+    if (bPlayerShoot) {
+      if (getPrevDir() == GO_RIGHT) {
+        if (setAnimationOnce(animationStrings.at(ItemR))) {
+          bPlayerShoot = false;
+          return false;
+        }
+      }
+      else if (getPrevDir() == GO_LEFT) {
+        if (setAnimationOnce(animationStrings.at(ItemL)))
+        {
+          bPlayerShoot = false;
+          return false;
+        }
+      }
+      return true;
     }
-    return true;
+    
+    return false;
+  }
+  if (playerInput->isDoubleRight()) {
+    if(getMovementStatus()==GO_ON_GROUND){
+      setVelocityX(0);
+    }
+    item_charge_time = item_charge_time_max;
+    objectSprite->setScaleX(1);
+    setAnimationOnce(animationStrings.at(ItemR));
+    //setVelocityX(0);
+    setPrevDir(GO_RIGHT);
+    auto babyTurf = SimpleBullet::create();
+    babyTurf->setup(E_EXPLOSIVE_BULLET);
+    babyTurf->setupHitbox(0.1f, 1.0f, 16, 16, 16, 16, false);
+    babyTurf->setObjectPositionX(getPositionX() + 10);
+    babyTurf->setObjectPositionY(getPositionY() + 2);
+    babyTurf->getPhysicsBody()->setCategoryBitmask((int)PhysicsCategory::PlayerProjectile);
+    babyTurf->getPhysicsBody()->setCollisionBitmask((int)PhysicsCategory::None);
+    babyTurf->getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::Enemy | (int)PhysicsCategory::PlayerPickups|(int)PhysicsCategory::Hazard);
+    addToGameObjects.pushBack(babyTurf);
+    bPlayerShoot = true;
+    babyTurf->setVelocityX(200);
+    weaponSFX->play(0.4f);
+  }
+  if (playerInput->isDoubleLeft()) {
+    if(getMovementStatus()==GO_ON_GROUND){
+      setVelocityX(0);
+    }
+    item_charge_time = item_charge_time_max;
+    objectSprite->setScaleX(-1);
+    setAnimationOnce(animationStrings.at(ItemR));
+    //setVelocityX(0);
+    setPrevDir(GO_RIGHT);
+    auto babyTurf = SimpleBullet::create();
+    babyTurf->setup(E_EXPLOSIVE_BULLET);
+    babyTurf->setupHitbox(0.1f, 1.0f, 16, 16, 16, 16, false);
+    babyTurf->setObjectPositionX(getPositionX() - 20);
+    babyTurf->setObjectPositionY(getPositionY() + 2);
+    babyTurf->getPhysicsBody()->setCategoryBitmask((int)PhysicsCategory::PlayerProjectile);
+    babyTurf->getPhysicsBody()->setCollisionBitmask((int)PhysicsCategory::None);
+    babyTurf->getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::Enemy | (int)PhysicsCategory::PlayerPickups|(int)PhysicsCategory::Hazard);
+    addToGameObjects.pushBack(babyTurf);
+    bPlayerShoot = true;
+    babyTurf->setVelocityX(-200);
+    weaponSFX->play(0.4f);
+    if(getMovementStatus()==GO_ON_GROUND){
+      setVelocityX(0);
+    }
   }
   return false;
 }
@@ -533,8 +620,9 @@ bool PlayerObject::no_item(float delta) {
 
 
 void PlayerObject::playerUpdate(const float delta) {
-  p_zone_test->setObjectPositionX(getPositionX());
-  p_zone_test->setObjectPositionY(getPositionY());
+  item_charge_time-=delta;
+  //p_zone_test->setObjectPositionX(getPositionX());
+  //p_zone_test->setObjectPositionY(getPositionY());
   if(dissconeted){
     if(getVelocityX()>0){
       objectSprite->setScaleX(1);
@@ -757,7 +845,7 @@ bool PlayerObject::setupAnimation() {
   
   // ITEM SETUP
   pItem = &PlayerObject::no_item;
-  //setItem(E_RIFLE_ITEM);
+  //setItem(E_NO_ITEM);
   const uint32_t gear = getPayerGear();
   gear_mask_exclusive = 0;
   setItem((PlayerItem_ID)(gear & E_RIFLE_ITEM));

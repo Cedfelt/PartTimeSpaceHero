@@ -29,7 +29,7 @@ bool ItemCreate::init() {
   
   //objectSprite->getTexture()->setAliasTexParameters();
   
-  random = 0;
+  random = cocos2d::random(0, 64);
   setVelocityX(0);
   setVelocityY(-40);
   
@@ -52,7 +52,7 @@ void ItemCreate::colideWith(GameObject* otherGo,const uint32_t otherType){
       otherGo->setVelocityY(50);
     }
     if(otherType&(uint32_t)PhysicsCategory::PlayerProjectile){
-      otherGo->remove_object = true;
+      otherGo->setVelocityX(0);
     }
     
     

@@ -17,7 +17,6 @@ bool SimpleBullet::init() {
   
   this->schedule(schedule_selector(SimpleBullet::update));
   addGravityToObject(false);
-  setElastic(0.f);
   // SETUP ANIMATIONS
   objectSprite = cocos2d::Sprite::create("turfel_baby.png");
   objectSprite->getTexture()->setAliasTexParameters();
@@ -29,27 +28,57 @@ bool SimpleBullet::init() {
   addAnimation("explosion", "explosion", 1, 12, 0.1f);
   start_animation = false;
   HP = 3;
+  bullet_update = &SimpleBullet::explosive_bullet;
   return true;
+}
+
+void SimpleBullet::setup(BULLET_TYPE bt){
+  if(bt == E_SIMPLE_BULLET){
+    setElastic(0.f);
+    HP = 1;
+    bullet_update = &SimpleBullet::simple_bullet;
+  }
+  else if(bt == E_EXPLOSIVE_BULLET){
+    addGravityToObject(true);
+    setElastic(1.0f);
+    setVelocityY(25.f);
+    HP = 3;
+    bullet_update = &SimpleBullet::explosive_bullet;
+  }
 }
 
 void SimpleBullet::colideWith(GameObject* oterhObj,const uint32_t otherType){
   oterhObj->hurt(dmg, Vec2(0.5f*getVelocityX(), 0.5f*getVelocityY()));
   oterhObj->setColor(Color3B::BLACK);
-  setVelocityX(0);
   start_animation = true;
+  obstacle_mask = GO_LEFT|GO_RIGHT;
   
 }
 
 void SimpleBullet::update(const float delta) {
-  if(!getVelocityX() &&(!start_animation)){
+  (*this.*bullet_update)(delta);
+}
+
+bool SimpleBullet::explosive_bullet(float delta){
+  if((obstacle_mask&GO_RIGHT||obstacle_mask&GO_LEFT) &&(!start_animation)){
     start_animation = true;
+    setVelocityX(0);
+    setVelocityY(0);
+    addGravityToObject(false);
   }
   if(start_animation){
     if(setAnimationOnce("explosion")){
       remove_object = true;
     }
   }
-  
+  return true;
+}
+
+bool SimpleBullet::simple_bullet(float delta){
+  if(!getVelocityX()){
+    remove_object = true;
+  }
+  return true;
 }
 
 bool SimpleBullet::setupAnimation() {

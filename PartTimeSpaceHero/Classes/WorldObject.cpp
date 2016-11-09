@@ -144,6 +144,7 @@ float int_delta = 0;
 uint32_t delta_cnt = 0;
 const float delta_max = 120;
 float new_delta = 1.0 / 60.0;
+float max_delta = 1.0 / 54.0;
 
 
 
@@ -184,6 +185,13 @@ void WorldObject::updateWorld(float delta) {
     delta_cnt = 0;
     //new_delta = int_delta / (delta_max-1);
     int_delta = 0;
+  }
+  if(delta>(max_delta)){
+    new_delta = delta;
+  }
+  else{
+  
+    new_delta = 1.f / 60.f;
   }
   int_delta += delta;
   if(false && std::abs(delta-new_delta)>0.04f * delta){

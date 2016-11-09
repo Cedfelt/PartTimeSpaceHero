@@ -73,7 +73,8 @@ private:
   float fuel;
   float consumeRate;
   float currentConsumeRate;
-  
+  float item_charge_time;
+  float item_charge_time_max = 0.75f;
   float lastFuel;
   
   std::vector<std::string> animationStrings;
@@ -96,6 +97,7 @@ private:
   };
 
   bool rifle_item(float);
+  bool explosive_item(float);
   bool playerDashUpdate(float delta);
   bool no_item(float delta);
   

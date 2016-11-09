@@ -127,17 +127,17 @@ public:
     E_RIFLE_ITEM = 1,
     E_DASH_ITEM = 2,
     E_SUPORT_ITEM = 4,
+    E_BFG_ITEM = 8,
   };
   
-#define NUMBER_OF_ITEMS 3
+#define NUMBER_OF_ITEMS 4
   
   std::string item_descriptions[10] ={
     "NO_ITEM",
     "Plasma Rifle",
     "Dash",
     "Suportive Droid",
-    
-  
+    "BFG",
   };
   
   uint32_t itemLevel;

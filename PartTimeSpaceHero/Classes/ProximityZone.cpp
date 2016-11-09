@@ -25,10 +25,8 @@ bool ProximityZone::init() {
 }
 
 void ProximityZone::colideWith(GameObject* otherGo,const uint32_t otherType){
-  if(otherType&(uint32_t)PhysicsCategory::Player){
-    remove_object = true;
-    pling->play(0.5f);
-    otherGo->addCoins(1);
+  if(otherType&(uint32_t)PhysicsCategory::Enemy){
+    
   }
   
 }

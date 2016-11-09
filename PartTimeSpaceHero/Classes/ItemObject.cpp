@@ -49,6 +49,12 @@ void  ItemObject::generateItem(uint32_t itemType){
     objectSprite->setPosition(16/2, 16/2);// Aling sprite in Hitbox
     addChild(objectSprite);
   }
+  else if(itemType & E_BFG_ITEM){
+    objectSprite = cocos2d::Sprite::create("bfg.png");
+    objectSprite->getTexture()->setAliasTexParameters();
+    objectSprite->setPosition(16/2, 16/2);// Aling sprite in Hitbox
+    addChild(objectSprite);
+  }
   
 }
 
