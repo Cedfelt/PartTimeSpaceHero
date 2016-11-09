@@ -187,7 +187,7 @@ void WorldObject::updateWorld(float delta) {
     int_delta = 0;
   }
   if(delta>(max_delta)){
-    new_delta = delta;
+    new_delta = 1.f / 60.f;//delta;
   }
   else{
   

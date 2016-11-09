@@ -467,9 +467,12 @@ bool bPlayerShoot = false;
 bool PlayerObject::rifle_item(float delta) {
   
   if(item_charge_time>0.f){
-    playerInput->isDoubleRight();
-    playerInput->isDoubleLeft();
-    // Holding the item animation. 
+    bool left_or_right = playerInput->isDoubleRight();
+    left_or_right |= playerInput->isDoubleLeft();
+    if(left_or_right && getMovementStatus()==GO_ON_GROUND){
+      setVelocityX(0);
+    }
+    // Holding the item animation.
     if (bPlayerShoot) {
       if (getPrevDir() == GO_RIGHT) {
         if (setAnimationOnce(animationStrings.at(ItemR))) {
@@ -542,8 +545,11 @@ bool PlayerObject::rifle_item(float delta) {
 bool PlayerObject::explosive_item(float delta) {
   
   if(item_charge_time>0.f){
-    playerInput->isDoubleRight();
-    playerInput->isDoubleLeft();
+    bool left_or_right = playerInput->isDoubleRight();
+    left_or_right |= playerInput->isDoubleLeft();
+    if(left_or_right && getMovementStatus()==GO_ON_GROUND){
+      setVelocityX(0);
+    }
     // Holding the item animation.
     if (bPlayerShoot) {
       if (getPrevDir() == GO_RIGHT) {
@@ -851,6 +857,7 @@ bool PlayerObject::setupAnimation() {
   setItem((PlayerItem_ID)(gear & E_RIFLE_ITEM));
   setItem((PlayerItem_ID)(gear & E_DASH_ITEM));
   setItem((PlayerItem_ID)(gear & E_SUPORT_ITEM));
+  setItem((PlayerItem_ID)(gear & E_BFG_ITEM));
   // ... MORE ITEMS ADD HERE. TO A NICE LOOP
   
   coins = getPayerMoney();
