@@ -59,8 +59,7 @@ bool PlayerObject::init() {
   consumeRate = currentConsumeRate;
   currentConsumeRate = 0.0050f;
   
-  //p_zone_test = ProximityZone::create();
-  //addToGameObjects.pushBack(p_zone_test);
+  
 
   
   
@@ -627,8 +626,6 @@ bool PlayerObject::no_item(float delta) {
 
 void PlayerObject::playerUpdate(const float delta) {
   item_charge_time-=delta;
-  //p_zone_test->setObjectPositionX(getPositionX());
-  //p_zone_test->setObjectPositionY(getPositionY());
   if(dissconeted){
     if(getVelocityX()>0){
       objectSprite->setScaleX(1);
@@ -851,7 +848,7 @@ bool PlayerObject::setupAnimation() {
   
   // ITEM SETUP
   pItem = &PlayerObject::no_item;
-  //setItem(E_NO_ITEM);
+  setItem(E_SUPORT_ITEM);
   const uint32_t gear = getPayerGear();
   gear_mask_exclusive = 0;
   setItem((PlayerItem_ID)(gear & E_RIFLE_ITEM));

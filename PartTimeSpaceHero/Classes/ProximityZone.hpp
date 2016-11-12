@@ -10,6 +10,7 @@
 #include "GameObject.hpp"
 #include "SoundFx.hpp"
 
+
 using namespace cocos2d;
 class ProximityZone : public GameObject {
 public:
@@ -19,5 +20,6 @@ public:
   bool setupAnimation();
   SoundFx* pling;
   void update(const float delta);
+  
 private:
 };

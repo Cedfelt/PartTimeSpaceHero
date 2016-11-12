@@ -40,8 +40,9 @@ bool SuporterObject::init() {
   setupAnimation();
   setAnimation("suport_idle");
   
-  
-  
+  p_zone_test = ProximityZone::create();
+  addToGameObjects.pushBack(p_zone_test);
+  p_zone_test->retain();// CHECH FOR OBJECTS TO ADD in INIT
   return true;
 }
 
@@ -54,6 +55,8 @@ const float xFront = 25;
 float xOffset = xBack;
 
 void SuporterObject::update(const float delta) {
+  //p_zone_test->setObjectPositionX(getPositionX());
+  //p_zone_test->setObjectPositionY(getPositionY());
   if((target->getPrevDir()==GO_RIGHT) && xOffset>xBack){
     objectSprite->setScaleX(1);
     xOffset-= (delta*20);

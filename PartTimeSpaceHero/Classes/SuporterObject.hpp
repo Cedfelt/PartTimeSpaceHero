@@ -9,6 +9,7 @@
 #pragma once
 #include "EnemyObject.hpp"
 #include "SoundFx.hpp"
+#include "ProximityZone.hpp"
 
 using namespace cocos2d;
 class SuporterObject : public GameObject {
@@ -25,5 +26,6 @@ public:
   float xtick;
   float ytick;
   virtual void deadState();
+  ProximityZone* p_zone_test;
 private:
 };
