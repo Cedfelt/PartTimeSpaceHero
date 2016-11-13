@@ -41,11 +41,11 @@ void SaveData::loadWorldData() {
   addLevelToGame("level2.tmx");
   addLevelToGame("djungel2.tmx");
   addLevelToGame("tutorial.tmx");
-  
+  addLevelToGame("nes_test.tmx");
   
   addLevelToGame("forest_dungeon.tmx");
   
-  addLevelToGame("nes_test.tmx");
+  
   addLevelToGame("level3.tmx");
   addLevelToGame("knock_knock.tmx");
   addLevelToGame("level4.tmx");
