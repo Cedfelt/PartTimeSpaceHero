@@ -37,6 +37,8 @@
 
 float lastX;
 float lastY;
+float distance_y;
+
 
 bool WorldObject::init() {
   //////////////////////////////
@@ -245,11 +247,21 @@ void WorldObject::updateWorld(float delta) {
   }
 #else
   if(player){
-    Vec2 playerPos = Vec2(player->getObjectPositionX(),player->getObjectPositionY());
+    
     const float offset = player->playerLookAhead;
-    setViewPointCenter(Vec2((playerPos.x + lastX)/2.0,(playerPos.y + lastY +48)/2.0));
-    lastX = playerPos.x;
-    lastY = playerPos.y;
+    if(camera==nullptr){
+      Vec2 playerPos = Vec2(player->getObjectPositionX(),player->getObjectPositionY());
+      setViewPointCenter(Vec2((playerPos.x + lastX)/2.0,(playerPos.y + lastY +48)/2.0));
+      lastX = playerPos.x;
+      lastY = playerPos.y;
+    }
+    else{
+      Vec2 playerPos = Vec2(player->getObjectPositionX(),player->getObjectPositionY());
+      distance_y -= std::abs(camera->getVelocityY() * delta);
+      if(distance_y>0)
+        setViewPointCenter(Point(camera->getObjectPositionX(),camera->getObjectPositionY()));
+    }
+    
     }
 #endif
   
@@ -381,6 +393,8 @@ void WorldObject::spawnObjects(cocos2d::Vector<GameObject*>* gameObjects) {
       }
     }
     
+    
+    
     else if(name == "CoinObject"){
       // COIN
       auto coin = CoinObject::create();
@@ -394,17 +408,31 @@ void WorldObject::spawnObjects(cocos2d::Vector<GameObject*>* gameObjects) {
       addChild(coin);
     }
 
-    else if (name == "ItemCreate") {
+    else if(name == "CoinObject"){
       // COIN
-      auto coin = ItemCreate::create();
-      coin->setupHitbox(0.1f, 1.0f, 32, 32, 32, 32, false);
+      auto coin = CoinObject::create();
+      coin->setupHitbox(0.1f, 1.0f, 19, 17, 19, 17, false);
       gameObjects->pushBack(coin);
       coin->setObjectPositionX(x);
       coin->setObjectPositionY(y);
       coin->getPhysicsBody()->setCategoryBitmask((int)PhysicsCategory::PlayerPickups);
       coin->getPhysicsBody()->setCollisionBitmask((int)PhysicsCategory::None);
-      coin->getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::Player | (int)PhysicsCategory::PlayerProjectile | (int)PhysicsCategory::Hazard);
+      coin->getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::Player|(int)PhysicsCategory::PlayerPickups|(int)PhysicsCategory::Hazard);
       addChild(coin);
+    }
+
+    
+    else if (name == "CameraObject") {
+      // COIN
+      camera = GameObject::create();
+      camera->setObjectPositionX(x);
+      camera->setObjectPositionY(y);
+      camera->addGravityToObject(false);
+      camera->bWallCollisions = false;
+      gameObjects->pushBack(camera);
+      camera->setVelocityY(-15.f);
+      addChild(camera);
+      distance_y = vm["distance_y"].asFloat();
     }
     
     else if(name == "GoalObject"){
@@ -783,6 +811,9 @@ void WorldObject::spawnObjects(cocos2d::Vector<GameObject*>* gameObjects) {
   }
   for (int i = 0;i < plattis.size();i++) {
     plattis.at(i)->target = player;
+  }
+  if(camera!=nullptr and player!=nullptr){
+    player->disable = true;
   }
   
 }

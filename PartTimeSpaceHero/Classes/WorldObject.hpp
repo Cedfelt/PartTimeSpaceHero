@@ -33,7 +33,7 @@ public:
   cocos2d::Vector<DialogObject*>* dialogObjects;
   int bg_color;
   void setupWorld();
-  
+  GameObject* camera;
 private:
   bool goOnScreen(GameObject *obj);
   void updateOffScreenRect();

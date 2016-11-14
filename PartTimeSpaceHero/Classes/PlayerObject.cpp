@@ -13,7 +13,6 @@
 #include "ProximityZone.hpp"
 
 
-
 bool PlayerObject::init() {
   
   
@@ -625,6 +624,9 @@ bool PlayerObject::no_item(float delta) {
 
 
 void PlayerObject::playerUpdate(const float delta) {
+  if(disable){ // Active Camera Movement
+    return;
+  }
   item_charge_time-=delta;
   if(dissconeted){
     if(getVelocityX()>0){
@@ -839,7 +841,7 @@ bool PlayerObject::setupAnimation() {
   objectSprite->retain();
   objectSprite->setAnchorPoint(cocos2d::Point(0.5, 0.25));
   objectSprite->setPositionX(5);// Aling sprite in Hitbox
-  setAnimation(animationStrings.at((WalkR)));
+  setAnimation(animationStrings.at((IdleR)));
   setAnchorPoint(Point(0.0 , 0.5f));
   //objectSprite->setPosition(cocos2d::Point((4, 0);
   addChild(objectSprite);

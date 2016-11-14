@@ -58,6 +58,8 @@ public:
   virtual bool isSafe();
   virtual void removeWhenBelowZero();
   
+  bool disable;
+  
   void addCoins(uint32_t coinsToAdd);
   uint32_t getCoins();
   uint32_t coins;
