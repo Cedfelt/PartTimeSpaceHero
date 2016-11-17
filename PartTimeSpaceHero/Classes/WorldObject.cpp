@@ -256,9 +256,8 @@ void WorldObject::updateWorld(float delta) {
       lastY = playerPos.y;
     }
     else{
-      Vec2 playerPos = Vec2(player->getObjectPositionX(),player->getObjectPositionY());
       distance_y -= std::abs(camera->getVelocityY() * delta);
-      if(distance_y>0)
+      if(camera->getObjectPositionY()>player->getObjectPositionY() + 75.f)
         setViewPointCenter(Point(camera->getObjectPositionX(),camera->getObjectPositionY()));
     }
     
@@ -424,15 +423,15 @@ void WorldObject::spawnObjects(cocos2d::Vector<GameObject*>* gameObjects) {
     
     else if (name == "CameraObject") {
       // COIN
-      camera = GameObject::create();
+      camera = CameraObject::create();
       camera->setObjectPositionX(x);
       camera->setObjectPositionY(y);
-      camera->addGravityToObject(false);
-      camera->bWallCollisions = false;
       gameObjects->pushBack(camera);
       camera->setVelocityY(-15.f);
       addChild(camera);
       distance_y = vm["distance_y"].asFloat();
+      camera->objectSprite = NULL;
+      camera->skipMove =false;
     }
     
     else if(name == "GoalObject"){

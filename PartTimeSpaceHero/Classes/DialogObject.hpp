@@ -28,6 +28,7 @@ public:
   bool started;
   bool lineShowed = true;
   std::string nextLine;
+  float dialog_pause_timer;
   std::string outputLine;
   float printRate = 0.1f;
   int inx = 0;

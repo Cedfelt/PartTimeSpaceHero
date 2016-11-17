@@ -61,6 +61,8 @@
 		A80B7A891DB963050023B986 /* SmallWildLife.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A80B7A861DB963050023B986 /* SmallWildLife.cpp */; };
 		A8136BFC1DD1270A00BCBCE0 /* ProximityZone.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8136BFA1DD1270A00BCBCE0 /* ProximityZone.cpp */; };
 		A8136BFD1DD1270A00BCBCE0 /* ProximityZone.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8136BFA1DD1270A00BCBCE0 /* ProximityZone.cpp */; };
+		A81862CB1DDDA0BA00519515 /* CameraObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A81862C91DDDA0BA00519515 /* CameraObject.cpp */; };
+		A81862CC1DDDA0BA00519515 /* CameraObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A81862C91DDDA0BA00519515 /* CameraObject.cpp */; };
 		A81BE13F1CBA408300C09359 /* MainMenu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A81BE13D1CBA408300C09359 /* MainMenu.cpp */; };
 		A81BE1401CBA408300C09359 /* MainMenu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A81BE13D1CBA408300C09359 /* MainMenu.cpp */; };
 		A81BE1431CBA40AE00C09359 /* GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A81BE1411CBA40AE00C09359 /* GameScene.cpp */; };
@@ -213,6 +215,8 @@
 		A80B7A871DB963050023B986 /* SmallWildLife.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SmallWildLife.hpp; sourceTree = "<group>"; };
 		A8136BFA1DD1270A00BCBCE0 /* ProximityZone.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ProximityZone.cpp; sourceTree = "<group>"; };
 		A8136BFB1DD1270A00BCBCE0 /* ProximityZone.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ProximityZone.hpp; sourceTree = "<group>"; };
+		A81862C91DDDA0BA00519515 /* CameraObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CameraObject.cpp; sourceTree = "<group>"; };
+		A81862CA1DDDA0BA00519515 /* CameraObject.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CameraObject.hpp; sourceTree = "<group>"; };
 		A81BE13D1CBA408300C09359 /* MainMenu.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MainMenu.cpp; sourceTree = "<group>"; };
 		A81BE13E1CBA408300C09359 /* MainMenu.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = MainMenu.hpp; sourceTree = "<group>"; };
 		A81BE1411CBA40AE00C09359 /* GameScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameScene.cpp; sourceTree = "<group>"; };
@@ -536,6 +540,8 @@
 				A8C2C8321DC911CD001AE82B /* VeggieObject.hpp */,
 				A8136BFA1DD1270A00BCBCE0 /* ProximityZone.cpp */,
 				A8136BFB1DD1270A00BCBCE0 /* ProximityZone.hpp */,
+				A81862C91DDDA0BA00519515 /* CameraObject.cpp */,
+				A81862CA1DDDA0BA00519515 /* CameraObject.hpp */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -762,6 +768,7 @@
 				A82561111CFCD65200FC1DD3 /* LevelData.cpp in Sources */,
 				A87C27C71CC19F10004520EF /* Physic.cpp in Sources */,
 				A8ECBD651DAB88AE00B7929E /* LoadScreenScene.cpp in Sources */,
+				A81862CB1DDDA0BA00519515 /* CameraObject.cpp in Sources */,
 				A825610D1CFCD64100FC1DD3 /* SaveData.cpp in Sources */,
 				A8805F341CF0F5B100B2AE7A /* GoalObject.cpp in Sources */,
 				A8136BFC1DD1270A00BCBCE0 /* ProximityZone.cpp in Sources */,
@@ -823,6 +830,7 @@
 				A80B7A891DB963050023B986 /* SmallWildLife.cpp in Sources */,
 				A81BE14C1CBA415400C09359 /* GameObject.cpp in Sources */,
 				A8E25E831D4955A4002295C8 /* SuporterObject.cpp in Sources */,
+				A81862CC1DDDA0BA00519515 /* CameraObject.cpp in Sources */,
 				A828EC1A1D060C680006AA25 /* PlatformObject.cpp in Sources */,
 				A8ECBD621DAA91A100B7929E /* MudMonsterObject.cpp in Sources */,
 			);

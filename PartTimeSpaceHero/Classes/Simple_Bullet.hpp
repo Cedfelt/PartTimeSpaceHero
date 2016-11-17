@@ -29,5 +29,6 @@ public:
   bool simple_bullet(float delta);
   bool (SimpleBullet::*bullet_update)(float);
   void setup(BULLET_TYPE bt);
+  int x_bounce;
 private:
 };

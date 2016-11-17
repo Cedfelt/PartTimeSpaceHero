@@ -18,6 +18,7 @@
 #include "SaveData.hpp"
 #include "WaterTiles.hpp"
 #include "DialogObject.hpp"
+#include "CameraObject.hpp"
 
 
 class WorldObject : public cocos2d::Node
@@ -33,7 +34,7 @@ public:
   cocos2d::Vector<DialogObject*>* dialogObjects;
   int bg_color;
   void setupWorld();
-  GameObject* camera;
+  CameraObject* camera;
 private:
   bool goOnScreen(GameObject *obj);
   void updateOffScreenRect();

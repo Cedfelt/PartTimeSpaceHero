@@ -29,6 +29,7 @@ bool SimpleBullet::init() {
   start_animation = false;
   HP = 3;
   bullet_update = &SimpleBullet::explosive_bullet;
+  x_bounce = 1;
   return true;
 }
 
@@ -40,7 +41,7 @@ void SimpleBullet::setup(BULLET_TYPE bt){
   }
   else if(bt == E_EXPLOSIVE_BULLET){
     addGravityToObject(true);
-    setElastic(1.0f);
+    setElastic(1.2f);
     setVelocityY(25.f);
     HP = 3;
     bullet_update = &SimpleBullet::explosive_bullet;
@@ -61,12 +62,22 @@ void SimpleBullet::update(const float delta) {
 
 bool SimpleBullet::explosive_bullet(float delta){
   if((obstacle_mask&GO_RIGHT||obstacle_mask&GO_LEFT) &&(!start_animation)){
+    x_bounce-=1;
+    if(x_bounce >= 0){
+      obstacle_mask = 0;
+      //return true; wall bounce
+    }
     start_animation = true;
     setVelocityX(0);
     setVelocityY(0);
     addGravityToObject(false);
+    
   }
   if(start_animation){
+    bWallCollisions = false;
+    setElastic(0);
+    setVelocityX(getVelocityX()*0.95f);
+    setVelocityY(getVelocityY()*0.95f);
     if(setAnimationOnce("explosion")){
       remove_object = true;
     }

@@ -17,7 +17,7 @@ bool VeggieObject::init() {
     return false;
   }
   
-  setScale(2.0);
+  setScale(3.0);
   this->schedule(schedule_selector(VeggieObject::AIUpdate), 0.8);
   addGravityToObject(true);
   setElastic(0.f);
@@ -42,6 +42,12 @@ void VeggieObject::colideWith(GameObject* oterhObj, const uint32_t otherType) {
 }
 
 void VeggieObject::AIUpdate(const float delta) {
+  if(getVelocityY()<0){
+    setAnimation("veggie_dead");
+  }
+  else{
+    setAnimation("veggie_idle");
+  }
   genericWalkAi(delta);
 }
 

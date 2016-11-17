@@ -38,6 +38,17 @@ bool DialogObject::init() {
 
 
 void DialogObject::update(const float delta) {
+  if(dialog_pause_timer>0){
+    dialog_pause_timer-=delta;
+    if(dialog_pause_timer < 0){
+      lineShowed = true;
+      dialog_pause_timer = 0;
+      holdCnt = 0;
+    }
+    else{
+      return;
+    }
+  }
   if(holdCnt>0){
     holdCnt-=delta;
     return;
@@ -52,11 +63,16 @@ void DialogObject::update(const float delta) {
   else if(lineShowed){
     lineShowed = false;
     nextLine = dialogText.at(0);
+    
     dialogText.erase(dialogText.begin());
     inx = 0;
     const float diaTime = dialogTime.at(0);
     dialogTime.erase(dialogTime.begin());
     cnt = 0;
+    if (nextLine == "pause"){
+      dialog_pause_timer = 25.f;
+      dialogLabel->setString("");
+    }
   }
   else if(cnt <=0){
     inx++;
