@@ -154,6 +154,8 @@ bool WorldObject::finish_scene(float delta){
     dia->addLine("Level Completed", 2.5f);
     dia->presentation = DialogObject::E_LINE_BY_LINE;
     dialogObjects->pushBack(dia);
+    auto audio = CocosDenshion::SimpleAudioEngine::getInstance();
+    audio->stopBackgroundMusic();
   }
   finish_time-=delta;
   return finish_time<=0;
@@ -165,6 +167,8 @@ bool WorldObject::death_scene(float delta){
     dia->addLine("You Died", 2.5f);
     dia->presentation = DialogObject::E_LINE_BY_LINE;
     dialogObjects->pushBack(dia);
+    auto audio = CocosDenshion::SimpleAudioEngine::getInstance();
+    audio->stopBackgroundMusic();
   }
   dead_time-=delta;
   return dead_time<=0;
