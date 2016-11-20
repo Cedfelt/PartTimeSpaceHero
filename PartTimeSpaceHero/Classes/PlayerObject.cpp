@@ -624,6 +624,9 @@ bool PlayerObject::no_item(float delta) {
 
 
 void PlayerObject::playerUpdate(const float delta) {
+  if(HP<=0){
+    return;//dead
+  }
   if(disable){ // Active Camera Movement
     return;
   }

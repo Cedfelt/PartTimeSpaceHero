@@ -15,6 +15,7 @@
 #include "MainMenu.hpp"
 #include "TitleScreen.hpp"
 #include "LoadScreenScene.hpp"
+#include "SimpleAudioEngine.h"
 
 
 
@@ -102,6 +103,9 @@ bool EraseGameScreen::init()
         gameSave->eraseMemorey();
         auto scene = LoadScreen::createScene();
         Director::getInstance()->pushScene(scene);
+        auto audio = CocosDenshion::SimpleAudioEngine::getInstance();
+        audio->stopBackgroundMusic();
+        audio->end();
         break;
         
     }

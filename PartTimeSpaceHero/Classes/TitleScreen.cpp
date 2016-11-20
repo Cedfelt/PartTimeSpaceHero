@@ -71,27 +71,32 @@ bool TitleScreen::init()
   
   
   // New Game Label -
-  auto label = Label::createWithTTF("P.T.S.H", "fonts/PressStart2P.ttf", 40*scale);
+  auto label = Label::createWithTTF("", "fonts/PressStart2P.ttf", 40*scale);
   label->setPosition(Vec2(visibleSize.width/2 , visibleSize.height*0.7));
   label->setColor(col3b);
   addChild(label);
   
+  auto Map = cocos2d::TMXTiledMap::create("tutorial kopia.tmx");
+  addChild(Map);
+  //FÖR ATT LÄGGA IN NY STARTSKÄRM (måste vara sparade i spelets mapfiles nerladdat)
+  // för att bestämma hur stor kartan ska vara ska bli
+  
   // New Game Label -
   auto label2 = Label::createWithTTF("Touch the Screen to Start", "fonts/PressStart2P.ttf", 12*scale);
   label2->setColor(col3b);
-  label2->setPosition(Vec2(visibleSize.width*0.5 , visibleSize.height*0.55));
+  label2->setPosition(Vec2(visibleSize.width*0.5 , visibleSize.height*0.40));
   addChild(label2);
   
   // New Game Label -
   auto label3 = Label::createWithTTF("© 2017 Seacow", "fonts/PressStart2P.ttf", 12*scale);
   label3->setColor(col3b);
-  label3->setPosition(Vec2(visibleSize.width/2 , visibleSize.height*0.40));
+  label3->setPosition(Vec2(visibleSize.width/2 , visibleSize.height*0.25));
   addChild(label3);
   
   //auto audio = CocosDenshion::SimpleAudioEngine::getInstance();
   //audio->stopBackgroundMusic();
   //audio->playBackgroundMusic("title_theme.mp3", true);
-  CocosDenshion::SimpleAudioEngine::getInstance()->playBackgroundMusic("title_theme.mp3",true);
+  CocosDenshion::SimpleAudioEngine::getInstance()->playBackgroundMusic("majestetic.mp3",true);
   return true;
 }
 
@@ -102,14 +107,14 @@ void TitleScreen::onTouchBegan(const std::vector<Touch*>& touch, Event* event)
 
 void TitleScreen::onTouchEnded(const std::vector<Touch*>& touches, Event*)
 {
-    auto scene = MainMenu::createScene();
-    // Transition Fade
-    auto col = getColorFromCollection(BLACK);
-    
-    Director::getInstance()->replaceScene(TransitionFade::create(0.2f, scene, Color3B(col.red,col.green,col.blue)));
+  auto scene = MainMenu::createScene();
+  // Transition Fade
+  auto col = getColorFromCollection(BLACK);
+  
+  Director::getInstance()->replaceScene(TransitionFade::create(0.2f, scene, Color3B(col.red,col.green,col.blue)));
   auto audio = CocosDenshion::SimpleAudioEngine::getInstance();
-  audio->stopBackgroundMusic();
-  audio->end();
+  //audio->stopBackgroundMusic();
+  //audio->end();
 }
 
 void TitleScreen::onTouchMoved(const std::vector<Touch*>& touch, Event* event)

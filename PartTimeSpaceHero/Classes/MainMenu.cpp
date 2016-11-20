@@ -4,7 +4,7 @@
 #include "cocostudio/CocoStudio.h"
 #include "LoadScreenScene.hpp"
 #include "EraseGameScene.hpp"
-
+#include "SimpleAudioEngine.h"
 
 USING_NS_CC;
 
@@ -34,32 +34,33 @@ bool MainMenu::init()
 {
   
     
-    //////////////////////////////
-    // 1. super init first
-    if ( !Layer::init() )
-    {
-        return false;
-    }
+  //////////////////////////////
+  // 1. super init first
+  if ( !Layer::init() )
+  {
+    return false;
+  }
   
   
-    Size visibleSize = Director::getInstance()->getVisibleSize();
-    Vec2 origin = Director::getInstance()->getVisibleOrigin();
-    
-    const size_t scale = getScaleFactor();
-    
-    
-    // Add Touch
-    auto touchListener = EventListenerTouchAllAtOnce::create();
-    touchListener->onTouchesBegan = CC_CALLBACK_2(MainMenu::onTouchBegan, this);
-    touchListener->onTouchesEnded = CC_CALLBACK_2(MainMenu::onTouchEnded, this);
-    touchListener->onTouchesMoved = CC_CALLBACK_2(MainMenu::onTouchMoved, this);
-    touchListener->onTouchesCancelled = CC_CALLBACK_2(MainMenu::onTouchCancelled, this);
-    _eventDispatcher->addEventListenerWithSceneGraphPriority(touchListener, this);
-    
-    // New Game Label -
-    auto label = Label::createWithTTF("Start New Game", "fonts/PressStart2P.ttf", 15*scale);
-    label->setPosition(Vec2(0 + label->getContentSize().width * 0.6f, 0 + label->getContentSize().height));
-    addChild(label);
+  Size visibleSize = Director::getInstance()->getVisibleSize();
+  Vec2 origin = Director::getInstance()->getVisibleOrigin();
+  
+  const size_t scale = getScaleFactor();
+  
+  
+  // Add Touch
+  auto touchListener = EventListenerTouchAllAtOnce::create();
+  touchListener->onTouchesBegan = CC_CALLBACK_2(MainMenu::onTouchBegan, this);
+  touchListener->onTouchesEnded = CC_CALLBACK_2(MainMenu::onTouchEnded, this);
+  touchListener->onTouchesMoved = CC_CALLBACK_2(MainMenu::onTouchMoved, this);
+  touchListener->onTouchesCancelled = CC_CALLBACK_2(MainMenu::onTouchCancelled, this);
+  _eventDispatcher->addEventListenerWithSceneGraphPriority(touchListener, this);
+  
+  // New Game Label -
+  auto label = Label::createWithTTF("Start New Game", "fonts/PressStart2P.ttf", 15*scale);
+  label->setPosition(Vec2(0 + label->getContentSize().width * 0.6f, 0 + label->getContentSize().height));
+  addChild(label);
+  
   
   auto label_continue = Label::createWithTTF("Continue", "fonts/PressStart2P.ttf", 15*scale);
   label_continue->setPosition(Vec2(visibleSize.width - label_continue->getContentSize().width * 1.f, 0 + label_continue->getContentSize().height));
@@ -67,25 +68,16 @@ bool MainMenu::init()
   
   // Sprite
   auto director = Director::getInstance();
-  const float xPos = director->getWinSize().width *0.75;
-  const float yPos = director->getWinSize().height / 4;
-  Sprite* spaceShipSprite = Sprite::create("SpaceshipA.png");
+  const float xPos = director->getWinSize().width *0.5;
+  const float yPos = director->getWinSize().height /2;
+  Sprite* spaceShipSprite = Sprite::create("rocket_wagon.png");
   spaceShipSprite->getTexture()->setAliasTexParameters();
   spaceShipSprite->setScale(3);
   spaceShipSprite->setPositionX(xPos);
   spaceShipSprite->setPositionY(yPos);
-  spaceShipSprite->setRotation(60);
+  spaceShipSprite->setRotation(0);
   addChild(spaceShipSprite,0);
   
-  
-  const float xPosLogo = director->getWinSize().width / 2;
-  const float yPosLogo = director->getWinSize().height*0.5;
-  Sprite* logo = Sprite::create("logo.png");
-  logo->getTexture()->setAliasTexParameters();
-  logo->setScale(2);
-  logo->setPositionX(xPosLogo);
-  logo->setPositionY(yPosLogo);
-  addChild(logo,1);
     return true;
 }
 bool newGame;
@@ -112,9 +104,13 @@ void MainMenu::onTouchEnded(const std::vector<Touch*>& touches, Event*)
     else{
       auto scene = LoadScreen::createScene();
       Director::getInstance()->replaceScene(scene);
+      auto audio = CocosDenshion::SimpleAudioEngine::getInstance();
+      audio->stopBackgroundMusic();
+      audio->end();
       return;
     }
   }
+  
 }
 
 void MainMenu::onTouchMoved(const std::vector<Touch*>& touch, Event* event)

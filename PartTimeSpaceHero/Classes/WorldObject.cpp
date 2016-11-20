@@ -148,6 +148,27 @@ const float delta_max = 120;
 float new_delta = 1.0 / 60.0;
 float max_delta = 1.0 / 54.0;
 
+bool WorldObject::finish_scene(float delta){
+  if(finish_time == 3.f){
+    DialogObject* dia = DialogObject::create();
+    dia->addLine("Level Completed", 2.5f);
+    dia->presentation = DialogObject::E_LINE_BY_LINE;
+    dialogObjects->pushBack(dia);
+  }
+  finish_time-=delta;
+  return finish_time<=0;
+}
+
+bool WorldObject::death_scene(float delta){
+  if(dead_time == 3.f){
+    DialogObject* dia = DialogObject::create();
+    dia->addLine("You Died", 2.5f);
+    dia->presentation = DialogObject::E_LINE_BY_LINE;
+    dialogObjects->pushBack(dia);
+  }
+  dead_time-=delta;
+  return dead_time<=0;
+}
 
 
 void WorldObject::updateWorld(float delta) {
@@ -271,13 +292,15 @@ void WorldObject::updateWorld(float delta) {
   // Check Goal
   if(obj!=NULL){
     if(obj->colided){
-      finishLevel();
+      if(finish_scene(delta)){
+        finishLevel();
+      }
     }
   }
   
   // Check if player dead
   if(player){
-  if(player->HP<=0){
+  if(player->HP<=0&&death_scene(delta)){
     stopAllActions();
     auto scene = LoadScreen::createScene();
     Director::getInstance()->replaceScene(scene);
@@ -822,7 +845,7 @@ bool WorldObject::goOnScreen(GameObject *obj) {
 }
 
 void WorldObject::updateOffScreenRect() {
-  outside_screen = 1;
+  outside_screen = 2;
   const float screnWidh = cocos2d::Director::getInstance()->getWinSize().width*outside_screen;
   const float screnHeight = cocos2d::Director::getInstance()->getWinSize().height*outside_screen;
   const float distanceX = (screnWidh - screnWidh / outside_screen) / 2;
