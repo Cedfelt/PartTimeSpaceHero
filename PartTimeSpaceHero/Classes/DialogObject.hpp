@@ -37,6 +37,13 @@ public:
   bool endLevelWhenDone;
   int presentation;
   
+  typedef enum tDialogStyle{
+    E_DEFAULT_STYLE,
+    E_LEVEL_COMPLETED_STYLE
+  }dialogStyle;
+  
+  void setStyyle(const dialogStyle style);
+  
   typedef enum tDialogType{
     E_CHAR_BY_CHAR,
     E_LINE_BY_LINE

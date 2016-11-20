@@ -184,7 +184,9 @@ bool EffectZone::hideLayer(float delta){
 }
 
 bool EffectZone::showLayer(float delta){
-  layerToHide->setVisible(true);
+  if(layerToHide!=NULL){
+    layerToHide->setVisible(true);
+  }
   return true;
 }
 

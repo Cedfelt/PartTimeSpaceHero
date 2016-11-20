@@ -36,6 +36,15 @@ bool DialogObject::init() {
   
 }
 
+void DialogObject::setStyyle(const dialogStyle style){
+  if(style == E_LEVEL_COMPLETED_STYLE){
+    auto conf = dialogLabel->getTTFConfig();
+    const size_t scale = getScaleFactor();
+    Size visibleSize = Director::getInstance()->getVisibleSize();
+    dialogLabel->setPosition(Vec2(visibleSize.width / 2 - scale * 20,12.f * 15*scale));
+    //dialogLabel->setSystemFontSize(25*scale);
+  }
+}
 
 void DialogObject::update(const float delta) {
   if(dialog_pause_timer>0){

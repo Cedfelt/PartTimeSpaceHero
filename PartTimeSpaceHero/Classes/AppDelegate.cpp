@@ -87,6 +87,8 @@ bool AppDelegate::applicationDidFinishLaunching() {
   CocosDenshion::SimpleAudioEngine::getInstance()->preloadBackgroundMusic("Hope.mp3");
   CocosDenshion::SimpleAudioEngine::getInstance()->preloadBackgroundMusic("on_a_mission.mp3");
   CocosDenshion::SimpleAudioEngine::getInstance()->preloadBackgroundMusic("Space_Adventure.mp3");
+  CocosDenshion::SimpleAudioEngine::getInstance()->preloadBackgroundMusic("finished.mp3");
+  CocosDenshion::SimpleAudioEngine::getInstance()->preloadBackgroundMusic("death.mp3");
   //CocosDenshion::SimpleAudioEngine::getInstance()->preloadBackgroundMusic("too_quiet_in_here.aif");
   
 

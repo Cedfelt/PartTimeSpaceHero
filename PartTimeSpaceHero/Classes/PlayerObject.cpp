@@ -628,6 +628,7 @@ void PlayerObject::playerUpdate(const float delta) {
     return;//dead
   }
   if(disable){ // Active Camera Movement
+    setAnimation("IdleR");
     return;
   }
   item_charge_time-=delta;

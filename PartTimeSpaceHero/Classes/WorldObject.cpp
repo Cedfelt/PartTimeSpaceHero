@@ -149,26 +149,33 @@ float new_delta = 1.0 / 60.0;
 float max_delta = 1.0 / 54.0;
 
 bool WorldObject::finish_scene(float delta){
-  if(finish_time == 3.f){
+  if(finish_time == 5.f){
     DialogObject* dia = DialogObject::create();
-    dia->addLine("Level Completed", 2.5f);
+    dia->addLine("LEVEL COMPLETED", 4.0f);
     dia->presentation = DialogObject::E_LINE_BY_LINE;
+    dia->setStyyle(DialogObject::E_LEVEL_COMPLETED_STYLE);
     dialogObjects->pushBack(dia);
     auto audio = CocosDenshion::SimpleAudioEngine::getInstance();
     audio->stopBackgroundMusic();
+    audio->playBackgroundMusic("finished.mp3");
+    player->disable = true;
+    player->setVelocityX(0);
+    player->setVelocityY(0);
   }
   finish_time-=delta;
   return finish_time<=0;
 }
 
 bool WorldObject::death_scene(float delta){
-  if(dead_time == 3.f){
+  if(dead_time == 5.f){
     DialogObject* dia = DialogObject::create();
-    dia->addLine("You Died", 2.5f);
+    dia->addLine("YOU DIED", 4.0f);
     dia->presentation = DialogObject::E_LINE_BY_LINE;
+    dia->setStyyle(DialogObject::E_LEVEL_COMPLETED_STYLE);
     dialogObjects->pushBack(dia);
     auto audio = CocosDenshion::SimpleAudioEngine::getInstance();
     audio->stopBackgroundMusic();
+    audio->playBackgroundMusic("death.mp3");
   }
   dead_time-=delta;
   return dead_time<=0;

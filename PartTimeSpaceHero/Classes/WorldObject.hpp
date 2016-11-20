@@ -59,9 +59,9 @@ private:
   int playerSafe = 0;
   int flyCnt = 0;
   bool finish_scene(float delta);
-  float finish_time = 3;
+  float finish_time = 5.f;
   bool death_scene(float delta);
-  float dead_time = 3;
+  float dead_time = 5.f;
   WaterTiles* water;
 };
 
