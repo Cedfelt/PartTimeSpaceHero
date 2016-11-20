@@ -157,7 +157,18 @@ bool WorldObject::finish_scene(float delta){
     dialogObjects->pushBack(dia);
     auto audio = CocosDenshion::SimpleAudioEngine::getInstance();
     audio->stopBackgroundMusic();
-    audio->playBackgroundMusic("finished.mp3");
+    int random = cocos2d::random(0,2);
+    if(random == 0){
+      audio->playBackgroundMusic("finished.mp3");
+    }
+    
+    if(random == 1){
+      audio->playBackgroundMusic("finished2.mp3");
+    }
+    
+    if(random == 2){
+      audio->playBackgroundMusic("finished3.mp3");
+    }
     player->disable = true;
     player->setVelocityX(0);
     player->setVelocityY(0);
