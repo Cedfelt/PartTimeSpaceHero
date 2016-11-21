@@ -489,7 +489,10 @@ void WorldObject::spawnObjects(cocos2d::Vector<GameObject*>* gameObjects) {
       this->obj->getPhysicsBody()->setCategoryBitmask((int)PhysicsCategory::Goal);
       this->obj->getPhysicsBody()->setCollisionBitmask((int)PhysicsCategory::None);
       this->obj->getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::Player);
-      addChild(this->obj);
+      if(type=="ai"){
+        this->obj->ai_setup();
+      }
+      addChild(this->obj,-1);
     }
     
     else if(name == "LaserObject"){

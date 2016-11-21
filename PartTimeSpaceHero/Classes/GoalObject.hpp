@@ -17,6 +17,14 @@ public:
   virtual bool init();
   virtual void colideWith(GameObject* oterhObj, const uint32_t otherType);
   CREATE_FUNC(GoalObject);
+  void ai_setup();
+  int ai_state;
   void update(const float delta);
 private:
+  typedef enum tAi_states{
+    NO_AI_STATE,
+    AI_ENABLE,
+    SHUTDOWN_AI,
+    DRAIN_AI,
+  }ai_states;
 };
