@@ -11,11 +11,11 @@
                 <key>spriteOffset</key>
                 <string>{0,0}</string>
                 <key>spriteSize</key>
-                <string>{16,32}</string>
+                <string>{48,96}</string>
                 <key>spriteSourceSize</key>
-                <string>{16,32}</string>
+                <string>{48,96}</string>
                 <key>textureRect</key>
-                <string>{{0,0},{16,32}}</string>
+                <string>{{0,0},{48,96}}</string>
                 <key>textureRotated</key>
                 <false/>
             </dict>
@@ -26,11 +26,11 @@
                 <key>spriteOffset</key>
                 <string>{0,0}</string>
                 <key>spriteSize</key>
-                <string>{16,32}</string>
+                <string>{48,96}</string>
                 <key>spriteSourceSize</key>
-                <string>{16,32}</string>
+                <string>{48,96}</string>
                 <key>textureRect</key>
-                <string>{{16,0},{16,32}}</string>
+                <string>{{48,0},{48,96}}</string>
                 <key>textureRotated</key>
                 <false/>
             </dict>
@@ -41,11 +41,11 @@
                 <key>spriteOffset</key>
                 <string>{0,0}</string>
                 <key>spriteSize</key>
-                <string>{16,32}</string>
+                <string>{48,96}</string>
                 <key>spriteSourceSize</key>
-                <string>{16,32}</string>
+                <string>{48,96}</string>
                 <key>textureRect</key>
-                <string>{{32,0},{16,32}}</string>
+                <string>{{96,0},{48,96}}</string>
                 <key>textureRotated</key>
                 <false/>
             </dict>
@@ -56,11 +56,11 @@
                 <key>spriteOffset</key>
                 <string>{0,0}</string>
                 <key>spriteSize</key>
-                <string>{16,32}</string>
+                <string>{48,96}</string>
                 <key>spriteSourceSize</key>
-                <string>{16,32}</string>
+                <string>{48,96}</string>
                 <key>textureRect</key>
-                <string>{{48,0},{16,32}}</string>
+                <string>{{144,0},{48,96}}</string>
                 <key>textureRotated</key>
                 <false/>
             </dict>
@@ -71,11 +71,11 @@
                 <key>spriteOffset</key>
                 <string>{0,0}</string>
                 <key>spriteSize</key>
-                <string>{16,32}</string>
+                <string>{48,96}</string>
                 <key>spriteSourceSize</key>
-                <string>{16,32}</string>
+                <string>{48,96}</string>
                 <key>textureRect</key>
-                <string>{{0,32},{16,32}}</string>
+                <string>{{192,0},{48,96}}</string>
                 <key>textureRotated</key>
                 <false/>
             </dict>
@@ -86,11 +86,11 @@
                 <key>spriteOffset</key>
                 <string>{0,0}</string>
                 <key>spriteSize</key>
-                <string>{16,32}</string>
+                <string>{48,96}</string>
                 <key>spriteSourceSize</key>
-                <string>{16,32}</string>
+                <string>{48,96}</string>
                 <key>textureRect</key>
-                <string>{{16,32},{16,32}}</string>
+                <string>{{0,96},{48,96}}</string>
                 <key>textureRotated</key>
                 <false/>
             </dict>
@@ -106,9 +106,9 @@
             <key>realTextureFileName</key>
             <string>veggie.png</string>
             <key>size</key>
-            <string>{64,64}</string>
+            <string>{256,256}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:d7781921ac102f8ddf7db7d80efc6266:662717fa1b61eee8e92308e6600e0eee:098082ec4cdd7767faa608ff81931950$</string>
+            <string>$TexturePacker:SmartUpdate:b6f89f43dd9f23c1b19940987eb1ada6:4b44c8941f64476941bc0885b948b252:098082ec4cdd7767faa608ff81931950$</string>
             <key>textureFileName</key>
             <string>veggie.png</string>
         </dict>

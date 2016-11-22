@@ -197,7 +197,7 @@ void WorldObject::updateWorld(float delta) {
   updateOffScreenRect();
   // Spawn
   if(player){
-  if (((player->getCoins() % 7 == 0) && (player->getCoins()>0) )|| (giveObject &&!createSpawned) ) {
+  if (((player->getCoins() % 25 == 0) && (player->getCoins()>0) )|| (giveObject &&!createSpawned) ) {
     playerSafe += player->isSafe();
     giveObject = true;
     if (!createSpawned&&playerSafe>5) {
@@ -597,7 +597,7 @@ void WorldObject::spawnObjects(cocos2d::Vector<GameObject*>* gameObjects) {
       botty->setupAnimation();
       bottyFirst = false;
       botty-> setAnimation("veggie_idle");
-      botty->setupHitbox(0.1, 1, 12, 16,12, 16, false);
+      botty->setupHitbox(0.1, 1, 40, 50,40, 50, false);
       gameObjects->pushBack(botty);
       botty->setObjectPositionX(x);
       botty->setObjectPositionY(y);

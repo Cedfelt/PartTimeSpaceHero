@@ -233,13 +233,7 @@ float PlayerObject::getFuel() {
   return fuel;
 }
 
-bool PlayerObject::flyAtDir(MovementDirectionX dir, std::string animName) {
-  const float playerFallSpeed = 0.1f;
-  setAnimation(animName);
-  addToVelocityX(dir*playerFallSpeed);
-  return true;
-}
-float uppSpeed = 2.8f * SPEED_MOD;
+float uppSpeed = 100.8f * SPEED_MOD;
 float maxRiseSpeed = 100 * SPEED_MOD;
 bool PlayerObject::playerFlyUpdate(float delta) {
   

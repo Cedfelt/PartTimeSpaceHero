@@ -17,7 +17,7 @@ bool VeggieObject::init() {
     return false;
   }
   
-  setScale(3.0);
+  //setScale(3.0);
   this->schedule(schedule_selector(VeggieObject::AIUpdate), 0.8);
   addGravityToObject(true);
   setElastic(0.f);
@@ -30,7 +30,7 @@ bool VeggieObject::init() {
   setVelocityX(-speed);
   setPrevDir(GO_LEFT);
   objectSprite = cocos2d::Sprite::create();
-  objectSprite->setPosition(0, 0);// Aling sprite in Hitbox
+  objectSprite->setPosition(28, 0);// Aling sprite in Hitbox
   objectSprite->setAnchorPoint(Point(0.5, 0));
   addChild(objectSprite);
   objectSprite->setScaleX(-1);
