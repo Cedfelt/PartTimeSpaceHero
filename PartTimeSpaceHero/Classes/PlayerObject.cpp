@@ -30,6 +30,7 @@ bool PlayerObject::init() {
   dissconeted = false;
   itemLevel = NUMBER_OF_ITEMS;
   
+  dead = false;
   
   HP = 3;
   playerLookAhead = 0;
@@ -689,6 +690,9 @@ void PlayerObject::playerUpdate(const float delta) {
 }
 
 bool PlayerObject::hurt(const int dmg, const Vec2 force) {
+  if(dead){
+    return false;
+  }
   if (!isImune() && (!dashing)) {
     if (dmg > 0) {
       setImune();
@@ -712,12 +716,22 @@ bool PlayerObject::hurt(const int dmg, const Vec2 force) {
       setVelocityY(force.y);
   }
   
-  
+  if(HP<=0){
+    /*addGravityToObject(false);
+    setAnimationOnce("Die2");
+    dead = true;
+    setVelocityX(force.x * 0.25f);
+    setVelocityY(25);*/
+    setAnimationOnce("Die");
+    dead = true;
+    setVelocityX(0);
+    setVelocityY(0);
+  }
   return true;
 }
 
 void PlayerObject::colideWith(GameObject* otherObj, const uint32_t otherType) {
-  if(isImune()){
+  if(isImune() || dead){
     return;
   }
   if (otherType&(uint32_t)PhysicsCategory::Enemy) {
@@ -800,6 +814,8 @@ bool PlayerObject::setupAnimation() {
   addAnimation("PTSH", "DashChargeL", 18, 21, 0.1f);
   addAnimation("PTSH", "DashR", 22, 25, 0.15f);
   addAnimation("PTSH", "DashL", 22, 25, 0.15f);
+  addAnimation("PTSH", "Die", 34, 41, 0.15f);
+  addAnimation("PTSH", "Die2", 42, 42, 0.15f);
   
   // Weapon Anim
   auto spriteFrameCache = cocos2d::SpriteFrameCache::getInstance();

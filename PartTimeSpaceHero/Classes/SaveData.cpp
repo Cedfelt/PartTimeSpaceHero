@@ -39,6 +39,7 @@ void SaveData::loadWorldData() {
   //addLevelToGame("tutorial2.tmx");
   //addLevelToGame("level1.tmx");
   
+  addLevelToGame("metroid_cave.tmx");
   addLevelToGame("level2.tmx");
   addLevelToGame("djungel2.tmx");
   addLevelToGame("tutorial.tmx");

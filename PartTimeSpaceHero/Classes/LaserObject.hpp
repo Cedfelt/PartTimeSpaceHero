@@ -13,7 +13,7 @@
 
 
 USING_NS_CC;
-#define MAX_CAPACITY 25
+#define MAX_CAPACITY 35
 class LaserObject : public GameObject{
 public:
   bool setupAnimation();

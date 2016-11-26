@@ -71,6 +71,7 @@ private:
   SoundFx* weaponSFX;
   SoundFx* rechargedSFX;
   float fuel;
+  bool dead;
   float consumeRate;
   float currentConsumeRate;
   float item_charge_time;

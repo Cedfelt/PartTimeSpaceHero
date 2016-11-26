@@ -19,7 +19,7 @@ bool GoalObject::init() {
   
   this->schedule(schedule_selector(GoalObject::update));
   setScale(1);
-  //addGravityToObject(false);
+  addGravityToObject(false);
   setElastic(0);
   // SETUP ANIMATIONS
   objectSprite = cocos2d::Sprite::create(/*"SpaceshipA.png"*/);
@@ -59,4 +59,5 @@ void GoalObject::ai_setup(){
   addAnimation("ai", "ai_drain", 11, 17, 0.18f);
   setAnimation("ai_idle");
   ai_state = AI_ENABLE;
+  addGravityToObject(true);
 }
