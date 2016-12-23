@@ -227,7 +227,16 @@
             <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/pths_builds/PTSH31.png</key>
             <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/pths_builds/PTSH32.png</key>
             <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/pths_builds/PTSH33.png</key>
+            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/pths_builds/PTSH34.png</key>
+            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/pths_builds/PTSH35.png</key>
+            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/pths_builds/PTSH36.png</key>
+            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/pths_builds/PTSH37.png</key>
+            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/pths_builds/PTSH38.png</key>
+            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/pths_builds/PTSH39.png</key>
             <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/pths_builds/PTSH4.png</key>
+            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/pths_builds/PTSH40.png</key>
+            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/pths_builds/PTSH41.png</key>
+            <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/pths_builds/PTSH42.png</key>
             <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/pths_builds/PTSH5.png</key>
             <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/pths_builds/PTSH6.png</key>
             <key type="filename">../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/pths_builds/PTSH7.png</key>
@@ -273,6 +282,15 @@
             <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/pths_builds/PTSH31.png</filename>
             <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/pths_builds/PTSH32.png</filename>
             <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/pths_builds/PTSH33.png</filename>
+            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/pths_builds/PTSH34.png</filename>
+            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/pths_builds/PTSH35.png</filename>
+            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/pths_builds/PTSH36.png</filename>
+            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/pths_builds/PTSH37.png</filename>
+            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/pths_builds/PTSH38.png</filename>
+            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/pths_builds/PTSH39.png</filename>
+            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/pths_builds/PTSH40.png</filename>
+            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/pths_builds/PTSH41.png</filename>
+            <filename>../../../../Dropbox/Anders &amp; Karin Spel/projektfiler/Aseprite/pths_builds/PTSH42.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

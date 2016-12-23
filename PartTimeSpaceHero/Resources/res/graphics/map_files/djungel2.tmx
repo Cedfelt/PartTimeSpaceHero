@@ -90,7 +90,7 @@
   <object id="141" name="PlayerObject" x="34.0597" y="6172.93" width="12" height="25"/>
   <object id="178" name="TurfelObject" x="144.412" y="5602.8" width="12" height="25"/>
   <object id="179" name="TurfelObject" x="879.851" y="5538.27" width="12" height="25"/>
-  <object id="180" name="GoalObject" x="1153.63" y="4706.12" width="13.3263" height="25"/>
+  <object id="180" name="GoalObject" x="1189.33" y="4739.12" width="13.3263" height="25"/>
   <object id="181" name="SnailObject" x="463.254" y="4854.85" width="298.767" height="91.1293">
    <properties>
     <property name="stayInZone" value="false"/>

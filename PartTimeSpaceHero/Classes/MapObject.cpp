@@ -84,8 +84,8 @@ void MapObject::setupLiquidLayers(){
 }
 
 
-
 void MapObject::moveBackgroundLayers(){
+  CC_ASSERT(false); // DONT USE THIS
   for (int i = 0; i < background_layers.size();i++) {
     auto layer_grp = background_layers.at(i)->getProperties();
     float bg_speed = layer_grp["BACKGROUND_SPEED"].asFloat();
@@ -96,6 +96,18 @@ void MapObject::moveBackgroundLayers(){
     auto v = bg_speed*map->convertToNodeSpace(Point(0.0, bg_offset));
     v.x = std::roundf(v.x);
     v.y = std::roundf(v.y);
+    background_layers.at(i)->setPosition(v);
+  }
+}
+void MapObject::moveBackgroundLayers(const float map_pos_x,const float map_pos_y){
+  for (int i = 0; i < background_layers.size();i++) {
+    auto layer_grp = background_layers.at(i)->getProperties();
+    float bg_speed = layer_grp["BACKGROUND_SPEED"].asFloat();
+    if (bg_speed == 0) {
+      bg_speed = 1;
+    }
+    const float bg_offset = -16*8; // THE 8 BLOCKS NOT VISIBLE BELOW
+    Vec2 v = Vec2(bg_speed*map_pos_x,bg_speed*(map_pos_y + bg_offset));
     background_layers.at(i)->setPosition(v);
   }
 }

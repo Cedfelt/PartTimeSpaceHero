@@ -15,7 +15,7 @@
 DB32Color color_collection[32];
 DB32Color color1 = {20, 12, 28};
 DB32Color color2 = {48, 52, 109};
-DB32Color color3 = {109, 194, 204};
+DB32Color color3 = {109, 194, 202};
 DB32Color color4 = {89, 125, 206};
 DB32Color color5 = {143, 86, 59};
 DB32Color color6 = {223, 113, 38};
@@ -41,10 +41,10 @@ DB32Color color25 = {105, 106, 106};
 DB32Color color26 = {89, 86, 82};
 DB32Color color27 = {118, 66, 138};
 DB32Color color28 = {172, 50, 50};
-DB32Color color29 = {217, 87, 99};
-DB32Color color30 = {215, 123, 186};
-DB32Color color31 = {143, 151, 74};
-DB32Color color32 = {138, 11, 48};
+DB32Color color29 = {10, 152, 172};
+DB32Color color30 = {106, 49, 202};
+DB32Color color31 = {33, 32, 64};
+DB32Color color32 = {0, 23, 125};
 
 void setup_colorcollection(){
   color_collection[BLACK] = color1;

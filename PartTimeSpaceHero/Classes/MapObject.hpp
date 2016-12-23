@@ -26,6 +26,7 @@ public:
   uint32_t getMapTileSize();
   void setupBackgroundLayers();
   void moveBackgroundLayers();
+  void moveBackgroundLayers(const float map_pos_x,const float map_pos_y);
   MapData* mapData;
   // implement the "static create()" method manually
   CREATE_FUNC(MapObject);

@@ -12,6 +12,7 @@
 #include "CoinObject.hpp"
 #include "TurfelObject.hpp"
 #include "BottyObject.hpp"
+#include "RobotObject.hpp"
 #include "RifleBoss.hpp"
 #include "GoalObject.hpp"
 #include "LaserObject.hpp"
@@ -251,7 +252,7 @@ void WorldObject::updateWorld(float delta) {
   }
   
   
-  mapObject->moveBackgroundLayers();
+  //mapObject->moveBackgroundLayers();
   #ifdef SMART_CAMERA
   // SMART CLIMB CAMERA
   Vec2 playerPos = Vec2(player->getObjectPositionX(),player->getObjectPositionY());
@@ -378,6 +379,9 @@ void WorldObject::setViewPointCenter(const cocos2d::Point position) {
   cocos2d::Point centerOfView = cocos2d::Point(winSize.width, winSize.height);
   centerOfView.subtract(actualPosition);// ccpSub(centerOfView, actualPosition);
   this->setPosition(centerOfView);
+  Vec2 mapPos = this->convertToNodeSpace(Point(mapObject->map->getPositionX(), mapObject->map->getPositionY()));
+  mapObject->moveBackgroundLayers(mapPos.x,mapPos.y);
+
 }
 
 bool WorldObject::onContactBegan(PhysicsContact &contact) {
@@ -574,6 +578,21 @@ void WorldObject::spawnObjects(cocos2d::Vector<GameObject*>* gameObjects) {
       addChild(botty);
     }
     
+    else if(name == "RobotObject"){
+      // COIN
+      auto botty = RobotObject::create();
+      botty->setupAnimation();
+      botty->setupHitbox(0.1, 1, 24, 32, 24, 32, false);
+      gameObjects->pushBack(botty);
+      botty->setObjectPositionX(x);
+      botty->setObjectPositionY(y);
+      botty->getPhysicsBody()->setCategoryBitmask((int)PhysicsCategory::Enemy);
+      botty->getPhysicsBody()->setCollisionBitmask((int)PhysicsCategory::None);
+      botty->getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::Player|(int)PhysicsCategory::PlayerProjectile|(int)PhysicsCategory::Hazard);
+      botty->target = player;
+      addChild(botty);
+    }
+    
     else if(name == "TankObject"){
       // COIN
       auto botty = TankObject::create();
@@ -597,7 +616,7 @@ void WorldObject::spawnObjects(cocos2d::Vector<GameObject*>* gameObjects) {
       botty->setupAnimation();
       bottyFirst = false;
       botty-> setAnimation("veggie_idle");
-      botty->setupHitbox(0.1, 1, 40, 50,40, 50, false);
+      botty->setupHitbox(0.1, 1, 40, 36,40, 36, false);
       gameObjects->pushBack(botty);
       botty->setObjectPositionX(x);
       botty->setObjectPositionY(y);
@@ -891,6 +910,7 @@ void WorldObject::updateOffScreenRect() {
 void WorldObject::finishLevel(){
   // setCurrentCompleted
   CocosDenshion::SimpleAudioEngine::getInstance()->stopBackgroundMusic();
+  CocosDenshion::SimpleAudioEngine::getInstance()->stopAllEffects();
   setPlayerGear(player->gear_mask_exclusive | player->gear_mask_unlimited);
   setPlayerMoney(player->coins);
   auto sd = SaveData::create();

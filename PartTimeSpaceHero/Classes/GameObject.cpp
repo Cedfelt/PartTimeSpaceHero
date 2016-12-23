@@ -293,8 +293,8 @@ void GameObject::dropCoin(int nrOfCoins) {
     coin->getPhysicsBody()->setCollisionBitmask((int)PhysicsCategory::None);
     coin->getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::Player | (int)PhysicsCategory::Hazard);
     coin->setVelocityX(cocos2d::random(-25, 25));
-    coin->setVelocityY(cocos2d::random(10, 50));
-    coin->addGravityToObject(true);
+    coin->setVelocityY(cocos2d::random(-10, 10));
+    // coin->addGravityToObject(true);
     coin->setElastic(1);
     addToGameObjects.pushBack(coin);
   }

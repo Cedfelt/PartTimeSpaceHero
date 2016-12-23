@@ -76,7 +76,7 @@ bool TitleScreen::init()
   label->setColor(col3b);
   addChild(label);
   
-  auto Map = cocos2d::TMXTiledMap::create("tutorial kopia.tmx");
+  auto Map = cocos2d::TMXTiledMap::create("title_screen.tmx");
   addChild(Map);
   //FÖR ATT LÄGGA IN NY STARTSKÄRM (måste vara sparade i spelets mapfiles nerladdat)
   // för att bestämma hur stor kartan ska vara ska bli

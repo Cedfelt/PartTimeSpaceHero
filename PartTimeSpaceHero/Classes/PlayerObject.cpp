@@ -234,8 +234,8 @@ float PlayerObject::getFuel() {
   return fuel;
 }
 
-float uppSpeed = 100.8f * SPEED_MOD;
-float maxRiseSpeed = 100 * SPEED_MOD;
+float uppSpeed = 180.8f * SPEED_MOD;
+float maxRiseSpeed = 125 * SPEED_MOD;
 bool PlayerObject::playerFlyUpdate(float delta) {
   
   
@@ -359,11 +359,11 @@ bool PlayerObject::playerFlyUpdate(float delta) {
   if(leftAndRightFly>=2){
     // CODE FOR DOUBLE SIDE UP BOOST, NOT USED RIGHT NOW
     setVelocityX(getVelocityX() * 1.0);
-    uppSpeed = 2.2f *1.0f;
+    uppSpeed = 2.7f *1.0f;
     maxRiseSpeed = 100 * 1.0f;
   }
   else{
-    uppSpeed = 2.2f;
+    uppSpeed = 3.2f;
     maxRiseSpeed = 100;
   }
   return module_active;

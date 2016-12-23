@@ -52,6 +52,7 @@ public:
   
 private:
   void addLevelToGame(std::string levelName);
+  void addLevelToGame(std::string levelName,std::string description);
   
 };
 

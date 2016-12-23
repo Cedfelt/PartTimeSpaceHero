@@ -30,7 +30,7 @@ bool VeggieObject::init() {
   setVelocityX(-speed);
   setPrevDir(GO_LEFT);
   objectSprite = cocos2d::Sprite::create();
-  objectSprite->setPosition(28, 0);// Aling sprite in Hitbox
+  objectSprite->setPosition(20, 0);// Aling sprite in Hitbox
   objectSprite->setAnchorPoint(Point(0.5, 0));
   addChild(objectSprite);
   objectSprite->setScaleX(-1);

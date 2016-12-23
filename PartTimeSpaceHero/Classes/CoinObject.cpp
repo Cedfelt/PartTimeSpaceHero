@@ -27,7 +27,15 @@ bool CoinObject::init() {
   objectSprite = cocos2d::Sprite::create();
   SpriteFrameCache::getInstance()->addSpriteFramesWithFile("coin_sheet.plist");
   addAnimation("coin", "Coin1", 1, 4, 0.2f);
-  setAnimation("Coin1");
+  //setAnimation("Coin1");
+  if(cocos2d::random(0, 1)){
+    objectSprite = cocos2d::Sprite::create("can.png");
+  }
+  else {
+    objectSprite = cocos2d::Sprite::create("glass.png");
+  }
+  
+  objectSprite->getTexture()->setAliasTexParameters();
   objectSprite->setPosition(19/2, 17/2);// Aling sprite in Hitbox
   addChild(objectSprite);
   return true;
