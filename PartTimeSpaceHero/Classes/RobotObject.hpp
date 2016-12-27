@@ -19,6 +19,15 @@ public:
   CREATE_FUNC(RobotObject);
   SoundFx* plingSFX;
   void AIUpdate(const float delta);
+  void ShootXDir(const float delta);
   virtual void deadState();
+protected:
+  enum {
+    PATROL,
+    AIM,
+    SHOOT,
+    AIM_DOWN
+  };
+  float AI_TIMER;
 private:
 };

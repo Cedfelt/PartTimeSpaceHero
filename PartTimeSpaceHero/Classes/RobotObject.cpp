@@ -9,7 +9,7 @@
 #include "RobotObject.hpp"
 #include "BabyTurfelObject.hpp"
 #include "CoinObject.hpp"
-
+#include "Simple_Bullet.hpp"
 
 bool RobotObject::init() {
   //////////////////////////////
@@ -20,7 +20,7 @@ bool RobotObject::init() {
   }
   
   
-  this->schedule(schedule_selector(RobotObject::AIUpdate), 0.8);
+  this->schedule(schedule_selector(RobotObject::AIUpdate), 0.4);
   addGravityToObject(true);
   setElastic(0.f);
   plingSFX = SoundFx::create();
@@ -39,6 +39,7 @@ bool RobotObject::init() {
   addChild(objectSprite);
   objectSprite->setScaleX(-1);
   //objectSprite->setScaleY(2);
+  
 
   return true;
 }
@@ -47,8 +48,71 @@ void RobotObject::colideWith(GameObject* oterhObj, const uint32_t otherType) {
   simpleWalkerHurt(oterhObj,otherType);
 }
 
+
+
 void RobotObject::AIUpdate(const float delta) {
-  genericWalkAi(delta);
+  
+  if(AI_STATE_VAR == PATROL){
+    genericWalkAi(delta);
+    setAnimation("robot_idle");
+    if(isPlayerInZone() && target->HP > 0){
+      AI_STATE_VAR = AIM;
+      AI_TIMER = 1.f;
+      return;
+    }
+  }
+  else if(AI_STATE_VAR == AIM){
+    setVelocityX(0);
+    setAnimation("robot_aim");
+    faceTarget(delta);
+    if(AI_TIMER>0){
+      AI_TIMER-= delta;
+      return;
+    }
+    else{
+      AI_STATE_VAR = SHOOT;
+      return;
+    }
+  }
+  else if(AI_STATE_VAR == SHOOT){
+    ShootXDir(delta);
+    AI_STATE_VAR = AIM_DOWN;
+    AI_TIMER = 1.f;
+    return;
+  }
+  else if(AI_STATE_VAR == AIM_DOWN){
+    if(AI_TIMER>0){
+      AI_TIMER-= delta;
+      return;
+    }
+    else{
+      AI_STATE_VAR = PATROL;
+      return;
+    }
+  }
+  
+}
+
+void RobotObject::ShootXDir(const float delta) {
+  auto babyTurf = SimpleBullet::create();
+  float bullet_x_offset;
+  babyTurf->setup(E_SIMPLE_BULLET);
+  babyTurf->setupHitbox(0.1f, 1.0f, 16, 16, 16, 16, false);
+  babyTurf->getPhysicsBody()->setCategoryBitmask((int)PhysicsCategory::Enemy);
+  babyTurf->getPhysicsBody()->setCollisionBitmask((int)PhysicsCategory::None);
+  babyTurf->getPhysicsBody()->setContactTestBitmask( (int)PhysicsCategory::Player | (int)PhysicsCategory::Hazard);
+  addToGameObjects.pushBack(babyTurf);
+  if(getPrevDir() == GO_RIGHT){
+    babyTurf->setVelocityX(200);
+    bullet_x_offset = 22;
+  }
+  else {
+    babyTurf->setVelocityX(-200);
+    bullet_x_offset = -16;
+  }
+  babyTurf->setObjectPositionX(getPositionX() + bullet_x_offset);
+  babyTurf->setObjectPositionY(getPositionY() + 16);
+  //weaponSFX->play(0.4f);
 }
 
 void RobotObject::deadState() {
@@ -69,5 +133,6 @@ bool RobotObject::setupAnimation() {
   SpriteFrameCache::getInstance()->addSpriteFramesWithFile("robothunter.plist");
   addAnimation("robothunter", "robot_idle", 1, 4, 0.2f);
   addAnimation("robothunter", "robot_dead", 5, 7, 0.2f);
+  addAnimation("robothunter", "robot_aim", 8, 8, 0.2f);
   return true;
 }

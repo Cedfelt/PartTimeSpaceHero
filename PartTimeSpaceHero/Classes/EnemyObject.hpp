@@ -24,6 +24,8 @@ protected:
   virtual void walkInZone(const float delta);
   virtual void simpleWalkerHurt(GameObject* player, const uint32_t otherType);
   void genericWalkAi(const float delta);
+  void faceTarget(const float delta);
   float fSimpleHurtForce;
   int fDMG;
+  int AI_STATE_VAR = 0;
 };

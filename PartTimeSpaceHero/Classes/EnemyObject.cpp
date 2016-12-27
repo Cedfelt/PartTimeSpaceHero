@@ -24,6 +24,17 @@ bool EnemyObject::init() {
 
 }
 
+void EnemyObject::faceTarget(const float delta){
+  if(target->getObjectPositionX() > getObjectPositionX()){
+    setPrevDir(GO_RIGHT);
+    objectSprite->setScaleX(1 * abs(objectSprite->getScale()));
+  }
+  else{
+    setPrevDir(GO_LEFT);
+    objectSprite->setScaleX(-1 * abs(objectSprite->getScale()));
+  }
+}
+
 // AI - BEHAVIOURS
 
 void EnemyObject::genericWalkAi(const float delta) {
