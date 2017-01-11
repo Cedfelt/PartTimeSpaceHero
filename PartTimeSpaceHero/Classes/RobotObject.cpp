@@ -45,6 +45,9 @@ bool RobotObject::init() {
 }
 
 void RobotObject::colideWith(GameObject* oterhObj, const uint32_t otherType) {
+  if(AI_STATE_VAR == DEAD){
+    return;
+  }
   simpleWalkerHurt(oterhObj,otherType);
 }
 
@@ -90,6 +93,9 @@ void RobotObject::AIUpdate(const float delta) {
       return;
     }
   }
+  else if(AI_STATE_VAR == DEAD){
+    setVelocityX(getVelocityX()*0.2f);
+  }
   
 }
 
@@ -119,11 +125,11 @@ void RobotObject::deadState() {
   HP = 0;
   plingSFX->play(0.3f);
   setAnimation("robot_dead");
-  this->bWallCollisions = false;
   setVelocityY(70);
-  this->unschedule(schedule_selector(RobotObject::AIUpdate));
-  this->unschedule(schedule_selector(RobotObject::update));
-  removeWhenBelowZero();
+  //this->unschedule(schedule_selector(RobotObject::AIUpdate));
+  //this->unschedule(schedule_selector(RobotObject::update));
+  //removeWhenBelowZero();
+  AI_STATE_VAR = DEAD;
   dropCoin(3);
 }
 

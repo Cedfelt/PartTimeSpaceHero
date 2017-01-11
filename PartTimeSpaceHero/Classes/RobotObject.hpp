@@ -26,7 +26,8 @@ protected:
     PATROL,
     AIM,
     SHOOT,
-    AIM_DOWN
+    AIM_DOWN,
+    DEAD
   };
   float AI_TIMER;
 private:

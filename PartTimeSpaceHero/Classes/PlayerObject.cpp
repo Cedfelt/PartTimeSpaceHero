@@ -462,11 +462,12 @@ bool PlayerObject::rifle_item(float delta) {
   if(item_charge_time>0.f){
     bool left_or_right = playerInput->isDoubleRight();
     left_or_right |= playerInput->isDoubleLeft();
-    if(left_or_right && getMovementStatus()==GO_ON_GROUND){
+    if(getMovementStatus()==GO_ON_GROUND){
       setVelocityX(0);
     }
     // Holding the item animation.
     if (bPlayerShoot) {
+      
       if (getPrevDir() == GO_RIGHT) {
         if (setAnimationOnce(animationStrings.at(ItemR))) {
           bPlayerShoot = false;
@@ -486,9 +487,6 @@ bool PlayerObject::rifle_item(float delta) {
     return false;
   }
   if (playerInput->isDoubleRight()) {
-    if(getMovementStatus()==GO_ON_GROUND){
-      setVelocityX(0);
-    }
     item_charge_time = item_charge_time_max;
     objectSprite->setScaleX(1);
     setAnimationOnce(animationStrings.at(ItemR));
@@ -498,7 +496,7 @@ bool PlayerObject::rifle_item(float delta) {
     babyTurf->setup(E_SIMPLE_BULLET);
     babyTurf->setupHitbox(0.1f, 1.0f, 16, 16, 16, 16, false);
     babyTurf->setObjectPositionX(getPositionX() + 10);
-    babyTurf->setObjectPositionY(getPositionY() + 2);
+    babyTurf->setObjectPositionY(getPositionY() + 10);
     babyTurf->getPhysicsBody()->setCategoryBitmask((int)PhysicsCategory::PlayerProjectile);
     babyTurf->getPhysicsBody()->setCollisionBitmask((int)PhysicsCategory::None);
     babyTurf->getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::Enemy | (int)PhysicsCategory::PlayerPickups|(int)PhysicsCategory::Hazard);
@@ -520,7 +518,7 @@ bool PlayerObject::rifle_item(float delta) {
     babyTurf->setup(E_SIMPLE_BULLET);
     babyTurf->setupHitbox(0.1f, 1.0f, 16, 16, 16, 16, false);
     babyTurf->setObjectPositionX(getPositionX() - 20);
-    babyTurf->setObjectPositionY(getPositionY() + 2);
+    babyTurf->setObjectPositionY(getPositionY() + 10);
     babyTurf->getPhysicsBody()->setCategoryBitmask((int)PhysicsCategory::PlayerProjectile);
     babyTurf->getPhysicsBody()->setCollisionBitmask((int)PhysicsCategory::None);
     babyTurf->getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::Enemy | (int)PhysicsCategory::PlayerPickups|(int)PhysicsCategory::Hazard);
@@ -528,9 +526,7 @@ bool PlayerObject::rifle_item(float delta) {
     bPlayerShoot = true;
     babyTurf->setVelocityX(-200);
     weaponSFX->play(0.4f);
-    if(getMovementStatus()==GO_ON_GROUND){
-      setVelocityX(0);
-    }
+    
   }
   return false;
 }
@@ -617,8 +613,16 @@ bool PlayerObject::no_item(float delta) {
   return false;
 }
 
-
+float last_velocity;
 void PlayerObject::playerUpdate(const float delta) {
+  if((getVelocityY() - last_velocity)>400.f){
+    HP = 0;
+    setAnimationOnce("Die");
+    dead = true;
+    setVelocityX(0);
+    setVelocityY(0);
+  }
+  last_velocity = getVelocityY();
   if(HP<=0){
     return;//dead
   }
@@ -800,39 +804,40 @@ bool PlayerObject::setupAnimation() {
 
   // Items 
   SpriteFrameCache::getInstance()->addSpriteFramesWithFile("ptsh.plist");
-  addAnimation("PTSH", "IdleR", 1, 4, 0.2f);
-  addAnimation("PTSH", "IdleL", 1, 4, 0.2f);
-  addAnimation("PTSH", "WalkR", 5, 8, 0.15f);
-  addAnimation("PTSH", "WalkL", 5, 8, 0.15f);
-  addAnimation("PTSH", "FlyR", 9, 12, 0.13f);
-  addAnimation("PTSH", "FlyL", 9, 12, 0.13f);
-  addAnimation("PTSH", "AscendR", 13, 13, 0.2f);
-  addAnimation("PTSH", "AscendL", 13, 13, 0.2f);
-  addAnimation("PTSH", "FallR", 14, 17, 0.12f);
-  addAnimation("PTSH", "FallL", 14, 17, 0.12f);
+  SpriteFrameCache::getInstance()->addSpriteFramesWithFile("16_astro.plist");
+  addAnimation("16_astro", "IdleR", 1, 1, 0.2f);
+  addAnimation("16_astro", "IdleL", 1, 1, 0.2f);
+  addAnimation("16_astro", "WalkR", 2, 3, 0.15f);
+  addAnimation("16_astro", "WalkL", 2, 3, 0.15f);
+  addAnimation("16_astro", "FlyR", 4, 5, 0.13f);
+  addAnimation("16_astro", "FlyL", 4, 5, 0.13f);
+  addAnimation("16_astro", "AscendR", 5, 5, 0.2f);
+  addAnimation("16_astro", "AscendL", 5, 5, 0.2f);
+  addAnimation("16_astro", "FallR", 2, 2, 0.12f);
+  addAnimation("16_astro", "FallL", 2, 2, 0.12f);
   addAnimation("PTSH", "DashChargeR", 18, 21, 0.1f);
   addAnimation("PTSH", "DashChargeL", 18, 21, 0.1f);
   addAnimation("PTSH", "DashR", 22, 25, 0.15f);
   addAnimation("PTSH", "DashL", 22, 25, 0.15f);
-  addAnimation("PTSH", "Die", 34, 41, 0.15f);
-  addAnimation("PTSH", "Die2", 42, 42, 0.15f);
+  addAnimation("16_astro", "Die", 7, 7, 0.15f);
+  addAnimation("16_astro", "Die2", 7, 7, 0.15f);
   
   // Weapon Anim
   auto spriteFrameCache = cocos2d::SpriteFrameCache::getInstance();
   //  spriteFrameCache->addSpriteFramesWithFile("ptshwep.plist");
   spriteFrameCache->addSpriteFramesWithFile("PTSH_CLN.plist");
-  addAnimation("PTSH_WEP", "IdleRWep", 1, 4, 0.2f);
-  addAnimation("PTSH_WEP", "IdleLWep", 1, 4, 0.2f);
-  addAnimation("PTSH_WEP", "WalkRWep", 5, 8, 0.20f);
-  addAnimation("PTSH_WEP", "WalkLWep", 5, 8, 0.20f);
-  addAnimation("PTSH_WEP", "FlyRWep", 9, 12, 0.18f);
-  addAnimation("PTSH_WEP", "FlyLWep", 9, 12, 0.18f);
-  addAnimation("PTSH_WEP", "AscendRWep", 9, 12, 0.2f);
-  addAnimation("PTSH_WEP", "AscendLWep", 9, 12, 0.2f);
-  addAnimation("PTSH_WEP", "FallRWep", 14, 17, 0.2f);
-  addAnimation("PTSH_WEP", "FallLWep", 14, 17, 0.2f);
-  addAnimation("PTSH_WEP", "PlayerShootRWep", 26, 29, 0.06f);
-  addAnimation("PTSH_WEP", "PlayerShootLWep", 26, 29, 0.06f);
+  addAnimation("16_astro", "IdleRWep", 1, 1, 0.2f);
+  addAnimation("16_astro", "IdleLWep", 1, 1, 0.2f);
+  addAnimation("16_astro", "WalkRWep", 2, 3, 0.20f);
+  addAnimation("16_astro", "WalkLWep", 2, 3, 0.20f);
+  addAnimation("16_astro", "FlyRWep", 4, 5, 0.18f);
+  addAnimation("16_astro", "FlyLWep", 4, 5, 0.18f);
+  addAnimation("16_astro", "AscendRWep", 5, 5, 0.2f);
+  addAnimation("16_astro", "AscendLWep", 5, 5, 0.2f);
+  addAnimation("16_astro", "FallRWep", 2, 2, 0.2f);
+  addAnimation("16_astro", "FallLWep", 2, 2, 0.2f);
+  addAnimation("16_astro", "PlayerShootRWep", 6, 6, 0.54f);
+  addAnimation("16_astro", "PlayerShootLWep", 6, 6, 0.54f);
 
 
   // Strings
@@ -853,8 +858,9 @@ bool PlayerObject::setupAnimation() {
 
   objectSprite = cocos2d::Sprite::create();
   objectSprite->retain();
-  objectSprite->setAnchorPoint(cocos2d::Point(0.5, 0.25));
+  objectSprite->setAnchorPoint(cocos2d::Point(0.5, 0.0));
   objectSprite->setPositionX(5);// Aling sprite in Hitbox
+  objectSprite->setPositionY(-32);// Aling sprite in Hitbox
   setAnimation(animationStrings.at((IdleR)));
   setAnchorPoint(Point(0.0 , 0.5f));
   //objectSprite->setPosition(cocos2d::Point((4, 0);
@@ -864,7 +870,8 @@ bool PlayerObject::setupAnimation() {
   
   // ITEM SETUP
   pItem = &PlayerObject::no_item;
-  setItem(E_SUPORT_ITEM);
+  //setItem(E_SUPORT_ITEM);
+  setItem(E_RIFLE_ITEM);
   const uint32_t gear = getPayerGear();
   gear_mask_exclusive = 0;
   setItem((PlayerItem_ID)(gear & E_RIFLE_ITEM));

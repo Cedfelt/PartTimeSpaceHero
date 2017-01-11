@@ -45,22 +45,22 @@ void SaveData::addLevelToGame(std::string levelName,std::string description){
 void SaveData::loadWorldData() {
   // Tutorial
   // Intro
+  addLevelToGame("karins.tmx", "Dev Level");
+  addLevelToGame("happy space.tmx", "Green and lonley");
   //addLevelToGame("tutorial2.tmx");
-  //addLevelToGame("level1.tmx");
-  addLevelToGame("design_test.tmx", "Dev Level");
-  addLevelToGame("happy space.tmx", "Welcome to Scarp Yard 0x41A3");
+  addLevelToGame("level1.tmx");
   addLevelToGame("level2.tmx","Brace for Impact");
-  addLevelToGame("the_second_step.tmx", "Down below");
-  addLevelToGame("metroid_cave.tmx");
-  
+  addLevelToGame("djungel2.tmx","Up like a pancake");
+  addLevelToGame("tutorial.tmx","Into The Yonder");
+  addLevelToGame("design_test.tmx", "Dev Level");
+  //addLevelToGame("nes_test.tmx","It should be here somewhere..");
+ //addLevelToGame("the_second_step.tmx", "Down below");
+  //addLevelToGame("metroid_cave.tmx");
   addLevelToGame("djungel2.tmx","Up like a pancake");
   addLevelToGame("tutorial.tmx","Into The Yonder");
   addLevelToGame("nes_test.tmx","It should be here somewhere..");
-  
   addLevelToGame("forest_dungeon.tmx","You Want it Darker");
   addLevelToGame("bellas_house.tmx","Something for the handy... ");
-  
-  
   addLevelToGame("level3.tmx");
   addLevelToGame("knock_knock.tmx");
   addLevelToGame("level4.tmx");
