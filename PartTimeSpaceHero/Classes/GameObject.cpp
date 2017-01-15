@@ -8,6 +8,7 @@
 #include "GameObject.hpp"
 #include "GlobalPList.hpp"
 #include "CoinObject.hpp"
+#include "SpecialFX.hpp"
 GameObject::GameObject(){
 }
 
@@ -180,11 +181,13 @@ bool GameObject::hurt(const int dmg, const Vec2 force) {
   if (!isImune()&&HP>0) {
     setImune();
     HP -= dmg;
-    addToVelocityX(force.x);
+    flash(5,imuneTime/5.0f);
+    hurtNotification();
     addToVelocityY(force.y);
     this->unschedule(CC_SCHEDULE_SELECTOR(GameObject::imuneUpdate));
     this->schedule(CC_SCHEDULE_SELECTOR(GameObject::imuneUpdate));
     if (HP <= 0) {
+      addToVelocityX(force.x);
       HP = 0;
       deadState();
     }
@@ -193,7 +196,14 @@ bool GameObject::hurt(const int dmg, const Vec2 force) {
   return false;
 }
 
+void GameObject::hurtNotification(){}
+
 void GameObject::deadState() {
+  SpecialFX *poof = SpecialFX::create();
+  poof->setObjectPositionX(getObjectPositionX());
+  poof->setObjectPositionY(getObjectPositionY());
+  poof->setupFXType(POOF_FX);
+  addToGameObjects.pushBack(poof);
   this->remove_object = true;
 }
 

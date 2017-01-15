@@ -15,6 +15,8 @@ Color3B green;
 Color3B yellow;
 Color3B red;
 
+std::string meter[7] = {"meter0","meter1","meter2","meter3","meter4","meter5","meter6"};
+
 bool GUI::init() {
   //////////////////////////////
   // 1. super init first
@@ -56,27 +58,38 @@ bool GUI::init() {
   rightIcon->setPosition(xRight,-yRight);
   addChild(rightIcon, 101);
   
-  Sprite* barBack = Sprite::create("fule_bar.png");
+  /*Sprite* barBack = Sprite::create("meter1.png");
   barBack->setScaleX(bar_length);
   barBack->setAnchorPoint(Point(0.0f, 1.f));
   barBack->getTexture()->setAliasTexParameters();
   barBack->setColor(Color3B(0, 0, 0));
-  addChild(barBack, 101);
+  addChild(barBack, 101);*/
+  objectSprite = cocos2d::Sprite::create("meter6.png"); 
+  SpriteFrameCache::getInstance()->addSpriteFramesWithFile("meter.plist");
+  addAnimation("meter", "meter0", 1, 1, 0.2f);
+  addAnimation("meter", "meter1", 2, 2, 0.2f);
+  addAnimation("meter", "meter2", 3, 3, 0.2f);
+  addAnimation("meter", "meter3", 4, 4, 0.2f);
+  addAnimation("meter", "meter4", 5, 5, 0.2f);
+  addAnimation("meter", "meter5", 6, 6, 0.2f);
+  addAnimation("meter", "meter6", 7, 7, 0.2f);
+  
+  
   
   
 
-  objectSprite = cocos2d::Sprite::create("fule_bar.png");
-  objectSprite->setScaleX(bar_length);
+  
+  objectSprite->setScale(4);
   objectSprite->setAnchorPoint(Point(0.0f, 1.f));
   objectSprite->getTexture()->setAliasTexParameters();
-  objectSprite->setColor(green);
+  //objectSprite->setColor(green);
   addChild(objectSprite, 102);
 
-  Label* fuelLabel = Label::createWithTTF("POWER", "fonts/PressStart2P.ttf", 20);
+  /*Label* fuelLabel = Label::createWithTTF("POWER", "fonts/PressStart2P.ttf", 20);
   fuelLabel->setAnchorPoint(Point(0.0f, 1.f));
   fuelLabel->setPositionX(9 * bar_length / 2.0f);
   fuelLabel->setPositionY(-8);
-  addChild(fuelLabel, 103);
+  addChild(fuelLabel, 103);*/
 
   // Hearts
   for (int i = 0;i < 3;i++) {
@@ -159,14 +172,18 @@ void GUI::update(const float delta) {
   
   
   const float fule = player->getFuel();
-  objectSprite->setScaleX(bar_length*player->getFuel());
+  int inx = std::ceil(fule / 0.1428f);
+  inx = MAX(inx, 0);
+  inx = MIN(inx, 6);
+  setAnimation(meter[inx]);
+  /*objectSprite->setScaleX(bar_length*player->getFuel());
   objectSprite->setColor(green);
   if(fule<0.66f){
     objectSprite->setColor(yellow);
   }
   if(fule<0.3f){
     objectSprite->setColor(red);
-  }
+  }*/
   
   const std::string moneyString = std::to_string(player->getCoins());
   moneyLabel->setString(moneyString);

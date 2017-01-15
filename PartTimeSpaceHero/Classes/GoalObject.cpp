@@ -19,11 +19,11 @@ bool GoalObject::init() {
   
   this->schedule(schedule_selector(GoalObject::update));
   setScale(1);
-  addGravityToObject(false);
+  addGravityToObject(true);
   setElastic(0);
   // SETUP ANIMATIONS
-  objectSprite = cocos2d::Sprite::create(/*"SpaceshipA.png"*/);
-  objectSprite->setPosition(32, 64);// Aling sprite in Hitbox
+  objectSprite = cocos2d::Sprite::create("goal_pole.png");
+  objectSprite->setPosition(0, 48);// Aling sprite in Hitbox
   objectSprite->getTexture()->setAliasTexParameters();
   addChild(objectSprite);
   setAnchorPoint(Point(0.5,0));

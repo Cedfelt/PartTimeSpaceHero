@@ -29,6 +29,7 @@ public:
   void EyeMon_AIUpdate(const float delta);
   void ShootXDir(const float delta);
   virtual void deadState();
+  virtual void hurtNotification();
   MONSTER_ID monster_id;
   
   void setupMonsterType(MONSTER_ID id);
@@ -38,6 +39,7 @@ protected:
     AIM,
     SHOOT,
     AIM_DOWN,
+    HAUNT,
     DEAD
   };
   float AI_TIMER;

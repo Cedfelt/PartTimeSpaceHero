@@ -95,3 +95,7 @@ bool SimpleBullet::simple_bullet(float delta){
 bool SimpleBullet::setupAnimation() {
   return true;
 }
+
+void SimpleBullet::deadState() {
+  remove_object = true;
+}

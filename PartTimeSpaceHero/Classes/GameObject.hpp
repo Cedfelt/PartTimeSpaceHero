@@ -88,6 +88,7 @@ public:
   MapData* mapData;
   Vec2 extraMove;
   virtual void deadState();
+  virtual void hurtNotification();
   float moveX;
   float moveY;
 

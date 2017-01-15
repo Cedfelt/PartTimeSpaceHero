@@ -19,6 +19,7 @@ using namespace cocos2d;
 class SimpleBullet : public GameObject {
 public:
   virtual bool init();
+  virtual void deadState();
   bool setupAnimation();
   CREATE_FUNC(SimpleBullet);
   SoundFx* babyTurfelCrySFX;

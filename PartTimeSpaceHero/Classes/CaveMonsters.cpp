@@ -10,6 +10,7 @@
 #include "BabyTurfelObject.hpp"
 #include "CoinObject.hpp"
 #include "Simple_Bullet.hpp"
+#include "SpecialFX.hpp"
 
 bool CaveMonsters::init() {
   //////////////////////////////
@@ -28,6 +29,7 @@ bool CaveMonsters::init() {
   
   
   
+  
   return true;
 }
 
@@ -41,12 +43,14 @@ void CaveMonsters::setupMonsterType(MONSTER_ID id){
   monster_id = id;
   
   if(id == FIRE_MONSTER){
+    HP = 3;
     setAnimation("fireMon_walk");
     this->schedule(schedule_selector(CaveMonsters::FireMon_AIUpdate), 0.4);
     objectSprite->setPosition(8, 0);// Aling sprite in Hitbox
     objectSprite->setAnchorPoint(Point(0.5, 0));
   }
   else if(id == BLOB_MONSTER){
+    HP = 2;
     setAnimation("blobMon_walk");
     this->schedule(schedule_selector(CaveMonsters::BlobMon_AIUpdate), 0.4);
     objectSprite->setPosition(8, 0);// Aling sprite in Hitbox
@@ -54,6 +58,7 @@ void CaveMonsters::setupMonsterType(MONSTER_ID id){
     speed = speed * 0.5f;
   }
   else if(id == FLYING_EYE_MOSTER){
+    HP = 1;
     setAnimation("eyeMon_walk");
     addGravityToObject(false);
     this->schedule(schedule_selector(CaveMonsters::EyeMon_AIUpdate), 0.4);
@@ -115,6 +120,13 @@ void CaveMonsters::FireMon_AIUpdate(const float delta) {
       return;
     }
   }
+  
+  else if(AI_STATE_VAR == HAUNT){
+    approachPlayer(0);
+    if(std::abs(target->getObjectPositionY() - getObjectPositionY())<15){
+      AI_STATE_VAR = AIM;
+    }
+  }
   else if(AI_STATE_VAR == DEAD){
     setVelocityX(getVelocityX()*0.2f);
   }
@@ -152,10 +164,21 @@ void CaveMonsters::ShootXDir(const float delta) {
   //weaponSFX->play(0.4f);
 }
 
+
 void CaveMonsters::deadState() {
   HP = 0;
   plingSFX->play(0.3f);
+  dropCoin(3);
+  SpecialFX *poof = SpecialFX::create();
+  poof->setObjectPositionX(getObjectPositionX());
+  poof->setObjectPositionY(getObjectPositionY());
+  poof->setupFXType(POOF_FX);
+  addToGameObjects.pushBack(poof);
+  remove_object = true;
+  return;
+  
   addGravityToObject(true);
+  
   if(monster_id == FIRE_MONSTER)
     setAnimation("fireMon_dead");
   else if(monster_id == BLOB_MONSTER)
@@ -168,7 +191,16 @@ void CaveMonsters::deadState() {
   this->unschedule(schedule_selector(CaveMonsters::update));
   removeWhenBelowZero();
   AI_STATE_VAR = DEAD;
-  dropCoin(3);
+  
+}
+
+void CaveMonsters::hurtNotification(){
+  if(monster_id == FIRE_MONSTER){
+    approachPlayer(0);
+    AI_STATE_VAR = HAUNT;
+  }
+  else if(monster_id == BLOB_MONSTER){}
+  else if(monster_id == FLYING_EYE_MOSTER){}
 }
 
 bool CaveMonsters::setupAnimation(int monster_type) {
