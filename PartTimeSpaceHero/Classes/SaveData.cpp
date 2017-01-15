@@ -45,11 +45,14 @@ void SaveData::addLevelToGame(std::string levelName,std::string description){
 void SaveData::loadWorldData() {
   // Tutorial
   // Intro
+  addLevelToGame("monster_cave.tmx","Brace for Impact");
+  addLevelToGame("level2.tmx","Brace for Impact");
+  addLevelToGame("scrap_planet.tmx", "Dev Level");
   addLevelToGame("karins.tmx", "Dev Level");
   addLevelToGame("happy space.tmx", "Green and lonley");
   //addLevelToGame("tutorial2.tmx");
   addLevelToGame("level1.tmx");
-  addLevelToGame("level2.tmx","Brace for Impact");
+  
   addLevelToGame("djungel2.tmx","Up like a pancake");
   addLevelToGame("tutorial.tmx","Into The Yonder");
   addLevelToGame("design_test.tmx", "Dev Level");

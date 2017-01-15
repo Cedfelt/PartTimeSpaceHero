@@ -35,6 +35,7 @@
 #include "SmallWildLife.hpp"
 #include "Tank.hpp"
 #include "VeggieObject.hpp"
+#include "CaveMonsters.hpp"
 
 float lastX;
 float lastY;
@@ -581,8 +582,23 @@ void WorldObject::spawnObjects(cocos2d::Vector<GameObject*>* gameObjects) {
     else if(name == "RobotObject"){
       // COIN
       auto botty = RobotObject::create();
-      botty->setupAnimation();
       botty->setupHitbox(0.1, 1, 24, 32, 24, 32, false);
+      gameObjects->pushBack(botty);
+      botty->setObjectPositionX(x);
+      botty->setObjectPositionY(y);
+      botty->getPhysicsBody()->setCategoryBitmask((int)PhysicsCategory::Enemy);
+      botty->getPhysicsBody()->setCollisionBitmask((int)PhysicsCategory::None);
+      botty->getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::Player|(int)PhysicsCategory::PlayerProjectile|(int)PhysicsCategory::Hazard);
+      botty->target = player;
+      botty->objectZone.setRect(x, y, w, h);
+      addChild(botty);
+    }
+    
+    else if(name == "CaveMonster"){
+      // COIN
+      auto botty = CaveMonsters::create();
+      botty->setupMonsterType((MONSTER_ID)vm["type"].asInt());
+      botty->setupHitbox(0.1, 1, 24, 24, 24, 24, false);
       gameObjects->pushBack(botty);
       botty->setObjectPositionX(x);
       botty->setObjectPositionY(y);

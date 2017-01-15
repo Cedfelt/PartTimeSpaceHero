@@ -98,6 +98,8 @@
 		A825610E1CFCD64100FC1DD3 /* SaveData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A825610B1CFCD64100FC1DD3 /* SaveData.cpp */; };
 		A82561111CFCD65200FC1DD3 /* LevelData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A825610F1CFCD65200FC1DD3 /* LevelData.cpp */; };
 		A82561121CFCD65200FC1DD3 /* LevelData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A825610F1CFCD65200FC1DD3 /* LevelData.cpp */; };
+		A82817581E2AEB3E004453A0 /* CaveMonsters.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A82817561E2AEB3E004453A0 /* CaveMonsters.cpp */; };
+		A82817591E2AEB3E004453A0 /* CaveMonsters.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A82817561E2AEB3E004453A0 /* CaveMonsters.cpp */; };
 		A828EC0E1D00D0D70006AA25 /* BottyObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A828EC0C1D00D0D70006AA25 /* BottyObject.cpp */; };
 		A828EC111D020A3D0006AA25 /* MapData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A828EC0F1D020A3D0006AA25 /* MapData.cpp */; };
 		A828EC121D020A3D0006AA25 /* MapData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A828EC0F1D020A3D0006AA25 /* MapData.cpp */; };
@@ -257,6 +259,8 @@
 		A825610C1CFCD64100FC1DD3 /* SaveData.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SaveData.hpp; sourceTree = "<group>"; };
 		A825610F1CFCD65200FC1DD3 /* LevelData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LevelData.cpp; sourceTree = "<group>"; };
 		A82561101CFCD65200FC1DD3 /* LevelData.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = LevelData.hpp; sourceTree = "<group>"; };
+		A82817561E2AEB3E004453A0 /* CaveMonsters.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CaveMonsters.cpp; sourceTree = "<group>"; };
+		A82817571E2AEB3E004453A0 /* CaveMonsters.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CaveMonsters.hpp; sourceTree = "<group>"; };
 		A828EC0C1D00D0D70006AA25 /* BottyObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BottyObject.cpp; sourceTree = "<group>"; };
 		A828EC0D1D00D0D70006AA25 /* BottyObject.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BottyObject.hpp; sourceTree = "<group>"; };
 		A828EC0F1D020A3D0006AA25 /* MapData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MapData.cpp; sourceTree = "<group>"; };
@@ -546,6 +550,8 @@
 				A8136BFB1DD1270A00BCBCE0 /* ProximityZone.hpp */,
 				A81862C91DDDA0BA00519515 /* CameraObject.cpp */,
 				A81862CA1DDDA0BA00519515 /* CameraObject.hpp */,
+				A82817561E2AEB3E004453A0 /* CaveMonsters.cpp */,
+				A82817571E2AEB3E004453A0 /* CaveMonsters.hpp */,
 				A80CDEAC1E0C903C000E319F /* RobotObject.cpp */,
 				A80CDEAD1E0C903C000E319F /* RobotObject.hpp */,
 			);
@@ -763,6 +769,7 @@
 				A803C10E1D3EC9C700E918EA /* SnailObject.cpp in Sources */,
 				A8ECBD611DAA91A100B7929E /* MudMonsterObject.cpp in Sources */,
 				A81BE1431CBA40AE00C09359 /* GameScene.cpp in Sources */,
+				A82817581E2AEB3E004453A0 /* CaveMonsters.cpp in Sources */,
 				A80B7A881DB963050023B986 /* SmallWildLife.cpp in Sources */,
 				A82561091CFB635F00FC1DD3 /* UfoObject.cpp in Sources */,
 				A81BE15B1CBA424600C09359 /* LaserObject.cpp in Sources */,
@@ -829,6 +836,7 @@
 				A87AD0A31D40166300CF5B03 /* DialogObject.cpp in Sources */,
 				A80CDEAF1E0C903C000E319F /* RobotObject.cpp in Sources */,
 				A82561121CFCD65200FC1DD3 /* LevelData.cpp in Sources */,
+				A82817591E2AEB3E004453A0 /* CaveMonsters.cpp in Sources */,
 				A825610E1CFCD64100FC1DD3 /* SaveData.cpp in Sources */,
 				A8FA61791D3ED4F6007178A2 /* ZombieObject.cpp in Sources */,
 				A87396B11D0DF44800ADE298 /* Simple_Bullet.cpp in Sources */,

@@ -615,13 +615,14 @@ bool PlayerObject::no_item(float delta) {
 
 float last_velocity;
 void PlayerObject::playerUpdate(const float delta) {
-  if((getVelocityY() - last_velocity)>400.f){
+  /*if((getVelocityY() - last_velocity)>400.f){
     HP = 0;
     setAnimationOnce("Die");
     dead = true;
     setVelocityX(0);
     setVelocityY(0);
-  }
+    jetpack1->stop();
+  }*/
   last_velocity = getVelocityY();
   if(HP<=0){
     return;//dead
@@ -704,6 +705,7 @@ bool PlayerObject::hurt(const int dmg, const Vec2 force) {
       this->schedule(CC_SCHEDULE_SELECTOR(GameObject::imuneUpdate));
       if (HP <= 0) {
         HP = 0;
+        jetpack1->stop();
       }
       else{
         flash(5,imuneTime/5.0f);
@@ -730,6 +732,7 @@ bool PlayerObject::hurt(const int dmg, const Vec2 force) {
     dead = true;
     setVelocityX(0);
     setVelocityY(0);
+    jetpack1->stop();
   }
   return true;
 }

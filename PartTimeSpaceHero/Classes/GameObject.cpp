@@ -329,6 +329,16 @@ void GameObject::approachPlayer(const float delta){
   }
 }
 
+bool GameObject::isFacingTarget(){
+  const float distX = target->getObjectPositionX() - getObjectPositionX();
+  if(distX<0){
+    return (getPrevDir() == GO_LEFT);
+  }
+  else{
+    return (getPrevDir() == GO_RIGHT);
+  }
+}
+
 void GameObject::flash(int times, float interval){
   this->schedule(CC_SCHEDULE_SELECTOR(GameObject::flash_sprite),interval,times,0);
 }

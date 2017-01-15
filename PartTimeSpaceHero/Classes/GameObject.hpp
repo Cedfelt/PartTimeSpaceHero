@@ -151,7 +151,7 @@ public:
   void setStupidWalk(bool bState);
   void setStayInZone(bool bState);
   void flash(int times, float interval);
-  
+  bool isFacingTarget();
   void flash_sprite(float delta);
 protected:
   virtual void removeWhenBelowZeroUpdate(const float delta);
