@@ -181,7 +181,7 @@ bool GameObject::hurt(const int dmg, const Vec2 force) {
   if (!isImune()&&HP>0) {
     setImune();
     HP -= dmg;
-    flash(5,imuneTime/5.0f);
+    flash(3,imuneTime/3.0f);
     hurtNotification();
     addToVelocityY(force.y);
     this->unschedule(CC_SCHEDULE_SELECTOR(GameObject::imuneUpdate));

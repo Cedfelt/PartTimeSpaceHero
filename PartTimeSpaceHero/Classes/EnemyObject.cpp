@@ -19,7 +19,7 @@ bool EnemyObject::init() {
   bStayInZone = false;
   bStupidWalk = false;
   bTurnAtEdges = false;
-  
+  imuneTime = 0.4f;
   return true;
 
 }

@@ -49,7 +49,7 @@ void SimpleBullet::setup(BULLET_TYPE bt){
 }
 
 void SimpleBullet::colideWith(GameObject* oterhObj,const uint32_t otherType){
-  oterhObj->hurt(dmg, Vec2(0.5f*getVelocityX(), 0.5f*getVelocityY()));
+  oterhObj->hurt(dmg, Vec2(0.5f*getVelocityX(), 75.f));
   oterhObj->setColor(Color3B::BLACK);
   start_animation = true;
   obstacle_mask = GO_LEFT|GO_RIGHT;
