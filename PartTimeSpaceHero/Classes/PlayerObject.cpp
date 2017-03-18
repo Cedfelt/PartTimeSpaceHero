@@ -808,39 +808,39 @@ bool PlayerObject::setupAnimation() {
   // Items 
   SpriteFrameCache::getInstance()->addSpriteFramesWithFile("ptsh.plist");
   SpriteFrameCache::getInstance()->addSpriteFramesWithFile("16_astro.plist");
-  addAnimation("16_astro", "IdleR", 1, 1, 0.2f);
-  addAnimation("16_astro", "IdleL", 1, 1, 0.2f);
-  addAnimation("16_astro", "WalkR", 2, 3, 0.15f);
-  addAnimation("16_astro", "WalkL", 2, 3, 0.15f);
-  addAnimation("16_astro", "FlyR", 4, 5, 0.13f);
-  addAnimation("16_astro", "FlyL", 4, 5, 0.13f);
-  addAnimation("16_astro", "AscendR", 5, 5, 0.2f);
-  addAnimation("16_astro", "AscendL", 5, 5, 0.2f);
-  addAnimation("16_astro", "FallR", 2, 2, 0.12f);
-  addAnimation("16_astro", "FallL", 2, 2, 0.12f);
+  addAnimation("PTSH", "IdleR", 1, 4, 0.2f);
+  addAnimation("PTSH", "IdleL", 1, 4, 0.2f);
+  addAnimation("PTSH", "WalkR", 5, 8, 0.15f);
+  addAnimation("PTSH", "WalkL", 5, 8, 0.15f);
+  addAnimation("PTSH", "FlyR", 9, 12, 0.13f);
+  addAnimation("PTSH", "FlyL", 9, 12, 0.13f);
+  addAnimation("PTSH", "AscendR", 13, 13, 0.2f);
+  addAnimation("PTSH", "AscendL", 13, 13, 0.2f);
+  addAnimation("PTSH", "FallR", 14, 17, 0.12f);
+  addAnimation("PTSH", "FallL", 17, 17, 0.12f);
   addAnimation("PTSH", "DashChargeR", 18, 21, 0.1f);
   addAnimation("PTSH", "DashChargeL", 18, 21, 0.1f);
   addAnimation("PTSH", "DashR", 22, 25, 0.15f);
   addAnimation("PTSH", "DashL", 22, 25, 0.15f);
-  addAnimation("16_astro", "Die", 7, 7, 0.15f);
-  addAnimation("16_astro", "Die2", 7, 7, 0.15f);
+  addAnimation("PTSH", "Die", 7, 7, 0.15f);
+  addAnimation("PTSH", "Die2", 7, 7, 0.15f);
   
   // Weapon Anim
   auto spriteFrameCache = cocos2d::SpriteFrameCache::getInstance();
   //  spriteFrameCache->addSpriteFramesWithFile("ptshwep.plist");
   spriteFrameCache->addSpriteFramesWithFile("PTSH_CLN.plist");
-  addAnimation("16_astro", "IdleRWep", 1, 1, 0.2f);
-  addAnimation("16_astro", "IdleLWep", 1, 1, 0.2f);
-  addAnimation("16_astro", "WalkRWep", 2, 3, 0.20f);
-  addAnimation("16_astro", "WalkLWep", 2, 3, 0.20f);
-  addAnimation("16_astro", "FlyRWep", 4, 5, 0.18f);
-  addAnimation("16_astro", "FlyLWep", 4, 5, 0.18f);
-  addAnimation("16_astro", "AscendRWep", 5, 5, 0.2f);
-  addAnimation("16_astro", "AscendLWep", 5, 5, 0.2f);
-  addAnimation("16_astro", "FallRWep", 2, 2, 0.2f);
-  addAnimation("16_astro", "FallLWep", 2, 2, 0.2f);
-  addAnimation("16_astro", "PlayerShootRWep", 6, 6, 0.54f);
-  addAnimation("16_astro", "PlayerShootLWep", 6, 6, 0.54f);
+  addAnimation("PTSH", "IdleRWep", 1, 1, 0.2f);
+  addAnimation("PTSH", "IdleLWep", 1, 1, 0.2f);
+  addAnimation("PTSH", "WalkRWep", 2, 3, 0.20f);
+  addAnimation("PTSH", "WalkLWep", 2, 3, 0.20f);
+  addAnimation("PTSH", "FlyRWep", 4, 5, 0.18f);
+  addAnimation("PTSH", "FlyLWep", 4, 5, 0.18f);
+  addAnimation("PTSH", "AscendRWep", 5, 5, 0.2f);
+  addAnimation("PTSH", "AscendLWep", 5, 5, 0.2f);
+  addAnimation("PTSH", "FallRWep", 2, 2, 0.2f);
+  addAnimation("PTSH", "FallLWep", 2, 2, 0.2f);
+  addAnimation("PTSH", "PlayerShootRWep", 6, 6, 0.54f);
+  addAnimation("PTSH", "PlayerShootLWep", 6, 6, 0.54f);
 
 
   // Strings
@@ -862,8 +862,8 @@ bool PlayerObject::setupAnimation() {
   objectSprite = cocos2d::Sprite::create();
   objectSprite->retain();
   objectSprite->setAnchorPoint(cocos2d::Point(0.5, 0.0));
-  objectSprite->setPositionX(5);// Aling sprite in Hitbox
-  objectSprite->setPositionY(-32);// Aling sprite in Hitbox
+  objectSprite->setPositionX(8);// Aling sprite in Hitbox
+  objectSprite->setPositionY(-16);// Aling sprite in Hitbox
   setAnimation(animationStrings.at((IdleR)));
   setAnchorPoint(Point(0.0 , 0.5f));
   //objectSprite->setPosition(cocos2d::Point((4, 0);
@@ -874,7 +874,7 @@ bool PlayerObject::setupAnimation() {
   // ITEM SETUP
   pItem = &PlayerObject::no_item;
   //setItem(E_SUPORT_ITEM);
-  setItem(E_RIFLE_ITEM);
+  setItem(E_NO_ITEM);
   const uint32_t gear = getPayerGear();
   gear_mask_exclusive = 0;
   setItem((PlayerItem_ID)(gear & E_RIFLE_ITEM));

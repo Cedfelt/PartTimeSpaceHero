@@ -39,6 +39,8 @@ void MapData::setupAttributes(cocos2d::TMXTiledMap* map) {
     for(int y = 0;y<mh;y++){
       const int gid = tempLayer->getTileGIDAt(cocos2d::Point(x, mh - (y)));
       attributes[x][y] = gid;
+      if(gid!=0)
+        cocos2d::log(" %u ",gid);
     }
   }
 }
