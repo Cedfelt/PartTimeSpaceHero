@@ -48,6 +48,9 @@ void MapObject::setupBackgroundLayers(){
   std::string bgs = "background";
   int bg_cnt = 1;
   TMXLayer *bg = map->getLayer((bgs + std::to_string(bg_cnt)));
+  TMXLayer *dj2 = map->getLayer(("dj2"));
+  if(dj2!=NULL)
+    dj2->getTexture()->setAntiAliasTexParameters();
   
   int cnt = 0;// Make the scala an atribute of the layer!!!
   while (bg != NULL) {

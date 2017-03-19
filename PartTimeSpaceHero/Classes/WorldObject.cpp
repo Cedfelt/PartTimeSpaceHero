@@ -77,7 +77,8 @@ void WorldObject::setupWorld(){
   
   // This Sets the scale for all World Objects
   const size_t scale = getScaleFactor();
-  setScale(scale);
+  //setScale(scale);
+  setScale(3);
   this->schedule(schedule_selector(WorldObject::updateWorld));
   if(player)
     setViewPointCenter(Point((player->getObjectPositionX()),(player->getObjectPositionY()+ 21.0)));

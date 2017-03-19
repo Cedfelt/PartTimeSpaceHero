@@ -33,7 +33,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     // initialize director
   
     // initialize director
-    const uint32_t scale = 2;
+    const float scale = 1.f / 0.375f;
     setup_colorcollection();
 
 
@@ -46,13 +46,15 @@ bool AppDelegate::applicationDidFinishLaunching() {
 #else //if IPHONE5
   const uint32_t res_x = director->getWinSizeInPixels().width;
   const uint32_t res_y = director->getWinSizeInPixels().height;
+  director->setDepthTest(false);
+  director->setProjection(Director::Projection::_2D);
 #endif
     auto glview = director->getOpenGLView();
     if (!glview) {
         glview = GLViewImpl::createWithRect("SpaceGame", Rect(0, 0, res_x , res_y ));
         director->setOpenGLView(glview);
     }
-    
+    //CC_SPRITEBATCHNODE_RENDER_SUBPIXEL
     setScaleFactor(scale);
     
     director->getOpenGLView()->setDesignResolutionSize(res_x, res_y, ResolutionPolicy::SHOW_ALL);
