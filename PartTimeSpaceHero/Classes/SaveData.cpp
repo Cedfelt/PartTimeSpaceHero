@@ -45,7 +45,7 @@ void SaveData::addLevelToGame(std::string levelName,std::string description){
 void SaveData::loadWorldData() {
   // Tutorial
   // Intro
-  addLevelToGame("world1_prototype.tmx","Hostile liveforms detected");
+  addLevelToGame("world2_prototype.tmx","Hostile liveforms detected");
   addLevelToGame("monster_cave.tmx","Hostile liveforms detected");
   addLevelToGame("level2.tmx","Brace for Impact");
   addLevelToGame("scrap_planet.tmx", "Dev Level");

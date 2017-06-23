@@ -24,7 +24,7 @@ bool PlayerObject::init() {
     return false;
   }
   playerInput = PlayerInput::create();
-  setSpeed(135.f*SPEED_MOD);
+  setSpeed(89.f*SPEED_MOD);
   addChild(playerInput);
   this->schedule(schedule_selector(PlayerObject::playerUpdate));
   dissconeted = false;
@@ -808,16 +808,17 @@ bool PlayerObject::setupAnimation() {
   // Items 
   SpriteFrameCache::getInstance()->addSpriteFramesWithFile("ptsh.plist");
   SpriteFrameCache::getInstance()->addSpriteFramesWithFile("16_astro.plist");
-  addAnimation("PTSH", "IdleR", 1, 4, 0.2f);
-  addAnimation("PTSH", "IdleL", 1, 4, 0.2f);
-  addAnimation("PTSH", "WalkR", 5, 8, 0.15f);
-  addAnimation("PTSH", "WalkL", 5, 8, 0.15f);
-  addAnimation("PTSH", "FlyR", 9, 12, 0.13f);
-  addAnimation("PTSH", "FlyL", 9, 12, 0.13f);
-  addAnimation("PTSH", "AscendR", 13, 13, 0.2f);
-  addAnimation("PTSH", "AscendL", 13, 13, 0.2f);
-  addAnimation("PTSH", "FallR", 14, 17, 0.12f);
-  addAnimation("PTSH", "FallL", 17, 17, 0.12f);
+  SpriteFrameCache::getInstance()->addSpriteFramesWithFile("ptsh_nes.plist");
+  addAnimation("ptsh_nes", "IdleR", 2, 2, 0.2f);
+  addAnimation("ptsh_nes", "IdleL", 2, 2, 0.2f);
+  addAnimation("ptsh_nes", "WalkR", 1, 4, 0.150f);
+  addAnimation("ptsh_nes", "WalkL", 1, 4, 0.150f);
+  addAnimation("ptsh_nes", "FlyR", 5, 6, 0.2f);
+  addAnimation("ptsh_nes", "FlyL", 5, 6, 0.2f);
+  addAnimation("ptsh_nes", "AscendR", 5, 5, 0.2f);
+  addAnimation("ptsh_nes", "AscendL", 5, 5, 0.2f);
+  addAnimation("ptsh_nes", "FallR", 1, 1, 0.12f);
+  addAnimation("ptsh_nes", "FallL", 1, 1, 0.12f);
   addAnimation("PTSH", "DashChargeR", 18, 21, 0.1f);
   addAnimation("PTSH", "DashChargeL", 18, 21, 0.1f);
   addAnimation("PTSH", "DashR", 22, 25, 0.15f);
@@ -863,7 +864,7 @@ bool PlayerObject::setupAnimation() {
   objectSprite->retain();
   objectSprite->setAnchorPoint(cocos2d::Point(0.5, 0.0));
   objectSprite->setPositionX(8);// Aling sprite in Hitbox
-  objectSprite->setPositionY(-16);// Aling sprite in Hitbox
+  objectSprite->setPositionY(-3);// Aling sprite in Hitbox
   setAnimation(animationStrings.at((IdleR)));
   setAnchorPoint(Point(0.0 , 0.5f));
   //objectSprite->setPosition(cocos2d::Point((4, 0);
