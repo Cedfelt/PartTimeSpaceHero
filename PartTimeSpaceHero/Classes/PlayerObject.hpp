@@ -30,6 +30,7 @@ public:
   uint32_t gear_mask_exclusive; // 0x ff ff ff ff
   uint32_t gear_mask_unlimited; // 0x ff ff ff ff
   ProximityZone* p_zone_test;
+  uint32_t collectables;
 private:
   
   
@@ -72,6 +73,7 @@ private:
   SoundFx* rechargedSFX;
   float fuel;
   bool dead;
+  
   float consumeRate;
   float currentConsumeRate;
   float item_charge_time;
