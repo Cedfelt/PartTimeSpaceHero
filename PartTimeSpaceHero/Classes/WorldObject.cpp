@@ -1,4 +1,4 @@
-//
+ //
 //  WorldObject.cpp
 //  PartTimeSpaceHero
 //
@@ -323,6 +323,10 @@ void WorldObject::updateWorld(float delta) {
     }
   }
   
+  if(player->getCoins() == player->collectables){
+    obj->colided = true;
+  }
+  
   // Check if player dead
   if(player){
   if(player->HP<=0&&death_scene(delta)){
@@ -412,6 +416,8 @@ void WorldObject::spawnObjects(cocos2d::Vector<GameObject*>* gameObjects) {
   auto objectGroup = mapObject->map->getObjectGroup(objectName);
   ValueVector obj = objectGroup->getObjects();
   bool bottyFirst = true;
+  size_t collect_to_win = 0;
+  
   for (int i = 0;i < obj.size();i++) {
     ValueMap vm = obj.at(i).asValueMap();
     const float x = vm["x"].asFloat();
@@ -456,19 +462,7 @@ void WorldObject::spawnObjects(cocos2d::Vector<GameObject*>* gameObjects) {
       coin->getPhysicsBody()->setCollisionBitmask((int)PhysicsCategory::None);
       coin->getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::Player|(int)PhysicsCategory::PlayerPickups|(int)PhysicsCategory::Hazard);
       addChild(coin);
-    }
-
-    else if(name == "CoinObject"){
-      // COIN
-      auto coin = CoinObject::create();
-      coin->setupHitbox(0.1f, 1.0f, 19, 17, 19, 17, false);
-      gameObjects->pushBack(coin);
-      coin->setObjectPositionX(x);
-      coin->setObjectPositionY(y);
-      coin->getPhysicsBody()->setCategoryBitmask((int)PhysicsCategory::PlayerPickups);
-      coin->getPhysicsBody()->setCollisionBitmask((int)PhysicsCategory::None);
-      coin->getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::Player|(int)PhysicsCategory::PlayerPickups|(int)PhysicsCategory::Hazard);
-      addChild(coin);
+      collect_to_win++;
     }
 
     
@@ -899,6 +893,8 @@ void WorldObject::spawnObjects(cocos2d::Vector<GameObject*>* gameObjects) {
   if(camera!=nullptr and player!=nullptr){
     player->disable = true;
   }
+  
+  player->collectables = collect_to_win;
   
 }
 
