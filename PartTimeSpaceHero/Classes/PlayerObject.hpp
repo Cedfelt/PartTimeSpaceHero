@@ -30,7 +30,7 @@ public:
   uint32_t gear_mask_exclusive; // 0x ff ff ff ff
   uint32_t gear_mask_unlimited; // 0x ff ff ff ff
   ProximityZone* p_zone_test;
-  uint32_t collectables;
+  uint32_t collectables_to_win;
 private:
   
   

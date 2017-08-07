@@ -36,6 +36,7 @@
 #include "Tank.hpp"
 #include "VeggieObject.hpp"
 #include "CaveMonsters.hpp"
+#include "Collectables.hpp"
 
 float lastX;
 float lastY;
@@ -323,7 +324,7 @@ void WorldObject::updateWorld(float delta) {
     }
   }
   
-  if(player->getCoins() == player->collectables){
+  if(player->collectables == player->collectables_to_win){
     obj->colided = true;
   }
   
@@ -454,6 +455,19 @@ void WorldObject::spawnObjects(cocos2d::Vector<GameObject*>* gameObjects) {
     else if(name == "CoinObject"){
       // COIN
       auto coin = CoinObject::create();
+      coin->setupHitbox(0.1f, 1.0f, 19, 17, 19, 17, false);
+      gameObjects->pushBack(coin);
+      coin->setObjectPositionX(x);
+      coin->setObjectPositionY(y);
+      coin->getPhysicsBody()->setCategoryBitmask((int)PhysicsCategory::PlayerPickups);
+      coin->getPhysicsBody()->setCollisionBitmask((int)PhysicsCategory::None);
+      coin->getPhysicsBody()->setContactTestBitmask((int)PhysicsCategory::Player|(int)PhysicsCategory::PlayerPickups|(int)PhysicsCategory::Hazard);
+      addChild(coin);
+    }
+    
+    else if(name == "Collectable"){
+      // COIN
+      auto coin = Collectables::create();
       coin->setupHitbox(0.1f, 1.0f, 19, 17, 19, 17, false);
       gameObjects->pushBack(coin);
       coin->setObjectPositionX(x);
@@ -894,7 +908,7 @@ void WorldObject::spawnObjects(cocos2d::Vector<GameObject*>* gameObjects) {
     player->disable = true;
   }
   
-  player->collectables = collect_to_win;
+  player->collectables_to_win = collect_to_win;
   
 }
 

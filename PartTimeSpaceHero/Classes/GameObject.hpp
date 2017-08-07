@@ -61,8 +61,10 @@ public:
   bool disable;
   
   void addCoins(uint32_t coinsToAdd);
+  void addCollectables(const uint32_t value);
   uint32_t getCoins();
   uint32_t coins;
+  uint32_t collectables;
   void setCoins(uint32_t coinsSet);
 
   float getElastic(void);

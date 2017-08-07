@@ -109,6 +109,8 @@
 		A828EC161D02C6080006AA25 /* DamageZone.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A828EC131D02C6080006AA25 /* DamageZone.cpp */; };
 		A828EC191D060C680006AA25 /* PlatformObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A828EC171D060C680006AA25 /* PlatformObject.cpp */; };
 		A828EC1A1D060C680006AA25 /* PlatformObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A828EC171D060C680006AA25 /* PlatformObject.cpp */; };
+		A8492D151F35459500AE05B2 /* Collectables.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8492D131F35459500AE05B2 /* Collectables.cpp */; };
+		A8492D161F35459500AE05B2 /* Collectables.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8492D131F35459500AE05B2 /* Collectables.cpp */; };
 		A85C30FD1D4C970C0047A532 /* Icon-87.png in Resources */ = {isa = PBXBuildFile; fileRef = A85C30FC1D4C970C0047A532 /* Icon-87.png */; };
 		A85C30FF1D4C97160047A532 /* Icon-180.png in Resources */ = {isa = PBXBuildFile; fileRef = A85C30FE1D4C97160047A532 /* Icon-180.png */; };
 		A87396AD1D0CA6BC00ADE298 /* WaterTiles.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A87396AB1D0CA6BC00ADE298 /* WaterTiles.cpp */; };
@@ -273,6 +275,8 @@
 		A828EC141D02C6080006AA25 /* DamageZone.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = DamageZone.hpp; sourceTree = "<group>"; };
 		A828EC171D060C680006AA25 /* PlatformObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PlatformObject.cpp; sourceTree = "<group>"; };
 		A828EC181D060C680006AA25 /* PlatformObject.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = PlatformObject.hpp; sourceTree = "<group>"; };
+		A8492D131F35459500AE05B2 /* Collectables.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Collectables.cpp; sourceTree = "<group>"; };
+		A8492D141F35459500AE05B2 /* Collectables.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Collectables.hpp; sourceTree = "<group>"; };
 		A85C30FC1D4C970C0047A532 /* Icon-87.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-87.png"; sourceTree = "<group>"; };
 		A85C30FE1D4C97160047A532 /* Icon-180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-180.png"; sourceTree = "<group>"; };
 		A87396AB1D0CA6BC00ADE298 /* WaterTiles.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WaterTiles.cpp; sourceTree = "<group>"; };
@@ -457,6 +461,8 @@
 				A828EC0C1D00D0D70006AA25 /* BottyObject.cpp */,
 				A828EC0D1D00D0D70006AA25 /* BottyObject.hpp */,
 				A8805F2B1CEFB37400B2AE7A /* CoinObject.cpp */,
+				A8492D131F35459500AE05B2 /* Collectables.cpp */,
+				A8492D141F35459500AE05B2 /* Collectables.hpp */,
 				A8805F2C1CEFB37400B2AE7A /* CoinObject.hpp */,
 				A828EC131D02C6080006AA25 /* DamageZone.cpp */,
 				A828EC141D02C6080006AA25 /* DamageZone.hpp */,
@@ -755,6 +761,7 @@
 				A81BE15F1CBA465A00C09359 /* PlayerInput.cpp in Sources */,
 				46880B8A19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */,
 				A8C6DF9E1D73416900153994 /* DB32.cpp in Sources */,
+				A8492D151F35459500AE05B2 /* Collectables.cpp in Sources */,
 				A800448E1D1FD5B2003A11A1 /* ItemCreate.cpp in Sources */,
 				A8E25E7A1D46CEAD002295C8 /* FishObject.cpp in Sources */,
 				A81BE14F1CBA41D500C09359 /* MapObject.cpp in Sources */,
@@ -856,6 +863,7 @@
 				A8E25E831D4955A4002295C8 /* SuporterObject.cpp in Sources */,
 				A81862CC1DDDA0BA00519515 /* CameraObject.cpp in Sources */,
 				A828EC1A1D060C680006AA25 /* PlatformObject.cpp in Sources */,
+				A8492D161F35459500AE05B2 /* Collectables.cpp in Sources */,
 				A8ECBD621DAA91A100B7929E /* MudMonsterObject.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
