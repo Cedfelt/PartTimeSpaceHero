@@ -238,6 +238,10 @@ void GameObject::addCoins(uint32_t coinsToAdd) {
   coins += coinsToAdd;
 }
 
+void GameObject::addCollectables(const uint32_t value) {
+  collectables += value;
+}
+
 void GameObject::setCoins(uint32_t coinsSet) {
   coins = coinsSet;
 }
