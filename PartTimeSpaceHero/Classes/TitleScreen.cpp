@@ -66,7 +66,7 @@ bool TitleScreen::init()
   touchListener->onTouchesCancelled = CC_CALLBACK_2(TitleScreen::onTouchCancelled, this);
   _eventDispatcher->addEventListenerWithSceneGraphPriority(touchListener, this);
   
-  const auto textCol = getColorFromCollection(2);
+  const auto textCol = getColorFromCollection(21);
   auto col3b = Color3B(textCol.red,textCol.green,textCol.blue);
   
   
@@ -76,21 +76,30 @@ bool TitleScreen::init()
   label->setColor(col3b);
   addChild(label);
   
-  auto Map = cocos2d::TMXTiledMap::create("title_screen.tmx");
-  addChild(Map);
+  // Sprite
+  auto director = Director::getInstance();
+  const float xPos = director->getWinSize().width *0.5;
+  const float yPos = director->getWinSize().height /2;
+  Sprite* spaceShipSprite = Sprite::create("start_screen.png");
+  spaceShipSprite->getTexture()->setAliasTexParameters();
+  spaceShipSprite->setScale(scale);
+  spaceShipSprite->setPositionX(xPos);
+  spaceShipSprite->setPositionY(yPos);
+  spaceShipSprite->setRotation(0);
+  addChild(spaceShipSprite,0);
   //FÖR ATT LÄGGA IN NY STARTSKÄRM (måste vara sparade i spelets mapfiles nerladdat)
   // för att bestämma hur stor kartan ska vara ska bli
   
   // New Game Label -
-  auto label2 = Label::createWithTTF("Touch the Screen to Start", "fonts/PressStart2P.ttf", 12*scale);
+  auto label2 = Label::createWithTTF("Part Time Space Hero", "fonts/PressStart2P.ttf", 24*scale);
   label2->setColor(col3b);
-  label2->setPosition(Vec2(visibleSize.width*0.5 , visibleSize.height*0.40));
+  label2->setPosition(Vec2(visibleSize.width*0.5 , visibleSize.height*0.85));
   addChild(label2);
   
   // New Game Label -
-  auto label3 = Label::createWithTTF("© 2017 Seacow", "fonts/PressStart2P.ttf", 12*scale);
+  auto label3 = Label::createWithTTF("© 2018 Seacow", "fonts/PressStart2P.ttf", 12*scale);
   label3->setColor(col3b);
-  label3->setPosition(Vec2(visibleSize.width/2 , visibleSize.height*0.25));
+  label3->setPosition(Vec2(visibleSize.width/2 , visibleSize.height*0.1));
   addChild(label3);
   
   //auto audio = CocosDenshion::SimpleAudioEngine::getInstance();

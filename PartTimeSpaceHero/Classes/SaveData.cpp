@@ -46,6 +46,7 @@ void SaveData::loadWorldData() {
   // Tutorial
   // Intro
   addLevelToGame("world3_prototype.tmx","Welcome to the Jungel");
+  addLevelToGame("world4_prototype.tmx","Welcome to the Jungel");
   addLevelToGame("world2_prototype.tmx","Hostile liveforms detected");
   addLevelToGame("monster_cave.tmx","Hostile liveforms detected");
   addLevelToGame("level2.tmx","Brace for Impact");
